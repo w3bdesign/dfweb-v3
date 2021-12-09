@@ -1,3 +1,5 @@
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/w3bdesign/dfweb-v3.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/w3bdesign/dfweb-v3/context:javascript)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
