@@ -1,57 +1,34 @@
-# Welcome to Remix!
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-- [Remix Docs](https://remix.run/docs)
+## Getting Started
 
-## Vercel Setup
+First, run the development server:
 
-First you'll need the [Vercel CLI](https://vercel.com/docs/cli):
-
-```sh
-npm i -g vercel
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-Before you can run the app in development, you need to link this project to a new Vercel project on your account.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-**It is important that you use a new project. If you try to link this project to an existing project (like a Next.js site) you will have problems.**
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-```sh
-$ vercel link
-```
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-Follow the prompts, and when it's done you should be able to get started.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Development
+## Learn More
 
-You will be running two processes during development when using Vercel as your server.
+To learn more about Next.js, take a look at the following resources:
 
-- Your Vercel server in one
-- The Remix development server in another
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-```sh
-# in one tab
-$ vercel dev
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-# in another
-$ npm run dev
-```
+## Deploy on Vercel
 
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-If you'd rather run everything in a single tab, you can look at [concurrently](https://npm.im/concurrently) or similar tools to run both processes in one tab.
-
-## Deploying
-
-```sh
-$ npm run build
-# preview deployment
-$ vercel
-
-# production deployment
-$ vercel --prod
-```
-
-### GitHub Automatic Deployments
-
-For some reason the GitHub integration doesn't deploy the public folder. We're working with Vercel to figure this out.
-
-For now, [you can set up a GitHub action with this config](https://gist.github.com/mcansh/91f8effda798b41bb373351fad217070) from our friend [@mcansh](https://github.com/mcansh).
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
