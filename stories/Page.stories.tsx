@@ -9,7 +9,13 @@ export default {
   component: Page,
 } as ComponentMeta<typeof Page>;
 
-const Template: ComponentStory<typeof Page> = (args) => <Page {...args} />;
+const Template: ComponentStory<typeof Page> = () => <Page onLogin={function (): void {
+  throw new Error('Function not implemented.');
+} } onLogout={function (): void {
+  throw new Error('Function not implemented.');
+} } onCreateAccount={function (): void {
+  throw new Error('Function not implemented.');
+} }  />;
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
@@ -17,7 +23,7 @@ LoggedIn.args = {
   ...HeaderStories.LoggedIn.args,
 };
 
-export const LoggedOut = Template.bind({});
+export const LoggedOut = Template;
 LoggedOut.args = {
   ...HeaderStories.LoggedOut.args,
 };
