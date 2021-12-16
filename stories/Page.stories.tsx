@@ -17,7 +17,7 @@ const Template: ComponentStory<typeof Page> = () => <Page onLogin={function (): 
   throw new Error('Function not implemented.');
 } }  />;
 
-export const LoggedIn = Template.bind({});
+export const LoggedIn = Template;
 LoggedIn.args = {
   // More on composing args: https://storybook.js.org/docs/react/writing-stories/args#args-composition
   ...HeaderStories.LoggedIn.args,
