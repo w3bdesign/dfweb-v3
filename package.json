@@ -30,7 +30,7 @@
    
     "@types/storybook__react": "^5.2.1",
   
-    "@types/react": "17.0.37",
+    "@types/react": "17.0.38",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "eslint": "8.5.0",
