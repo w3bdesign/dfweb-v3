@@ -1,5 +1,7 @@
 /* global cy, describe, beforeEach, it */
 
+import cy from 'cy'
+
 describe(`The Home Page`, () => {
   beforeEach(() => {
     cy.visit("/");
