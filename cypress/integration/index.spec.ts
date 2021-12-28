@@ -9,6 +9,8 @@ describe(`The Home Page`, () => {
   });
 });
 
+export {}
+
 /*context("Home", () => {
   beforeEach(() => {
     cy.visit("/");
