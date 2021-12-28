@@ -1,21 +1,27 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { Page } from './Page';
-import * as HeaderStories from './Header.stories';
+import { Page } from "./Page";
+import * as HeaderStories from "./Header.stories";
 
 export default {
-  title: 'Example/Page',
+  title: "Example/Page",
   component: Page,
 } as ComponentMeta<typeof Page>;
 
-const Template: ComponentStory<typeof Page> = () => <Page onLogin={function (): void {
-  throw new Error('Function not implemented.');
-} } onLogout={function (): void {
-  throw new Error('Function not implemented.');
-} } onCreateAccount={function (): void {
-  throw new Error('Function not implemented.');
-} }  />;
+const Template: ComponentStory<typeof Page> = () => (
+  <Page
+    onLogin={function (): void {
+      throw new Error("Function not implemented.");
+    }}
+    onLogout={function (): void {
+      throw new Error("Function not implemented.");
+    }}
+    onCreateAccount={function (): void {
+      throw new Error("Function not implemented.");
+    }}
+  />
+);
 
 export const LoggedIn = Template;
 LoggedIn.args = {
