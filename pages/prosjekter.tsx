@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-        Velkommen til Index
+         Velkommen til Prosjekter
         </h1>
 
         <p className={styles.description}>
