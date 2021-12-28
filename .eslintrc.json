@@ -1,6 +1,6 @@
 {
-  "extends": "next/core-web-vitals", "cypress",
-
-"globals": {
+  "extends": ["next/core-web-vitals", "cypress"],
+  "globals": {
     "cy": true
   }
+}
