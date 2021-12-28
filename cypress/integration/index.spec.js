@@ -1,6 +1,4 @@
-/* global cy, describe, beforeEach, it */
-
-import cy from 'cypress'
+/// <reference types="cypress" />
 
 describe(`The Home Page`, () => {
   beforeEach(() => {
