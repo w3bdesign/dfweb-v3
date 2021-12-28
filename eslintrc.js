@@ -1,0 +1,1 @@
+"extends": 'plugin:cypress/recommended'
