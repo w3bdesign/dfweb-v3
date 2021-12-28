@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/stein-saks-papir
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:14
     steps:
       - checkout
       - restore_cache:
