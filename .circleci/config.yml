@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/dfweb-v3
     docker:
-      - image: circleci/node:17
+      - image: circleci/node:15
     steps:
       - checkout
       - restore_cache:
