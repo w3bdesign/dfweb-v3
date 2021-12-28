@@ -13,4 +13,8 @@ context("Home", () => {
   beforeEach(() => {
     cy.visit("/");
   });
+
+  it("contains", () => {
+    cy.get("h1").contains("Velkommen");
+  });
 });
