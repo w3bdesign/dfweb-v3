@@ -1,5 +1,4 @@
-// https://nextjs.org/docs/testing
-// https://nextjs.org/docs/testing#creating-your-first-cypress-integration-test
+/* global cy, describe, beforeEach, it */ 
 
 describe('Navigation', () => {
     it('should navigate to the about page', () => {
