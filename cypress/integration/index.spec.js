@@ -1,5 +1,7 @@
 /* global cy, describe, beforeEach, it */ 
 
+import cy from "cypress"
+
 describe('Navigation', () => {
     it('should navigate to the about page', () => {
       // Start from the index page
