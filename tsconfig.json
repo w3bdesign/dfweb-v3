@@ -16,6 +16,11 @@
     "incremental": true,
     "types": ["cypress"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "__tests__/index.test.jsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "__tests__/index.test.jsx"
+  ],
   "exclude": ["node_modules"]
 }
