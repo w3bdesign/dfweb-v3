@@ -27,5 +27,7 @@ jobs:
       - run:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
-      - cypress/run # "run" job comes from "cypress" orb
+      - run: 
+         name: Cypress
+         command: cypress/run # "run" job comes from "cypress" orb
     parallelism: 6
