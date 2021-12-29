@@ -1,15 +1,15 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Index from "../components/Index/Index.component";
+import IndexContent from "../components/Index/IndexContent.component";
 import * as HeaderStories from "./Header.stories";
 
 export default {
   title: "Example/Index",
-  component: Index,
-} as ComponentMeta<typeof Index>;
+  component: IndexContent,
+} as ComponentMeta<typeof IndexContent>;
 
-const Template: ComponentStory<typeof Index> = () => <Index />;
+const Template: ComponentStory<typeof IndexContent> = () => <IndexContent />;
 
 export const LoggedIn = Template;
 LoggedIn.args = {
