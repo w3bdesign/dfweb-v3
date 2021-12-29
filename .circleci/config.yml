@@ -4,24 +4,22 @@ orbs:
   browser-tools: circleci/browser-tools@1.2.3
 jobs:
   build:
-    working_directory: ~/dfweb-v3
+    working_directory: ~/dfweb
     docker:
       - image: circleci/node:latest
     steps:
       - checkout
+      - browser-tools/install-browser-tools
+      - node/install-packages
       - restore_cache:
-          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          key: yarn-packages-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
-          command: npm ci
+          command: npm install
       - save_cache:
-          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          key: yarn-packages-{{ checksum "package-lock.json" }}
           paths:
             - /home/circleci/.npm
       - run:
-          name: Run Tests
-          command: npm test
-      - run:
-          name: Codecov
-          command: bash <(curl -s https://codecov.io/bash)
-    parallelism: 6
+          name: Run Jest Tests
+          command: npm run test
