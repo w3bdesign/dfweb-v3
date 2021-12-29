@@ -1,4 +1,10 @@
-version: 2
+version: 2.1
+orbs:
+  # "cypress-io/cypress@1" installs the latest published
+  # version "1.x.y" of the orb. We recommend you then use
+  # the strict explicit version "cypress-io/cypress@1.x.y"
+  # to lock the version and prevent unexpected CI changes
+  cypress: cypress-io/cypress@1
 jobs:
   build:
     working_directory: ~/dfweb-v3
@@ -16,9 +22,10 @@ jobs:
           paths:
             - /home/circleci/.npm
       - run:
-          name: Run Tests
+          name: Run Jest Tests
           command: npm test
       - run:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
+      - cypress/run # "run" job comes from "cypress" orb
     parallelism: 6
