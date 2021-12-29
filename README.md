@@ -3,9 +3,9 @@
 [![codecov](https://codecov.io/gh/w3bdesign/dfweb-v3/branch/master/graph/badge.svg?token=VML3KNGO0N)](https://codecov.io/gh/w3bdesign/dfweb-v3)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_dfweb-v3&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3bdesign_dfweb-v3)
 
-# Dfweb
+# Dfweb Version 3
 
-Third version of my portfolio website with Next.js with Typescriptinstead of Gatsby.
+Third version of my portfolio website with Next.js with Typescript instead of Gatsby.
 
 ## Features:
 

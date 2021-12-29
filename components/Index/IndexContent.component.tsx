@@ -1,9 +1,9 @@
-import type { NextPage } from "next";
+import type { NextComponentType } from "next";
 import Head from "next/head";
 
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
 
-const Index: NextPage = () => {
+const IndexContent: NextComponentType = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -19,4 +19,4 @@ const Index: NextPage = () => {
   );
 };
 
-export default Index;
+export default IndexContent;
