@@ -1,7 +1,7 @@
-version: 2
+version: 2.1
 jobs:
   build:
-    working_directory: ~/stein-saks-papir
+    working_directory: ~/dfweb
     docker:
       - image: circleci/node:latest
     steps:
@@ -16,8 +16,9 @@ jobs:
           paths:
             - /home/circleci/.npm
       - run:
-          name: Run Tests
+          name: Run Jest Tests
           command: npm test
       - run:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
+    parallelism: 6
