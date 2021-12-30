@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import ProsjekterContent from "../components/Prosjekter/ProsjekterContent.component";
 import Layout from "../components/Layout/Layout.component";
 
-const Home: NextPage = () => {
+const Prosjekter: NextPage = () => {
   return (
     <>
       <Layout title="Prosjekter - Portefølje - Dfweb">
@@ -13,4 +13,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Prosjekter;

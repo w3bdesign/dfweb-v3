@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import CVContent from "../components/CV/CVContent.component";
 import Layout from "../components/Layout/Layout.component";
 
-const Home: NextPage = () => {
+const CV: NextPage = () => {
   return (
     <>
       <Layout title="CV - Portefølje - Dfweb">
@@ -13,4 +13,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default CV;
