@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import styles from "../../styles/Home.module.css";
 
-const Kontakt: NextPage = () => {
+const KontaktContent: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -19,4 +19,4 @@ const Kontakt: NextPage = () => {
   );
 };
 
-export default Kontakt;
+export default KontaktContent;

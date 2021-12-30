@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import styles from "../../styles/Home.module.css";
 
-const CV: NextPage = () => {
+const CVContent: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -19,4 +19,4 @@ const CV: NextPage = () => {
   );
 };
 
-export default CV;
+export default CVContent;
