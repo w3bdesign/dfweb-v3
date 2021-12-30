@@ -4,7 +4,7 @@ import client from "../client";
 
 import ProsjekterContent from "../components/Prosjekter/ProsjekterContent.component";
 import Layout from "../components/Layout/Layout.component";
-import { ReactChild, ReactFragment, ReactPortal } from "react";
+
 
 const Prosjekter: NextPage = ({ project }: any) => {
   console.log(project);
