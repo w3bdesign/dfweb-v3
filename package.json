@@ -1,5 +1,6 @@
 {
   "name": "dfweb-v3",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
@@ -7,8 +8,8 @@
     "start": "next start",
     "test": "jest --coverage",
     "lint": "next lint",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
     "cypress": "cypress open"
   },
