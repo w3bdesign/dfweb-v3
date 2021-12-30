@@ -1,11 +1,10 @@
-//import type { NextComponentType } from "next";
 import { NextPage } from "next";
 import Head from "next/head";
 
 import styles from "../../styles/Home.module.css";
 
 interface HeaderProps {
-  title: String;
+  title: string;
 }
 
 const Header: NextPage<HeaderProps> = ({ title }: HeaderProps) => {
