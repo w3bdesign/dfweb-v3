@@ -7,6 +7,8 @@
 
 Third version of my portfolio website with Next.js with Typescript instead of Gatsby.
 
+Work In Progress.
+
 ## Features:
 
 ### Misc:
