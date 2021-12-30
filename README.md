@@ -7,11 +7,14 @@
 
 Third version of my portfolio website with Next.js with Typescript instead of Gatsby.
 
+Work In Progress.
+
 ## Features:
 
 ### Misc:
 
 - NextJS as main project dependency
+- Sanity for fetching project details
 
 ## TODO
 
