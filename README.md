@@ -13,8 +13,11 @@ Work In Progress.
 
 ### Misc:
 
-- NextJS as main project dependency
-- Sanity for fetching project details
+- NextJS with Typescript as main project dependency
+- Sanity for fetching project information
+- Storybook for component documentation
+- Jest for unit testing
+- Cypress for E2E testing
 
 ## TODO
 
