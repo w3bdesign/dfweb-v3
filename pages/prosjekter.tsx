@@ -5,14 +5,15 @@ import client from "../client";
 import ProsjekterContent from "../components/Prosjekter/ProsjekterContent.component";
 import Layout from "../components/Layout/Layout.component";
 
+type StringOrEmpty = string | null | undefined;
 interface ProjectInterface {
   _id: string;
   id: null | undefined | number;
-  name: string | null | undefined;
-  description: string | null | undefined;
-  subdescription: string | null | undefined;
-  urlgithub: string | null | undefined;
-  urlwww: string | null | undefined;
+  name: StringOrEmpty;
+  description: StringOrEmpty;
+  subdescription: StringOrEmpty;
+  urlgithub: StringOrEmpty;
+  urlwww: StringOrEmpty;
 }
 
 const Prosjekter: NextPage = ({ project }: any) => {
