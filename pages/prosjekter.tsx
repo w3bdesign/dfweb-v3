@@ -4,7 +4,17 @@ import client from "../client";
 
 import ProsjekterContent from "../components/Prosjekter/ProsjekterContent.component";
 import Layout from "../components/Layout/Layout.component";
+import { Key, ReactChild, ReactFragment, ReactPortal } from "react";
 
+interface ProjectInterface {
+  _id: string;
+  id: null | undefined | number;
+  name: string | null | undefined;
+  description: string | null | undefined;
+  subdescription: string | null | undefined;
+  urlgithub: string | null | undefined;
+  urlwww: string | null | undefined;
+}
 
 const Prosjekter: NextPage = ({ project }: any) => {
   console.log(project);
@@ -13,7 +23,7 @@ const Prosjekter: NextPage = ({ project }: any) => {
       <Layout title="Prosjekter - Portefølje - Dfweb">
         Du er på prosjekter siden
         <br />
-        {project.map((post) => (
+        {project.map((post: ProjectInterface) => (
           <div key={post._id}>
             <li>{post.id}</li>
             <li>{post.name}</li>
