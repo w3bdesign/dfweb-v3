@@ -1,4 +1,4 @@
-import type { NextPage } from "Next";
+import type { NextPage } from "next";
 
 import client from "../client";
 
