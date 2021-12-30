@@ -12,7 +12,7 @@ describe("Home", () => {
     const welcometoNext = screen.queryByText("heading", {
       name: /welcome to next/i,
     });
-    console.log(welcometoNext);
+ 
     expect(welcometoNext).not.toBeInTheDocument();
   });
 
