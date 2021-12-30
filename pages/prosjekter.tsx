@@ -20,8 +20,6 @@ const Prosjekter: NextPage = ({ project }: any) => {
   return (
     <>
       <Layout title="Prosjekter - Portefølje - Dfweb">
-        Du er på prosjekter siden
-        <br />
         {project.map((post: ProjectInterface) => (
           <div key={post._id}>
             <li>{post.id}</li>
@@ -33,7 +31,6 @@ const Prosjekter: NextPage = ({ project }: any) => {
             <li>{post.urlwww}</li>
           </div>
         ))}
-        {project && <span>{project.id}</span>}
         <ProsjekterContent />
       </Layout>
     </>
