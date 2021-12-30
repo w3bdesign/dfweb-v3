@@ -1,3 +1,6 @@
+// https://dev.to/jonasmerlin/how-to-use-the-next-js-image-component-in-storybook-1415
+import "../styles/globals.css";
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -6,4 +9,4 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
