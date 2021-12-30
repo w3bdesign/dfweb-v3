@@ -16,6 +16,7 @@ const ProsjekterContent: NextComponentType = () => {
 
 export async function getStaticPaths() {
   const paths = await client.fetch(`*[_type == "project"`);
+  console.log(paths)
 
   return {
     //paths: paths.map((slug: any) => ({params: {slug}})),
