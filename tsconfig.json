@@ -13,8 +13,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
-    "types": ["cypress"]
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
