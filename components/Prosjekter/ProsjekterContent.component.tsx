@@ -15,6 +15,9 @@ const ProsjekterContent: NextComponentType = () => {
 };
 
 export async function getStaticPaths() {
+  console.log("Hei")
+  console.log(client)
+
   const paths = await client.fetch(`*[_type == "project"`);
   console.log(paths)
 
@@ -28,6 +31,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: {
   params: { slug?: "" | undefined };
 }) {
+  console.log("Hei hei")
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params;
   const project = await client.fetch(

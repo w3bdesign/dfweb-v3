@@ -7,6 +7,7 @@ const Prosjekter: NextPage = () => {
   return (
     <>
       <Layout title="Prosjekter - Portefølje - Dfweb">
+        Du er på prosjekter siden
         <ProsjekterContent />
       </Layout>
     </>
