@@ -1,5 +1,5 @@
 import { NextPage } from "Next";
-import Head from "Next/head";
+import Head from "next/head";
 
 import styles from "../../styles/Home.module.css";
 
