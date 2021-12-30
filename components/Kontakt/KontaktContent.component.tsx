@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import styles from "../../styles/Home.module.css";
 
-const CV: NextPage = () => {
+const KontaktContent: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,10 +13,10 @@ const CV: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Velkommen til CV</h1>
+        <h1 className={styles.title}>Velkommen til Kontakt</h1>
       </main>
     </div>
   );
 };
 
-export default CV;
+export default KontaktContent;

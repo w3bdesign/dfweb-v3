@@ -6,7 +6,7 @@ import Layout from "../components/Layout/Layout.component";
 const Home: NextPage = () => {
   return (
     <>
-      <Layout title="Forside - Portefølje - ">
+      <Layout title="Forside - Portefølje - Dfweb">
         <IndexContent />
       </Layout>
     </>
