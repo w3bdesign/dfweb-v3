@@ -5,7 +5,7 @@ import { Header } from "./Header";
 
 export default {
   title: "Example/Header",
-  component: Header,
+  component: Header
 } as ComponentMeta<typeof Header>;
 
 const Template: ComponentStory<typeof Header> = () => (
@@ -25,7 +25,7 @@ const Template: ComponentStory<typeof Header> = () => (
 export const LoggedIn = Template;
 
 LoggedIn.args = {
-  user: {},
+  user: {}
 };
 
 export const LoggedOut = Template;
