@@ -1,4 +1,4 @@
-import type { NextComponentType } from "next";
+// import type { NextComponentType } from "next";
 
 type StringOrEmpty = string | null | undefined;
 interface ProjectInterface {
