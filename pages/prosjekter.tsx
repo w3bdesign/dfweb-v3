@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import client from "../../client";
+import client from "../client";
 
 import ProsjekterContent from "../components/Prosjekter/ProsjekterContent.component";
 import Layout from "../components/Layout/Layout.component";
