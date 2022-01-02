@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-import cy from "cypress"
+import cy from "cypress";
 
 describe(`The Home Page`, () => {
   beforeEach(() => {
