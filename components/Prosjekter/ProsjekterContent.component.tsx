@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import type { NextComponentType } from "next";
 
 type StringOrEmpty = string | null | undefined;
