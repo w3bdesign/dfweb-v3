@@ -11,7 +11,8 @@ interface ProjectInterface {
   urlwww: StringOrEmpty;
 }
 
-const ProsjekterContent: NextComponentType = ({ project }: any) => {
+//const ProsjekterContent: NextComponentType = ({ project }) => {
+const ProsjekterContent: any = ({ project }: any) => {
   return (
     <>
       {project.map((post: ProjectInterface) => (
