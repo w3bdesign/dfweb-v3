@@ -29,13 +29,13 @@ function Navbar() {
               {LINKS.map((link) => (
                 <li key={link.id} className="mr-3 animate-link">
                   {link.external ? (
-                    <Link
-                      aria-label={link.text}
-                      href={link.url}
-                      // rel="noopener noreferrer"
-                      // target="_blank"
-                    >
-                      <a className="inline-block text-xl text-white text">{link.text}</a>
+                    <Link aria-label={link.text} href={link.url}>
+                      <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        className="inline-block text-xl text-white text">
+                        {link.text}
+                      </a>
                     </Link>
                   ) : (
                     <Link href={link.url}>
