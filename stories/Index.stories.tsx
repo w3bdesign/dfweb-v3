@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import IndexContent from "../components/Index/IndexContent.component";
+import IndexContent from "../src/components/Index/IndexContent.component";
 import * as HeaderStories from "./Header.stories";
 
 export default {

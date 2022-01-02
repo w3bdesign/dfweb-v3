@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import LINKS from "../../constants/LINKS";
+import LINKS from "../../../constants/LINKS";
 
 /**
  * Display the menu and the links
