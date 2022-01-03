@@ -32,7 +32,7 @@ function Navbar() {
               aria-label="Navigasjon"
               className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4">
               {LINKS.map((link) => (
-                <li key={link.id} className="mr-3 animate-link">
+                <li key={link.id} className="mr-3">
                   {link.external ? (
                     <Link aria-label={link.text} href={link.url}>
                       <a
