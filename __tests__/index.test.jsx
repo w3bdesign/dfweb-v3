@@ -16,10 +16,10 @@ describe("Home", () => {
     expect(welcometoNext).not.toBeInTheDocument();
   });
 
-  it("Velkommen til Index eksisterer", () => {
+  it("Om Meg eksisterer", () => {
     render(<Home />);
     const velkommen = screen.getByRole("heading", {
-      name: /velkommen til Index/i,
+      name: /Om Meg/i,
     });
     expect(velkommen).toBeInTheDocument();
   });
