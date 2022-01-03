@@ -64,7 +64,7 @@ const IndexContent: NextComponentType = () => {
                 På{" "}
                 <Link href="/prosjekter">
                   <a className="underline">PROSJEKTER</a>
-                </Link>
+                </Link>{" "}
                 kan du se eksempler på arbeid jeg har gjort i nyere tid.
               </p>
             </section>
