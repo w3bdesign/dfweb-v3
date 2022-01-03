@@ -8,7 +8,7 @@ const Footer: NextComponentType = () => {
       <div className="mt-4 bg-gray-800 shadow">
         <div
           aria-label="Copyright tekst"
-          className="container p-6 mx-auto text-base text-center text-white">
+          className="container p-6 mx-auto text-center text-white font-semibold">
           Copyright Daniel Fjeldstad
           <BiCopyright className="inline-block m-2" size="1.2em" />
           {new Date().getFullYear()}
