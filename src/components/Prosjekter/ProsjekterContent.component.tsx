@@ -15,6 +15,9 @@ interface ProjectInterface {
 const ProsjekterContent: any = ({ project }: any) => {
   return (
     <>
+      <h1 className="text-5xl text-rose-500 text-center">
+        Velkommen til Prosjekter denne er fra komponenten
+      </h1>
       {project.map((post: ProjectInterface) => (
         <div className="mt-24" key={post._id}>
           <li>{post.id}</li>
