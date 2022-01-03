@@ -34,9 +34,10 @@ function Navbar() {
               {LINKS.map((link) => (
                 <li key={link.id} className="mr-3">
                   {link.external ? (
-                    <Link aria-label={link.text} href={link.url}>
+                    <Link href={link.url}>
                       <a
                         rel="noopener noreferrer"
+                        aria-label={link.text}
                         target="_blank"
                         className="inline-block text-xl text-white transition ease-in-out duration-300  border-b-4 border-transparent hover:border-white">
                         {link.text}
@@ -44,7 +45,9 @@ function Navbar() {
                     </Link>
                   ) : (
                     <Link href={link.url}>
-                      <a className="inline-block text-xl text-white transition ease-in-out duration-300 border-b-4 border-transparent hover:border-white">
+                      <a
+                        aria-label={link.text}
+                        className="inline-block text-xl text-white transition ease-in-out duration-300 border-b-4 border-transparent hover:border-white">
                         {link.text}
                       </a>
                     </Link>
