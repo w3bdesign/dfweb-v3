@@ -3,11 +3,11 @@ import Head from "next/head";
 
 import Navbar from "./Navbar.component";
 
-interface HeaderProps {
+interface IHeaderProps {
   title: string;
 }
 
-const Header: NextPage<HeaderProps> = ({ title }: HeaderProps) => {
+const Header: NextPage<IHeaderProps> = ({ title }: IHeaderProps) => {
   return (
     <>
       <Head>
