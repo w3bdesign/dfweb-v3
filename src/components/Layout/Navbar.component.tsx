@@ -38,13 +38,15 @@ function Navbar() {
                       <a
                         rel="noopener noreferrer"
                         target="_blank"
-                        className="inline-block text-xl text-white text">
+                        className="inline-block text-xl text-white transition ease-in-out duration-300  border-b-4 border-transparent hover:border-white">
                         {link.text}
                       </a>
                     </Link>
                   ) : (
                     <Link href={link.url}>
-                      <a className="inline-block text-xl text-white text">{link.text}</a>
+                      <a className="inline-block text-xl text-white transition ease-in-out duration-300 border-b-4 border-transparent hover:border-white">
+                        {link.text}
+                      </a>
                     </Link>
                   )}
                 </li>
