@@ -69,6 +69,12 @@ const IndexContent: NextComponentType = () => {
               </p>
             </section>
           </div>
+
+          <div className="p-8 text-lg text-black bg-white rounded shadow">
+            <section aria-label="Hovedinnhold fra Sanity">
+              Denne teksten skal komme fra Sanity
+            </section>
+          </div>
         </div>
       </div>
     </main>
