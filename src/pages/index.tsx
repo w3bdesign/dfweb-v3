@@ -19,7 +19,7 @@ const Home: NextPage = ({ data, preview }) => {
     enabled: preview && data.post?.slug
   });
 
-  // console.log("Post: ", post);
+  console.log("Post text: ", post);
 
   const { title, text } = post;
 
@@ -30,16 +30,12 @@ const Home: NextPage = ({ data, preview }) => {
 
         {post.map((post: any) => (
           <div className="mt-24" key={post._id}>
-            
             <h2>{post.title}</h2>
-            <li><PortableText blocks={post.text} /></li>
             
+              <PortableText blocks={post.text} />
+           
           </div>
         ))}
-
-        
-     
-        
       </Layout>
     </>
   );

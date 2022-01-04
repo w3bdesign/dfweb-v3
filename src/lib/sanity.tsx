@@ -17,40 +17,28 @@ export const urlFor = (source: SanityImageSource) => createImageUrlBuilder(confi
 // Set up the live preview subscription hook
 export const usePreviewSubscription = createPreviewSubscriptionHook(config);
 
-/*const serializers = {
+const serializers = {
   types: {
-    code: (props: any) => (
-      <pre data-language={props.node.language}>
-        <code>brrr - {props.node.code}</code>
+    p: (props: any) => (
+      <pre>
+        brrr span
       </pre>
     )
   }
-};*/
+};
 
 // https://www.sanity.io/guides/3-things-you-need-to-know-when-getting-started-with-portable-text
 
-const BlockRenderer = (props: {
-  node: { style?: "normal" | undefined };
-  children: {} | null | undefined;
-}) => {
-  console.log("Node: ", props.node);
-  const { style = "normal" } = props.node;
+// https://www.sanity.io/schemas/breaks-for-portable-text-189dba35
 
-  if (/^h\d/.test(style)) {
-    const level = style.replace(/[^\d]/g, "");
-    return React.createElement(style, { className: `heading-${level}` }, props.children);
-  }
 
-  // Fall back to default handling
-  //return BlockContent.defaultSerializers.types.block(props)
-};
 
 // Set up Portable Text serialization
 export const PortableText = createPortableTextComponent({
   ...config,
   // Serializers passed to @sanity/block-content-to-react
   // (https://github.com/sanity-io/block-content-to-react)
-  serializers: { BlockRenderer }
+  serializers: { serializers } 
 });
 
 // Helper function for using the current logged in user account
