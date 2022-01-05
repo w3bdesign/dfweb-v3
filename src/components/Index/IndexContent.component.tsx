@@ -25,7 +25,7 @@ const IndexContent: NextComponentType = ({ post }: any) => {
         <div className="container grid gap-4 p-4 mx-auto mt-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
           {post.map((post: any) => (
             <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow" key={post._id}>
-              <section aria-label={post.title}>
+              <section role="contentinfo" aria-label={post.title}>
                 <h2 className="text-3xl text-center">{post.title}</h2>
                 <PortableText
                   className="text-xl"
