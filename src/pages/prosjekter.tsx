@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import client from "../utils/sanity-client";
+import client from "../lib/sanityClient";
 
 import ProsjekterContent from "../components/Prosjekter/ProsjekterContent.component";
 import Layout from "../components/Layout/Layout.component";

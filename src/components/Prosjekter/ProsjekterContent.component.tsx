@@ -1,5 +1,7 @@
 // import type { NextComponentType } from "next";
 
+// For bilder: import { usePreviewSubscription, urlFor } from "../lib/sanity";
+
 type StringOrEmpty = string | null | undefined;
 interface IProjectInterface {
   _id: string;

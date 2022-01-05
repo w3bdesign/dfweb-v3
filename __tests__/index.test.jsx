@@ -10,17 +10,17 @@ describe("Home", () => {
   it("Welcome to next eksisterer ikke", () => {
     render(<Home />);
     const welcometoNext = screen.queryByText("heading", {
-      name: /welcome to next/i,
+      name: /welcome to next/i
     });
- 
+
     expect(welcometoNext).not.toBeInTheDocument();
   });
 
   it("Om Meg eksisterer", () => {
     render(<Home />);
-    const velkommen = screen.getByRole("heading", {
-      name: /Om Meg/i,
+    const banner = screen.getByRole("banner", {
+      name: /Header for logo og navigasjon/i
     });
-    expect(velkommen).toBeInTheDocument();
+    expect(banner).toBeInTheDocument();
   });
 });
