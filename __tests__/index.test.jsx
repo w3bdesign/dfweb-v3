@@ -51,7 +51,16 @@ describe("Home", () => {
     const welcometoNext = screen.queryByText("heading", {
       name: /welcome/i
     });
-    console.log(welcometoNext);
+
     expect(welcometoNext).not.toBeInTheDocument();
+  });
+
+  it("Welcome eksisterer ikke", () => {
+    render(<IndexContent />);
+    const welcome = screen.queryByText("heading", {
+      name: /hei/i
+    });
+
+    expect(welcome).not.toBeInTheDocument();
   });
 });
