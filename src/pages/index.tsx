@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 
-import { usePreviewSubscription, urlFor, PortableText } from "../lib/sanity";
+import { usePreviewSubscription, urlFor } from "../lib/sanity";
 import { getClient } from "../lib/sanity.server";
 
 import type { NextPage } from "next";
@@ -12,38 +12,30 @@ const indexQuery = groq`
 *[_type == 'sitecontent' && pagename match 'Index']
 `;
 
-const Home: NextPage = ({ data, preview }) => {
-  const { data: post } = usePreviewSubscription(indexQuery, {
+
+
+
+//const Home: NextPage = ({ data }) => {
+const Home: NextPage<any> = ({ data }) => {
+  /*const { data: post } = usePreviewSubscription(indexQuery, {
     params: { slug: data.post?.slug },
-    initialData: data.post,
-    enabled: preview && data.post?.slug
-  });
+    initialData: data.post
+    //enabled: preview && data.post?.slug
+  });*/
 
-  console.log("Post text: ", post);
-
-  const { title, text } = post;
+  console.log("Data fra props: ", data);
 
   return (
     <>
       <Layout title="Forside - Portefølje - Dfweb">
-        <IndexContent />
-
-        {post.map((post: any) => (
-          <div className="mt-24" key={post._id}>
-            <h2>{post.title}</h2>
-            
-              <PortableText blocks={post.text} />
-           
-          </div>
-        ))}
+        <IndexContent {...data} />
       </Layout>
     </>
   );
 };
 
 export async function getStaticProps() {
-  const post = await getClient("test").fetch(indexQuery);
-  console.log("Data index Sanity: ", post);
+  const post = await getClient({}).fetch(indexQuery);
 
   return {
     props: {
@@ -51,18 +43,5 @@ export async function getStaticProps() {
     }
   };
 }
-
-/*export async function getStaticProps() {
-  const content = await client.fetch(
-    `
-    *[_type == "project"]
-  `
-  );
-  return {
-    props: {
-      project
-    }
-  };
-}*/
 
 export default Home;
