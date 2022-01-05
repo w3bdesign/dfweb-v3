@@ -12,6 +12,7 @@ const indexQuery = groq`
 `;
 
 const Home: NextPage<any> = ({ data }) => {
+ // console.log("Data: ", data);
   return (
     <>
       <Layout title="Forside - Portefølje - Dfweb">
