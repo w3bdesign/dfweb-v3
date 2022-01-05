@@ -1,5 +1,3 @@
-// import { SanityClient } from "@sanity/client";
-
 import { createClient } from "next-sanity";
 import { config } from "./sanity.config";
 
