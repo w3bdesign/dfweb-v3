@@ -16,86 +16,32 @@ const IndexContent: NextComponentType = ({ post }: any) => {
           className="flex flex-col justify-center text-lg">
           <div className="p-2 mt-4 mb-4 bg-white opacity-75">
             <div className="text-black rounded">
-              <section aria-label="Introduksjonstekst">Introduksjonstekst</section>
+              <section aria-label="Introduksjonstekst">
+                Her kommer en Jumbotron eller noe lignende
+              </section>
             </div>
           </div>
         </div>
         <div className="container grid gap-4 p-4 mx-auto mt-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
           {post.map((post: any) => (
             <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow" key={post._id}>
-              <h2 className="text-3xl text-center">{post.title}</h2>
-              <PortableText
-                className="text-xl"
-                content={post.text}
-                serializers={{
-                  code: (props: any) => <p className="mt-6 text-lg">{props.children} </p>,
-                  link: (props: any) => (
-                    <Link href={props.href}>
-                      <a className="underline">{props.children}</a>
-                    </Link>
-                  )
-                }}
-              />
+              <section aria-label={post.title}>
+                <h2 className="text-3xl text-center">{post.title}</h2>
+                <PortableText
+                  className="text-xl"
+                  content={post.text}
+                  serializers={{
+                    code: (props: any) => <p className="mt-6 text-lg">{props.children} </p>,
+                    link: (props: any) => (
+                      <Link href={props.href}>
+                        <a className="underline">{props.children}</a>
+                      </Link>
+                    )
+                  }}
+                />
+              </section>
             </div>
           ))}
-
-          <div className="p-8 text-lg text-black bg-white rounded shadow">
-            <section aria-label="Hovedinnhold om meg">
-              <h1 className="text-3xl text-center">Om Meg</h1>
-              <p
-                role="article"
-                aria-label="Informasjon om mine ferdigheter"
-                className="mt-6 text-lg">
-                Siden 2000 har jeg arbeidet med webutvikling. Jeg har arbeidet med WordPress og
-                WooCommerce siden 2011 hvor jeg har arbeidet frilans via Fiverr og kan skilte med
-                100% positiv tilbakemelding på samtlige oppdrag.
-              </p>
-              <p role="article" aria-label="Info om open-source bidrag" className="mt-6 text-lg">
-                Har også bidratt til flere open-source prosjekter på Github.
-              </p>
-              <p
-                role="article"
-                aria-label="Info om andre teknologier jeg har jobbet med"
-                className="mt-6 text-lg">
-                Jeg har også erfaring med andre teknologier som moderne Javascript (ES6+), Node.js,
-                Firebase, Context, Redux, Axios, Docker, Storybook, NextJS, Gatsby, MongoDB,
-                OpenCart, Magento med mer.
-              </p>
-            </section>
-          </div>
-          <div className="p-8 text-lg text-black bg-white rounded shadow">
-            <section aria-label="Github seksjon">
-              <h1 className="text-3xl text-center">Prosjekter</h1>
-              <p
-                role="article"
-                aria-label="Informasjon om Github og prosjekter"
-                className="mt-6 text-lg">
-                Jeg arbeider jevnlig med hobbyprosjekter.
-                <br />
-                <br />
-                Kildekoden publiserer jeg på
-                <Link href="https://github.com/w3bdesign">
-                  <a className="underline" target="_blank" rel="noopener noreferrer">
-                    {" "}
-                    GITHUB
-                  </a>
-                </Link>
-              </p>
-              <p className="mt-6 text-lg">
-                På{" "}
-                <Link href="/prosjekter">
-                  <a className="underline">PROSJEKTER</a>
-                </Link>{" "}
-                kan du se eksempler på arbeid jeg har gjort i nyere tid.
-              </p>
-            </section>
-          </div>
-
-          <div className="p-8 text-lg text-black bg-white rounded shadow">
-            <section aria-label="Hovedinnhold fra Sanity">
-              Denne teksten skal komme fra Sanity
-            </section>
-          </div>
         </div>
       </div>
     </main>
