@@ -1,18 +1,20 @@
 import { groq } from "next-sanity";
 
-import { getClient } from "../lib/sanity.server";
+// Types
+import type { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 
-import type { NextPage } from "next";
-
+// Components
 import IndexContent from "../components/Index/IndexContent.component";
 import Layout from "../components/Layout/Layout.component";
+
+// Utilities
+import { getClient } from "../lib/sanity.server";
 
 const indexQuery = groq`
 *[_type == 'sitecontent' && pagename match 'Index']
 `;
 
-const Home: NextPage<any> = ({ data }) => {
- // console.log("Data: ", data);
+const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Layout title="Forside - Portefølje - Dfweb">
@@ -22,7 +24,7 @@ const Home: NextPage<any> = ({ data }) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const post = await getClient({}).fetch(indexQuery);
 
   return {
@@ -30,6 +32,6 @@ export async function getStaticProps() {
       data: { post }
     }
   };
-}
+};
 
 export default Home;

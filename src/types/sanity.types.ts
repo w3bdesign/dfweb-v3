@@ -1,4 +1,4 @@
-Se mer på følgende:
+/*Se mer på følgende:
 
 https://github.com/abdullahibneat/next-portfolio
 
@@ -8,10 +8,7 @@ https://github.com/Kerosz/personal-website
 
 https://github.com/Kerosz/chirila.dev
 
-https://github.com/crvouga/thebandalibi-com
-
-
-
+https://github.com/crvouga/thebandalibi-com*/
 
 import type {
   SanityReference,
@@ -31,7 +28,6 @@ import type {
   SanityImagePalette,
   SanityImagePaletteSwatch
 } from "sanity-codegen";
-
 
 export type {
   SanityReference,
@@ -62,7 +58,7 @@ export interface Project extends SanityDocument {
 
   /**
    * Id — `number`
-   *  
+   *
    */
   id?: number;
 
@@ -74,7 +70,7 @@ export interface Project extends SanityDocument {
 
   /**
    * Description — `string`
-   * 
+   *
    */
   description?: string;
 
@@ -104,7 +100,7 @@ export interface Project extends SanityDocument {
 
   /**
    * projectImage — `image`
-   *   
+   *
    */
   projectimage?: {
     _type: "image";
@@ -120,7 +116,8 @@ export interface Project extends SanityDocument {
 
  */
 export interface Sitecontent extends SanityDocument {
-  Array<
+  //data: any;
+
   _type: "sitecontent";
 
   /**
@@ -131,7 +128,7 @@ export interface Sitecontent extends SanityDocument {
 
   /**
    * Pagename — `string`
-   * 
+   *
    */
   pagename?: string;
 
@@ -143,9 +140,9 @@ export interface Sitecontent extends SanityDocument {
 
   /**
    * Text — `array`
-   *  
+   *
    */
-  text?: Array<SanityKeyed<SanityBlock>>>;
+  text?: Array<SanityKeyed<SanityBlock>>;
 }
 
 export type Documents = Project | Sitecontent;
