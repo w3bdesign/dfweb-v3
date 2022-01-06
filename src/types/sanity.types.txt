@@ -17,6 +17,7 @@ import type {
   SanityImagePaletteSwatch
 } from "sanity-codegen";
 
+
 export type {
   SanityReference,
   SanityKeyedReference,
@@ -104,6 +105,7 @@ export interface Project extends SanityDocument {
 
  */
 export interface Sitecontent extends SanityDocument {
+  Array<
   _type: "sitecontent";
 
   /**
@@ -128,7 +130,7 @@ export interface Sitecontent extends SanityDocument {
    * Text — `array`
    *  
    */
-  text?: Array<SanityKeyed<SanityBlock>>;
+  text?: Array<SanityKeyed<SanityBlock>>>;
 }
 
 export type Documents = Project | Sitecontent;
