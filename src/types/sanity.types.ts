@@ -1,0 +1,134 @@
+import type {
+  SanityReference,
+  SanityKeyedReference,
+  SanityAsset,
+  SanityImage,
+  SanityFile,
+  SanityGeoPoint,
+  SanityBlock,
+  SanityDocument,
+  SanityImageCrop,
+  SanityImageHotspot,
+  SanityKeyed,
+  SanityImageAsset,
+  SanityImageMetadata,
+  SanityImageDimensions,
+  SanityImagePalette,
+  SanityImagePaletteSwatch
+} from "sanity-codegen";
+
+export type {
+  SanityReference,
+  SanityKeyedReference,
+  SanityAsset,
+  SanityImage,
+  SanityFile,
+  SanityGeoPoint,
+  SanityBlock,
+  SanityDocument,
+  SanityImageCrop,
+  SanityImageHotspot,
+  SanityKeyed,
+  SanityImageAsset,
+  SanityImageMetadata,
+  SanityImageDimensions,
+  SanityImagePalette,
+  SanityImagePaletteSwatch
+};
+
+/**
+ * Project
+ *
+
+ */
+export interface Project extends SanityDocument {
+  _type: "project";
+
+  /**
+   * Id — `number`
+   *  
+   */
+  id?: number;
+
+  /**
+   * Name — `string`
+   *
+   */
+  name?: string;
+
+  /**
+   * Description — `string`
+   * 
+   */
+  description?: string;
+
+  /**
+   * Subdescription — `string`
+   *
+   */
+  subdescription?: string;
+
+  /**
+   * Category — `string`
+   *
+   */
+  category?: string;
+
+  /**
+   * Urlwww — `url`
+   *
+   */
+  urlwww?: string;
+
+  /**
+   * Urlgithub — `url`
+   *
+   */
+  urlgithub?: string;
+
+  /**
+   * projectImage — `image`
+   *   
+   */
+  projectimage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
+ * Sitecontent
+ *
+
+ */
+export interface Sitecontent extends SanityDocument {
+  _type: "sitecontent";
+
+  /**
+   * Id — `number`
+   *
+   */
+  id?: number;
+
+  /**
+   * Pagename — `string`
+   * 
+   */
+  pagename?: string;
+
+  /**
+   * Title — `string`
+   *
+   */
+  title?: string;
+
+  /**
+   * Text — `array`
+   *  
+   */
+  text?: Array<SanityKeyed<SanityBlock>>;
+}
+
+export type Documents = Project | Sitecontent;

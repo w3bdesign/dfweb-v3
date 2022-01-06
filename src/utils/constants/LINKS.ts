@@ -1,3 +1,6 @@
+/**
+ * Type for linker som skal brukes på nettsiden
+ */
 type TLinkType = {
   id: number;
   url: string;
@@ -5,6 +8,9 @@ type TLinkType = {
   external: boolean;
 }[];
 
+/**
+ * Konstant med linker som skal brukes på nettsiden
+ */
 const LINKS: TLinkType = [
   {
     id: 1,
