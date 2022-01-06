@@ -4,7 +4,6 @@ import { groq } from "next-sanity";
 import type { NextPage } from "next";
 import type { GetStaticProps } from "next";
 import type { InferGetStaticPropsType } from "next";
-import type { Sitecontent } from "../types/sanity.types";
 
 // Components
 import IndexContent from "../components/Index/IndexContent.component";
@@ -18,7 +17,7 @@ const indexQuery = groq`
 `;
 
 // const Home: NextPage<Sitecontent> = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Layout title="Forside - Portefølje - Dfweb">
