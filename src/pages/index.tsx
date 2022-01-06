@@ -1,9 +1,7 @@
 import { groq } from "next-sanity";
 
 // Types
-import type { NextPage } from "next";
-import type { GetStaticProps } from "next";
-import type { InferGetStaticPropsType } from "next";
+import type { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 
 // Components
 import IndexContent from "../components/Index/IndexContent.component";
@@ -16,7 +14,6 @@ const indexQuery = groq`
 *[_type == 'sitecontent' && pagename match 'Index']
 `;
 
-// const Home: NextPage<Sitecontent> = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
 const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
