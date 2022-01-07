@@ -1,5 +1,4 @@
-/*
-Se mer på følgende for inpirasjon:
+/*Se mer på følgende:
 
 https://github.com/abdullahibneat/next-portfolio
 
@@ -9,8 +8,7 @@ https://github.com/Kerosz/personal-website
 
 https://github.com/Kerosz/chirila.dev
 
-https://github.com/crvouga/thebandalibi-com
-*/
+https://github.com/crvouga/thebandalibi-com*/
 
 import type {
   SanityReference,

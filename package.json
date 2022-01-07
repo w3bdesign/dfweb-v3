@@ -1,6 +1,6 @@
 {
   "name": "dfweb-v3",
-  "version": "0.0.7",
+  "version": "0.0.6",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
@@ -11,8 +11,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
-    "cypress": "cypress open",
-    "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@sanity/client": "^2.23.2",
