@@ -2,6 +2,7 @@
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/w3bdesign/dfweb-v3.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/w3bdesign/dfweb-v3/context:javascript)
 [![codecov](https://codecov.io/gh/w3bdesign/dfweb-v3/branch/master/graph/badge.svg?token=VML3KNGO0N)](https://codecov.io/gh/w3bdesign/dfweb-v3)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_dfweb-v3&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3bdesign_dfweb-v3)
+[![CodeFactor](https://www.codefactor.io/repository/github/w3bdesign/dfweb-v3/badge)](https://www.codefactor.io/repository/github/w3bdesign/dfweb-v3)
 
 # Dfweb Version 3
 
