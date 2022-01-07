@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 
-import KontaktContent from "../components/Kontakt/KontaktContent.component";
-import Layout from "../components/Layout/Layout.component";
+import KontaktContent from "~/components/Kontakt/KontaktContent.component";
+import Layout from "~/components/Layout/Layout.component";
 
 const Kontakt: NextPage = () => {
   return (

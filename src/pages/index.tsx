@@ -4,11 +4,11 @@ import { groq } from "next-sanity";
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 
 // Components
-import IndexContent from "../components/Index/IndexContent.component";
-import Layout from "../components/Layout/Layout.component";
+import IndexContent from "~/components/Index/IndexContent.component";
+import Layout from "~/components/Layout/Layout.component";
 
 // Utilities
-import { getClient } from "../lib/sanity.server";
+import { getClient } from "~/lib/sanity.server";
 
 // Sanity GROQ queries
 const indexQuery = groq`
