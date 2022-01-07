@@ -10,6 +10,7 @@ import Layout from "../components/Layout/Layout.component";
 // Utilities
 import { getClient } from "../lib/sanity.server";
 
+// Sanity GROQ queries
 const indexQuery = groq`
 *[_type == 'sitecontent' && pagename match 'Index']
 `;
