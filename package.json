@@ -1,6 +1,6 @@
 {
   "name": "dfweb-v3",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
@@ -15,7 +15,6 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
   },
   "dependencies": {
-    "@sanity/client": "^2.23.2",
     "next": "^12.0.7",
     "next-sanity": "^0.4.0",
     "prettier": "2.5.1",
