@@ -8,7 +8,6 @@ interface IProject {
 
 type TStringOrEmpty = string | null | undefined;
 interface IProjectInterface {
-  //[x: string]: any;
   _id: string;
   id: null | undefined | number;
   name: TStringOrEmpty;
@@ -51,7 +50,7 @@ const ProsjekterListings: NextPage<IProject> = ({ project }) => {
 
           <ProsjektProjects
             // filter={categoryFilter}
-            projects={project}
+            allProjects={project}
           />
         </div>
       </div>

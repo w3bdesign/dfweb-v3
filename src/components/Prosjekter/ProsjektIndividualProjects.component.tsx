@@ -27,13 +27,9 @@
 }
 */
 
-/*
+import Image from "next/image";
 
-Bruk .... import Image from "next/image";
-
-Bruk ... import { urlFor } from "../../lib/sanity";
-
-*/
+import { urlFor } from "../../lib/sanity";
 
 /**
  * Display individual portfolio projects if they match the filter passed down through props
@@ -41,13 +37,14 @@ Bruk ... import { urlFor } from "../../lib/sanity";
  * @param {Object} filter The filter that we apply to the component so we only displays projects from the correct category
  * @param {Object} projects The portfolio project data to display, contains name, image etc
  */
-function ProsjektIndividualProjects({ filter, projects }: any) {
+function ProsjektIndividualProjects({ allProjects }: any) {
   return (
     <>
-      {projects.map(
-        ({ id, name, description, subdescription, category, urlwww, urlgithub, image }: any) =>
-          // Use ternary to apply filter so we only see projects from the relevant category
-          filter === category && (
+      {
+        allProjects.map(
+          ({ id, name, description, subdescription, urlwww, urlgithub, projectimage }: any) => (
+            // Use ternary to apply filter so we only see projects from the relevant category
+            // filter === category && (
             <div
               id="projectdiv"
               key={id}
@@ -59,7 +56,15 @@ function ProsjektIndividualProjects({ filter, projects }: any) {
                   Teknologier: {subdescription}
                 </p>
                 <div className="flex justify-center mt-6">
-                  <img src={image} alt={name} role="presentation" />
+                  {projectimage && (
+                    <Image
+                      height="255"
+                      width="500"
+                      src={urlFor(projectimage).url() as string}
+                      alt={name}
+                      role="presentation"
+                    />
+                  )}
                 </div>
                 <div className="flex justify-center mt-4">
                   {/* Display only Github button if not empty  */}
@@ -77,7 +82,9 @@ function ProsjektIndividualProjects({ filter, projects }: any) {
               </div>
             </div>
           )
-      )}
+        )
+        // )
+      }
     </>
   );
 }
