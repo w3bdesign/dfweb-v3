@@ -15,6 +15,8 @@ const projectQuery = groq`
 *[_type == "project"]
 `;
 
+const categoryQuery = groq`*[_type == 'project'].category[0..3]`;
+
 const Prosjekter: NextPage = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
@@ -27,10 +29,12 @@ const Prosjekter: NextPage = ({ project }: InferGetStaticPropsType<typeof getSta
 
 export const getStaticProps: GetStaticProps = async () => {
   const project = await getClient({}).fetch(projectQuery);
+  const categories = await getClient({}).fetch(categoryQuery);
 
   return {
     props: {
-      project
+      project,
+      categories
     }
   };
 };
