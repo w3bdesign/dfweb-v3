@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { urlFor } from "../../lib/sanity";
+import Button from "../UI/Button.component";
 
 /**
  * Display individual portfolio projects if they match the filter passed down through props
@@ -41,12 +42,12 @@ function ProsjektIndividualProjects({ allProjects }: any) {
                   {/* Display only Github button if not empty  */}
                   {urlgithub && (
                     <a rel="noopener noreferrer" target="_blank" aria-label={name} href={urlgithub}>
-                      Github
+                      <Button text="Github" />
                     </a>
                   )}
                   {urlwww && (
                     <a rel="noopener noreferrer" target="_blank" aria-label={name} href={urlwww}>
-                      Besøk
+                      <Button text="Besøk" />
                     </a>
                   )}
                 </div>
