@@ -1,35 +1,7 @@
-/*
-  return (
-    <>
-      <h1 className="text-5xl text-rose-500 text-center">
-        Velkommen til Prosjekter denne er fra komponenten
-      </h1>
-      {project.map((post: IProjectInterface) => (
-        <div className="mt-24" key={post._id}>
-          <li>{post.id}</li>
-          <li>{post.name}</li>
-          <li>{post.description}</li>
-          <li>{post.subdescription}</li>
-          <li>
-            {post.projectimage && (
-              <Image
-                height="255"
-                width="500"
-                src={urlFor(post.projectimage).url() as string}
-                alt="Test"
-              />
-            )}
-          </li>
-          <li>{post.urlgithub}</li>
-          <li>{post.urlwww}</li>
-        </div>
-      ))}
-}
-*/
-
 import Image from "next/image";
 
 import { urlFor } from "../../lib/sanity";
+import Button from "../UI/Button.component";
 
 /**
  * Display individual portfolio projects if they match the filter passed down through props
@@ -70,12 +42,12 @@ function ProsjektIndividualProjects({ allProjects }: any) {
                   {/* Display only Github button if not empty  */}
                   {urlgithub && (
                     <a rel="noopener noreferrer" target="_blank" aria-label={name} href={urlgithub}>
-                      Github
+                      <Button text="Github" />
                     </a>
                   )}
                   {urlwww && (
                     <a rel="noopener noreferrer" target="_blank" aria-label={name} href={urlwww}>
-                      Besøk
+                      <Button text="Besøk" />
                     </a>
                   )}
                 </div>
