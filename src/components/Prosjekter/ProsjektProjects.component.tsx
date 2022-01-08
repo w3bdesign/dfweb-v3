@@ -48,13 +48,3 @@ function ProsjektProjects({ filter, projects }) {
 }
 
 export default ProsjektProjects;
-
-ProsjektProjects.propTypes = {
-  filter: PropTypes.string,
-  projects: PropTypes.arrayOf(PropTypes.object)
-};
-
-ProsjektProjects.defaultProps = {
-  filter: null,
-  projects: null
-};
