@@ -1,7 +1,5 @@
 import { NextPage } from "next";
-import Image from "next/image";
 
-import { urlFor } from "../../lib/sanity";
 import ProsjektProjects from "./ProsjektProjects.component";
 
 interface IProject {

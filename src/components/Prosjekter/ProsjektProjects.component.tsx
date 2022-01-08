@@ -1,5 +1,13 @@
 // import Button from "../../layout/Button/Button.component"
 
+/*
+
+import Image from "next/image";
+
+import { urlFor } from "../../lib/sanity";
+
+*/
+
 /**
  * Display individual portfilio projects if they match the filter passed down through props
  *
