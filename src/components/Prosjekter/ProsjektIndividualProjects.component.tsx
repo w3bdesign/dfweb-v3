@@ -41,7 +41,7 @@ Bruk ... import { urlFor } from "../../lib/sanity";
  * @param {Object} filter The filter that we apply to the component so we only displays projects from the correct category
  * @param {Object} projects The portfolio project data to display, contains name, image etc
  */
-function ProsjektProjects({ filter, projects }: any) {
+function ProsjektIndividualProjects({ filter, projects }: any) {
   return (
     <>
       {projects.map(
@@ -82,4 +82,4 @@ function ProsjektProjects({ filter, projects }: any) {
   );
 }
 
-export default ProsjektProjects;
+export default ProsjektIndividualProjects;

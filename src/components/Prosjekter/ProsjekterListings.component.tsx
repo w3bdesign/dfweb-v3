@@ -20,7 +20,7 @@ interface IProjectInterface {
 
 
 
-const ProsjekterContent: NextPage<IProject> = ({ project }) => {
+const ProsjekterListings: NextPage<IProject> = ({ project }) => {
   return (
     <main aria-label="Innhold portefølje" className="mt-32 bg-graybg">
       <div className="container mx-auto rounded">
@@ -61,4 +61,4 @@ const ProsjekterContent: NextPage<IProject> = ({ project }) => {
   );
 };
 
-export default ProsjekterContent;
+export default ProsjekterListings;
