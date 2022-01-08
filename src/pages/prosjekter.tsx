@@ -20,7 +20,7 @@ import Layout from "../components/Layout/Layout.component";
 const projectQuery = groq`*[_type == "project"]
 `;
 
-const categoryQuery = groq`*[_type == "project"]{category}[0..3]`;
+const categoryQuery = groq`*[_type == "project"].category[0..3]`;
 
 const Prosjekter: NextPage = ({
   project,

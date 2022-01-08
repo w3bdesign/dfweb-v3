@@ -8,7 +8,8 @@ export const config = {
    **/
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "thisneedstobedefined",
-  apiVersion: "2021-12-30",
+  // apiVersion: "2021-12-30",
+  apiVersion: "v1",
   /**
    * Set useCdn to `false` if your application require the freshest possible
    * data always (potentially slightly slower and a bit more expensive).
