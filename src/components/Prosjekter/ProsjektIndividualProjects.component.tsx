@@ -31,14 +31,6 @@ import Image from "next/image";
 
 import { urlFor } from "../../lib/sanity";
 
-/*
-
-Bruk .... import Image from "next/image";
-
-Bruk ... import { urlFor } from "../../lib/sanity";
-
-*/
-
 /**
  * Display individual portfolio projects if they match the filter passed down through props
  *
@@ -46,7 +38,6 @@ Bruk ... import { urlFor } from "../../lib/sanity";
  * @param {Object} projects The portfolio project data to display, contains name, image etc
  */
 function ProsjektIndividualProjects({ allProjects }: any) {
-  console.log("IndividualProjects: ", allProjects);
   return (
     <>
       {
