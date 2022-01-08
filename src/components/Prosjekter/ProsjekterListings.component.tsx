@@ -4,6 +4,7 @@ import ProsjektProjects from "./ProsjektIndividualProjects.component";
 
 interface IProject {
   project: IProjectInterface;
+  categories: string
 }
 
 type TStringOrEmpty = string | null | undefined;
@@ -17,7 +18,8 @@ interface IProjectInterface {
   urlwww: TStringOrEmpty;
 }
 
-const ProsjekterListings: NextPage<IProject> = ({ project }) => {
+const ProsjekterListings: NextPage<IProject> = ({ project, categories }) => {
+  console.log(categories)
   return (
     <main aria-label="Innhold portefølje" className="mt-32 bg-graybg">
       <div className="container mx-auto rounded">

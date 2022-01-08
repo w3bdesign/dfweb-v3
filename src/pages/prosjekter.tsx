@@ -1,35 +1,46 @@
 import { groq } from "next-sanity";
 
 // Types
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import type {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  InferGetStaticPropsType,
+  NextPage
+} from "next";
 
 // Utilities
 import { getClient } from "../lib/sanity.server";
 
 // Components
-import ProsjekterContent from "../components/Prosjekter/ProsjekterListings.component";
+import ProsjekterListings from "../components/Prosjekter/ProsjekterListings.component";
 import Layout from "../components/Layout/Layout.component";
+//import { getStaticProps } from ".";
 
 // Sanity GROQ queries
-const projectQuery = groq`
-*[_type == "project"]
+const projectQuery = groq`*[_type == "project"]
 `;
 
-const categoryQuery = groq`*[_type == 'project'].category[0..3]`;
+const categoryQuery = groq`*[_type == "project"]{category}[0..3]`;
 
-const Prosjekter: NextPage = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Prosjekter: NextPage = ({
+  project,
+  categories
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
       <Layout title="Prosjekter - Portefølje - Dfweb">
-        <ProsjekterContent project={project} />
+        <ProsjekterListings project={project} categories={categories} />
       </Layout>
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+//export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const project = await getClient({}).fetch(projectQuery);
   const categories = await getClient({}).fetch(categoryQuery);
+
+  console.log("Static categories: ", categories);
 
   return {
     props: {
