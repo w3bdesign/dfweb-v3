@@ -18,8 +18,6 @@ interface IProjectInterface {
   urlwww: TStringOrEmpty;
 }
 
-
-
 const ProsjekterListings: NextPage<IProject> = ({ project }) => {
   return (
     <main aria-label="Innhold portefølje" className="mt-32 bg-graybg">
