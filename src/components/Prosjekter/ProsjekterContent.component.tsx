@@ -20,7 +20,7 @@ interface IProjectInterface {
   urlwww: TStringOrEmpty;
 }
 
-/* 
+/*
   return (
     <>
       <h1 className="text-5xl text-rose-500 text-center">
