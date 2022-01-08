@@ -6,11 +6,11 @@
  * @param {Object} filter The filter that we apply to the component so we only displays projects from the correct category
  * @param {Object} projects The portfolio project data to display, contains name, image etc
  */
-function ProsjektProjects({ filter, projects }) {
+function ProsjektProjects({ filter, projects }: any) {
   return (
     <>
       {projects.map(
-        ({ id, name, description, subdescription, category, urlwww, urlgithub, image }) =>
+        ({ id, name, description, subdescription, category, urlwww, urlgithub, image }: any) =>
           // Use ternary to apply filter so we only see projects from the relevant category
           filter === category && (
             <div
