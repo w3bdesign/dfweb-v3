@@ -1,10 +1,10 @@
-// import Button from "../../layout/Button/Button.component"
+
 
 /*
 
-import Image from "next/image";
+Bruk .... import Image from "next/image";
 
-import { urlFor } from "../../lib/sanity";
+Bruk ... import { urlFor } from "../../lib/sanity";
 
 */
 
