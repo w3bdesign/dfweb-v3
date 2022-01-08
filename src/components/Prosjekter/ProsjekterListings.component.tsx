@@ -48,10 +48,14 @@ const ProsjekterListings: NextPage<IProject> = ({ project }) => {
             </form>
           </span>
 
-          <ProsjektProjects
-            // filter={categoryFilter}
-            allProjects={project}
-          />
+          <div
+            id="prosjektgrid"
+            className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
+            <ProsjektProjects
+              // filter={categoryFilter}
+              allProjects={project}
+            />
+          </div>
         </div>
       </div>
     </main>
