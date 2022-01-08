@@ -7,7 +7,7 @@ import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { getClient } from "../lib/sanity.server";
 
 // Components
-import ProsjekterContent from "../components/Prosjekter/ProsjekterContent.component";
+import ProsjekterContent from "../components/Prosjekter/ProsjekterListings.component";
 import Layout from "../components/Layout/Layout.component";
 
 // Sanity GROQ queries
