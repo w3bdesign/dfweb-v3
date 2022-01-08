@@ -31,7 +31,7 @@ const ProsjekterContent: any = ({ project }: any) => {
           <li>{post.subdescription}</li>
           <li>
             {post.projectimage && (
-              <Image height="255" width="500" src={urlFor(post.projectimage).url()} />
+              <Image height="255" width="500" src={urlFor(post.projectimage).url()} alt="Test" />
             )}
           </li>
           <li>{post.urlgithub}</li>
