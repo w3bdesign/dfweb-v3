@@ -1,7 +1,11 @@
-// import type { NextComponentType } from "next";
+import { NextPage } from "next";
 import Image from "next/image";
 
 import { urlFor } from "../../lib/sanity";
+
+interface IProject {
+  project: IProjectInterface;
+}
 
 type TStringOrEmpty = string | null | undefined;
 interface IProjectInterface {
@@ -15,8 +19,7 @@ interface IProjectInterface {
   urlwww: TStringOrEmpty;
 }
 
-//const ProsjekterContent: NextComponentType = ({ project }) => {
-const ProsjekterContent: any = ({ project }: any) => {
+const ProsjekterContent: NextPage<IProject> = ({ project }) => {
   return (
     <>
       <h1 className="text-5xl text-rose-500 text-center">
