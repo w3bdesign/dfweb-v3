@@ -1,19 +1,18 @@
 // import type { NextComponentType } from "next";
+import Image from "next/image";
 
 import { urlFor } from "../../lib/sanity";
 
-import Image from "next/image";
-
-type StringOrEmpty = string | null | undefined;
+type TStringOrEmpty = string | null | undefined;
 interface IProjectInterface {
   [x: string]: any;
   _id: string;
   id: null | undefined | number;
-  name: StringOrEmpty;
-  description: StringOrEmpty;
-  subdescription: StringOrEmpty;
-  urlgithub: StringOrEmpty;
-  urlwww: StringOrEmpty;
+  name: TStringOrEmpty;
+  description: TStringOrEmpty;
+  subdescription: TStringOrEmpty;
+  urlgithub: TStringOrEmpty;
+  urlwww: TStringOrEmpty;
 }
 
 //const ProsjekterContent: NextComponentType = ({ project }) => {
@@ -31,7 +30,12 @@ const ProsjekterContent: any = ({ project }: any) => {
           <li>{post.subdescription}</li>
           <li>
             {post.projectimage && (
-              <Image height="255" width="500" src={urlFor(post.projectimage).url() as any} alt="Test" />
+              <Image
+                height="255"
+                width="500"
+                src={urlFor(post.projectimage).url() as string}
+                alt="Test"
+              />
             )}
           </li>
           <li>{post.urlgithub}</li>
