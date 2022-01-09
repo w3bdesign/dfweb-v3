@@ -1,14 +1,19 @@
 import { NextPage } from "next";
+import { useState } from "react";
 
-import ProsjektProjects from "./ProsjektIndividualProjects.component";
+import ProsjektIndividualProjects from "./ProsjektIndividualProjects.component";
 
-interface IProject {
-  projects: IProjectInterface;
+export interface IProjectCategory extends IProject {
   categories: Array<string>;
 }
 
-type TStringOrEmpty = string | null | undefined;
-interface IProjectInterface {
+export interface IProject {
+  projects: Array<IProjectInterface>;
+}
+
+export type TStringOrEmpty = string | null | undefined;
+
+export interface IProjectInterface {
   _id: string;
   id: null | undefined | number;
   name: TStringOrEmpty;
@@ -16,9 +21,20 @@ interface IProjectInterface {
   subdescription: TStringOrEmpty;
   urlgithub: TStringOrEmpty;
   urlwww: TStringOrEmpty;
+  category: string;
 }
 
-const ProsjekterListings: NextPage<IProject> = ({ projects, categories }) => {
+const ProsjekterListings: NextPage<IProjectCategory> = ({ projects, categories }) => {
+  const [prosjekt, setProsjekt] = useState(projects);
+
+  const handleFilterChange = (event: any) => {
+    setProsjekt(
+      projects.filter((project) => {
+        return project.category === event.target.value;
+      })
+    );
+  };
+
   return (
     <main aria-label="Innhold portefølje" className="mt-32 bg-graybg">
       <div className="container mx-auto rounded">
@@ -34,7 +50,7 @@ const ProsjekterListings: NextPage<IProject> = ({ projects, categories }) => {
               <select
                 id="kategorifilter"
                 name="kategorifilter"
-                //onChange={handleFilterChange}
+                onChange={handleFilterChange}
                 className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline">
                 <option label="" value="">
                   Ingen filtrering
@@ -48,14 +64,10 @@ const ProsjekterListings: NextPage<IProject> = ({ projects, categories }) => {
               </select>
             </form>
           </span>
-
           <div
             id="prosjektgrid"
             className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
-            <ProsjektProjects
-              // filter={categoryFilter}
-              allProjects={projects}
-            />
+            {prosjekt && <ProsjektIndividualProjects projects={prosjekt} />}
           </div>
         </div>
       </div>
