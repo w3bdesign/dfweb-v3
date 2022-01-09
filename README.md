@@ -19,6 +19,7 @@ Work In Progress.
 - Storybook for component documentation
 - Jest for unit testing
 - Cypress for E2E testing
+- Filter project display
 
 ## TODO
 
