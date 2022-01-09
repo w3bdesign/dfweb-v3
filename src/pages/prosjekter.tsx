@@ -29,12 +29,9 @@ const Prosjekter: NextPage = ({
   );
 };
 
-
 export const getServerSideProps: GetServerSideProps = async () => {
   const project = await getClient({}).fetch(projectQuery);
   const categories = await getClient({}).fetch(categoryQuery);
-
-  console.log("Static categories: ", categories);
 
   return {
     props: {
