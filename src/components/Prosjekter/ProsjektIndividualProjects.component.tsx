@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { urlFor } from "../../lib/sanity";
+
 import Button from "../UI/Button.component";
 
 /**
@@ -9,14 +10,22 @@ import Button from "../UI/Button.component";
  * @param {Object} filter The filter that we apply to the component so we only displays projects from the correct category
  * @param {Object} projects The portfolio project data to display, contains name, image etc
  */
-function ProsjektIndividualProjects({ allProjects }: any) {
+function ProsjektIndividualProjects({ filter, allProjects }: any) {
   return (
     <>
-      {
-        allProjects.map(
-          ({ id, name, description, subdescription, urlwww, urlgithub, projectimage }: any) => (
-            // Use ternary to apply filter so we only see projects from the relevant category
-            // filter === category && (
+      {allProjects.map(
+        ({
+          id,
+          name,
+          description,
+          subdescription,
+          category,
+          urlwww,
+          urlgithub,
+          projectimage
+        }: any) =>
+          // Use ternary to apply filter so we only see projects from the relevant category
+          filter === category && (
             <div
               id="projectdiv"
               key={id}
@@ -54,9 +63,7 @@ function ProsjektIndividualProjects({ allProjects }: any) {
               </div>
             </div>
           )
-        )
-        // )
-      }
+      )}
     </>
   );
 }
