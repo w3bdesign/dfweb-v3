@@ -17,25 +17,25 @@ const projectQuery = groq`*[_type == "project"]
 const categoryQuery = groq`*[_type == "project"].category[0..3]`;
 
 const Prosjekter: NextPage = ({
-  project,
+  projects,
   categories
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
       <Layout title="Prosjekter - Portefølje - Dfweb">
-        <ProsjekterListings project={project} categories={categories} />
+        <ProsjekterListings projects={projects} categories={categories} />
       </Layout>
     </>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const project = await getClient({}).fetch(projectQuery);
+  const projects = await getClient({}).fetch(projectQuery);
   const categories = await getClient({}).fetch(categoryQuery);
 
   return {
     props: {
-      project,
+      projects,
       categories
     }
   };
