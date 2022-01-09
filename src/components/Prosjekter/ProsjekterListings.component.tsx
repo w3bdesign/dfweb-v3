@@ -3,7 +3,8 @@ import { NextPage } from "next";
 import ProsjektProjects from "./ProsjektIndividualProjects.component";
 
 interface IProject {
-  project: IProjectInterface;
+  projects: IProjectInterface;
+  categories: Array<string>;
 }
 
 type TStringOrEmpty = string | null | undefined;
@@ -17,7 +18,7 @@ interface IProjectInterface {
   urlwww: TStringOrEmpty;
 }
 
-const ProsjekterListings: NextPage<IProject> = ({ project }) => {
+const ProsjekterListings: NextPage<IProject> = ({ projects, categories }) => {
   return (
     <main aria-label="Innhold portefølje" className="mt-32 bg-graybg">
       <div className="container mx-auto rounded">
@@ -38,12 +39,12 @@ const ProsjekterListings: NextPage<IProject> = ({ project }) => {
                 <option label="" value="">
                   Ingen filtrering
                 </option>
-                {/*CATEGORIES &&
-                  CATEGORIES.map(({ id, name }) => (
-                    <option key={id} value={name}>
-                      {name}
+                {categories &&
+                  categories.map((category: any, index: any) => (
+                    <option key={index} value={category}>
+                      {category}
                     </option>
-                  ))*/}
+                  ))}
               </select>
             </form>
           </span>
@@ -53,7 +54,7 @@ const ProsjekterListings: NextPage<IProject> = ({ project }) => {
             className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
             <ProsjektProjects
               // filter={categoryFilter}
-              allProjects={project}
+              allProjects={projects}
             />
           </div>
         </div>
