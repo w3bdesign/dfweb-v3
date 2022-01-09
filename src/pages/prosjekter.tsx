@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 
 // Types
-import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 
 // Utilities
 import { getClient } from "../lib/sanity.server";
@@ -19,7 +19,7 @@ const categoryQuery = groq`*[_type == "project"].category[0..3]`;
 const Prosjekter: NextPage = ({
   projects,
   categories
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Layout title="Prosjekter - Portefølje - Dfweb">
@@ -29,7 +29,7 @@ const Prosjekter: NextPage = ({
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const projects = await getClient({}).fetch(projectQuery);
   const categories = await getClient({}).fetch(categoryQuery);
 
