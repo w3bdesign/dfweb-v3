@@ -3,13 +3,18 @@ import { useState } from "react";
 
 import ProsjektIndividualProjects from "./ProsjektIndividualProjects.component";
 
-interface IProject {
+export interface IProjectCategory {
   projects: Array<IProjectInterface>;
   categories: Array<string>;
 }
 
-type TStringOrEmpty = string | null | undefined;
-interface IProjectInterface {
+export interface IProject {
+  projects: Array<IProjectInterface>;
+}
+
+export type TStringOrEmpty = string | null | undefined;
+
+export interface IProjectInterface {
   _id: string;
   id: null | undefined | number;
   name: TStringOrEmpty;
@@ -20,10 +25,10 @@ interface IProjectInterface {
   category: string;
 }
 
-const ProsjekterListings: NextPage<IProject> = ({ projects, categories }) => {
+const ProsjekterListings: NextPage<IProjectCategory> = ({ projects, categories }) => {
   const [prosjekt, setProsjekt] = useState(projects);
 
-  const handleFilterChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+  const handleFilterChange = (event: any) => {
     setProsjekt(
       projects.filter((project) => {
         return project.category === event.target.value;
@@ -46,7 +51,7 @@ const ProsjekterListings: NextPage<IProject> = ({ projects, categories }) => {
               <select
                 id="kategorifilter"
                 name="kategorifilter"
-                onChange={() => handleFilterChange}
+                onChange={handleFilterChange}
                 className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline">
                 <option label="" value="">
                   Ingen filtrering
@@ -63,7 +68,7 @@ const ProsjekterListings: NextPage<IProject> = ({ projects, categories }) => {
           <div
             id="prosjektgrid"
             className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
-            {prosjekt && <ProsjektIndividualProjects allProjects={prosjekt} />}
+            {prosjekt && <ProsjektIndividualProjects projects={prosjekt} />}
           </div>
         </div>
       </div>

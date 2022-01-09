@@ -2,7 +2,10 @@ import Image from "next/image";
 
 import { urlFor } from "../../lib/sanity";
 
+import type { IProject } from "./ProsjekterListings.component";
+
 import Button from "../UI/Button.component";
+import { NextPage } from "next/types";
 
 /**
  * Display individual portfolio projects if they match the filter passed down through props
@@ -10,10 +13,11 @@ import Button from "../UI/Button.component";
  * @param {Object} filter The filter that we apply to the component so we only displays projects from the correct category
  * @param {Object} projects The portfolio project data to display, contains name, image etc
  */
-function ProsjektIndividualProjects({ allProjects }: any) {
+
+  const ProsjektIndividualProjects: NextPage<IProject> = ({ projects }) => {
   return (
     <>
-      {allProjects.map(
+      {projects.map(
         ({ id, name, description, subdescription, urlwww, urlgithub, projectimage }: any) => (
           <div
             id="projectdiv"
