@@ -24,15 +24,23 @@ export interface IProjectInterface {
   category: string;
 }
 
+export interface IChangeEvent {
+  target: { value: string };
+}
+
 const ProsjekterListings: NextPage<IProjectCategory> = ({ projects, categories }) => {
   const [prosjekt, setProsjekt] = useState(projects);
 
-  const handleFilterChange = (event: any) => {
-    setProsjekt(
-      projects.filter((project) => {
-        return project.category === event.target.value;
-      })
-    );
+  const handleFilterChange = (event: IChangeEvent) => {
+    if (event.target.value) {
+      setProsjekt(
+        projects.filter((project) => {
+          return project.category === event.target.value;
+        })
+      );
+    } else {
+      setProsjekt(projects);
+    }
   };
 
   return (
