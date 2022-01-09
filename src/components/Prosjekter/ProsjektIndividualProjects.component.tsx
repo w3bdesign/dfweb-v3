@@ -2,15 +2,14 @@ import Image from "next/image";
 
 import { urlFor } from "../../lib/sanity";
 
-import type { IProject } from "./ProsjekterListings.component";
-
 import Button from "../UI/Button.component";
-import { NextPage } from "next/types";
+
+import type { NextPage } from "next/types";
+import type { IProject } from "./ProsjekterListings.component";
 
 /**
  * Display individual portfolio projects if they match the filter passed down through props
  *
- * @param {Object} filter The filter that we apply to the component so we only displays projects from the correct category
  * @param {Object} projects The portfolio project data to display, contains name, image etc
  */
 

@@ -3,8 +3,7 @@ import { useState } from "react";
 
 import ProsjektIndividualProjects from "./ProsjektIndividualProjects.component";
 
-export interface IProjectCategory {
-  projects: Array<IProjectInterface>;
+export interface IProjectCategory extends IProject {
   categories: Array<string>;
 }
 
