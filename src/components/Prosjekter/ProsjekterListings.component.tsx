@@ -1,10 +1,10 @@
 import { NextPage } from "next";
-import { SetStateAction, useState } from "react";
+import { useState, ChangeEvent } from "react";
 
 import ProsjektIndividualProjects from "./ProsjektIndividualProjects.component";
 
 interface IProject {
-  projects: IProjectInterface;
+  projects: Array<IProjectInterface>;
   categories: Array<string>;
 }
 
@@ -17,22 +17,18 @@ interface IProjectInterface {
   subdescription: TStringOrEmpty;
   urlgithub: TStringOrEmpty;
   urlwww: TStringOrEmpty;
-  //handleFilterChange: void;
+  category: string;
 }
 
-//const ProsjekterListings: NextPage<IProject> = ({ projects, categories }) => {
-const ProsjekterListings: any = ({ projects, categories }: any) => {
-  const [categoryFilter, setCategoryFilter] = useState();
+const ProsjekterListings: NextPage<IProject> = ({ projects, categories }) => {
+  const [prosjekt, setProsjekt] = useState(projects);
 
-  const handleFilterChange = (e: any) => {
-    /**
-     * Eslint seems to complain if I replace this with a ternary
-     */
-    if (e.target.value) {
-      setCategoryFilter(e.target.value);
-    } /*else {
-        setCategoryFilter()
-      }*/
+  const handleFilterChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+    setProsjekt(
+      projects.filter((project) => {
+        return project.category === event.target.value;
+      })
+    );
   };
 
   return (
@@ -50,7 +46,7 @@ const ProsjekterListings: any = ({ projects, categories }: any) => {
               <select
                 id="kategorifilter"
                 name="kategorifilter"
-                onChange={handleFilterChange}
+                onChange={() => handleFilterChange}
                 className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline">
                 <option label="" value="">
                   Ingen filtrering
@@ -68,7 +64,7 @@ const ProsjekterListings: any = ({ projects, categories }: any) => {
           <div
             id="prosjektgrid"
             className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
-            <ProsjektIndividualProjects filter={categoryFilter} allProjects={projects} />
+            {prosjekt.length && <ProsjektIndividualProjects allProjects={prosjekt} />}
           </div>
         </div>
       </div>
