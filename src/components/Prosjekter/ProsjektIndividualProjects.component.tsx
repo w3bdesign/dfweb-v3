@@ -11,7 +11,6 @@ import Button from "../UI/Button.component";
  * @param {Object} projects The portfolio project data to display, contains name, image etc
  */
 function ProsjektIndividualProjects({ allProjects }: any) {
-  //console.log("Filter er: ", filter);
   return (
     <>
       {allProjects.map(
