@@ -20,6 +20,7 @@ Work In Progress.
 - Jest for unit testing
 - Cypress for E2E testing
 - Filter project display
+- Display CV with React-PDF
 
 ## TODO
 
