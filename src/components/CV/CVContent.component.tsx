@@ -14,7 +14,6 @@ const CVContent: NextPage = () => {
           <div className="container mx-auto bg-white rounded shadow">
             <div className="p-4 mx-auto mt-4">
               <div className="p-4 text-lg rounded">
-                
                 <div className="mt-0 sm:mt-2 xs:mt-2">
                   <Document
                     className="hidden mt-4 text-center xl:block lg:block"
@@ -28,7 +27,6 @@ const CVContent: NextPage = () => {
                       pageNumber={1}
                     />
                     <Page
-                   
                       renderMode="svg"
                       className="flex content-center justify-center -mt-48"
                       scale={1.5}
