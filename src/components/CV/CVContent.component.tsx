@@ -1,5 +1,7 @@
 import { Document, Page, pdfjs } from "react-pdf";
 
+import Link from "next/link";
+
 import type { NextPage } from "next";
 
 import Button from "../UI/Button.component";
@@ -36,9 +38,7 @@ const CVContent: NextPage = () => {
                 </div>
                 <div className="mx-auto mt-0 text-center sm:mt-2 xs:mt-2">
                   <Button>
-                    <a rel="noopener noreferrer" target="_blank" href="./CV-dfweb.pdf">
-                      Last ned PDF
-                    </a>
+                    <Link href="./CV-dfweb.pdf">Last ned PDF</Link>
                   </Button>
                 </div>
               </div>
