@@ -15,8 +15,8 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.3.1",   
-    "next": "^12.0.7",
+    "@emailjs/browser": "^3.4.0",   
+    "next": "^12.0.8",
     "next-sanity": "^0.4.0",
     "prettier": "2.5.1",
     "react": "17.0.2",
@@ -27,13 +27,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
-    "@storybook/addon-actions": "^6.4.10",
-    "@storybook/addon-essentials": "^6.4.10",
-    "@storybook/addon-links": "^6.4.10",
+    "@storybook/addon-actions": "^6.4.12",
+    "@storybook/addon-essentials": "^6.4.12",
+    "@storybook/addon-links": "^6.4.12",
     "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/builder-webpack5": "^6.4.10",
-    "@storybook/manager-webpack5": "^6.4.10",
-    "@storybook/react": "^6.4.10",
+    "@storybook/builder-webpack5": "^6.4.12",
+    "@storybook/manager-webpack5": "^6.4.12",
+    "@storybook/react": "^6.4.12",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@types/classnames": "^2.3.1",
@@ -47,14 +47,14 @@
     "cross-env": "^7.0.3",
     "cypress": "^9.2.1",
     "eslint": "8.6.0",
-    "eslint-config-next": "12.0.7",
+    "eslint-config-next": "12.0.8",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-storybook": "^0.5.5",
     "jest": "^27.4.7",
     "postcss": "^8.4.5",
     "react-test-renderer": "^17.0.2",
     "sanity-codegen": "^0.9.8",
-    "tailwindcss": "^3.0.12",
+    "tailwindcss": "^3.0.13",
     "typescript": "4.5.4"
   }
 }
