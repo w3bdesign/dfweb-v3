@@ -117,10 +117,7 @@ function KontaktContent() {
             </div>
           </div>
         </div>
-        <div id="kontakt-filler" className="mt-48">
-          <br />
-          <br />
-        </div>
+        <div id="kontakt-filler" className="mt-36"></div>
       </div>
     </main>
   );
