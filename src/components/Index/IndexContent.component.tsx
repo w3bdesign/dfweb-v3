@@ -11,8 +11,8 @@ import Hero from "./Hero.component";
 
 // interfaces
 interface IContent {
-  _id: Key | null | undefined;
-  title: {} | null | undefined;
+  _id: Key | null;
+  title: string;
   text: [object];
 }
 
@@ -35,25 +35,27 @@ const IndexContent = (data: TData) => {
         <div className="container grid gap-4 p-4 mx-auto mt-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
           {data.post &&
             data.post.map((content: IContent) => (
-              <div
-                className="mt-4 p-8 text-lg text-black bg-white rounded shadow"
-                key={content._id}>
-                <h2 className="text-3xl text-center">{content.title}</h2>
-                <PortableText
-                  className="text-xl"
-                  content={content.text}
-                  serializers={{
-                    code: (props: ISerializerCode) => (
-                      <p className="mt-6 text-lg">{props.children} </p>
-                    ),
-                    link: (props: ISerializerLink) => (
-                      <Link href={props.href}>
-                        <a className="underline">{props.children}</a>
-                      </Link>
-                    )
-                  }}
-                />
-              </div>
+              <section role="contentinfo" aria-label={content.title}>
+                <div
+                  className="mt-4 p-8 text-lg text-black bg-white rounded shadow"
+                  key={content._id}>
+                  <h2 className="text-3xl text-center">{content.title}</h2>
+                  <PortableText
+                    className="text-xl"
+                    content={content.text}
+                    serializers={{
+                      code: (props: ISerializerCode) => (
+                        <p className="mt-6 text-lg">{props.children} </p>
+                      ),
+                      link: (props: ISerializerLink) => (
+                        <Link href={props.href}>
+                          <a className="underline">{props.children}</a>
+                        </Link>
+                      )
+                    }}
+                  />
+                </div>
+              </section>
             ))}
         </div>
       </div>
