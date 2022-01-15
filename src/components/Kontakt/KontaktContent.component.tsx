@@ -108,23 +108,7 @@ function KontaktContent() {
                             aria-required
                           />
                         </label>
-                        <br />
-                        <label className="text-black" htmlFor="captcha">
-                          Skriv inn CAPTCHA nedenfor:
-                          <br />
-                          <input
-                            className="w-64 p-2 m-2 placeholder-black transition duration-500 ease-in-out border border-gray-500 rounded focus:scale-x-110 focus:shadow-outline hover:bg-gray-200 transform-gpu"
-                            id="captcha"
-                            name="captcha"
-                            //ref={captchaRef}
-                            type="text"
-                            required
-                            aria-required
-                          />
-                          captchaError
-                        </label>
                       </fieldset>
-                      <div className="flex justify-center">LoadCanvasTemplateNoReload</div>
                       <Button>Send skjema</Button>
                     </form>
                   </>
