@@ -35,10 +35,8 @@ const IndexContent = (data: TData) => {
         <div className="container grid gap-4 p-4 mx-auto mt-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
           {data.post &&
             data.post.map((content: IContent) => (
-              <section role="contentinfo" aria-label={content.title}>
-                <div
-                  className="mt-4 p-8 text-lg text-black bg-white rounded shadow"
-                  key={content._id}>
+              <section key={content._id} role="contentinfo" aria-label={content.title}>
+                <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow">
                   <h2 className="text-3xl text-center">{content.title}</h2>
                   <PortableText
                     className="text-xl"
