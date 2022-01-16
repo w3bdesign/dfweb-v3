@@ -21,6 +21,8 @@ Work In Progress.
 - Cypress for E2E testing
 - Filter project display
 - Display CV with React-PDF
+- Responsive design
+- Animations with Animate.css
 
 ## TODO
 
