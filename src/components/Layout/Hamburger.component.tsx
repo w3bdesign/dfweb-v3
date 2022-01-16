@@ -97,12 +97,11 @@ const Hamburger = () => {
                   {link.text}
                 </a>
               ) : (
-                <Link
-                  //className="inline-block m-4 text-xl text-white hover:underline"
-                  // activeClassName="underline"
-                  data-testid={`mobil-${link.text}`}
-                  href={link.url}>
-                  {link.text}
+                <Link data-testid={`mobil-${link.text}`} href={link.url}>
+                  <a className="inline-block m-4 text-xl text-white hover:underline">
+                    {" "}
+                    {link.text}
+                  </a>
                 </Link>
               )}
             </li>
