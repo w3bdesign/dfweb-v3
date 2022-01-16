@@ -40,7 +40,7 @@ const IndexContent = ({ post }: TData) => {
                 role="contentinfo"
                 aria-label={content.title}
                 data-testid="sanity-section">
-                <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow">
+                <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow min-h-full">
                   <h2 className="text-3xl text-center">{content.title}</h2>
                   <PortableText
                     className="text-xl"
