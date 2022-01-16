@@ -25,7 +25,7 @@ interface ISerializerLink {
   children: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
 }
 
-type TData = { post: IContent[] };
+type TData = { post?: IContent[] };
 
 const IndexContent = (data: TData) => {
   return (
