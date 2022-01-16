@@ -23,4 +23,10 @@ describe("Home", () => {
     });
     expect(banner).toBeInTheDocument();
   });
+
+  it("Hero eksisterer", () => {
+    const { getByTestId } = render(<Home />);
+    const MainHero = getByTestId("main-hero");
+    expect(MainHero).toBeInTheDocument();
+  });
 });
