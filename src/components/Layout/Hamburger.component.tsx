@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import classNames from "classnames";
 
@@ -6,7 +6,7 @@ import type { NextComponentType } from "next";
 
 import LINKS from "../../utils/constants/LINKS";
 
-const Hamburger = () => {
+const Hamburger: NextComponentType = () => {
   const [isExpanded, setisExpanded] = useState(false);
   const [isInitialRender, setisInitialRender] = useState(true);
   const hamburgerLine =
