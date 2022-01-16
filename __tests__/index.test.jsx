@@ -29,4 +29,13 @@ describe("Home", () => {
     const MainHero = getByTestId("main-hero");
     expect(MainHero).toBeInTheDocument();
   });
+
+  /*
+  it("Sanity seksjoner eksisterer", () => {
+    const { getByTestId } = render(<Home />);
+    const SanitySection = getByTestId("sanity-section");
+    expect(SanitySection).toBeInTheDocument();
+  });*/
+
+
 });
