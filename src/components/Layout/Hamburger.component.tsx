@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import classNames from "classnames";
 
@@ -19,19 +19,19 @@ const Hamburger: NextComponentType = () => {
 
   const node = useRef<HTMLDivElement>(null);
 
-  /*const handleClickOutside = (e: { target: any; }) => {
-    if (node.current.contains(e.target)) {
+  const handleClickOutside = (e: { target: any }) => {
+    if (node.current && node.current.contains(e.target)) {
       /**
        * Clicked inside of the menu
        */
-  // return;
-  // }
-  /**
-   * Clicked outside of the menu
-   */
-  /*
+      return;
+    }
+    /**
+     * Clicked outside of the menu
+     */
+
     setisExpanded(false);
-  };*/
+  };
 
   const handleMobileMenuClick = () => {
     /**
@@ -42,6 +42,26 @@ const Hamburger: NextComponentType = () => {
     setisExpanded((prevExpanded) => !prevExpanded);
     setisInitialRender(false);
   };
+
+  useEffect(() => {
+    /**
+     * Add the event listeners so we can close the menu when we click outside the mobile menu
+     * Eslint doesnt like it if I use a ternary here
+     */
+
+    if (isExpanded) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    /**
+     * Cleanup
+     */
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isExpanded]);
 
   return (
     <div ref={node} className="z-50 md:hidden lg:hidden xl:hidden">
