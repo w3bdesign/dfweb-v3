@@ -27,7 +27,7 @@ interface ISerializerLink {
 
 type TData = { post?: IContent[] };
 
-const IndexContent = ({ post }: TData) => {
+const IndexContent = ({ post }: any) => {
   return (
     <main role="main" aria-label="Her kommer hovedinnholdet" id="maincontent">
       <div className="mx-auto mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-64 xs:mt-64">
