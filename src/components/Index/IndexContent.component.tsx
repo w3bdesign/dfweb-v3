@@ -27,8 +27,8 @@ interface ISerializerLink {
 
 type TData = { post?: IContent[] };
 
-//const IndexContent = (data: TData) => {
-  const IndexContent = ({post}: any) => {
+const IndexContent = ({ post }: TData) => {
+  console.log("Post: ", post)
   return (
     <main role="main" aria-label="Her kommer hovedinnholdet" id="maincontent">
       <div className="mx-auto mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-64 xs:mt-64">
@@ -36,7 +36,11 @@ type TData = { post?: IContent[] };
         <div className="container grid gap-4 p-4 mx-auto mt-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
           {post &&
             post.map((content: IContent) => (
-              <section key={content._id} role="contentinfo" aria-label={content.title} data-testid="sanity-section">
+              <section
+                key={content._id}
+                role="contentinfo"
+                aria-label={content.title}
+                data-testid="sanity-section">
                 <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow">
                   <h2 className="text-3xl text-center">{content.title}</h2>
                   <PortableText
