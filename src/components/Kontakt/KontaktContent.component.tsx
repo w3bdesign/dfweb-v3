@@ -1,31 +1,12 @@
 import { useState, useRef } from "react";
 import { init, sendForm } from "@emailjs/browser";
 
-/*import {
-  loadCaptchaEnginge,
-  LoadCanvasTemplateNoReload,
-  validateCaptcha,
-} from "react-simple-captcha"*/
-
 import Button from "../UI/Button.component";
 
 function KontaktContent() {
   const formRef = useRef("");
-  //const captchaRef = useRef({value:""})
+
   const [serverResponse, setServerResponse] = useState("");
-  //const [captchaError, setcaptchaError] = useState()
-
-  //useEffect(() => loadCaptchaEnginge(3), [])
-
-  /*const handleCaptchaSubmit = () => {
-    const captchaValue = captchaRef.current.value
-
-    if (validateCaptcha(captchaValue) === true) {
-      return true
-    }
-    setcaptchaError("Feil verdi i CAPTCHA")
-    return false
-  }*/
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     const EMAIL_API_KEY = process.env.EMAIL_API_KEY || "changeme";
@@ -34,7 +15,6 @@ function KontaktContent() {
 
     event.preventDefault();
 
-    //if (handleCaptchaSubmit() === true) {
     init(EMAIL_API_KEY);
     sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
       () => {
@@ -45,7 +25,7 @@ function KontaktContent() {
       }
     );
   };
-  //}
+
   return (
     <main id="maincontent">
       <div className="mt-32 bg-graybg">
@@ -62,7 +42,6 @@ function KontaktContent() {
                     <h1 className="m-2 text-3xl text-center text-black">Kontakt</h1>
                     <form
                       className="text-center"
-                      // ref={formRef}
                       onSubmit={handleSubmit}
                       method="POST"
                       action="/api/form">
