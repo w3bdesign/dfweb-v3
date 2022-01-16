@@ -10,6 +10,8 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 
 Work In Progress.
 
+## Live URL: https://v3.dfweb.no/
+
 ## Features:
 
 ### Misc:
