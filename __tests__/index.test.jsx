@@ -6,7 +6,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import Home from "../src/pages/index";
 
-describe("Index", () => {
+describe("Forside", () => {
   it("Welcome to next eksisterer ikke", () => {
     render(<Home />);
     const welcometoNext = screen.queryByText("heading", {
@@ -28,5 +28,11 @@ describe("Index", () => {
     const { getByTestId } = render(<Home />);
     const MainHero = getByTestId("main-hero");
     expect(MainHero).toBeInTheDocument();
+  });
+
+  it("Hei eksisterer", () => {
+    render(<Home />);
+    const Hei = screen.getByRole("heading", { name: /hei!/i });
+    expect(Hei).toBeInTheDocument();
   });
 });
