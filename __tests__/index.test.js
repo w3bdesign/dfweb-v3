@@ -4,7 +4,20 @@
 
 import React from "react";
 import { render, screen } from "@testing-library/react";
+import { rest } from "msw";
+import { setupServer } from "msw/node";
+
 import Home from "../src/pages/index";
+
+const server = setupServer(
+  rest.get("/greeting", (_req, res, ctx) => {
+    return res(ctx.json({ greeting: "hello there" }));
+  })
+);
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
 
 describe("Forside", () => {
   it("Welcome to next eksisterer ikke", () => {
@@ -14,14 +27,6 @@ describe("Forside", () => {
     });
 
     expect(welcometoNext).not.toBeInTheDocument();
-  });
-
-  it("Om Meg eksisterer", () => {
-    render(<Home />);
-    const banner = screen.getByRole("banner", {
-      name: /Header for logo og navigasjon/i
-    });
-    expect(banner).toBeInTheDocument();
   });
 
   it("Hero eksisterer", () => {

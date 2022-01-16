@@ -52,6 +52,7 @@
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-storybook": "^0.5.5",
     "jest": "^27.4.7",
+    "msw": "^0.36.4",
     "postcss": "^8.4.5",
     "react-test-renderer": "^17.0.2",
     "sanity-codegen": "^0.9.8",
