@@ -11,6 +11,7 @@ export default {
 
 const Template: ComponentStory<typeof IndexContent> = () => <IndexContent />;
 
+/*
 export const LoggedIn = Template;
 LoggedIn.args = {
   // More on composing args: https://storybook.js.org/docs/react/writing-stories/args#args-composition
@@ -21,3 +22,4 @@ export const LoggedOut = Template;
 LoggedOut.args = {
   ...HeaderStories.LoggedOut.args
 };
+*/
