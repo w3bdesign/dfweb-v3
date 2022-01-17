@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, MutableRefObject } from "react";
 import emailjs from "@emailjs/browser";
 
 import Button from "../UI/Button.component";
@@ -10,7 +10,7 @@ interface IEvent {
 type TString = string;
 
 function KontaktContent() {
-  const formRef = useRef<any>(null);
+  const formRef = useRef() as MutableRefObject<HTMLFormElement>;
 
   const [serverResponse, setServerResponse] = useState<TString>("");
 
