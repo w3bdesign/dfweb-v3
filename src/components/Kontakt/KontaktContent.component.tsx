@@ -3,21 +3,21 @@ import { init, sendForm } from "@emailjs/browser";
 
 import Button from "../UI/Button.component";
 
+interface IEvent {
+  preventDefault: () => void;
+}
+
+type TString = string;
+
 function KontaktContent() {
-  const formRef = useRef<any>();
+  const formRef = useRef(null);
 
-  const [serverResponse, setServerResponse] = useState("");
+  const [serverResponse, setServerResponse] = useState<TString>("");
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
-    const EMAIL_API_KEY = process.env.EMAIL_API_KEY || "changeme";
-    const TEMPLATE_KEY = process.env.EMAIL_TEMPLATE_KEY || "changeme";
-    const SERVICE_KEY = process.env.EMAIL_SERVICE_KEY || "changeme";
-
-    //console.log("Api nøkkel: ", EMAIL_API_KEY)
-
-
-
-    
+  const handleSubmit = (event: IEvent) => {
+    const EMAIL_API_KEY = process.env.NEXT_PUBLIC_EMAIL_API_KEY || "changeme";
+    const TEMPLATE_KEY = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY || "changeme";
+    const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY || "changeme";
 
     event.preventDefault();
 
