@@ -13,11 +13,11 @@ function KontaktContent() {
     const TEMPLATE_KEY = process.env.EMAIL_TEMPLATE_KEY || "changeme";
     const SERVICE_KEY = process.env.EMAIL_SERVICE_KEY || "changeme";
 
-    console.log("Api nøkkel: ", EMAIL_API_KEY)
+    //console.log("Api nøkkel: ", EMAIL_API_KEY)
 
 
 
-    console.log("Formref: ", formRef.current)
+    
 
     event.preventDefault();
 
