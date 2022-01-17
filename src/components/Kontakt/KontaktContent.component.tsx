@@ -19,6 +19,10 @@ function KontaktContent() {
     const TEMPLATE_KEY = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY || "changeme";
     const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY || "changeme";
 
+    if (EMAIL_API_KEY || TEMPLATE_KEY || SERVICE_KEY === "changeme") {
+      setServerResponse("Feil under sending av skjema");
+    }
+
     event.preventDefault();
 
     init(EMAIL_API_KEY);
