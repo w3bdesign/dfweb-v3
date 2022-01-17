@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { init, sendForm } from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 import Button from "../UI/Button.component";
 
@@ -10,7 +10,7 @@ interface IEvent {
 type TString = string;
 
 function KontaktContent() {
-  const formRef = useRef<HTMLDivElement>(null!);
+  const formRef = useRef<any>(null);
 
   const [serverResponse, setServerResponse] = useState<TString>("");
 
@@ -25,8 +25,9 @@ function KontaktContent() {
 
     event.preventDefault();
 
-    init(EMAIL_API_KEY);
-    sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
+    emailjs.init(EMAIL_API_KEY);
+
+    emailjs.sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
       () => {
         setServerResponse("Takk for din beskjed");
       },
@@ -51,7 +52,7 @@ function KontaktContent() {
                   <>
                     <h1 className="m-2 text-3xl text-center text-black">Kontakt</h1>
                     <form
-                      className="text-center"
+                      className="text-center"                     
                       ref={formRef}
                       onSubmit={handleSubmit}
                       method="POST"
