@@ -19,10 +19,6 @@ function KontaktContent() {
     const TEMPLATE_KEY = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY || "changeme";
     const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY || "changeme";
 
-    if (EMAIL_API_KEY || TEMPLATE_KEY || SERVICE_KEY === "changeme") {
-      setServerResponse("Feil under sending av skjema");
-    }
-
     event.preventDefault();
 
     emailjs.init(EMAIL_API_KEY);
@@ -52,7 +48,7 @@ function KontaktContent() {
                   <>
                     <h1 className="m-2 text-3xl text-center text-black">Kontakt</h1>
                     <form
-                      className="text-center"                     
+                      className="text-center"
                       ref={formRef}
                       onSubmit={handleSubmit}
                       method="POST"
