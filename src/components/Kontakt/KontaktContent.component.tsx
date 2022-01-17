@@ -10,7 +10,7 @@ interface IEvent {
 type TString = string;
 
 function KontaktContent() {
-  const formRef = useRef("vfv");
+  const formRef = useRef<HTMLDivElement>(null!);
 
   const [serverResponse, setServerResponse] = useState<TString>("");
 
