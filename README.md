@@ -28,7 +28,8 @@ Work In Progress.
 
 ## TODO
 
-- Add features and improve README
+- Add more features and improve README
+- Add animations
 - Add more tests
 - Add Storybook stories
 - Redesign site
