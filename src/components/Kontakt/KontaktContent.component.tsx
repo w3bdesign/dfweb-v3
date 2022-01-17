@@ -4,7 +4,7 @@ import { init, sendForm } from "@emailjs/browser";
 import Button from "../UI/Button.component";
 
 function KontaktContent() {
-  const formRef = useRef("");
+  const formRef = useRef<any>();
 
   const [serverResponse, setServerResponse] = useState("");
 
@@ -12,6 +12,12 @@ function KontaktContent() {
     const EMAIL_API_KEY = process.env.EMAIL_API_KEY || "changeme";
     const TEMPLATE_KEY = process.env.EMAIL_TEMPLATE_KEY || "changeme";
     const SERVICE_KEY = process.env.EMAIL_SERVICE_KEY || "changeme";
+
+    console.log("Api nøkkel: ", EMAIL_API_KEY)
+
+
+
+    console.log("Formref: ", formRef.current)
 
     event.preventDefault();
 
@@ -42,6 +48,7 @@ function KontaktContent() {
                     <h1 className="m-2 text-3xl text-center text-black">Kontakt</h1>
                     <form
                       className="text-center"
+                      ref={formRef}
                       onSubmit={handleSubmit}
                       method="POST"
                       action="/api/form">
