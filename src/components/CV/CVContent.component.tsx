@@ -11,7 +11,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 const CVContent: NextPage = () => {
   return (
     <main id="maincontent">
-      <div className="mt-24 bg-graybg">
+      <div className="mt-32 bg-graybg">
         <div className="px-4 p lg:px-0 xl:px-0 md:px-0">
           <div className="container mx-auto bg-white rounded shadow">
             <div className="p-4 mx-auto mt-4">
@@ -25,13 +25,13 @@ const CVContent: NextPage = () => {
                   >
                     <Page
                       renderMode="svg"
-                      className="flex content-center justify-center -mt-32"
+                      className="flex content-center justify-center -mt-12"
                       scale={1.5}
                       pageNumber={1}
                     />
                     <Page
                       renderMode="svg"
-                      className="flex content-center justify-center -mt-48"
+                      className="flex content-center justify-center -mt-24"
                       scale={1.5}
                       pageNumber={2}
                     />
