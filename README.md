@@ -8,7 +8,11 @@
 
 Third version of my portfolio website with Next.js with Typescript instead of Gatsby.
 
-Work In Progress.
+> ## This is a work in progress
+>
+> The code in this repo is still in active development. 
+> This text will be removed when I feel the project has enough features.
+
 
 ## Live URL: https://v3.dfweb.no/
 
