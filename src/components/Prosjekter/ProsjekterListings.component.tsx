@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import { useState } from "react";
 
 import ProsjektIndividualProjects from "./ProsjektIndividualProjects.component";

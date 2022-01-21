@@ -8,7 +8,6 @@ import { UrlObject } from "url";
 
 // components
 import Hero from "./Hero.component";
-import type { NextComponentType } from "next";
 
 // interfaces
 interface IContent {
