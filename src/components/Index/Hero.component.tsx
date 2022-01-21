@@ -1,6 +1,4 @@
-import type { NextComponentType } from "next";
-
-const Hero: NextComponentType = () => {
+const Hero = (): JSX.Element => {
   return (
     <div
       role="article"

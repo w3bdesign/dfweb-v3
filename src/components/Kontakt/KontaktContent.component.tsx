@@ -9,7 +9,7 @@ interface IEvent {
 
 type TString = string;
 
-function KontaktContent() {
+const KontaktContent = (): JSX.Element => {
   const formRef = useRef() as MutableRefObject<HTMLFormElement>;
 
   const [serverResponse, setServerResponse] = useState<TString>("");
@@ -108,6 +108,6 @@ function KontaktContent() {
       </div>
     </main>
   );
-}
+};
 
 export default KontaktContent;

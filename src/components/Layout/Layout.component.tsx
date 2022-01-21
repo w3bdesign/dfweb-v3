@@ -8,7 +8,7 @@ interface ILayoutProps {
   title: string;
 }
 
-const Layout = ({ children, title }: ILayoutProps) => {
+const Layout = ({ children, title }: ILayoutProps): JSX.Element  => {
   return (
     <>
       <Header title={title} />

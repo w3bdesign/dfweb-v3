@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Head from "next/head";
 
 import Navbar from "./Navbar.component";
@@ -7,7 +6,7 @@ interface IHeaderProps {
   title: string;
 }
 
-const Header: NextPage<IHeaderProps> = ({ title }: IHeaderProps) => {
+const Header = ({ title }: IHeaderProps): JSX.Element => {
   return (
     <>
       <Head>

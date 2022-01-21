@@ -2,13 +2,11 @@ import { Document, Page, pdfjs } from "react-pdf";
 
 import Link from "next/link";
 
-import type { NextPage } from "next";
-
 import Button from "../UI/Button.component";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-const CVContent: NextPage = () => {
+const CVContent = (): JSX.Element => {
   return (
     <main id="maincontent">
       <div className="mt-32 bg-graybg">
@@ -21,8 +19,7 @@ const CVContent: NextPage = () => {
                     className="hidden mt-4 text-center xl:block lg:block"
                     error="En feil har oppstått under lasting av PDF"
                     loading="Laster inn PDF ..."
-                    file="./CV-dfweb.pdf"
-                  >
+                    file="./CV-dfweb.pdf">
                     <Page
                       renderMode="svg"
                       className="flex content-center justify-center -mt-12"
