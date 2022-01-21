@@ -45,6 +45,8 @@ const IndexContent = ({ post }: TData): JSX.Element => {
                   <PortableText
                     className="text-xl"
                     content={content.text}
+                    dataset=""
+                    projectId=""
                     serializers={{
                       code: (props: ISerializerCode) => (
                         <p className="mt-6 text-lg">{props.children} </p>
