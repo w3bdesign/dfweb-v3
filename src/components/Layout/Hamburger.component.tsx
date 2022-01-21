@@ -15,6 +15,8 @@ const Hamburger = (): JSX.Element => {
     "animate__animated animate__fadeOutDown": !isExpanded
   });
 
+  const opacityFull = "opacity-100 group-hover:opacity-100";
+
   const node = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (e: { target: any }) => {
@@ -73,21 +75,15 @@ const Hamburger = (): JSX.Element => {
         <span className="sr-only text-white text-2xl">Hamburger</span>
         <span
           className={`${hamburgerLine} ${
-            isExpanded
-              ? "rotate-45 translate-y-3 opacity-100 group-hover:opacity-100"
-              : "opacity-100 group-hover:opacity-100"
+            isExpanded ? "rotate-45 translate-y-3 opacity-100 group-hover:opacity-100" : opacityFull
           }`}
         />
-        <span
-          className={`${hamburgerLine} ${
-            isExpanded ? "opacity-0" : "opacity-100 group-hover:opacity-100"
-          }`}
-        />
+        <span className={`${hamburgerLine} ${isExpanded ? "opacity-0" : opacityFull}`} />
         <span
           className={`${hamburgerLine} ${
             isExpanded
               ? "-rotate-45 -translate-y-3 opacity-100 group-hover:opacity-100"
-              : "opacity-100 group-hover:opacity-100"
+              : opacityFull
           }`}
         />
       </button>
