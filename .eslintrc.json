@@ -3,8 +3,8 @@
     "ecmaVersion": 7,
     "sourceType": "module"
   },
-  "extends": ["next/core-web-vitals", "plugin:cypress/recommended"],
-  "plugins": ["react", "cypress"],
+  "extends": ["next/core-web-vitals", "plugin:cypress/recommended", "plugin:sonarjs/recommended"],
+  "plugins": ["react", "cypress", "sonarjs"],
   "globals": {
     "cy": true
   }
