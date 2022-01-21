@@ -1,11 +1,11 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
   "extends": ["next/core-web-vitals", "plugin:cypress/recommended"],
   "plugins": ["react", "cypress"],
   "globals": {
     "cy": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 7,
-    "sourceType": "module"
   }
 }
