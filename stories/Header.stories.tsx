@@ -8,16 +8,18 @@ export default {
   component: Header
 } as ComponentMeta<typeof Header>;
 
+const functionNotImplemented = "Function not implemented."
+
 const Template: ComponentStory<typeof Header> = () => (
   <Header
     onLogin={function (): void {
-      throw new Error("Function not implemented.");
+      throw new Error(functionNotImplemented);
     }}
     onLogout={function (): void {
-      throw new Error("Function not implemented.");
+      throw new Error(functionNotImplemented);
     }}
     onCreateAccount={function (): void {
-      throw new Error("Function not implemented.");
+      throw new Error(functionNotImplemented);
     }}
   />
 );

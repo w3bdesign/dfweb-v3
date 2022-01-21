@@ -9,16 +9,18 @@ export default {
   component: Page
 } as ComponentMeta<typeof Page>;
 
+const functionNotImplemented = "Function not implemented.";
+
 const Template: ComponentStory<typeof Page> = () => (
   <Page
     onLogin={function (): void {
-      throw new Error("Function not implemented.");
+      throw new Error(functionNotImplemented);
     }}
     onLogout={function (): void {
-      throw new Error("Function not implemented.");
+      throw new Error(functionNotImplemented);
     }}
     onCreateAccount={function (): void {
-      throw new Error("Function not implemented.");
+      throw new Error(functionNotImplemented);
     }}
   />
 );
