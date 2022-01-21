@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
+    "gsap": "^3.9.1",
     "next": "^12.0.8",
     "next-sanity": "^0.4.0",
     "prettier": "2.5.1",
