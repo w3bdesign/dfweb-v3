@@ -34,7 +34,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 ## TODO
 
 - Add more features and improve README
-- Add animations
+- Add animations with GSAP
 - Add more tests
 - Add Storybook stories
 - Redesign site
