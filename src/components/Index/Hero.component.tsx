@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 const Hero = (): JSX.Element => {
   return (
     <div
