@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import classNames from "classNames";
+import classNames from "classnames";
 
 import LINKS from "../../utils/constants/LINKS";
 
