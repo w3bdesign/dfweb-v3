@@ -71,7 +71,8 @@ const Hamburger = (): JSX.Element => {
         data-testid="hamburger"
         onClick={handleMobileMenuClick}
         aria-expanded={isExpanded}
-        type="button">
+        type="button"
+      >
         <span className="sr-only text-white text-2xl">Hamburger</span>
         <span
           className={`${hamburgerLine} ${
@@ -96,7 +97,8 @@ const Hamburger = (): JSX.Element => {
         data-testid="mobile-menu"
         aria-hidden={isInitialRender}
         hidden={isInitialRender}
-        className={fadeInUpCSS}>
+        className={fadeInUpCSS}
+      >
         <ul aria-label="Navigasjon">
           {LINKS.map((link) => (
             <li key={link.id} className="w-full border-t border-gray-600 border-solid shadow">
@@ -107,7 +109,8 @@ const Hamburger = (): JSX.Element => {
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  data-testid={`mobil-${link.text}`}>
+                  data-testid={`mobil-${link.text}`}
+                >
                   {link.text}
                 </a>
               ) : (

@@ -8,7 +8,7 @@ export default {
   component: Header
 } as ComponentMeta<typeof Header>;
 
-const functionNotImplemented = "Function not implemented."
+const functionNotImplemented = "Function not implemented.";
 
 const Template: ComponentStory<typeof Header> = () => (
   <Header
