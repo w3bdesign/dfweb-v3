@@ -12,6 +12,8 @@ import LINKS from "../../utils/constants/LINKS";
  */
 
 const Navbar = (): JSX.Element => {
+  // https://stackoverflow.com/questions/59273754/how-can-i-assign-a-new-ref-to-every-iteration-inside-a-map-function
+  // TODO Vurder å bruke gsap på mouseenter?
   return (
     <header role="banner" aria-label="Header for logo og navigasjon">
       <nav className="fixed top-0 z-50 w-full p-4 bg-gray-800">

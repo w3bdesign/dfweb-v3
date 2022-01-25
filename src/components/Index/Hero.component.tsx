@@ -7,13 +7,13 @@ import { SiTypescript, SiWordpress } from "react-icons/si";
 type TTimeLineRef = HTMLDivElement | null;
 
 const Hero = (): JSX.Element => {
-  const boxRef = useRef<TTimeLineRef>(null);
+  const animateRef = useRef<TTimeLineRef>(null);
 
   // wait until DOM has been rendered
   useEffect(() => {
     gsap
       .timeline()
-      .from(boxRef.current, {
+      .from(animateRef.current, {
         scale: 0.6,
         duration: 1.5,
         opacity: 0,
@@ -45,8 +45,9 @@ const Hero = (): JSX.Element => {
       aria-label="Kontainer for animasjoner av introtekst"
       id="main-hero"
       data-testid="main-hero"
-      className="flex flex-col justify-center text-lg">
-      <div ref={boxRef} className="p-4 mt-6 mb-6 bg-white opacity-75">
+      className="flex flex-col justify-center text-lg"
+    >
+      <div ref={animateRef} className="p-4 mt-6 mb-6 bg-white opacity-75">
         <div className="text-black rounded">
           <section role="intro" aria-label="Introduksjonstekst">
             <h1 className="text-reveal text-5xl text-center p-2">Hei!</h1>
