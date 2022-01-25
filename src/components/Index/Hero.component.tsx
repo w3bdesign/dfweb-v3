@@ -1,4 +1,21 @@
+import { gsap } from "gsap";
+
+import { useEffect, useRef } from "react";
+
+type TTimeLineRef = HTMLDivElement | null;
+
 const Hero = (): JSX.Element => {
+  const boxRef = useRef<TTimeLineRef>(null);
+
+  // wait until DOM has been rendered
+  useEffect(() => {
+    gsap.from(boxRef.current, {
+      scale: 0.6,
+      duration: 2,
+      opacity: 0
+    });
+  });
+
   return (
     <div
       role="article"
@@ -6,7 +23,7 @@ const Hero = (): JSX.Element => {
       id="main-hero"
       data-testid="main-hero"
       className="flex flex-col justify-center text-lg">
-      <div className="p-4 mt-6 mb-6 bg-white opacity-75">
+      <div ref={boxRef} className="p-4 mt-6 mb-6 bg-white opacity-75">
         <div className="text-black rounded">
           <section role="intro" aria-label="Introduksjonstekst">
             <h1 className="text-5xl text-center p-2">Hei!</h1>
