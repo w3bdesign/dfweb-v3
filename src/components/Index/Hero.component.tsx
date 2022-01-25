@@ -20,18 +20,22 @@ const Hero = (): JSX.Element => {
         ease: "Expo.easeOut",
         delay: 0.2
       })
-      .to(".text-reveal", {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-        stagger: 0.6,
-        duration: 0.2,        
-        y: 0
-      })
+      .to(
+        ".text-reveal",
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+          stagger: 0.7,
+          duration: 0.3,
+          y: 0
+        },
+        "-=0.5"
+      )
       .to(".icon-reveal", {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-        stagger: 0.8,
-        duration: 0.3,
-        delay: 0.2,
-        x: 0
+        stagger: 0.6,
+        duration: 0.2,
+        x: 0,
+        delay: 0.6
       });
   }, []);
 
