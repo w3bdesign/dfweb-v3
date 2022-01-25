@@ -45,7 +45,8 @@ const Hero = (): JSX.Element => {
       aria-label="Kontainer for animasjoner av introtekst"
       id="main-hero"
       data-testid="main-hero"
-      className="flex flex-col justify-center text-lg">
+      className="flex flex-col justify-center text-lg"
+    >
       <div ref={animateRef} className="p-4 mt-6 mb-6 bg-white opacity-75">
         <div className="text-black rounded">
           <section role="intro" aria-label="Introduksjonstekst">
