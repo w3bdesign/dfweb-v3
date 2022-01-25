@@ -25,12 +25,12 @@ a {
 
 .text-reveal {
   transition: all 1.5s;
-  transform: translateY(-3em);
+  transform: translateY(-4em);
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
 .icon-reveal {
   transition: all 1.5s;
-  transform: translateX(3em);
+  transform: translateX(4em);
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
