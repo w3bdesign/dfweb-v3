@@ -14,13 +14,15 @@ const Hero = (): JSX.Element => {
         scale: 0.2,
         duration: 2,
         opacity: 0,
-        ease: "power3.inOut"
+        ease: "Expo.easeOut",
+        delay: 0.2
       },
       {
         scale: 1,
         duration: 2,
-        ease: "power3.inOut",
-        opacity: 0.75
+        ease: "Expo.easeOut",
+        opacity: 0.75,
+        delay: 0.2
       }
     );
   });
