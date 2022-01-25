@@ -25,7 +25,7 @@ a {
 
 .text-reveal {
   transition: all 1.5s;
-  transform: translateY(-4em);
+  transform: translateY(-3em);
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
