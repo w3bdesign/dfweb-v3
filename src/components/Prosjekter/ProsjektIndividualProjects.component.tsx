@@ -13,6 +13,7 @@ import type { IProject } from "./ProsjekterListings.component";
  */
 
 const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
+  // https://ihatetomatoes.net/react-and-greensock-tutorial-for-beginners/
   return (
     <>
       {projects.map(
