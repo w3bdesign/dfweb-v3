@@ -2,4 +2,6 @@ User-agent: *
 
 Allow: /
 
+Disallow: /api/*
+
 Sitemap: https://v3.dfweb.no/api/siteMapGenerator
