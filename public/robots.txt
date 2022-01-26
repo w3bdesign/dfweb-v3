@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://v3.dfweb.no/api/siteMapGenerator
