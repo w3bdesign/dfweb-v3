@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "__tests__/index.test.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"Fjern test fra include i tsconfig.json],
   "exclude": ["node_modules"]
 }
