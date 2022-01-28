@@ -23,6 +23,8 @@ a {
   box-sizing: border-box;
 }
 
+/* Hero animations */
+
 .text-reveal {
   transition: all 1.5s;
   transform: translateY(-3em);
