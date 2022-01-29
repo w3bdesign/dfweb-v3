@@ -37,22 +37,14 @@ a {
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
-
-
-
-
-
-
-
-
-
+/* Animasjoner Navbar */
 
 .svg-wrapper {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-    margin: 0 auto;
-  width: 320px;  
+  margin: 0 auto;
+  width: 320px;
 }
 .shape {
   stroke-dasharray: 140 540;
@@ -78,6 +70,3 @@ a {
   stroke-dashoffset: 0;
   stroke-dasharray: 760;
 }
-
-
-
