@@ -10,7 +10,6 @@ body {
 
 /* Custom styling for main hero image */
 #main-hero {
-  visibility: hidden;
   background-image: url("../assets/images/blue-hero.jpg");
   height: 450px;
 }
@@ -23,3 +22,19 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* Hero animations */
+
+.text-reveal {
+  transition: all 1.5s;
+  transform: translateY(-3em);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.icon-reveal {
+  transition: all 1.5s;
+  transform: translateX(4em);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+
