@@ -1,42 +1,29 @@
 import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import { TextPlugin } from "gsap";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
 import { FaReact, FaVuejs, FaPhp } from "react-icons/fa";
 import { SiTypescript, SiWordpress } from "react-icons/si";
 
-type TTimeLineRef = HTMLDivElement | null;
+/*if (process.browser) {
+  gsap.registerPlugin(TextPlugin);
+}*/
+
+gsap.registerPlugin(TextPlugin);
 
 const Hero = (): JSX.Element => {
-  const animateRef = useRef<TTimeLineRef>(null);
-
   // wait until DOM has been rendered
-  useEffect(() => {
+
+  useIsomorphicLayoutEffect(() => {
     gsap
-      .timeline()
-      .from(animateRef.current, {
-        scale: 0.6,
-        duration: 1.5,
-        opacity: 0,
-        ease: "Expo.easeOut",
-        delay: 0.2
-      })
-      .to(
-        ".text-reveal",
-        {
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-          stagger: 0.7,
-          duration: 0.3,
-          y: 0
-        },
-        "-=0.5"
-      )
-      .to(".icon-reveal", {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-        stagger: 0.6,
-        duration: 0.2,
-        x: 0,
-        delay: 0.6
-      });
+      .timeline({ defaults: { opacity: 0, ease: "back" } })
+      .from("#main-hero", { autoAlpha: 0 })
+
+      .from("#main-hero h1", { duration: 2, text: "Hei!", ease: "none" })
+
+      //.from("#main-hero h1", { y: 100, duration: 0.5 })
+      .from("#main-hero h2", { x: -150, duration: 1, delay: 0.2, stagger: 0.5 })
+      .from("#main-hero svg", { y: 50, duration: 1, stagger: 0.3 });
   }, []);
 
   return (
@@ -46,7 +33,7 @@ const Hero = (): JSX.Element => {
       id="main-hero"
       data-testid="main-hero"
       className="flex flex-col justify-center text-lg">
-      <div ref={animateRef} className="p-2 mt-10 mb-4 bg-white opacity-75 lg:mt-4 md:mt-4 xl:mt-4">
+      <div className="p-2 mt-10 mb-4 bg-white opacity-75 lg:mt-4 md:mt-4 xl:mt-4">
         <div className="text-black rounded">
           <section role="intro" aria-label="Introduksjonstekst">
             <h1 className="text-reveal text-5xl text-center p-2">Hei!</h1>
