@@ -33,15 +33,6 @@ const Navbar = (): JSX.Element => {
               role="navigation"
               aria-label="Navigasjon"
               className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4">
-              <div className="svg-wrapper">
-                <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-                  <rect className="shape" height="60" width="320" />
-                  <text x="60" y="55" className="text">
-                    LINK HERE
-                  </text>
-                </svg>
-              </div>
-
               {LINKS.map((link) => (
                 <li key={link.id} className="mr-3">
                   {link.external ? (
