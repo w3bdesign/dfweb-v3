@@ -9,12 +9,12 @@ const Hero = (): JSX.Element => {
   // wait until DOM has been rendered
   useIsomorphicLayoutEffect(() => {
     gsap
-      .timeline({ defaults: { opacity: 0, ease: "back", duration: 1 } })
+      .timeline({ defaults: { opacity: 0, ease: "back", duration: 0.8 } })
       .from("#main-hero", { autoAlpha: 0 })
       .from("#main-hero .introtekst", { y: -150, stagger: 0.3 })
       .from("#main-hero .forsteh2", { x: -100 })
-      .from("#main-hero .andreh2", { x: 100, delay: 0.3 })
-      .from("#main-hero svg", { y: 60, stagger: 0.3, ease: "bounce" });
+      .from("#main-hero .andreh2", { y: 100, delay: 0.3 })
+      .from("#main-hero .ikoner", { y: 60, stagger: 0.3, ease: "bounce" });
   }, []);
 
   return (
@@ -41,11 +41,11 @@ const Hero = (): JSX.Element => {
               Photoshop og mye mer.
             </h2>
             <span className="flex justify-center p-6">
-              <FaReact className="mr-6" title="React ikon" size="3em" />
-              <FaVuejs className="mr-6" title="Vue ikon" size="3em" />
-              <SiTypescript className="mr-6" title="Typescript ikon" size="3em" />
-              <SiWordpress className="mr-6" title="Wordpress ikon" size="3em" />
-              <FaPhp className="mr-6" title="PHP ikon" size="3em" />
+              <FaReact className="ikoner mr-6" title="React ikon" size="3em" />
+              <FaVuejs className="ikoner mr-6" title="Vue ikon" size="3em" />
+              <SiTypescript className="ikoner mr-6" title="Typescript ikon" size="3em" />
+              <SiWordpress className="ikoner mr-6" title="Wordpress ikon" size="3em" />
+              <FaPhp className="ikoner mr-6" title="PHP ikon" size="3em" />
             </span>
           </section>
         </div>

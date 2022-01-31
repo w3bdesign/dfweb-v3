@@ -3,6 +3,8 @@ import Link from "next/link";
 import classNames from "classnames";
 
 import LINKS from "../../utils/constants/LINKS";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
+import { gsap } from "gsap";
 
 const Hamburger = (): JSX.Element => {
   const [isExpanded, setisExpanded] = useState(false);
@@ -18,6 +20,24 @@ const Hamburger = (): JSX.Element => {
   const opacityFull = "opacity-100 group-hover:opacity-100";
 
   const node = useRef<HTMLDivElement>(null);
+
+
+  useIsomorphicLayoutEffect(() => {
+    gsap
+      //.timeline({ defaults: { opacity: 0, ease: "back", duration: 0.8 } })
+      //.from("button", { autoAlpha: 0 })
+
+
+      //.timeline()
+      //.from("#hamburger-div", { opacity: 0,y: -50, duration: 1 })
+     
+  }, []);
+
+
+
+
+
+
 
   const handleClickOutside = (e: { target: any }) => {
     if (node.current && node.current.contains(e.target)) {
