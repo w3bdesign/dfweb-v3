@@ -1,5 +1,4 @@
 import { gsap } from "gsap";
-//import { TextPlugin } from "gsap/dist/TextPlugin";
 
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
