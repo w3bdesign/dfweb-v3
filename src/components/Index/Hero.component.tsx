@@ -9,12 +9,12 @@ const Hero = (): JSX.Element => {
   // wait until DOM has been rendered
   useIsomorphicLayoutEffect(() => {
     gsap
-      .timeline({ defaults: { opacity: 0, ease: "back" } })
+      .timeline({ defaults: { opacity: 0, ease: "back", duration: 1 } })
       .from("#main-hero", { autoAlpha: 0 })
-      .from("#main-hero .introtekst", { y: -150, duration: 1, stagger: 0.3 })
-      .from("#main-hero .forsteh2", { x: -100, duration: 1 })
-      .from("#main-hero .andreh2", { x: 100, duration: 1, delay: 0.3 })
-      .from("#main-hero svg", { y: 60, duration: 1, stagger: 0.3, ease: "bounce" });
+      .from("#main-hero .introtekst", { y: -150, stagger: 0.3 })
+      .from("#main-hero .forsteh2", { x: -100 })
+      .from("#main-hero .andreh2", { x: 100, delay: 0.3 })
+      .from("#main-hero svg", { y: 60, stagger: 0.3, ease: "bounce" });
   }, []);
 
   return (
