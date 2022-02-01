@@ -15,15 +15,11 @@ const indexQuery = groq`
 *[_type == 'sitecontent' && pagename match 'Index']
 `;
 
-const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return (
-    <>
-      <Layout title="Forside - Portefølje - Dfweb">
-        <IndexContent {...data} />
-      </Layout>
-    </>
-  );
-};
+const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => (
+  <Layout title="Forside - Portefølje - Dfweb">
+    <IndexContent {...data} />
+  </Layout>
+);
 
 export const getStaticProps: GetStaticProps = async () => {
   const post = await getClient({}).fetch(indexQuery);

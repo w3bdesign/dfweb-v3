@@ -21,11 +21,9 @@ const Prosjekter: NextPage = ({
   categories
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <>
-      <Layout title="Prosjekter - Portefølje - Dfweb">
-        <ProsjekterListings projects={projects} categories={categories} />
-      </Layout>
-    </>
+    <Layout title="Prosjekter - Portefølje - Dfweb">
+      <ProsjekterListings projects={projects} categories={categories} />
+    </Layout>
   );
 };
 

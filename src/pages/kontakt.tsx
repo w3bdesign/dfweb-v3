@@ -5,11 +5,9 @@ import Layout from "../components/Layout/Layout.component";
 
 const Kontakt: NextPage = () => {
   return (
-    <>
-      <Layout title="Kontakt - Portefølje - Dfweb">
-        <KontaktContent />
-      </Layout>
-    </>
+    <Layout title="Kontakt - Portefølje - Dfweb">
+      <KontaktContent />
+    </Layout>
   );
 };
 
