@@ -12,13 +12,13 @@ const functionNotImplemented = "Function not implemented.";
 
 const Template: ComponentStory<typeof Header> = () => (
   <Header
-    onLogin={function (): void {
+    onLogin={(): void => {
       throw new Error(functionNotImplemented);
     }}
-    onLogout={function (): void {
+    onLogout={(): void => {
       throw new Error(functionNotImplemented);
     }}
-    onCreateAccount={function (): void {
+    onCreateAccount={(): void => {
       throw new Error(functionNotImplemented);
     }}
   />

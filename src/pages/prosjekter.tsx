@@ -19,15 +19,11 @@ const categoryQuery = groq`*[_type == "project"].category[0..3]`;
 const Prosjekter: NextPage = ({
   projects,
   categories
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return (
-    <>
-      <Layout title="Prosjekter - Portefølje - Dfweb">
-        <ProsjekterListings projects={projects} categories={categories} />
-      </Layout>
-    </>
-  );
-};
+}: InferGetStaticPropsType<typeof getStaticProps>) => (
+  <Layout title="Prosjekter - Portefølje - Dfweb">
+    <ProsjekterListings projects={projects} categories={categories} />
+  </Layout>
+);
 
 export const getStaticProps: GetStaticProps = async () => {
   const projects = await getClient({}).fetch(projectQuery);
