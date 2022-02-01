@@ -35,7 +35,7 @@ const Hero = (): JSX.Element => {
               <span className="introtekst text-5xl inline-block">!</span>
             </div>
             <h2 className="forsteh2 px-6 mt-4 text-lg md:p-0 lg:p-0 xl:p-0 xl:text-center lg:text-left md:text-center xl:text-2xl lg:text-xl md:text-xl md:mx-auto lg:w-2/3">
-              Jeg heter Daniel Fjeldstad og er en webutvikler.
+              Jeg heter Daniel Fjeldstad og er en webutvikler. Test.
             </h2>
             <h2 className="andreh2 px-6 mt-4 text-lg md:p-0 lg:p-0 xl:p-0 xl:text-center lg:text-left md:text-center xl:text-2xl lg:text-xl md:text-xl md:mx-auto lg:w-2/3">
               Jeg kan PHP, Wordpress, Javascript, Typescript, React, Vue, Docker, Photoshop og mye
