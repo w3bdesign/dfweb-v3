@@ -28,7 +28,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 - Filter project display
 - Display CV with React-PDF
 - Responsive design
-- Animations with Animate.css and GSAP
+- Animations with GSAP 3
 
 ## TODO
 
