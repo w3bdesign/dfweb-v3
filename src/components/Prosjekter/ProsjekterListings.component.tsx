@@ -10,7 +10,7 @@ export interface IProject {
   projects: Array<IProjectInterface>;
 }
 
-export type TStringOrEmpty = string | null | undefined;
+export type TStringOrEmpty = string | undefined;
 
 export interface IProjectInterface {
   _id: string;
@@ -20,7 +20,8 @@ export interface IProjectInterface {
   subdescription: TStringOrEmpty;
   urlgithub: TStringOrEmpty;
   urlwww: TStringOrEmpty;
-  category: string;
+  category: TStringOrEmpty;
+  projectimage: TStringOrEmpty;
 }
 
 export interface IChangeEvent {
@@ -32,11 +33,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
 
   const handleFilterChange = (event: IChangeEvent) => {
     if (event.target.value) {
-      setProsjekt(
-        projects.filter((project) => {
-          return project.category === event.target.value;
-        })
-      );
+      setProsjekt(projects.filter((project) => project.category === event.target.value));
     } else {
       setProsjekt(projects);
     }

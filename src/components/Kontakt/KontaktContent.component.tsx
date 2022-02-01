@@ -11,7 +11,6 @@ type TString = string;
 
 const KontaktContent = (): JSX.Element => {
   const formRef = useRef() as MutableRefObject<HTMLFormElement>;
-
   const [serverResponse, setServerResponse] = useState<TString>("");
 
   const handleSubmit = (event: IEvent) => {
@@ -105,7 +104,7 @@ const KontaktContent = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div id="kontakt-filler" className="mt-36"></div>
+        <div id="kontakt-filler" className="mt-36" />
       </div>
     </main>
   );

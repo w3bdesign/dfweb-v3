@@ -8,14 +8,12 @@ interface ILayoutProps {
   title: string;
 }
 
-const Layout = ({ children, title }: ILayoutProps): JSX.Element => {
-  return (
-    <>
-      <Header title={title} />
-      {children}
-      <Footer />
-    </>
-  );
-};
+const Layout = ({ children, title }: ILayoutProps): JSX.Element => (
+  <>
+    <Header title={title} />
+    {children}
+    <Footer />
+  </>
+);
 
 export default Layout;
