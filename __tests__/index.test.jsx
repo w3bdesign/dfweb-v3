@@ -29,10 +29,4 @@ describe("Forside", () => {
     const MainHero = getByTestId("main-hero");
     expect(MainHero).toBeInTheDocument();
   });
-
-  it("Hei eksisterer", () => {
-    render(<Home />);
-    const Hei = screen.getByRole("heading", { name: /hei!/i });
-    expect(Hei).toBeInTheDocument();
-  });
 });
