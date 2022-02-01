@@ -10,7 +10,7 @@
     "lint": "next lint",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,json}\"",
     "cypress": "cypress open",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
   },
