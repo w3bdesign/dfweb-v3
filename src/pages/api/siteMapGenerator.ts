@@ -24,11 +24,11 @@ const siteMapGenerator = async (req: IReq, res: IRes) => {
   // An array with your links
 
   const links: ILinks[] = [
-      { url: "/", changefreq: "daily", priority: 0.3 },
-      { url: "/prosjekter", changefreq: "daily", priority: 0.3 },
-      { url: "/cv", changefreq: "daily", priority: 0.3 },
-      { url: "/kontakt", changefreq: "daily", priority: 0.3 }
-    ];
+    { url: "/", changefreq: "daily", priority: 0.3 },
+    { url: "/prosjekter", changefreq: "daily", priority: 0.3 },
+    { url: "/cv", changefreq: "daily", priority: 0.3 },
+    { url: "/kontakt", changefreq: "daily", priority: 0.3 }
+  ];
 
   // Create a stream to write to
 
