@@ -14,7 +14,7 @@ const Hero = (): JSX.Element => {
       .from("#main-hero .introtekst", { y: -70, stagger: 0.3 })
       .from("#main-hero .forsteh2", { y: -70 })
       .from("#main-hero .andreh2", { y: 70 })
-      .from("#main-hero .ikoner", { scale: 2, stagger: 0.4, ease: "bounce" });
+      .from("#main-hero .ikoner", { scale: 2.5, stagger: 0.4, ease: "bounce" });
   }, []);
 
   return (
