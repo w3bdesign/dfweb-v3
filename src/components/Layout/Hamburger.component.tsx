@@ -6,6 +6,10 @@ import LINKS from "../../utils/constants/LINKS";
 
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
+interface ITimeline {
+  current: gsap.core.Timeline | null;
+}
+
 const Hamburger = (): JSX.Element => {
   const [isExpanded, setisExpanded] = useState(false);
 
@@ -16,15 +20,20 @@ const Hamburger = (): JSX.Element => {
 
   const node = useRef<HTMLDivElement>(null);
 
-  const timeline = useRef<any>(null);
+  const timeline: ITimeline = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
     timeline.current = gsap
       .timeline({
         paused: true,
-        defaults: { duration: 0.3, ease: "back" }
+        defaults: { ease: "back" }
       })
-      .fromTo("#mobile-menu", { opacity: 0, duration: 1 }, { opacity: 1, duration: 0.5 }, 0)
+      .fromTo(
+        "#mobile-menu",
+        { opacity: 0, duration: 1 },
+        { opacity: 1, duration: 0.5, autoAlpha: 1 },
+        0
+      )
       .fromTo(
         ".menu-item",
         { opacity: 0, y: "0.5em", stagger: 0.2, duration: 0.4 },
@@ -35,10 +44,10 @@ const Hamburger = (): JSX.Element => {
   useIsomorphicLayoutEffect(() => {
     if (isExpanded) {
       document.addEventListener("mousedown", handleClickOutside);
-      timeline.current.play();
+      timeline.current && timeline.current.play();
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
-      timeline.current.reverse();
+      timeline.current && timeline.current.reverse();
     }
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -76,8 +85,7 @@ const Hamburger = (): JSX.Element => {
         data-testid="hamburger"
         onClick={handleMobileMenuClick}
         aria-expanded={isExpanded}
-        type="button"
-      >
+        type="button">
         <span className="sr-only text-white text-2xl">Hamburger</span>
         <span
           className={`${hamburgerLine} ${
@@ -100,14 +108,12 @@ const Hamburger = (): JSX.Element => {
         id="mobile-menu"
         data-testid="mobile-menu"
         aria-hidden={!isExpanded}
-        className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30"
-      >
+        className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30 invisible">
         <ul aria-label="Navigasjon">
           {LINKS.map((link) => (
             <li
               key={link.id}
-              className="menu-item w-full border-t border-gray-600 border-solid shadow"
-            >
+              className="menu-item w-full border-t border-gray-600 border-solid shadow">
               {link.external ? (
                 <a
                   className="inline-block m-4 text-xl text-white hover:underline"
@@ -115,8 +121,7 @@ const Hamburger = (): JSX.Element => {
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  data-testid={`mobil-${link.text}`}
-                >
+                  data-testid={`mobil-${link.text}`}>
                   {link.text}
                 </a>
               ) : (
