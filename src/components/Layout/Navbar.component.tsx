@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
+
+import Image from "../UI/Image";
 
 import Hamburger from "./Hamburger.component";
 
@@ -12,7 +13,6 @@ import LINKS from "../../utils/constants/LINKS";
  */
 
 const Navbar = (): JSX.Element => {
-  // https://stackoverflow.com/questions/59273754/how-can-i-assign-a-new-ref-to-every-iteration-inside-a-map-function
   // TODO Vurder å bruke gsap på mouseenter?
   return (
     <header role="banner" aria-label="Header for logo og navigasjon">
