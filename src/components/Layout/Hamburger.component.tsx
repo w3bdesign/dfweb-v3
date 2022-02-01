@@ -24,11 +24,11 @@ const Hamburger = (): JSX.Element => {
         paused: true,
         defaults: { duration: 0.3, ease: "back" }
       })
-      .fromTo("#mobile-menu", { opacity: 0, duration: 1 }, { opacity: 1, duration: 1 }, 0)
+      .fromTo("#mobile-menu", { opacity: 0, duration: 1 }, { opacity: 1, duration: 0.5 }, 0)
       .fromTo(
         ".menu-item",
-        { opacity: 0, y: "0.5em", stagger: 0.2, duration: 1 },
-        { opacity: 1, y: "0em", stagger: 0.2, duration: 1 }
+        { opacity: 0, y: "0.5em", stagger: 0.2, duration: 0.4 },
+        { opacity: 1, y: "0em", stagger: 0.2, duration: 0.4 }
       );
   }, []);
 
