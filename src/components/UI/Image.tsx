@@ -1,16 +1,13 @@
-import NextImage from "next/image";
+import NextImage, { ImageProps } from "next/image";
 import { useEffect, useState } from "react";
 
-/*declare const navigator: Navigator;
+declare const navigator: {
+  connection: { type: string; effectiveType: string; saveData: boolean };
+  mozConnection: Navigator;
+  webkitConnection: Navigator;
+};
 
-interface Navigator {
-    mozConnection?: Navigator["connection"]
-    webkitConnection?: Navigator["connection"]
-}*/
-
-declare const navigator: any;
-
-const Image = (props: any) => {
+const Image = (props: ImageProps) => {
   const [loading, setLoading] = useState(props.loading);
 
   useEffect(() => {
@@ -51,7 +48,7 @@ const isMobileConnection = () => {
 };
 
 const defer = (callback: IdleRequestCallback) => {
-  let handle: any;
+  let handle: number;
   // Check if we can use requestIdleCallback
   if (window.requestIdleCallback) {
     handle = window.requestIdleCallback(callback);
