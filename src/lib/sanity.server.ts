@@ -4,10 +4,12 @@ import { config } from "./sanity.config";
 // Set up the client for fetching data in the getProps page functions
 export const sanityClient = createClient(config);
 
+const env = process.env.NODE_ENV;
+
 // Set up a preview client with serverless authentication for drafts
 export const previewClient = createClient({
   ...config,
-  useCdn: false,
+  useCdn: env === "development" ? false : true,
   token: process.env.SANITY_API_TOKEN
 });
 
