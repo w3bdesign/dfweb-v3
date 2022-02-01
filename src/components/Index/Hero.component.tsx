@@ -11,9 +11,9 @@ const Hero = (): JSX.Element => {
     gsap
       .timeline({ defaults: { opacity: 0, ease: "back", duration: 0.8 } })
       .from("#main-hero", { autoAlpha: 0 })
-      .from("#main-hero .introtekst", { y: -150, stagger: 0.3 })
-      .from("#main-hero .forsteh2", { x: -100 })
-      .from("#main-hero .andreh2", { y: 100, delay: 0.3 })
+      .from("#main-hero .introtekst", { y: -100, stagger: 0.3 })
+      .from("#main-hero .forsteh2", { x: -100, ease: "linear" })
+      .from("#main-hero .andreh2", { y: 100 })
       .from("#main-hero .ikoner", { y: 60, stagger: 0.3, ease: "bounce" });
   }, []);
 
@@ -33,10 +33,10 @@ const Hero = (): JSX.Element => {
               <span className="introtekst text-5xl inline-block">i</span>
               <span className="introtekst text-5xl inline-block">!</span>
             </div>
-            <h2 className="forsteh2 px-6 mt-4 text-lg md:p-0 lg:p-0 xl:p-0 xl:text-center lg:text-left md:text-center xl:text-2xl lg:text-xl md:text-xl md:mx-auto md:w-full lg:w-2/3 xl:w-full">
+            <h2 className="forsteh2 px-6 mt-4 text-lg md:p-0 lg:p-0 xl:p-0 xl:text-center lg:text-left md:text-center xl:text-2xl lg:text-xl md:text-xl md:mx-auto lg:w-2/3">
               Jeg heter Daniel Fjeldstad og er en webutvikler.
             </h2>
-            <h2 className="andreh2 px-6 mt-4 text-lg md:p-0 lg:p-0 xl:p-0 xl:text-center lg:text-left md:text-center xl:text-2xl lg:text-xl md:text-xl md:mx-auto md:w-full lg:w-2/3 xl:w-full">
+            <h2 className="andreh2 px-6 mt-4 text-lg md:p-0 lg:p-0 xl:p-0 xl:text-center lg:text-left md:text-center xl:text-2xl lg:text-xl md:text-xl md:mx-auto lg:w-2/3">
               Jeg kan PHP, mySQL, Wordpress, Javascript, Typescript, React, Vue, Redux, Docker,
               Photoshop og mye mer.
             </h2>
