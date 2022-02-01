@@ -1,5 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
+//import Image from "next/image";
+
+import Image from "../UI/Image";
 
 import Hamburger from "./Hamburger.component";
 
