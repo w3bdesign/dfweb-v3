@@ -1,11 +1,13 @@
 import NextImage, { ImageProps } from "next/image";
 import { useEffect, useState } from "react";
 
-declare const navigator: {
+/* declare const navigator: {
   connection: { type: string; effectiveType: string; saveData: boolean };
   mozConnection: Navigator;
   webkitConnection: Navigator;
-};
+};*/
+
+declare const navigator: any;
 
 const Image = (props: ImageProps) => {
   const [loading, setLoading] = useState(props.loading);
