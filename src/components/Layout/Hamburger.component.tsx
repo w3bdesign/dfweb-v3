@@ -6,6 +6,10 @@ import LINKS from "../../utils/constants/LINKS";
 
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
+interface ITimeline {
+  current: gsap.core.Timeline | null;
+}
+
 const Hamburger = (): JSX.Element => {
   const [isExpanded, setisExpanded] = useState(false);
 
@@ -16,7 +20,7 @@ const Hamburger = (): JSX.Element => {
 
   const node = useRef<HTMLDivElement>(null);
 
-  const timeline: { current: gsap.core.Timeline | null } = useRef(null);
+  const timeline: ITimeline = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
     timeline.current = gsap
