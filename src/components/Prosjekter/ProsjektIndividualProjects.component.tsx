@@ -1,4 +1,4 @@
-import Image from "../UI/Image";
+import Image from "../UI/Image.component";
 
 import { urlFor } from "../../lib/sanity";
 
