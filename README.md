@@ -14,25 +14,25 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 >
 > This text will be removed when I feel the project has enough features.
 
-## Live URL: https://v3.dfweb.no/
+## Live URL: <https://v3.dfweb.no/>
 
 ## Features:
 
 ### Misc:
 
-- NextJS with Typescript as main project dependency
-- Sanity.io for fetching project information
-- Storybook for component documentation
-- Jest for unit testing
-- Cypress for E2E testing
-- Filter project display
-- Display CV with React-PDF
-- Responsive design
-- Animations with GSAP 3
+-   NextJS with Typescript as main project dependency
+-   Sanity.io for fetching project information
+-   Storybook for component documentation
+-   Jest for unit testing
+-   Cypress for E2E testing
+-   Filter project display
+-   Display CV with React-PDF
+-   Responsive design
+-   Animations with GSAP 3
 
 ## TODO
 
-- Add more features and improve README
-- Add more tests
-- Add Storybook stories
-- Redesign site
+-   Add more features and improve README
+-   Add more tests
+-   Add Storybook stories
+-   Redesign site (long term)
