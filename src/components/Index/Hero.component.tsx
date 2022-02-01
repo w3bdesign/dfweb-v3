@@ -9,12 +9,12 @@ const Hero = (): JSX.Element => {
   // wait until DOM has been rendered
   useIsomorphicLayoutEffect(() => {
     gsap
-      .timeline({ defaults: { opacity: 0, ease: "back", duration: 0.8 } })
+      .timeline({ defaults: { opacity: 0, ease: "back", duration: 0.7 } })
       .from("#main-hero", { autoAlpha: 0 })
-      .from("#main-hero .introtekst", { y: -100, stagger: 0.3 })
-      .from("#main-hero .forsteh2", { x: -100, ease: "linear" })
-      .from("#main-hero .andreh2", { y: 100 })
-      .from("#main-hero .ikoner", { y: 60, stagger: 0.3, ease: "bounce" });
+      .from("#main-hero .introtekst", { y: -70, stagger: 0.3 })
+      .from("#main-hero .forsteh2", { y: -70 })
+      .from("#main-hero .andreh2", { y: 70 })
+      .from("#main-hero .ikoner", { scale: 2, stagger: 0.4, ease: "bounce" });
   }, []);
 
   return (
@@ -37,7 +37,8 @@ const Hero = (): JSX.Element => {
               Jeg heter Daniel Fjeldstad og er en webutvikler.
             </h2>
             <h2 className="andreh2 px-6 mt-4 text-lg md:p-0 lg:p-0 xl:p-0 xl:text-center lg:text-left md:text-center xl:text-2xl lg:text-xl md:text-xl md:mx-auto lg:w-2/3">
-              Jeg kan PHP, Wordpress, Javascript, Typescript, React, Vue, Docker, Photoshop og mye mer.
+              Jeg kan PHP, Wordpress, Javascript, Typescript, React, Vue, Docker, Photoshop og mye
+              mer.
             </h2>
             <span className="flex justify-center p-6">
               <FaReact className="ikoner mr-6" title="React ikon" size="3em" />
