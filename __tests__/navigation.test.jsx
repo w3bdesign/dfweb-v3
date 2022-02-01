@@ -7,6 +7,18 @@ import { render, screen } from "@testing-library/react";
 import Home from "../src/pages/index";
 
 describe("Navigation", () => {
+  it("Hamburger eksisterer i navigasjon", () => {
+    render(<Home />);
+    const Hamburger = screen.getByRole("button", { name: /hamburger/i });
+    expect(Hamburger).toBeInTheDocument();
+  });
+
+  it("Hamburger er synlig", () => {
+    render(<Home />);
+    const Hamburger = screen.getByRole("button", { name: /hamburger/i });
+    expect(Hamburger).toBeVisible();
+  });
+
   it("Linken Hjem eksisterer i navigasjon", () => {
     render(<Home />);
     const linkHjem = screen.getByRole("link", { name: /hjem/i });
