@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "../UI/Image";
 
 import { urlFor } from "../../lib/sanity";
 
@@ -21,8 +21,7 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
           <div
             id="projectdiv"
             key={id}
-            className="p-6 text-lg text-black transition duration-500 ease-in-out bg-white rounded shadow  hover:bg-sky-50 transform-gpu"
-          >
+            className="p-6 text-lg text-black transition duration-500 ease-in-out bg-white rounded shadow  hover:bg-sky-50 transform-gpu">
             <h2 className="text-xl font-black text-center">{name}</h2>
             <div className="mt-6 text-lg text-left lg:text-left md:text-left">
               <p>{description}</p>
