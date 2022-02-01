@@ -20,7 +20,7 @@ const Image = (props: any) => {
     }
 
     if (!isMobileConnection()) {
-      let clearDefer: { (): void; (): void; };
+      let clearDefer: { (): void; (): void };
       // Set loading to eager if all resources of document are loaded, but defer it a bit
       const onLoad = () => {
         clearDefer = defer(() => setLoading("eager"));
@@ -40,7 +40,6 @@ const Image = (props: any) => {
 };
 
 const isMobileConnection = () => {
-  
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   return (
     connection?.type === "cellular" ||
@@ -52,13 +51,14 @@ const isMobileConnection = () => {
 };
 
 const defer = (callback: IdleRequestCallback) => {
+    let handle: any
   // Check if we can use requestIdleCallback
   if (window.requestIdleCallback) {
-    const handle = window.requestIdleCallback(callback);
+     handle = window.requestIdleCallback(callback);
     return () => window.cancelIdleCallback(handle);
   }
   // Just defer using setTimeout with some random delay otherwise
-  const handle = setTimeout(callback, 2345 + Math.random() * 1000);
+   handle = setTimeout(callback, 2345 + Math.random() * 1000);
   return () => clearTimeout(handle);
 };
 
