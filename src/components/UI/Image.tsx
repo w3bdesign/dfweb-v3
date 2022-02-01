@@ -51,14 +51,14 @@ const isMobileConnection = () => {
 };
 
 const defer = (callback: IdleRequestCallback) => {
-    let handle: any
+  let handle: any;
   // Check if we can use requestIdleCallback
   if (window.requestIdleCallback) {
-     handle = window.requestIdleCallback(callback);
+    handle = window.requestIdleCallback(callback);
     return () => window.cancelIdleCallback(handle);
   }
   // Just defer using setTimeout with some random delay otherwise
-   handle = setTimeout(callback, 2345 + 0.5 * 1000);
+  handle = setTimeout(callback, 2345 + 0.5 * 1000);
   return () => clearTimeout(handle);
 };
 
