@@ -16,7 +16,7 @@ const Hamburger = (): JSX.Element => {
 
   const node = useRef<HTMLDivElement>(null);
 
-  const timeline = useRef<any>(null);
+  const timeline: { current: gsap.core.Timeline | null } = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
     timeline.current = gsap
@@ -40,10 +40,10 @@ const Hamburger = (): JSX.Element => {
   useIsomorphicLayoutEffect(() => {
     if (isExpanded) {
       document.addEventListener("mousedown", handleClickOutside);
-      timeline.current.play();
+      timeline.current && timeline.current.play();
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
-      timeline.current.reverse();
+      timeline.current && timeline.current.reverse();
     }
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
