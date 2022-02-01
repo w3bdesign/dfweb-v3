@@ -37,8 +37,7 @@ const Hero = (): JSX.Element => {
               Jeg heter Daniel Fjeldstad og er en webutvikler.
             </h2>
             <h2 className="andreh2 px-6 mt-4 text-lg md:p-0 lg:p-0 xl:p-0 xl:text-center lg:text-left md:text-center xl:text-2xl lg:text-xl md:text-xl md:mx-auto lg:w-2/3">
-              Jeg kan PHP, mySQL, Wordpress, Javascript, Typescript, React, Vue, Redux, Docker,
-              Photoshop og mye mer.
+              Jeg kan PHP, Wordpress, Javascript, Typescript, React, Vue, Docker, Photoshop og mye mer.
             </h2>
             <span className="flex justify-center p-6">
               <FaReact className="ikoner mr-6" title="React ikon" size="3em" />
