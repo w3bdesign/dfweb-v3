@@ -51,7 +51,6 @@ describe("Navigation", () => {
 
   it("Logo eksisterer i navigasjon", () => {
     render(<Home />);
-    //const logo = screen.getByRole("img", { name: /dfweb logo/i });
     const logo = screen.queryByRole("img", { name: /dfweb logo/i });
     expect(logo).toBeInTheDocument();
   });

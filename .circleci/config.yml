@@ -21,4 +21,4 @@ jobs:
       - run:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
-    parallelism: 6
+    parallelism: 30
