@@ -1,9 +1,7 @@
 import Link from "next/link";
-import { gsap } from "gsap";
 
 import Image from "../UI/Image.component";
 import Hamburger from "./Hamburger.component";
-import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
 import LINKS from "../../utils/constants/LINKS";
 
