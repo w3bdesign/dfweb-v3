@@ -33,15 +33,15 @@ const Navbar = (): JSX.Element => (
             aria-label="Navigasjon"
             className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4"
           >
-            {LINKS.map((link) => (
-              <li key={link.id} className="mr-3">
+            {LINKS?.map((link) => (
+              <li key={link.id} className="link mr-3">
                 {link.external ? (
                   <Link href={link.url}>
                     <a
                       rel="noopener noreferrer"
                       aria-label={link.text}
                       target="_blank"
-                      className="inline-block text-xl text-white transition ease-in-out duration-300  border-b-4 border-transparent hover:border-white"
+                      className="navbar-link inline-block text-xl text-white "
                     >
                       {link.text}
                     </a>
@@ -50,7 +50,7 @@ const Navbar = (): JSX.Element => (
                   <Link href={link.url}>
                     <a
                       aria-label={link.text}
-                      className="inline-block text-xl text-white transition ease-in-out duration-300 border-b-4 border-transparent hover:border-white"
+                      className="navbar-link eds-top-navigation-item  inline-block text-xl text-white "
                     >
                       {link.text}
                     </a>
