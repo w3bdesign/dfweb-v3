@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-
 import ProsjektIndividualProjects from "./ProsjektIndividualProjects.component";
-import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
 export interface IProjectCategory extends IProject {
   categories: Array<string>;
@@ -40,8 +38,6 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
       setProsjekt(projects);
     }
   };
-
-  
 
   return (
     <main aria-label="Innhold portefølje" className="mt-32 bg-graybg">
