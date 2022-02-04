@@ -37,4 +37,20 @@ a {
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
+/* Navbar animations */
 
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+.navbar-link::after {
+ /* position: absolute;*/
+  content: "";
+  display: block;
+  bottom: -0.45rem;
+  height: 0.2575rem;
+  width: 0;
+  margin: 0 auto;
+  background: #fff;
+  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
