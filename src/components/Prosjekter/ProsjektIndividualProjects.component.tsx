@@ -1,15 +1,15 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 import Image from "../UI/Image.component";
+import Button from "../UI/Button.component";
 
 import { urlFor } from "../../lib/sanity";
 
-import Button from "../UI/Button.component";
-
 import type { IProject } from "./ProsjekterListings.component";
 
-
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 
 /**
  * Display individual portfolio projects if they match the filter passed down through props
@@ -18,7 +18,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
  */
 
 const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
-
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +26,7 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
     // Set things up
     gsap.set(boxes, { autoAlpha: 0, y: 50 });
 
-    boxes.forEach((box: any, i) => {
+    boxes.forEach((box: any, _i) => {
       // Set up your animation
       const anim = gsap.to(box, { duration: 1, autoAlpha: 1, y: 0, paused: true });
 
