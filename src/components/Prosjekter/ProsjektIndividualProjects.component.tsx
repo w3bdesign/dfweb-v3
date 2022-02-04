@@ -10,7 +10,6 @@ import type { IProject } from "./ProsjekterListings.component";
 
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
-
 /**
  * Display individual portfolio projects if they match the filter passed down through props
  *
@@ -18,6 +17,8 @@ import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
  */
 
 const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
+  // https://edidiongasikpo.com/using-gsap-scrolltrigger-plugin-in-react
+  // https://greensock.com/forums/topic/24427-scrolltrigger-fade-in-elements-on-scroll-by-toggleclass-only-once/
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +30,6 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
     boxes.forEach((box: any, _i) => {
       // Set up your animation
       const anim = gsap.to(box, { duration: 1, autoAlpha: 1, y: 0, paused: true });
-
       // Use callbacks to control the state of the animation
       ScrollTrigger.create({
         trigger: box,
