@@ -2,8 +2,7 @@ import { gsap } from "gsap";
 
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
-import { FaReact, FaVuejs, FaPhp } from "react-icons/fa";
-import { SiTypescript, SiWordpress } from "react-icons/si";
+import Icons from "./Icons.component";
 
 const Hero = (): JSX.Element => {
   // wait until DOM has been rendered
@@ -23,8 +22,7 @@ const Hero = (): JSX.Element => {
       aria-label="Kontainer for animasjoner av introtekst"
       id="main-hero"
       data-testid="main-hero"
-      className="flex flex-col justify-center text-lg invisible"
-    >
+      className="flex flex-col justify-center text-lg invisible">
       <div className="p-2 mt-10 mb-4 bg-white opacity-75 lg:mt-4 md:mt-4 xl:mt-4">
         <div className="text-black rounded">
           <section role="intro" aria-label="Introduksjonstekst">
@@ -41,13 +39,7 @@ const Hero = (): JSX.Element => {
               Jeg kan PHP, Wordpress, Javascript, Typescript, React, Vue, Docker, Photoshop og mye
               mer.
             </h2>
-            <span className="flex justify-center p-6">
-              <FaReact className="ikoner mr-6" title="React ikon" size="3em" />
-              <FaVuejs className="ikoner mr-6" title="Vue ikon" size="3em" />
-              <SiTypescript className="ikoner mr-6" title="Typescript ikon" size="3em" />
-              <SiWordpress className="ikoner mr-6" title="Wordpress ikon" size="3em" />
-              <FaPhp className="ikoner mr-6" title="PHP ikon" size="3em" />
-            </span>
+            <Icons />
           </section>
         </div>
       </div>
