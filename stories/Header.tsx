@@ -3,14 +3,7 @@ import React from "react";
 import { Button } from "./Button";
 import "./header.css";
 
-interface IHeaderProps {
-  user?: {};
-  onLogin: () => void;
-  onLogout: () => void;
-  onCreateAccount: () => void;
-}
-
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }: IHeaderProps) => (
+export const Header = ({ user, onLogin, onLogout, onCreateAccount }: any) => (
   <header>
     <div className="wrapper">
       <div>

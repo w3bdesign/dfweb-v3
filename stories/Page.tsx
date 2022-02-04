@@ -3,14 +3,7 @@ import React from "react";
 import { Header } from "./Header";
 import "./page.css";
 
-interface IPageProps {
-  user?: {};
-  onLogin: () => void;
-  onLogout: () => void;
-  onCreateAccount: () => void;
-}
-
-export const Page = ({ user, onLogin, onLogout, onCreateAccount }: IPageProps) => (
+export const Page = ({ user, onLogin, onLogout, onCreateAccount }: any) => (
   <article>
     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />
 
