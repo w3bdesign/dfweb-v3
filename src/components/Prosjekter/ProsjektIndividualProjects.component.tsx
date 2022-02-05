@@ -14,6 +14,12 @@ interface IOnEnter {
   progress: number;
 }
 
+interface ILinkButton {
+  url: string;
+  text: string;
+  name: string;
+}
+
 /**
  * Display individual portfolio projects if they match the filter passed down through props
  *
@@ -23,14 +29,18 @@ interface IOnEnter {
 const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
   // https://edidiongasikpo.com/using-gsap-scrolltrigger-plugin-in-react
   // https://greensock.com/forums/topic/24427-scrolltrigger-fade-in-elements-on-scroll-by-toggleclass-only-once/
+
+  const ShowLinkButton = ({ url, text, name }: ILinkButton): JSX.Element => (
+    <a rel="noopener noreferrer" target="_blank" aria-label={name} href={url}>
+      <Button>{text}</Button>
+    </a>
+  );
+
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     const boxes = gsap.utils.toArray("#projectdiv");
-
     // Set things up
     gsap.set(boxes, { autoAlpha: 0, y: 50 });
-
     boxes.forEach((box: any, _i: number) => {
       // Set up your animation
       const anim = gsap.to(box, { duration: 1, autoAlpha: 1, y: 0, paused: true });
@@ -78,16 +88,8 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
               </div>
               <div className="flex justify-center mt-4">
                 {/* Display only Github button if not empty  */}
-                {urlgithub && (
-                  <a rel="noopener noreferrer" target="_blank" aria-label={name} href={urlgithub}>
-                    <Button text="Github" />
-                  </a>
-                )}
-                {urlwww && (
-                  <a rel="noopener noreferrer" target="_blank" aria-label={name} href={urlwww}>
-                    <Button text="Besøk" />
-                  </a>
-                )}
+                {urlgithub && <ShowLinkButton url={urlgithub} text="Github" name={name} />}
+                {urlwww && <ShowLinkButton url={urlwww} text="Besøk" name={name} />}
               </div>
             </div>
           </div>

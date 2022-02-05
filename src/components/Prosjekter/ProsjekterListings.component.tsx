@@ -15,13 +15,13 @@ export type TStringOrEmpty = string | undefined;
 export interface IProjectInterface {
   _id: string;
   id: null | undefined | number;
-  name: TStringOrEmpty;
-  description: TStringOrEmpty;
-  subdescription: TStringOrEmpty;
-  urlgithub: TStringOrEmpty;
+  name: string;
+  description: string;
+  subdescription: string;
+  urlgithub: string;
   urlwww: TStringOrEmpty;
-  category: TStringOrEmpty;
-  projectimage: TStringOrEmpty;
+  category: string;
+  projectimage: string;
 }
 
 export interface IChangeEvent {
