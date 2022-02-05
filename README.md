@@ -1,4 +1,3 @@
-[![DeepScan grade](https://deepscan.io/api/teams/11080/projects/19508/branches/508468/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=11080&pid=19508&bid=508468)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/129bf1165c3a455fadb43ddf5f67e1bd)](https://www.codacy.com/gh/w3bdesign/dfweb-v3/dashboard?utm_source=github.com&utm_medium=referral&utm_content=w3bdesign/dfweb-v3&utm_campaign=Badge_Grade)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/w3bdesign/dfweb-v3.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/w3bdesign/dfweb-v3/context:javascript)
 [![codecov](https://codecov.io/gh/w3bdesign/dfweb-v3/branch/master/graph/badge.svg?token=VML3KNGO0N)](https://codecov.io/gh/w3bdesign/dfweb-v3)
