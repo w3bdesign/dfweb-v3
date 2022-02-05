@@ -1,0 +1,51 @@
+/* Global font */
+body {
+    font-family: Lato, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  /* Custom styling for main hero image */
+  #main-hero {
+    background-image: url("../assets/images/blue-hero.jpg");
+    height: 450px;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Hero animations */
+  
+  .text-reveal {
+    transition: all 1.5s;
+    transform: translateY(-3em);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  
+  .icon-reveal {
+    transition: all 1.5s;
+    transform: translateX(4em);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  
+  /* Navbar animations */
+  
+  .navbar-link::after {
+    content: "";
+    display: block;
+    bottom: -0.45rem;
+    height: 0.2575rem;
+    width: 0;
+    margin: 0 auto;
+    background: #fff;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .navbar-link:hover::after {
+    width: 100%;
+  }
