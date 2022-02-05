@@ -41,16 +41,13 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
     const boxes = gsap.utils.toArray("#projectdiv");
 
     boxes.forEach((box: any, _i: number) => {
-      // Set up your animation
       const anim = gsap.from(box, { duration: 0.5, autoAlpha: 0, y: 50, paused: true });
-      // Use callbacks to control the state of the animation
+
       ScrollTrigger.create({
         trigger: box,
         end: "bottom bottom",
         once: true,
         onEnter: (self: IOnEnter) => {
-          // If it's scrolled past, set the state
-          // If it's scrolled to, play it
           if (self.progress === 1) {
             anim.progress(1);
           } else {
