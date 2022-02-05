@@ -31,13 +31,13 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Display CV with React-PDF
 -   Responsive design
 
-### Animations:
+### Animations
 
 -   Animations with GSAP 3 and ScrollPlugin for the majority of animations
 -   CSS hover animations in navigation menu
 -   GSAP and ScrollPlugin for revealing content on portfolio (projects)
 
-### Accessibility and design:
+### Accessibility and design
 
 -   WCAG accessibility tested
 -   Fully responsive design tested on all devices
@@ -46,7 +46,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Tailwind CSS for styling
 -   Google fonts with Lato (optimized for Next.js)
 
-### Code quality:
+### Code quality
 
 -   Continuous Integration with CircleCI
 -   Code quality analysis with Codacy, Sonarcloud, Codefactor, LGTM and Codeclimate 
