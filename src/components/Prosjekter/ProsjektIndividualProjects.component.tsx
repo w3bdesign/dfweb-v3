@@ -10,6 +10,10 @@ import type { IProject } from "./ProsjekterListings.component";
 
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
+interface IOnEnter {
+  progress: number;
+}
+
 /**
  * Display individual portfolio projects if they match the filter passed down through props
  *
@@ -27,7 +31,7 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
     // Set things up
     gsap.set(boxes, { autoAlpha: 0, y: 50 });
 
-    boxes.forEach((box: any, _i) => {
+    boxes.forEach((box: any, _i: number) => {
       // Set up your animation
       const anim = gsap.to(box, { duration: 1, autoAlpha: 1, y: 0, paused: true });
       // Use callbacks to control the state of the animation
@@ -35,7 +39,7 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
         trigger: box,
         end: "bottom bottom",
         once: true,
-        onEnter: (self) => {
+        onEnter: (self: IOnEnter) => {
           // If it's scrolled past, set the state
           // If it's scrolled to, play it
           if (self.progress === 1) {
