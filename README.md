@@ -24,7 +24,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Next.js with Typescript as main project dependency
 -   Sanity.io for fetching project information and frontpage text
 -   Storybook for component documentation
--   Animations with GSAP
+-   Animations with GSAP 3
 -   Jest for unit testing
 -   Cypress for E2E testing
 -   Filter project display
