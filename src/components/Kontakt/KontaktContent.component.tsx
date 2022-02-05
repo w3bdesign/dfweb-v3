@@ -1,4 +1,4 @@
-import { useState, useRef, MutableRefObject } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 import Button from "../UI/Button.component";
@@ -7,11 +7,9 @@ interface IEvent {
   preventDefault: () => void;
 }
 
-type TString = string;
-
 const KontaktContent = (): JSX.Element => {
-  const formRef = useRef() as MutableRefObject<HTMLFormElement>;
-  const [serverResponse, setServerResponse] = useState<TString>("");
+  const formRef = useRef<HTMLFormElement>(null);
+  const [serverResponse, setServerResponse] = useState<string>("");
 
   const handleSubmit = (event: IEvent) => {
     const EMAIL_API_KEY = process.env.NEXT_PUBLIC_EMAIL_API_KEY || "changeme";
@@ -19,6 +17,7 @@ const KontaktContent = (): JSX.Element => {
     const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY || "changeme";
 
     event.preventDefault();
+    if (!formRef.current) return;
 
     emailjs.init(EMAIL_API_KEY);
 
@@ -42,7 +41,6 @@ const KontaktContent = (): JSX.Element => {
                 {serverResponse && (
                   <h3 className="m-12 text-3xl text-center text-green">{serverResponse}</h3>
                 )}
-
                 {!serverResponse && (
                   <>
                     <h1 className="m-2 text-3xl text-center text-black">Kontakt</h1>
