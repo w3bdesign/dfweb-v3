@@ -56,7 +56,7 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
         }
       });
     });
-  }, []);
+  }, []); 
   return (
     <>
       {projects.map(
