@@ -5,9 +5,7 @@
 import React from "react";
 
 import { render, screen } from "@testing-library/react";
-import Image from "../src/components/UI/Image.component";
-
-import { isMobileConnection } from "../src/components/UI/Image.component";
+import Image, { isMobileConnection } from "../src/components/UI/Image.component";
 
 // Debug: //console.log(prettyDOM(JestImage));
 
