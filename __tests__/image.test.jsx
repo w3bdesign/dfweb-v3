@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 
 import { render, screen } from "@testing-library/react";
 import Image from "../src/components/UI/Image.component";
@@ -17,7 +17,7 @@ describe("Mobile menu", () => {
 
   it("Expect mock", () => {
     const isMobileConnection = jest.fn();
-    //useEffect.mock.calls[0]();
+
     jest.mock("React", () => ({
       ...jest.requireActual("React"),
       useEffect: jest.fn()
@@ -25,7 +25,6 @@ describe("Mobile menu", () => {
 
     render(<Image alt="Jest" src="/blue-hero.jpg" width="100" height="100" />);
 
-    //expect(isMobileConnection.mock.calls.length).toBe(1);
     expect(isMobileConnection.mock.calls.length).toBe(0);
   });
 });
