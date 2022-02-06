@@ -36,7 +36,7 @@ const Image = (props: ImageProps) => {
   return <NextImage loading={loading} {...props} />;
 };
 
-const isMobileConnection = () => {
+export const isMobileConnection = () => {
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   return (
     connection?.type === "cellular" ||

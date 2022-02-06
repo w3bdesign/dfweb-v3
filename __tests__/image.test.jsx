@@ -5,7 +5,8 @@
 import React from "react";
 
 import { render, screen } from "@testing-library/react";
-import Image from "../src/components/UI/Image.component";
+import Image, { isMobileConnection } from "../src/components/UI/Image.component";
+
 // Debug: //console.log(prettyDOM(JestImage));
 
 describe("Mobile menu", () => {
@@ -16,15 +17,9 @@ describe("Mobile menu", () => {
   });
 
   it("Expect mock", () => {
-    const isMobileConnection = jest.fn();
-
-    /*jest.mock("React", () => ({
-      ...jest.requireActual("React"),
-      useEffect: jest.fn()
-    }));*/
-
+    const mock = jest.fn(isMobileConnection).mockResolvedValue(true);
     render(<Image alt="Jest" src="/blue-hero.jpg" width="100" height="100" />);
-
-    expect(isMobileConnection.mock.calls.length).toBe(0);
+    expect(mock).toBeTruthy();
+    mock.mockRestore();
   });
 });
