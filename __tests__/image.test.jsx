@@ -18,11 +18,6 @@ describe("Mobile menu", () => {
   it("Expect mock", () => {
     const isMobileConnection = jest.fn();
 
-    /*jest.mock("React", () => ({
-      ...jest.requireActual("React"),
-      useEffect: jest.fn()
-    }));*/
-
     render(<Image alt="Jest" src="/blue-hero.jpg" width="100" height="100" />);
 
     expect(isMobileConnection.mock.calls.length).toBe(0);
