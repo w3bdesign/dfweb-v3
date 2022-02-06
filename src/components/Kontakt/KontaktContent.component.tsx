@@ -20,7 +20,6 @@ const KontaktContent = (): JSX.Element => {
     if (!formRef.current) return;
 
     emailjs.init(EMAIL_API_KEY);
-
     emailjs.sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
       () => {
         setServerResponse("Takk for din beskjed");
