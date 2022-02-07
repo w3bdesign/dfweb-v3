@@ -17,7 +17,7 @@ interface ILinkButton {
  * @param {Object} projects The portfolio project data to display, contains name, image etc
  */
 
-const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
+const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {
   const ShowLinkButton = ({ url, text, name }: ILinkButton): JSX.Element => (
     <a rel="noopener noreferrer" target="_blank" aria-label={name} href={url}>
       <Button text={text} />
@@ -60,4 +60,4 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
   );
 };
 
-export default ProsjektIndividualProjects;
+export default ProsjekterSingleProject;
