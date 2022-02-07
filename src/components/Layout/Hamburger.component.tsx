@@ -54,8 +54,8 @@ const Hamburger = (): JSX.Element => {
     };
   }, [isExpanded]);
 
-  const handleClickOutside = (e: { target: any }) => {
-    if (node.current?.contains(e.target)) {
+  const handleClickOutside = (e: MouseEvent): void => {
+    if (node.current?.contains(e.target as Node)) {
       /**
        * Clicked inside of the menu
        */
@@ -85,8 +85,7 @@ const Hamburger = (): JSX.Element => {
         data-testid="hamburger"
         onClick={handleMobileMenuClick}
         aria-expanded={isExpanded}
-        type="button"
-      >
+        type="button">
         <span className="sr-only text-white text-2xl">Hamburger</span>
         <span
           className={`${hamburgerLine} ${
@@ -109,14 +108,12 @@ const Hamburger = (): JSX.Element => {
         id="mobile-menu"
         data-testid="mobile-menu"
         aria-hidden={!isExpanded}
-        className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30 invisible"
-      >
+        className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30 invisible">
         <ul aria-label="Navigasjon">
           {LINKS.map((link) => (
             <li
               key={link.id}
-              className="menu-item w-full border-t border-gray-600 border-solid shadow"
-            >
+              className="menu-item w-full border-t border-gray-600 border-solid shadow">
               {link.external ? (
                 <a
                   className="inline-block m-4 text-xl text-white hover:underline"
@@ -124,8 +121,7 @@ const Hamburger = (): JSX.Element => {
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  data-testid={`mobil-${link.text}`}
-                >
+                  data-testid={`mobil-${link.text}`}>
                   {link.text}
                 </a>
               ) : (
