@@ -49,7 +49,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 ### Code quality
 
 -   Continuous Integration with CircleCI
--   Code quality analysis with Codacy, Sonarcloud, Codefactor, LGTM and Codeclimate 
+-   Code quality analysis with Codacy, Sonarcloud, Deepscan, Codefactor, LGTM and Codeclimate 
 -   E2E testing with Cypress
 -   Unit testing with Jest and React-Testing-Library
 -   Test coverage setup with Codecov
