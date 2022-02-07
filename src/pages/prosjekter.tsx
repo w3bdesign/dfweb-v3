@@ -26,8 +26,8 @@ const Prosjekter: NextPage = ({
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projects = await getClient({}).fetch(projectQuery);
-  const categories = await getClient({}).fetch(categoryQuery);
+  const projects = await getClient(false).fetch(projectQuery);
+  const categories = await getClient(false).fetch(categoryQuery);
 
   return {
     props: {
