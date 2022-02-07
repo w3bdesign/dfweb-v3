@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import ProsjektIndividualProjects from "./ProsjektIndividualProjects.component";
+import ProsjektIndividualProjects from "./ProsjekterSingleProject.component";
 
 export interface IProjectCategory extends IProject {
   categories: Array<string>;
