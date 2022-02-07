@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Button from "../../src/components/UI/Button.component";
 
 interface IButtonProps {
-  args?: JSX.IntrinsicAttributes;
+  //args?: JSX.IntrinsicAttributes;
   text?: string | undefined;
   children?: ReactNode | JSX.Element;
   onClick?: MouseEventHandler<HTMLButtonElement>;
@@ -18,7 +18,9 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args: IButtonProps) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = ({ text, onClick }: IButtonProps) => (
+  <Button text={text} onClick={onClick} />
+);
 
 export const Primary = Template;
 
