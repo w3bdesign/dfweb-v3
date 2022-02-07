@@ -48,7 +48,7 @@ export const isMobileConnection = (): boolean => {
 };
 
 const defer = (callback: IdleRequestCallback) => {
-  let handle: number = 0;
+  let handle = 0;
   // Check if we can use requestIdleCallback
   if (window.requestIdleCallback) {
     handle = window.requestIdleCallback(callback);
