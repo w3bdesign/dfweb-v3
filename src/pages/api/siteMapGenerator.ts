@@ -1,5 +1,5 @@
-const { SitemapStream, streamToPromise } = require("sitemap");
-const { Readable } = require("stream");
+import { SitemapStream, streamToPromise } from "sitemap";
+import { Readable } from "stream";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
