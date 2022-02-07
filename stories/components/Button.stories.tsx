@@ -17,5 +17,6 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Primary = Template;
 
 Primary.args = {
-  text: "Test"
+  text: "",
+  children: <h1>Button</h1>
 };
