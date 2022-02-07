@@ -25,7 +25,7 @@ const Hero = (): JSX.Element => {
       className="flex flex-col justify-center text-lg invisible">
       <div className="p-2 mt-10 mb-4 bg-white opacity-75 lg:mt-4 md:mt-4 xl:mt-4">
         <div className="text-black rounded">
-          <section role="heading" aria-label="Introduksjonstekst">
+          <section role="heading" aria-label="Introduksjonstekst" aria-level={2}>
             <div className="text-center">
               <span className="introtekst text-5xl inline-block invisible">H</span>
               <span className="introtekst text-5xl inline-block invisible ">e</span>
