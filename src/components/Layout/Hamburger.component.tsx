@@ -36,7 +36,7 @@ const Hamburger = (): JSX.Element => {
     setisExpanded(false);
   };
 
-  const handleMobileMenuClick = () => {
+  const handleMobileMenuClick = (): void => {
     /**
      * Anti-pattern: setisExpanded(!isExpanded)
      * Even if your state updates are batched and multiple updates to the enabled/disabled state are made together
