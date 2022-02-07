@@ -39,7 +39,7 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const boxes = gsap.utils.toArray("#projectdiv");
-    boxes.forEach((box: any, _i: number) => {
+    boxes.forEach((box: HTMLDivElement, _i: number) => {
       const anim = gsap.from(box, { duration: 0.5, autoAlpha: 0, y: 50, paused: true });
       ScrollTrigger.create({
         trigger: box,
@@ -62,8 +62,7 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
           <div
             id="projectdiv"
             key={id}
-            className="p-6 text-lg text-black  bg-white rounded shadow invisible"
-          >
+            className="p-6 text-lg text-black  bg-white rounded shadow invisible">
             <h2 className="text-xl font-black text-center">{name}</h2>
             <div className="mt-6 text-lg text-left lg:text-left md:text-left">
               <p>{description}</p>
