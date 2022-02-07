@@ -19,7 +19,7 @@ export const usePreviewSubscription = createPreviewSubscriptionHook(config);
 
 const serializers = {
   types: {
-    p: (props: any) => <pre>brrr span</pre>
+    p: () => <pre>brrr span</pre>
   }
 };
 
