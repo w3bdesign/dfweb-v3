@@ -1,4 +1,4 @@
-import { gsap } from "gsap";
+import { gsap, TweenTarget } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import Image from "../UI/Image.component";
@@ -39,7 +39,7 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const boxes = gsap.utils.toArray("#projectdiv");
-    boxes.forEach((box: HTMLDivElement | unknown, _i: number) => {
+    boxes.forEach((box: TweenTarget, _i: number) => {
       const anim = gsap.from(box, { duration: 0.5, autoAlpha: 0, y: 50, paused: true });
       ScrollTrigger.create({
         trigger: box,
