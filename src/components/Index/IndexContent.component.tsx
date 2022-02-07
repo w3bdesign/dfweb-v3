@@ -13,7 +13,7 @@ import Hero from "./Hero.component";
 interface IContent {
   _id: Key | null;
   title: string;
-  text: Record<string, unknown>;
+  text: Array<object>;
   // text: [object];
 }
 
