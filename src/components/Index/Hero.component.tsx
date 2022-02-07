@@ -22,11 +22,10 @@ const Hero = (): JSX.Element => {
       aria-label="Kontainer for animasjoner av introtekst"
       id="main-hero"
       data-testid="main-hero"
-      className="flex flex-col justify-center text-lg invisible"
-    >
+      className="flex flex-col justify-center text-lg invisible">
       <div className="p-2 mt-10 mb-4 bg-white opacity-75 lg:mt-4 md:mt-4 xl:mt-4">
         <div className="text-black rounded">
-          <section role="intro" aria-label="Introduksjonstekst">
+          <section role="heading" aria-label="Introduksjonstekst">
             <div className="text-center">
               <span className="introtekst text-5xl inline-block invisible">H</span>
               <span className="introtekst text-5xl inline-block invisible ">e</span>
