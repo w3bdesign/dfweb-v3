@@ -32,7 +32,7 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
 
   const ShowLinkButton = ({ url, text, name }: ILinkButton): JSX.Element => (
     <a rel="noopener noreferrer" target="_blank" aria-label={name} href={url}>
-      <Button>{text}</Button>
+      <Button text={text} />
     </a>
   );
 
