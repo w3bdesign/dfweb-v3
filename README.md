@@ -4,7 +4,6 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_dfweb-v3&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3bdesign_dfweb-v3)
 [![CodeFactor](https://www.codefactor.io/repository/github/w3bdesign/dfweb-v3/badge)](https://www.codefactor.io/repository/github/w3bdesign/dfweb-v3)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ffcd837a61db13b9630e/maintainability)](https://codeclimate.com/github/w3bdesign/dfweb-v3/maintainability)
-[![DeepSource](https://deepsource.io/gh/w3bdesign/dfweb-v3.svg/?label=active+issues&show_trend=true&token=xU1k2KJL7peEGSzJkuYYEuw5)](https://deepsource.io/gh/w3bdesign/dfweb-v3/)
 
 # Dfweb Version 3
 
