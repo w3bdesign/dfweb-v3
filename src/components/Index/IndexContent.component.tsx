@@ -13,8 +13,8 @@ import Hero from "./Hero.component";
 interface IContent {
   _id: Key | null;
   title: string;
- text: [string];
- // text: [object];
+  text: object[];
+  // text: [object];
 }
 
 interface ISerializerCode {
@@ -38,8 +38,7 @@ const IndexContent = ({ post }: TData): JSX.Element => (
             key={content._id}
             role="contentinfo"
             aria-label={content.title}
-            data-testid="sanity-section"
-          >
+            data-testid="sanity-section">
             <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow min-h-full">
               <h2 className="text-3xl text-center">{content.title}</h2>
               <PortableText
