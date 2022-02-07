@@ -3,7 +3,7 @@ import type { ReactNode, MouseEventHandler } from "react";
 type TProps = {
   text?: string;
   children?: ReactNode;
-  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
 /**
