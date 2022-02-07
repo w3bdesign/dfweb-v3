@@ -1,13 +1,13 @@
-import React from "react";
+import React, { ReactNode, MouseEventHandler } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Button from "../../src/components/UI/Button.component";
 
 interface IButtonProps {
-  args: JSX.IntrinsicAttributes;
+  args?: JSX.IntrinsicAttributes;
   text?: string | undefined;
-  children?: React.ReactNode;
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  children?: ReactNode | JSX.Element;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
