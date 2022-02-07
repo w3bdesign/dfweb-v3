@@ -7,7 +7,7 @@ interface IKontaktFormProps {
   handleSubmit: any;
 }
 
-const KontaktForm = forwardRef(({ handleSubmit, formRef }: IKontaktFormProps) => (
+const Kontakt = ({ handleSubmit, formRef }: IKontaktFormProps) => (
   <>
     <h1 className="m-2 text-3xl text-center text-black">Kontakt</h1>
     <form
@@ -62,6 +62,10 @@ const KontaktForm = forwardRef(({ handleSubmit, formRef }: IKontaktFormProps) =>
       <Button>Send skjema</Button>
     </form>
   </>
-));
+);
+
+//export default KontaktForm;
+
+const KontaktForm = forwardRef(Kontakt);
 
 export default KontaktForm;
