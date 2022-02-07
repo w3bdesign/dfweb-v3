@@ -1,17 +1,10 @@
 const { SitemapStream, streamToPromise } = require("sitemap");
 const { Readable } = require("stream");
 
+import type { NextApiRequest, NextApiResponse } from "next";
+
 interface IData {
   toString: () => string;
-}
-
-interface IReq {
-  headers: { host: any };
-}
-
-interface IRes {
-  writeHead: (arg0: number, arg1: { "Content-Type": string }) => void;
-  end: (arg0: any) => void;
 }
 
 interface ILinks {
@@ -20,7 +13,7 @@ interface ILinks {
   priority: number;
 }
 
-const siteMapGenerator = async (req: IReq, res: IRes) => {
+const siteMapGenerator = async (req: NextApiRequest, res: NextApiResponse) => {
   // An array with your links
 
   const links: ILinks[] = [
