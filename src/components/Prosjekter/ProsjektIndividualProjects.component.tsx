@@ -1,18 +1,9 @@
-import { gsap, TweenTarget } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
 import Image from "../UI/Image.component";
 import Button from "../UI/Button.component";
 
 import { urlFor } from "../../lib/sanity";
 
 import type { IProject } from "./ProsjekterListings.component";
-
-import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
-
-interface IOnEnter {
-  progress: number;
-}
 
 interface ILinkButton {
   url: string;
@@ -27,34 +18,12 @@ interface ILinkButton {
  */
 
 const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
-  // https://edidiongasikpo.com/using-gsap-scrolltrigger-plugin-in-react
-  // https://greensock.com/forums/topic/24427-scrolltrigger-fade-in-elements-on-scroll-by-toggleclass-only-once/
-
   const ShowLinkButton = ({ url, text, name }: ILinkButton): JSX.Element => (
     <a rel="noopener noreferrer" target="_blank" aria-label={name} href={url}>
       <Button text={text} />
     </a>
   );
 
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const boxes = gsap.utils.toArray("#projectdiv");
-    boxes.forEach((box: TweenTarget, _i: number) => {
-      const anim = gsap.from(box, { duration: 0.5, autoAlpha: 0, y: 50, paused: true });
-      ScrollTrigger.create({
-        trigger: box,
-        end: "bottom bottom",
-        once: true,
-        onEnter: (self: IOnEnter) => {
-          if (self.progress === 1) {
-            anim.progress(1);
-          } else {
-            anim.play();
-          }
-        }
-      });
-    });
-  }, []);
   return (
     <>
       {projects.map(
