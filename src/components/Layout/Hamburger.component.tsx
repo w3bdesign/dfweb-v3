@@ -129,7 +129,7 @@ const Hamburger = (): JSX.Element => {
                   {link.text}
                 </a>
               ) : (
-                <Link data-testid={`mobil-${link.text}`} href={link.url}>
+                <Link data-testid={`mobil-${link.text}`} href={link.url} passHref>
                   <a className="inline-block m-4 text-xl text-white hover:underline">{link.text}</a>
                 </Link>
               )}
