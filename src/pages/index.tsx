@@ -15,9 +15,9 @@ const indexQuery = groq`
 *[_type == 'sitecontent' && pagename match 'Index']
 `;
 
-const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => (
+const Home: NextPage = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Forside - Portefølje - Dfweb">
-    <IndexContent {...data} />
+    <IndexContent post={post} />
   </Layout>
 );
 
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      data: { post }
+      post
     }
   };
 };
