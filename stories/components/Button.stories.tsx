@@ -6,7 +6,8 @@ import Button from "../../src/components/UI/Button.component";
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/Button",
-  component: Button
+  component: Button,
+  argTypes: { onClick: { action: "onClick" } }
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
