@@ -22,6 +22,29 @@ const Hamburger = (): JSX.Element => {
 
   const timeline: ITimeline = useRef(null);
 
+  const handleClickOutside = (e: MouseEvent): void => {
+    if (node.current?.contains(e.target as Node)) {
+      /**
+       * Clicked inside of the menu
+       */
+      return;
+    }
+    /**
+     * Clicked outside of the menu
+     */
+
+    setisExpanded(false);
+  };
+
+  const handleMobileMenuClick = () => {
+    /**
+     * Anti-pattern: setisExpanded(!isExpanded)
+     * Even if your state updates are batched and multiple updates to the enabled/disabled state are made together
+     * each update will rely on the correct previous state so that you always end up with the result you expect.
+     */
+    setisExpanded((prevExpanded) => !prevExpanded);
+  };
+
   useIsomorphicLayoutEffect(() => {
     timeline.current = gsap
       .timeline({
@@ -54,29 +77,6 @@ const Hamburger = (): JSX.Element => {
     };
   }, [isExpanded]);
 
-  const handleClickOutside = (e: MouseEvent): void => {
-    if (node.current?.contains(e.target as Node)) {
-      /**
-       * Clicked inside of the menu
-       */
-      return;
-    }
-    /**
-     * Clicked outside of the menu
-     */
-
-    setisExpanded(false);
-  };
-
-  const handleMobileMenuClick = () => {
-    /**
-     * Anti-pattern: setisExpanded(!isExpanded)
-     * Even if your state updates are batched and multiple updates to the enabled/disabled state are made together
-     * each update will rely on the correct previous state so that you always end up with the result you expect.
-     */
-    setisExpanded((prevExpanded) => !prevExpanded);
-  };
-
   return (
     <div ref={node} className="z-50 md:hidden lg:hidden xl:hidden">
       <button
@@ -85,8 +85,7 @@ const Hamburger = (): JSX.Element => {
         data-testid="hamburger"
         onClick={handleMobileMenuClick}
         aria-expanded={isExpanded}
-        type="button"
-      >
+        type="button">
         <span className="sr-only text-white text-2xl">Hamburger</span>
         <span
           className={`${hamburgerLine} ${
@@ -109,14 +108,12 @@ const Hamburger = (): JSX.Element => {
         id="mobile-menu"
         data-testid="mobile-menu"
         aria-hidden={!isExpanded}
-        className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30 invisible"
-      >
+        className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30 invisible">
         <ul aria-label="Navigasjon">
           {LINKS.map((link) => (
             <li
               key={link.id}
-              className="menu-item w-full border-t border-gray-600 border-solid shadow"
-            >
+              className="menu-item w-full border-t border-gray-600 border-solid shadow">
               {link.external ? (
                 <a
                   className="inline-block m-4 text-xl text-white hover:underline"
@@ -124,8 +121,7 @@ const Hamburger = (): JSX.Element => {
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  data-testid={`mobil-${link.text}`}
-                >
+                  data-testid={`mobil-${link.text}`}>
                   {link.text}
                 </a>
               ) : (
