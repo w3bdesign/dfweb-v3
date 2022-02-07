@@ -16,22 +16,22 @@ const KontaktContent = (): JSX.Element => {
     const TEMPLATE_KEY = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY || "changeme";
     const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY || "changeme";
 
-    console.log("Form submit!")
+    
 
     event.preventDefault();
 
-    console.log(formRef.current)
+    
     
     if (!formRef.current) return;
 
-    console.log("Sender epost ...")
+    
 
 
 
 
     emailjs.init(EMAIL_API_KEY);
 
-    console.log(EMAIL_API_KEY)
+    
 
     emailjs.sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
       () => {
