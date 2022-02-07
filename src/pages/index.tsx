@@ -22,7 +22,7 @@ const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const post = await getClient({}).fetch(indexQuery);
+  const post = await getClient(false).fetch(indexQuery);
 
   return {
     props: {
