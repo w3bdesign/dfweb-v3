@@ -14,7 +14,6 @@ interface IContent {
   _id: Key | null;
   title: string;
   text: IText[];
-  // text: [object];
 }
 
 interface IChild {
@@ -28,7 +27,7 @@ interface IText {
   _key: string;
   _type: string;
   children: IChild[];
-  markDefs: any[];
+  markDefs: string[];
   style: string;
 }
 
@@ -56,7 +55,6 @@ const IndexContent = ({ post }: TData): JSX.Element => (
             data-testid="sanity-section">
             <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow min-h-full">
               <h2 className="text-3xl text-center">{content.title}</h2>
-              <pre>{JSON.stringify(content.text)}</pre>
               <PortableText
                 className="text-xl"
                 content={content.text}
