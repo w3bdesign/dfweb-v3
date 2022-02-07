@@ -3,19 +3,14 @@ import { forwardRef } from "react";
 import Button from "../UI/Button.component";
 
 interface IKontaktFormProps {
-  formRef: any;
+  formRef?: any;
   handleSubmit: any;
 }
 
-const KontaktForm = forwardRef(({ handleSubmit, formRef }: IKontaktFormProps) => (
+const KontaktForm = forwardRef(({ handleSubmit }: IKontaktFormProps, formRef: any) => (
   <>
     <h1 className="m-2 text-3xl text-center text-black">Kontakt</h1>
-    <form
-      className="text-center"
-      ref={formRef}
-      onSubmit={handleSubmit}
-      method="POST"
-      action="/api/form">
+    <form className="text-center" ref={formRef} onSubmit={handleSubmit} method="POST">
       <fieldset>
         <legend className="container m-4 mx-auto text-xl text-center w-full">
           Vennligst fyll ut kontaktskjemaet:{" "}
