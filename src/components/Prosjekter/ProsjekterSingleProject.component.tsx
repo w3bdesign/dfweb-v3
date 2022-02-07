@@ -35,7 +35,6 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {
               <p className="mt-6 text-left md:text-left lg:text-left">
                 Teknologier: {subdescription}
               </p>
-
               <div className="flex justify-center mt-6">
                 {projectimage && (
                   <Image
