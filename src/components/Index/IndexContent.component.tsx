@@ -13,8 +13,23 @@ import Hero from "./Hero.component";
 interface IContent {
   _id: Key | null;
   title: string;
-  text: Array<object>;
+  text: IText[];
   // text: [object];
+}
+
+interface IChild {
+  _key: string;
+  _type: string;
+  marks: string[];
+  text: string;
+}
+
+interface IText {
+  _key: string;
+  _type: string;
+  children: IChild[];
+  markDefs: any[];
+  style: string;
 }
 
 interface ISerializerCode {
@@ -41,6 +56,7 @@ const IndexContent = ({ post }: TData): JSX.Element => (
             data-testid="sanity-section">
             <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow min-h-full">
               <h2 className="text-3xl text-center">{content.title}</h2>
+              <pre>{JSON.stringify(content.text)}</pre>
               <PortableText
                 className="text-xl"
                 content={content.text}
