@@ -28,10 +28,7 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
     <>
       {projects.map(
         ({ id, name, description, subdescription, urlwww, urlgithub, projectimage }) => (
-          <div
-            id="projectdiv"
-            key={id}
-            className="p-6 text-lg text-black  bg-white rounded shadow">
+          <div id="projectdiv" key={id} className="p-6 text-lg text-black  bg-white rounded shadow">
             <h2 className="text-xl font-black text-center">{name}</h2>
             <div className="mt-6 text-lg text-left lg:text-left md:text-left">
               <p>{description}</p>
