@@ -13,7 +13,8 @@ import Hero from "./Hero.component";
 interface IContent {
   _id: Key | null;
   title: string;
-  text: [object];
+ text: [string];
+ // text: [object];
 }
 
 interface ISerializerCode {
