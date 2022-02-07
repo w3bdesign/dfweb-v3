@@ -17,7 +17,7 @@ const Image = (props: ImageProps) => {
     }
 
     if (!isMobileConnection()) {
-      let clearDefer: { (): void; (): void };
+      let clearDefer: { (): void; (): void } | undefined = undefined;
       // Set loading to eager if all resources of document are loaded, but defer it a bit
       const onLoad = () => {
         clearDefer = defer(() => setLoading("eager"));
@@ -48,7 +48,7 @@ export const isMobileConnection = (): boolean => {
 };
 
 const defer = (callback: IdleRequestCallback) => {
-  let handle: number;
+  let handle = 0;
   // Check if we can use requestIdleCallback
   if (window.requestIdleCallback) {
     handle = window.requestIdleCallback(callback);
