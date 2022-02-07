@@ -17,7 +17,7 @@ interface ILinkButton {
  * @param {Object} projects The portfolio project data to display, contains name, image etc
  */
 
-const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
+const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {
   const ShowLinkButton = ({ url, text, name }: ILinkButton): JSX.Element => (
     <a rel="noopener noreferrer" target="_blank" aria-label={name} href={url}>
       <Button text={text} />
@@ -28,10 +28,7 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
     <>
       {projects.map(
         ({ id, name, description, subdescription, urlwww, urlgithub, projectimage }) => (
-          <div
-            id="projectdiv"
-            key={id}
-            className="p-6 text-lg text-black  bg-white rounded shadow">
+          <div id="projectdiv" key={id} className="p-6 text-lg text-black  bg-white rounded shadow">
             <h2 className="text-xl font-black text-center">{name}</h2>
             <div className="mt-6 text-lg text-left lg:text-left md:text-left">
               <p>{description}</p>
@@ -63,4 +60,4 @@ const ProsjektIndividualProjects = ({ projects }: IProject): JSX.Element => {
   );
 };
 
-export default ProsjektIndividualProjects;
+export default ProsjekterSingleProject;

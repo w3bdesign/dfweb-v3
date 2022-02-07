@@ -48,7 +48,8 @@ const KontaktContent = (): JSX.Element => {
                       ref={formRef}
                       onSubmit={handleSubmit}
                       method="POST"
-                      action="/api/form">
+                      action="/api/form"
+                    >
                       <fieldset>
                         <legend className="container m-4 mx-auto text-xl text-center w-full">
                           Vennligst fyll ut kontaktskjemaet:{" "}
