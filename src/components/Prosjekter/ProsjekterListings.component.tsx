@@ -59,8 +59,8 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
                 <option label="" value="">
                   Ingen filtrering
                 </option>
-                {categories?.map((category: string, id: number) => (
-                  <option key={id} value={category}>
+                {categories?.map((category: string) => (
+                  <option key={category} value={category}>
                     {category}
                   </option>
                 ))}
