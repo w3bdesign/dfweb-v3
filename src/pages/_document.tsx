@@ -6,10 +6,36 @@ class MyDocument extends Document {
     return { ...initialProps };
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="nb">
-        <Head />
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+            rel="stylesheet"
+          />
+
+          <link rel="icon" href="/logo.png" />
+          <link rel="apple-touch-icon" href="/logo.png" />
+
+          <meta property="og:title" content="Daniel Fjeldstad" />
+          <meta name="author" content="Daniel Fjeldstad" />
+          <meta property="og:locale" content="nb_NO" />
+          <meta
+            name="description"
+            content="Daniel Fjeldstad | Frontend Web Utvikler | Portefølje"
+          />
+          <meta
+            property="og:description"
+            content="Daniel Fjeldstad | Frontend Web Utvikler | Portefølje"
+          />
+
+          <meta property="og:url" content="https://www.dfweb.no/" />
+          <meta property="og:site_name" content="dfweb" />
+        </Head>
+
         <body>
           <Main />
           <NextScript />
