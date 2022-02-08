@@ -33,7 +33,7 @@ const Navbar = (): JSX.Element => (
             className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4">
             {LINKS?.map((link) => (
               <li key={link.id} className="link mr-3">
-                {link.external && (
+                {link.external ? (
                   <Link href={link.url} passHref>
                     <a
                       rel="noopener noreferrer"
@@ -43,8 +43,7 @@ const Navbar = (): JSX.Element => (
                       {link.text}
                     </a>
                   </Link>
-                )}
-                {!link.external && (
+                ) : (
                   <Link href={link.url} passHref>
                     <a
                       aria-label={link.text}
