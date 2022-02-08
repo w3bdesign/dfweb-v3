@@ -13,7 +13,7 @@ import LINKS from "../../utils/constants/LINKS";
  * @returns {JSX.Element} - Rendered component
  */
 const Navbar = (): JSX.Element => (
-  <header role="navigation" aria-label="Header for logo og navigasjon">
+  <header role="banner" aria-label="Header for logo og navigasjon">
     <nav className="fixed top-0 z-50 w-full p-4 bg-gray-800">
       <div
         id="main-navigation"
