@@ -33,9 +33,8 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 
 ### Animations
 
--   Animations with GSAP 3 and ScrollPlugin for the majority of animations
+-   Animations with GSAP 3 for the majority of animations
 -   CSS hover animations in navigation menu
--   GSAP and ScrollPlugin for revealing content on portfolio (projects)
 
 ### Accessibility and design
 
