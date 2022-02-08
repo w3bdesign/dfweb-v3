@@ -1,6 +1,9 @@
+import Link from "next/link";
+
 import Image from "../UI/Image.component";
 import Hamburger from "./Hamburger.component";
-import NavLinks from "./NavLinks.component";
+
+import LINKS from "../../utils/constants/LINKS";
 
 /**
  * Display the menu and the links
@@ -24,7 +27,6 @@ const Navbar = (): JSX.Element => (
           data-cy="hamburger-div"
           className="flex content-center justify-between md:w-1/2 md:justify-end p-3">
           <Hamburger />
-          <NavLinks />
         </div>
       </div>
     </nav>
