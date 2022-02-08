@@ -15,8 +15,8 @@ export default {
 } as ComponentMeta<typeof Image>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Image> = (props: ImageProps) => (
-  <Image src="/logo.png" alt="" width="100" height="50" />
+const Template: ComponentStory<typeof Image> = () => (
+  <Image src="/logo.png" alt="" width="100" height="100" />
 );
 
 export const Primary = Template;
