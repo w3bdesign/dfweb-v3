@@ -1,11 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { ImageProps } from "next/image";
-
 import Image from "../../src/components/UI/Image.component";
-
-
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
