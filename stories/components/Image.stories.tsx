@@ -6,8 +6,7 @@ import Image from "../../src/components/UI/Image.component";
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/Image",
-  component: Image,
-  argTypes: { onClick: { action: "onClick" } }
+  component: Image
 } as ComponentMeta<typeof Image>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
