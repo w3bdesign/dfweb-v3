@@ -17,7 +17,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <link rel="icon" href="/logo.png" />
+          <link rel="icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" href="/logo.png" />
 
           <meta property="og:title" content="Daniel Fjeldstad" />
