@@ -42,6 +42,13 @@ interface ISerializerLink {
 
 type TData = { post: IContent[] };
 
+/**
+ * Renders the index content for the front page
+ * @function IndexContent
+ * @param {TData} post - Text data that is retrieved from Sanity
+ * @returns {JSX.Element} - Rendered component
+ */
+
 const IndexContent = ({ post }: TData): JSX.Element => (
   <main role="main" aria-label="Her kommer hovedinnholdet" id="maincontent">
     <div className="mx-auto mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-64 xs:mt-64">

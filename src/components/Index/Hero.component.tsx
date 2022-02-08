@@ -4,6 +4,13 @@ import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
 import Icons from "./Icons.component";
 
+/**
+ * Renders Hero that is used on the front page
+ * Uses GSAP for animations to show the text
+ * @function Hero
+ * @returns {JSX.Element} - Rendered component
+ */
+
 const Hero = (): JSX.Element => {
   // wait until DOM has been rendered
   useIsomorphicLayoutEffect(() => {
@@ -22,8 +29,7 @@ const Hero = (): JSX.Element => {
       aria-label="Kontainer for animasjoner av introtekst"
       id="main-hero"
       data-testid="main-hero"
-      className="flex flex-col justify-center text-lg invisible"
-    >
+      className="flex flex-col justify-center text-lg invisible">
       <div className="p-2 mt-10 mb-4 bg-white opacity-75 lg:mt-4 md:mt-4 xl:mt-4">
         <div className="text-black rounded">
           <section role="heading" aria-label="Introduksjonstekst" aria-level={2}>

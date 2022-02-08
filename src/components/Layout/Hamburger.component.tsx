@@ -13,7 +13,7 @@ interface ITimeline {
 /**
  * Renders Hamburger for responsive menu
  * @function About
- * @returns {JSX.Element} - Rendered Hamburger component
+ * @returns {JSX.Element} - Rendered component
  */
 
 const Hamburger = (): JSX.Element => {

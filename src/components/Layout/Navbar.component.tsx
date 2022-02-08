@@ -8,9 +8,10 @@ import LINKS from "../../utils/constants/LINKS";
 /**
  * Display the menu and the links
  * On mobile, we display a hamburger icon and include the Hamburger component
- * We reduce code duplication by loading the links from a JSON object and map over it
+ * We reduce code duplication by fetching the links from Sanity and map over them
+ * @function Navbar
+ * @returns {JSX.Element} - Rendered component
  */
-
 const Navbar = (): JSX.Element => (
   <header role="banner" aria-label="Header for logo og navigasjon">
     <nav className="fixed top-0 z-50 w-full p-4 bg-gray-800">
