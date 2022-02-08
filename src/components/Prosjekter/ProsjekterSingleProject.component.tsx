@@ -26,7 +26,9 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {
   );
 
   return (
-    <>
+    <div
+      id="prosjektgrid"
+      className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
       {projects.map(
         ({ id, name, description, subdescription, urlwww, urlgithub, projectimage }) => (
           <div id="projectdiv" key={id} className="p-6 text-lg text-black  bg-white rounded shadow">
@@ -56,7 +58,7 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {
           </div>
         )
       )}
-    </>
+    </div>
   );
 };
 

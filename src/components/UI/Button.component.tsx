@@ -14,7 +14,7 @@ type TProps = {
  * @returns {JSX.Element} - Rendered component
  */
 
-const Button = ({ text, children, onClick }: TProps) => (
+const Button = ({ text, children, onClick }: TProps): JSX.Element => (
   <button
     type="submit"
     onClick={onClick}

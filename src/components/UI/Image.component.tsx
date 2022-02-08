@@ -16,7 +16,7 @@ declare const navigator: {
  * @returns {JSX.Element} - Rendered component
  */
 
-const Image = (props: ImageProps) => {
+const Image = (props: ImageProps): JSX.Element => {
   const [loading, setLoading] = useState(props.loading);
 
   useEffect(() => {
