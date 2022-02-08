@@ -13,8 +13,9 @@ interface ILinkButton {
 
 /**
  * Display individual portfolio projects if they match the filter passed down through props
- *
- * @param {Object} projects The portfolio project data to display, contains name, image etc
+ * @function ProsjekterSingleProject
+ * @param {IProjectInterface[]} projects - Projects that is retrieved from Sanity in prosjekter.tsx
+ * @returns {JSX.Element} - Rendered component
  */
 
 const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {

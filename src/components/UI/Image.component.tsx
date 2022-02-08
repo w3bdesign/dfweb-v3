@@ -7,6 +7,15 @@ declare const navigator: {
   webkitConnection: Navigator;
 };
 
+/**
+ * Image component.
+ * A wrapper around the Next/image component with detection for slow connections
+ * Uses eager loading depending on the connection or has the priority prop
+ * @function Image
+ * @param {ImageProps} props - Props for the image
+ * @returns {JSX.Element} - Rendered component
+ */
+
 const Image = (props: ImageProps) => {
   const [loading, setLoading] = useState(props.loading);
 
