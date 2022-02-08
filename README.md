@@ -21,43 +21,43 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 
 ### General
 
--   Next.js with Typescript as main project dependency
--   Sanity.io for fetching project information and frontpage text
--   Storybook for component documentation
--   Animations with GSAP 3
--   Jest for unit testing
--   Cypress for E2E testing
--   Filter project display
--   Display CV with React-PDF
--   Responsive design
+- Next.js with Typescript as main project dependency
+- Sanity.io for fetching project information and frontpage text
+- Storybook for component documentation
+- Animations with GSAP 3
+- Jest for unit testing
+- Cypress for E2E testing
+- Filter project display
+- Display CV with React-PDF
+- Responsive design
 
 ### Animations
 
--   Animations with GSAP 3 and ScrollPlugin for the majority of animations
--   CSS hover animations in navigation menu
--   GSAP and ScrollPlugin for revealing content on portfolio (projects)
+- Animations with GSAP 3 and ScrollPlugin for the majority of animations
+- CSS hover animations in navigation menu
+- GSAP and ScrollPlugin for revealing content on portfolio (projects)
 
 ### Accessibility and design
 
--   WCAG accessibility tested
--   Fully responsive design tested on all devices
--   Relevant aria labels added for all content
--   React Icons for project icons
--   Tailwind CSS for styling
--   Google fonts with Lato (optimized for Next.js)
+- WCAG accessibility tested
+- Fully responsive design tested on all devices
+- Relevant aria labels added for all content
+- React Icons for project icons
+- Tailwind CSS for styling
+- Google fonts with Lato (optimized for Next.js)
 
 ### Code quality
 
--   Continuous Integration with CircleCI
--   Code quality analysis with Codacy, Sonarcloud, Deepscan, Codefactor, LGTM and Codeclimate
--   E2E testing with Cypress
--   Unit testing with Jest and React-Testing-Library
--   Test coverage setup with Codecov
--   Eslint setup with Airbnb style guide
+- Continuous Integration with CircleCI
+- Code quality analysis with Codacy, Sonarcloud, Deepscan, Codefactor, LGTM and Codeclimate
+- E2E testing with Cypress
+- Unit testing with Jest and React-Testing-Library
+- Test coverage setup with Codecov
+- Eslint setup with Airbnb style guide
 
 ## TODO
 
--   Add more features and improve README
--   Add more tests
--   Add Storybook stories
--   Redesign site (long term)
+- Add more features and improve README
+- Add more tests
+- Add Storybook stories
+- Redesign site (long term)
