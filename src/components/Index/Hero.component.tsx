@@ -4,6 +4,13 @@ import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
 import Icons from "./Icons.component";
 
+/**
+ * Renders Hero that is used on the front page
+ * Uses GSAP for animations to show the text
+ * @function Hero
+ * @returns {JSX.Element} - Rendered component
+ */
+
 const Hero = (): JSX.Element => {
   // wait until DOM has been rendered
   useIsomorphicLayoutEffect(() => {

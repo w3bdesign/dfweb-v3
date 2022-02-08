@@ -7,6 +7,12 @@ interface IEvent {
   preventDefault: () => void;
 }
 
+/**
+ * Renders contact form. Uses EmailJS to send the emails.
+ * @function KontaktContent
+ * @returns {JSX.Element} - Rendered component
+ */
+
 const KontaktContent = (): JSX.Element => {
   const formRef = useRef<HTMLFormElement>(null);
   const [serverResponse, setServerResponse] = useState<string>("");

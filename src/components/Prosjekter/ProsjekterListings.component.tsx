@@ -28,6 +28,15 @@ export interface IChangeEvent {
   target: { value: string };
 }
 
+/**
+ * Renders a listing of all the portfolio projects.
+ * Fetches data from Sanity and prosjekter.tsx with getStaticProps
+ * @function ProsjekterListings
+ * @param {IProjectInterface[]} projects - Projects that is retrieved from Sanity in prosjekter.tsx
+ * @param {string[]} categories - Categories that is retrieved from Sanity in prosjekter.tsx
+ * @returns {JSX.Element} - Rendered component
+ */
+
 const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Element => {
   const [prosjekt, setProsjekt] = useState(projects);
 
@@ -67,11 +76,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
               </select>
             </form>
           </span>
-          <div
-            id="prosjektgrid"
-            className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
-            {prosjekt && <ProsjekterSingleProject projects={prosjekt} />}
-          </div>
+          {prosjekt && <ProsjekterSingleProject projects={prosjekt} />}
         </div>
       </div>
     </main>
