@@ -10,6 +10,12 @@ interface ITimeline {
   current: gsap.core.Timeline | null;
 }
 
+/**
+ * Renders Hamburger for responsive menu
+ * @function About
+ * @returns {JSX.Element} - Rendered Hamburger component
+ */
+
 const Hamburger = (): JSX.Element => {
   const [isExpanded, setisExpanded] = useState(false);
 
