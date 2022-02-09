@@ -59,20 +59,19 @@ const IndexContent = ({ post }: TData): JSX.Element => (
             key={content._id}
             role="contentinfo"
             aria-label={content.title}
-            data-testid="sanity-section"
-          >
+            data-testid="sanity-section">
             <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow min-h-full">
               <h2 className="text-3xl text-center">{content.title}</h2>
               <PortableText
                 className="text-xl"
                 content={content.text}
                 serializers={{
-                  code: (props: ISerializerCode) => (
-                    <p className="mt-6 text-lg">{props.children} </p>
+                  code: ({ children }: ISerializerCode) => (
+                    <p className="mt-6 text-lg">{children} </p>
                   ),
-                  link: (props: ISerializerLink) => (
-                    <Link href={props.href} passHref>
-                      <a className="underline">{props.children}</a>
+                  link: ({ children, href }: ISerializerLink) => (
+                    <Link href={href} passHref>
+                      <a className="underline">{children}</a>
                     </Link>
                   )
                 }}
