@@ -22,12 +22,7 @@ const bounceVariants: Variants = {
 };
 
 export const BounceInWhenVisible = ({ children }: IBounceProps) => (
-  <motion.div
-    initial="offscreen"
-    whileInView="onscreen"
-    viewport={{ once: true, amount: 0.8 }}
-    id="projectdiv"
-    className="p-6 text-lg text-black  bg-white rounded shadow">
+  <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }}>
     <motion.div variants={bounceVariants}>{children}</motion.div>
   </motion.div>
 );
