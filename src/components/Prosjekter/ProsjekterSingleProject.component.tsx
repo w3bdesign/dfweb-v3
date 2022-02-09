@@ -4,6 +4,7 @@ import Button from "../UI/Button.component";
 import { urlFor } from "../../lib/sanity";
 
 import type { IProject } from "./ProsjekterListings.component";
+import { motion } from "framer-motion";
 
 interface ILinkButton {
   url: string;
@@ -18,6 +19,23 @@ interface ILinkButton {
  * @returns {JSX.Element} - Rendered component
  */
 
+const cardVariants = {
+  offscreen: {
+    y: 100,
+    opacity: 0
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8
+    }
+  }
+};
+
 const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {
   const ShowLinkButton = ({ url, text, name }: ILinkButton): JSX.Element => (
     <a rel="noopener noreferrer" target="_blank" aria-label={name} href={url}>
@@ -28,35 +46,42 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {
   return (
     <div
       id="prosjektgrid"
-      className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1"
-    >
+      className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
       {projects.map(
         ({ id, name, description, subdescription, urlwww, urlgithub, projectimage }) => (
-          <div id="projectdiv" key={id} className="p-6 text-lg text-black  bg-white rounded shadow">
-            <h2 className="text-xl font-black text-center">{name}</h2>
-            <div className="mt-6 text-lg text-left lg:text-left md:text-left">
-              <p>{description}</p>
-              <p className="mt-6 text-left md:text-left lg:text-left">
-                Teknologier: {subdescription}
-              </p>
-              <div className="flex justify-center mt-6">
-                {projectimage && (
-                  <Image
-                    height="255"
-                    width="500"
-                    src={urlFor(projectimage).url() as string}
-                    alt={name}
-                    role="presentation"
-                  />
-                )}
+          <motion.div
+            key={id}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+            id="projectdiv"
+            className="p-6 text-lg text-black  bg-white rounded shadow">
+            <motion.div variants={cardVariants}>
+              <h2 className="text-xl font-black text-center">{name}</h2>
+              <div className="mt-6 text-lg text-left lg:text-left md:text-left">
+                <p>{description}</p>
+                <p className="mt-6 text-left md:text-left lg:text-left">
+                  Teknologier: {subdescription}
+                </p>
+                <div className="flex justify-center mt-6">
+                  {projectimage && (
+                    <Image
+                      height="255"
+                      width="500"
+                      src={urlFor(projectimage).url() as string}
+                      alt={name}
+                      role="presentation"
+                    />
+                  )}
+                </div>
+                <div className="flex justify-center mt-4">
+                  {/* Display only Github button if not empty  */}
+                  {urlgithub && <ShowLinkButton url={urlgithub} text="Github" name={name} />}
+                  {urlwww && <ShowLinkButton url={urlwww} text="Besøk" name={name} />}
+                </div>
               </div>
-              <div className="flex justify-center mt-4">
-                {/* Display only Github button if not empty  */}
-                {urlgithub && <ShowLinkButton url={urlgithub} text="Github" name={name} />}
-                {urlwww && <ShowLinkButton url={urlwww} text="Besøk" name={name} />}
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         )
       )}
     </div>
