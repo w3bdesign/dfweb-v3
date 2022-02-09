@@ -7,7 +7,7 @@ interface IBounceProps {
 
 interface IScaleInProps {
   children: ReactNode;
-  cssClass: string;
+  cssClass?: string;
 }
 
 const bounceVariants: Variants = {
