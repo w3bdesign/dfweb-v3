@@ -53,3 +53,44 @@ export const seciconVariants: Variants = {
     transition: { type: "spring", duration: 0.5, stiffness: 150, staggerChildren: 5.9 }
   }
 };
+
+/** */
+
+export const bounceVariants: Variants = {
+  offscreen: {
+    y: 100,
+    opacity: 0
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.3,
+      duration: 1.0
+    }
+  }
+};
+
+export const scaleInVariant: Variants = {
+  visible: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.5,
+      delay: 2.8,
+      ease: "easeInOut"
+    }
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: "afterChildren"
+    }
+  }
+};
+
+export const scaleInItemVariant: Variants = {
+  visible: { opacity: 1, scale: 1 },
+  hidden: { opacity: 0, scale: 2.2 }
+};
