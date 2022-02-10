@@ -58,5 +58,5 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 
 -   Add more features and improve README
 -   Add more tests
--   Add Storybook stories
+-   Replace GSAP with Framer Motion
 -   Redesign site (long term)
