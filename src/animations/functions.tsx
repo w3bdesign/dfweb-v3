@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
-import { bounceVariants, scaleInVariant, scaleInItemVariant } from "./variants";
+import { bounceVariants, scaleInVariants, scaleInItemVariants } from "./variants";
 
 interface IAnimateProps {
   children: ReactNode;
   cssClass?: string;
 }
+
+/* Project */
 
 export const BounceInWhenVisible = ({ children, cssClass }: IAnimateProps) => (
   <motion.div
@@ -19,13 +21,13 @@ export const BounceInWhenVisible = ({ children, cssClass }: IAnimateProps) => (
 );
 
 export const ScaleIn = ({ children, cssClass }: IAnimateProps) => (
-  <motion.span initial="hidden" animate="visible" variants={scaleInVariant} className={cssClass}>
+  <motion.span initial="hidden" animate="visible" variants={scaleInVariants} className={cssClass}>
     {children}
   </motion.span>
 );
 
 export const ScaleInItem = ({ children, cssClass }: IAnimateProps) => (
-  <motion.span variants={scaleInItemVariant} className={cssClass}>
+  <motion.span variants={scaleInItemVariants} className={cssClass}>
     {children}
   </motion.span>
 );

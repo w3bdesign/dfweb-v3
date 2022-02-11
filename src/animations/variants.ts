@@ -72,7 +72,7 @@ export const bounceVariants: Variants = {
   }
 };
 
-export const scaleInVariant: Variants = {
+export const scaleInVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
@@ -90,7 +90,7 @@ export const scaleInVariant: Variants = {
   }
 };
 
-export const scaleInItemVariant: Variants = {
+export const scaleInItemVariants: Variants = {
   visible: { opacity: 1, scale: 1 },
   hidden: { opacity: 0, scale: 2.2 }
 };
