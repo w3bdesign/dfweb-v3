@@ -87,5 +87,5 @@ export const scaleInVariants: Variants = {
 
 export const scaleInItemVariants: Variants = {
   visible: { opacity: 1, scale: 1 },
-  hidden: { opacity: 0, scale: 2.2 }
+  hidden: { opacity: 0, scale: 1.7}
 };
