@@ -2,15 +2,9 @@
 
 //import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
-import { motion } from "framer-motion";
-
 import Icons from "./Icons.component";
 
-import {
-  introVariants,
-  firstHeaderVariants,
-  secondHeaderVariants
-} from "../../animations/variants";
+import { FadeDown, FadeUp } from "../../animations/functions";
 
 /**
  * Renders Hero that is used on the front page
@@ -41,31 +35,22 @@ const Hero = (): JSX.Element => {
       <div className="mt-10 mb-4 bg-white p-2 opacity-75 md:mt-4 lg:mt-4 xl:mt-4">
         <div className="rounded text-black">
           <section role="heading" aria-label="Introduksjonstekst" aria-level={2}>
-            <motion.div
-              className="text-center"
-              variants={introVariants}
-              initial="initial"
-              animate="animate">
-              <span className="introtekst inline-block text-5xl">H</span>
-              <span className="introtekst inline-block text-5xl">e</span>
-              <span className="introtekst inline-block text-5xl">i</span>
-              <span className="introtekst inline-block text-5xl">!</span>
-            </motion.div>
-            <motion.h2
-              variants={firstHeaderVariants}
-              initial="initial"
-              animate="animate"
-              className="forsteh2  mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl">
-              Jeg heter Daniel Fjeldstad og er en webutvikler.
-            </motion.h2>
-            <motion.h2
-              variants={secondHeaderVariants}
-              initial="initial"
-              animate="animate"
-              className="andreh2  mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl">
-              Jeg kan PHP, Wordpress, Javascript, Typescript, React, Vue, Docker, Photoshop og mye
-              mer.
-            </motion.h2>
+            <FadeDown delay={1} cssClass="text-center">
+              <span className="introtekst inline-block text-5xl">Hei!</span>
+            </FadeDown>
+            <FadeUp
+              delay={1.7}
+              cssClass="mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl">
+              <h2>Jeg heter Daniel Fjeldstad og er en webutvikler.</h2>
+            </FadeUp>
+            <FadeDown
+              delay={2.2}
+              cssClass="mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl">
+              <h2>
+                Jeg kan PHP, Wordpress, Javascript, Typescript, React, Vue, Docker, Photoshop og mye
+                mer.
+              </h2>
+            </FadeDown>
             <Icons />
           </section>
         </div>

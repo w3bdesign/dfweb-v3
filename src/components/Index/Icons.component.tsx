@@ -10,7 +10,7 @@ import { ScaleIn, ScaleInItem } from "../../animations/functions";
  */
 
 const Icons = (): JSX.Element => (
-  <ScaleIn cssClass="flex justify-center p-6">
+  <ScaleIn delay={2.7} cssClass="flex justify-center p-6">
     <ScaleInItem>
       <FaReact className="ikoner mr-6" title="React ikon" size="3em" />
     </ScaleInItem>

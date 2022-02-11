@@ -6,26 +6,21 @@ export const pageTransitionVariants: Variants = {
   exit: { opacity: 0 }
 };
 
-export const introVariants = {
+export const fadeDownVariants: Variants = {
   initial: { opacity: 0, y: -50 },
   animate: {
     y: 0,
     opacity: 1,
-    transition: {
-      delay: 1.1,
-      type: "spring",
-      duration: 0.5,
-      stiffness: 120
-    }
+    transition: { type: "spring", duration: 0.5, stiffness: 120 }
   }
 };
 
-export const firstHeaderVariants: Variants = {
+export const fadeUpVariants: Variants = {
   initial: { opacity: 0, y: 50 },
   animate: {
     y: 0,
     opacity: 1,
-    transition: { delay: 2.1, type: "spring", duration: 0.5, stiffness: 120 }
+    transition: { type: "spring", duration: 0.5, stiffness: 120 }
   }
 };
 
