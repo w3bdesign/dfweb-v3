@@ -1,6 +1,6 @@
-import { gsap } from "gsap";
+//import { gsap } from "gsap";
 
-import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
+//import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
 import { motion } from "framer-motion";
 
@@ -37,36 +37,32 @@ const Hero = (): JSX.Element => {
       aria-label="Kontainer for animasjoner av introtekst"
       id="main-hero"
       data-testid="main-hero"
-      className="flex flex-col justify-center text-lg "
-    >
-      <div className="p-2 mt-10 mb-4 bg-white opacity-75 lg:mt-4 md:mt-4 xl:mt-4">
-        <div className="text-black rounded">
+      className="flex flex-col justify-center text-lg ">
+      <div className="mt-10 mb-4 bg-white p-2 opacity-75 md:mt-4 lg:mt-4 xl:mt-4">
+        <div className="rounded text-black">
           <section role="heading" aria-label="Introduksjonstekst" aria-level={2}>
             <motion.div
               className="text-center"
               variants={introVariants}
               initial="initial"
-              animate="animate"
-            >
-              <span className="introtekst text-5xl inline-block">H</span>
-              <span className="introtekst text-5xl inline-block">e</span>
-              <span className="introtekst text-5xl inline-block">i</span>
-              <span className="introtekst text-5xl inline-block">!</span>
+              animate="animate">
+              <span className="introtekst inline-block text-5xl">H</span>
+              <span className="introtekst inline-block text-5xl">e</span>
+              <span className="introtekst inline-block text-5xl">i</span>
+              <span className="introtekst inline-block text-5xl">!</span>
             </motion.div>
             <motion.h2
               variants={firstHeaderVariants}
               initial="initial"
               animate="animate"
-              className="forsteh2  px-6 mt-4 text-lg md:p-0 lg:p-0 xl:p-0 xl:text-center lg:text-left md:text-center xl:text-2xl lg:text-xl md:text-xl md:mx-auto lg:w-2/3"
-            >
+              className="forsteh2  mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl">
               Jeg heter Daniel Fjeldstad og er en webutvikler.
             </motion.h2>
             <motion.h2
               variants={secondHeaderVariants}
               initial="initial"
               animate="animate"
-              className="andreh2  px-6 mt-4 text-lg md:p-0 lg:p-0 xl:p-0 xl:text-center lg:text-left md:text-center xl:text-2xl lg:text-xl md:text-xl md:mx-auto lg:w-2/3"
-            >
+              className="andreh2  mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl">
               Jeg kan PHP, Wordpress, Javascript, Typescript, React, Vue, Docker, Photoshop og mye
               mer.
             </motion.h2>
