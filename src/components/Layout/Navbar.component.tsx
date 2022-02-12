@@ -26,9 +26,8 @@ const Navbar = (): JSX.Element => (
             alt="Dfweb Logo"
             width={150}
             height={45}
-            priority
+            quality={60}
             loading="eager"
-            sizes="only screen and (min-resolution: 3dppx) 150px"
           />
         </div>
         <div
