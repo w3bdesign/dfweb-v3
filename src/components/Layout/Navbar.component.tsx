@@ -1,7 +1,8 @@
 /*eslint max-depth: ["error", 5]*/
 import Link from "next/link";
 
-import Image from "../UI/Image.component";
+//import Image from "../UI/Image.component";
+import Image from "next/image";
 import Hamburger from "./Hamburger.component";
 
 import LINKS from "../../utils/constants/LINKS";
