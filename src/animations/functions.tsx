@@ -27,7 +27,8 @@ export const BounceInWhenVisible = ({ children, cssClass }: IAnimateProps) => (
     initial="offscreen"
     whileInView="onscreen"
     viewport={{ once: true, amount: 0.8 }}
-    className={cssClass}>
+    className={cssClass}
+  >
     <motion.div variants={bounceVariants}>{children}</motion.div>
   </motion.div>
 );
@@ -77,7 +78,8 @@ export const FadeDown = ({ children, cssClass, delay }: IAnimateWithDelayProps) 
       className={cssClass}
       variants={fadeDownVariants}
       initial="initial"
-      animate="animate">
+      animate="animate"
+    >
       {children}
     </motion.div>
   );
