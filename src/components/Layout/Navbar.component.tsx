@@ -21,7 +21,15 @@ const Navbar = (): JSX.Element => (
         data-cy="main-navigation"
         className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap">
         <div className="flex w-full font-extrabold text-white md:w-1/2 md:justify-start">
-          <Image src="/logo.svg" alt="Dfweb Logo" width={150} height={45} priority />
+          <Image
+            src="/logo.svg"
+            alt="Dfweb Logo"
+            width={150}
+            height={45}
+            priority
+            loading="eager"
+            sizes="only screen and (min-resolution: 3dppx) 150px"
+          />
         </div>
         <div
           id="hamburger-div"
