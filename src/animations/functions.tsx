@@ -1,7 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ReactNode } from "react";
-
-import { bounceVariants, scaleInItemVariants } from "./variants";
 
 interface IAnimateProps {
   children: ReactNode;
@@ -14,17 +12,33 @@ interface IAnimateWithDelayProps {
   delay: number;
 }
 
-/* Project */
+export const BounceInWhenVisible = ({ children, cssClass }: IAnimateProps) => {
+  const bounceVariants: Variants = {
+    offscreen: {
+      y: 100,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.3,
+        duration: 1.0
+      }
+    }
+  };
 
-export const BounceInWhenVisible = ({ children, cssClass }: IAnimateProps) => (
-  <motion.div
-    initial="offscreen"
-    whileInView="onscreen"
-    viewport={{ once: true, amount: 0.8 }}
-    className={cssClass}>
-    <motion.div variants={bounceVariants}>{children}</motion.div>
-  </motion.div>
-);
+  return (
+    <motion.div
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+      className={cssClass}>
+      <motion.div variants={bounceVariants}>{children}</motion.div>
+    </motion.div>
+  );
+};
 
 export const ScaleIn = ({ children, cssClass, delay }: IAnimateWithDelayProps) => {
   const scaleInVariants = {
@@ -51,11 +65,17 @@ export const ScaleIn = ({ children, cssClass, delay }: IAnimateWithDelayProps) =
   );
 };
 
-export const ScaleInItem = ({ children, cssClass }: IAnimateProps) => (
-  <motion.span variants={scaleInItemVariants} className={cssClass}>
-    {children}
-  </motion.span>
-);
+export const ScaleInItem = ({ children, cssClass }: IAnimateProps) => {
+  const scaleInItemVariants: Variants = {
+    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 1.7 }
+  };
+  return (
+    <motion.span variants={scaleInItemVariants} className={cssClass}>
+      {children}
+    </motion.span>
+  );
+};
 
 export const FadeDown = ({ children, cssClass, delay }: IAnimateWithDelayProps) => {
   const fadeDownVariants = {
