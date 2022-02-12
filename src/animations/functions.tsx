@@ -88,13 +88,11 @@ export const ScaleIn = ({ children, cssClass, delay }: IAnimateWithDelayProps) =
 
 export const ScaleInItem = ({ children, cssClass }: IAnimateProps) => {
   const scaleInItemVariants: Variants = {
-   /* visible: { opacity: 1, scale: 1 },
+    /* visible: { opacity: 1, scale: 1 },
     hidden: { opacity: 0, scale: 1.7 }*/
 
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -50 }
-
-
   };
   return (
     <motion.span variants={scaleInItemVariants} className={cssClass}>

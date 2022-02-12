@@ -12,7 +12,8 @@ const Footer = (): JSX.Element => (
     <div className="mt-10 bg-gray-800 shadow">
       <div
         aria-label="Copyright tekst"
-        className="container p-6 mx-auto text-center text-white font-semibold inline-block">
+        className="container p-6 mx-auto text-center text-white font-semibold inline-block"
+      >
         Copyright Daniel Fjeldstad
         <IconContext.Provider value={{ className: "inline-block m-2" }}>
           <BiCopyright size="1.2em" />
