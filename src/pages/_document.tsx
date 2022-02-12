@@ -17,11 +17,13 @@ class MyDocument extends Document {
     const nonce = crypto.randomBytes(8).toString("base64");
     let csp = `default-src 'self'; script-src 'self' ${cspHashOf(
       NextScript.getInlineScriptSource(this.props)
-    )}`;
+    )}
+    form-action 'self'; report-uri 'dfweb.no'; img-src 'self' data:; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com data:;    
+    `;
     if (process.env.NODE_ENV !== "production") {
       csp = `style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com data:; default-src 'self'; script-src 'unsafe-eval' 'self' ${cspHashOf(
         NextScript.getInlineScriptSource(this.props)
-      )} form-action 'self'; report-uri 'dfweb.no';`;
+      )} `;
     }
     return (
       <Html lang="nb">
