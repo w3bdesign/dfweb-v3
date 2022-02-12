@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
+import generateCSP from "../utils/generate-csp";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -19,6 +20,8 @@ class MyDocument extends Document {
 
           <link rel="icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" href="/logo.png" />
+
+          <meta httpEquiv="Content-Security-Policy" content={generateCSP()} />
 
           <meta property="og:title" content="Daniel Fjeldstad" />
           <meta name="author" content="Daniel Fjeldstad" />
