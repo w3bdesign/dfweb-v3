@@ -25,9 +25,8 @@ const Navbar = (): JSX.Element => (
           <Image
             src="/logo.svg"
             alt="Dfweb Logo"
-            width={150}
-            height={45}
-            quality={60}
+            width="150"
+            height="45"           
             loading="eager"
           />
         </div>
