@@ -16,6 +16,29 @@ declare const navigator: {
  * @returns {JSX.Element} - Rendered component
  */
 
+export const isMobileConnection = (): boolean => {
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  return (
+    connection?.type === "cellular" ||
+    connection?.effectiveType === "slow-2g" ||
+    connection?.effectiveType === "2g" ||
+    connection?.effectiveType === "3g" ||
+    connection?.saveData === true
+  );
+};
+
+const defer = (callback: IdleRequestCallback) => {
+  let handle = 0;
+  // Check if we can use requestIdleCallback
+  if (window.requestIdleCallback) {
+    handle = window.requestIdleCallback(callback);
+    return () => window.cancelIdleCallback(handle);
+  }
+  // Just defer using setTimeout with some random delay otherwise
+  handle = setTimeout(callback, 2345 + 0.5 * 1000);
+  return () => clearTimeout(handle);
+};
+
 const Image = (props: ImageProps): JSX.Element => {
   const [loading, setLoading] = useState(props.loading);
 
@@ -43,29 +66,6 @@ const Image = (props: ImageProps): JSX.Element => {
   }, [props.loading, props.priority]);
 
   return <NextImage loading={loading} {...props} />;
-};
-
-export const isMobileConnection = (): boolean => {
-  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-  return (
-    connection?.type === "cellular" ||
-    connection?.effectiveType === "slow-2g" ||
-    connection?.effectiveType === "2g" ||
-    connection?.effectiveType === "3g" ||
-    connection?.saveData === true
-  );
-};
-
-const defer = (callback: IdleRequestCallback) => {
-  let handle = 0;
-  // Check if we can use requestIdleCallback
-  if (window.requestIdleCallback) {
-    handle = window.requestIdleCallback(callback);
-    return () => window.cancelIdleCallback(handle);
-  }
-  // Just defer using setTimeout with some random delay otherwise
-  handle = setTimeout(callback, 2345 + 0.5 * 1000);
-  return () => clearTimeout(handle);
 };
 
 export default Image;
