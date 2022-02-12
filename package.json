@@ -12,7 +12,7 @@
     "build-storybook": "build-storybook -s public",
     "format": "prettier --write \"**/*.{ts,tsx,json}\"",
     "cypress": "cypress open",
-    "refresh": "rm -rf node_modules && rm package-lock.json && npm run format && npm i"
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
