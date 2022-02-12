@@ -28,6 +28,7 @@ const Navbar = (): JSX.Element => (
             height={45}
             priority
             loading="eager"
+            sizes="only screen and (min-resolution: 3dppx) 150px"
           />
         </div>
         <div
