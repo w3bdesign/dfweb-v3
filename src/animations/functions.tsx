@@ -1,4 +1,4 @@
-import { motion, Variants } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { ReactNode } from "react";
 
 interface IAnimateProps {
@@ -11,6 +11,26 @@ interface IAnimateWithDelayProps {
   cssClass?: string;
   delay: number;
 }
+
+export const PageTransition = ({ children, cssClass }: IAnimateProps) => {
+  const pageTransitionVariants: Variants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 1.0 } },
+    exit: { opacity: 0 }
+  };
+  return (
+    <AnimatePresence exitBeforeEnter>
+      <motion.div
+        className={cssClass}
+        variants={pageTransitionVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit">
+        {children}
+      </motion.div>
+    </AnimatePresence>
+  );
+};
 
 export const BounceInWhenVisible = ({ children, cssClass }: IAnimateProps) => {
   const bounceVariants: Variants = {
@@ -28,7 +48,6 @@ export const BounceInWhenVisible = ({ children, cssClass }: IAnimateProps) => {
       }
     }
   };
-
   return (
     <motion.div
       initial="offscreen"

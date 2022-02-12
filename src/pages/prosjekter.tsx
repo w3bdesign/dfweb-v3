@@ -1,5 +1,4 @@
 import { groq } from "next-sanity";
-import { AnimatePresence, motion } from "framer-motion";
 
 // Types
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
@@ -12,7 +11,7 @@ import ProsjekterListings from "../components/Prosjekter/ProsjekterListings.comp
 import Layout from "../components/Layout/Layout.component";
 
 // Animations
-import { pageTransitionVariants } from "../animations/variants";
+import { PageTransition } from "../animations/functions";
 
 // Sanity GROQ queries
 const projectQuery = groq`*[_type == "project"]`;
@@ -23,11 +22,9 @@ const Prosjekter: NextPage = ({
   categories
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Prosjekter - Portefølje - Dfweb">
-    <AnimatePresence exitBeforeEnter>
-      <motion.div variants={pageTransitionVariants} initial="initial" animate="animate" exit="exit">
-        <ProsjekterListings projects={projects} categories={categories} />
-      </motion.div>
-    </AnimatePresence>
+    <PageTransition>
+      <ProsjekterListings projects={projects} categories={categories} />
+    </PageTransition>
   </Layout>
 );
 

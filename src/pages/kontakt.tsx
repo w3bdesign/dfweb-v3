@@ -1,5 +1,3 @@
-import { AnimatePresence, motion } from "framer-motion";
-
 // Types
 import type { NextPage } from "next";
 
@@ -8,15 +6,13 @@ import KontaktContent from "../components/Kontakt/KontaktContent.component";
 import Layout from "../components/Layout/Layout.component";
 
 // Animations
-import { pageTransitionVariants } from "../animations/variants";
+import { PageTransition } from "../animations/functions";
 
 const Kontakt: NextPage = () => (
   <Layout title="Kontakt - Portefølje - Dfweb">
-    <AnimatePresence exitBeforeEnter>
-      <motion.div variants={pageTransitionVariants} initial="initial" animate="animate" exit="exit">
-        <KontaktContent />
-      </motion.div>
-    </AnimatePresence>
+    <PageTransition>
+      <KontaktContent />
+    </PageTransition>
   </Layout>
 );
 
