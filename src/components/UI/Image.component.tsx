@@ -16,7 +16,7 @@ declare const navigator: {
  * @returns {JSX.Element} - Rendered component
  */
 
-const isMobileConnection = (): boolean => {
+export const isMobileConnection = (): boolean => {
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   return (
     connection?.type === "cellular" ||
