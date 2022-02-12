@@ -10,21 +10,21 @@ import { ScaleIn, ScaleInItem } from "../../animations/functions";
  */
 
 const Icons = (): JSX.Element => (
-  <ScaleIn delay={2.7} cssClass="flex justify-center p-6">
-    <ScaleInItem>
-      <FaReact className="ikoner mr-6" title="React ikon" size="3em" />
+  <ScaleIn delay={2.7} cssClass="flex justify-center mt-4 p-2">
+    <ScaleInItem cssClass="p-2">
+      <FaReact title="React ikon" size="3em" />
     </ScaleInItem>
-    <ScaleInItem>
-      <FaVuejs className="ikoner mr-6" title="Vue ikon" size="3em" />
+    <ScaleInItem cssClass="p-2">
+      <FaVuejs title="Vue ikon" size="3em" />
     </ScaleInItem>
-    <ScaleInItem>
-      <SiTypescript className="ikoner mr-6" title="Typescript ikon" size="3em" />
+    <ScaleInItem cssClass="p-2">
+      <SiTypescript title="Typescript ikon" size="3em" />
     </ScaleInItem>
-    <ScaleInItem>
-      <SiWordpress className="ikoner mr-6" title="Wordpress ikon" size="3em" />
+    <ScaleInItem cssClass="p-2">
+      <SiWordpress title="Wordpress ikon" size="3em" />
     </ScaleInItem>
-    <ScaleInItem>
-      <FaPhp className="ikoner mr-6" title="PHP ikon" size="3em" />
+    <ScaleInItem cssClass="p-2">
+      <FaPhp title="PHP ikon" size="3em" />
     </ScaleInItem>
   </ScaleIn>
 );
