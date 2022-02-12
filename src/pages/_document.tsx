@@ -23,7 +23,7 @@ class MyDocument extends Document {
 
     let csp = `style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com data:; default-src 'self'; script-src 'unsafe-eval' 'self' ${cspHashOf(
         NextScript.getInlineScriptSource(this.props)
-      )} `;
+      )} form-action 'self'`;
 
 
 
