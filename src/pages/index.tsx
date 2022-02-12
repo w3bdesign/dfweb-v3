@@ -10,6 +10,9 @@ import Layout from "../components/Layout/Layout.component";
 // Utilities
 import { getClient } from "../lib/sanity.server";
 
+// Animations
+import { PageTransition } from "../animations/functions";
+
 // Sanity GROQ queries
 const indexQuery = groq`
 *[_type == 'sitecontent' && pagename match 'Index']
@@ -17,7 +20,9 @@ const indexQuery = groq`
 
 const Home: NextPage = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Forside - Portefølje - Dfweb">
-    <IndexContent post={post} />
+    <PageTransition>
+      <IndexContent post={post} />
+    </PageTransition>
   </Layout>
 );
 

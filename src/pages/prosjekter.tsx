@@ -10,6 +10,9 @@ import { getClient } from "../lib/sanity.server";
 import ProsjekterListings from "../components/Prosjekter/ProsjekterListings.component";
 import Layout from "../components/Layout/Layout.component";
 
+// Animations
+import { PageTransition } from "../animations/functions";
+
 // Sanity GROQ queries
 const projectQuery = groq`*[_type == "project"]`;
 const categoryQuery = groq`*[_type == "project"].category[0..3]`;
@@ -19,7 +22,9 @@ const Prosjekter: NextPage = ({
   categories
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Prosjekter - Portefølje - Dfweb">
-    <ProsjekterListings projects={projects} categories={categories} />
+    <PageTransition>
+      <ProsjekterListings projects={projects} categories={categories} />
+    </PageTransition>
   </Layout>
 );
 

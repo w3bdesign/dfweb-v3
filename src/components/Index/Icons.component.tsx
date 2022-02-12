@@ -1,5 +1,6 @@
 import { FaReact, FaVuejs, FaPhp } from "react-icons/fa";
 import { SiTypescript, SiWordpress } from "react-icons/si";
+import { ScaleIn, ScaleInItem } from "../../animations/functions";
 
 /**
  * Renders SVG icons that are used on the front page
@@ -9,13 +10,23 @@ import { SiTypescript, SiWordpress } from "react-icons/si";
  */
 
 const Icons = (): JSX.Element => (
-  <span className="flex justify-center p-6">
-    <FaReact className="ikoner mr-6" title="React ikon" size="3em" />
-    <FaVuejs className="ikoner mr-6" title="Vue ikon" size="3em" />
-    <SiTypescript className="ikoner mr-6" title="Typescript ikon" size="3em" />
-    <SiWordpress className="ikoner mr-6" title="Wordpress ikon" size="3em" />
-    <FaPhp className="ikoner mr-6" title="PHP ikon" size="3em" />
-  </span>
+  <ScaleIn delay={2.7} cssClass="flex justify-center mt-4 p-2">
+    <ScaleInItem cssClass="p-2">
+      <FaReact title="React ikon" size="3em" />
+    </ScaleInItem>
+    <ScaleInItem cssClass="p-2">
+      <FaVuejs title="Vue ikon" size="3em" />
+    </ScaleInItem>
+    <ScaleInItem cssClass="p-2">
+      <SiTypescript title="Typescript ikon" size="3em" />
+    </ScaleInItem>
+    <ScaleInItem cssClass="p-2">
+      <SiWordpress title="Wordpress ikon" size="3em" />
+    </ScaleInItem>
+    <ScaleInItem cssClass="p-2">
+      <FaPhp title="PHP ikon" size="3em" />
+    </ScaleInItem>
+  </ScaleIn>
 );
 
 export default Icons;
