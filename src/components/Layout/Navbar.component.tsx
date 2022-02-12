@@ -1,3 +1,4 @@
+/*eslint max-depth: ["error", 5]*/
 import Link from "next/link";
 
 import Image from "../UI/Image.component";
