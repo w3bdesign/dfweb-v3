@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
 
 import ProsjekterSingleProject from "./ProsjekterSingleProject.component";
@@ -58,16 +57,14 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
               <label
                 className="p-2 mr-4 text-lg"
                 aria-label="kategorifilter"
-                htmlFor="kategorifilter"
-              >
+                htmlFor="kategorifilter">
                 Filtrer kategori:
               </label>
               <select
                 id="kategorifilter"
                 name="kategorifilter"
                 onChange={handleFilterChange}
-                className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              >
+                className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline">
                 <option label="" value="">
                   Ingen filtrering
                 </option>
