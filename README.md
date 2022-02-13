@@ -56,7 +56,6 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 
 ## TODO
 
--   Add more features and improve README
 -   Add more tests
 -   Replace GSAP with Framer Motion
 -   Redesign site (long term)
