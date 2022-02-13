@@ -30,7 +30,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Filter project display
 -   Display CV with React-PDF
 -   Responsive design
--   Strict CSP policy with grade A+ as reported by cspscanner.com for improved security
+-   Grade A+ for security as reported by https://securityheaders.com
 
 ### Animations
 
