@@ -1,7 +1,4 @@
-/** @type {import('next').NextConfig} */
-
-//import { headers } from "./src/utils/headers";
-const headers = [
+export const headers = [
   {
     key: "X-DNS-Prefetch-Control",
     value: "on"
@@ -35,20 +32,3 @@ const headers = [
     value: "geolocation=*" // allow specified policies here
   }
 ];
-
-module.exports = {
-  reactStrictMode: true,
-  poweredByHeader: false,
-  images: {
-    domains: ["cdn.sanity.io", "v3.dfweb.no", "dfweb.no"],
-    minimumCacheTTL: 600
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers
-      }
-    ];
-  }
-};
