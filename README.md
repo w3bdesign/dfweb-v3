@@ -33,7 +33,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 
 ### Animations
 
--   Animations with GSAP 3 for the majority of animations
+-   Animations with Framer Motion for the majority of animations
 -   CSS hover animations in navigation menu
 
 ### Accessibility and design
