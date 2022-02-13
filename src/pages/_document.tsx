@@ -14,8 +14,7 @@ class MyDocument extends Document {
   }
 
   render(): JSX.Element {
-    let csp = `
-    script-src 'self' ${cspHashOf(NextScript.getInlineScriptSource(this.props))};
+    let csp = `script-src 'self' ${cspHashOf(NextScript.getInlineScriptSource(this.props))};
     frame-ancestors 'self';
     block-all-mixed-content;
     default-src 'self';
@@ -25,8 +24,7 @@ class MyDocument extends Document {
     manifest-src 'self';base-uri 'self';form-action 'self';
     media-src 'self';
     prefetch-src 'self';
-    worker-src 'self';
-    `;
+    worker-src 'self';`;
 
     if (process.env.NODE_ENV !== "production") {
       csp = `style-src 'self' 'unsafe-inline'; font-src 'self' data:; default-src 'self'; script-src 'unsafe-eval' 'self' ${cspHashOf(
