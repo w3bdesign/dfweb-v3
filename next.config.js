@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-//import { headers } from "./src/utils/headers";
 const headers = [
   {
     key: "X-DNS-Prefetch-Control",
@@ -33,7 +32,12 @@ const headers = [
   {
     key: "Permissions-Policy",
     value: "geolocation=*" // allow specified policies here
-  }
+  } /*
+  {
+    key: "Content-Security-Policy",
+   
+    value: ContentSecurityPolicy.replace(/\s{2,}/g, " ").trim()
+  }*/
 ];
 
 module.exports = {
