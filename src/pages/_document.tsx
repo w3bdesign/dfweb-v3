@@ -1,4 +1,11 @@
+import crypto from "crypto";
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
+
+const cspHashOf = (text: crypto.BinaryLike) => {
+  const hash = crypto.createHash("sha256");
+  hash.update(text);
+  return `'sha256-${hash.digest("base64")}'`;
+};
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -7,6 +14,15 @@ class MyDocument extends Document {
   }
 
   render(): JSX.Element {
+    let csp = `default-src 'self'; script-src 'self' ${cspHashOf(
+      NextScript.getInlineScriptSource(this.props)
+    )}`;
+    if (process.env.NODE_ENV !== "production") {
+      csp = `style-src 'self' 'unsafe-inline'; font-src 'self' data:; default-src 'self'; script-src 'unsafe-eval' 'self' ${cspHashOf(
+        NextScript.getInlineScriptSource(this.props)
+      )}`;
+    }
+
     return (
       <Html lang="nb">
         <Head>
@@ -19,6 +35,8 @@ class MyDocument extends Document {
 
           <link rel="icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" href="/logo.png" />
+
+          <meta httpEquiv="Content-Security-Policy" content={csp} />
 
           <meta property="og:title" content="Daniel Fjeldstad" />
           <meta name="author" content="Daniel Fjeldstad" />
