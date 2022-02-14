@@ -85,53 +85,40 @@ const Hamburger = (): JSX.Element => {
        * Start the mobile menu initially as hidden, then remove hidden class if we have clicked on the mobile menu
        */}
 
-     
-        <FadeLeftToRight delay={0.2} staggerDelay={0.3} animateAtOnce={isExpanded}>
-          <div
-            id="mobile-menu"
-            data-testid="mobile-menu"
-            aria-hidden={!isExpanded}
-            className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30">
-            <ul aria-label="Navigasjon">
-              {LINKS.map((link) => (
-                <FadeLeftToRightItem cssClass="block">
-                  <li
-                    key={link.id}
-                    className="menu-item w-full border-t border-gray-600 border-solid shadow">
-                    {link.external ? (
-                      <a
-                        className="inline-block m-4 text-xl text-white hover:underline"
-                        aria-label={link.text}
-                        href={link.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        data-testid={`mobil-${link.text}`}>
+      <FadeLeftToRight delay={0.2} staggerDelay={0.3} animateAtOnce={isExpanded}>
+        <div
+          id="mobile-menu"
+          data-testid="mobile-menu"
+          aria-hidden={!isExpanded}
+          className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30">
+          <ul aria-label="Navigasjon">
+            {LINKS.map((link) => (
+              <FadeLeftToRightItem key={link.id} cssClass="block">
+                <li className="menu-item w-full border-t border-gray-600 border-solid shadow">
+                  {link.external ? (
+                    <a
+                      className="inline-block m-4 text-xl text-white hover:underline"
+                      aria-label={link.text}
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      data-testid={`mobil-${link.text}`}>
+                      {link.text}
+                    </a>
+                  ) : (
+                    <Link data-testid={`mobil-${link.text}`} href={link.url} passHref>
+                      <a className="inline-block m-4 text-xl text-white hover:underline">
                         {link.text}
                       </a>
-                    ) : (
-                      <Link data-testid={`mobil-${link.text}`} href={link.url} passHref>
-                        <a className="inline-block m-4 text-xl text-white hover:underline">
-                          {link.text}
-                        </a>
-                      </Link>
-                    )}
-                  </li>
-                </FadeLeftToRightItem>
-              ))}
-            </ul>
-          </div>
-        </FadeLeftToRight>
-
-
-
-     
-
-
+                    </Link>
+                  )}
+                </li>
+              </FadeLeftToRightItem>
+            ))}
+          </ul>
+        </div>
+      </FadeLeftToRight>
     </div>
-
-
-
-
   );
 };
 
