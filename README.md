@@ -29,7 +29,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Filter project display
 -   Display CV with React-PDF
 -   Responsive design
--   Grade A+ for security as reported by https://securityheaders.com
+-   Grade A for security as reported by https://securityheaders.com
 
 ### Animations
 
