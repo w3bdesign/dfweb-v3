@@ -26,7 +26,8 @@ export const PageTransition = ({ children, cssClass }: IAnimateProps) => {
         variants={pageTransitionVariants}
         initial="initial"
         animate="animate"
-        exit="exit">
+        exit="exit"
+      >
         {children}
       </motion.div>
     </AnimatePresence>
@@ -54,13 +55,19 @@ export const BounceInWhenVisible = ({ children, cssClass }: IAnimateProps) => {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
-      className={cssClass}>
+      className={cssClass}
+    >
       <motion.div variants={bounceVariants}>{children}</motion.div>
     </motion.div>
   );
 };
 
-export const FadeLeftToRight = ({ children, cssClass, delay, staggerDelay }: IAnimateWithDelayProps) => {
+export const FadeLeftToRight = ({
+  children,
+  cssClass,
+  delay,
+  staggerDelay
+}: IAnimateWithDelayProps) => {
   const FadeLeftToRightVariants = {
     visible: {
       opacity: 1,
@@ -79,7 +86,12 @@ export const FadeLeftToRight = ({ children, cssClass, delay, staggerDelay }: IAn
     }
   };
   return (
-    <motion.div initial="hidden" animate="visible" variants={FadeLeftToRightVariants} className={cssClass}>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={FadeLeftToRightVariants}
+      className={cssClass}
+    >
       {children}
     </motion.div>
   );
@@ -111,7 +123,8 @@ export const FadeDown = ({ children, cssClass, delay }: IAnimateWithDelayProps) 
       className={cssClass}
       variants={fadeDownVariants}
       initial="initial"
-      animate="animate">
+      animate="animate"
+    >
       {children}
     </motion.div>
   );
