@@ -10,6 +10,7 @@ interface IAnimateWithDelayProps {
   children: ReactNode;
   cssClass?: string;
   delay: number;
+  staggerDelay?: number;
 }
 
 export const PageTransition = ({ children, cssClass }: IAnimateProps) => {
@@ -25,8 +26,7 @@ export const PageTransition = ({ children, cssClass }: IAnimateProps) => {
         variants={pageTransitionVariants}
         initial="initial"
         animate="animate"
-        exit="exit"
-      >
+        exit="exit">
         {children}
       </motion.div>
     </AnimatePresence>
@@ -54,20 +54,19 @@ export const BounceInWhenVisible = ({ children, cssClass }: IAnimateProps) => {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
-      className={cssClass}
-    >
+      className={cssClass}>
       <motion.div variants={bounceVariants}>{children}</motion.div>
     </motion.div>
   );
 };
 
-export const ScaleIn = ({ children, cssClass, delay }: IAnimateWithDelayProps) => {
-  const scaleInVariants = {
+export const FadeLeftToRight = ({ children, cssClass, delay, staggerDelay }: IAnimateWithDelayProps) => {
+  const FadeLeftToRightVariants = {
     visible: {
       opacity: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.5,
+        staggerChildren: staggerDelay ? staggerDelay : 0.5,
         delay,
         ease: "easeInOut"
       }
@@ -80,22 +79,19 @@ export const ScaleIn = ({ children, cssClass, delay }: IAnimateWithDelayProps) =
     }
   };
   return (
-    <motion.div initial="hidden" animate="visible" variants={scaleInVariants} className={cssClass}>
+    <motion.div initial="hidden" animate="visible" variants={FadeLeftToRightVariants} className={cssClass}>
       {children}
     </motion.div>
   );
 };
 
-export const ScaleInItem = ({ children, cssClass }: IAnimateProps) => {
-  const scaleInItemVariants: Variants = {
-    /* visible: { opacity: 1, scale: 1 },
-    hidden: { opacity: 0, scale: 1.7 }*/
-
+export const FadeLeftToRightItem = ({ children, cssClass }: IAnimateProps) => {
+  const FadeLeftToRightItemVariants: Variants = {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -50 }
   };
   return (
-    <motion.span variants={scaleInItemVariants} className={cssClass}>
+    <motion.span variants={FadeLeftToRightItemVariants} className={cssClass}>
       {children}
     </motion.span>
   );
@@ -115,8 +111,7 @@ export const FadeDown = ({ children, cssClass, delay }: IAnimateWithDelayProps) 
       className={cssClass}
       variants={fadeDownVariants}
       initial="initial"
-      animate="animate"
-    >
+      animate="animate">
       {children}
     </motion.div>
   );
