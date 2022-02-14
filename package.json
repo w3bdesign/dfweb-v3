@@ -19,6 +19,7 @@
     "crypto": "^1.0.1",
     "framer-motion": "^6.2.6",
     "gsap": "^3.9.1",
+    "nanoid": "^3.2.0",
     "next": "^12.0.10",
     "next-sanity": "^0.4.0",
     "prettier": "2.5.1",

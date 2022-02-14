@@ -1,5 +1,20 @@
 /** @type {import('next').NextConfig} */
 
+const { nanoid } = require("nanoid");
+const crypto = require("crypto");
+
+const generateCsp = () => {
+  const hash = crypto.createHash("sha256");
+  hash.update(nanoid());
+  const production = process.env.NODE_ENV === "production";
+
+  return `default-src 'self'; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; script-src 'sha256-${hash.digest(
+    "base64"
+  )}' 'self' 'unsafe-inline' ${
+    production ? "" : "'unsafe-eval'"
+  }; font-src https://fonts.gstatic.com 'self' data:; img-src https://lh3.googleusercontent.com https://res.cloudinary.com https://s.gravatar.com 'self' data:;`;
+};
+
 const csp = `frame-ancestors 'self';block-all-mixed-content;default-src 'self';script-src 'self' 'report-sample' v3.dfweb.no dfweb.no;style-src 'self' dfweb.no v3.dfweb.no fonts.googleapis.com;object-src 'none';frame-src 'self';child-src 'self';img-src 'self' data: fonts.gstatic.com;font-src 'self' fonts.googleapis.com fonts.gstatic.com;connect-src 'self' api.emailjs.com emailjs.com fonts.googleapis.com fonts.gstatic.com;manifest-src 'self';base-uri 'self';form-action 'self';media-src 'self';worker-src 'self';`;
 
 const headers = [
@@ -37,7 +52,8 @@ const headers = [
   },
   {
     key: "Content-Security-Policy",
-    value: process.env.NODE_ENV === "production" ? csp : "" // only use csp in production
+    //value: process.env.NODE_ENV === "production" ? csp : "" // only use csp in production
+    value: generateCsp()
   }
 ];
 
