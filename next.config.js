@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const csp = `frame-ancestors 'self';block-all-mixed-content;default-src 'self';script-src 'self' 'report-sample' v3.dfweb.no dfweb.no;style-src 'self' 'unsafe-inline' 'report-sample' dfweb.no v3.dfweb.no fonts.googleapis.com;object-src 'none';frame-src 'self';child-src 'self';img-src 'self' data: fonts.gstatic.com;font-src 'self' fonts.googleapis.com fonts.gstatic.com;connect-src 'self' api.emailjs.com emailjs.com fonts.googleapis.com fonts.gstatic.com;manifest-src 'self';base-uri 'self';form-action 'self';media-src 'self';worker-src 'self';`;
+const csp = `frame-ancestors 'self';block-all-mixed-content;default-src 'self';script-src 'self' 'report-sample' v3.dfweb.no dfweb.no;style-src 'self' dfweb.no v3.dfweb.no fonts.googleapis.com;object-src 'none';frame-src 'self';child-src 'self';img-src 'self' data: fonts.gstatic.com;font-src 'self' fonts.googleapis.com fonts.gstatic.com;connect-src 'self' api.emailjs.com emailjs.com fonts.googleapis.com fonts.gstatic.com;manifest-src 'self';base-uri 'self';form-action 'self';media-src 'self';worker-src 'self';`;
 
 const headers = [
   {
