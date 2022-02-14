@@ -85,8 +85,8 @@ const Hamburger = (): JSX.Element => {
        * Start the mobile menu initially as hidden, then remove hidden class if we have clicked on the mobile menu
        */}
 
-      {isExpanded && (
-        <FadeLeftToRight delay={0.2} staggerDelay={0.4}>
+     
+        <FadeLeftToRight delay={0.2} staggerDelay={0.4} animateAtOnce={isExpanded}>
           <div
             id="mobile-menu"
             data-testid="mobile-menu"
@@ -121,8 +121,17 @@ const Hamburger = (): JSX.Element => {
             </ul>
           </div>
         </FadeLeftToRight>
-      )}
+
+
+
+     
+
+
     </div>
+
+
+
+
   );
 };
 

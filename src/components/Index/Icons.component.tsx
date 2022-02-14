@@ -10,7 +10,7 @@ import { FadeLeftToRight, FadeLeftToRightItem } from "../../animations/functions
  */
 
 const Icons = (): JSX.Element => (
-  <FadeLeftToRight delay={2.7} cssClass="flex justify-center mt-4 p-2">
+  <FadeLeftToRight delay={2.7} animateAtOnce cssClass="flex justify-center mt-4 p-2">
     <FadeLeftToRightItem cssClass="p-2">
       <FaReact title="React ikon" size="3em" />
     </FadeLeftToRightItem>
