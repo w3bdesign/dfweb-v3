@@ -5,14 +5,14 @@ const crypto = require("crypto");
 
 const generateCsp = () => {
   const hash = crypto.createHash("sha256");
+  const hashsecond = crypto.createHash("sha256");
+  hashsecond.update(nanoid());
   hash.update(nanoid());
   const production = process.env.NODE_ENV === "production";
 
   return `default-src 'self'; style-src https://fonts.googleapis.com 'self' 'sha256-${hash.digest(
     "base64"
-  )}'; script-src 'sha256-${hash.digest(
-    "base64"
-  )}' 'self' ${
+  )}'; script-src 'sha256-${hashsecond.digest("base64")}' 'self' ${
     production ? "" : "'unsafe-eval'"
   }; font-src https://fonts.gstatic.com 'self' data:; img-src https://lh3.googleusercontent.com https://res.cloudinary.com https://s.gravatar.com 'self' data:;`;
 };
