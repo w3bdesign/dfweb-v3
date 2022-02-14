@@ -8,9 +8,11 @@ const generateCsp = () => {
   hash.update(nanoid());
   const production = process.env.NODE_ENV === "production";
 
-  return `default-src 'self'; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; script-src 'sha256-${hash.digest(
+  return `default-src 'self'; style-src https://fonts.googleapis.com 'self' 'sha256-${hash.digest(
     "base64"
-  )}' 'self' 'unsafe-inline' ${
+  )}'; script-src 'sha256-${hash.digest(
+    "base64"
+  )}' 'self' ${
     production ? "" : "'unsafe-eval'"
   }; font-src https://fonts.gstatic.com 'self' data:; img-src https://lh3.googleusercontent.com https://res.cloudinary.com https://s.gravatar.com 'self' data:;`;
 };
