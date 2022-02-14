@@ -18,7 +18,7 @@ class MyDocument extends Document {
           />
 
           <link rel="icon" href="/favicon.ico" />
-          <link rel="apple-touch-icon" href="/logo.png" />
+          <link rel="apple-touch-icon" href="/logo.svg" />
 
           <meta property="og:title" content="Daniel Fjeldstad" />
           <meta name="author" content="Daniel Fjeldstad" />
