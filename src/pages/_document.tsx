@@ -1,5 +1,7 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
 
+import { randomBytes } from "crypto";
+
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -7,9 +9,10 @@ class MyDocument extends Document {
   }
 
   render(): JSX.Element {
+    const nonce = randomBytes(8).toString("base64");
     return (
       <Html lang="nb">
-        <Head>
+        <Head nonce={nonce}>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link
