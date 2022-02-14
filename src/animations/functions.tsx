@@ -11,6 +11,13 @@ interface IAnimateWithDelayProps {
   cssClass?: string;
   delay: number;
   staggerDelay?: number;
+}
+
+interface IAnimateAtOnceWithDelayProps {
+  children: ReactNode;
+  cssClass?: string;
+  delay: number;
+  staggerDelay?: number;
   animateAtOnce: boolean;
 }
 
@@ -67,7 +74,7 @@ export const FadeLeftToRight = ({
   delay,
   staggerDelay,
   animateAtOnce
-}: IAnimateWithDelayProps) => {
+}: IAnimateAtOnceWithDelayProps) => {
   const FadeLeftToRightVariants = {
     visible: {
       opacity: 1,
