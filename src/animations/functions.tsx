@@ -10,7 +10,6 @@ interface IAnimateWithDelayProps {
   children: ReactNode;
   cssClass?: string;
   delay: number;
-  staggerDelay?: number;
 }
 
 interface IAnimateAtOnceWithDelayProps {
