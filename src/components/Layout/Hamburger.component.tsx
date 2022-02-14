@@ -86,7 +86,7 @@ const Hamburger = (): JSX.Element => {
        */}
 
      
-        <FadeLeftToRight delay={0.2} staggerDelay={0.4} animateAtOnce={isExpanded}>
+        <FadeLeftToRight delay={0.2} staggerDelay={0.3} animateAtOnce={isExpanded}>
           <div
             id="mobile-menu"
             data-testid="mobile-menu"
