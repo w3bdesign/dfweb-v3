@@ -91,7 +91,6 @@ export const FadeLeftToRight = ({
   return (
     <motion.div
       initial="hidden"
-      //animate="visible"
       animate={animateAtOnce ? "visible" : "hidden"}
       variants={FadeLeftToRightVariants}
       className={cssClass}>
