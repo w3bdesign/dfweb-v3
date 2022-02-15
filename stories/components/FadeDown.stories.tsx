@@ -9,7 +9,6 @@ import { IAnimateWithDelayProps } from "../../src/components/Animations/types/An
 export default {
   title: "Components/Animations/FadeDown",
   component: FadeDown,
-
   argTypes: {
     children: {
       description: "Children content to be rendered",
