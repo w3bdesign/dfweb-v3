@@ -1,15 +1,16 @@
 import React, { useState, useRef } from "react";
-
 import Link from "next/link";
 
 import LINKS from "../../utils/constants/LINKS";
 
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
-import { FadeLeftToRight, FadeLeftToRightItem } from "../../animations/functions";
+
+import FadeLeftToRight from "../Animations/FadeLeftToRight.component";
+import FadeLeftToRightItem from "../Animations/FadeLeftToRightItem.component";
 
 /**
  * Renders Hamburger for responsive menu
- * @function About
+ * @function Hamburger
  * @returns {JSX.Element} - Rendered component
  */
 
@@ -65,7 +66,8 @@ const Hamburger = (): JSX.Element => {
         data-testid="hamburger"
         onClick={handleMobileMenuClick}
         aria-expanded={isExpanded}
-        type="button">
+        type="button"
+      >
         <span className="sr-only text-white text-2xl">Hamburger</span>
         <span
           className={`${hamburgerLine} ${
@@ -90,7 +92,8 @@ const Hamburger = (): JSX.Element => {
           id="mobile-menu"
           data-testid="mobile-menu"
           aria-hidden={!isExpanded}
-          className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30">
+          className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30"
+        >
           <ul aria-label="Navigasjon">
             {LINKS.map((link) => (
               <FadeLeftToRightItem key={link.id} cssClass="block">
@@ -102,7 +105,8 @@ const Hamburger = (): JSX.Element => {
                       href={link.url}
                       target="_blank"
                       rel="noreferrer"
-                      data-testid={`mobil-${link.text}`}>
+                      data-testid={`mobil-${link.text}`}
+                    >
                       {link.text}
                     </a>
                   ) : (

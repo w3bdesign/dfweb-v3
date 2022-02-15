@@ -2,7 +2,7 @@
 import type { NextPage } from "next";
 
 // Animations
-import { PageTransition } from "../animations/functions";
+import PageTransition from "../components/Animations/PageTransition.component";
 
 // Components
 import CVContent from "../components/CV/CVContent.component";

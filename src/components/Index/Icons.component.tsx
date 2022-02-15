@@ -1,10 +1,12 @@
 import { FaReact, FaVuejs, FaPhp } from "react-icons/fa";
 import { SiTypescript, SiWordpress } from "react-icons/si";
-import { FadeLeftToRight, FadeLeftToRightItem } from "../../animations/functions";
+
+import FadeLeftToRight from "../Animations/FadeLeftToRight.component";
+import FadeLeftToRightItem from "../Animations/FadeLeftToRightItem.component";
 
 /**
  * Renders SVG icons that are used on the front page
- * Uses GSAP for animations to show the SVGs
+ * Uses Framer Motion for animations to show the SVGs
  * @function Icons
  * @returns {JSX.Element} - Rendered component
  */

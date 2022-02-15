@@ -11,7 +11,7 @@ import ProsjekterListings from "../components/Prosjekter/ProsjekterListings.comp
 import Layout from "../components/Layout/Layout.component";
 
 // Animations
-import { PageTransition } from "../animations/functions";
+import PageTransition from "../components/Animations/PageTransition.component";
 
 // Sanity GROQ queries
 const projectQuery = groq`*[_type == "project"]`;

@@ -1,6 +1,7 @@
 import Icons from "./Icons.component";
 
-import { FadeDown, FadeUp } from "../../animations/functions";
+import FadeDown from "../Animations/FadeDown.component";
+import FadeUp from "../Animations/FadeUp.component";
 
 /**
  * Renders Hero that is used on the front page

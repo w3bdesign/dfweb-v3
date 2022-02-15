@@ -11,7 +11,7 @@ import Layout from "../components/Layout/Layout.component";
 import { getClient } from "../lib/sanity.server";
 
 // Animations
-import { PageTransition } from "../animations/functions";
+import PageTransition from "../components/Animations/PageTransition.component";
 
 // Sanity GROQ queries
 const indexQuery = groq`
