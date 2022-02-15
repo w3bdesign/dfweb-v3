@@ -11,7 +11,7 @@ interface IButtonProps {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Button",
+  title: "Components/UI/Button",
   component: Button,
   argTypes: { onClick: { action: "onClick" } }
 } as ComponentMeta<typeof Button>;
