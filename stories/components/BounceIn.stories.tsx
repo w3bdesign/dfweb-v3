@@ -13,9 +13,8 @@ export default {
   argTypes: {
     children: {
       description: "Children content to be rendered",
-      options: ["BounceIn animation", "Sample animation text"],
+      options: ["Sample animation text"],
       mapping: {
-        BounceIn: <h1>BounceIn animation</h1>,
         Sample: <h1>Sample animation text</h1>
       }
     },
@@ -31,6 +30,6 @@ const Template: ComponentStory<typeof BounceIn> = ({ children, cssClass }: IAnim
 export const Primary = Template;
 
 Primary.args = {
-  children: <h1>BounceIn animation</h1>,
+  children: <h1>Sample animation text</h1>,
   cssClass: "text-center"
 };
