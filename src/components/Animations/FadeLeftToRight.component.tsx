@@ -1,6 +1,6 @@
 import { motion, Variants } from "framer-motion";
 
-import { IAnimateWithDelayProps } from "./types/Animations.types";
+import { IAnimateStaggerWithDelayProps } from "./types/Animations.types";
 
 const FadeLeftToRight = ({
   children,
@@ -8,7 +8,7 @@ const FadeLeftToRight = ({
   delay,
   staggerDelay,
   animateNotReverse
-}: IAnimateWithDelayProps) => {
+}: IAnimateStaggerWithDelayProps) => {
   const FadeLeftToRightVariants: Variants = {
     visible: {
       opacity: 1,

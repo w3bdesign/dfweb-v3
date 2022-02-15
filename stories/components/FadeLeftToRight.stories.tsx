@@ -4,13 +4,12 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import FadeLeftToRight from "../../src/components/Animations/FadeLeftToRight.component";
 import FadeLeftToRightItem from "../../src/components/Animations/FadeLeftToRightItem.component";
 
-import { IAnimateWithDelayProps } from "../../src/components/Animations/types/Animations.types";
+import { IAnimateStaggerWithDelayProps } from "../../src/components/Animations/types/Animations.types";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/Animations/FadeLeftToRight",
   component: FadeLeftToRight,
-
   argTypes: {
     children: {
       description: "Children content to be rendered"
@@ -29,7 +28,7 @@ const Template: ComponentStory<typeof FadeLeftToRight> = ({
   delay,
   staggerDelay,
   animateNotReverse
-}: IAnimateWithDelayProps) => (
+}: IAnimateStaggerWithDelayProps) => (
   <FadeLeftToRight
     cssClass={cssClass}
     delay={delay}

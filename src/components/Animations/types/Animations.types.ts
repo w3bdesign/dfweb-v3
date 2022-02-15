@@ -11,7 +11,7 @@ export interface IAnimateWithDelayProps {
   delay: number;
 }
 
-export interface IAnimateWithDelayProps {
+export interface IAnimateStaggerWithDelayProps {
   children: ReactNode;
   cssClass?: string;
   delay: number;
