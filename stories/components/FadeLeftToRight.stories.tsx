@@ -33,8 +33,7 @@ const Template: ComponentStory<typeof FadeLeftToRight> = ({
     cssClass={cssClass}
     delay={delay}
     staggerDelay={staggerDelay}
-    animateNotReverse={animateNotReverse}
-  >
+    animateNotReverse={animateNotReverse}>
     <FadeLeftToRightItem cssClass="block">{children}</FadeLeftToRightItem>
     <br />
     <FadeLeftToRightItem cssClass="block">{children}</FadeLeftToRightItem>
@@ -52,6 +51,6 @@ Primary.args = {
   delay: 0.2,
   staggerDelay: 0.2,
   animateNotReverse: true,
-  //children: <h1>Fade Left To Right</h1>,
+  children: <h1>Fade Left To Right</h1>,
   cssClass: "text-center"
 };
