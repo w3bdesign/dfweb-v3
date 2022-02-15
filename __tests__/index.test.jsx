@@ -4,7 +4,19 @@
 
 import React from "react";
 import { render, screen } from "@testing-library/react";
+
 import Home from "../src/pages/index";
+
+jest.mock("next/router", () => ({
+  useRouter() {
+      return {
+          route: "/",
+          pathname: "",
+          query: "",
+          asPath: "",
+      };
+  },
+}));
 
 describe("Forside", () => {
   it("Welcome to next eksisterer ikke", () => {
