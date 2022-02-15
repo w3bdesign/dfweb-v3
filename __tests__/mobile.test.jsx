@@ -9,13 +9,13 @@ import Home from "../src/pages/index";
 
 jest.mock("next/router", () => ({
   useRouter() {
-      return {
-          route: "/",
-          pathname: "",
-          query: "",
-          asPath: "",
-      };
-  },
+    return {
+      route: "/",
+      pathname: "",
+      query: "",
+      asPath: ""
+    };
+  }
 }));
 
 describe("Mobile menu", () => {
