@@ -13,11 +13,7 @@ export default {
 
   argTypes: {
     children: {
-      description: "Children content to be rendered",
-      options: ["Sample animation text"],
-      mapping: {
-        Sample: <h1>Sample animation text</h1>
-      }
+      description: "Children content to be rendered"
     }
   },
   cssClass: { description: "CSS class to append to content" },
@@ -39,19 +35,23 @@ const Template: ComponentStory<typeof FadeLeftToRight> = ({
     delay={delay}
     staggerDelay={staggerDelay}
     animateAtOnce={animateAtOnce}>
-    <FadeLeftToRightItem>{children}</FadeLeftToRightItem><br />
-    <FadeLeftToRightItem>{children}</FadeLeftToRightItem><br />
-    <FadeLeftToRightItem>{children}</FadeLeftToRightItem><br />
-    <FadeLeftToRightItem>{children}</FadeLeftToRightItem><br />
+    <FadeLeftToRightItem cssClass="block">{children}</FadeLeftToRightItem>
+    <br />
+    <FadeLeftToRightItem cssClass="block">{children}</FadeLeftToRightItem>
+    <br />
+    <FadeLeftToRightItem cssClass="block">{children}</FadeLeftToRightItem>
+    <br />
+    <FadeLeftToRightItem cssClass="block">{children}</FadeLeftToRightItem>
+    <br />
   </FadeLeftToRight>
 );
 
 export const Primary = Template;
 
 Primary.args = {
-  delay: 1,
-  staggerDelay: 0.5,
+  delay: 0.2,
+  staggerDelay: 0.2,
   animateAtOnce: true,
-  children: <h1>Fade Left To Right</h1>,
+  //children: <h1>Fade Left To Right</h1>,
   cssClass: "text-center"
 };
