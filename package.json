@@ -1,6 +1,6 @@
 {
   "name": "dfweb-v3",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
@@ -40,7 +40,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@types/classnames": "^2.3.1",
-    "@types/node": "^17.0.17",
+    "@types/node": "^17.0.18",
     "@types/react": "17.0.39",
     "@types/react-icons": "^3.0.0",
     "@types/react-pdf": "^5.0.9",
