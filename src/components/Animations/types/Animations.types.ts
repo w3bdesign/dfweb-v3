@@ -11,10 +11,10 @@ export interface IAnimateWithDelayProps {
   delay: number;
 }
 
-export interface IAnimateAtOnceWithDelayProps {
+export interface IAnimateWithDelayProps {
   children: ReactNode;
   cssClass?: string;
   delay: number;
   staggerDelay?: number;
-  animateAtOnce: boolean;
+  animateNotReverse: boolean;
 }
