@@ -1,14 +1,14 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import FadeDown from "../../src/components/Animations/FadeDown.component";
+import FadeUp from "../../src/components/Animations/FadeUp.component";
 
 import { IAnimateWithDelayProps } from "../../src/components/Animations/types/Animations.types";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Animations/FadeDown",
-  component: FadeDown,
+  title: "Components/Animations/FadeUp",
+  component: FadeUp,
   argTypes: {
     children: {
       description: "Children content to be rendered",
@@ -20,18 +20,14 @@ export default {
     cssClass: { description: "CSS class to append to content" },
     delay: { description: "Delay before starting animation" }
   }
-} as ComponentMeta<typeof FadeDown>;
+} as ComponentMeta<typeof FadeUp>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof FadeDown> = ({
+const Template: ComponentStory<typeof FadeUp> = ({
   children,
   cssClass,
   delay
-}: IAnimateWithDelayProps) => (
-  <FadeDown cssClass={cssClass} delay={delay}>
-    {children}
-  </FadeDown>
-);
+}: IAnimateWithDelayProps) => <FadeUp cssClass={cssClass} delay={delay}>{children}</FadeUp>;
 
 export const Primary = Template;
 
