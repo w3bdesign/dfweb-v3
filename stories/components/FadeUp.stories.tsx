@@ -27,7 +27,11 @@ const Template: ComponentStory<typeof FadeUp> = ({
   children,
   cssClass,
   delay
-}: IAnimateWithDelayProps) => <FadeUp cssClass={cssClass} delay={delay}>{children}</FadeUp>;
+}: IAnimateWithDelayProps) => (
+  <FadeUp cssClass={cssClass} delay={delay}>
+    {children}
+  </FadeUp>
+);
 
 export const Primary = Template;
 
