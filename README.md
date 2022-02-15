@@ -29,11 +29,10 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Filter project display
 -   Display CV with React-PDF
 -   Responsive design
--   Grade A for security as reported by https://securityheaders.com
 
 ### Animations
 
--   Animations with Framer Motion for the majority of animations
+-   Animations with Framer Motion
 -   CSS hover animations in navigation menu
 
 ### Accessibility and design
@@ -57,5 +56,4 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 ## TODO
 
 -   Add more tests
--   Replace GSAP with Framer Motion
 -   Redesign site (long term)
