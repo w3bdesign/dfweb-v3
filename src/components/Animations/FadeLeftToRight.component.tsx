@@ -1,14 +1,14 @@
 import { motion, Variants } from "framer-motion";
 
-import { IAnimateAtOnceWithDelayProps } from "./types/Animations.types";
+import { IAnimateStaggerWithDelayProps } from "./types/Animations.types";
 
 const FadeLeftToRight = ({
   children,
   cssClass,
   delay,
   staggerDelay,
-  animateAtOnce
-}: IAnimateAtOnceWithDelayProps) => {
+  animateNotReverse
+}: IAnimateStaggerWithDelayProps) => {
   const FadeLeftToRightVariants: Variants = {
     visible: {
       opacity: 1,
@@ -32,7 +32,7 @@ const FadeLeftToRight = ({
   return (
     <motion.div
       initial="hidden"
-      animate={animateAtOnce ? "visible" : "hidden"}
+      animate={animateNotReverse ? "visible" : "hidden"}
       variants={FadeLeftToRightVariants}
       className={cssClass}
     >

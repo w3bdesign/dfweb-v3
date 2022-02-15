@@ -87,7 +87,7 @@ const Hamburger = (): JSX.Element => {
        * Start the mobile menu initially as hidden, then remove hidden class if we have clicked on the mobile menu
        */}
 
-      <FadeLeftToRight delay={0.2} staggerDelay={0.2} animateAtOnce={isExpanded}>
+      <FadeLeftToRight delay={0.2} staggerDelay={0.2} animateNotReverse={isExpanded}>
         <div
           id="mobile-menu"
           data-testid="mobile-menu"
