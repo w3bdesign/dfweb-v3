@@ -16,7 +16,8 @@ const FadeDown = ({ children, cssClass, delay }: IAnimateWithDelayProps) => {
       className={cssClass}
       variants={fadeDownVariants}
       initial="initial"
-      animate="animate">
+      animate="animate"
+    >
       {children}
     </motion.div>
   );

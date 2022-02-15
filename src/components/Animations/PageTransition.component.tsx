@@ -15,7 +15,8 @@ const PageTransition = ({ children, cssClass }: IAnimateProps) => {
         variants={pageTransitionVariants}
         initial="initial"
         animate="animate"
-        exit="exit">
+        exit="exit"
+      >
         {children}
       </motion.div>
     </AnimatePresence>

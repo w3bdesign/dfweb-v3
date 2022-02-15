@@ -23,7 +23,8 @@ const BounceIn = ({ children, cssClass }: IAnimateProps) => {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
-      className={cssClass}>
+      className={cssClass}
+    >
       <motion.div variants={bounceVariants}>{children}</motion.div>
     </motion.div>
   );
