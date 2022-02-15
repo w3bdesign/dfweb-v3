@@ -50,7 +50,7 @@ const KontaktContent = (): JSX.Element => {
                   <>
                     <h1 className="m-2 text-3xl text-center text-black">Kontakt</h1>
                     <form
-                      className="text-center"
+                      className="text-center mt-6"
                       ref={formRef}
                       onSubmit={handleSubmit}
                       method="POST"
