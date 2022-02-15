@@ -4,16 +4,45 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import FadeLeftToRight from "../../src/components/Animations/FadeLeftToRight.component";
 import FadeLeftToRightItem from "../../src/components/Animations/FadeLeftToRightItem.component";
 
+import { IAnimateAtOnceWithDelayProps } from "../../src/components/Animations/types/Animations.types";
+
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/Animations/FadeLeftToRight",
-  component: FadeLeftToRight
+  component: FadeLeftToRight,
+
+  argTypes: {
+    children: {
+      description: "Children content to be rendered",
+      options: ["Sample animation text"],
+      mapping: {
+        Sample: <h1>Sample animation text</h1>
+      }
+    }
+  },
+  cssClass: { description: "CSS class to append to content" },
+  delay: { description: "Delay before starting animation" },
+  staggerDelay: { description: "Delay before staggering animations for children" },
+  animateatOnce: { description: "Start animation at once" }
 } as ComponentMeta<typeof FadeLeftToRight>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof FadeLeftToRight> = () => (
-  <FadeLeftToRight animateAtOnce delay={1} staggerDelay={0.5}>
-    <FadeLeftToRightItem>FadeLeftToRight animation</FadeLeftToRightItem>
+const Template: ComponentStory<typeof FadeLeftToRight> = ({
+  children,
+  cssClass,
+  delay,
+  staggerDelay,
+  animateAtOnce
+}: IAnimateAtOnceWithDelayProps) => (
+  <FadeLeftToRight
+    cssClass={cssClass}
+    delay={delay}
+    staggerDelay={staggerDelay}
+    animateAtOnce={animateAtOnce}>
+    <FadeLeftToRightItem>{children}</FadeLeftToRightItem><br />
+    <FadeLeftToRightItem>{children}</FadeLeftToRightItem><br />
+    <FadeLeftToRightItem>{children}</FadeLeftToRightItem><br />
+    <FadeLeftToRightItem>{children}</FadeLeftToRightItem><br />
   </FadeLeftToRight>
 );
 
