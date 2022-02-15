@@ -1,15 +1,16 @@
 import React, { useState, useRef } from "react";
-
 import Link from "next/link";
 
 import LINKS from "../../utils/constants/LINKS";
 
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
-import { FadeLeftToRight, FadeLeftToRightItem } from "../../animations/functions";
+
+import FadeLeftToRight from "../Animations/FadeLeftToRight.component";
+import FadeLeftToRightItem from "../Animations/FadeLeftToRightItem.component";
 
 /**
  * Renders Hamburger for responsive menu
- * @function About
+ * @function Hamburger
  * @returns {JSX.Element} - Rendered component
  */
 

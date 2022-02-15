@@ -6,7 +6,7 @@ import KontaktContent from "../components/Kontakt/KontaktContent.component";
 import Layout from "../components/Layout/Layout.component";
 
 // Animations
-import { PageTransition } from "../animations/functions";
+import PageTransition from "../components/Animations/PageTransition.component";
 
 const Kontakt: NextPage = () => (
   <Layout title="Kontakt - Portefølje - Dfweb">
