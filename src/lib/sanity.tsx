@@ -1,10 +1,11 @@
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import createImageUrlBuilder from "@sanity/image-url";
 import {
-  createImageUrlBuilder,
   createPortableTextComponent,
   createPreviewSubscriptionHook,
   createCurrentUserHook
 } from "next-sanity";
+
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 import { config } from "./sanity.config";
 
