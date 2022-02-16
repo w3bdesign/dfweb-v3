@@ -9,7 +9,6 @@ import { IAnimateProps } from "../../src/components/Animations/types/Animations.
 export default {
   title: "Components/Animations/PageTransition",
   component: PageTransition,
-
   argTypes: {
     children: {
       description: "Children content to be rendered",
