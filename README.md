@@ -21,6 +21,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   React testing library for unit testing
 -   Cypress for E2E testing
 -   Filter project display
+-   Contact form with Emailjs
 -   Display CV with React-PDF
 -   Automatic sitemap generation (see robots.txt)
 -   Responsive design
