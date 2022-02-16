@@ -54,7 +54,8 @@ const KontaktContent = (): JSX.Element => {
                       ref={formRef}
                       onSubmit={handleSubmit}
                       method="POST"
-                      action="/api/form">
+                      action="/api/form"
+                    >
                       <fieldset>
                         <label htmlFor="navn" className="text-black">
                           Fullt navn
