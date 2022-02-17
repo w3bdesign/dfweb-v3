@@ -1,11 +1,11 @@
-import Image from "../UI/Image.component";
+import Image from "next/image";
+
 import Button from "../UI/Button.component";
+import BounceIn from "../Animations/BounceIn.component";
 
 import { urlFor } from "../../lib/sanity";
 
 import type { IProject } from "./ProsjekterListings.component";
-
-import BounceIn from "../Animations/BounceIn.component";
 
 interface ILinkButton {
   url: string;
@@ -30,8 +30,7 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {
   return (
     <div
       id="prosjektgrid"
-      className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1"
-    >
+      className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
       {projects.map(
         ({ id, name, description, subdescription, urlwww, urlgithub, projectimage }) => (
           <div key={id} id="projectdiv" className="p-6 text-lg text-black  bg-white rounded shadow">
