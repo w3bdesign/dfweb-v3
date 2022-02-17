@@ -1,6 +1,6 @@
 {
   "name": "dfweb-v3",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
@@ -18,7 +18,7 @@
     "@emailjs/browser": "^3.4.0",
     "@sanity/image-url": "^1.0.1",
     "framer-motion": "^6.2.6",
-    "next": "^12.0.10",
+    "next": "^12.1.0",
     "next-sanity": "^0.5.0",
     "prettier": "2.5.1",
     "react": "17.0.2",
@@ -30,7 +30,7 @@
     "sharp": "^0.30.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.4",
+    "@babel/core": "^7.17.5",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
@@ -50,10 +50,10 @@
     "cross-env": "^7.0.3",
     "cypress": "^9.5.0",
     "eslint": "8.9.0",
-    "eslint-config-next": "12.0.10",
+    "eslint-config-next": "12.1.00",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-sonarjs": "^0.11.0",
-    "eslint-plugin-storybook": "^0.5.6",
+    "eslint-plugin-storybook": "^0.5.7",
     "jest": "^27.5.1",
     "postcss": "^8.4.6",
     "react-test-renderer": "^17.0.2",
