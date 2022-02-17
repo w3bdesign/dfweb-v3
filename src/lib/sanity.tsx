@@ -5,22 +5,6 @@ import { createPreviewSubscriptionHook, createCurrentUserHook } from "next-sanit
 import { config } from "./sanity.config";
 
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import {
-  PortableTextBlock,
-  PortableTextMarkDefinition,
-  ArbitraryTypedObject,
-  PortableTextSpan
-} from "@portabletext/types";
-
-type TPortableText = JSX.IntrinsicAttributes &
-  PortableTextProps<
-    PortableTextBlock<
-      PortableTextMarkDefinition,
-      ArbitraryTypedObject | PortableTextSpan,
-      string,
-      string
-    >
-  >;
 
 /**
  * Set up a helper function for generating Image URLs with only the asset reference data in your documents.
@@ -34,8 +18,6 @@ export const usePreviewSubscription = createPreviewSubscriptionHook(config);
 // https://www.sanity.io/guides/3-things-you-need-to-know-when-getting-started-with-portable-text
 
 // https://www.sanity.io/schemas/breaks-for-portable-text-189dba35
-
-export const PortableText = (props: TPortableText) => <PortableTextComponent {...props} />;
 
 // Helper function for using the current logged in user account
 export const useCurrentUser = createCurrentUserHook(config);
