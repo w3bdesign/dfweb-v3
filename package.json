@@ -1,6 +1,6 @@
 {
   "name": "dfweb-v3",
-  "version": "0.4.9",
+  "version": "0.5.0",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
+    "@sanity/image-url": "^1.0.1",
     "framer-motion": "^6.2.6",
     "next": "^12.0.10",
     "next-sanity": "^0.5.0",
