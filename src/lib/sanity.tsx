@@ -1,5 +1,5 @@
 import createImageUrlBuilder from "@sanity/image-url";
-import { PortableText as PortableTextComponent, PortableTextProps } from "@portabletext/react";
+
 import { createPreviewSubscriptionHook, createCurrentUserHook } from "next-sanity";
 
 import { config } from "./sanity.config";
