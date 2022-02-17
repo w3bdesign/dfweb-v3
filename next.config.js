@@ -36,8 +36,8 @@ const headers = [
     value: "geolocation=*" // allow specified policies here
   },
   {
-    //key: "Content-Security-Policy",
-    key: "Content-Security-Policy-Report-Only",
+    key: "Content-Security-Policy",
+    //key: "Content-Security-Policy-Report-Only",
     value: csp
   }
 ];
