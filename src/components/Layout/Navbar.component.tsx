@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import Image from "../UI/Image.component";
+//import Image from "../UI/Image.component";
+import Image from "next/image";
 import Hamburger from "./Hamburger.component";
 
 import LINKS from "../../utils/constants/LINKS";
@@ -28,7 +29,7 @@ const Navbar = (): JSX.Element => {
           className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap"
         >
           <div className="flex w-full font-extrabold text-white md:w-1/2 md:justify-start">
-            <Image src="/logo.svg" alt="Dfweb Logo" width={150} height={45} />
+            <Image src="/logo.svg" alt="Dfweb Logo" width={150} height={45} priority />
           </div>
           <div
             id="hamburger-div"
