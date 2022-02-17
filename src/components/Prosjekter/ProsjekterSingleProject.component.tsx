@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import Button from "../UI/Button.component";
-import BounceIn from "../Animations/BounceIn.component";
+import BounceInScroll from "../Animations/BounceInScroll.component";
 
 import { urlFor } from "../../lib/sanity";
 
@@ -35,7 +35,7 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {
       {projects.map(
         ({ id, name, description, subdescription, urlwww, urlgithub, projectimage }) => (
           <div key={id} id="projectdiv" className="p-6 text-lg text-black  bg-white rounded shadow">
-            <BounceIn>
+            <BounceInScroll>
               <h2 className="text-xl font-black text-center">{name}</h2>
               <div className="mt-6 text-lg text-left lg:text-left md:text-left">
                 <p>{description}</p>
@@ -59,7 +59,7 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {
                   {urlwww && <ShowLinkButton url={urlwww} text="Besøk" name={name} />}
                 </div>
               </div>
-            </BounceIn>
+            </BounceInScroll>
           </div>
         )
       )}

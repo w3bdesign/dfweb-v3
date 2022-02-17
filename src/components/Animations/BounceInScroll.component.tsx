@@ -18,15 +18,15 @@ const bounceVariants: Variants = {
   }
 };
 
-const BounceIn = ({ children, cssClass }: IAnimateProps) => (
+const BounceInScroll = ({ children, cssClass }: IAnimateProps) => (
   <motion.div
     initial="offscreen"
     whileInView="onscreen"
-    viewport={{ once: true, amount: 0.2 }}
+    viewport={{ once: true, amount: 0.3 }}
     className={cssClass}
   >
     <motion.div variants={bounceVariants}>{children}</motion.div>
   </motion.div>
 );
 
-export default BounceIn;
+export default BounceInScroll;
