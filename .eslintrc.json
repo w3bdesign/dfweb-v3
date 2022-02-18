@@ -9,6 +9,6 @@
     "cy": true
   },
   "rules": {
-    "react/jsx-max-depth": 10
+    "react/jsx-max-depth": 1
   }
 }
