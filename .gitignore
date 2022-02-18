@@ -40,3 +40,6 @@ yarn-error.log*
 
 #storybook build
 storybook-static
+
+#sanity
+sanity.json

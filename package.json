@@ -1,6 +1,6 @@
 {
   "name": "dfweb-v3",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
@@ -52,7 +52,7 @@
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.00",
     "eslint-plugin-cypress": "2.12.1",
-    "eslint-plugin-sonarjs": "^0.11.0",
+    "eslint-plugin-sonarjs": "^0.12.0",
     "eslint-plugin-storybook": "^0.5.7",
     "jest": "^27.5.1",
     "postcss": "^8.4.6",
