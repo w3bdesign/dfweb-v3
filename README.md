@@ -15,7 +15,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 
 ### General
 
--   Next.js with Typescript as main project dependency
+-   Next.js with Typescript
 -   Sanity.io for fetching project information and frontpage text
 -   Storybook for component documentation
 -   Animations with Framer Motion
