@@ -29,14 +29,7 @@ const Navbar = (): JSX.Element => {
           data-cy="main-navigation"
           className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap">
           <div className="flex w-full font-extrabold text-white md:w-1/2 md:justify-start">
-            <Image
-              src={logoImage}
-              alt="Dfweb Logo"
-              width={150}
-              height={50}
-              loading="eager"
-              placeholder="blur"
-            />
+            <Image src={logoImage} alt="Dfweb Logo" width={150} height={50} loading="eager" />
           </div>
           <div
             id="hamburger-div"
