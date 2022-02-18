@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
+// import Image from "next/image";
 
 import Hamburger from "./Hamburger.component";
 
 import LINKS from "../../utils/constants/LINKS";
 
-const blurImage =
-  " data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADBSURBVChTY/gPBNtP3Px/+N0jEBMnYHj/+dv/oJol/31OroAKYQcMXSsO/s/oXv8/7Oza/xue34AKYwIGw9qp/xduPvu/8/6x/96rl0KFMQGDyMyu//9//f//8v/X/xxh9VBhTMAgvXUCmPHw2fv/rF41YDY2wOC8f8n/Da9u/i+bsf2/dfEMqDAmYJhx5+z/utsH/1vnzPi/dN95qDAmYPjw68f/7Ks7/hskT4QKYQfgAD/49uH/nadugQWwg///AUKybHpBpVu6AAAAAElFTkSuQmCC";
+//const blurImage =
+//" data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADBSURBVChTY/gPBNtP3Px/+N0jEBMnYHj/+dv/oJol/31OroAKYQcMXSsO/s/oXv8/7Oza/xue34AKYwIGw9qp/xduPvu/8/6x/96rl0KFMQGDyMyu//9//f//8v/X/xxh9VBhTMAgvXUCmPHw2fv/rF41YDY2wOC8f8n/Da9u/i+bsf2/dfEMqDAmYJhx5+z/utsH/1vnzPi/dN95qDAmYPjw68f/7Ks7/hskT4QKYQfgAD/49uH/nadugQWwg///AUKybHpBpVu6AAAAAElFTkSuQmCC";
 
 /**
  * Display the menu and the links
@@ -30,15 +30,7 @@ const Navbar = (): JSX.Element => {
           data-cy="main-navigation"
           className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap">
           <div className="flex w-full font-extrabold text-white md:w-1/2 md:justify-start">
-            <Image
-              src="/logo.webp"
-              alt="Dfweb Logo"
-              width={150}
-              height={50}
-              loading="eager"
-              placeholder="blur"
-              blurDataURL={blurImage}
-            />
+            <img src="/logo.svg" alt="Dfweb Logo" width="150" height="45" />
           </div>
           <div
             id="hamburger-div"
