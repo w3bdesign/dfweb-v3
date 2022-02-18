@@ -5,7 +5,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ffcd837a61db13b9630e/maintainability)](https://codeclimate.com/github/w3bdesign/dfweb-v3/maintainability)
 [![DeepSource](https://deepsource.io/gh/w3bdesign/dfweb-v3.svg/?label=active+issues&token=xU1k2KJL7peEGSzJkuYYEuw5)](https://deepsource.io/gh/w3bdesign/dfweb-v3/?ref=repository-badge)
 
-# Dfweb Version 3
+# Dfweb Portfolio Version 3
 
 Third version of my portfolio website with Next.js with Typescript instead of Gatsby.
 
