@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-//const csp = `frame-ancestors 'self';report-uri https://dfweb.report-uri.com/r/d/csp/reportOnly;block-all-mixed-content;default-src 'self';script-src 'self' 'report-sample' 'unsafe-inline' 'unsafe-eval' cdnjs.cloudflare.com;style-src-elem 'self' 'unsafe-inline' v3.dfweb.no;style-src 'self' 'unsafe-inline' v3.dfweb.no cdnjs.cloudflare.com fonts.googleapis.com;object-src 'none';frame-src 'self';child-src 'self';img-src 'self' data: fonts.gstatic.com;font-src 'self' fonts.googleapis.com fonts.gstatic.com;connect-src 'self' fonts.googleapis.com fonts.gstatic.com;manifest-src 'self';base-uri 'self';form-action 'self';media-src 'self';prefetch-src 'self';worker-src 'self' blob:;`;
+//const csp = `frame-ancestors 'self';report-uri https://dfweb.report-uri.com/r/d/csp/reportOnly;block-all-mixed-content;default-src 'self';script-src 'self' 'report-sample' 'unsafe-inline' 'unsafe-eval' cdnjs.cloudflare.com;style-src-elem 'self' 'unsafe-inline' dfweb.no;style-src 'self' 'unsafe-inline' dfweb.no cdnjs.cloudflare.com fonts.googleapis.com;object-src 'none';frame-src 'self';child-src 'self';img-src 'self' data: fonts.gstatic.com;font-src 'self' fonts.googleapis.com fonts.gstatic.com;connect-src 'self' fonts.googleapis.com fonts.gstatic.com;manifest-src 'self';base-uri 'self';form-action 'self';media-src 'self';prefetch-src 'self';worker-src 'self' blob:;`;
 
 const headers = [
   {
@@ -41,7 +41,7 @@ module.exports = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
-    domains: ["cdn.sanity.io", "v3.dfweb.no", "dfweb.no"],
+    domains: ["cdn.sanity.io", "dfweb.no", "www.dfweb.no"],
     minimumCacheTTL: 600
   },
   async headers() {
