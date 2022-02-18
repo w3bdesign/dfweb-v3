@@ -23,7 +23,10 @@ export default {
         SecondButton: <h1>Second Button</h1>
       }
     },
-    onClick: { action: "onClick" }
+    onClick: {
+      description: "onClick handler for button",
+      action: "onClick"
+    }
   }
 } as ComponentMeta<typeof Button>;
 
