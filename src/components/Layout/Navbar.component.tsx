@@ -25,8 +25,8 @@ const Navbar = (): JSX.Element => {
           id="main-navigation"
           data-cy="main-navigation"
           className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap">
-          <div className="flex w-full font-extrabold text-white md:w-1/2 md:justify-start">
-            <img className="p-2" src="/logo.svg" alt="Dfweb Logo" width="150" height="45" />
+          <div className="flex w-full text-white md:w-1/2 md:justify-start">
+            <img src="/logo.svg" alt="Dfweb Logo" width="150" height="45" />
           </div>
           <div
             id="hamburger-div"
