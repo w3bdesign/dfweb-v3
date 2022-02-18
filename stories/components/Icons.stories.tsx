@@ -13,4 +13,3 @@ export default {
 const Template: ComponentStory<typeof Icons> = () => <Icons />;
 
 export const Icon = Template;
-
