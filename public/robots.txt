@@ -4,4 +4,4 @@ Allow: /
 
 Disallow: /api/*
 
-Sitemap: https://v3.dfweb.no/api/siteMapGenerator
+Sitemap: https://www.dfweb.no/api/siteMapGenerator
