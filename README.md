@@ -50,10 +50,6 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Test coverage setup with Codecov
 -   Eslint setup with Airbnb style guide
 
-### Misc
-
--   Bundle analyzer setup with cross-env and `next build`
-
 ## TODO
 
 -   Add more tests
