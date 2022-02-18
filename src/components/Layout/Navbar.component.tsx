@@ -1,13 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-// import Image from "next/image";
 
 import Hamburger from "./Hamburger.component";
 
 import LINKS from "../../utils/constants/LINKS";
-
-//const blurImage =
-//" data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADBSURBVChTY/gPBNtP3Px/+N0jEBMnYHj/+dv/oJol/31OroAKYQcMXSsO/s/oXv8/7Oza/xue34AKYwIGw9qp/xduPvu/8/6x/96rl0KFMQGDyMyu//9//f//8v/X/xxh9VBhTMAgvXUCmPHw2fv/rF41YDY2wOC8f8n/Da9u/i+bsf2/dfEMqDAmYJhx5+z/utsH/1vnzPi/dN95qDAmYPjw68f/7Ks7/hskT4QKYQfgAD/49uH/nadugQWwg///AUKybHpBpVu6AAAAAElFTkSuQmCC";
 
 /**
  * Display the menu and the links
