@@ -10,14 +10,19 @@ import Layout from "../components/Layout/Layout.component";
 // Utilities
 import { getClient } from "../lib/sanity.server";
 
+// Animations
+import PageTransition from "../components/Animations/PageTransition.component";
+
 // Sanity GROQ queries
 const indexQuery = groq`
 *[_type == 'sitecontent' && pagename match 'Index']
 `;
 
-const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => (
+const Home: NextPage = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Forside - Portefølje - Dfweb">
-    <IndexContent {...data} />
+    <PageTransition>
+      <IndexContent post={post} />
+    </PageTransition>
   </Layout>
 );
 
@@ -26,7 +31,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      data: { post }
+      post
     }
   };
 };

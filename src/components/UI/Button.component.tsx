@@ -7,14 +7,14 @@ type TProps = {
 };
 
 /**
- * Common button component used by several pages
- *
- *
- * @param {Object} text Text passed into the button
- * @param {Void} onClick Handler for when we click the button
+ * Button component usually used for links
+ * @function Button
+ * @param {string?} text - Text to show in the button
+ * @param {children?} children - HTML children to render in the button
+ * @returns {JSX.Element} - Rendered component
  */
 
-const Button = ({ text, children, onClick }: TProps) => (
+const Button = ({ text, children, onClick }: TProps): JSX.Element => (
   <button
     type="submit"
     onClick={onClick}

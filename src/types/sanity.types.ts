@@ -116,8 +116,6 @@ export interface Project extends SanityDocument {
 
  */
 export interface Sitecontent extends SanityDocument {
-  //data: any;
-
   _type: "sitecontent";
 
   /**

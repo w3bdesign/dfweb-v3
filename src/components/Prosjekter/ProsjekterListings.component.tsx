@@ -1,6 +1,7 @@
+/*eslint max-depth: ["error", 5]*/
 import { useState } from "react";
 
-import ProsjektIndividualProjects from "./ProsjektIndividualProjects.component";
+import ProsjekterSingleProject from "./ProsjekterSingleProject.component";
 
 export interface IProjectCategory extends IProject {
   categories: Array<string>;
@@ -28,6 +29,15 @@ export interface IChangeEvent {
   target: { value: string };
 }
 
+/**
+ * Renders a listing of all the portfolio projects.
+ * Fetches data from Sanity and prosjekter.tsx with getStaticProps
+ * @function ProsjekterListings
+ * @param {IProjectInterface[]} projects - Projects that is retrieved from Sanity in prosjekter.tsx
+ * @param {string[]} categories - Categories that is retrieved from Sanity in prosjekter.tsx
+ * @returns {JSX.Element} - Rendered component
+ */
+
 const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Element => {
   const [prosjekt, setProsjekt] = useState(projects);
 
@@ -44,37 +54,30 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
       <div className="container mx-auto rounded">
         <div className="px-4 mx-auto mt-4 lg:px-0 xl:px-0 md:px-0">
           <span className="flex justify-end mb-4">
-            <form>
-              <label
-                className="p-2 mr-4 text-lg"
-                aria-label="kategorifilter"
-                htmlFor="kategorifilter"
-              >
-                Filtrer kategori:
-              </label>
-              <select
-                id="kategorifilter"
-                name="kategorifilter"
-                onChange={handleFilterChange}
-                className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              >
-                <option label="" value="">
-                  Ingen filtrering
+            <label
+              className="p-2 mr-4 text-lg"
+              aria-label="kategorifilter"
+              htmlFor="kategorifilter"
+            >
+              Filtrer kategori:
+            </label>
+            <select
+              id="kategorifilter"
+              name="kategorifilter"
+              onChange={handleFilterChange}
+              className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+            >
+              <option label="" value="">
+                Ingen filtrering
+              </option>
+              {categories?.map((category: string) => (
+                <option key={category} value={category}>
+                  {category}
                 </option>
-                {categories?.map((category: string, index: number) => (
-                  <option key={index} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-            </form>
+              ))}
+            </select>
           </span>
-          <div
-            id="prosjektgrid"
-            className="grid gap-4 pt-4 pb-4 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1"
-          >
-            {prosjekt && <ProsjektIndividualProjects projects={prosjekt} />}
-          </div>
+          {prosjekt && <ProsjekterSingleProject projects={prosjekt} />}
         </div>
       </div>
     </main>

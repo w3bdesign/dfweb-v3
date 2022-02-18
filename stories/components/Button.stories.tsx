@@ -11,9 +11,23 @@ interface IButtonProps {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Button",
+  title: "Components/UI/Button",
   component: Button,
-  argTypes: { onClick: { action: "onClick" } }
+  argTypes: {
+    text: { description: "Text for button" },
+    children: {
+      description: "Children content to be rendered",
+      options: ["Button", "Second Button"],
+      mapping: {
+        Button: <h1>Button</h1>,
+        SecondButton: <h1>Second Button</h1>
+      }
+    },
+    onClick: {
+      description: "onClick handler for button",
+      action: "onClick"
+    }
+  }
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
