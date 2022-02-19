@@ -25,7 +25,8 @@ const CVContent = (): JSX.Element => (
                   className="hidden mt-4 text-center xl:block lg:block"
                   error="En feil har oppstått under lasting av PDF"
                   loading="Laster inn PDF ..."
-                  file="./CV-dfweb.pdf">
+                  file="./CV-dfweb.pdf"
+                >
                   <Page
                     renderMode="svg"
                     className="flex content-center justify-center -mt-12"

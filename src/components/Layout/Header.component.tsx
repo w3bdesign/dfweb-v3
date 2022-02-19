@@ -11,7 +11,7 @@ interface IHeaderProps {
 /**
  * Renders title for each page along with Navbar
  * @function Header
- * @param {TTitle} title - Title for page. Limited to 4 titles to choose from.                         
+ * @param {TTitle} title - Title for page. Limited to 4 titles to choose from.
  * @returns {JSX.Element} - Rendered component
  */
 
