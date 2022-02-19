@@ -2,13 +2,24 @@ import { motion, Variants } from "framer-motion";
 
 import { IAnimateStaggerWithDelayProps } from "./types/Animations.types";
 
+/**
+ * Fade content left to right. Needs to be used with FadeLeftToRightItem
+ * @function FadeLeftToRight
+ * @param {ReactNode} children - Children content to render
+ * @param {string} cssClass - CSS classes to apply to component
+ * @param {number} delay - Time to wait before starting animation
+ * @param {number} staggerDelay - Time to wait before starting animation for children items
+ * @param {boolean} animateNotReverse - Start animation backwards
+ * @returns {JSX.Element} - Rendered component
+ */
+
 const FadeLeftToRight = ({
   children,
   cssClass,
   delay,
   staggerDelay,
   animateNotReverse
-}: IAnimateStaggerWithDelayProps) => {
+}: IAnimateStaggerWithDelayProps): JSX.Element => {
   const FadeLeftToRightVariants: Variants = {
     visible: {
       opacity: 1,
@@ -34,8 +45,7 @@ const FadeLeftToRight = ({
       initial="hidden"
       animate={animateNotReverse ? "visible" : "hidden"}
       variants={FadeLeftToRightVariants}
-      className={cssClass}
-    >
+      className={cssClass}>
       {children}
     </motion.div>
   );

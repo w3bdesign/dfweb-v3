@@ -2,6 +2,14 @@ import { Variants, AnimatePresence, motion } from "framer-motion";
 
 import { IAnimateProps } from "./types/Animations.types";
 
+/**
+ * Fade in animation used for page transitions
+ * @function PageTransition
+ * @param {ReactNode} children - Children content to render
+ * @param {string} cssClass - CSS classes to apply to component
+ * @returns {JSX.Element} - Rendered component
+ */
+
 const PageTransition = ({ children, cssClass }: IAnimateProps) => {
   const pageTransitionVariants: Variants = {
     initial: { opacity: 0 },
@@ -15,8 +23,7 @@ const PageTransition = ({ children, cssClass }: IAnimateProps) => {
         variants={pageTransitionVariants}
         initial="initial"
         animate="animate"
-        exit="exit"
-      >
+        exit="exit">
         {children}
       </motion.div>
     </AnimatePresence>

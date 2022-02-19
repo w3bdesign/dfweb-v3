@@ -6,6 +6,13 @@ import Button from "../UI/Button.component";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
+/**
+ * Renders CV content
+ * Uses React-pdf
+ * @function CVContent
+ * @returns {JSX.Element} - Rendered component
+ */
+
 const CVContent = (): JSX.Element => (
   <main id="maincontent">
     <div className="mt-32 bg-graybg">
@@ -18,8 +25,7 @@ const CVContent = (): JSX.Element => (
                   className="hidden mt-4 text-center xl:block lg:block"
                   error="En feil har oppstått under lasting av PDF"
                   loading="Laster inn PDF ..."
-                  file="./CV-dfweb.pdf"
-                >
+                  file="./CV-dfweb.pdf">
                   <Page
                     renderMode="svg"
                     className="flex content-center justify-center -mt-12"
