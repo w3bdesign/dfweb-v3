@@ -43,14 +43,15 @@ class MyDocument extends Document {
             "@context": "https://schema.org",
             "@type": "NewsArticle",
             "author": "Daniel",
-            "url": "https://www.dfweb.no"
+            "url": "https://www.dfweb.no",
             "headline": "Dfweb",
             "image": [ "https://www.dfweb.no/logo.png"  ],
             "datePublished": "",
             "dateModified": ""
         }
-    `
-            }}></script>
+          `
+            }}
+          />
         </Head>
         <body>
           <Main />
