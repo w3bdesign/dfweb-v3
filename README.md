@@ -28,11 +28,6 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Responsive design
 -   Google rich results for each individual page
 
-### Animations
-
--   Animations with Framer Motion
--   CSS hover animations in navigation menu
-
 ### Accessibility and design
 
 -   WCAG accessibility tested
