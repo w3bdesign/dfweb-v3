@@ -9,7 +9,7 @@ import Layout from "../components/Layout/Layout.component";
 import PageTransition from "../components/Animations/PageTransition.component";
 
 const Kontakt: NextPage = () => (
-  <Layout title="Kontakt - Portefølje - Dfweb">
+  <Layout title="Kontakt">
     <PageTransition>
       <KontaktContent />
     </PageTransition>
