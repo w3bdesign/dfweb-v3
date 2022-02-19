@@ -11,8 +11,7 @@ interface IHeaderProps {
 /**
  * Renders title for each page along with Navbar
  * @function Header
- * @param {"Forside" | "Kontakt" | "CV" | "Prosjekter"} title - Title for page. Limited to 4 titles to choose from.
- *                                                              Prevents XSS as title is output in rich results.
+ * @param {TTitle} title - Title for page. Limited to 4 titles to choose from.                         
  * @returns {JSX.Element} - Rendered component
  */
 
