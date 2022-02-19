@@ -2,8 +2,10 @@ import Head from "next/head";
 
 import Navbar from "./Navbar.component";
 
+type TTitle = "Forside" | "Kontakt" | "CV" | "Prosjekter";
+
 interface IHeaderProps {
-  title: ("Forside" | "Kontakt" | "CV" | "Prosjekter");
+  title: TTitle;
 }
 
 /**
