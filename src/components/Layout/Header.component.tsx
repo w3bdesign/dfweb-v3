@@ -34,7 +34,7 @@ const Header = ({ title }: IHeaderProps): JSX.Element => {
               "name": "Daniel",
               "url": "https://www.dfweb.no"
             },      
-            "headline": "${title}",
+            "headline": "Portefølje - Dfweb",
             "image": [ "https://www.dfweb.no/logo.png"  ],
             "datePublished": "${todaysDate}",
             "dateModified": "${todaysDate}"
