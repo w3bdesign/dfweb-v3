@@ -18,13 +18,20 @@ const bounceVariants: Variants = {
   }
 };
 
-const BounceInScroll = ({ children, cssClass }: IAnimateProps) => (
+/**
+ * Bounce in content when content becomes visible in viewport
+ * @function BounceInScroll
+ * @param {ReactNode} children - Children content to render
+ * @param {string} cssClass - CSS classes to apply to component
+ * @returns {JSX.Element} - Rendered component
+ */
+
+const BounceInScroll = ({ children, cssClass }: IAnimateProps): JSX.Element => (
   <motion.div
     initial="offscreen"
     whileInView="onscreen"
     viewport={{ once: true, amount: 0.4 }}
-    className={cssClass}
-  >
+    className={cssClass}>
     <motion.div variants={bounceVariants}>{children}</motion.div>
   </motion.div>
 );
