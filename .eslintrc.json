@@ -9,6 +9,7 @@
     "cy": true
   },
   "rules": {
-    "react/jsx-max-depth": 1
+    "react/jsx-max-depth": 1,
+    "@next/next/no-img-element": 0
   }
 }
