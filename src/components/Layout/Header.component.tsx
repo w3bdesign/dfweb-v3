@@ -3,7 +3,7 @@ import Head from "next/head";
 import Navbar from "./Navbar.component";
 
 interface IHeaderProps {
-  title: "Forside" | "Kontakt" | "CV" | "Prosjekter";
+  title: ("Forside" | "Kontakt" | "CV" | "Prosjekter");
 }
 
 /**
