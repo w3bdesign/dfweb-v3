@@ -26,6 +26,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Display CV with React-PDF
 -   Automatic sitemap generation (see robots.txt)
 -   Responsive design
+-   Google rich results for each individual page
 
 ### Animations
 
