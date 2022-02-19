@@ -34,28 +34,6 @@ class MyDocument extends Document {
 
           <meta property="og:url" content="https://www.dfweb.no/" />
           <meta property="og:site_name" content="dfweb" />
-
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: `
-        {
-            "@context": "https://schema.org",
-            "@type": "NewsArticle",
-            "author": {
-              "@type": "Person",
-              "name": "Daniel",
-              "url": "https://www.dfweb.no"
-            },
-      
-            "headline": "Dfweb",
-            "image": [ "https://www.dfweb.no/logo.png"  ],
-            "datePublished": "",
-            "dateModified": ""
-        }
-          `
-            }}
-          />
         </Head>
         <body>
           <Main />
