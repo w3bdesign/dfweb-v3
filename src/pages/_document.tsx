@@ -42,8 +42,12 @@ class MyDocument extends Document {
         {
             "@context": "https://schema.org",
             "@type": "NewsArticle",
-            "author": "Daniel",
-            "url": "https://www.dfweb.no",
+            "author": {
+              "@type": "Person",
+              "name": "Daniel",
+              "url": "https://www.dfweb.no"
+            },
+      
             "headline": "Dfweb",
             "image": [ "https://www.dfweb.no/logo.png"  ],
             "datePublished": "",
