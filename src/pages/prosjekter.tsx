@@ -21,7 +21,7 @@ const Prosjekter: NextPage = ({
   projects,
   categories
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <Layout title="Prosjekter - Portefølje - Dfweb">
+  <Layout title="Prosjekter">
     <PageTransition>
       <ProsjekterListings projects={projects} categories={categories} />
     </PageTransition>

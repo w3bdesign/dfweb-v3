@@ -3,24 +3,26 @@ import Head from "next/head";
 import Navbar from "./Navbar.component";
 
 interface IHeaderProps {
-  title: string;
+  title: "Forside" | "Kontakt" | "CV" | "Prosjekter";
 }
 
 /**
  * Renders title for each page along with Navbar
  * @function Header
- * @param {string} title - Title for page
+ * @param {"Forside" | "Kontakt" | "CV" | "Prosjekter"} title - Title for page. Limited to 4 titles to choose from.
+ *                                                              Prevents XSS as title is output in rich results.
  * @returns {JSX.Element} - Rendered component
  */
 
 const Header = ({ title }: IHeaderProps): JSX.Element => {
   const today = new Date();
   const todaysDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+  const fullTitle = `${title} - Portefølje - Dfweb`;
 
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{fullTitle}</title>
 
         <script
           type="application/ld+json"

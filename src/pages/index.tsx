@@ -19,7 +19,7 @@ const indexQuery = groq`
 `;
 
 const Home: NextPage = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <Layout title="Forside - Portefølje - Dfweb">
+  <Layout title="Forside">
     <PageTransition>
       <IndexContent post={post} />
     </PageTransition>

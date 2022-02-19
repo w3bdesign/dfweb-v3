@@ -9,7 +9,7 @@ import CVContent from "../components/CV/CVContent.component";
 import Layout from "../components/Layout/Layout.component";
 
 const CV: NextPage = () => (
-  <Layout title="CV - Portefølje - Dfweb">
+  <Layout title="CV">
     <PageTransition>
       <CVContent />
     </PageTransition>
