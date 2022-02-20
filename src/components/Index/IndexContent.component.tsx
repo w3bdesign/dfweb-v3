@@ -62,7 +62,7 @@ const IndexContent = ({ post }: TData): JSX.Element => (
                 content={text}
                 serializers={{
                   code: ({ children }: ISerializerCode) => (
-                    <p className="mt-6 text-lg">{children} </p>
+                    <p className="mt-4 text-lg">{children} </p>
                   ),
                   link: ({ children, href }: ISerializerLink) => (
                     <Link href={href} passHref>
