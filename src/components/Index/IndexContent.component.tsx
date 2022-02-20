@@ -56,7 +56,7 @@ const IndexContent = ({ post }: TData): JSX.Element => (
       <div className="container grid gap-4 p-4 mx-auto mt-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
         {post?.map(({ _id, title, text }: IContent) => (
           <section key={_id} role="contentinfo" aria-label={title} data-testid="sanity-section">
-            <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow min-h-full">
+            <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow h-64 md:h-96">
               <h2 className="text-3xl text-center">{title}</h2>
               <PortableText
                 content={text}
