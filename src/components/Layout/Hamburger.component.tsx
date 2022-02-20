@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
 import Link from "next/link";
+import React, { useState, useRef } from "react";
 
 import LINKS from "../../utils/constants/LINKS";
 
