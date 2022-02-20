@@ -46,7 +46,7 @@ type TData = { post: IContent[] };
  * Renders the index content for the front page
  * @function IndexContent
  * @param {TData} post - Text data that is retrieved from Sanity
- * @returns {JSX.Element} - Rendered  
+ * @returns {JSX.Element} - Rendered component
  */
 
 const IndexContent = ({ post }: TData): JSX.Element => (
