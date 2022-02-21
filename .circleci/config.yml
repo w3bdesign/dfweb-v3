@@ -36,3 +36,8 @@ jobs:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
     parallelism: 6
+workflows:
+  # 👇 Adds Chromatic to the workflow
+  chromatic-deploy:
+    jobs:
+      - chromatic-deployment # 👈 Runs the Chromatic job implemented above
