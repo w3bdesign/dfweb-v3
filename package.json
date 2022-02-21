@@ -13,6 +13,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,json}\"",
     "cypress:open": "cypress open",
     "cypress:start": "cypress start",
+    "chromatic": "chromatic --exit-zero-on-changes",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
