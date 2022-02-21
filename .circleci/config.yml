@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
     # 👇 Adds Chromatic as a job
-  chromatic-deployment: 
+  chromatic-deployment:
     docker:
       - image: circleci/node:12
     working_directory: ~/repo
