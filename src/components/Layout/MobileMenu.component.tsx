@@ -7,20 +7,16 @@ import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
 import FadeLeftToRight from "../Animations/FadeLeftToRight.component";
 import FadeLeftToRightItem from "../Animations/FadeLeftToRightItem.component";
+import Hamburger from "../UI/Hamburger.component";
 
 /**
- * Renders Hamburger for responsive menu
- * @function Hamburger
+ * Renders MobileMenu for responsive menu
+ * @function MobileMenu
  * @returns {JSX.Element} - Rendered component
  */
 
-const Hamburger = (): JSX.Element => {
+const MobileMenu = (): JSX.Element => {
   const [isExpanded, setisExpanded] = useState<boolean>(false);
-
-  const hamburgerLine =
-    "h-1 w-10 my-1 rounded-full bg-white transition ease transform duration-300 not-sr-only";
-
-  const opacityFull = "opacity-100 group-hover:opacity-100";
 
   const node = useRef<HTMLDivElement>(null);
 
@@ -60,32 +56,7 @@ const Hamburger = (): JSX.Element => {
 
   return (
     <div ref={node} className="z-50 md:hidden lg:hidden xl:hidden">
-      <button
-        className="flex flex-col w-16 rounded justify-center items-center group "
-        data-cy="hamburger"
-        data-testid="hamburger"
-        onClick={handleMobileMenuClick}
-        aria-expanded={isExpanded}
-        type="button">
-        <span className="sr-only text-white text-2xl">Hamburger</span>
-        <span
-          className={`${hamburgerLine} ${
-            isExpanded ? "rotate-45 translate-y-3 opacity-100 group-hover:opacity-100" : opacityFull
-          }`}
-        />
-        <span className={`${hamburgerLine} ${isExpanded ? "opacity-0" : opacityFull}`} />
-        <span
-          className={`${hamburgerLine} ${
-            isExpanded
-              ? "-rotate-45 -translate-y-3 opacity-100 group-hover:opacity-100"
-              : opacityFull
-          }`}
-        />
-      </button>
-      {/*
-       * Start the mobile menu initially as hidden, then remove hidden class if we have clicked on the mobile menu
-       */}
-
+      <Hamburger onClick={handleMobileMenuClick} animatetoX={isExpanded} />
       <FadeLeftToRight delay={0.2} staggerDelay={0.2} animateNotReverse={isExpanded}>
         <div
           id="mobile-menu"
@@ -123,4 +94,4 @@ const Hamburger = (): JSX.Element => {
   );
 };
 
-export default Hamburger;
+export default MobileMenu;

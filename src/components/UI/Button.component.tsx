@@ -1,10 +1,10 @@
 import type { ReactNode, MouseEventHandler } from "react";
 
-type TProps = {
+export interface IButtonProps {
   text?: string;
-  children?: ReactNode;
+  children?: ReactNode | JSX.Element;
   onClick?: MouseEventHandler<HTMLButtonElement>;
-};
+}
 
 /**
  * Button component usually used for links
@@ -14,7 +14,7 @@ type TProps = {
  * @returns {JSX.Element} - Rendered component
  */
 
-const Button = ({ text, children, onClick }: TProps): JSX.Element => (
+const Button = ({ text, children, onClick }: IButtonProps): JSX.Element => (
   <button
     type="submit"
     onClick={onClick}
