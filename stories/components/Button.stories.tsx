@@ -27,7 +27,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = ({ text, children, onClick }: IButtonProps) => (
   <Button text={text} onClick={onClick}>
-    TEST CHRomatic
+    {children}
   </Button>
 );
 
