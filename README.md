@@ -21,6 +21,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Next.js with Typescript
 -   Sanity.io for fetching project information and frontpage text
 -   Storybook for component documentation
+-   Chromatic setup with CircleCI for visual testing of Storybook components
 -   Animations with Framer Motion
 -   React testing library for unit testing
 -   Cypress for E2E testing
