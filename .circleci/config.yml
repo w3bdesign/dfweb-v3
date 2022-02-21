@@ -40,4 +40,5 @@ workflows:
   # 👇 Adds Chromatic to the workflow
   chromatic-deploy:
     jobs:
+      - build
       - chromatic-deployment # 👈 Runs the Chromatic job implemented above
