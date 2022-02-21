@@ -1,6 +1,9 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 /// <reference types="cypress"/>
 
 describe("Navigation", () => {
+  const hamburger = "[data-cy=hamburger]";
+
   context("720p resolution", () => {
     beforeEach(() => {
       // Run these tests as if in a desktop browser with a 720p monitor
@@ -10,7 +13,7 @@ describe("Navigation", () => {
 
     it("Hamburger should not be visible", () => {
       cy.get("#main-navigation").should("be.visible");
-      cy.get("[data-cy=hamburger]").should("not.be.visible");
+      cy.get(hamburger).should("not.be.visible");
     });
   });
 
@@ -22,11 +25,11 @@ describe("Navigation", () => {
     });
 
     it("Hamburger is visible", () => {
-      cy.get("[data-cy=hamburger]").should("be.visible");
+      cy.get(hamburger).should("be.visible");
     });
 
     it("Mobile menu is visible after we click on the hamburger", () => {
-      cy.get("[data-cy=hamburger]").click();
+      cy.get(hamburger).click();
       cy.contains("Kontakt").should("be.visible");
     });
   });
