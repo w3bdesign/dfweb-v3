@@ -28,3 +28,7 @@ export const Primary = Template;
 Primary.args = {
   animatetoX: false
 };
+
+Primary.parameters = {
+  backgrounds: { default: "dark" }
+};
