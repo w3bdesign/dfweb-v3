@@ -22,7 +22,7 @@ jobs:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
     parallelism: 6
-chromatic-deployment: 
+chromatic-deployment:
     docker:
       - image: cimg/node:current-browsers
     working_directory: ~/repo
