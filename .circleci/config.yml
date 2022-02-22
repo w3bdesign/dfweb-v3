@@ -53,7 +53,7 @@ jobs:
       - checkout
       - run:
           name: Install project dependencies
-          command: npm install
+          command: npm ci
       - run: 
           name: Compile and start development server on port 3000
           command: npm run cidev
