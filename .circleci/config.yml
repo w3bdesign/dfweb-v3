@@ -50,6 +50,9 @@ workflows:
           name: Build Next.js project
       - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
           name: Check build with Chromatic
+      - cypress/install:
+          start: npm ci
+          no-workspace: false
       - cypress/run:
           start: npm run dev
           wait-on: 'http://localhost:3000'
