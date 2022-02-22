@@ -51,6 +51,7 @@ workflows:
       - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
           name: Check build with Chromatic
       - cypress/run:
+          name: Run Cypress E2E tests
           start: npm run dev
           wait-on: 'http://localhost:3000'
           # there are no jobs to follow this one
