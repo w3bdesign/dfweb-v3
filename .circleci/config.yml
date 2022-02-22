@@ -53,6 +53,7 @@ workflows:
     jobs:
       - build
       - chromatic-deployment # 👈 Runs the Chromatic job implemented above
+      - cypress/install
       - cypress/run:
           requires:
             - cypress/install
