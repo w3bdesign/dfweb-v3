@@ -46,7 +46,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 
 -   Continuous Integration with CircleCI
 -   Code quality analysis with Codacy, Sonarcloud, Deepscan, Codefactor, LGTM and Codeclimate
--   E2E testing with Cypress
+-   E2E testing with Cypress integrated with CircleCI
 -   Unit testing with Jest and React-Testing-Library
 -   Test coverage setup with Codecov
 -   Eslint setup with Airbnb style guide
