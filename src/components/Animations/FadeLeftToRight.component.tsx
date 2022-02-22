@@ -1,4 +1,4 @@
-//import { motion, Variants } from "framer-motion";
+import { Variants } from "framer-motion";
 const { motion } = require("framer-motion");
 
 import { IAnimateStaggerWithDelayProps } from "./types/Animations.types";
@@ -21,7 +21,7 @@ const FadeLeftToRight = ({
   staggerDelay,
   animateNotReverse
 }: IAnimateStaggerWithDelayProps): JSX.Element => {
-  const FadeLeftToRightVariants = {
+  const FadeLeftToRightVariants: Variants = {
     visible: {
       opacity: 1,
       transition: {
@@ -46,8 +46,7 @@ const FadeLeftToRight = ({
       initial="hidden"
       animate={animateNotReverse ? "visible" : "hidden"}
       variants={FadeLeftToRightVariants}
-      className={cssClass}
-    >
+      className={cssClass}>
       {children}
     </motion.div>
   );
