@@ -61,7 +61,5 @@ workflows:
           executor: cypress/base-14
       - cypress/run:
           name: Run all tests
-          requires:
-            - Install
           start: npm run dev
           wait-on: 'http://localhost:3000'
