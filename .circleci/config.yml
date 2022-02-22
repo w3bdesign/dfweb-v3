@@ -54,5 +54,5 @@ workflows:
       - build
       - chromatic-deployment # 👈 Runs the Chromatic job implemented above
       - cypress/run:
-          start: npm run cidev
+          start: npm run e2e
           wait-on: 'http://localhost:3000'
