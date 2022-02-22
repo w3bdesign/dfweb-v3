@@ -1,4 +1,4 @@
-//import { Variants, motion } from "framer-motion";
+import { Variants } from "framer-motion";
 const { motion } = require("framer-motion");
 
 import { IAnimateProps } from "./types/Animations.types";
@@ -12,7 +12,7 @@ import { IAnimateProps } from "./types/Animations.types";
  */
 
 const FadeLeftToRightItem = ({ children, cssClass }: IAnimateProps): JSX.Element => {
-  const FadeLeftToRightItemVariants = {
+  const FadeLeftToRightItemVariants: Variants = {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -50 }
   };

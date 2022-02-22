@@ -1,4 +1,4 @@
-//import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
 const { motion } = require("framer-motion");
 
 import { IAnimateWithDelayProps } from "./types/Animations.types";
@@ -13,7 +13,7 @@ import { IAnimateWithDelayProps } from "./types/Animations.types";
  */
 
 const FadeUp = ({ children, cssClass, delay }: IAnimateWithDelayProps): JSX.Element => {
-  const fadeUpVariants = {
+  const fadeUpVariants: Variants = {
     initial: { opacity: 0, y: 50 },
     animate: {
       y: 0,

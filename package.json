@@ -1,6 +1,6 @@
 {
   "name": "dfweb-v3",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
@@ -15,7 +15,7 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "e2e": "start-test cidev 3000 cypress:run",
+    "e2e": "start-test dev 3000 cypress:run",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
@@ -66,7 +66,6 @@
     "sitemap": "^7.1.1",
     "start-server-and-test": "^1.14.0",
     "tailwindcss": "^3.0.23",
-    "typescript": "4.5.5",
-    "wait-on": "^6.0.1"
+    "typescript": "4.5.5"
   }
 }
