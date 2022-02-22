@@ -53,15 +53,6 @@ workflows:
     jobs:
       - build
       - chromatic-deployment # 👈 Runs the Chromatic job implemented above
-      - cypress/install
       - cypress/run:
-          requires:
-            - cypress/install
-          executor: with-chrome
-          browser: chrome
-          post-steps:
-            - run: ls
-            - store_test_results:
-                path: cypress/results
-            - store_artifacts:
-                path: cypress/screenshots
+          start: npm run dev
+          wait-on: 'http://localhost:3000'
