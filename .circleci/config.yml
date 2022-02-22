@@ -61,7 +61,6 @@ workflows:
           executor: cypress/base-14
       - cypress/run:
           name: Run all tests
-          executor: with-services
           requires:
             - Install
           start: npm start
