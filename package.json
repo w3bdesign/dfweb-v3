@@ -11,7 +11,9 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "format": "prettier --write \"**/*.{ts,tsx,json}\"",
-    "cypress": "cypress open",
+    "cypress:open": "cypress open",
+    "cypress:start": "cypress start",
+    "chromatic": "chromatic --exit-zero-on-changes",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
@@ -47,6 +49,7 @@
     "@types/storybook__react": "^5.2.1",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.5.1",
     "cross-env": "^7.0.3",
     "cypress": "^9.5.0",
     "eslint": "8.9.0",

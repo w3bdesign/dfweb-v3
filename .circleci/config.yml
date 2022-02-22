@@ -1,5 +1,19 @@
 version: 2.1
 jobs:
+    # 👇 Adds Chromatic as a job
+  chromatic-deployment:
+    docker:
+      - image: circleci/node:14
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: yarn install
+        # 👇 Runs the Chromatic CLI
+      - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
   build:
     working_directory: ~/dfweb
     docker:
@@ -22,3 +36,9 @@ jobs:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
     parallelism: 6
+workflows:
+  # 👇 Adds Chromatic to the workflow
+  chromatic-deploy:
+    jobs:
+      - build
+      - chromatic-deployment # 👈 Runs the Chromatic job implemented above

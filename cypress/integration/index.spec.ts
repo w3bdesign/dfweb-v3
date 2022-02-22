@@ -4,8 +4,17 @@ describe(`The Home Page`, () => {
   beforeEach(() => {
     cy.visit("/");
   });
-  it(`Contains my name in the hero section`, () => {
-    cy.get("h1").contains("Velkommen");
+
+  it(`Hei vises på forsiden`, () => {
+    cy.get('[data-cy="hei"]').contains("Hei!");
+  });
+
+  it(`Om meg vises på forsiden`, () => {
+    cy.get('[data-cy="Om Meg"]').contains("Om Meg");
+  });
+
+  it(`Prosjekter vises på forsiden`, () => {
+    cy.get('[data-cy="Prosjekter"]').contains("Prosjekter");
   });
 });
 
