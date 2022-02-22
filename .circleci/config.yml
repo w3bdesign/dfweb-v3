@@ -5,11 +5,6 @@ orbs:
   # the strict explicit version "cypress-io/cypress@1.x.y"
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1.29.0
-executors:
-  with-chrome:
-    resource_class: small
-    docker:
-      - image: "cypress/browsers:node14.16.0-chrome90-ff88"
 jobs:
     # 👇 Adds Chromatic as a job
   chromatic-deployment:
@@ -47,6 +42,32 @@ jobs:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
     parallelism: 6
+  run_tests:
+    docker:
+      - image: cypress/base:14
+        environment:
+          # this enables colors in the output
+          TERM: xterm
+    working_directory: ~/portalo
+    steps:
+      - checkout
+      - run:
+          name: Install project dependencies
+          command: yarn install --frozen-lockfile
+      - run: 
+          name: Compile and start development server on port 3000
+          command: yarn startOnPort3000Linux
+          background: true
+      - run: 
+          name: Wait for development server to start
+          command: 'yarn wait-on http://localhost:3000'
+      - run: 
+          name: Run routing tests with react-testing-library via yarn test
+          command: 'yarn test ~/portalo/src/tests/react-testing-library/routing.test.tsx'
+      - run: 
+          name: Run e2e tests with Cypruss via cypress run
+          command: $(yarn bin)/cypress run
+
 workflows:
   # 👇 Adds Chromatic to the workflow
   chromatic-deploy:
@@ -55,9 +76,4 @@ workflows:
           name: Build Next.js project
       - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
           name: Check build with Chromatic
-      - cypress/install
-      - cypress/run:
-          requires:
-            - cypress/install
-          executor: with-chrome
-          browser: chrome
+      - run_tests
