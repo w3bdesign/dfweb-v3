@@ -49,4 +49,4 @@ workflows:
       - build
       - chromatic-deployment # 👈 Runs the Chromatic job implemented above
       - cypress/run:
-          start: npm dev
+          start: npm run dev
