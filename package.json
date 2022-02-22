@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
-    "cidev": "next dev",
+    "cidev": "cross-env NODE_ENV='dev' next dev",
     "build": "next build",
     "start": "next start",
     "test": "jest --coverage",
