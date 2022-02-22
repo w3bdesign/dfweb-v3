@@ -53,6 +53,16 @@ workflows:
     jobs:
       - build
       - chromatic-deployment # 👈 Runs the Chromatic job implemented above
+      - cypress/install:
+          name: Install
+          # to install dependencies, we do not need other services
+          # so let's use the executor close to what the tests will use
+          # https://github.com/cypress-io/circleci-orb/blob/master/docs/executors.md
+          executor: cypress/base-14
       - cypress/run:
-          start: npm run e2e
+          name: Run all tests
+          executor: with-services
+          requires:
+            - Install
+          start: npm start
           wait-on: 'http://localhost:3000'
