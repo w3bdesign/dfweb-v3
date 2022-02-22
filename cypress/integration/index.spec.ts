@@ -1,5 +1,6 @@
 /// <reference types="cypress"/>
 
+// https://cheatography.com/aiqbal/cheat-sheets/cypress-io/
 describe(`Forside`, () => {
   beforeEach(() => {
     cy.visit("/");
