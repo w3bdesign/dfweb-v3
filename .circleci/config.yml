@@ -51,15 +51,13 @@ workflows:
   # 👇 Adds Chromatic to the workflow
   chromatic-deploy:
     jobs:
-      - build
+      - build:
+          name: Build Next.js project
       - chromatic-deployment # 👈 Runs the Chromatic job implemented above
-      - cypress/install:
-          name: Install Cypress
-          # to install dependencies, we do not need other services
-          # so let's use the executor close to what the tests will use
-          # https://github.com/cypress-io/circleci-orb/blob/master/docs/executors.md
-          executor: cypress/base-14
+          name: Check build with Chromatic
+      - cypress/install
       - cypress/run:
-          name: Run all tests
-          start: npm run dev
-          wait-on: 'http://localhost:3000'
+          requires:
+            - cypress/install
+          executor: with-chrome
+          browser: chrome
