@@ -1,7 +1,7 @@
 //import { motion } from "framer-motion";
 const { motion } = require("framer-motion");
 
-import { IAnimateWithDelayProps } from "./types/Animations.types";
+import { IAnimateWithDelayProps } from "./types/Animations.types"; 
 
 /**
  * Fade down content animation
