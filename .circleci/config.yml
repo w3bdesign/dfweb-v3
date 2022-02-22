@@ -44,7 +44,7 @@ jobs:
     parallelism: 6
   run_tests:
     docker:
-      - image: cypress/base:14
+      - image: cypress/base:12
         environment:
           # this enables colors in the output
           TERM: xterm
