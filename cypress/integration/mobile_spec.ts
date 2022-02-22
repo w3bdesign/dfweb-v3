@@ -1,17 +1,16 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 /// <reference types="cypress"/>
 
-describe("Navigation", () => {
+describe("Mobilmeny", () => {
   const hamburger = "[data-cy=hamburger]";
 
   context("720p resolution", () => {
     beforeEach(() => {
-      // Run these tests as if in a desktop browser with a 720p monitor
       cy.viewport(1280, 720);
       cy.visit("/");
     });
 
-    it("Hamburger should not be visible", () => {
+    it("Hamburger er ikke synlig", () => {
       cy.get("#main-navigation").should("be.visible");
       cy.get(hamburger).should("not.be.visible");
     });
@@ -19,16 +18,16 @@ describe("Navigation", () => {
 
   context("Iphone-5 resolution", () => {
     beforeEach(() => {
-      // Run these tests as if in a mobile browser and ensure our resolution is correct
+      // Bruk iphone-5 som standard oppløsning
       cy.viewport("iphone-5");
       cy.visit("/");
     });
 
-    it("Hamburger is visible", () => {
+    it("Hamburger er synlig", () => {
       cy.get(hamburger).should("be.visible");
     });
 
-    it("Mobile menu is visible after we click on the hamburger", () => {
+    it("Mobilmeny er synlig etter at vi klikker på hamburger", () => {
       cy.get(hamburger).click();
       cy.contains("Kontakt").should("be.visible");
     });
