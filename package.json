@@ -15,7 +15,7 @@
     "cypress:open": "cypress open",
     "cypress:start": "cypress start",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "e2e": "start-test dev 3000 cypress:open",
+    "e2e": "start-test cidev 3000 cypress:start",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
