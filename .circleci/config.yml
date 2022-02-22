@@ -53,20 +53,17 @@ jobs:
       - checkout
       - run:
           name: Install project dependencies
-          command: yarn install --frozen-lockfile
+          command: npm install
       - run: 
           name: Compile and start development server on port 3000
-          command: yarn startOnPort3000Linux
+          command: npm run cidev
           background: true
       - run: 
           name: Wait for development server to start
-          command: 'yarn wait-on http://localhost:3000'
-      - run: 
-          name: Run routing tests with react-testing-library via yarn test
-          command: 'yarn test ~/portalo/src/tests/react-testing-library/routing.test.tsx'
+          command: 'npx wait-on http://localhost:3000'
       - run: 
           name: Run e2e tests with Cypruss via cypress run
-          command: $(yarn bin)/cypress run
+          command: 'npm run cypress:run'
 
 workflows:
   # 👇 Adds Chromatic to the workflow
