@@ -1,5 +1,5 @@
-import { Variants, AnimatePresence } from "framer-motion";
-const { motion } = require("framer-motion");
+//import { Variants, AnimatePresence, motion } from "framer-motion";
+const { motion, AnimatePresence } = require("framer-motion");
 
 import { IAnimateProps } from "./types/Animations.types";
 
@@ -12,7 +12,7 @@ import { IAnimateProps } from "./types/Animations.types";
  */
 
 const PageTransition = ({ children, cssClass }: IAnimateProps) => {
-  const pageTransitionVariants: Variants = {
+  const pageTransitionVariants = {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { duration: 1.0 } },
     exit: { opacity: 0 }

@@ -1,9 +1,9 @@
-import { Variants } from "framer-motion";
+//import { Variants, motion } from "framer-motion";
 const { motion } = require("framer-motion");
 
 import { IAnimateProps } from "./types/Animations.types";
 
-const bounceVariants: Variants = {
+const bounceVariants = {
   offscreen: {
     y: 100,
     opacity: 0
@@ -32,7 +32,8 @@ const BounceInScroll = ({ children, cssClass }: IAnimateProps): JSX.Element => (
     initial="offscreen"
     whileInView="onscreen"
     viewport={{ once: true, amount: 0.4 }}
-    className={cssClass}>
+    className={cssClass}
+  >
     <motion.div variants={bounceVariants}>{children}</motion.div>
   </motion.div>
 );
