@@ -42,29 +42,6 @@ jobs:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
     parallelism: 6
-  run_tests:
-    docker:
-      - image: cypress/base:12
-        environment:
-          # this enables colors in the output
-          TERM: xterm
-    working_directory: ~/portalo
-    steps:
-      - checkout
-      - run:
-          name: Install project dependencies
-          command: npm ci
-      - run: 
-          name: Compile and start development server on port 3000
-          command: npm run cidev
-          background: true
-      - run: 
-          name: Wait for development server to start
-          command: 'npx wait-on http://localhost:3000'
-      - run: 
-          name: Run e2e tests with Cypruss via cypress run
-          command: 'npm run cypress:run'
-
 workflows:
   # 👇 Adds Chromatic to the workflow
   chromatic-deploy:
@@ -73,4 +50,9 @@ workflows:
           name: Build Next.js project
       - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
           name: Check build with Chromatic
-      - run_tests
+      - cypress/run:
+          start: npm run dev
+          wait-on: 'http://localhost:3000'
+          # there are no jobs to follow this one
+          # so no need to save the workspace files (saves time)
+          no-workspace: true
