@@ -9,7 +9,7 @@ jobs:
     # 👇 Adds Chromatic as a job
   chromatic-deployment:
     docker:
-      - image: circleci/node:14
+      - image: cimg/node:17
     working_directory: ~/repo
     steps:
       - checkout
@@ -48,4 +48,5 @@ workflows:
     jobs:
       - build
       - chromatic-deployment # 👈 Runs the Chromatic job implemented above
-      - cypress/run # "run" job comes from "cypress" orb
+      - cypress/run:
+          start: npm start
