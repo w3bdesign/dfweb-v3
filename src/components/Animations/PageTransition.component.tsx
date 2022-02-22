@@ -1,4 +1,5 @@
 import { Variants } from "framer-motion";
+// CircleCI doesn't like import { motion } from "framer-motion" here, so we use require
 const { motion, AnimatePresence } = require("framer-motion");
 
 import { IAnimateProps } from "./types/Animations.types";
