@@ -74,4 +74,4 @@ workflows:
       - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
           name: Check build with Chromatic
       - run_tests
-        executor: browsers-chrome73-ff68
+          executor: browsers-chrome73-ff68
