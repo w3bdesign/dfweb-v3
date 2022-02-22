@@ -1,4 +1,6 @@
-import { motion, Variants } from "framer-motion";
+import { Variants } from "framer-motion";
+// CircleCI doesn't like import { motion } from "framer-motion" here, so we use require
+const { motion } = require("framer-motion");
 
 import { IAnimateStaggerWithDelayProps } from "./types/Animations.types";
 

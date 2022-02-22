@@ -1,4 +1,10 @@
 version: 2.1
+orbs:
+  # "cypress-io/cypress@1" installs the latest published
+  # version "1.x.y" of the orb. We recommend you then use
+  # the strict explicit version "cypress-io/cypress@1.x.y"
+  # to lock the version and prevent unexpected CI changes
+  cypress: cypress-io/cypress@1.29.0
 jobs:
     # 👇 Adds Chromatic as a job
   chromatic-deployment:
@@ -40,5 +46,13 @@ workflows:
   # 👇 Adds Chromatic to the workflow
   chromatic-deploy:
     jobs:
-      - build
-      - chromatic-deployment # 👈 Runs the Chromatic job implemented above
+      - build:
+          name: Build Next.js project
+      - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
+          name: Check build with Chromatic
+      - cypress/run:
+          start: npm run dev
+          wait-on: 'http://localhost:3000'
+          # there are no jobs to follow this one
+          # so no need to save the workspace files (saves time)
+          no-workspace: false

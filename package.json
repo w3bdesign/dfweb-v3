@@ -1,9 +1,10 @@
 {
   "name": "dfweb-v3",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "cidev": "cross-env NODE_ENV='dev' next dev",
     "build": "next build",
     "start": "next start",
     "test": "jest --coverage",
@@ -12,8 +13,9 @@
     "build-storybook": "build-storybook -s public",
     "format": "prettier --write \"**/*.{ts,tsx,json}\"",
     "cypress:open": "cypress open",
-    "cypress:start": "cypress start",
+    "cypress:run": "cypress run",
     "chromatic": "chromatic --exit-zero-on-changes",
+    "e2e": "start-test dev 3000 cypress:run",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
@@ -53,7 +55,7 @@
     "cross-env": "^7.0.3",
     "cypress": "^9.5.0",
     "eslint": "8.9.0",
-    "eslint-config-next": "12.1.00",
+    "eslint-config-next": "^12.1.0",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-sonarjs": "^0.12.0",
     "eslint-plugin-storybook": "^0.5.7",
@@ -62,6 +64,7 @@
     "react-test-renderer": "^17.0.2",
     "sanity-codegen": "^0.9.8",
     "sitemap": "^7.1.1",
+    "start-server-and-test": "^1.14.0",
     "tailwindcss": "^3.0.23",
     "typescript": "4.5.5"
   }

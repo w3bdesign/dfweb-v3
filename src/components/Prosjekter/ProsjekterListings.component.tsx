@@ -64,6 +64,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
             <select
               id="kategorifilter"
               name="kategorifilter"
+              data-cy="kategorifilter"
               onChange={handleFilterChange}
               className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
             >

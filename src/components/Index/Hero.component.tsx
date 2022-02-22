@@ -22,7 +22,9 @@ const Hero = (): JSX.Element => (
       <div className="rounded text-black">
         <section role="heading" aria-label="Introduksjonstekst" aria-level={2}>
           <FadeDown delay={1} cssClass="text-center">
-            <span data-cy="hei" className="introtekst inline-block text-5xl">Hei!</span>
+            <span data-cy="hei" className="introtekst inline-block text-5xl">
+              Hei!
+            </span>
           </FadeDown>
           <FadeUp
             delay={1.7}
