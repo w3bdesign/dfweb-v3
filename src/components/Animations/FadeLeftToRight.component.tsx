@@ -46,7 +46,8 @@ const FadeLeftToRight = ({
       initial="hidden"
       animate={animateNotReverse ? "visible" : "hidden"}
       variants={FadeLeftToRightVariants}
-      className={cssClass}>
+      className={cssClass}
+    >
       {children}
     </motion.div>
   );
