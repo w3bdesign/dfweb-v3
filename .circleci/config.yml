@@ -5,6 +5,11 @@ orbs:
   # the strict explicit version "cypress-io/cypress@1.x.y"
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1
+executors:
+  with-chrome:
+    resource_class: small
+    docker:
+      - image: "cypress/browsers:node14.16.0-chrome90-ff88"
 jobs:
     # 👇 Adds Chromatic as a job
   chromatic-deployment:
@@ -49,4 +54,13 @@ workflows:
       - build
       - chromatic-deployment # 👈 Runs the Chromatic job implemented above
       - cypress/run:
-          start: npm run dev
+          requires:
+            - cypress/install
+          executor: with-chrome
+          browser: chrome
+          post-steps:
+            - run: ls
+            - store_test_results:
+                path: cypress/results
+            - store_artifacts:
+                path: cypress/screenshots
