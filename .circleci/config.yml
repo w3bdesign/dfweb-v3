@@ -1,14 +1,58 @@
 version: 2.1
 orbs:
+  # "cypress-io/cypress@1" installs the latest published
+  # version "1.x.y" of the orb. We recommend you then use
+  # the strict explicit version "cypress-io/cypress@1.x.y"
+  # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1.29.0
-workflows:
+jobs:
+    # 👇 Adds Chromatic as a job
+  chromatic-deployment:
+    docker:
+      - image: circleci/node:14
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: yarn install
+        # 👇 Runs the Chromatic CLI
+      - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
   build:
+    working_directory: ~/dfweb
+    docker:
+      - image: cimg/node:current-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install Dependencies
+          command: npm ci
+      - save_cache:
+          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          paths:
+            - /home/circleci/.npm
+      - run:
+          name: Run Jest Tests
+          command: npm test
+      - run:
+          name: Codecov
+          command: bash <(curl -s https://codecov.io/bash)
+    parallelism: 6
+workflows:
+  # 👇 Adds Chromatic to the workflow
+  chromatic-deploy:
     jobs:
+      - build:
+          name: Build Next.js project
+      - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
+          name: Check build with Chromatic
       - cypress/run:
           start: npm run dev
           wait-on: 'http://localhost:3000'
           # there are no jobs to follow this one
           # so no need to save the workspace files (saves time)
-          no-workspace: true
-
-
+          no-workspace: false

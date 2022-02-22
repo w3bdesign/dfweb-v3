@@ -1,4 +1,5 @@
-import { Variants, AnimatePresence, motion } from "framer-motion";
+import { Variants, AnimatePresence } from "framer-motion";
+const { motion } = require("framer-motion");
 
 import { IAnimateProps } from "./types/Animations.types";
 

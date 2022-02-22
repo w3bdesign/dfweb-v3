@@ -1,4 +1,5 @@
-import { motion, Variants } from "framer-motion";
+import {  Variants } from "framer-motion";
+const { motion } = require("framer-motion");
 
 import { IAnimateStaggerWithDelayProps } from "./types/Animations.types";
 
