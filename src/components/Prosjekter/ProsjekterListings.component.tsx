@@ -3,8 +3,13 @@ import { useState } from "react";
 
 import ProsjekterSingleProject from "./ProsjekterSingleProject.component";
 
+interface ICategories {
+  id: number;
+  name: string;
+}
+
 export interface IProjectCategory extends IProject {
-  categories: Array<string>;
+  categories: Array<ICategories>;
 }
 
 export interface IProject {
@@ -57,8 +62,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
             <label
               className="p-2 mr-4 text-lg"
               aria-label="kategorifilter"
-              htmlFor="kategorifilter"
-            >
+              htmlFor="kategorifilter">
               Filtrer kategori:
             </label>
             <select
@@ -66,14 +70,13 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
               name="kategorifilter"
               data-cy="kategorifilter"
               onChange={handleFilterChange}
-              className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-            >
+              className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline">
               <option label="" value="">
                 Ingen filtrering
               </option>
-              {categories?.map((category: string) => (
-                <option key={category} value={category}>
-                  {category}
+              {categories?.map(({ id, name }) => (
+                <option key={id} value={name}>
+                  {name}
                 </option>
               ))}
             </select>

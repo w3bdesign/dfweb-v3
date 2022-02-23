@@ -15,7 +15,8 @@ import PageTransition from "../components/Animations/PageTransition.component";
 
 // Sanity GROQ queries
 const projectQuery = groq`*[_type == "project"]`;
-const categoryQuery = groq`*[_type == "project"].category[0..3]`;
+
+const categoryQuery = groq`*[_type == "category"]{ id, name } | order(id asc)`;
 
 const Prosjekter: NextPage = ({
   projects,
