@@ -17,7 +17,7 @@ export default {
       description: "Children content to be rendered",
       options: ["Sample animation text"],
       mapping: {
-        Sample: <h1>Sample animation text</h1>
+        Sample: <h1>Sample animation test</h1>
       }
     },
     cssClass: { description: "CSS class to append to content" },
