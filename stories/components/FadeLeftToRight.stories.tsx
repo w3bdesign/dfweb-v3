@@ -12,7 +12,7 @@ export default {
   component: FadeLeftToRight,
   parameters: {
     // Sets a delay for the component's stories
-    chromatic: { delay: 3000 },
+    chromatic: { delay: 3000 }
   },
   argTypes: {
     children: {
