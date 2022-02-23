@@ -39,7 +39,7 @@ const Template: ComponentStory<typeof FadeUp> = ({
 export const Primary = Template;
 
 Primary.args = {
-  children: <h1>Sample animation test</h1>,
+  children: <h1>Sample animation text</h1>,
   cssClass: "text-center",
   delay: 1
 };
