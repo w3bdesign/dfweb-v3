@@ -11,7 +11,7 @@ export default {
   component: Hamburger,
   parameters: {
     // Sets a delay for the component's stories
-    chromatic: { delay: 3000 },
+    chromatic: { delay: 3000 }
   },
   argTypes: {
     animatetoX: { description: "Animate hamburger to X" },
