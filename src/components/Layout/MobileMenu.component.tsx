@@ -17,6 +17,7 @@ import Hamburger from "../UI/Hamburger.component";
 
 const MobileMenu = (): JSX.Element => {
   const [isExpanded, setisExpanded] = useState<boolean>(false);
+  const [hidden, setHidden] = useState<string>("invisible");
 
   const node = useRef<HTMLDivElement>(null);
 
@@ -46,7 +47,12 @@ const MobileMenu = (): JSX.Element => {
   useIsomorphicLayoutEffect(() => {
     if (isExpanded) {
       document.addEventListener("mousedown", handleClickOutside);
+      setHidden("");
     } else {
+      setTimeout(() => {
+        setHidden("invisible");
+      }, 1000);
+
       document.removeEventListener("mousedown", handleClickOutside);
     }
     return () => {
@@ -61,8 +67,9 @@ const MobileMenu = (): JSX.Element => {
         <div
           id="mobile-menu"
           data-testid="mobile-menu"
+          data-cy="mobile-menu"
           aria-hidden={!isExpanded}
-          className={`absolute right-0 w-full text-center bg-gray-800 mt-4 w-30`}>
+          className={`absolute right-0 w-full text-center bg-gray-800 mt-4 w-30 ${hidden}`}>
           <ul aria-label="Navigasjon">
             {LINKS.map((link) => (
               <FadeLeftToRightItem key={link.id} cssClass="block">
