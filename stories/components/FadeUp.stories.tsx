@@ -10,8 +10,7 @@ export default {
   title: "Components/Animations/FadeUp",
   component: FadeUp,
   parameters: {
-    // Sets a delay for the component's stories
-    chromatic: { delay: 3000 },
+    chromatic: { delay: 3000 }
   },
   argTypes: {
     children: {
