@@ -10,6 +10,10 @@ import { IAnimateStaggerWithDelayProps } from "../../src/components/Animations/t
 export default {
   title: "Components/Animations/FadeLeftToRight",
   component: FadeLeftToRight,
+  parameters: {
+    // Sets a delay for the component's stories
+    chromatic: { delay: 3000 },
+  },
   argTypes: {
     children: {
       description: "Children content to be rendered"

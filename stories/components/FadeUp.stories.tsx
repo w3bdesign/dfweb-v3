@@ -9,6 +9,10 @@ import { IAnimateWithDelayProps } from "../../src/components/Animations/types/An
 export default {
   title: "Components/Animations/FadeUp",
   component: FadeUp,
+  parameters: {
+    // Sets a delay for the component's stories
+    chromatic: { delay: 3000 },
+  },
   argTypes: {
     children: {
       description: "Children content to be rendered",

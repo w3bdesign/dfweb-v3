@@ -10,6 +10,10 @@ import { IAnimateProps } from "../../src/components/Animations/types/Animations.
 export default {
   title: "Components/Animations/BounceInScroll",
   component: BounceInScroll,
+  parameters: {
+    // Sets a delay for the component's stories
+    chromatic: { delay: 3000 },
+  },
   argTypes: {
     children: {
       description: "Children content to be rendered",
