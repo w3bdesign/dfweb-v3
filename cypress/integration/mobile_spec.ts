@@ -3,10 +3,10 @@
 
 describe("Mobilmeny", () => {
   const hamburger = "[data-cy=hamburger]";
+  const mobileMenuItem = "[data-cy=mobile-menu-item]";
 
-  context("720p resolution", () => {
+  context("Standard oppløsning", () => {
     beforeEach(() => {
-      cy.viewport(1280, 720);
       cy.visit("/");
     });
 
@@ -16,7 +16,7 @@ describe("Mobilmeny", () => {
     });
   });
 
-  context("Iphone-5 resolution", () => {
+  context("Test Iphone 5 oppløsning", () => {
     beforeEach(() => {
       // Bruk iphone-5 som standard oppløsning
       cy.viewport("iphone-5");
@@ -29,7 +29,7 @@ describe("Mobilmeny", () => {
 
     it("Mobilmeny er synlig etter at vi klikker på hamburger", () => {
       cy.get(hamburger).click();
-      cy.contains("Kontakt").should("be.visible");
+      cy.get(mobileMenuItem).should("be.visible");
     });
   });
 });

@@ -73,7 +73,9 @@ const MobileMenu = (): JSX.Element => {
           <ul aria-label="Navigasjon">
             {LINKS.map((link) => (
               <FadeLeftToRightItem key={link.id} cssClass="block">
-                <li className="border-t border-gray-600 border-solid shadow">
+                <li
+                  data-cy="mobile-menu-item"
+                  className="border-t border-gray-600 border-solid shadow">
                   {link.external ? (
                     <a
                       className="inline-block m-4 text-xl text-white hover:underline"
