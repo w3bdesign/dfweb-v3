@@ -62,12 +62,11 @@ const MobileMenu = (): JSX.Element => {
           id="mobile-menu"
           data-testid="mobile-menu"
           aria-hidden={!isExpanded}
-          className={`absolute right-0 w-full text-center bg-gray-800 mt-4 w-30`}
-        >
+          className={`absolute right-0 w-full text-center bg-gray-800 mt-4 w-30`}>
           <ul aria-label="Navigasjon">
             {LINKS.map((link) => (
               <FadeLeftToRightItem key={link.id} cssClass="block">
-                <li className="menu-item w-full border-t border-gray-600 border-solid shadow">
+                <li className="border-t border-gray-600 border-solid shadow">
                   {link.external ? (
                     <a
                       className="inline-block m-4 text-xl text-white hover:underline"
@@ -75,8 +74,7 @@ const MobileMenu = (): JSX.Element => {
                       href={link.url}
                       target="_blank"
                       rel="noreferrer"
-                      data-testid={`mobil-${link.text}`}
-                    >
+                      data-testid={`mobil-${link.text}`}>
                       {link.text}
                     </a>
                   ) : (
