@@ -9,7 +9,7 @@ import Hamburger from "../src/components/UI/Hamburger.component";
 
 describe("Hamburger", () => {
   it("Hamburger laster inn og kan vises", () => {
-    const { hamburger } = render(<Hamburger />);
-    expect(hamburger).toMatchSnapshot();
+    const { container } = render(<Hamburger />);
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BounceInScroll BounceInScroll laster inn og kan vises 1`] = `
+<div>
+  <div>
+    <div
+      style="opacity: 0; transform: translateY(100px) translateZ(0);"
+    >
+      BounceInScroll
+    </div>
+  </div>
+</div>
+`;
