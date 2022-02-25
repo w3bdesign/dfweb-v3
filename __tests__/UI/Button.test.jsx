@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import Button from "../src/components/UI/Button.component";
+import Button from "../../src/components/UI/Button.component";
 import { render } from "@testing-library/react";
 
 describe("Button", () => {
