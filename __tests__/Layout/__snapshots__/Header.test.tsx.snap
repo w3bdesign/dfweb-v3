@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Header laster inn og kan vises 1`] = `
+<div>
+  <header
+    aria-label="Header for logo og navigasjon"
+    role="banner"
+  >
+    <nav
+      class="fixed top-0 z-50 w-full p-4 bg-gray-800"
+    >
+      <div
+        class="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap"
+        data-cy="main-navigation"
+        id="main-navigation"
+      >
+        <div
+          class="flex w-full text-white md:w-1/2 md:justify-start"
+        >
+          <img
+            alt="Dfweb Logo"
+            class="p-2 lg:p-0"
+            height="45"
+            src="/logo.svg"
+            width="150"
+          />
+        </div>
+        <div
+          class="flex content-center justify-between md:w-1/2 md:justify-end p-3"
+          data-cy="hamburger-div"
+          id="hamburger-div"
+        >
+          <div
+            class="z-50 md:hidden lg:hidden xl:hidden"
+          >
+            <button
+              aria-expanded="false"
+              class="flex flex-col w-16 rounded justify-center items-center group "
+              data-cy="hamburger"
+              data-testid="hamburger"
+              type="button"
+            >
+              <span
+                class="sr-only text-white text-2xl"
+              >
+                Hamburger
+              </span>
+              <span
+                class="h-1 w-10 my-1 rounded-full bg-white transition ease transform duration-300 not-sr-only opacity-100 group-hover:opacity-100"
+              />
+              <span
+                class="h-1 w-10 my-1 rounded-full bg-white transition ease transform duration-300 not-sr-only opacity-100 group-hover:opacity-100"
+              />
+              <span
+                class="h-1 w-10 my-1 rounded-full bg-white transition ease transform duration-300 not-sr-only opacity-100 group-hover:opacity-100"
+              />
+            </button>
+            <div
+              style="opacity: 0;"
+            >
+              <div
+                aria-hidden="true"
+                class="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30 invisible"
+                data-cy="mobile-menu"
+                data-testid="mobile-menu"
+                id="mobile-menu"
+              >
+                <ul
+                  aria-label="Navigasjon"
+                >
+                  <span
+                    class="block"
+                    style="opacity: 0; transform: translateX(-50px) translateZ(0);"
+                  >
+                    <li
+                      class="border-t border-gray-600 border-solid shadow"
+                      data-cy="mobile-menu-item"
+                    >
+                      <a
+                        class="inline-block m-4 text-xl text-white hover:underline"
+                        href="/"
+                      >
+                        Hjem
+                      </a>
+                    </li>
+                  </span>
+                  <span
+                    class="block"
+                    style="opacity: 0; transform: translateX(-50px) translateZ(0);"
+                  >
+                    <li
+                      class="border-t border-gray-600 border-solid shadow"
+                      data-cy="mobile-menu-item"
+                    >
+                      <a
+                        class="inline-block m-4 text-xl text-white hover:underline"
+                        href="/prosjekter"
+                      >
+                        Prosjekter
+                      </a>
+                    </li>
+                  </span>
+                  <span
+                    class="block"
+                    style="opacity: 0; transform: translateX(-50px) translateZ(0);"
+                  >
+                    <li
+                      class="border-t border-gray-600 border-solid shadow"
+                      data-cy="mobile-menu-item"
+                    >
+                      <a
+                        class="inline-block m-4 text-xl text-white hover:underline"
+                        href="/cv"
+                      >
+                        CV
+                      </a>
+                    </li>
+                  </span>
+                  <span
+                    class="block"
+                    style="opacity: 0; transform: translateX(-50px) translateZ(0);"
+                  >
+                    <li
+                      class="border-t border-gray-600 border-solid shadow"
+                      data-cy="mobile-menu-item"
+                    >
+                      <a
+                        aria-label="Github"
+                        class="inline-block m-4 text-xl text-white hover:underline"
+                        data-testid="mobil-Github"
+                        href="https://www.github.com/w3bdesign"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        Github
+                      </a>
+                    </li>
+                  </span>
+                  <span
+                    class="block"
+                    style="opacity: 0; transform: translateX(-50px) translateZ(0);"
+                  >
+                    <li
+                      class="border-t border-gray-600 border-solid shadow"
+                      data-cy="mobile-menu-item"
+                    >
+                      <a
+                        class="inline-block m-4 text-xl text-white hover:underline"
+                        href="/kontakt"
+                      >
+                        Kontakt
+                      </a>
+                    </li>
+                  </span>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <ul
+            aria-label="Navigasjon"
+            class="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4"
+          >
+            <li
+              class="link mr-3 md:mr-8 lg:mr-3"
+            >
+              <a
+                aria-label="Hjem"
+                class="navbar-link eds-top-navigation-item inline-block text-xl text-white
+                      
+
+                      "
+                href="/"
+              >
+                Hjem
+              </a>
+            </li>
+            <li
+              class="link mr-3 md:mr-8 lg:mr-3"
+            >
+              <a
+                aria-label="Prosjekter"
+                class="navbar-link eds-top-navigation-item inline-block text-xl text-white
+                      
+
+                      "
+                href="/prosjekter"
+              >
+                Prosjekter
+              </a>
+            </li>
+            <li
+              class="link mr-3 md:mr-8 lg:mr-3"
+            >
+              <a
+                aria-label="CV"
+                class="navbar-link eds-top-navigation-item inline-block text-xl text-white
+                      
+
+                      "
+                href="/cv"
+              >
+                CV
+              </a>
+            </li>
+            <li
+              class="link mr-3 md:mr-8 lg:mr-3"
+            >
+              <a
+                aria-label="Github"
+                class="navbar-link inline-block text-xl text-white"
+                href="https://www.github.com/w3bdesign"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Github
+              </a>
+            </li>
+            <li
+              class="link mr-3 md:mr-8 lg:mr-3"
+            >
+              <a
+                aria-label="Kontakt"
+                class="navbar-link eds-top-navigation-item inline-block text-xl text-white
+                      
+
+                      "
+                href="/kontakt"
+              >
+                Kontakt
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+`;
