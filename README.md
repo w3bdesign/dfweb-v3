@@ -42,7 +42,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Tailwind CSS for styling
 -   Google fonts with Lato (optimized for Next.js)
 
-### Code quality
+### Devops / Code quality
 
 -   Continuous Integration with CircleCI
 -   Code quality analysis with Codacy, Sonarcloud, Deepscan, Codefactor, LGTM and Codeclimate
