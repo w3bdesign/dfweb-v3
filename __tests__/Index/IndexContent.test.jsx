@@ -2,8 +2,9 @@
  * @jest-environment jsdom
  */
 
-import IndexContent from "../../src/components/Index/IndexContent.component";
 import { render } from "@testing-library/react";
+
+import IndexContent from "../../src/components/Index/IndexContent.component";
 
 describe("IndexContent", () => {
   it("IndexContent laster inn og kan vises", () => {

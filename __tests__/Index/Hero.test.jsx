@@ -2,8 +2,9 @@
  * @jest-environment jsdom
  */
 
-import Hero from "../../src/components/Index/Hero.component";
 import { render } from "@testing-library/react";
+
+import Hero from "../../src/components/Index/Hero.component";
 
 describe("Hero", () => {
   it("Hero laster inn og kan vises", () => {

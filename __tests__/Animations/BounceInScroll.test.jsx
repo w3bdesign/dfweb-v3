@@ -2,8 +2,9 @@
  * @jest-environment jsdom
  */
 
-import BounceInScroll from "../../src/components/Animations/BounceInScroll.component";
 import { render } from "@testing-library/react";
+
+import BounceInScroll from "../../src/components/Animations/BounceInScroll.component";
 
 describe("BounceInScroll", () => {
   it("BounceInScroll laster inn og kan vises", () => {

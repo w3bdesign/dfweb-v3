@@ -2,8 +2,9 @@
  * @jest-environment jsdom
  */
 
-import Button from "../../src/components/UI/Button.component";
 import { render } from "@testing-library/react";
+
+import Button from "../../src/components/UI/Button.component";
 
 const handleOnClick = jest.fn();
 

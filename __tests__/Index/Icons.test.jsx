@@ -2,8 +2,9 @@
  * @jest-environment jsdom
  */
 
-import Icons from "../../src/components/Index/Icons.component";
 import { render } from "@testing-library/react";
+
+import Icons from "../../src/components/Index/Icons.component";
 
 describe("Icons ", () => {
   it("Icons laster inn og kan vises", () => {

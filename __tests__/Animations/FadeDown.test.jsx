@@ -2,8 +2,9 @@
  * @jest-environment jsdom
  */
 
-import FadeDown from "../../src/components/Animations/FadeDown.component";
 import { render } from "@testing-library/react";
+
+import FadeDown from "../../src/components/Animations/FadeDown.component";
 
 describe("FadeDown", () => {
   it("FadeDown laster inn og kan vises", () => {

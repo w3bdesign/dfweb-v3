@@ -2,8 +2,9 @@
  * @jest-environment jsdom
  */
 
-import FadeUp from "../../src/components/Animations/FadeUp.component";
 import { render } from "@testing-library/react";
+
+import FadeUp from "../../src/components/Animations/FadeUp.component";
 
 describe("FadeUp", () => {
   it("FadeUp laster inn og kan vises", () => {

@@ -2,8 +2,9 @@
  * @jest-environment jsdom
  */
 
-import Header from "../../src/components/Layout/Header.component";
 import { render } from "@testing-library/react";
+
+import Header from "../../src/components/Layout/Header.component";
 
 jest.mock("next/router", () => ({
   useRouter() {
