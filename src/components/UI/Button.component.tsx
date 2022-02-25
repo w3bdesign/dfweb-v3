@@ -11,6 +11,7 @@ export interface IButtonProps {
  * @function Button
  * @param {string?} text - Text to show in the button
  * @param {children?} children - HTML children to render in the button
+ * @param {MouseEventHandler<HTMLButtonElement>?} onClick - onClick handler for button
  * @returns {JSX.Element} - Rendered component
  */
 
