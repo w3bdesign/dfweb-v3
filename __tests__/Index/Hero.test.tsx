@@ -8,7 +8,7 @@ import Hero from "../../src/components/Index/Hero.component";
 
 describe("Hero", () => {
   it("Hero laster inn og kan vises", () => {
-    const { container } = render(<Hero />);
-    expect(container).toMatchSnapshot();
+    const { queryByTestId } = render(<Hero />);
+    expect(queryByTestId("main-hero")).toBeTruthy();
   });
 });

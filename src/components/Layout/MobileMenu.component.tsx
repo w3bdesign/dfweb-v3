@@ -61,7 +61,7 @@ const MobileMenu = (): JSX.Element => {
   }, [isExpanded]);
 
   return (
-    <div ref={node} className="z-50 md:hidden lg:hidden xl:hidden">
+    <div ref={node} className="z-50 md:hidden lg:hidden xl:hidden" data-testid="mobilemenu">
       <Hamburger onClick={handleMobileMenuClick} animatetoX={isExpanded} />
       <FadeLeftToRight delay={0.2} staggerDelay={0.2} animateNotReverse={isExpanded}>
         <div
