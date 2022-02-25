@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hamburger Hamburger laster inn og kan vises 1`] = `
+<div>
+  <button
+    class="flex flex-col w-16 rounded justify-center items-center group "
+    data-cy="hamburger"
+    data-testid="hamburger"
+    type="button"
+  >
+    <span
+      class="sr-only text-white text-2xl"
+    >
+      Hamburger
+    </span>
+    <span
+      class="h-1 w-10 my-1 rounded-full bg-white transition ease transform duration-300 not-sr-only opacity-100 group-hover:opacity-100"
+    />
+    <span
+      class="h-1 w-10 my-1 rounded-full bg-white transition ease transform duration-300 not-sr-only opacity-100 group-hover:opacity-100"
+    />
+    <span
+      class="h-1 w-10 my-1 rounded-full bg-white transition ease transform duration-300 not-sr-only opacity-100 group-hover:opacity-100"
+    />
+  </button>
+</div>
+`;

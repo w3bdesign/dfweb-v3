@@ -8,7 +8,7 @@ import { BiCopyright } from "react-icons/bi";
  */
 
 const Footer = (): JSX.Element => (
-  <footer role="contentinfo" aria-label="Innholdet for bunnteksten med copyright">
+  <footer role="contentinfo" aria-label="Innholdet for bunnteksten med copyright" data-testid="footer">
     <div className="mt-10 bg-gray-800 shadow">
       <div
         aria-label="Copyright tekst"
