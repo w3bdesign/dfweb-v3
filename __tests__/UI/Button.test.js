@@ -14,13 +14,6 @@ describe("Button", () => {
     const button = screen.queryByRole("button", {
       name: /button/i
     });
-
-    console.log("Button ....")
-    screen.debug();
-    console.log(button)
-
-
-
     expect(button).toBeInTheDocument();
   });
 });
