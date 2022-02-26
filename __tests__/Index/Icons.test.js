@@ -2,13 +2,22 @@
  * @jest-environment jsdom
  */
 
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import Icons from "../../src/components/Index/Icons.component";
 
 describe("Icons ", () => {
-  it("Icons laster inn og kan vises", () => {
-    const { queryByTestId } = render(<Icons />);
-    expect(queryByTestId("icons")).toBeTruthy();
+  beforeEach(() => {
+    render(<Icons />);
+  });
+
+  it("Typescript laster inn og kan vises", () => {
+    const typescript = screen.getByRole("img", { name: /typescript ikon/i });
+    expect(typescript).toBeInTheDocument();
+  });
+
+  it("Wordpress laster inn og kan vises", () => {
+    const wordpress = screen.getByRole("img", { name: /wordpress ikon/i });
+    expect(wordpress).toBeInTheDocument();
   });
 });
