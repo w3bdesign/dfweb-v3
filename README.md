@@ -32,7 +32,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Automatic sitemap generation (see robots.txt)
 -   Responsive design
 -   Google rich results for each individual page
--   100% score in Google Lighthoude
+-   100% score in Google Lighthouse
 
 ### Accessibility and design
 
