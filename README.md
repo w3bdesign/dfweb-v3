@@ -5,8 +5,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ffcd837a61db13b9630e/maintainability)](https://codeclimate.com/github/w3bdesign/dfweb-v3/maintainability)
 [![DeepSource](https://deepsource.io/gh/w3bdesign/dfweb-v3.svg/?label=active+issues&token=xU1k2KJL7peEGSzJkuYYEuw5)](https://deepsource.io/gh/w3bdesign/dfweb-v3/?ref=repository-badge)
 
-> # Google Lighthouse score
-><center><img src="https://user-images.githubusercontent.com/45217974/154784575-ec7c0df5-3724-4de0-b8ec-c0ee6ea42f6f.png" alt="Lighthouse score" /></center>
+> ## Google Lighthouse score
+>
+> <center><img src="https://user-images.githubusercontent.com/45217974/154784575-ec7c0df5-3724-4de0-b8ec-c0ee6ea42f6f.png" alt="Lighthouse score" /></center>
 
 # Dfweb Portfolio Version 3
 
@@ -31,7 +32,7 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Automatic sitemap generation (see robots.txt)
 -   Responsive design
 -   Google rich results for each individual page
--   100% score in Google Lighthoude
+-   100% score in Google Lighthouse
 
 ### Accessibility and design
 
