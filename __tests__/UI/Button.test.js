@@ -10,7 +10,10 @@ const handleOnClick = jest.fn();
 
 describe("Button", () => {
   it("Button laster inn og kan vises", () => {
-    const { container } = render(<Button onClick={handleOnClick}>Button</Button>);
-    expect(container).toMatchSnapshot();
+    render(<Button onClick={handleOnClick}>Button</Button>);
+    const container = screen.queryByRole("button", {
+      name: /button/i
+    });
+    expect(container).toBeInTheDocument();
   });
 });
