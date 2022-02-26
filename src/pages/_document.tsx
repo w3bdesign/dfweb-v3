@@ -38,6 +38,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script async type="text/javascript" src="/js/newrelic.js" />
         </body>
       </Html>
     );
