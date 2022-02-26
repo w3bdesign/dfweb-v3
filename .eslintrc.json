@@ -4,12 +4,22 @@
     "sourceType": "module"
   },
   "extends": ["next/core-web-vitals", "plugin:cypress/recommended", "plugin:sonarjs/recommended"],
-  "plugins": ["react", "cypress", "sonarjs", "testing-library"],  
+  "plugins": ["react", "cypress", "sonarjs", "testing-library", "jest-dom"],
   "globals": {
     "cy": true
   },
   "rules": {
     "react/jsx-max-depth": 1,
-    "@next/next/no-img-element": 0
+    "@next/next/no-img-element": 0,
+    /* eslint-plugin-testing-library */
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debugging-utils": "warn",
+    "testing-library/no-dom-import": "off",
+    /* jest-dom */
+    "jest-dom/prefer-checked": "error",
+    "jest-dom/prefer-enabled-disabled": "error",
+    "jest-dom/prefer-required": "error",
+    "jest-dom/prefer-to-have-attribute": "error"
   }
 }
