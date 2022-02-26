@@ -60,6 +60,7 @@
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-sonarjs": "^0.12.0",
     "eslint-plugin-storybook": "^0.5.7",
+    "eslint-plugin-testing-library": "^5.0.5",
     "jest": "^27.5.1",
     "postcss": "^8.4.7",
     "react-test-renderer": "^17.0.2",

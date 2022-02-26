@@ -4,7 +4,7 @@
     "sourceType": "module"
   },
   "extends": ["next/core-web-vitals", "plugin:cypress/recommended", "plugin:sonarjs/recommended"],
-  "plugins": ["react", "cypress", "sonarjs"],
+  "plugins": ["react", "cypress", "sonarjs", "testing-library"],  
   "globals": {
     "cy": true
   },
