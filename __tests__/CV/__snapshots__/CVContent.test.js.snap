@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CVContent CVContent laster inn og kan vises 1`] = `
+<div>
+  <main
+    id="maincontent"
+  >
+    <div
+      class="mt-32 bg-graybg"
+    >
+      <div
+        class="px-4 p lg:px-0 xl:px-0 md:px-0"
+      >
+        <div
+          class="container mx-auto bg-white rounded shadow"
+        >
+          <div
+            class="p-4 mx-auto mt-4"
+          >
+            <div
+              class="p-4 text-lg rounded"
+            >
+              <div
+                class="mt-0 sm:mt-2 xs:mt-2"
+              >
+                <div
+                  class="react-pdf__Document hidden mt-4 text-center xl:block lg:block"
+                >
+                  <div
+                    class="react-pdf__message react-pdf__message--loading"
+                  >
+                    Laster inn PDF ...
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mx-auto mt-0 text-center sm:mt-2 xs:mt-2"
+              >
+                <button
+                  class="p-4 m-4 text-white transition duration-500 ease-in-out bg-gray-800 rounded hover:shadow-outline hover:bg-gray-600"
+                  type="submit"
+                >
+                  <a
+                    href="/CV-dfweb.pdf"
+                  >
+                    Last ned PDF
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+`;
