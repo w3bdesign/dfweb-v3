@@ -55,5 +55,5 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 ## TODO
 
 -   Improve React testing library tests
--   Add more Cypress tests
+-   Add more tests
 -   Redesign site (long term)
