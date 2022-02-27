@@ -12,12 +12,12 @@ describe("Icons ", () => {
   });
 
   it("React laster inn og kan vises", () => {
-    const react = screen.getByLabelText("React ikon");
+    const react = screen.getByLabelText(/react ikon/i);
     expect(react).toBeInTheDocument();
   });
 
   it("Vue laster inn og kan vises", () => {
-    const vue = screen.getByLabelText("Vue ikon");
+    const vue = screen.getByLabelText(/vue ikon/i);
     expect(vue).toBeInTheDocument();
   });
 
@@ -32,7 +32,7 @@ describe("Icons ", () => {
   });
 
   it("PHP laster inn og kan vises", () => {
-    const php = screen.getByLabelText("PHP  ikon");
+    const php = screen.getByLabelText(/php ikon/i);
     expect(php).toBeInTheDocument();
   });
 });
