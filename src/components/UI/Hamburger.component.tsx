@@ -26,10 +26,10 @@ const Hamburger = ({ onClick, animatetoX }: IHamburgerProps) => {
       data-testid="hamburger"
       onClick={onClick}
       aria-expanded={animatetoX}
-      type="button"
-    >
+      type="button">
       <span className="sr-only text-white text-2xl">Hamburger</span>
       <span
+        data-testid="hamburgerline"
         className={`${hamburgerLine} ${
           animatetoX ? "rotate-45 translate-y-3 opacity-100 group-hover:opacity-100" : opacityFull
         }`}
