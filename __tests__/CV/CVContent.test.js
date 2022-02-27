@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import CVContent from "../../src/components/CV/CVContent.component";
 
