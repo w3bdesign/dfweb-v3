@@ -18,7 +18,11 @@ const FadeLeftToRightItem = ({ children, cssClass }: IAnimateProps): JSX.Element
     hidden: { opacity: 0, x: -50 }
   };
   return (
-    <motion.span variants={FadeLeftToRightItemVariants} className={cssClass}>
+    <motion.span
+      variants={FadeLeftToRightItemVariants}
+      className={cssClass}
+      data-testid="fadelefttorightitem"
+    >
       {children}
     </motion.span>
   );
