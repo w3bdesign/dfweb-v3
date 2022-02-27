@@ -21,7 +21,8 @@ const FadeLeftToRightItem = ({ children, cssClass }: IAnimateProps): JSX.Element
     <motion.span
       variants={FadeLeftToRightItemVariants}
       className={cssClass}
-      data-testid="fadelefttorightitem">
+      data-testid="fadelefttorightitem"
+    >
       {children}
     </motion.span>
   );
