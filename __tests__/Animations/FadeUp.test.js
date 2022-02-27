@@ -7,9 +7,17 @@ import { render, screen } from "@testing-library/react";
 import FadeUp from "../../src/components/Animations/FadeUp.component";
 
 describe("FadeUp", () => {
-  it("FadeUp laster inn og kan vises", () => {
+  beforeEach(() => {
     render(<FadeUp delay={1}>FadeUp</FadeUp>);
+  });
+
+  it("FadeUp laster inn og kan vises", () => {
     const fadeup = screen.getByTestId("fadeup");
     expect(fadeup).toBeInTheDocument();
+  });
+
+  it("FadeUp bruker translateY(50px)", () => {
+    const fadeup = screen.getByTestId("fadeup");
+    expect(fadeup).toContainHTML("translateY(50px)");
   });
 });
