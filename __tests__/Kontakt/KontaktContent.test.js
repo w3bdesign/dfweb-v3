@@ -17,6 +17,13 @@ describe("KontaktContent", () => {
     expect(kontaktcontent).toBeInTheDocument();
   });
 
+  it("Test at vi ikke kan sende et tomt skjema", () => {
+    const sendskjema = screen.getByRole("button", { name: /send skjema/i });
+    const firstname = screen.getByRole("textbox", { name: /fullt navn/i });
+    userEvent.click(sendskjema);
+    expect(firstname).toBeVisible();
+  });
+
   it("Test at vi kan skrive i navn tekstboks", () => {
     const firstname = screen.getByRole("textbox", { name: /fullt navn/i });
     userEvent.clear(firstname);
