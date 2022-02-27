@@ -8,7 +8,8 @@ import CVContent from "../../src/components/CV/CVContent.component";
 
 describe("CVContent", () => {
   it("CVContent laster inn og kan vises", () => {
-    const { container } = render(<CVContent />);
-    expect(container).toMatchSnapshot();
+    render(<CVContent />);
+    const cvcontent = screen.getByText(/nøkkelkvalifikasjoner/i);
+    expect(cvcontent).toBeInTheDocument();
   });
 });
