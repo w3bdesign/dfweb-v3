@@ -6,7 +6,7 @@
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest --coverage --transformIgnorePatterns \"node_modules/(?!dfweb-v3)/\" --env=jsdom",
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006 -s public",
