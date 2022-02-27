@@ -8,7 +8,7 @@ import FadeLeftToRight from "../../src/components/Animations/FadeLeftToRight.com
 
 describe("FadeLeftToRight", () => {
   it("FadeLeftToRight laster inn og kan vises", () => {
-    render(<FadeLeftToRight delay={1}>FadeDown</FadeLeftToRight>);
+    render(<FadeLeftToRight delay={1}>FadeLeftToRight</FadeLeftToRight>);
     const fadelefttoright = screen.getByTestId("fadelefttoright");
     expect(fadelefttoright).toBeInTheDocument();
   });
