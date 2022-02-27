@@ -11,6 +11,16 @@ describe("Icons ", () => {
     render(<Icons />);
   });
 
+  it("React laster inn og kan vises", () => {
+    const react = screen.getByLabelText(/react ikon/i);
+    expect(react).toBeInTheDocument();
+  });
+
+  it("Vue laster inn og kan vises", () => {
+    const vue = screen.getByLabelText(/vue ikon/i);
+    expect(vue).toBeInTheDocument();
+  });
+
   it("Typescript laster inn og kan vises", () => {
     const typescript = screen.getByRole("img", { name: /typescript ikon/i });
     expect(typescript).toBeInTheDocument();
@@ -19,5 +29,10 @@ describe("Icons ", () => {
   it("Wordpress laster inn og kan vises", () => {
     const wordpress = screen.getByRole("img", { name: /wordpress ikon/i });
     expect(wordpress).toBeInTheDocument();
+  });
+
+  it("PHP laster inn og kan vises", () => {
+    const php = screen.getByLabelText(/php ikon/i);
+    expect(php).toBeInTheDocument();
   });
 });
