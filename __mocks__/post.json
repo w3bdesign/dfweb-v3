@@ -1,0 +1,155 @@
+[
+  {
+    "_createdAt": "2022-02-20T05:37:15Z",
+    "_id": "12165711-a0f1-4695-9cde-eac2a8de3f3e",
+    "_rev": "RIOCdUWyAQH9R1PU5jTyLc",
+    "_type": "sitecontent",
+    "_updatedAt": "2022-02-20T21:13:45Z",
+    "id": 2,
+    "pagename": "Index",
+    "text": [
+      {
+        "_key": "670740cc9ed3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a0fd8aa6ace00",
+            "_type": "span",
+            "marks": ["code"],
+            "text": "Siden 2000 har jeg arbeidet med webdesign og utvikling, og jeg har i nyere tid spesialisert meg på frontendutvikling."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c168500e6701",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "da718e2420d20",
+            "_type": "span",
+            "marks": ["code"],
+            "text": "Jeg har erfaring med WordPress og WooCommerce siden 2011 hvor jeg har arbeidet frilans via Fiverr og kan skilte med 100% positiv tilbakemelding på samtlige oppdrag."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e2c06f6902ae",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e56f9fcb69940",
+            "_type": "span",
+            "marks": ["code"],
+            "text": "Jeg har også erfaring med andre teknologier som moderne Javascript (ES6+), Typescript, React, Vue.js, PHP, mySQL,  Gatsby, Next.js, Docker, GraphQL, Adobe Photoshop, Storybook, Bootstrap med mer."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "title": "Om Meg"
+  },
+  {
+    "_createdAt": "2022-01-03T19:44:25Z",
+    "_id": "9165f0de-ff21-4893-b6fa-74a43f4eb0bb",
+    "_rev": "RIOCdUWyAQH9R1PU5jMpuQ",
+    "_type": "sitecontent",
+    "_updatedAt": "2022-02-20T20:27:25Z",
+    "id": 1,
+    "pagename": "Index",
+    "text": [
+      {
+        "_key": "fdf136bef72f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4f14d3e3a1aa0",
+            "_type": "span",
+            "marks": ["code"],
+            "text": "Jeg arbeider jevnlig med hobbyprosjekter, primært med fokus på Javascript og Typescript."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f18a99610770",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c185c2471f9c0",
+            "_type": "span",
+            "marks": ["code"],
+            "text": "Kildekoden publiserer jeg på "
+          },
+          {
+            "_key": "e98b3c177571",
+            "_type": "span",
+            "marks": ["code", "4942ff46f12f"],
+            "text": "GITHUB"
+          },
+          { "_key": "0fba878e970f", "_type": "span", "marks": ["code"], "text": "." }
+        ],
+        "markDefs": [
+          { "_key": "4942ff46f12f", "_type": "link", "href": "https://www.github.com/w3bdesign" }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "518f59698dcf",
+        "_type": "block",
+        "children": [
+          { "_key": "21625b7a99d00", "_type": "span", "marks": ["code"], "text": "På " },
+          {
+            "_key": "313777263639",
+            "_type": "span",
+            "marks": ["code", "a93c8592e1da"],
+            "text": "PROSJEKTER"
+          },
+          {
+            "_key": "7173562e78cd",
+            "_type": "span",
+            "marks": ["code"],
+            "text": " kan du se eksempler på arbeid jeg har gjort i nyere tid."
+          }
+        ],
+        "markDefs": [{ "_key": "a93c8592e1da", "_type": "link", "href": "/prosjekter" }],
+        "style": "normal"
+      },
+      {
+        "_key": "aa0a8123543b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1fabbe7e78ed0",
+            "_type": "span",
+            "marks": ["code"],
+            "text": "Har også bidratt med utvikling av flere open-source prosjekter på "
+          },
+          {
+            "_key": "6f9e089bea32",
+            "_type": "span",
+            "marks": ["code", "7602a2888b65"],
+            "text": "GITHUB."
+          }
+        ],
+        "markDefs": [
+          { "_key": "7602a2888b65", "_type": "link", "href": "https://www.github.com/w3bdesign" }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "109a97f844cf",
+        "_type": "block",
+        "children": [{ "_key": "1fe2c2a8e695", "_type": "span", "marks": [], "text": "" }],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "title": "Prosjekter"
+  }
+]
