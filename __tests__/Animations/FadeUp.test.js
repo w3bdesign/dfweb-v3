@@ -16,8 +16,8 @@ describe("FadeUp", () => {
     expect(fadeup).toBeInTheDocument();
   });
 
-  it("FadeUp bruker translateY(50px)", () => {
+  it("Framer motion setter translateY", () => {
     const fadeup = screen.getByTestId("fadeup");
-    expect(fadeup).toContainHTML("translateY(50px)");
+    expect(fadeup).toContainHTML("translateY");
   });
 });
