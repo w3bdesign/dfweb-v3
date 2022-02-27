@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import Header from "../../src/components/Layout/Header.component";
 
@@ -19,7 +19,8 @@ jest.mock("next/router", () => ({
 
 describe("Header", () => {
   it("Header laster inn og kan vises", () => {
-    const { container } = render(<Header />);
-    expect(container).toMatchSnapshot();
+    render(<Header />);
+    const header = screen.getByRole("navigation");
+    expect(header).toBeInTheDocument();
   });
 });
