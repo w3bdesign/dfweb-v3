@@ -7,12 +7,12 @@ import { render, screen } from "@testing-library/react";
 import ProsjekterListings from "../../src/components/Prosjekter/ProsjekterListings.component";
 
 describe("ProsjekterListings", () => {
-  it("Button laster inn og kan vises", () => {
+  beforeEach(() => {
     render(<ProsjekterListings />);
-    expect(true)
-    /*const button = screen.queryByRole("button", {
-      name: /button/i
-    });
-    expect(button).toBeInTheDocument();*/
+  });
+
+  it("ProsjekterListings laster inn og kan vises", () => {
+    const prosjekterlistings = screen.getByRole("main", { name: /innhold portefølje/i });
+    expect(prosjekterlistings).toBeInTheDocument();
   });
 });
