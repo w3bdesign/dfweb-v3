@@ -13,6 +13,10 @@ describe("Test at prosjekter vises og at filter fungerer", () => {
       cy.visit("/prosjekter");
     });
 
+    it("Har ingen a11y problemer", () => {
+      cy.checkA11y();
+    });
+
     it("Test at vi kan velge kategori på mobil", () => {
       cy.get('[data-cy="kategorifilter"]').select("PHP");
       cy.get('[data-cy="prosjektgrid"]').find('[data-cy="projectdiv"]').should("have.length", 1);

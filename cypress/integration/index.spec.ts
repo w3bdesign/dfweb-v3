@@ -6,6 +6,10 @@ describe("Forside", () => {
     cy.visit("/");
   });
 
+  it("Har ingen a11y problemer", () => {
+    cy.checkA11y();
+  });
+
   it(`Hei vises på forsiden`, () => {
     cy.get('[data-cy="hei"]').contains("Hei!");
   });
