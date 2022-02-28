@@ -2,8 +2,6 @@ import { Document, Page, pdfjs } from "react-pdf";
 
 import Link from "next/link";
 
-import Button from "../UI/Button.component";
-
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 /**
@@ -21,12 +19,12 @@ const CVContent = (): JSX.Element => (
           <div className="p-4 mx-auto mt-4">
             <div className="p-4 text-lg rounded">
               <div className="mt-0 sm:mt-2 xs:mt-2">
+                <h1 className="text-center text-black">CV</h1>
                 <Document
                   className="hidden mt-4 text-center xl:block lg:block"
                   error="En feil har oppstått under lasting av PDF"
                   loading="Laster inn PDF ..."
-                  file="./CV-dfweb.pdf"
-                >
+                  file="./CV-dfweb.pdf">
                   <Page
                     renderMode="svg"
                     className="flex content-center justify-center -mt-12"
@@ -41,10 +39,8 @@ const CVContent = (): JSX.Element => (
                   />
                 </Document>
               </div>
-              <div className="mx-auto mt-0 text-center sm:mt-2 xs:mt-2">
-                <Button>
-                  <Link href="./CV-dfweb.pdf">Last ned PDF</Link>
-                </Button>
+              <div className="mx-auto pt-2 text-center sm:mt-2 xs:mt-2 bg-gray-800 rounded w-64 h-12 text-white">
+                <Link href="./CV-dfweb.pdf">Last ned PDF</Link>
               </div>
             </div>
           </div>

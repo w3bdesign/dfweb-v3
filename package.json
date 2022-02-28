@@ -21,6 +21,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
     "@sanity/image-url": "^1.0.1",
+    "axe-core": "^4.4.1",
     "framer-motion": "^6.2.8",
     "next": "^12.1.0",
     "next-sanity": "^0.5.0",
@@ -56,6 +57,7 @@
     "chromatic": "^6.5.1",
     "cross-env": "^7.0.3",
     "cypress": "^9.5.0",
+    "cypress-axe": "^0.14.0",
     "eslint": "8.10.0",
     "eslint-config-next": "^12.1.0",
     "eslint-plugin-cypress": "2.12.1",
