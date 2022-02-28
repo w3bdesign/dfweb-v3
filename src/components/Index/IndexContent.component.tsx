@@ -60,17 +60,16 @@ const IndexContent = ({ post }: TData): JSX.Element => (
               <h2 data-cy={title} className="text-3xl text-center">
                 {title}
               </h2>
+              <br />
               <PortableText
                 content={text}
                 serializers={{
                   code: ({ children }: ISerializerCode) => (
-                    <p className="mt-4 text-lg">{children} </p>
-                  ),
-                  h1: ({ children }: ISerializerCode) => (
-                    <h1 className="text-3xl text-center">{children}</h1>
-                  ),
-                  h2: ({ children }: ISerializerCode) => (
-                    <h2 className="text-2xl text-center">{children}</h2>
+                    <span className="mt-4 text-lg">
+                      {children}
+                      <br />
+                      &nbsp;
+                    </span>
                   ),
                   link: ({ children, href }: ISerializerLink) => (
                     <Link href={href} passHref>
