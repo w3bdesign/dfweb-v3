@@ -1,6 +1,5 @@
 /// <reference types="cypress"/>
 
-// https://cheatography.com/aiqbal/cheat-sheets/cypress-io/
 describe("Kontakt", () => {
   const beVisible = "be.visible";
 
