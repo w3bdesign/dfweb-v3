@@ -19,12 +19,12 @@ describe("IndexContent", () => {
   });
 
   it("Om meg laster inn og kan vises", () => {
-    const ommeg = screen.getByRole("contentinfo", { name: /om meg/i });
+    const ommeg = screen.getByRole('heading', {  name: /om meg/i})
     expect(ommeg).toBeInTheDocument();
   });
 
   it("Prosjekter laster inn og kan vises", () => {
-    const prosjekter = screen.getByRole("contentinfo", { name: /prosjekter/i });
+    const prosjekter = screen.getByRole('heading', {  name: /prosjekter/i})
     expect(prosjekter).toBeInTheDocument();
   });
 });
