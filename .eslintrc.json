@@ -9,8 +9,8 @@
     "cy": true
   },
   "rules": {
-    "react/jsx-max-depth": 1,
-    "@next/next/no-img-element": 0,
+    "react/jsx-max-depth": "warn",
+    "@next/next/no-img-element": "off",
     /* eslint-plugin-testing-library */
     "testing-library/await-async-query": "error",
     "testing-library/no-await-sync-query": "error",

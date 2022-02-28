@@ -2,6 +2,8 @@ import { Document, Page, pdfjs } from "react-pdf";
 
 import Link from "next/link";
 
+import PageHeader from "../UI/PageHeader.component";
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 /**
@@ -14,12 +16,12 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 const CVContent = (): JSX.Element => (
   <main id="maincontent">
     <div className="mt-32 bg-graybg">
+      <PageHeader>CV</PageHeader>
       <div className="px-4 p lg:px-0 xl:px-0 md:px-0">
         <div className="container mx-auto bg-white rounded shadow">
           <div className="p-4 mx-auto mt-4">
             <div className="p-4 text-lg rounded">
               <div className="mt-0 sm:mt-2 xs:mt-2">
-                <h1 className="text-center text-black">CV</h1>
                 <Document
                   className="hidden mt-4 text-center xl:block lg:block"
                   error="En feil har oppstått under lasting av PDF"

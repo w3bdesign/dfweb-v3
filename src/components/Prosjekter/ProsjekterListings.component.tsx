@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 import ProsjekterSingleProject from "./ProsjekterSingleProject.component";
+import PageHeader from "../UI/PageHeader.component";
 
 interface ICategories {
   id: number;
@@ -56,15 +57,15 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
 
   return (
     <main role="main" aria-label="Innhold portefølje" className="mt-32 bg-graybg">
+      <PageHeader>Prosjekter</PageHeader>
       <div className="container mx-auto rounded">
-        <h1 className="text-center text-3xl p-2">Prosjekter</h1>
+        
         <div className="px-4 mx-auto mt-4 lg:px-0 xl:px-0 md:px-0">
           <span className="flex justify-end mb-4">
             <label
               className="p-2 mr-4 text-lg"
               aria-label="kategorifilter"
-              htmlFor="kategorifilter"
-            >
+              htmlFor="kategorifilter">
               Filtrer kategori:
             </label>
             <select
@@ -72,8 +73,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
               name="kategorifilter"
               data-cy="kategorifilter"
               onChange={handleFilterChange}
-              className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-            >
+              className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline">
               <option label="" value="">
                 Ingen filtrering
               </option>
