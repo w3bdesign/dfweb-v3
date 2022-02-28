@@ -10,10 +10,6 @@ describe("Mobilmeny", () => {
       cy.visit("/");
     });
 
-    it("Har ingen a11y problemer", () => {
-      cy.checkA11y();
-    });
-
     it("Hamburger er ikke synlig", () => {
       cy.get("#main-navigation").should("be.visible");
       cy.get(hamburger).should("not.be.visible");

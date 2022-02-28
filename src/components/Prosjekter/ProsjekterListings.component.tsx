@@ -57,6 +57,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
   return (
     <main aria-label="Innhold portefølje" className="mt-32 bg-graybg">
       <div className="container mx-auto rounded">
+        <h1 className="text-center text-3xl p-2">Prosjekter</h1>
         <div className="px-4 mx-auto mt-4 lg:px-0 xl:px-0 md:px-0">
           <span className="flex justify-end mb-4">
             <label

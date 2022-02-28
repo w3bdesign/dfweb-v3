@@ -7,6 +7,9 @@ describe("Forside", () => {
   });
 
   it("Har ingen a11y problemer", () => {
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(5000);
+    cy.injectAxe();
     cy.checkA11y();
   });
 

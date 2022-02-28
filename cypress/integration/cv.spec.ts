@@ -6,7 +6,8 @@ describe(`Test at CV vises og laster`, () => {
   });
 
   it("Har ingen a11y problemer", () => {
-    cy.contains('This page should pass A11y checks')
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(1500);
     cy.injectAxe();
     cy.checkA11y();
   });

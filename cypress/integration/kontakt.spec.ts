@@ -9,7 +9,9 @@ describe("Kontakt", () => {
   });
 
   it("Har ingen a11y problemer", () => {
-    cy.get("#navn").should(beVisible).injectAxe();
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(1500);
+    cy.injectAxe();
     cy.checkA11y();
   });
 

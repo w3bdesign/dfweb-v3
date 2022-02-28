@@ -30,27 +30,28 @@ Third version of my portfolio website with Next.js with Typescript instead of Ga
 -   Contact form with Emailjs
 -   Display CV with React-PDF
 -   Automatic sitemap generation (see robots.txt)
--   Responsive design
 -   Google rich results for each individual page
 -   100% score in Google Lighthouse
 
-### Accessibility and design
+### Design
 
--   WCAG accessibility tested
 -   Fully responsive design tested on all devices
--   Relevant aria labels added for all content
 -   React Icons for project icons
 -   Tailwind CSS for styling
 -   Google fonts with Lato (optimized for Next.js)
+
+### Accessibility
+
+-   WCAG accessibility tested
+-   Cypress setup with Cypress Axe for automatic accessibility testing
 
 ### Devops / Code quality
 
 -   Continuous Integration with CircleCI
 -   Code quality analysis with Codacy, Sonarcloud, Deepscan, Codefactor, LGTM and Codeclimate
 -   E2E testing with Cypress integrated with CircleCI
--   Unit testing with Jest and React-Testing-Library
+-   Unit testing with Jest and React Testing Library
 -   Test coverage setup with Codecov
--   Eslint setup with Airbnb style guide
 
 ## TODO
 
