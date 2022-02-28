@@ -71,12 +71,6 @@ const IndexContent = ({ post }: TData): JSX.Element => (
                       <br />&nbsp;
                     </span>
                   ),
-                  h1: ({ children }: ISerializerCode) => (
-                    <h1 className="text-3xl p-4 text-center">{children}</h1>
-                  ),
-                  h2: ({ children }: ISerializerCode) => (
-                    <h2 className="text-2xl p-4 text-center">{children}</h2>
-                  ),
                   link: ({ children, href }: ISerializerLink) => (
                     <Link href={href} passHref>
                       <a className="underline">{children}</a>
