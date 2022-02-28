@@ -20,10 +20,6 @@ describe("Kontakt", () => {
   it(`Vi kan skrive navn`, () => {
     cy.get("#navn").type("Fullt navn").should("have.value", "Fullt navn");
   });
-
-  it(`Vi prøver å sende inn et tomt skjema`, () => {
-    cy.get('[data-cy="submit"]').click().should;
-  });
 });
 
 export {};
