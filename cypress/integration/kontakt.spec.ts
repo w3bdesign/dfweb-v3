@@ -12,6 +12,11 @@ describe("Kontakt", () => {
     cy.get("#navn").should(beVisible);
   });
 
+  it(`Vi kan skrive navn`, () => {
+    cy.get("#navn").type("Navn");
+    cy.get("#navn").contains("Navn", { timeout: 9000 });
+  });
+
   it(`Telefon vises`, () => {
     cy.get("#phone").should(beVisible);
   });
