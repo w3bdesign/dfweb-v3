@@ -64,11 +64,11 @@ const IndexContent = ({ post }: TData): JSX.Element => (
               <PortableText
                 content={text}
                 serializers={{
-                  p: ({ children }: ISerializerCode) => ({ children }),
                   code: ({ children }: ISerializerCode) => (
                     <span className="mt-4 text-lg">
                       {children}
-                      <br />&nbsp;
+                      <br />
+                      &nbsp;
                     </span>
                   ),
                   link: ({ children, href }: ISerializerLink) => (
