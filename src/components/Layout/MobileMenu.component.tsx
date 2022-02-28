@@ -21,10 +21,6 @@ const MobileMenu = (): JSX.Element => {
   const node = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (e: MouseEvent): void => {
-    /**
-     * Clicked outside of the menu
-     */
-
     setisExpanded(false);
   };
 
