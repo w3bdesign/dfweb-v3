@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 import Button from "../UI/Button.component";
+import PageHeader from "../UI/PageHeader.component";
 
 interface IEvent {
   preventDefault: () => void;
@@ -39,6 +40,7 @@ const KontaktContent = (): JSX.Element => {
   return (
     <main id="maincontent">
       <div className="mt-32 bg-graybg">
+        <PageHeader>Kontakt</PageHeader>
         <div className="px-4 p lg:px-0 xl:px-0 md:px-0">
           <div className="container mx-auto bg-white rounded shadow">
             <div className="p-4 mx-auto mt-4">
@@ -48,14 +50,12 @@ const KontaktContent = (): JSX.Element => {
                 )}
                 {!serverResponse && (
                   <>
-                    <h1 className="m-2 text-3xl text-center text-black">Kontakt</h1>
                     <form
                       className="text-center mt-6"
                       ref={formRef}
                       onSubmit={handleSubmit}
                       method="POST"
-                      action="/api/form"
-                    >
+                      action="/api/form">
                       <fieldset>
                         <label htmlFor="navn" className="text-black">
                           Fullt navn
