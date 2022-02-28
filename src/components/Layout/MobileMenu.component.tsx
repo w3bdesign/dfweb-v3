@@ -20,7 +20,7 @@ const MobileMenu = (): JSX.Element => {
   const [hidden, setHidden] = useState<string>("invisible");
   const node = useRef<HTMLDivElement>(null);
 
-  const handleClickOutside = (e: MouseEvent): void => {
+  const handleClickOutside = (): void => {
     setisExpanded(false);
   };
 
