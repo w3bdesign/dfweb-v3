@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 
+import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
 
 import MobileMenu from "../../src/components/Layout/MobileMenu.component";
@@ -39,5 +40,24 @@ describe("MobileMenu", () => {
   it("Kontakt linken eksisterer i menyen", () => {
     const kontakt = screen.getByText(/kontakt/i);
     expect(kontakt).toBeInTheDocument();
+  });
+
+  it("Åpne mobilmeny og se at aria-hidden er false", () => {
+    const mobilemenu = screen.getByTestId("mobile-menu");
+    const hamburger = screen.getByRole("button", {
+      name: /hamburger/i
+    });
+    userEvent.click(hamburger);
+    expect(mobilemenu).toHaveAttribute("aria-hidden", "false");
+  });
+
+  it("Lukk mobilmeny når vi klikker utenfor menyen", () => {
+    const mobilemenu = screen.getByTestId("mobile-menu");
+    const hamburger = screen.getByRole("button", {
+      name: /hamburger/i
+    });
+    userEvent.click(hamburger);
+    userEvent.click(document.body);
+    expect(mobilemenu).toHaveAttribute("aria-hidden", "true");
   });
 });
