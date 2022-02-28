@@ -41,7 +41,7 @@ const CVContent = (): JSX.Element => (
                   />
                 </Document>
               </div>
-              <div className="mx-auto pt-2 text-center sm:mt-2 xs:mt-2 bg-gray-800 rounded w-64 h-12 text-white">
+              <div className="mx-auto pt-2 text-center sm:mt-2 xs:mt-2 bg-gray-800 rounded w-64 h-12 text-white cursor-pointer">
                 <Link href="./CV-dfweb.pdf">Last ned PDF</Link>
               </div>
             </div>
