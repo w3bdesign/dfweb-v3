@@ -9,7 +9,7 @@ import { BiCopyright } from "react-icons/bi";
 
 const Footer = (): JSX.Element => (
   <footer
-    className="mt-64 sm:mt-4"
+    className="mt-80 sm:mt-4"
     aria-label="Innholdet for bunnteksten med copyright"
     data-testid="footer"
   >
