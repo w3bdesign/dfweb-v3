@@ -48,10 +48,9 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
   const [prosjekt, setProsjekt] = useState(projects);
 
   const handleFilterChange = (event: IChangeEvent) => {
+    setProsjekt(projects);
     if (event.target.value) {
       setProsjekt(projects.filter((project) => project.category === event.target.value));
-    } else {
-      setProsjekt(projects);
     }
   };
 
@@ -64,8 +63,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
             <label
               className="p-2 mr-4 text-lg"
               aria-label="kategorifilter"
-              htmlFor="kategorifilter"
-            >
+              htmlFor="kategorifilter">
               Filtrer kategori:
             </label>
             <select
@@ -73,8 +71,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
               name="kategorifilter"
               data-cy="kategorifilter"
               onChange={handleFilterChange}
-              className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-            >
+              className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline">
               <option label="" value="">
                 Ingen filtrering
               </option>

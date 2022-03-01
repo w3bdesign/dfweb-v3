@@ -103,7 +103,7 @@ const KontaktContent = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div id="kontakt-filler" className="mt-48" />
+        <div id="kontakt-filler" className="mt-40" />
       </div>
     </main>
   );
