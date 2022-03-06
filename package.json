@@ -1,6 +1,6 @@
 {
   "name": "dfweb-v3",
-  "version": "1.0.92",
+  "version": "1.0.93",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
