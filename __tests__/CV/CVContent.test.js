@@ -17,9 +17,7 @@ jest.mock("react-pdf", () => {
     },
     Outline: null,
     Page,
-    Document: ({ onLoadSuccess = (pdf = { numPages: 2 }) => pdf.numPages }) => {
-      return <div>nøkkelkvalifikasjoner{onLoadSuccess({ numPages: 2 })}</div>;
-    }
+    Document: ({ onLoadSuccess = (pdf = { numPages: 2 }) => pdf.numPages }) => <div>nøkkelkvalifikasjoner{onLoadSuccess({ numPages: 2 })}</div>
   };
 });
 
