@@ -24,7 +24,6 @@ const Header = ({ title }: IHeaderProps): JSX.Element => {
     <>
       <Head>
         <title>{fullTitle}</title>
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
