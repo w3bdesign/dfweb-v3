@@ -1,8 +1,11 @@
+import dynamic from "next/dynamic";
 // Types
 import type { NextPage } from "next";
 
 // Components
-import KontaktContent from "../components/Kontakt/KontaktContent.component";
+const KontaktContent = dynamic(() => import("../components/Kontakt/KontaktContent.component"), {
+  ssr: false
+});
 import Layout from "../components/Layout/Layout.component";
 
 // Animations

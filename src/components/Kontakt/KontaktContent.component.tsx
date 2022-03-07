@@ -1,5 +1,10 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import {
+  loadCaptchaEnginge,
+  LoadCanvasTemplateNoReload,
+  validateCaptcha
+} from "react-simple-captcha";
 
 import Button from "../UI/Button.component";
 import PageHeader from "../UI/PageHeader.component";
@@ -17,6 +22,21 @@ interface IEvent {
 const KontaktContent = (): JSX.Element => {
   const formRef = useRef<HTMLFormElement>(null);
   const [serverResponse, setServerResponse] = useState<string>("");
+  const captchaRef = useRef<any>(null);
+
+  const [captchaError, setcaptchaError] = useState<string>();
+
+  useEffect(() => loadCaptchaEnginge(3), []);
+
+  const handleCaptchaSubmit = () => {
+    const captchaValue = captchaRef.current.value;
+
+    if (validateCaptcha(captchaValue) === true) {
+      return true;
+    }
+    setcaptchaError("Feil verdi i CAPTCHA");
+    return false;
+  };
 
   const handleSubmit = (event: IEvent) => {
     const EMAIL_API_KEY = process.env.NEXT_PUBLIC_EMAIL_API_KEY || "changeme";
@@ -25,16 +45,17 @@ const KontaktContent = (): JSX.Element => {
 
     event.preventDefault();
     if (!formRef.current) return;
-
-    emailjs.init(EMAIL_API_KEY);
-    emailjs.sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
-      () => {
-        setServerResponse("Takk for din beskjed");
-      },
-      () => {
-        setServerResponse("Feil under sending av skjema");
-      }
-    );
+    if (handleCaptchaSubmit() === true) {
+      emailjs.init(EMAIL_API_KEY);
+      emailjs.sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
+        () => {
+          setServerResponse("Takk for din beskjed");
+        },
+        () => {
+          setServerResponse("Feil under sending av skjema");
+        }
+      );
+    }
   };
 
   return (
@@ -54,8 +75,7 @@ const KontaktContent = (): JSX.Element => {
                     ref={formRef}
                     onSubmit={handleSubmit}
                     method="POST"
-                    action="/api/form"
-                  >
+                    action="/api/form">
                     <fieldset>
                       <label htmlFor="navn" className="text-black">
                         Fullt navn
@@ -95,7 +115,32 @@ const KontaktContent = (): JSX.Element => {
                           aria-required
                         />
                       </label>
+                      <br />
+                      <label className="text-black" htmlFor="captcha">
+                        Skriv inn CAPTCHA nedenfor:
+                        <br />
+                        <input
+                          className="w-64 p-2 m-2 placeholder-black transition duration-500 ease-in-out border border-gray-500 rounded focus:scale-x-110 focus:shadow-outline hover:bg-gray-200 transform-gpu"
+                          id="captcha"
+                          name="captcha"
+                          ref={captchaRef}
+                          type="text"
+                          required
+                          aria-required
+                        />
+                        {captchaError && (
+                          <>
+                            <br />
+                            <span className="text-red-500 text-xl m-6">{captchaError}</span>
+                            <br />
+                            <br />
+                          </>
+                        )}
+                      </label>
                     </fieldset>
+                    <div className="flex justify-center">
+                      <LoadCanvasTemplateNoReload />
+                    </div>
                     <Button>Send skjema</Button>
                   </form>
                 )}
