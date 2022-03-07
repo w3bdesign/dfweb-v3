@@ -8,7 +8,6 @@ import CVContent from "../../src/components/CV/CVContent.component";
 
 jest.mock("react-pdf", () => {
   const Page = () => <div>nøkkelkvalifikasjoner</div>;
-
   return {
     pdfjs: {
       GlobalWorkerOptions: {
