@@ -10,7 +10,7 @@
 
 # Dfweb Portfolio Version 3
 
-Third version of my portfolio website with Next.js with Typescript instead of Gatsby.
+Third version of my portfolio website with Next.js and Typescript.
 
 ## Live URL: <https://www.dfweb.no/>
 
