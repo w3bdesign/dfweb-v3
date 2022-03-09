@@ -12,6 +12,10 @@ describe("KontaktContent", () => {
     render(<KontaktContent />);
   });
 
+  const setServerResponse = jest.fn();
+  const useStateSpy = jest.spyOn(React, "serverResponse");
+  useStateSpy.mockImplementation((serverResponse) => [serverResponse, setServerResponse]);
+
   it("KontaktContent laster inn og kan vises", () => {
     const kontaktcontent = screen.getByRole("heading", { name: /kontakt/i });
     expect(kontaktcontent).toBeInTheDocument();
