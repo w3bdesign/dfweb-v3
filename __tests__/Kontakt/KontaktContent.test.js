@@ -13,10 +13,6 @@ describe("KontaktContent", () => {
     render(<KontaktContent />);
   });
 
-  const setServerResponse = jest.fn();
-  const useStateSpy = jest.spyOn(React, "serverResponse");
-  useStateSpy.mockImplementation((serverResponse) => [serverResponse, setServerResponse]);
-
   it("KontaktContent laster inn og kan vises", () => {
     const kontaktcontent = screen.getByRole("heading", { name: /kontakt/i });
     expect(kontaktcontent).toBeInTheDocument();
@@ -48,5 +44,12 @@ describe("KontaktContent", () => {
     userEvent.clear(beskjed);
     userEvent.type(beskjed, "beskjed");
     expect(beskjed).toHaveValue("beskjed");
+  });
+
+  it("Test setServerResponse", () => {
+    const setServerResponsemock = jest.fn();
+    const useStateSpy = jest.spyOn(React, "serverResponse");
+    useStateSpy.mockImplementation((serverResponse) => [serverResponse, setServerResponsemock]);
+    expect(setServerResponsemock).toBeCalledTimes(0);
   });
 });
