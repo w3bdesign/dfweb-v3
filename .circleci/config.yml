@@ -9,7 +9,7 @@ jobs:
     # 👇 Adds Chromatic as a job
   chromatic-deployment:
     docker:
-      - image: cimg/node:17.6.0
+      - image: cimg/node:17.7.1
     working_directory: ~/repo
     steps:
       - checkout
