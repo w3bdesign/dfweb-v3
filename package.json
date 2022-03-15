@@ -1,6 +1,6 @@
 {
   "name": "dfweb-v3",
-  "version": "1.0.94",
+  "version": "1.0.95",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
@@ -65,7 +65,7 @@
     "eslint-plugin-storybook": "^0.5.7",
     "eslint-plugin-testing-library": "^5.1.0",
     "jest": "^27.5.1",
-    "postcss": "^8.4.8",
+    "postcss": "^8.4.11",
     "react-test-renderer": "^17.0.2",
     "sanity-codegen": "^0.9.8",
     "sitemap": "^7.1.1",
