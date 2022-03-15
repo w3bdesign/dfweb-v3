@@ -51,7 +51,7 @@
     "@types/react-icons": "^3.0.0",
     "@types/react-pdf": "^5.0.9",
     "@types/storybook__react": "^5.2.1",
-    "autoprefixer": "^10.4.2",
+    "autoprefixer": "^10.4.3",
     "babel-loader": "^8.2.3",
     "chromatic": "^6.5.3",
     "cross-env": "^7.0.3",
