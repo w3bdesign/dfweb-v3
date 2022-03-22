@@ -52,7 +52,7 @@
     "@types/react-pdf": "^5.0.9",
     "@types/storybook__react": "^5.2.1",
     "autoprefixer": "^10.4.4",
-    "babel-loader": "^8.2.3",
+    "babel-loader": "^8.2.4",
     "chromatic": "^6.5.3",
     "cross-env": "^7.0.3",
     "cypress": "^9.5.2",
