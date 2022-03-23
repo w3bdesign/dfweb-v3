@@ -47,7 +47,7 @@
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
-    "@types/react": "17.0.41",
+    "@types/react": "17.0.42",
     "@types/react-icons": "^3.0.0",
     "@types/react-pdf": "^5.0.9",
     "@types/storybook__react": "^5.2.1",
