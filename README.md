@@ -4,13 +4,11 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ffcd837a61db13b9630e/maintainability)](https://codeclimate.com/github/w3bdesign/dfweb-v3/maintainability)
 [![DeepSource](https://deepsource.io/gh/w3bdesign/dfweb-v3.svg/?label=active+issues&token=xU1k2KJL7peEGSzJkuYYEuw5)](https://deepsource.io/gh/w3bdesign/dfweb-v3/?ref=repository-badge)
 
-> ## Google Lighthouse score
->
-> <center><img src="https://user-images.githubusercontent.com/45217974/154784575-ec7c0df5-3724-4de0-b8ec-c0ee6ea42f6f.png" alt="Lighthouse score" /></center>
-
 # Dfweb Portfolio Version 3
 
 Third version of my portfolio website with Next.js and Typescript.
+
+<center><img src="https://user-images.githubusercontent.com/45217974/160189236-fa986737-f5a2-42bf-9008-50c59c13a645.png" alt="Dfweb screenshot" /></center>
 
 ## Live URL: <https://www.dfweb.no/>
 
@@ -51,6 +49,10 @@ Third version of my portfolio website with Next.js and Typescript.
 -   E2E testing with Cypress integrated with CircleCI
 -   Unit testing with Jest and React Testing Library
 -   Test coverage setup with Codecov
+
+> ### Google Lighthouse score
+>
+> <center><img src="https://user-images.githubusercontent.com/45217974/154784575-ec7c0df5-3724-4de0-b8ec-c0ee6ea42f6f.png" alt="Lighthouse score" /></center>
 
 ## TODO
 
