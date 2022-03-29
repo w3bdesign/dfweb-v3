@@ -19,7 +19,7 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.4.0",
+    "@emailjs/browser": "^3.5.0",
     "@sanity/image-url": "^1.0.1",
     "axe-core": "^4.4.1",
     "framer-motion": "^6.2.8",
