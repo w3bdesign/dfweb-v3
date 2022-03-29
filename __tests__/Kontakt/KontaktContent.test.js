@@ -17,31 +17,31 @@ describe("KontaktContent", () => {
     expect(kontaktcontent).toBeInTheDocument();
   });
 
-  it("Test at vi ikke kan sende et tomt skjema", () => {
+  it("Test at vi ikke kan sende et tomt skjema", async () => {
     const sendskjema = screen.getByRole("button", { name: /send skjema/i });
     const firstname = screen.getByRole("textbox", { name: /fullt navn/i });
-    userEvent.click(sendskjema);
+    await userEvent.click(sendskjema);
     expect(firstname).toBeVisible();
   });
 
-  it("Test at vi kan skrive i navn tekstboks", () => {
+  it("Test at vi kan skrive i navn tekstboks", async () => {
     const firstname = screen.getByRole("textbox", { name: /fullt navn/i });
-    userEvent.clear(firstname);
-    userEvent.type(firstname, "navn");
+    await userEvent.clear(firstname);
+    await userEvent.type(firstname, "navn");
     expect(firstname).toHaveValue("navn");
   });
 
-  it("Test at vi kan skrive i telefon tekstboks", () => {
+  it("Test at vi kan skrive i telefon tekstboks", async () => {
     const telefon = screen.getByRole("textbox", { name: /telefonnummer \(i norskt format\)/i });
-    userEvent.clear(telefon);
-    userEvent.type(telefon, "telefon");
+    await userEvent.clear(telefon);
+    await userEvent.type(telefon, "telefon");
     expect(telefon).toHaveValue("telefon");
   });
 
-  it("Test at vi kan skrive i hva ønsker du å si tekstboks", () => {
+  it("Test at vi kan skrive i hva ønsker du å si tekstboks", async () => {
     const beskjed = screen.getByRole("textbox", { name: /hva ønsker du å si\?/i });
-    userEvent.clear(beskjed);
-    userEvent.type(beskjed, "beskjed");
+    await userEvent.clear(beskjed);
+    await userEvent.type(beskjed, "beskjed");
     expect(beskjed).toHaveValue("beskjed");
   });
 });

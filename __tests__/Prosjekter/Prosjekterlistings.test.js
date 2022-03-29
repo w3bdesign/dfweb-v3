@@ -25,10 +25,10 @@ describe("ProsjekterListings", () => {
     expect(kategorifilter.length).toBe(5);
   });
 
-  it("Vi velger Typescript og tester at Typescript er valgt", () => {
+  it("Vi velger Typescript og tester at Typescript er valgt", async () => {
     const kategorifilter = screen.getByRole("combobox", { name: /kategorifilter/i });
     const typescript = screen.getByRole("option", { name: "Typescript" });
-    userEvent.selectOptions(kategorifilter, typescript);
+    await userEvent.selectOptions(kategorifilter, typescript);
     expect(typescript.selected).toBe(true);
   });
 });

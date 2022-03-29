@@ -43,22 +43,22 @@ describe("MobileMenu", () => {
     expect(kontakt).toBeInTheDocument();
   });
 
-  it("Åpne mobilmeny og se at aria-hidden er false", () => {
+  it("Åpne mobilmeny og se at aria-hidden er false", async () => {
     const mobilemenu = screen.getByTestId(testidMenu);
     const hamburger = screen.getByRole("button", {
       name: /hamburger/i
     });
-    userEvent.click(hamburger);
+    await userEvent.click(hamburger);
     expect(mobilemenu).toHaveAttribute("aria-hidden", "false");
   });
 
-  it("Lukk mobilmeny når vi klikker utenfor menyen", () => {
+  it("Lukk mobilmeny når vi klikker utenfor menyen", async () => {
     const mobilemenu = screen.getByTestId(testidMenu);
     const hamburger = screen.getByRole("button", {
       name: /hamburger/i
     });
-    userEvent.click(hamburger);
-    userEvent.click(document.body);
+    await userEvent.click(hamburger);
+    await userEvent.click(document.body);
     expect(mobilemenu).toHaveAttribute("aria-hidden", "true");
   });
 });
