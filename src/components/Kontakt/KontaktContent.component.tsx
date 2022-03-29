@@ -46,7 +46,7 @@ const KontaktContent = (): JSX.Element => {
             <div className="p-4 mx-auto mt-4">
               <div className="p-4 text-lg rounded">
                 {serverResponse && (
-                  <h3 className="m-12 text-3xl text-center text-green">{serverResponse}</h3>
+                  <h3 className="m-6 h-64 text-2xl md:text-3xl text-center">{serverResponse}</h3>
                 )}
                 {!serverResponse && (
                   <form
@@ -103,7 +103,7 @@ const KontaktContent = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div id="kontakt-filler" className="mt-40" />
+        <div id="kontakt-filler" className="mt-64 md:mt-72" />
       </div>
     </main>
   );
