@@ -4,6 +4,12 @@ body {
   background-color: #f2f2f2;
 }
 
+/* Kontakt page */
+
+#kontakt-container {
+  min-height: 480px;
+}
+
 /* Custom styling for main hero image */
 #main-hero {
   background-image: url("../assets/images/blue-hero.jpg");
