@@ -42,7 +42,7 @@ const KontaktContent = (): JSX.Element => {
       <div className="mt-32 bg-graybg">
         <PageHeader>Kontakt</PageHeader>
         <div className="px-4 p lg:px-0 xl:px-0 md:px-0">
-          <div className="container mx-auto bg-white rounded shadow">
+          <div id="kontakt-container" className="container mx-auto bg-white rounded shadow">
             <div className="p-4 mx-auto mt-4">
               <div className="p-4 text-lg rounded">
                 {serverResponse && (
@@ -54,8 +54,7 @@ const KontaktContent = (): JSX.Element => {
                     ref={formRef}
                     onSubmit={handleSubmit}
                     method="POST"
-                    action="/api/form"
-                  >
+                    action="/api/form">
                     <fieldset>
                       <label htmlFor="navn" className="text-black">
                         Fullt navn
@@ -103,7 +102,7 @@ const KontaktContent = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div id="kontakt-filler" className="mt-64 md:mt-72" />
+        <div id="kontakt-filler" className="mt-0 lg:mt-40" />
       </div>
     </main>
   );
