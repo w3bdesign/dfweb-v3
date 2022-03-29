@@ -21,11 +21,11 @@ describe("Hamburger", () => {
     expect(hamburger).toBeInTheDocument();
   });
 
-  it("Klikk på hamburger og test at aria-expanded endres på hamburger (hamburger animerer)", () => {
+  it("Klikk på hamburger og test at aria-expanded endres på hamburger (hamburger animerer)", async () => {
     const hamburger = screen.getByRole("button", {
       name: /hamburger/i
     });
-    userEvent.click(hamburger);
+    await userEvent.click(hamburger);
     expect(hamburger).toHaveAttribute("aria-expanded", "true");
   });
 });
