@@ -20,10 +20,8 @@ const indexQuery = groq`
 
 const Home: NextPage = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Forside">
-    <PageTransition>
       <IndexContent post={post} />
-    </PageTransition>
-  </Layout>
+    </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
