@@ -10,9 +10,6 @@ import Layout from "../components/Layout/Layout.component";
 // Utilities
 import { getClient } from "../lib/sanity.server";
 
-// Animations
-import PageTransition from "../components/Animations/PageTransition.component";
-
 // Sanity GROQ queries
 const indexQuery = groq`
 *[_type == 'sitecontent' && pagename match 'Index']
