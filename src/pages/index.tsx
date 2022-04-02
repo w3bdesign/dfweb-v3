@@ -17,8 +17,8 @@ const indexQuery = groq`
 
 const Home: NextPage = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Forside">
-      <IndexContent post={post} />
-    </Layout>
+    <IndexContent post={post} />
+  </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
