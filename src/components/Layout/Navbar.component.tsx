@@ -28,7 +28,9 @@ const Navbar = (): JSX.Element => {
           data-cy="main-navigation"
           className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap">
           <div className="flex w-full text-white md:w-1/2 md:justify-start">
-            <Image alt="Logo Dfweb" src={logo} layout="responsive" width={150} height={45} />
+            <div style={{ position: "relative", width: "150px", height: "50px" }}>
+              <Image alt="DFWeb logo" src={logo} layout="fill" objectFit="contain" />
+            </div>
           </div>
           <div
             id="hamburger-div"
