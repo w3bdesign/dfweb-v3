@@ -10,9 +10,6 @@ import { getClient } from "../lib/sanity.server";
 import ProsjekterListings from "../components/Prosjekter/ProsjekterListings.component";
 import Layout from "../components/Layout/Layout.component";
 
-// Animations
-import PageTransition from "../components/Animations/PageTransition.component";
-
 // Sanity GROQ queries
 const projectQuery = groq`*[_type == "project"]`;
 
@@ -23,9 +20,7 @@ const Prosjekter: NextPage = ({
   categories
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Prosjekter">
-    <PageTransition>
-      <ProsjekterListings projects={projects} categories={categories} />
-    </PageTransition>
+    <ProsjekterListings projects={projects} categories={categories} />
   </Layout>
 );
 
