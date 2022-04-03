@@ -5,6 +5,12 @@ export interface IAnimateProps {
   cssClass?: string;
 }
 
+export interface IAnimateBounceProps {
+  children: ReactNode;
+  cssClass?: string;
+  viewAmount?: number;
+}
+
 export interface IAnimateWithDelayProps {
   children: ReactNode;
   cssClass?: string;

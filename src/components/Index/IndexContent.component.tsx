@@ -60,7 +60,7 @@ const IndexContent = ({ post }: TData): JSX.Element => (
         {post?.map(({ _id, title, text }: IContent) => (
           <section key={_id} aria-label={title} data-testid="sanity-section">
             <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow min-h-full lg:h-128 xl:h-96">
-              <BounceInScroll>
+              <BounceInScroll viewAmount={0.0}>
                 <h2 data-cy={title} className="text-3xl text-center">
                   {title}
                 </h2>
