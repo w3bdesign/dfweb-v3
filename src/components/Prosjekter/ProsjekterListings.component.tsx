@@ -1,4 +1,3 @@
-/*eslint max-depth: ["error", 5]*/
 import { useState } from "react";
 
 import ProsjekterSingleProject from "./ProsjekterSingleProject.component";
