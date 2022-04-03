@@ -9,6 +9,9 @@ import { UrlObject } from "url";
 // components
 import Hero from "./Hero.component";
 
+// animations
+import BounceInScroll from "../Animations/BounceInScroll.component";
+
 // interfaces
 interface IContent {
   _id: Key | null;
@@ -61,23 +64,25 @@ const IndexContent = ({ post }: TData): JSX.Element => (
                 {title}
               </h2>
               <br />
-              <PortableText
-                content={text}
-                serializers={{
-                  code: ({ children }: ISerializerCode) => (
-                    <span className="mt-4 text-lg">
-                      {children}
-                      <br />
-                      &nbsp;
-                    </span>
-                  ),
-                  link: ({ children, href }: ISerializerLink) => (
-                    <Link href={href} passHref>
-                      <a className="underline">{children}</a>
-                    </Link>
-                  )
-                }}
-              />
+              <BounceInScroll>
+                <PortableText
+                  content={text}
+                  serializers={{
+                    code: ({ children }: ISerializerCode) => (
+                      <span className="mt-4 text-lg">
+                        {children}
+                        <br />
+                        &nbsp;
+                      </span>
+                    ),
+                    link: ({ children, href }: ISerializerLink) => (
+                      <Link href={href} passHref>
+                        <a className="underline">{children}</a>
+                      </Link>
+                    )
+                  }}
+                />
+              </BounceInScroll>
             </div>
           </section>
         ))}
