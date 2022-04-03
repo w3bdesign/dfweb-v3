@@ -55,6 +55,8 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => {
                       width="500"
                       src={urlFor(projectimage).url() as string}
                       alt={name}
+priority
+
                     />
                   )}
                 </div>
