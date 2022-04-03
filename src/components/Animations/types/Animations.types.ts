@@ -8,7 +8,7 @@ export interface IAnimateProps {
 export interface IAnimateBounceProps {
   children: ReactNode;
   cssClass?: string;
-  viewAmount?: number;
+  viewAmount?: "some" | "all" | number;
 }
 
 export interface IAnimateWithDelayProps {

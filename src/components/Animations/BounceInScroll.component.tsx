@@ -6,7 +6,7 @@ import { IAnimateBounceProps } from "./types/Animations.types";
 
 const bounceVariants: Variants = {
   offscreen: {
-    y: 100,
+    y: 50,
     opacity: 0
   },
   onscreen: {
@@ -25,7 +25,7 @@ const bounceVariants: Variants = {
  * @function BounceInScroll
  * @param {ReactNode} children - Children content to render
  * @param {string} cssClass - CSS classes to apply to component
- * @param {float} viewAmount - Amount of component needed to be visible before animating
+ * @param {"some" | "all" | number} viewAmount - Amount of component needed to be visible before animating
  * @returns {JSX.Element} - Rendered component
  */
 
