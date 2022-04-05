@@ -6,7 +6,7 @@ import { IAnimateBounceProps } from "./types/Animations.types";
 
 const bounceVariants: Variants = {
   offscreen: {
-    y: 50,
+    y: 60,
     opacity: 0
   },
   onscreen: {
@@ -14,7 +14,7 @@ const bounceVariants: Variants = {
     opacity: 1,
     transition: {
       type: "spring",
-      bounce: 0.4,
+      bounce: 0.5,
       duration: 1.2
     }
   }
