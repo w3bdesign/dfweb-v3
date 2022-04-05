@@ -24,7 +24,7 @@
     "axe-core": "^4.4.1",
     "framer-motion": "^6.2.8",
     "next": "^12.1.4",
-    "next-sanity": "^0.5.1",
+    "next-sanity": "^0.5.2",
     "prettier": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
