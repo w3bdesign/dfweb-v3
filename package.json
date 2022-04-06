@@ -22,7 +22,7 @@
     "@emailjs/browser": "^3.5.0",
     "@sanity/image-url": "^1.0.1",
     "axe-core": "^4.4.1",
-    "framer-motion": "^6.2.8",
+    "framer-motion": "^6.2.9",
     "next": "^12.1.4",
     "next-sanity": "^0.5.2",
     "prettier": "^2.6.2",
