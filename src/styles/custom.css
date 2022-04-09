@@ -4,6 +4,12 @@ body {
   background-color: #f2f2f2;
 }
 
+/* ProsjekterSingleProject */
+
+.description {
+  min-height: 85px;
+}
+
 /* Kontakt page */
 
 #kontakt-container {
