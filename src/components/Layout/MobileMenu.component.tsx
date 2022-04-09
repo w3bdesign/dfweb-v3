@@ -40,7 +40,7 @@ const MobileMenu = (): JSX.Element => {
      * Even if your state updates are batched and multiple updates to the enabled/disabled state are made together
      * each update will rely on the correct previous state so that you always end up with the result you expect.
      */
-    setisExpanded((prevExpanded: boolean) => !prevExpanded);
+    setisExpanded((prevExpanded) => !prevExpanded);
   }, []);
 
   useIsomorphicLayoutEffect(() => {
