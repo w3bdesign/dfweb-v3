@@ -15,7 +15,7 @@ const bounceVariants: Variants = {
     transition: {
       type: "spring",
       bounce: 0.5,
-      duration: 1.3
+      duration: 1.5
     }
   }
 };
