@@ -1,6 +1,6 @@
 {
   "parserOptions": {
-    "ecmaVersion": 2022,
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
   "extends": ["next/core-web-vitals", "plugin:cypress/recommended", "plugin:sonarjs/recommended"],
