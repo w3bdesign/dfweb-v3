@@ -19,7 +19,7 @@ Third version of my portfolio website with Next.js and Typescript.
 -   Next.js 12 with Typescript
 -   Sanity.io for fetching project information and frontpage text
 -   Storybook for component documentation
--   Chromatic setup with CircleCI for visual testing of Storybook components
+-   Chromatic for visual testing of Storybook components
 -   Animations with Framer Motion
 -   React testing library for unit testing
 -   Cypress for E2E testing
@@ -48,7 +48,7 @@ Third version of my portfolio website with Next.js and Typescript.
 -   CircleCI will warn before deploy if tests fail (setup for React testing library, Cypress and Chromatic)
 -   Code quality analysis with Codacy, Sonarcloud, Deepscan, LGTM and Codeclimate
 -   E2E testing with Cypress integrated with CircleCI
--   Unit testing with Jest and React Testing Library
+-   Unit testing with Jest and React Testing Library integrated with CircleCI
 -   Test coverage setup with Codecov
 
 > ### Google Lighthouse score
