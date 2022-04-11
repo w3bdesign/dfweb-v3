@@ -3,7 +3,7 @@
 ![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/dfweb.no)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ffcd837a61db13b9630e/maintainability)](https://codeclimate.com/github/w3bdesign/dfweb-v3/maintainability)
 [![DeepSource](https://deepsource.io/gh/w3bdesign/dfweb-v3.svg/?label=active+issues&token=xU1k2KJL7peEGSzJkuYYEuw5)](https://deepsource.io/gh/w3bdesign/dfweb-v3/?ref=repository-badge)
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://github.com/w3bdesign/dfweb-v3)
 
 # Dfweb Portfolio Version 3
 
