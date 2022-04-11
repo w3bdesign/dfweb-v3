@@ -45,6 +45,7 @@ Third version of my portfolio website with Next.js and Typescript.
 ### Devops / Code quality
 
 -   Continuous Integration with CircleCI
+-   CircleCI will warn before deploy if tests fail (setup for React testing library, Cypress and Chromatic)
 -   Code quality analysis with Codacy, Sonarcloud, Deepscan, LGTM and Codeclimate
 -   E2E testing with Cypress integrated with CircleCI
 -   Unit testing with Jest and React Testing Library
