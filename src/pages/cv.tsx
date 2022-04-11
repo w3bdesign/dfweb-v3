@@ -1,8 +1,13 @@
+// Package imports
+import dynamic from "next/dynamic";
+
 // Types
 import type { NextPage } from "next";
 
 // Components
-import CVContent from "../components/CV/CVContent.component";
+const CVContent = dynamic(() => import("../components/CV/CVContent.component"), {
+  loading: () => <p>Laster inn CV ...</p>
+});
 import Layout from "../components/Layout/Layout.component";
 
 const CV: NextPage = () => (

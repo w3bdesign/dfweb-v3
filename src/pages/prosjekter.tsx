@@ -1,3 +1,4 @@
+// Package imports
 import { groq } from "next-sanity";
 
 // Types
