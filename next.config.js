@@ -42,7 +42,7 @@ module.exports = {
   poweredByHeader: false,
   images: {
     domains: ["cdn.sanity.io", "dfweb.no", "www.dfweb.no"],
-    minimumCacheTTL: 900
+    minimumCacheTTL: 1200
   },
   async headers() {
     return [

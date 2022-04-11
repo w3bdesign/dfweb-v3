@@ -16,7 +16,7 @@ Third version of my portfolio website with Next.js and Typescript.
 
 ### General
 
--   Next.js with Typescript
+-   Next.js 12 with Typescript
 -   Sanity.io for fetching project information and frontpage text
 -   Storybook for component documentation
 -   Chromatic setup with CircleCI for visual testing of Storybook components
@@ -24,9 +24,9 @@ Third version of my portfolio website with Next.js and Typescript.
 -   React testing library for unit testing
 -   Cypress for E2E testing
 -   Filter project display
--   Contact form with Emailjs
+-   Contact form with Email.js
 -   Display CV with React-PDF
--   Automatic sitemap generation (see robots.txt)
+-   Automatic sitemap generation (see /api/siteMapGenerator.ts)
 -   Google rich results for each individual page
 -   100% score in Google Lighthouse
 
