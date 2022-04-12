@@ -10,4 +10,4 @@ const Custom404: NextPage = () => (
   </Layout>
 );
 
-export default Custom404();
+export default Custom404;
