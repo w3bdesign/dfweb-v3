@@ -18,7 +18,7 @@ const ErrorContent = (): JSX.Element => (
           <div className="p-4 mx-auto mt-4 h-96 sm:h-auto flex justify-center items-center sm:block">
             <div className="p-4 text-lg rounded ">
               <div className="mt-0 sm:mt-2 xs:mt-2">
-                <h1 className="mt-8 text-center text-xl">404 - side ikke funnet</h1>
+                <h1 className="h-64 text-center text-xl">Side ikke funnet</h1>
               </div>
             </div>
           </div>
