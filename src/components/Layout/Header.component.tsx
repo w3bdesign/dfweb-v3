@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import Navbar from "./Navbar.component";
 
-type TTitle = "Forside" | "Kontakt" | "CV" | "Prosjekter";
+type TTitle = "Forside" | "Kontakt" | "CV" | "Prosjekter" | "Side ikke funnet - 404";
 
 interface IHeaderProps {
   title: TTitle;
