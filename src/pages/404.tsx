@@ -5,7 +5,7 @@ import type { NextPage } from "next";
 import Layout from "../components/Layout/Layout.component";
 
 const Custom404: NextPage = () => (
-  <Layout title="404">
+  <Layout title="Side ikke funnet - 404">
     <h1>404 - side ikke funnet</h1>
   </Layout>
 );
