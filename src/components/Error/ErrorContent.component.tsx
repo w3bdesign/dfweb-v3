@@ -1,7 +1,7 @@
 import PageHeader from "../UI/PageHeader.component";
 
 /**
- * Renders error page
+ * Renders error page (404 not found error)
  * @function ErrorContent
  * @returns {JSX.Element} - Rendered component
  */

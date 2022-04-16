@@ -5,13 +5,11 @@ body {
 }
 
 /* ProsjekterSingleProject */
-
 .description {
   min-height: 85px;
 }
 
 /* Kontakt page */
-
 #kontakt-container {
   min-height: 500px;
 }
@@ -36,7 +34,6 @@ a {
 }
 
 /* Navbar animations */
-
 .navbar-link::after {
   content: "";
   display: block;
