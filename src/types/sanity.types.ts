@@ -53,7 +53,7 @@ export type {
 /**
  * Project
  *
-
+ *
  */
 export interface Project extends SanityDocument {
   _type: "project";
@@ -61,11 +61,13 @@ export interface Project extends SanityDocument {
   /**
    * Id — `number`
    *
+   *
    */
   id?: number;
 
   /**
    * Name — `string`
+   *
    *
    */
   name?: string;
@@ -73,35 +75,41 @@ export interface Project extends SanityDocument {
   /**
    * Description — `string`
    *
+   *
    */
   description?: string;
 
   /**
-   * Subdescription — `string`
+   * Technologies — `string`
+   *
    *
    */
   subdescription?: string;
 
   /**
-   * Category — `string`
+   * Project category — `reference`
+   *
    *
    */
-  category?: string;
+  projectcategory?: SanityReference<Category>;
 
   /**
-   * Urlwww — `url`
+   * Project URL — `array`
+   *
    *
    */
-  urlwww?: string;
+  urlwww?: Array<SanityKeyed<Link>>;
 
   /**
-   * Urlgithub — `url`
+   * Github URL — `array`
+   *
    *
    */
-  urlgithub?: string;
+  urlgithub?: Array<SanityKeyed<Link>>;
 
   /**
-   * projectImage — `image`
+   * Project image — `image`
+   *
    *
    */
   projectimage?: {
@@ -113,9 +121,32 @@ export interface Project extends SanityDocument {
 }
 
 /**
- * Sitecontent
+ * Project category
  *
+ *
+ */
+export interface Category extends SanityDocument {
+  _type: "category";
 
+  /**
+   * Id — `number`
+   *
+   *
+   */
+  id?: number;
+
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: string;
+}
+
+/**
+ * Index content
+ *
+ *
  */
 export interface Sitecontent extends SanityDocument {
   _type: "sitecontent";
@@ -123,11 +154,13 @@ export interface Sitecontent extends SanityDocument {
   /**
    * Id — `number`
    *
+   *
    */
   id?: number;
 
   /**
    * Pagename — `string`
+   *
    *
    */
   pagename?: string;
@@ -135,14 +168,70 @@ export interface Sitecontent extends SanityDocument {
   /**
    * Title — `string`
    *
+   *
    */
   title?: string;
 
   /**
    * Text — `array`
    *
+   *
    */
   text?: Array<SanityKeyed<SanityBlock>>;
 }
 
-export type Documents = Project | Sitecontent;
+/**
+ * Navigation
+ *
+ *
+ */
+export interface Navigation extends SanityDocument {
+  _type: "Navigation";
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Slug — `slug`
+   *
+   * required
+   */
+  slug?: { _type: "slug"; current: string };
+
+  /**
+   * Navigation — `array`
+   *
+   * Navigation links
+   */
+  navigation?: Array<SanityKeyed<Link>>;
+}
+
+export type Link = {
+  _type: "link";
+  /**
+   * Title — `string`
+   *
+   * Title
+   */
+  title?: string;
+
+  /**
+   * Url — `string`
+   *
+   * URL
+   */
+  url?: string;
+
+  /**
+   * External — `boolean`
+   *
+   * Is link external?
+   */
+  external?: boolean;
+};
+
+export type Documents = Project | Category | Sitecontent | Navigation;
