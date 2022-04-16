@@ -35,8 +35,7 @@ export interface IProjectInterface {
   urlwww?: Array<IProjectUrl>;
   category: string;
   projectimage: string;
-
-  projectCategory: any;
+  //TODO projectcategory: any;
 }
 
 export interface IChangeEvent {
