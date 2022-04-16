@@ -1,9 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Hamburger from "../../src/components/UI/Hamburger.component";
-
-import { IHamburgerProps } from "../../src/components/UI/Hamburger.component";
+import Hamburger, { IHamburgerProps } from "../../src/components/UI/Hamburger.component";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

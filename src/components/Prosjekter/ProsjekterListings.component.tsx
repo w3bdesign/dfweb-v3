@@ -35,7 +35,7 @@ export interface IProjectInterface {
   urlwww?: Array<IProjectUrl>;
   category: string;
   projectimage: string;
-  //TODO projectcategory: any;
+  categoryname: string;
 }
 
 export interface IChangeEvent {
@@ -57,7 +57,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
   const handleFilterChange = (event: IChangeEvent) => {
     setProsjekt(projects);
     if (event.target.value) {
-      setProsjekt(projects.filter((project) => project.category === event.target.value));
+      setProsjekt(projects.filter((project) => project.categoryname === event.target.value));
     }
   };
 

@@ -12,7 +12,8 @@ import ProsjekterListings from "../components/Prosjekter/ProsjekterListings.comp
 import Layout from "../components/Layout/Layout.component";
 
 // Sanity GROQ queries
-const projectQuery = groq`*[_type == "project"]`;
+
+const projectQuery = groq`*[_type == "project"]{  ...,  "categoryname": projectcategory->name}`;
 
 const categoryQuery = groq`*[_type == "category"]{ id, name } | order(id asc)`;
 
