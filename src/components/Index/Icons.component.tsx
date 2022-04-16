@@ -1,4 +1,3 @@
-import React from "react";
 import { FaReact, FaVuejs, FaPhp } from "react-icons/fa";
 import { SiTypescript, SiWordpress } from "react-icons/si";
 
