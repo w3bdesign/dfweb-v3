@@ -5,9 +5,7 @@ import dynamic from "next/dynamic";
 import type { NextPage } from "next";
 
 // Components
-const CVContent = dynamic(() => import("../components/CV/CVContent.component"), {
-  loading: () => <p>Laster inn CV ...</p>
-});
+import CVContent from "../components/CV/CVContent.component";
 import Layout from "../components/Layout/Layout.component";
 
 const CV: NextPage = () => (
