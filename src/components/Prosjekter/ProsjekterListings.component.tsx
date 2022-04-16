@@ -18,16 +18,25 @@ export interface IProject {
 
 export type TStringOrEmpty = string | undefined;
 
+export interface IProjectUrl {
+  _key: string;
+  _type: string;
+  external: boolean;
+  url: string;
+}
+
 export interface IProjectInterface {
   _id: string;
-  id: null | undefined | number;
+  id?: null | number;
   name: string;
   description: string;
   subdescription: string;
-  urlgithub: string;
-  urlwww: TStringOrEmpty;
+  urlgithub?: Array<IProjectUrl>;
+  urlwww?: Array<IProjectUrl>;
   category: string;
   projectimage: string;
+
+  projectCategory: any;
 }
 
 export interface IChangeEvent {
@@ -62,8 +71,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
             <label
               className="p-2 mr-4 text-lg"
               aria-label="kategorifilter"
-              htmlFor="kategorifilter"
-            >
+              htmlFor="kategorifilter">
               Filtrer kategori:
             </label>
             <select
@@ -71,8 +79,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
               name="kategorifilter"
               data-cy="kategorifilter"
               onChange={handleFilterChange}
-              className="w-40 p-2 bg-white text-black rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-            >
+              className="w-40 p-2 bg-white text-black rounded shadow appearance-none focus:outline-none focus:shadow-outline">
               <option label="" value="">
                 Ingen filtrering
               </option>
