@@ -1,6 +1,3 @@
-// Package imports
-import dynamic from "next/dynamic";
-
 // Types
 import type { NextPage } from "next";
 
