@@ -7,7 +7,7 @@ import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
 import FadeLeftToRight from "../Animations/FadeLeftToRight.component";
 import FadeLeftToRightItem from "../Animations/FadeLeftToRightItem.component";
-import Hamburger from "../UI/Hamburger.component";
+import Hamburger from "./Hamburger.component";
 
 /**
  * Renders the mobile menu.
