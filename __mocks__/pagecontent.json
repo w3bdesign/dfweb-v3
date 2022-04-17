@@ -13,9 +13,7 @@
               {
                 "_key": "ca2e480434ad",
                 "_type": "span",
-                "marks": [
-                  "code"
-                ],
+                "marks": ["code"],
                 "text": "Siden 2000 har jeg arbeidet med webdesign og utvikling, og jeg har i nyere tid spesialisert meg på frontendutvikling."
               }
             ],
@@ -29,9 +27,7 @@
               {
                 "_key": "482531646e9c",
                 "_type": "span",
-                "marks": [
-                  "code"
-                ],
+                "marks": ["code"],
                 "text": "Jeg har erfaring med WordPress og WooCommerce siden 2011 hvor jeg har arbeidet frilans via Fiverr og kan skilte med 100% positiv tilbakemelding på samtlige oppdrag."
               }
             ],
@@ -45,9 +41,7 @@
               {
                 "_key": "f4f2dccc1e04",
                 "_type": "span",
-                "marks": [
-                  "code"
-                ],
+                "marks": ["code"],
                 "text": "Jeg har også erfaring med andre teknologier som moderne Javascript (ES6+), Typescript, React, Vue.js, PHP, mySQL,  Gatsby, Next.js, Docker, GraphQL, Adobe Photoshop, Storybook, Bootstrap med mer."
               }
             ],
@@ -69,9 +63,7 @@
               {
                 "_key": "2c0cb654ac56",
                 "_type": "span",
-                "marks": [
-                  "code"
-                ],
+                "marks": ["code"],
                 "text": "Jeg arbeider jevnlig med hobbyprosjekter, primært med fokus på Javascript og Typescript."
               }
             ],
@@ -85,26 +77,19 @@
               {
                 "_key": "f0c8b6aab1df",
                 "_type": "span",
-                "marks": [
-                  "code"
-                ],
+                "marks": ["code"],
                 "text": "Kildekoden publiserer jeg på "
               },
               {
                 "_key": "cc709e2543ee",
                 "_type": "span",
-                "marks": [
-                  "code",
-                  "cdacd3f8961a"
-                ],
+                "marks": ["code", "cdacd3f8961a"],
                 "text": "GITHUB"
               },
               {
                 "_key": "9cccc3b57493",
                 "_type": "span",
-                "marks": [
-                  "code"
-                ],
+                "marks": ["code"],
                 "text": "."
               }
             ],
@@ -124,26 +109,19 @@
               {
                 "_key": "ea290d5c59fd",
                 "_type": "span",
-                "marks": [
-                  "code"
-                ],
+                "marks": ["code"],
                 "text": "På "
               },
               {
                 "_key": "ca82bc8dff9b",
                 "_type": "span",
-                "marks": [
-                  "code",
-                  "bba1096d8305"
-                ],
+                "marks": ["code", "bba1096d8305"],
                 "text": "PROSJEKTER"
               },
               {
                 "_key": "d2d65156cce9",
                 "_type": "span",
-                "marks": [
-                  "code"
-                ],
+                "marks": ["code"],
                 "text": " kan du se eksempler på arbeid jeg har gjort i nyere tid."
               }
             ],
@@ -163,18 +141,13 @@
               {
                 "_key": "e5d1b669a3f9",
                 "_type": "span",
-                "marks": [
-                  "code"
-                ],
+                "marks": ["code"],
                 "text": "Har også bidratt med utvikling av flere open-source prosjekter på "
               },
               {
                 "_key": "4f293f7da32f",
                 "_type": "span",
-                "marks": [
-                  "code",
-                  "b4f758908e2e"
-                ],
+                "marks": ["code", "b4f758908e2e"],
                 "text": "GITHUB."
               }
             ],
