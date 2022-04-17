@@ -24,7 +24,7 @@ const Home: NextPage = ({ pagecontent }: InferGetStaticPropsType<typeof getStati
 export const getStaticProps: GetStaticProps = async () => {
   const pagecontent = await getClient(false).fetch(sanityQuery);
 
-  console.log("pagecontent: ", pagecontent);
+  
 
 
 
