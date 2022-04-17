@@ -15,7 +15,6 @@ interface ILinks {
 
 const siteMapGenerator = async (req: NextApiRequest, res: NextApiResponse) => {
   // An array with your links
-
   const links: ILinks[] = [
     { url: "/", changefreq: "daily", priority: 0.3 },
     { url: "/prosjekter", changefreq: "daily", priority: 0.3 },
@@ -24,7 +23,6 @@ const siteMapGenerator = async (req: NextApiRequest, res: NextApiResponse) => {
   ];
 
   // Create a stream to write to
-
   const stream = new SitemapStream({ hostname: `https://${req.headers.host}` });
 
   res.writeHead(200, {
