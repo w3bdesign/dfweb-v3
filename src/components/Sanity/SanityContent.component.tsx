@@ -7,7 +7,7 @@ import { Key, ReactChild, ReactFragment, ReactPortal } from "react";
 import { UrlObject } from "url";
 
 // components
-import Hero from "./Hero.component";
+import Hero from "../Index/Hero.component";
 
 // animations
 import BounceInScroll from "../Animations/BounceInScroll.component";
