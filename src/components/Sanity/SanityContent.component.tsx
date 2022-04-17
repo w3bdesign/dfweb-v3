@@ -64,7 +64,7 @@ const SanityContent = ({ pagecontent }: TData): JSX.Element => (
       <div className="container grid gap-4 p-4 mx-auto mt-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
         {pagecontent?.map(({ id, content }: IPageContent) => (
           <Fragment key={id}>
-            {content?.map(({ _key, text, title }: any) => (
+            {content?.map(({ _key, text, title }: IContent) => (
               <section key={_key} aria-label={title} data-testid="sanity-section">
                 <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow min-h-full lg:h-128 xl:h-96">
                   <BounceInScroll viewAmount={0}>
