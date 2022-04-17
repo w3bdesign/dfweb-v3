@@ -20,8 +20,8 @@ interface IPageContent {
 
 interface IContent {
   _key: Key | null;
-  text: any;
-  title: any;
+  text: IText[];
+  title: string;
 }
 
 interface IChild {
