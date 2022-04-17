@@ -13,10 +13,15 @@ import Hero from "../Index/Hero.component";
 import BounceInScroll from "../Animations/BounceInScroll.component";
 
 // interfaces
+interface IPageContent {
+  id: Key | null;
+  content: IContent[];
+}
+
 interface IContent {
-  _id: Key | null;
-  title: string;
-  text: IText[];
+  _key: Key | null;
+  text: any;
+  title: any;
 }
 
 interface IChild {
@@ -43,7 +48,7 @@ interface ISerializerLink {
   children: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
 }
 
-type TData = { post: IContent[] };
+type TData = { pagecontent: IPageContent[] };
 
 /**
  * Renders the index content for the front page
@@ -52,12 +57,12 @@ type TData = { post: IContent[] };
  * @returns {JSX.Element} - Rendered component
  */
 
-const SanityContent = ({ pagecontent }: any): JSX.Element => (
+const SanityContent = ({ pagecontent }: TData): JSX.Element => (
   <main role="main" aria-label="Her kommer hovedinnholdet" id="maincontent">
     <div className="mx-auto mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-64 xs:mt-64">
       <Hero />
       <div className="container grid gap-4 p-4 mx-auto mt-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
-        {pagecontent?.map(({ id, title, content }: any) => (
+        {pagecontent?.map(({ id, content }: IPageContent) => (
           <Fragment key={id}>
             {content?.map(({ _key, text, title }: any) => (
               <section key={_key} aria-label={title} data-testid="sanity-section">
