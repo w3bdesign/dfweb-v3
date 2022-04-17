@@ -12,22 +12,25 @@ import Layout from "../components/Layout/Layout.component";
 import { getClient } from "../lib/sanity.server";
 
 // Sanity GROQ queries
-const indexQuery = groq`
-*[_type == 'sitecontent' && pagename match 'Index']
-`;
 
-const Home: NextPage = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => (
+const sanityQuery = groq`*[_type == 'page' && title match 'Hjem']{"id": _id, title, content}`;
+
+const Home: NextPage = ({ pagecontent }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Sanity">
-    <SanityContent post={post} />
+    <SanityContent pagecontent={pagecontent} />
   </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const post = await getClient(false).fetch(indexQuery);
+  const pagecontent = await getClient(false).fetch(sanityQuery);
+
+  console.log("pagecontent: ", pagecontent);
+
+
 
   return {
     props: {
-      post
+      pagecontent
     }
   };
 };
