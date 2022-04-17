@@ -6,7 +6,7 @@ import userEvent from "@testing-library/user-event";
 
 import { render, screen } from "@testing-library/react";
 
-import Hamburger from "../../src/components/UI/Hamburger.component";
+import Hamburger from "../../src/components/Layout/Hamburger.component";
 
 describe("Hamburger", () => {
   const onClick = jest.fn();
