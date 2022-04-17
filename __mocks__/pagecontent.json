@@ -1,0 +1,211 @@
+[
+  {
+    "content": [
+      {
+        "_key": "e7550a750302",
+        "_type": "pagecontent",
+        "id": 1,
+        "text": [
+          {
+            "_key": "4b2fc320f310",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "ca2e480434ad",
+                "_type": "span",
+                "marks": [
+                  "code"
+                ],
+                "text": "Siden 2000 har jeg arbeidet med webdesign og utvikling, og jeg har i nyere tid spesialisert meg på frontendutvikling."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          },
+          {
+            "_key": "297c32aa17bb",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "482531646e9c",
+                "_type": "span",
+                "marks": [
+                  "code"
+                ],
+                "text": "Jeg har erfaring med WordPress og WooCommerce siden 2011 hvor jeg har arbeidet frilans via Fiverr og kan skilte med 100% positiv tilbakemelding på samtlige oppdrag."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          },
+          {
+            "_key": "d32f03d1b1f2",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "f4f2dccc1e04",
+                "_type": "span",
+                "marks": [
+                  "code"
+                ],
+                "text": "Jeg har også erfaring med andre teknologier som moderne Javascript (ES6+), Typescript, React, Vue.js, PHP, mySQL,  Gatsby, Next.js, Docker, GraphQL, Adobe Photoshop, Storybook, Bootstrap med mer."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          }
+        ],
+        "title": "Om Meg"
+      },
+      {
+        "_key": "568ab6d8cf9b",
+        "_type": "pagecontent",
+        "id": 2,
+        "text": [
+          {
+            "_key": "0338b9d4749b",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "2c0cb654ac56",
+                "_type": "span",
+                "marks": [
+                  "code"
+                ],
+                "text": "Jeg arbeider jevnlig med hobbyprosjekter, primært med fokus på Javascript og Typescript."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          },
+          {
+            "_key": "da7af79bfd66",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "f0c8b6aab1df",
+                "_type": "span",
+                "marks": [
+                  "code"
+                ],
+                "text": "Kildekoden publiserer jeg på "
+              },
+              {
+                "_key": "cc709e2543ee",
+                "_type": "span",
+                "marks": [
+                  "code",
+                  "cdacd3f8961a"
+                ],
+                "text": "GITHUB"
+              },
+              {
+                "_key": "9cccc3b57493",
+                "_type": "span",
+                "marks": [
+                  "code"
+                ],
+                "text": "."
+              }
+            ],
+            "markDefs": [
+              {
+                "_key": "cdacd3f8961a",
+                "_type": "link",
+                "href": "https://www.github.com/w3bdesign"
+              }
+            ],
+            "style": "normal"
+          },
+          {
+            "_key": "09a11fccc636",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "ea290d5c59fd",
+                "_type": "span",
+                "marks": [
+                  "code"
+                ],
+                "text": "På "
+              },
+              {
+                "_key": "ca82bc8dff9b",
+                "_type": "span",
+                "marks": [
+                  "code",
+                  "bba1096d8305"
+                ],
+                "text": "PROSJEKTER"
+              },
+              {
+                "_key": "d2d65156cce9",
+                "_type": "span",
+                "marks": [
+                  "code"
+                ],
+                "text": " kan du se eksempler på arbeid jeg har gjort i nyere tid."
+              }
+            ],
+            "markDefs": [
+              {
+                "_key": "bba1096d8305",
+                "_type": "link",
+                "href": "/prosjekter"
+              }
+            ],
+            "style": "normal"
+          },
+          {
+            "_key": "695c2673bb8e",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "e5d1b669a3f9",
+                "_type": "span",
+                "marks": [
+                  "code"
+                ],
+                "text": "Har også bidratt med utvikling av flere open-source prosjekter på "
+              },
+              {
+                "_key": "4f293f7da32f",
+                "_type": "span",
+                "marks": [
+                  "code",
+                  "b4f758908e2e"
+                ],
+                "text": "GITHUB."
+              }
+            ],
+            "markDefs": [
+              {
+                "_key": "b4f758908e2e",
+                "_type": "link",
+                "href": "https://www.github.com/w3bdesign"
+              }
+            ],
+            "style": "normal"
+          },
+          {
+            "_key": "e9db993ae8d6",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "666688cfe4a8",
+                "_type": "span",
+                "marks": [],
+                "text": ""
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          }
+        ],
+        "title": "Prosjekter"
+      }
+    ],
+    "id": "15fc8058-09f7-4613-9a4e-bd1295d9085a",
+    "title": "Hjem"
+  }
+]
