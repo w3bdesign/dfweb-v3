@@ -12,7 +12,7 @@ import Layout from "../components/Layout/Layout.component";
 import { getClient } from "../lib/sanity.server";
 
 // Sanity GROQ queries
-const indexQuery = groq`*[_type == 'page' && title match 'Hjem']{"id": _id, title, content}`;
+const indexQuery = groq`*[_type == 'page' && title match 'Hjem']{"id": _id, title, hero, content}`;
 
 const Home: NextPage = ({ pagecontent }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Forside">
