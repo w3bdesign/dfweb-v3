@@ -1,0 +1,13 @@
+[
+  { "_key": "867819bd29dd", "_type": "herocontent", "text": "Hei!" },
+  {
+    "_key": "eb1421079302",
+    "_type": "herocontent",
+    "text": "Jeg heter Daniel Fjeldstad og er en webutvikler."
+  },
+  {
+    "_key": "1230d9b04a33",
+    "_type": "herocontent",
+    "text": "Jeg kan PHP, Wordpress, Javascript, Typescript, React, Vue, Docker, Photoshop og mye mer."
+  }
+]
