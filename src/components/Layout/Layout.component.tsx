@@ -8,7 +8,7 @@ export type TTitle =
   | "Kontakt"
   | "CV"
   | "Prosjekter"
-  | "Sanity"
+  | "Feil - 500"
   | "Side ikke funnet - 404";
 
 interface ILayoutProps {
