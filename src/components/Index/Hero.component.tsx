@@ -3,17 +3,12 @@ import Icons from "./Icons.component";
 import FadeDown from "../Animations/FadeDown.component";
 import FadeUp from "../Animations/FadeUp.component";
 
-type TContent = THerocontent[];
+type THero = { text: string };
 
-type THerocontent = {
-  content: Array<string>;
-  /**
-   * Text — `string`
-   *
-   *
-   */
-  text?: string;
-};
+interface IContent {
+  content: THero[];
+}
+[];
 
 /**
  * Renders Hero that is used on the front page
@@ -22,7 +17,11 @@ type THerocontent = {
  * @returns {JSX.Element} - Rendered component
  */
 
-const Hero = ({ content }: any): JSX.Element => {
+//const Hero = ({ content }: TContent): JSX.Element => {
+
+const Hero = ({ content }: IContent): JSX.Element => {
+  console.log("Content fra hero:", content);
+
   return (
     <div
       role="article"

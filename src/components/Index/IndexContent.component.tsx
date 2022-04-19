@@ -13,10 +13,15 @@ import Hero from "../Index/Hero.component";
 import BounceInScroll from "../Animations/BounceInScroll.component";
 
 // interfaces
+
+interface IHero {
+  text: string;
+}
+
 interface IPageContent {
   id: Key | null;
   content: IContent[];
-  hero: IContent[];
+  hero: IHero[];
 }
 
 interface IContent {
