@@ -8,7 +8,6 @@ type THero = { text: string };
 interface IContent {
   content: THero[];
 }
-[];
 
 /**
  * Renders Hero that is used on the front page
@@ -17,11 +16,7 @@ interface IContent {
  * @returns {JSX.Element} - Rendered component
  */
 
-//const Hero = ({ content }: TContent): JSX.Element => {
-
 const Hero = ({ content }: IContent): JSX.Element => {
-  console.log("Content fra hero:", content);
-
   return (
     <div
       role="article"
