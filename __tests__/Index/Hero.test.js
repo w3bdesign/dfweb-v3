@@ -11,8 +11,7 @@ import heromock from "../../__mocks__/hero.json";
 describe("Hero", () => {
   it("Hero laster inn og kan vises", () => {
     render(<Hero content={heromock} />);
-    //const hero = screen.getByText(/hei!/i);
-    expect(true)
-    //expect(hero).toBeInTheDocument();
+    const hero = screen.getByText(/hei!/i);
+    expect(hero).toBeInTheDocument();
   });
 });
