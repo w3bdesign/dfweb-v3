@@ -3,7 +3,7 @@ import Link from "next/link";
 import PortableText from "react-portable-text";
 
 // types
-import { Fragment, Key, ReactChild, ReactFragment, ReactPortal } from "react";
+import { Fragment, Key, ReactChild, ReactFragment, ReactPortal, useEffect, useState } from "react";
 import { UrlObject } from "url";
 
 // components
@@ -21,7 +21,7 @@ interface IHero {
 interface IPageContent {
   id: Key | null;
   content: IContent[];
-  hero: IHero[];
+  hero: IHero[] | null;
 }
 
 interface IContent {
@@ -64,10 +64,20 @@ type TPageContent = { pagecontent: IPageContent[] };
  */
 
 const IndexContent = ({ pagecontent }: TPageContent): JSX.Element => {
-  let hero = null;
+  const [hero, setHero] = useState<any>();
+
+  useEffect(() => {
+    if (pagecontent) {
+      setHero(pagecontent[0].hero);
+    }
+  }, [pagecontent]);
+
+  /*console.log(pagecontent[0].hero)
+  console.log(pagecontent[0].hero)
+  let hero = pagecontent[0].hero;
   if (pagecontent) {
     hero = pagecontent[0].hero;
-  }
+  }*/
 
   return (
     <main role="main" aria-label="Her kommer hovedinnholdet" id="maincontent">
