@@ -72,8 +72,6 @@ const IndexContent = ({ pagecontent }: TPageContent): JSX.Element => {
     }
   }, [pagecontent]);
 
-
-
   return (
     <main role="main" aria-label="Her kommer hovedinnholdet" id="maincontent">
       <div className="mx-auto mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-64 xs:mt-64">
@@ -88,7 +86,8 @@ const IndexContent = ({ pagecontent }: TPageContent): JSX.Element => {
                       <h2
                         data-testid="sanity-title"
                         data-cy={title}
-                        className="text-3xl text-center">
+                        className="text-3xl text-center"
+                      >
                         {title}
                       </h2>
                       <br />

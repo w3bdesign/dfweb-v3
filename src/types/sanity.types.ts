@@ -28,7 +28,7 @@ import type {
   SanityImageMetadata,
   SanityImageDimensions,
   SanityImagePalette,
-  SanityImagePaletteSwatch,
+  SanityImagePaletteSwatch
 } from "sanity-codegen";
 
 export type {
@@ -47,7 +47,7 @@ export type {
   SanityImageMetadata,
   SanityImageDimensions,
   SanityImagePalette,
-  SanityImagePaletteSwatch,
+  SanityImagePaletteSwatch
 };
 
 /**
