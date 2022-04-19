@@ -121,7 +121,7 @@ export interface Project extends SanityDocument {
 }
 
 /**
- * Project category
+ * Category
  *
  *
  */
@@ -144,40 +144,40 @@ export interface Category extends SanityDocument {
 }
 
 /**
- * Index content
+ * Page
  *
  *
  */
-export interface Sitecontent extends SanityDocument {
-  _type: "sitecontent";
+export interface Page extends SanityDocument {
+  _type: "page";
 
   /**
-   * Id — `number`
-   *
-   *
-   */
-  id?: number;
-
-  /**
-   * Pagename — `string`
-   *
-   *
-   */
-  pagename?: string;
-
-  /**
-   * Title — `string`
+   * Name — `string`
    *
    *
    */
   title?: string;
 
   /**
-   * Text — `array`
+   * Header — `string`
    *
    *
    */
-  text?: Array<SanityKeyed<SanityBlock>>;
+  header?: string;
+
+  /**
+   * Hero content — `array`
+   *
+   * Only supported in Hjem/Index page
+   */
+  hero?: Array<SanityKeyed<Herocontent>>;
+
+  /**
+   * Main content — `array`
+   *
+   * Only supported in Hjem/Index page
+   */
+  content?: Array<SanityKeyed<Pagecontent>>;
 }
 
 /**
@@ -234,4 +234,38 @@ export type Link = {
   external?: boolean;
 };
 
-export type Documents = Project | Category | Sitecontent | Navigation;
+export type Pagecontent = {
+  _type: "pagecontent";
+  /**
+   * Id — `number`
+   *
+   *
+   */
+  id?: number;
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Text — `array`
+   *
+   *
+   */
+  text?: Array<SanityKeyed<SanityBlock>>;
+};
+
+export type Herocontent = {
+  _type: "herocontent";
+  /**
+   * Text — `string`
+   *
+   *
+   */
+  text?: string;
+};
+
+export type Documents = Project | Category | Page | Navigation;
