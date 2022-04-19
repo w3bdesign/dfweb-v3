@@ -3,7 +3,7 @@ import Link from "next/link";
 import PortableText from "react-portable-text";
 
 // types
-import { Fragment, Key, ReactChild, ReactFragment, ReactPortal, useEffect, useState } from "react";
+import { Fragment, Key, ReactChild, ReactFragment, ReactPortal } from "react";
 import { UrlObject } from "url";
 
 // components
@@ -21,7 +21,7 @@ interface IHero {
 interface IPageContent {
   id: Key | null;
   content: IContent[];
-  hero: IHero[] | null | undefined;
+  hero: IHero[];
 }
 
 interface IContent {
@@ -64,18 +64,10 @@ type TPageContent = { pagecontent: IPageContent[] };
  */
 
 const IndexContent = ({ pagecontent }: TPageContent): JSX.Element => {
-  const [hero, setHero] = useState<IHero[] | null | undefined>();
-
-  useEffect(() => {
-    if (pagecontent) {
-      setHero(pagecontent[0].hero);
-    }
-  }, [pagecontent]);
-
   return (
     <main role="main" aria-label="Her kommer hovedinnholdet" id="maincontent">
       <div className="mx-auto mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-64 xs:mt-64">
-        {hero && <Hero content={hero} />}
+        {pagecontent && <Hero content={pagecontent[0].hero} />}
         <div className="container grid gap-4 p-4 mx-auto mt-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
           {pagecontent?.map(({ id, content }: IPageContent) => (
             <Fragment key={id}>
@@ -86,8 +78,7 @@ const IndexContent = ({ pagecontent }: TPageContent): JSX.Element => {
                       <h2
                         data-testid="sanity-title"
                         data-cy={title}
-                        className="text-3xl text-center"
-                      >
+                        className="text-3xl text-center">
                         {title}
                       </h2>
                       <br />

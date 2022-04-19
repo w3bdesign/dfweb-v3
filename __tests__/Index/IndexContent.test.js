@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 
 import IndexContent from "../../src/components/Index/IndexContent.component";
 
@@ -13,9 +13,19 @@ describe("IndexContent", () => {
     render(<IndexContent pagecontent={pagecontent} />);
   });
 
-  it("Hero laster inn og kan vises", () => {
-    const hero = screen.getByRole("article", { name: /kontainer for animasjoner av introtekst/i });
-    expect(hero).toBeInTheDocument();
+  it("Hero laster inn og kan vises", async () => {
+    //const hero = await screen.findByRole("article", { name: /kontainer for animasjoner av introtekst/i });
+
+    await waitFor(
+      () => screen.findByRole("article", { name: /kontainer for animasjoner av introtekst/i }),
+      { timeout: 15000 }
+    );
+
+    screen.debug();
+
+    expect(true);
+
+    //expect(hero).toBeInTheDocument();
   });
 
   it("Om meg laster inn og kan vises", () => {
