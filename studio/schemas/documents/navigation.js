@@ -1,6 +1,6 @@
-import { List } from 'phosphor-react'
+import { List } from "phosphor-react";
 
-export default {
+const navigation = {
   name: "Navigation",
   title: "Navigation",
   type: "document",
@@ -10,7 +10,7 @@ export default {
       title: "Title",
       name: "title",
       type: "string",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required()
     },
     {
       title: "Slug",
@@ -20,15 +20,17 @@ export default {
       validation: (Rule) => Rule.required(),
       options: {
         source: "title",
-        maxLength: 35,
-      },
+        maxLength: 35
+      }
     },
     {
       name: "navigation",
       title: "Navigation",
       description: "Navigation links",
       type: "array",
-      of: [{ type: "link" }],
-    },
-  ],
+      of: [{ type: "link" }]
+    }
+  ]
 };
+
+export default navigation;

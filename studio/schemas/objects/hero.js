@@ -1,6 +1,6 @@
 import { Article } from "phosphor-react";
 
-export default {
+const hero = {
   // This is the display name for the type
   title: "Hero content",
 
@@ -18,7 +18,9 @@ export default {
     {
       title: "Text",
       name: "text",
-      type: "string",
-    },
-  ],
+      type: "string"
+    }
+  ]
 };
+
+export default hero;

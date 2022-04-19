@@ -1,4 +1,4 @@
-export default {
+const category = {
   // This is the display name for the type
   title: "Category",
 
@@ -15,13 +15,15 @@ export default {
       title: "Id",
       name: "id",
       type: "number",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required()
     },
     {
       title: "Name",
       name: "name",
       type: "string",
-      validation: (Rule) => Rule.required(),
-    },
-  ],
+      validation: (Rule) => Rule.required()
+    }
+  ]
 };
+
+export default category;
