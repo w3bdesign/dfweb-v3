@@ -64,7 +64,7 @@ type TPageContent = { pagecontent: IPageContent[] };
  */
 
 const IndexContent = ({ pagecontent }: TPageContent): JSX.Element => {
-  let hero;
+  let hero = null;
   if (pagecontent) {
     hero = pagecontent[0].hero;
   }
