@@ -1,6 +1,6 @@
 import { Browsers } from "phosphor-react";
 
-export default {
+const page = {
   // This is the display name for the type
   title: "Page",
 
@@ -18,12 +18,12 @@ export default {
     {
       title: "Name",
       name: "title",
-      type: "string",
+      type: "string"
     },
     {
       title: "Header",
       name: "header",
-      type: "string",
+      type: "string"
     },
     {
       title: "Hero content",
@@ -32,7 +32,7 @@ export default {
       type: "array",
       of: [{ type: "herocontent" }],
       hidden: ({ document }) => document?.title !== "Hjem",
-      validation: (Rule) => Rule.max(3),
+      validation: (Rule) => Rule.max(3)
     },
     {
       title: "Main content",
@@ -40,7 +40,9 @@ export default {
       name: "content",
       type: "array",
       of: [{ type: "pagecontent" }],
-      hidden: ({ document }) => document?.title !== "Hjem",
-    },
-  ],
+      hidden: ({ document }) => document?.title !== "Hjem"
+    }
+  ]
 };
+
+export default page;
