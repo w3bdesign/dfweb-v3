@@ -21,7 +21,7 @@ interface IHero {
 interface IPageContent {
   id: Key | null;
   content: IContent[];
-  hero: IHero[] | null;
+  hero: IHero[] | null | undefined;
 }
 
 interface IContent {
@@ -64,7 +64,7 @@ type TPageContent = { pagecontent: IPageContent[] };
  */
 
 const IndexContent = ({ pagecontent }: TPageContent): JSX.Element => {
-  const [hero, setHero] = useState<any>();
+  const [hero, setHero] = useState<IHero[] | null | undefined>();
 
   useEffect(() => {
     if (pagecontent) {
