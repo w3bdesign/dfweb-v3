@@ -59,7 +59,10 @@ type TPageContent = { pagecontent: IPageContent[] };
  */
 
 const IndexContent = ({ pagecontent }: TPageContent): JSX.Element => {
-  const hero = pagecontent[0].hero;
+  let hero;
+  if (pagecontent) {
+    hero = pagecontent[0].hero;
+  }
 
   return (
     <main role="main" aria-label="Her kommer hovedinnholdet" id="maincontent">
