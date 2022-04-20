@@ -13,7 +13,7 @@ import navigation from "./documents/navigation";
 // Objects
 import link from "./objects/link";
 import pagecontent from "./objects/pagecontent";
-import hero from "./objects/hero";
+import herocontent from "./objects/herocontent";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,5 +22,5 @@ export default createSchema({
 
   // Then proceed to concatenate our document types (just one, for now)
   // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([project, category, page, navigation, link, pagecontent, hero])
+  types: schemaTypes.concat([project, category, page, navigation, link, pagecontent, herocontent])
 });
