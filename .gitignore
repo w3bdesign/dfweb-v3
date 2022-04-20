@@ -47,3 +47,5 @@ sanity.json
 
 #cypress
 *.mp4
+/cypress/videos
+/cypress/screenshots
