@@ -41,7 +41,7 @@ describe("KontaktContent", () => {
   it("Test at vi kan skrive i hva ønsker du å si tekstboks", async () => {
     const beskjed = screen.getByRole("textbox", { name: /hva ønsker du å si\?/i });
     await userEvent.clear(beskjed);
-    await userEvent.type(beskjed, "beskjed");
-    expect(beskjed).toHaveValue("beskjed");
+    await userEvent.type(beskjed, "melding");
+    expect(beskjed).toHaveValue("melding");
   });
 });
