@@ -9,7 +9,7 @@ const env = process.env.NODE_ENV;
 // Set up a preview client with serverless authentication for drafts
 export const previewClient = createClient({
   ...config,
-  useCdn: true,
+  useCdn: env === "development" ? false : true,
   token: process.env.SANITY_API_TOKEN
 });
 
