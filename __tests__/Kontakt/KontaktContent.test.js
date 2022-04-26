@@ -12,9 +12,14 @@ describe("KontaktContent", () => {
     render(<KontaktContent />);
   });
 
-  it("KontaktContent laster inn og kan vises", () => {
+  it("KontaktContent laster inn", () => {
     const kontaktcontent = screen.getByRole("heading", { name: /kontakt/i });
     expect(kontaktcontent).toBeInTheDocument();
+  });
+
+  it("KontaktContent laster inn og kan vises", () => {
+    const kontaktcontent = screen.getByRole("heading", { name: /kontakt/i });
+    expect(kontaktcontent).toBeVisible();
   });
 
   it("Test at vi ikke kan sende et tomt skjema", async () => {
@@ -41,7 +46,7 @@ describe("KontaktContent", () => {
   it("Test at vi kan skrive i hva ønsker du å si tekstboks", async () => {
     const beskjed = screen.getByRole("textbox", { name: /hva ønsker du å si\?/i });
     await userEvent.clear(beskjed);
-    await userEvent.type(beskjed, "melding");
-    expect(beskjed).toHaveValue("melding");
+    await userEvent.type(beskjed, "beskjed");
+    expect(beskjed).toHaveValue("beskjed");
   });
 });
