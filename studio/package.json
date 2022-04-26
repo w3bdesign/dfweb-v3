@@ -17,9 +17,9 @@
   "dependencies": {
     "@sanity/base": "^2.29.5",
     "@sanity/core": "^2.29.5",
-    "@sanity/default-layout": "^2.29.5",
+    "@sanity/default-layout": "^2.29.7",
     "@sanity/default-login": "^2.29.5",
-    "@sanity/desk-tool": "^2.29.6",
+    "@sanity/desk-tool": "^2.29.7",
     "@sanity/vision": "^2.29.5",
     "phosphor-react": "^1.4.1",
     "prop-types": "^15.8",
