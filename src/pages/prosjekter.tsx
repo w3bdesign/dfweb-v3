@@ -13,7 +13,7 @@ import Layout from "../components/Layout/Layout.component";
 
 // Sanity GROQ queries
 
-const projectQuery = groq`*[_type == "project"]{  ...,  "categoryname": projectcategory->name}`;
+const projectQuery = groq`*[_type == "project"]{  ...,  "categoryname": projectcategory->name, "imageurl": projectimage.asset->url}`;
 
 const categoryQuery = groq`*[_type == "category"]{ id, name } | order(id asc)`;
 
