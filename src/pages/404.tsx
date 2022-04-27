@@ -7,7 +7,7 @@ import ErrorContent from "../components/Error/ErrorContent.component";
 
 const Custom404: NextPage = () => (
   <Layout title="Side ikke funnet - 404">
-    <ErrorContent />
+    <ErrorContent text="Side ikke funnet" />
   </Layout>
 );
 
