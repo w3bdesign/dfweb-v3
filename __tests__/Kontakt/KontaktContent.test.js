@@ -8,11 +8,11 @@ import userEvent from "@testing-library/user-event";
 import KontaktContent from "../../src/components/Kontakt/KontaktContent.component";
 
 describe("KontaktContent", () => {
+  const user = userEvent.setup();
+
   beforeEach(() => {
     render(<KontaktContent />);
   });
-
-  const user = userEvent.setup();
 
   it("KontaktContent laster inn", () => {
     const kontaktcontent = screen.getByRole("heading", { name: /kontakt/i });
