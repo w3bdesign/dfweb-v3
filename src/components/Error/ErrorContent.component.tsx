@@ -26,9 +26,11 @@ const ErrorContent = ({ text }: IError): JSX.Element => (
             <div className="p-4 text-lg rounded">
               <div className="mt-0 sm:mt-2 xs:mt-2">
                 <div className="mt-64 sm:mt-12 w-72 mx-auto">
-                  <Image alt="Not found image" src={notfound} width="600" height="400" />
+                  <Image alt="Not found image" src={notfound} width="400" height="300" />
                 </div>
-                <h2 className="mt-12 h-64 text-center sm:text-2xl text-lg">Her var det noe rusk i maskineriet.</h2>
+                <h2 className="mt-12 h-64 text-center sm:text-2xl text-lg">
+                  Her var det noe rusk i maskineriet.
+                </h2>
               </div>
             </div>
           </div>
