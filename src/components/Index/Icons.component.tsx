@@ -12,7 +12,7 @@ import FadeLeftToRightItem from "../Animations/FadeLeftToRightItem.component";
  */
 
 const Icons = (): JSX.Element => (
-  <FadeLeftToRight delay={2.3} animateNotReverse cssClass="flex justify-center mt-4 p-2">
+  <FadeLeftToRight delay={1.9} animateNotReverse cssClass="flex justify-center mt-4 p-2">
     <div data-testid="icons" />
     <FadeLeftToRightItem cssClass="p-2">
       <FaReact title="React ikon" size="3em" aria-label="React ikon" />
