@@ -11,6 +11,7 @@ import projects from "../../__mocks__/projects.json";
 import categories from "../../__mocks__/categories.json";
 
 describe("ProsjekterListings", () => {
+  const user = userEvent.setup();
   beforeEach(() => {
     render(<ProsjekterListings projects={projects} categories={categories} />);
   });
@@ -28,7 +29,7 @@ describe("ProsjekterListings", () => {
   it("Vi velger Typescript og tester at Typescript er valgt", async () => {
     const kategorifilter = screen.getByRole("combobox", { name: /kategorifilter/i });
     const typescript = screen.getByRole("option", { name: "Typescript" });
-    await userEvent.selectOptions(kategorifilter, typescript);
+    await user.selectOptions(kategorifilter, typescript);
     expect(typescript.selected).toBe(true);
   });
 });
