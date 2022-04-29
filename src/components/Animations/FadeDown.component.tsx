@@ -19,7 +19,7 @@ const FadeDown = ({ children, cssClass, delay }: IAnimateWithDelayProps): JSX.El
     animate: {
       y: 0,
       opacity: 1,
-      transition: { delay, type: "spring", duration: 0.5, stiffness: 120 }
+      transition: { delay, type: "spring", duration: 0.5, stiffness: 110 }
     }
   };
   return (
