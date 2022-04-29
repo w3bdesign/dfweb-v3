@@ -15,7 +15,7 @@ import { IAnimateWithDelayProps } from "./types/Animations.types";
 
 const FadeDown = ({ children, cssClass, delay }: IAnimateWithDelayProps): JSX.Element => {
   const fadeDownVariants: Variants = {
-    initial: { opacity: 0, y: -50 },
+    initial: { opacity: 0, y: -20 },
     animate: {
       y: 0,
       opacity: 1,
