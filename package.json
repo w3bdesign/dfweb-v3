@@ -80,7 +80,7 @@
     "jest": "^28.0.3",
     "jest-environment-jsdom": "^28.0.2",
     "jsdom": "^19.0.0",
-    "postcss": "^8.4.12",
+    "postcss": "^8.4.13",
     "react-test-renderer": "17.0.2",
     "sanity-codegen": "^0.9.8",
     "sitemap": "^7.1.1",
