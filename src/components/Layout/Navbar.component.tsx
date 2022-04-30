@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 import MobileMenu from "./MobileMenu.component";
 
 import LINKS from "../../utils/constants/LINKS";
+import logo from "../../../public/logo.svg";
 
 /**
  * Display the menu and the links
@@ -19,7 +21,7 @@ const Navbar = (): JSX.Element => {
     pathname === url ? "navbar-link-active" : "";
 
   return (
-    <header role="banner" aria-label="Header for logo og navigasjon">
+    <header aria-label="Header for logo og navigasjon">
       <nav className="fixed top-0 z-50 w-full p-4 bg-gray-800">
         <div
           id="main-navigation"
@@ -27,7 +29,9 @@ const Navbar = (): JSX.Element => {
           className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap"
         >
           <div className="flex w-full text-white md:w-1/2 md:justify-start">
-            <img className="p-2 lg:p-0" src="/logo.svg" alt="Dfweb Logo" width="150" height="45" />
+            <div style={{ position: "relative", width: "150px", height: "50px" }}>
+              <Image alt="DFWeb logo" src={logo} layout="fill" objectFit="contain" priority />
+            </div>
           </div>
           <div
             id="hamburger-div"

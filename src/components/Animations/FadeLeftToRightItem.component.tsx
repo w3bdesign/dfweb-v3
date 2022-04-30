@@ -15,10 +15,14 @@ import { IAnimateProps } from "./types/Animations.types";
 const FadeLeftToRightItem = ({ children, cssClass }: IAnimateProps): JSX.Element => {
   const FadeLeftToRightItemVariants: Variants = {
     visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, x: -50 }
+    hidden: { opacity: 0, x: -20 }
   };
   return (
-    <motion.span variants={FadeLeftToRightItemVariants} className={cssClass}>
+    <motion.span
+      variants={FadeLeftToRightItemVariants}
+      className={cssClass}
+      data-testid="fadelefttorightitem"
+    >
       {children}
     </motion.span>
   );

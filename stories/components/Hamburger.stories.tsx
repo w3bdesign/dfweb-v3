@@ -1,18 +1,12 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Hamburger from "../../src/components/UI/Hamburger.component";
-
-import { IHamburgerProps } from "../../src/components/UI/Hamburger.component";
+import Hamburger, { IHamburgerProps } from "../../src/components/Layout/Hamburger.component";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/UI/Hamburger",
   component: Hamburger,
-  parameters: {
-    // Sets a delay for the component's stories
-    chromatic: { delay: 3000 },
-  },
   argTypes: {
     animatetoX: { description: "Animate hamburger to X" },
     onClick: {

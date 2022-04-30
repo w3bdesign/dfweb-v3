@@ -1,7 +1,7 @@
-/*eslint max-depth: ["error", 5]*/
 import { useState } from "react";
 
 import ProsjekterSingleProject from "./ProsjekterSingleProject.component";
+import PageHeader from "../UI/PageHeader.component";
 
 interface ICategories {
   id: number;
@@ -18,16 +18,24 @@ export interface IProject {
 
 export type TStringOrEmpty = string | undefined;
 
+export interface IProjectUrl {
+  _key: string;
+  _type: string;
+  external: boolean;
+  url: string;
+}
+
 export interface IProjectInterface {
   _id: string;
-  id: null | undefined | number;
+  id?: null | number;
   name: string;
   description: string;
   subdescription: string;
-  urlgithub: string;
-  urlwww: TStringOrEmpty;
+  urlgithub?: Array<IProjectUrl>;
+  urlwww?: Array<IProjectUrl>;
   category: string;
   projectimage: string;
+  categoryname: string;
 }
 
 export interface IChangeEvent {
@@ -47,15 +55,15 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
   const [prosjekt, setProsjekt] = useState(projects);
 
   const handleFilterChange = (event: IChangeEvent) => {
+    setProsjekt(projects);
     if (event.target.value) {
-      setProsjekt(projects.filter((project) => project.category === event.target.value));
-    } else {
-      setProsjekt(projects);
+      setProsjekt(projects.filter((project) => project.categoryname === event.target.value));
     }
   };
 
   return (
-    <main aria-label="Innhold portefølje" className="mt-32 bg-graybg">
+    <main role="main" aria-label="Innhold portefølje" className="mt-32 bg-graybg">
+      <PageHeader>Prosjekter</PageHeader>
       <div className="container mx-auto rounded">
         <div className="px-4 mx-auto mt-4 lg:px-0 xl:px-0 md:px-0">
           <span className="flex justify-end mb-4">
@@ -71,7 +79,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
               name="kategorifilter"
               data-cy="kategorifilter"
               onChange={handleFilterChange}
-              className="w-40 p-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+              className="w-40 p-2 bg-white text-black rounded shadow appearance-none focus:outline-none focus:shadow-outline"
             >
               <option label="" value="">
                 Ingen filtrering

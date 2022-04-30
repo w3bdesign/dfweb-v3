@@ -9,7 +9,7 @@ jobs:
     # 👇 Adds Chromatic as a job
   chromatic-deployment:
     docker:
-      - image: circleci/node:14
+      - image: cimg/node:18.0.0
     working_directory: ~/repo
     steps:
       - checkout
@@ -57,3 +57,4 @@ workflows:
           # there are no jobs to follow this one
           # so no need to save the workspace files (saves time)
           no-workspace: false
+          parallelism: 8

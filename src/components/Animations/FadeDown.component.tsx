@@ -15,11 +15,11 @@ import { IAnimateWithDelayProps } from "./types/Animations.types";
 
 const FadeDown = ({ children, cssClass, delay }: IAnimateWithDelayProps): JSX.Element => {
   const fadeDownVariants: Variants = {
-    initial: { opacity: 0, y: -50 },
+    initial: { opacity: 0, y: -20 },
     animate: {
       y: 0,
       opacity: 1,
-      transition: { delay, type: "spring", duration: 0.5, stiffness: 120 }
+      transition: { delay, type: "spring", duration: 0.5, stiffness: 110 }
     }
   };
   return (
@@ -28,6 +28,7 @@ const FadeDown = ({ children, cssClass, delay }: IAnimateWithDelayProps): JSX.El
       variants={fadeDownVariants}
       initial="initial"
       animate="animate"
+      data-testid="fadedown"
     >
       {children}
     </motion.div>

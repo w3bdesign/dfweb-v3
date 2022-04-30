@@ -2,11 +2,11 @@ import { Variants } from "framer-motion";
 // CircleCI doesn't like import { motion } from "framer-motion" here, so we use require
 const { motion } = require("framer-motion");
 
-import { IAnimateProps } from "./types/Animations.types";
+import { IAnimateBounceProps } from "./types/Animations.types";
 
 const bounceVariants: Variants = {
   offscreen: {
-    y: 100,
+    y: 30,
     opacity: 0
   },
   onscreen: {
@@ -14,8 +14,8 @@ const bounceVariants: Variants = {
     opacity: 1,
     transition: {
       type: "spring",
-      bounce: 0.3,
-      duration: 1.0
+      bounce: 0.5,
+      duration: 1.5
     }
   }
 };
@@ -25,15 +25,17 @@ const bounceVariants: Variants = {
  * @function BounceInScroll
  * @param {ReactNode} children - Children content to render
  * @param {string} cssClass - CSS classes to apply to component
+ * @param {"some" | "all" | number} viewAmount - Amount of component needed to be visible before animating
  * @returns {JSX.Element} - Rendered component
  */
 
-const BounceInScroll = ({ children, cssClass }: IAnimateProps): JSX.Element => (
+const BounceInScroll = ({ children, cssClass, viewAmount }: IAnimateBounceProps): JSX.Element => (
   <motion.div
     initial="offscreen"
     whileInView="onscreen"
-    viewport={{ once: true, amount: 0.4 }}
+    viewport={{ once: true, amount: viewAmount || 0.2 }}
     className={cssClass}
+    data-testid="bounceinscroll"
   >
     <motion.div variants={bounceVariants}>{children}</motion.div>
   </motion.div>

@@ -6,7 +6,7 @@ export const config = {
    *
    * https://nextjs.org/docs/basic-features/environment-variables
    **/
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  dataset: "production",
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "thisneedstobedefined",
   apiVersion: "v1",
   /**
@@ -14,5 +14,5 @@ export const config = {
    * data always (potentially slightly slower and a bit more expensive).
    * Authenticated request (like preview) will always bypass the CDN
    **/
-  useCdn: process.env.NODE_ENV === "production"
+  useCdn: true
 };

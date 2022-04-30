@@ -1,0 +1,21 @@
+[
+  {
+    "_createdAt": "2022-01-08T21:13:12Z",
+    "_id": "01979e3e-997e-49ba-bc1c-19895bb821f1",
+    "_rev": "N67YfvFXT61u7WTlVd9kW9",
+    "_type": "project",
+    "_updatedAt": "2022-01-26T00:21:34Z",
+    "category": "Typescript",
+    "description": "Henter informasjon fra Statens Vegvesen sitt REST API med en serverless backend som benyttes som proxy. Bruker Parcel bundler og er kodet i Typescript med HTML5 og Materialize for design.",
+    "id": 7,
+    "name": "Statens Vegvesen",
+    "subdescription": "HTML5, Typescript, OOP, Materialize, Parcel, Serverless",
+    "projectimage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-07084afbda1945f7c51ecc173b05f7ae857c14d0-1129x699-png",
+        "_type": "reference"
+      }
+    }
+  }
+]

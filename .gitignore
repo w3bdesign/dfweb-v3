@@ -30,7 +30,7 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-.env*
+.env
 
 # vercel
 .vercel
@@ -47,3 +47,5 @@ sanity.json
 
 #cypress
 *.mp4
+/cypress/videos
+/cypress/screenshots

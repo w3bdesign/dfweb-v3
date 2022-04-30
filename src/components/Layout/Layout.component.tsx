@@ -3,7 +3,13 @@ import { ReactNode } from "react";
 import Footer from "./Footer.component";
 import Header from "./Header.component";
 
-type TTitle = "Forside" | "Kontakt" | "CV" | "Prosjekter";
+export type TTitle =
+  | "Forside"
+  | "Kontakt"
+  | "CV"
+  | "Prosjekter"
+  | "Feil - 500"
+  | "Side ikke funnet - 404";
 
 interface ILayoutProps {
   children?: ReactNode;

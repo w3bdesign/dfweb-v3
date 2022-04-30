@@ -15,15 +15,21 @@ import { IAnimateWithDelayProps } from "./types/Animations.types";
 
 const FadeUp = ({ children, cssClass, delay }: IAnimateWithDelayProps): JSX.Element => {
   const fadeUpVariants: Variants = {
-    initial: { opacity: 0, y: 50 },
+    initial: { opacity: 0, y: 20 },
     animate: {
       y: 0,
       opacity: 1,
-      transition: { delay, type: "spring", duration: 0.5, stiffness: 120 }
+      transition: { delay, type: "spring", duration: 0.5, stiffness: 110 }
     }
   };
   return (
-    <motion.div className={cssClass} variants={fadeUpVariants} initial="initial" animate="animate">
+    <motion.div
+      className={cssClass}
+      variants={fadeUpVariants}
+      initial="initial"
+      animate="animate"
+      data-testid="fadeup"
+    >
       {children}
     </motion.div>
   );

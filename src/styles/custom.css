@@ -4,6 +4,20 @@ body {
   background-color: #f2f2f2;
 }
 
+/* ProsjekterSingleProject */
+.description {
+  min-height: 85px;
+}
+
+/* Kontakt page */
+#kontakt-container {
+  min-height: 500px;
+}
+
+#error-container {
+  min-height: 620px;
+}
+
 /* Custom styling for main hero image */
 #main-hero {
   background-image: url("../assets/images/blue-hero.jpg");
@@ -20,7 +34,6 @@ a {
 }
 
 /* Navbar animations */
-
 .navbar-link::after {
   content: "";
   display: block;

@@ -1,15 +1,24 @@
 {
   "parserOptions": {
-    "ecmaVersion": 7,
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
   "extends": ["next/core-web-vitals", "plugin:cypress/recommended", "plugin:sonarjs/recommended"],
-  "plugins": ["react", "cypress", "sonarjs"],
+  "plugins": ["react", "cypress", "sonarjs", "testing-library", "jest-dom"],
   "globals": {
     "cy": true
   },
   "rules": {
-    "react/jsx-max-depth": 1,
-    "@next/next/no-img-element": 0
+    "react/jsx-max-depth": "warn",
+    /* eslint-plugin-testing-library */
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debugging-utils": "error",
+    "testing-library/no-dom-import": "off",
+    /* jest-dom */
+    "jest-dom/prefer-checked": "error",
+    "jest-dom/prefer-enabled-disabled": "error",
+    "jest-dom/prefer-required": "error",
+    "jest-dom/prefer-to-have-attribute": "error"
   }
 }

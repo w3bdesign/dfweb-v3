@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import Navbar from "./Navbar.component";
 
-type TTitle = "Forside" | "Kontakt" | "CV" | "Prosjekter";
+import type { TTitle } from "./Layout.component";
 
 interface IHeaderProps {
   title: TTitle;
@@ -24,7 +24,6 @@ const Header = ({ title }: IHeaderProps): JSX.Element => {
     <>
       <Head>
         <title>{fullTitle}</title>
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

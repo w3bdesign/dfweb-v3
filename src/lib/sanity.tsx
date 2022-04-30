@@ -15,9 +15,5 @@ export const urlFor = (source: SanityImageSource) => createImageUrlBuilder(confi
 // Set up the live preview subscription hook
 export const usePreviewSubscription = createPreviewSubscriptionHook(config);
 
-// https://www.sanity.io/guides/3-things-you-need-to-know-when-getting-started-with-portable-text
-
-// https://www.sanity.io/schemas/breaks-for-portable-text-189dba35
-
 // Helper function for using the current logged in user account
 export const useCurrentUser = createCurrentUserHook(config);

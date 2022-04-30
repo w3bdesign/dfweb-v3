@@ -2,7 +2,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 
 import Link from "next/link";
 
-import Button from "../UI/Button.component";
+import PageHeader from "../UI/PageHeader.component";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -16,10 +16,11 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 const CVContent = (): JSX.Element => (
   <main id="maincontent">
     <div className="mt-32 bg-graybg">
+      <PageHeader>CV</PageHeader>
       <div className="px-4 p lg:px-0 xl:px-0 md:px-0">
-        <div className="container mx-auto bg-white rounded shadow">
-          <div className="p-4 mx-auto mt-4">
-            <div className="p-4 text-lg rounded">
+        <div className="container mx-auto bg-white rounded shadow mb-36 sm:mb-4">
+          <div className="p-4 mx-auto mt-4 h-96 sm:h-auto flex justify-center items-center sm:block">
+            <div className="p-4 text-lg rounded ">
               <div className="mt-0 sm:mt-2 xs:mt-2">
                 <Document
                   className="hidden mt-4 text-center xl:block lg:block"
@@ -41,10 +42,8 @@ const CVContent = (): JSX.Element => (
                   />
                 </Document>
               </div>
-              <div className="mx-auto mt-0 text-center sm:mt-2 xs:mt-2">
-                <Button>
-                  <Link href="./CV-dfweb.pdf">Last ned PDF</Link>
-                </Button>
+              <div className=" mx-auto pt-2 text-center sm:mt-2 xs:mt-2 bg-gray-800 rounded w-64 h-12 text-white cursor-pointer">
+                <Link href="./CV-dfweb.pdf">Last ned PDF</Link>
               </div>
             </div>
           </div>

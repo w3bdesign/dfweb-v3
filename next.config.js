@@ -42,7 +42,7 @@ module.exports = {
   poweredByHeader: false,
   images: {
     domains: ["cdn.sanity.io", "dfweb.no", "www.dfweb.no"],
-    minimumCacheTTL: 600
+    minimumCacheTTL: 1200
   },
   /* Replace React with Preact  - Remove this and uninstall Preact if advanced React features are needed */
   webpack: (config, { dev, isServer }) => {
