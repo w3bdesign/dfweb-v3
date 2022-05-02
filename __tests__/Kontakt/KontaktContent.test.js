@@ -24,6 +24,11 @@ describe("KontaktContent", () => {
     expect(kontaktcontent).toBeVisible();
   });
 
+  it("KontaktContent hovedinnhold laster inn", () => {
+    const kontaktmaincontent = screen.getByTestId("kontaktcontent");
+    expect(kontaktmaincontent).toBeInTheDocument();
+  });
+
   it("KontaktContent hovedinnhold laster inn og kan vises", () => {
     const kontaktmaincontent = screen.getByTestId("kontaktcontent");
     expect(kontaktmaincontent).toBeVisible();
