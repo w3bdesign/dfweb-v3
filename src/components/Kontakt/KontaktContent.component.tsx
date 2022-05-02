@@ -24,7 +24,7 @@ const KontaktContent = (): JSX.Element => {
     const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY || "changeme";
 
     event.preventDefault();
-    
+
     if (!formRef.current) return;
 
     emailjs.init(EMAIL_API_KEY);
