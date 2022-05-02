@@ -24,7 +24,7 @@ const KontaktContent = (): JSX.Element => {
     const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY || "changeme";
 
     event.preventDefault();
-    
+
     if (!formRef.current) return;
 
     emailjs.init(EMAIL_API_KEY);
@@ -55,8 +55,7 @@ const KontaktContent = (): JSX.Element => {
                     ref={formRef}
                     onSubmit={handleSubmit}
                     method="POST"
-                    action="/api/form"
-                  >
+                    action="/api/form">
                     <fieldset>
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema
