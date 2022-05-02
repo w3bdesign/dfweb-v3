@@ -38,7 +38,7 @@ const KontaktContent = (): JSX.Element => {
   };
 
   return (
-    <main id="maincontent">
+    <main data-testid="kontaktcontent" id="maincontent">
       <div className="mt-32 bg-graybg">
         <PageHeader>Kontakt</PageHeader>
         <div className="px-4 p lg:px-0 xl:px-0 md:px-0">
