@@ -62,4 +62,7 @@ describe("KontaktContent", () => {
     await user.type(beskjed, "beskjed");
     expect(beskjed).toHaveValue("beskjed");
   });
+
+  // https://stackoverflow.com/questions/69706363/why-form-test-fails-while-using-react-hook-form
+  // https://react-hook-form.com/advanced-usage/#TestingForm
 });
