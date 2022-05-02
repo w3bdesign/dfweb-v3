@@ -25,6 +25,7 @@ const KontaktContent = (): JSX.Element => {
 
     event.preventDefault();
     
+    if (!formRef.current) return;
 
     emailjs.init(EMAIL_API_KEY);
     emailjs.sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
