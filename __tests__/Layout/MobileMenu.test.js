@@ -9,6 +9,7 @@ import MobileMenu from "../../src/components/Layout/MobileMenu.component";
 
 describe("MobileMenu", () => {
   const testidMenu = "mobile-menu";
+  const user = userEvent.setup();
   beforeEach(() => {
     render(<MobileMenu />);
   });
@@ -48,7 +49,7 @@ describe("MobileMenu", () => {
     const hamburger = screen.getByRole("button", {
       name: /hamburger/i
     });
-    await userEvent.click(hamburger);
+    await user.click(hamburger);
     expect(mobilemenu).toHaveAttribute("aria-hidden", "false");
   });
 
@@ -57,8 +58,8 @@ describe("MobileMenu", () => {
     const hamburger = screen.getByRole("button", {
       name: /hamburger/i
     });
-    await userEvent.click(hamburger);
-    await userEvent.click(document.body);
+    await user.click(hamburger);
+    await user.click(document.body);
     expect(mobilemenu).toHaveAttribute("aria-hidden", "true");
   });
 });

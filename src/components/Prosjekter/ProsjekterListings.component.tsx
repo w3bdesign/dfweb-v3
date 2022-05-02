@@ -18,16 +18,24 @@ export interface IProject {
 
 export type TStringOrEmpty = string | undefined;
 
+export interface IProjectUrl {
+  _key: string;
+  _type: string;
+  external: boolean;
+  url: string;
+}
+
 export interface IProjectInterface {
   _id: string;
-  id: null | undefined | number;
+  id?: null | number;
   name: string;
   description: string;
   subdescription: string;
-  urlgithub: string;
-  urlwww: TStringOrEmpty;
+  urlgithub?: Array<IProjectUrl>;
+  urlwww?: Array<IProjectUrl>;
   category: string;
   projectimage: string;
+  categoryname: string;
 }
 
 export interface IChangeEvent {
@@ -49,7 +57,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
   const handleFilterChange = (event: IChangeEvent) => {
     setProsjekt(projects);
     if (event.target.value) {
-      setProsjekt(projects.filter((project) => project.category === event.target.value));
+      setProsjekt(projects.filter((project) => project.categoryname === event.target.value));
     }
   };
 

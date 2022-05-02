@@ -6,11 +6,11 @@ import { render, screen } from "@testing-library/react";
 
 import IndexContent from "../../src/components/Index/IndexContent.component";
 
-import post from "../../__mocks__/post.json";
+import pagecontent from "../../__mocks__/pagecontent.json";
 
 describe("IndexContent", () => {
   beforeEach(() => {
-    render(<IndexContent post={post} />);
+    render(<IndexContent pagecontent={pagecontent} />);
   });
 
   it("Hero laster inn og kan vises", () => {
@@ -19,12 +19,12 @@ describe("IndexContent", () => {
   });
 
   it("Om meg laster inn og kan vises", () => {
-    const ommeg = screen.getByRole('heading', {  name: /om meg/i})
+    const ommeg = screen.getByRole("heading", { name: /om meg/i });
     expect(ommeg).toBeInTheDocument();
   });
 
   it("Prosjekter laster inn og kan vises", () => {
-    const prosjekter = screen.getByRole('heading', {  name: /prosjekter/i})
+    const prosjekter = screen.getByRole("heading", { name: /prosjekter/i });
     expect(prosjekter).toBeInTheDocument();
   });
 });

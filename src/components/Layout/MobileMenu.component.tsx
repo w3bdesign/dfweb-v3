@@ -7,10 +7,11 @@ import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
 import FadeLeftToRight from "../Animations/FadeLeftToRight.component";
 import FadeLeftToRightItem from "../Animations/FadeLeftToRightItem.component";
-import Hamburger from "../UI/Hamburger.component";
+import Hamburger from "./Hamburger.component";
 
 /**
- * Renders MobileMenu for responsive menu
+ * Renders the mobile menu.
+ * Animates the X when clicked, and animates the menu items with Framer Motion
  * @function MobileMenu
  * @returns {JSX.Element} - Rendered component
  */
@@ -23,13 +24,10 @@ const MobileMenu = (): JSX.Element => {
   const handleClickOutside = (e: MouseEvent): void => {
     if (node.current?.contains(e.target as Node)) {
       /**
-       * Clicked inside of the menu
+       * Do nothing if we clicked inside the menu (but not the link item)
        */
       return;
     }
-    /**
-     * Clicked outside of the menu
-     */
 
     setisExpanded(false);
   };
@@ -40,7 +38,7 @@ const MobileMenu = (): JSX.Element => {
      * Even if your state updates are batched and multiple updates to the enabled/disabled state are made together
      * each update will rely on the correct previous state so that you always end up with the result you expect.
      */
-    setisExpanded((prevExpanded) => !prevExpanded);
+    setisExpanded((prevExpanded: boolean) => !prevExpanded);
   }, []);
 
   useIsomorphicLayoutEffect(() => {
