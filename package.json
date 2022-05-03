@@ -9,7 +9,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "next lint",
-    "storybook": "start-storybook -p 6006 -s public",
+    "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -s public",
     "format": "prettier --write \"**/*.{ts,tsx,json}\"",
     "cypress:open": "cypress open",
@@ -86,6 +86,7 @@
     "sanity-codegen": "^0.9.8",
     "sitemap": "^7.1.1",
     "start-server-and-test": "^1.14.0",
+    "storybook-addon-next": "^1.6.2",
     "tailwindcss": "^3.0.24",
     "typescript": "^4.6.4"
   }
