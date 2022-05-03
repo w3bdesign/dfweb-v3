@@ -1,6 +1,5 @@
 module.exports = {
   stories: ["../stories/**/*.stories.mdx", "../stories/**/*.stories.@(js|jsx|ts|tsx)"],
-  logLevel: "debug",
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
