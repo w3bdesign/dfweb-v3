@@ -19,6 +19,10 @@ describe("MobileMenu", () => {
     expect(mobilemenu).toBeInTheDocument();
   });
 
+  it("Document eksisterer", () => {
+    expect(document).toBeTruthy();
+  });
+
   it("Hjem linken eksisterer i menyen", () => {
     const hjem = screen.getByText(/hjem/i);
     expect(hjem).toBeInTheDocument();
