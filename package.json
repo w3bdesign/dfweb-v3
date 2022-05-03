@@ -9,7 +9,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "next lint",
-    "storybook": "start-storybook -p 6006 -s ./public",
+    "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "format": "prettier --write \"**/*.{ts,tsx,json}\"",
     "cypress:open": "cypress open",
