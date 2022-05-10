@@ -23,7 +23,7 @@ jobs:
   build:
     working_directory: ~/dfweb
     docker:
-      - image: cimg/node:current-browsers
+      - image: cimg/node:18.0.0-browsers
     steps:
       - checkout
       - restore_cache:
