@@ -24,6 +24,16 @@ describe("KontaktContent", () => {
     expect(kontaktcontent).toBeVisible();
   });
 
+  it("KontaktContent hovedinnhold laster inn", () => {
+    const kontaktmaincontent = screen.getByTestId("kontaktcontent");
+    expect(kontaktmaincontent).toBeInTheDocument();
+  });
+
+  it("KontaktContent hovedinnhold laster inn og kan vises", () => {
+    const kontaktmaincontent = screen.getByTestId("kontaktcontent");
+    expect(kontaktmaincontent).toBeVisible();
+  });
+
   it("Test at vi ikke kan sende et tomt skjema", async () => {
     const sendskjema = screen.getByRole("button", { name: /send skjema/i });
     const firstname = screen.getByRole("textbox", { name: /fullt navn/i });
@@ -52,4 +62,6 @@ describe("KontaktContent", () => {
     await user.type(beskjed, "beskjed");
     expect(beskjed).toHaveValue("beskjed");
   });
+  // https://stackoverflow.com/questions/69706363/why-form-test-fails-while-using-react-hook-form
+  // https://react-hook-form.com/advanced-usage/#TestingForm
 });
