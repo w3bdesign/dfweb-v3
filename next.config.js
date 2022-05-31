@@ -44,17 +44,12 @@ module.exports = {
     domains: ["cdn.sanity.io", "dfweb.no", "www.dfweb.no"],
     minimumCacheTTL: 1200
   },
-  /* Replace React with Preact  - Remove this and uninstall Preact if advanced React features are needed */
-  webpack: (config, { dev, isServer }) => {
-    // Replace React with Preact only in client production build
-    if (!dev && !isServer) {
-      Object.assign(config.resolve.alias, {
-        "react/jsx-runtime.js": "preact/compat/jsx-runtime",
-        react: "preact/compat",
-        "react-dom/test-utils": "preact/test-utils",
-        "react-dom": "preact/compat"
-      });
-    }
-    return config;
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers
+      }
+    ];
   }
 };
