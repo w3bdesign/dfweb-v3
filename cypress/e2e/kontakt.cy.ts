@@ -7,13 +7,6 @@ describe("Kontakt", () => {
     cy.visit("/kontakt");
   });
 
-  it("Har ingen a11y problemer", () => {
-    // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(1500);
-    cy.injectAxe();
-    cy.checkA11y();
-  });
-
   it(`Navn vises`, () => {
     cy.get("#navn").should(beVisible);
   });
