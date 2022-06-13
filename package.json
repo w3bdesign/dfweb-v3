@@ -45,7 +45,7 @@
     "sharp": "^0.30.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.2",
+    "@babel/core": "^7.18.5",
     "@storybook/addon-a11y": "^6.5.8",
     "@storybook/addon-actions": "^6.5.8",
     "@storybook/addon-essentials": "^6.5.8",
