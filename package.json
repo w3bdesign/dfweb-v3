@@ -79,7 +79,7 @@
     "jest-environment-jsdom": "^28.1.1",
     "jsdom": "^19.0.0",
     "postcss": "^8.4.14",
-    "prettier": "^2.7.0",
+    "prettier": "^2.7.1",
     "react-test-renderer": "18.2.0",
     "sanity-codegen": "^0.9.8",
     "sitemap": "^7.1.1",
