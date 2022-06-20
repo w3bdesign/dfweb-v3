@@ -32,22 +32,22 @@ jobs:
           name: Install Dependencies
           command: npm ci
       - run: 
-          name: Chrome setup
+          name: Chrome key start setup
           command: echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list                  
       - run:
-          name: Chrome x
+          name: Chrome key finish setup
           command: wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
       - run:
-          name: Chrome xx
+          name: Chrome package download
           command: sudo apt-get update
       - run: 
           name: Chrome install
           command: sudo apt-get install -y google-chrome-stable
       - run:
-          name: Lighthouse cli
+          name: Lighthouse cli setup
           command: npm install -g @lhci/cli@0.8.x
       - run:
-          name: Lighthouse CI
+          name: Lighthouse CI run
           command: lhci autorun
       - save_cache:
           key: npm-cache-v1-{{ checksum "package-lock.json" }}
