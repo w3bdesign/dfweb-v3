@@ -33,7 +33,7 @@ jobs:
           command: npm ci
       - run: 
           name: Chrome setup
-          command: echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list
+          command: echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list | 
                    wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - | 
                    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - | sudo apt-get update
       - run: 
