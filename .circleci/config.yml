@@ -60,9 +60,10 @@ jobs:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
     parallelism: 6
-  lhci:    
-    runs-on: ubuntu-latest
-    steps:
+  lhci:  
+     docker:
+      - image: ubuntu-latest      
+     steps:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
