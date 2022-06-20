@@ -33,16 +33,16 @@ jobs:
           command: npm ci
       - run: 
           name: Chrome setup
-          command: sudo sh -c "echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list"
+          command: echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list                  
       - run:
           name: Chrome x
           command: wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
       - run:
           name: Chrome xx
-          command: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - | sudo apt-get update
+          command: sudo apt-get update
       - run: 
           name: Chrome install
-          command: sudo apt-get install -y nodejs google-chrome-stable
+          command: sudo apt-get install -y google-chrome-stable
       - run:
           name: Lighthouse cli
           command: npm install -g @lhci/cli@0.8.x
