@@ -33,7 +33,7 @@ jobs:
           command: npm ci
       - run:
           name: Lighthouse cli
-          command: sudo npm install -g @lhci/cli@0.8.x
+          command: npm install -g @lhci/cli@0.8.x
       - run:
           name: Lighthouse CI
           command: lhci autorun
