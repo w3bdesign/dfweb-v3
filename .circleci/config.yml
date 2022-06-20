@@ -31,6 +31,12 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm ci
+      - run: 
+          name: Chrome download
+          command: sudo apt-get update
+      - run: 
+          name: Chrome install
+          command: sudo apt-get install -y nodejs google-chrome-stable
       - run:
           name: Lighthouse cli
           command: npm install -g @lhci/cli@0.8.x
