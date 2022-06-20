@@ -33,6 +33,9 @@ jobs:
           command: npm ci
       - run: 
           name: Chrome download
+          command: echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list
+                   wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          command: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
           command: sudo apt-get update
       - run: 
           name: Chrome install
