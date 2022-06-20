@@ -13,12 +13,6 @@ describe("Test at navigasjon fungerer", () => {
     cy.contains("Hei!");
   });
 
-  it("Test at vi kan navigere til Prosjekter", () => {
-    cy.get(navlink).eq(1).click();
-    cy.url().should("be.equal", "http://localhost:3000/prosjekter");
-    cy.contains("Prosjekter");
-  });
-
   it("Test at vi kan navigere til CV", () => {
     cy.get(navlink).eq(2).click();
     cy.url().should("be.equal", "http://localhost:3000/cv");
