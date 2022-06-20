@@ -33,9 +33,13 @@ jobs:
           command: npm ci
       - run: 
           name: Chrome setup
-          command: echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list | 
-                   wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - | 
-                   curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - | sudo apt-get update
+          command: echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list
+      - run:
+         name: Chrome x
+         command: wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+      - run:
+         name: Chrome xx
+         command: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - | sudo apt-get update
       - run: 
           name: Chrome install
           command: sudo apt-get install -y nodejs google-chrome-stable
