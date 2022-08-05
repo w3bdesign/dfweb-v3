@@ -15,12 +15,12 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.30.3",
+    "@sanity/base": "^2.30.4",
     "@sanity/core": "^2.30.3",
-    "@sanity/default-layout": "^2.30.3",
-    "@sanity/default-login": "^2.30.3",
-    "@sanity/desk-tool": "^2.30.3",
-    "@sanity/vision": "^2.30.3",
+    "@sanity/default-layout": "^2.30.4",
+    "@sanity/default-login": "^2.30.4",
+    "@sanity/desk-tool": "^2.30.4",
+    "@sanity/vision": "^2.30.4",
     "phosphor-react": "^1.4.1",
     "prop-types": "^15.8",
     "react": "^17.0",
