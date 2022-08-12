@@ -2,7 +2,7 @@
 
 describe("Test at navigasjon fungerer", () => {
   const navlink = ".navbar-link";
-  const mainUrl = "http://localhost:3000/";
+  const mainUrl = "http://localhost:3000";
 
   beforeEach(() => {
     cy.visit(mainUrl);
