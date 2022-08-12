@@ -10,7 +10,7 @@ describe("Test at navigasjon fungerer", () => {
 
   it("Test at vi kan navigere til Hjem", () => {
     cy.get(navlink).eq(0).click();
-    cy.url().should("be.equal", `${mainUrl}`);
+    cy.url().should("be.equal", `${mainUrl}/`);
     cy.contains("Hei!");
   });
 
