@@ -5,7 +5,7 @@ describe("Test at navigasjon fungerer", () => {
   const mainUrl = "http://localhost:3000/";
 
   beforeEach(() => {
-    cy.visit("/");
+    cy.visit(mainUrl);
   });
 
   it("Test at vi kan navigere til Hjem", () => {
