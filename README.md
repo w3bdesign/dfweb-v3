@@ -1,7 +1,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/129bf1165c3a455fadb43ddf5f67e1bd)](https://www.codacy.com/gh/w3bdesign/dfweb-v3/dashboard?utm_source=github.com&utm_medium=referral&utm_content=w3bdesign/dfweb-v3&utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/w3bdesign/dfweb-v3/branch/master/graph/badge.svg?token=VML3KNGO0N)](https://codecov.io/gh/w3bdesign/dfweb-v3)
 ![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/dfweb.no)
-[![Maintainability](https://api.codeclimate.com/v1/badges/c24592917caaf43bec41/maintainability)](https://codeclimate.com/github/w3bdesign/dfweb/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/33332dce96e1dedcf0b7/maintainability)](https://codeclimate.com/github/w3bdesign/dfweb-v3/maintainability)
 [![DeepSource](https://deepsource.io/gh/w3bdesign/dfweb-v3.svg/?label=active+issues&token=xU1k2KJL7peEGSzJkuYYEuw5)](https://deepsource.io/gh/w3bdesign/dfweb-v3/?ref=repository-badge)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://github.com/w3bdesign/dfweb-v3)
 
