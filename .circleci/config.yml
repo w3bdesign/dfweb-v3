@@ -45,7 +45,7 @@ jobs:
           command: sudo apt-get install -y google-chrome-stable
       - run:
           name: Lighthouse cli setup
-          command: npm install && npm install -g @lhci/cli@0.9.x
+          command: npm ci && npm install -g @lhci/cli@0.9.x
       - run:
           name: Lighthouse CI run
           command: lhci autorun
