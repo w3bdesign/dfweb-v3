@@ -16,7 +16,7 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
+            - v1-dependencies-cache
       - run: yarn install
         # 👇 Runs the Chromatic CLI
       - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
@@ -43,12 +43,6 @@ jobs:
       - run: 
           name: Chrome install
           command: sudo apt-get install -y google-chrome-stable
-      - run:
-          name: Lighthouse cli setup
-          command: npm install
-      - run:
-          name: Lighthouse CI run
-          command: lhci autorun
       - save_cache:
           key: npm-cache-v1-{{ checksum "package-lock.json" }}
           paths:
@@ -59,8 +53,7 @@ jobs:
       - run:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
-    parallelism: 6
-  
+    parallelism: 6  
 workflows:
   # 👇 Adds Chromatic to the workflow
   chromatic-deploy:
