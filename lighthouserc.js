@@ -5,7 +5,7 @@ module.exports = {
       startServerCommand: "npm run build && npm run start"
     },
     upload: {
-      target: "temporary-storage"
+      target: "temporary-ci-storage"
     }
   }
 };

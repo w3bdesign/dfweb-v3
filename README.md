@@ -60,7 +60,6 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 -   E2E testing with Cypress integrated with CircleCI
 -   Unit testing with Jest and React Testing Library integrated with CircleCI
 -   Test coverage setup with Codecov
--   Automatic scan with Google Lighthouse on each deployment
 
 > ### Google Lighthouse score
 >
