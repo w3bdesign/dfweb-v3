@@ -41,8 +41,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "react-pdf": "^5.7.2",
-    "react-portable-text": "^0.5.1",
-    "sharp": "^0.31.0"
+    "react-portable-text": "^0.5.1"   
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
