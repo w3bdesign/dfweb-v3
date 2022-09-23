@@ -53,7 +53,7 @@ jobs:
       - run:
           name: Codecov
           # command: bash <(curl -s https://codecov.io/bash)
-          command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov -t ${CODECOV_TOKEN}
+          command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov
 
     parallelism: 6  
 workflows:
