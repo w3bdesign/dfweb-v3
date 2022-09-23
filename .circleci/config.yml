@@ -54,7 +54,6 @@ jobs:
           name: Codecov
           # command: bash <(curl -s https://codecov.io/bash)
           command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov
-
     parallelism: 6  
 workflows:
   # 👇 Adds Chromatic to the workflow
