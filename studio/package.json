@@ -25,7 +25,7 @@
     "prop-types": "^15.8",
     "react": "17.0",
     "react-dom": "17.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
