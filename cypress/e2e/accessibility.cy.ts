@@ -61,3 +61,5 @@ describe("Accessibility testing av forside", () => {
     cy.checkA11y(undefined, undefined, terminalLog);
   });
 });
+
+export {};
