@@ -48,7 +48,7 @@ function terminalLog(violations: Result[]) {
     nodes: nodes.length
   }));
   cy.task("table", violationData);
-  
+  console.table(violationData);
 }
 
 describe("Accessibility testing av forside", () => {
