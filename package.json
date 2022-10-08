@@ -67,7 +67,12 @@
     "chromatic": "^6.10.1",
     "cross-env": "^7.0.3",
     "cypress": "^10.9.0",
+<<<<<<< Updated upstream
     "eslint": "^8.24.0",
+=======
+    "cypress-axe": "^1.0.0",
+    "eslint": "^8.25.0",
+>>>>>>> Stashed changes
     "eslint-config-next": "^12.3.1",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-jest-dom": "^4.0.2",
