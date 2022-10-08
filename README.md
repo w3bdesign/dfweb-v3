@@ -51,6 +51,8 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 ### Accessibility
 
 -   WCAG accessibility tested
+-   Accessibility testing with Cypress Axe
+-   Accessibility testing with Axe in Storybook for each component
 
 ### Devops / Code quality
 
