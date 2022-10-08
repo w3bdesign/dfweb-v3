@@ -51,9 +51,12 @@ function terminalLog(violations: Result[]) {
   console.table(violationData);
 }
 
-describe("can be used", () => {
-  it("should be accessible when starting", () => {
+describe("Accessibility testing av forside", () => {
+  it("Skal ikke ha noen a11y feilmeldinger", () => {
     cy.visit("/");
+    // Vent på at animasjonene skal bli ferdige før vi tester
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(5000);
     cy.injectAxe();
     cy.checkA11y(undefined, undefined, terminalLog);
   });
