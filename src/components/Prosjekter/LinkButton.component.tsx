@@ -5,7 +5,6 @@ import Button from "../UI/Button.component";
 interface ILinkButton {
   url: string;
   text: string;
-  name: string;
 }
 
 const LinkButton = ({ url, text }: ILinkButton): JSX.Element => (
