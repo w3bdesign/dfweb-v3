@@ -90,7 +90,7 @@ const IndexContent = ({ pagecontent }: TPageContent): JSX.Element => (
                         ),
                         link: ({ children, href }: ISerializerLink) => (
                           <Link href={href} passHref>
-                            <a className="underline">{children}</a>
+                            <span className="underline">{children}</span>
                           </Link>
                         )
                       }}

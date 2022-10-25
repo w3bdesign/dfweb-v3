@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Button from "../UI/Button.component";
 
 interface ILinkButton {
@@ -7,9 +9,9 @@ interface ILinkButton {
 }
 
 const LinkButton = ({ url, text, name }: ILinkButton): JSX.Element => (
-  <a rel="noopener noreferrer" target="_blank" aria-label={name} href={url}>
+  <Link href={url}>
     <Button text={text} />
-  </a>
+  </Link>
 );
 
 export default LinkButton;

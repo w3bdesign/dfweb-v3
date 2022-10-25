@@ -88,9 +88,9 @@ const MobileMenu = (): JSX.Element => {
                     </a>
                   ) : (
                     <Link data-testid={`mobil-${link.text}`} href={link.url} passHref>
-                      <a className="inline-block m-4 text-xl text-white hover:underline">
+                      <span className="inline-block m-4 text-xl text-white hover:underline">
                         {link.text}
-                      </a>
+                      </span>
                     </Link>
                   )}
                 </li>
