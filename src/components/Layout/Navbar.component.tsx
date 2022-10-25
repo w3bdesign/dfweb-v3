@@ -18,7 +18,10 @@ const Navbar = (): JSX.Element => {
   const router = useRouter();
 
   const activeLink = (url: string, pathname: string) => {
-    if (pathname === url) return "navbar-link-active";
+    if (pathname === url) {
+      return "navbar-link-active";
+    }
+    return "";
   };
 
   return (
