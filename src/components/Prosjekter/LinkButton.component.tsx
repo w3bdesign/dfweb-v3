@@ -8,7 +8,7 @@ interface ILinkButton {
   name: string;
 }
 
-const LinkButton = ({ url, text, name }: ILinkButton): JSX.Element => (
+const LinkButton = ({ url, text }: ILinkButton): JSX.Element => (
   <Link href={url}>
     <Button text={text} />
   </Link>
