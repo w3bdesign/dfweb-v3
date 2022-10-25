@@ -9,7 +9,7 @@ import LinkButton from "../../src/components/Prosjekter/LinkButton.component";
 describe("LinkButton", () => {
   beforeEach(() => {
     render(
-      <LinkButton urlgithub="urlgithub" name="name" text="Github" url="https://www.github.com" />
+      <LinkButton urlgithub="urlgithub" text="Github" url="https://www.github.com" />
     );
   });
 
