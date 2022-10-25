@@ -17,8 +17,9 @@ import logo from "../../../public/logo.svg";
 const Navbar = (): JSX.Element => {
   const router = useRouter();
 
-  const activeLink = (url: string, pathname: string) =>
-    pathname === url ? "navbar-link-active" : "";
+  const activeLink = (url: string, pathname: string) => {
+    if (pathname === url) return "navbar-link-active";
+  };
 
   return (
     <header aria-label="Header for logo og navigasjon">
