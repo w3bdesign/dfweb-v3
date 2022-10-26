@@ -51,7 +51,7 @@ jobs:
           name: Run Jest Tests
           command: npm test
       - store_artifacts:
-          path: /home/circleci/logs
+          path: /root/.npm/_logs/
           destination: debug-log
       - run:
           name: Codecov
