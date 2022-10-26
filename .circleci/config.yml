@@ -11,6 +11,9 @@ jobs:
     docker:
       - image: cimg/node:19.0.0
     working_directory: ~/repo
+      - store_artifacts:
+      path: jekyll/_site/docs/
+      destination: circleci-docs
     steps:
       - checkout
       - restore_cache:
@@ -52,7 +55,7 @@ jobs:
           command: npm test
       - run:
           name: Codecov
-          command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov
+          command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov      
     parallelism: 6  
 workflows:
   # 👇 Adds Chromatic to the workflow
@@ -65,9 +68,6 @@ workflows:
       - cypress/run:
           name: Run Cypress E2E tests
           start: npm run dev
-      - store_artifacts:
-          path: jekyll/_site/docs/
-          destination: circleci-docs
           # there are no jobs to follow this one
           # so no need to save the workspace files (saves time)
           no-workspace: false
