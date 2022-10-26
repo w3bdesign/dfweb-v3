@@ -53,7 +53,6 @@ jobs:
       - run:
           name: Codecov
           command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov
-    parallelism: 6  
 workflows:
   # 👇 Adds Chromatic to the workflow
   chromatic-deploy:
@@ -68,5 +67,4 @@ workflows:
           wait-on: 'http://localhost:3000'
           # there are no jobs to follow this one
           # so no need to save the workspace files (saves time)
-          no-workspace: false
-          parallelism: 8
+          no-workspace: false  
