@@ -21,7 +21,7 @@ jobs:
         # 👇 Runs the Chromatic CLI
       - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
   build:
-    working_directory: ~/dfweb
+    working_directory: /dfweb
     docker:
       - image: cimg/node:19.0.0-browsers
     steps:
@@ -51,8 +51,8 @@ jobs:
           name: Run Jest Tests
           command: npm test
       - store_artifacts:
-          path: jekyll/_site/docs/
-          destination: circleci-docs
+          path: /dfweb/logs
+          destination: debug-log
       - run:
           name: Codecov
           command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov      
