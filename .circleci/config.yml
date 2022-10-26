@@ -21,7 +21,7 @@ jobs:
         # 👇 Runs the Chromatic CLI
       - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
   build:
-    working_directory: /home/circleci/
+    working_directory: /home/circleci/dfweb
     docker:
       - image: cimg/node:19.0.0-browsers
     steps:
