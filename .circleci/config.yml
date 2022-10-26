@@ -50,6 +50,9 @@ jobs:
       - run:
           name: Run Jest Tests
           command: npm test
+      - store_artifacts:
+          path: jekyll/_site/docs/
+          destination: circleci-docs
       - run:
           name: Codecov
           command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov      
