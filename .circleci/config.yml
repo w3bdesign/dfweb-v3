@@ -10,10 +10,7 @@ jobs:
   chromatic-deployment:
     docker:
       - image: cimg/node:19.0.0
-    working_directory: ~/repo
-      - store_artifacts:
-      path: jekyll/_site/docs/
-      destination: circleci-docs
+    working_directory: ~/dfweb
     steps:
       - checkout
       - restore_cache:
@@ -30,7 +27,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          key: npm-cache-v2-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
           command: npm ci
