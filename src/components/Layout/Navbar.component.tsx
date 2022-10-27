@@ -21,7 +21,7 @@ const Navbar = (): JSX.Element => {
     if (pathname === url) {
       return "navbar-link-active";
     }
-    return undefined;
+    return "";
   };
 
   return (
