@@ -10,7 +10,7 @@ jobs:
   chromatic-deployment:
     docker:
       - image: cimg/node:19.0.0
-    working_directory: ~/repo
+    working_directory: ~/dfweb
     steps:
       - checkout
       - restore_cache:
@@ -21,13 +21,13 @@ jobs:
         # 👇 Runs the Chromatic CLI
       - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
   build:
-    working_directory: ~/dfweb
+    working_directory: /home/circleci/dfweb
     docker:
       - image: cimg/node:19.0.0-browsers
     steps:
       - checkout
       - restore_cache:
-          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          key: npm-cache-v2-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
           command: npm ci
@@ -47,12 +47,14 @@ jobs:
           key: npm-cache-v1-{{ checksum "package-lock.json" }}
           paths:
             - /home/circleci/.npm
+      - store_artifacts:
+          path: /root/.npm/_logs
       - run:
           name: Run Jest Tests
           command: npm test
       - run:
           name: Codecov
-          command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov
+          command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov      
     parallelism: 6  
 workflows:
   # 👇 Adds Chromatic to the workflow
@@ -65,7 +67,7 @@ workflows:
       - cypress/run:
           name: Run Cypress E2E tests
           start: npm run dev
-          wait-on: 'http://localhost:3000'
+          executor: cypress/base-14
           # there are no jobs to follow this one
           # so no need to save the workspace files (saves time)
           no-workspace: false
