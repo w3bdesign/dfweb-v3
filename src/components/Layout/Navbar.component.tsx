@@ -32,7 +32,7 @@ const Navbar = (): JSX.Element => {
           data-cy="main-navigation"
           className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap">
           <div className="flex w-full text-white md:w-1/2 md:justify-start">
-            <div style={{ position: "relative", width: "150px", height: "50px" }}>
+            <div className="relative w-[150px] h-[50px]">
               <Image alt="DFWeb logo" src={logo} fill priority />
             </div>
           </div>
