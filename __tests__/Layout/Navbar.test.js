@@ -14,8 +14,17 @@ describe("Navbar", () => {
       query: { pathName: "/" }
     }));
 
+    const activeLink = jest.fn((link) => {
+      return "navbar-link-active";
+    });
+
     render(<Navbar />);
+
+    activeLink("test");
+
     const navbar = screen.getByRole("navigation");
     expect(navbar).toBeInTheDocument();
+
+    expect(activeLink.mock.calls.length).toBe(1);
   });
 });
