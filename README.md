@@ -5,7 +5,7 @@
 [![DeepSource](https://deepsource.io/gh/w3bdesign/dfweb-v3.svg/?label=active+issues&token=xU1k2KJL7peEGSzJkuYYEuw5)](https://deepsource.io/gh/w3bdesign/dfweb-v3/?ref=repository-badge)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_dfweb-v3&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3bdesign_dfweb-v3)
 
-# Dfweb Portfolio Version 3
+# Dfweb.no Portfolio Version 3
 
 Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 
