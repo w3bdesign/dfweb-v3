@@ -5,6 +5,11 @@ orbs:
   # the strict explicit version "cypress-io/cypress@1.x.y"
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@2.2.0
+executors:
+  with-chrome-and-firefox:
+    docker:
+      - image: "cypress/browsers:node16.14.2-slim-chrome100-ff99-edge"
+    resource_class: large
 jobs:
     # 👇 Adds Chromatic as a job
   chromatic-deployment:
@@ -67,6 +72,7 @@ workflows:
       - cypress/run:
           name: Run Cypress E2E tests
           start: npm run dev
+          executor: with-chrome-and-firefox
           # executor: cypress/base:16.13.0
           # there are no jobs to follow this one
           # so no need to save the workspace files (saves time)
