@@ -67,7 +67,7 @@ workflows:
       - cypress/run:
           name: Run Cypress E2E tests
           start: npm run dev
-          executor: cypress/base:16.18.0
+          executor: cypress/base:16.13.0
           # there are no jobs to follow this one
           # so no need to save the workspace files (saves time)
           no-workspace: false
