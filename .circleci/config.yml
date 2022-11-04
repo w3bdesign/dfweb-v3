@@ -4,12 +4,12 @@ orbs:
   # version "1.x.y" of the orb. We recommend you then use
   # the strict explicit version "cypress-io/cypress@1.x.y"
   # to lock the version and prevent unexpected CI changes
-  cypress: cypress-io/cypress@2.1.0
+  cypress: cypress-io/cypress@2.2.0
 jobs:
     # 👇 Adds Chromatic as a job
   chromatic-deployment:
     docker:
-      - image: cimg/node:19.0.0
+      - image: cimg/node:18.0.0
     working_directory: ~/dfweb
     steps:
       - checkout
@@ -23,7 +23,7 @@ jobs:
   build:
     working_directory: /home/circleci/dfweb
     docker:
-      - image: cimg/node:19.0.0-browsers
+      - image: cimg/node:18.0.0-browsers
     steps:
       - checkout
       - restore_cache:
