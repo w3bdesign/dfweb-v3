@@ -11,7 +11,7 @@ executors:
       - image: "cypress/browsers:node16.14.2-slim-chrome100-ff99-edge"
     resource_class: large
 jobs:
-    # 👇 Adds Chromatic as a job
+  # 👇 Adds Chromatic as a job
   chromatic-deployment:
     docker:
       - image: cimg/node:18.12.0
@@ -36,16 +36,16 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm ci
-      - run: 
+      - run:
           name: Chrome key start setup
-          command: echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list                  
+          command: echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list
       - run:
           name: Chrome key finish setup
           command: wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
       - run:
           name: Chrome package download
           command: sudo apt-get update
-      - run: 
+      - run:
           name: Chrome install
           command: sudo apt-get install -y google-chrome-stable
       - save_cache:
@@ -59,8 +59,8 @@ jobs:
           command: npm test
       - run:
           name: Codecov
-          command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov      
-    parallelism: 6  
+          command: curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov
+    parallelism: 6
 workflows:
   # 👇 Adds Chromatic to the workflow
   chromatic-deploy:
@@ -73,8 +73,7 @@ workflows:
           name: Run Cypress E2E tests
           start: npm run dev
           executor: with-chrome-and-firefox
-          # executor: cypress/base:16.13.0
           # there are no jobs to follow this one
           # so no need to save the workspace files (saves time)
-          no-workspace: false
+          no-workspace: true
           parallelism: 8
