@@ -31,7 +31,7 @@
     ]
   },
   "dependencies": {
-    "@emailjs/browser": "^3.9.0",
+    "@emailjs/browser": "^3.9.1",
     "@sanity/image-url": "^1.0.1",
     "axe-core": "^4.5.1",
     "framer-motion": "^7.6.4",
