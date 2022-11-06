@@ -20,7 +20,7 @@ describe("Kontakt", () => {
   });
 
   it("Kontakt skal ikke ha noen a11y feilmeldinger", () => {
-    checkAccessibility();
+    checkAccessibility(5000);
   });
 });
 
