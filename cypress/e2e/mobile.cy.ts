@@ -1,5 +1,9 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 /// <reference types="cypress"/>
+/// <reference types="cypress-axe"/>
+/// <reference types="axe-core"/>
+
+import { checkAccessibility } from "../support/functions";
 
 describe("Mobilmeny", () => {
   const hamburger = "[data-cy=hamburger]";
@@ -25,6 +29,10 @@ describe("Mobilmeny", () => {
 
     it("Hamburger er synlig", () => {
       cy.get(hamburger).should("be.visible");
+    });
+
+    it("Mobilvisning skal ikke ha noen a11y feilmeldinger", () => {
+      checkAccessibility(5000);
     });
 
     it("Mobilmeny er synlig etter at vi klikker på hamburger", () => {
