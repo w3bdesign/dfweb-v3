@@ -1,5 +1,9 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 /// <reference types="cypress"/>
+/// <reference types="cypress-axe"/>
+/// <reference types="axe-core"/>
+
+import { terminalLog } from "../support/functions";
 
 describe("Mobilmeny", () => {
   const hamburger = "[data-cy=hamburger]";
@@ -27,8 +31,15 @@ describe("Mobilmeny", () => {
       cy.get(hamburger).should("be.visible");
     });
 
+    it("Mobilvisning skal ikke ha noen a11y feilmeldinger", () => {
+      cy.injectAxe();
+      cy.checkA11y(undefined, undefined, terminalLog);
+    });
+
     it("Mobilmeny er synlig etter at vi klikker på hamburger", () => {
       cy.get(hamburger).click();
+      cy.injectAxe();
+      cy.checkA11y(undefined, undefined, terminalLog);
       cy.get(mobileMenuItem).should("be.visible");
     });
   });

@@ -1,4 +1,8 @@
 /// <reference types="cypress"/>
+/// <reference types="cypress-axe"/>
+/// <reference types="axe-core"/>
+
+import { terminalLog } from "../support/functions";
 
 describe("Kontakt", () => {
   const beVisible = "be.visible";
@@ -13,6 +17,11 @@ describe("Kontakt", () => {
 
   it(`Vi kan skrive navn`, () => {
     cy.get("#navn").type("Fullt navn").should("have.value", "Fullt navn");
+  });
+
+  it("Kontakt skal ikke ha noen a11y feilmeldinger", () => {
+    cy.injectAxe();
+    cy.checkA11y(undefined, undefined, terminalLog);
   });
 });
 

@@ -1,4 +1,8 @@
 /// <reference types="cypress"/>
+/// <reference types="cypress-axe"/>
+/// <reference types="axe-core"/>
+
+import { terminalLog } from "../support/functions";
 
 describe("Test at prosjekter vises og at filter fungerer", () => {
   beforeEach(() => {
@@ -8,6 +12,11 @@ describe("Test at prosjekter vises og at filter fungerer", () => {
   it("Velg PHP og se at vi bare får ett resultat", () => {
     cy.get('[data-cy="kategorifilter"]').select("PHP");
     cy.get('[data-cy="prosjektgrid"]').find('[data-cy="projectdiv"]').should("have.length", 1);
+  });
+
+  it("Prosjekter skal ikke ha noen a11y feilmeldinger", () => {
+    cy.injectAxe();
+    cy.checkA11y(undefined, undefined, terminalLog);
   });
 
   context("Test filter på mobil", () => {
