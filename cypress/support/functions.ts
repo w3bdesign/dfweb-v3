@@ -1,5 +1,13 @@
 import { Result } from "axe-core";
 
+export function checkAccessibility(delay?: number) {
+  if (delay) {
+    cy.wait(delay);
+  }
+  cy.injectAxe();
+  cy.checkA11y(undefined, undefined, terminalLog);
+}
+
 export function terminalLog(violations: Result[]) {
   cy.task(
     "log",

@@ -2,7 +2,7 @@
 /// <reference types="cypress-axe"/>
 /// <reference types="axe-core"/>
 
-import { terminalLog } from "../support/functions";
+import { checkAccessibility } from "../support/functions";
 
 describe("Kontakt", () => {
   const beVisible = "be.visible";
@@ -20,8 +20,7 @@ describe("Kontakt", () => {
   });
 
   it("Kontakt skal ikke ha noen a11y feilmeldinger", () => {
-    cy.injectAxe();
-    cy.checkA11y(undefined, undefined, terminalLog);
+    checkAccessibility();
   });
 });
 

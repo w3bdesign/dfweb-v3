@@ -2,7 +2,7 @@
 /// <reference types="cypress-axe"/>
 /// <reference types="axe-core"/>
 
-import { terminalLog } from "../support/functions";
+import { checkAccessibility } from "../support/functions";
 
 describe("Test at prosjekter vises og at filter fungerer", () => {
   beforeEach(() => {
@@ -15,8 +15,7 @@ describe("Test at prosjekter vises og at filter fungerer", () => {
   });
 
   it("Prosjekter skal ikke ha noen a11y feilmeldinger", () => {
-    cy.injectAxe();
-    cy.checkA11y(undefined, undefined, terminalLog);
+    checkAccessibility();
   });
 
   context("Test filter på mobil", () => {

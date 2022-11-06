@@ -3,7 +3,7 @@
 /// <reference types="cypress-axe"/>
 /// <reference types="axe-core"/>
 
-import { terminalLog } from "../support/functions";
+import { checkAccessibility } from "../support/functions";
 
 describe("Mobilmeny", () => {
   const hamburger = "[data-cy=hamburger]";
@@ -32,17 +32,11 @@ describe("Mobilmeny", () => {
     });
 
     it("Mobilvisning skal ikke ha noen a11y feilmeldinger", () => {
-      cy.wait(5000);
-      cy.injectAxe();
-      cy.checkA11y(undefined, undefined, terminalLog);
+      checkAccessibility(5000);
     });
 
     it("Mobilmeny er synlig etter at vi klikker på hamburger", () => {
       cy.get(hamburger).click();
-      // eslint-disable-next-line cypress/no-unnecessary-waiting
-      //cy.wait(5000);
-     // cy.injectAxe();
-     // cy.checkA11y(undefined, undefined, terminalLog);
       cy.get(mobileMenuItem).should("be.visible");
     });
   });
