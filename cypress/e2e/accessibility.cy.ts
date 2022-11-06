@@ -11,7 +11,8 @@ describe("Accessibility testing av forside", () => {
     // eslint-disable-next-line cypress/no-unnecessary-waiting
     cy.wait(5000);
     cy.injectAxe();
-    cy.checkA11y(undefined, undefined, terminalLog);
+    // cy.checkA11y(undefined, undefined, terminalLog);
+    cy.checkA11y(null, null, terminalLog);
   });
 });
 
