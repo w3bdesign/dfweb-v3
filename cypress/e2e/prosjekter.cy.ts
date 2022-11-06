@@ -15,7 +15,7 @@ describe("Test at prosjekter vises og at filter fungerer", () => {
   });
 
   it("Prosjekter skal ikke ha noen a11y feilmeldinger", () => {
-    checkAccessibility();
+    checkAccessibility(5000);
   });
 
   context("Test filter på mobil", () => {
