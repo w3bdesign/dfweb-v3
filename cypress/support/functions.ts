@@ -7,6 +7,7 @@ export function terminalLog(violations: Result[]) {
       violations.length === 1 ? "was" : "were"
     } detected`
   );
+  
   const violationData = violations.map(({ id, impact, description, nodes }) => ({
     id,
     impact,

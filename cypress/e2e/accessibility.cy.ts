@@ -8,7 +8,7 @@ interface CheckResult {
   id: string;
   impact: string;
   message: string;
-  data: any;
+  //data: any;
 }
 
 interface NodeResult {
