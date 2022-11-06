@@ -1,4 +1,4 @@
-import { Result } from "./types";
+import { Result } from "axe-core";
 
 export function terminalLog(violations: Result[]) {
   cy.task(
@@ -7,7 +7,7 @@ export function terminalLog(violations: Result[]) {
       violations.length === 1 ? "was" : "were"
     } detected`
   );
-  
+
   const violationData = violations.map(({ id, impact, description, nodes }) => ({
     id,
     impact,
