@@ -1,8 +1,12 @@
 import { Document, Page, pdfjs } from "react-pdf";
+//import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5.js';
 
 import Link from "next/link";
 
 import PageHeader from "../UI/PageHeader.component";
+
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/TextLayer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -26,8 +30,7 @@ const CVContent = (): JSX.Element => (
                   className="hidden mt-4 text-center xl:block lg:block"
                   error="En feil har oppstått under lasting av PDF"
                   loading="Laster inn PDF ..."
-                  file="./CV-dfweb.pdf"
-                >
+                  file="./CV-dfweb.pdf">
                   <Page
                     renderMode="svg"
                     className="flex content-center justify-center -mt-12"
