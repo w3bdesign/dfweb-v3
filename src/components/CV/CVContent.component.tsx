@@ -1,4 +1,5 @@
-import { Document, Page, pdfjs } from "react-pdf";
+//import { Document, Page, pdfjs } from "react-pdf";
+import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5.js';
 
 import Link from "next/link";
 
@@ -7,7 +8,7 @@ import PageHeader from "../UI/PageHeader.component";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+//pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 /**
  * Renders CV content
