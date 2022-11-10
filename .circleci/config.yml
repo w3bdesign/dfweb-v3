@@ -14,7 +14,7 @@ jobs:
   # 👇 Adds Chromatic as a job
   chromatic-deployment:
     docker:
-      - image: cimg/node:18.12.0
+      - image: cimg/node:18.12.1
     working_directory: ~/dfweb
     steps:
       - checkout
@@ -28,7 +28,7 @@ jobs:
   build:
     working_directory: /home/circleci/dfweb
     docker:
-      - image: cimg/node:18.12.0-browsers
+      - image: cimg/node:18.12.1-browsers
     steps:
       - checkout
       - restore_cache:
