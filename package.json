@@ -89,6 +89,6 @@
     "typescript": "^4.8.4"
   },
   "resolutions": {
-    "loader-utils": "^3.2.1"
+    "loader-utils": "^2.0.0"
   }
 }
