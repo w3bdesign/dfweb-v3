@@ -42,7 +42,6 @@
     "react-icons": "^4.6.0",
     "react-pdf": "^6.0.3",
     "react-portable-text": "^0.5.1"
-    
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
