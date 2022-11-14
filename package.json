@@ -67,7 +67,7 @@
     "babel-loader": "^9.1.0",
     "chromatic": "^6.11.4",
     "cross-env": "^7.0.3",
-    "cypress": "^10.11.0",
+    "cypress": "10.11.0",
     "cypress-axe": "^1.0.0",
     "eslint": "^8.27.0",
     "eslint-config-next": "^13.0.3",
@@ -87,8 +87,5 @@
     "start-server-and-test": "^1.14.0",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.8.4"
-  },
-  "resolutions": {
-    "loader-utils": "2.0.4"
   }
 }
