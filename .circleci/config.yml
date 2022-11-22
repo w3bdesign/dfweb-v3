@@ -67,8 +67,8 @@ workflows:
     jobs:
       - build:
           name: Build Next.js project
-     # - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
-     #    name: Check build with Chromatic
+      - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
+          name: Check build with Chromatic
       - cypress/run:
           name: Run Cypress E2E tests
           start: npm run dev
