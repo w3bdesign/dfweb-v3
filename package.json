@@ -89,5 +89,8 @@
   },
   "overrides": {
     "enhanced-resolve": "5.10.0"
+  },
+  "resolutions": {
+    "enhanced-resolve": "5.10.0"
   }
 }
