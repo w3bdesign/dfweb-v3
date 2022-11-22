@@ -14,8 +14,8 @@ jobs:
   # 👇 Adds Chromatic as a job
   chromatic-deployment:
     docker:
-      - image: cimg/node:18.12.1
-    working_directory: ~/dfweb
+      - image: cimg/node:16.14.2
+    working_directory: ~/chromatic
     steps:
       - checkout
       - restore_cache:
