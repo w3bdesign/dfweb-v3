@@ -5,10 +5,10 @@ import type { NextPage } from "next";
 import Layout from "../components/Layout/Layout.component";
 import ErrorContent from "../components/Error/ErrorContent.component";
 
-const Custom404: NextPage = () => (
-  <Layout title="Side ikke funnet - 404">
-    <ErrorContent text="Side ikke funnet" />
+const Custom500: NextPage = () => (
+  <Layout title="Feil - 500">
+    <ErrorContent text="Feil - 500" />
   </Layout>
 );
 
-export default Custom404;
+export default Custom500;

@@ -13,7 +13,7 @@ const headers = [
   },
   {
     key: "Server",
-    value: "Apache" // fake server value
+    value: "Apache 2.0" // fake server value
   },
   {
     key: "X-Content-Type-Options",

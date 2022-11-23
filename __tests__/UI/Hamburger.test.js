@@ -11,6 +11,7 @@ import Hamburger from "../../src/components/Layout/Hamburger.component";
 describe("Hamburger", () => {
   const onClick = jest.fn();
   const animatetoX = true;
+  const user = userEvent.setup();
 
   beforeEach(() => {
     render(<Hamburger onClick={onClick} animatetoX={animatetoX} />);
@@ -25,7 +26,7 @@ describe("Hamburger", () => {
     const hamburger = screen.getByRole("button", {
       name: /hamburger/i
     });
-    await userEvent.click(hamburger);
+    await user.click(hamburger);
     expect(hamburger).toHaveAttribute("aria-expanded", "true");
   });
 });

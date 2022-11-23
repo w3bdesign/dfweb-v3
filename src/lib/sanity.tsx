@@ -1,6 +1,6 @@
 import createImageUrlBuilder from "@sanity/image-url";
 
-import { createPreviewSubscriptionHook, createCurrentUserHook } from "next-sanity";
+import { definePreview } from "next-sanity/preview";
 
 import { config } from "./sanity.config";
 
@@ -13,7 +13,4 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 export const urlFor = (source: SanityImageSource) => createImageUrlBuilder(config).image(source);
 
 // Set up the live preview subscription hook
-export const usePreviewSubscription = createPreviewSubscriptionHook(config);
-
-// Helper function for using the current logged in user account
-export const useCurrentUser = createCurrentUserHook(config);
+export const usePreviewSubscription = definePreview(config);

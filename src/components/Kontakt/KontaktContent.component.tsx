@@ -24,6 +24,7 @@ const KontaktContent = (): JSX.Element => {
     const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY || "changeme";
 
     event.preventDefault();
+
     if (!formRef.current) return;
 
     emailjs.init(EMAIL_API_KEY);
@@ -38,7 +39,7 @@ const KontaktContent = (): JSX.Element => {
   };
 
   return (
-    <main id="maincontent">
+    <main data-testid="kontaktcontent" id="maincontent">
       <div className="mt-32 bg-graybg">
         <PageHeader>Kontakt</PageHeader>
         <div className="px-4 p lg:px-0 xl:px-0 md:px-0">
@@ -106,7 +107,9 @@ const KontaktContent = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div id="kontakt-filler" className="mt-0 lg:mt-40" />
+        <div id="kontakt-filler" className="mt-0 lg:mt-40">
+          &nbsp;
+        </div>
       </div>
     </main>
   );

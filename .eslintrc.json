@@ -3,8 +3,13 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "extends": ["next/core-web-vitals", "plugin:cypress/recommended", "plugin:sonarjs/recommended"],
-  "plugins": ["react", "cypress", "sonarjs", "testing-library", "jest-dom"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:cypress/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["react", "cypress", "sonarjs", "testing-library", "jest-dom", "react-hooks"],
   "globals": {
     "cy": true
   },

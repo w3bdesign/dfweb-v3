@@ -1,6 +1,6 @@
 import { ArrowSquareOut } from "phosphor-react";
 
-export default {
+const link = {
   name: "link",
   title: "Link",
   type: "object",
@@ -10,35 +10,37 @@ export default {
       name: "title",
       title: "Title",
       description: "Title",
-      type: "string",
+      type: "string"
     },
     {
       name: "url",
       title: "Url",
       description: "URL",
       type: "string",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required()
     },
     {
       name: "external",
       title: "External",
       description: "Is link external?",
       type: "boolean",
-      validation: (Rule) => Rule.required(),
-    },
+      validation: (Rule) => Rule.required()
+    }
   ],
   initialValue: {
-    external: false,
+    external: false
   },
   preview: {
     select: {
       title: "title",
-      url: "url",
+      url: "url"
     },
     prepare({ title, url }) {
       return {
-        title: title ?? url,
+        title: title ?? url
       };
-    },
-  },
+    }
+  }
 };
+
+export default link;

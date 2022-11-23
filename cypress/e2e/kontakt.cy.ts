@@ -1,4 +1,8 @@
 /// <reference types="cypress"/>
+/// <reference types="cypress-axe"/>
+/// <reference types="axe-core"/>
+
+import { checkAccessibility } from "../support/functions";
 
 describe("Kontakt", () => {
   const beVisible = "be.visible";
@@ -7,19 +11,16 @@ describe("Kontakt", () => {
     cy.visit("/kontakt");
   });
 
-  it("Har ingen a11y problemer", () => {
-    // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(1500);
-    cy.injectAxe();
-    cy.checkA11y();
-  });
-
   it(`Navn vises`, () => {
     cy.get("#navn").should(beVisible);
   });
 
   it(`Vi kan skrive navn`, () => {
     cy.get("#navn").type("Fullt navn").should("have.value", "Fullt navn");
+  });
+
+  it("Kontakt skal ikke ha noen a11y feilmeldinger", () => {
+    checkAccessibility(5000);
   });
 });
 

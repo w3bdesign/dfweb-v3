@@ -22,4 +22,11 @@ describe("ProsjekterSingleProject", () => {
     const prosjektersingleproject = screen.getByTestId("projectdiv");
     expect(prosjektersingleproject).toBeInTheDocument();
   });
+
+  it("Vi kan vise bilde", async () => {
+    const bilde = await screen.findByRole("img", {
+      name: /statens vegvesen/i
+    });
+    expect(bilde).toBeInTheDocument();
+  });
 });

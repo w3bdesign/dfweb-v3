@@ -17,8 +17,12 @@ import logo from "../../../public/logo.svg";
 const Navbar = (): JSX.Element => {
   const router = useRouter();
 
-  const activeLink = (url: string, pathname: string) =>
-    pathname === url ? "navbar-link-active" : "";
+  const activeLink = (url: string, pathname: string) => {
+    if (pathname === url) {
+      return "navbar-link-active";
+    }
+    return "";
+  };
 
   return (
     <header aria-label="Header for logo og navigasjon">
@@ -29,8 +33,8 @@ const Navbar = (): JSX.Element => {
           className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap"
         >
           <div className="flex w-full text-white md:w-1/2 md:justify-start">
-            <div style={{ position: "relative", width: "150px", height: "50px" }}>
-              <Image alt="DFWeb logo" src={logo} layout="fill" objectFit="contain" priority />
+            <div className="relative w-[150px] h-[50px]">
+              <Image alt="DFWeb logo" src={logo} fill priority />
             </div>
           </div>
           <div
@@ -46,27 +50,18 @@ const Navbar = (): JSX.Element => {
               {LINKS?.map((link) => (
                 <li key={link.id} className="link mr-3 md:mr-8 lg:mr-3">
                   {link.external ? (
-                    <Link href={link.url} passHref>
-                      <a
-                        rel="noopener noreferrer"
-                        aria-label={link.text}
-                        target="_blank"
-                        className="navbar-link inline-block text-xl text-white"
-                      >
-                        {link.text}
-                      </a>
+                    <Link href={link.url} className="navbar-link inline-block text-xl text-white">
+                      {link.text}
                     </Link>
                   ) : (
-                    <Link href={link.url} passHref>
-                      <a
-                        aria-label={link.text}
-                        className={`navbar-link eds-top-navigation-item inline-block text-xl text-white
-                      ${activeLink(link.url, router.pathname)}
-
-                      `}
-                      >
-                        {link.text}
-                      </a>
+                    <Link
+                      href={link.url}
+                      className={`navbar-link eds-top-navigation-item inline-block text-xl text-white ${activeLink(
+                        link.url,
+                        router.pathname
+                      )}`}
+                    >
+                      {link.text}
                     </Link>
                   )}
                 </li>
