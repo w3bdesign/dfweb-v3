@@ -88,9 +88,9 @@
     "typescript": "^4.9.3"
   },
   "overrides": {
-    "enhanced-resolve": "5.10.0"
+    "enhanced-resolve": "5.12.0"
   },
   "resolutions": {
-    "enhanced-resolve": "5.10.0"
+    "enhanced-resolve": "5.12.0"
   }
 }
