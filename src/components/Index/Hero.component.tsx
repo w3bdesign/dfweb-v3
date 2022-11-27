@@ -29,29 +29,11 @@ const Hero = ({ content }: IContent): JSX.Element => (
         <section>
           <FadeDown delay={0.5} cssClass="text-center">
             <span data-cy="hei" className="introtekst inline-block text-5xl">
-<<<<<<< HEAD
-<<<<<<< HEAD
-              {content.length ? content[0].text : null}
-=======
               {content.length > 0 ? content[0].text : "Hei!"}
->>>>>>> parent of 8a43ba967 (Opprydding Hero)
-=======
-              {content.length > 0 ? content[0].text : "Hei!"}
->>>>>>> parent of 8a43ba967 (Opprydding Hero)
             </span>
           </FadeDown>
           <FadeUp
             delay={1.2}
-<<<<<<< HEAD
-<<<<<<< HEAD
-            cssClass="mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl">
-            <h1>{content.length ? content[1].text : null}</h1>
-          </FadeUp>
-          <FadeDown
-            delay={1.7}
-            cssClass="mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl">
-            <h2>{content.length ? content[2].text : null}</h2>
-=======
             cssClass="mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl"
           >
             <h1>{content.length > 0 && content[1].text}</h1>
@@ -61,18 +43,6 @@ const Hero = ({ content }: IContent): JSX.Element => (
             cssClass="mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl"
           >
             <h2>{content.length > 0 && content[2].text}</h2>
->>>>>>> parent of 8a43ba967 (Opprydding Hero)
-=======
-            cssClass="mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl"
-          >
-            <h1>{content.length > 0 && content[1].text}</h1>
-          </FadeUp>
-          <FadeDown
-            delay={1.7}
-            cssClass="mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-left lg:text-xl xl:p-0 xl:text-center xl:text-2xl"
-          >
-            <h2>{content.length > 0 && content[2].text}</h2>
->>>>>>> parent of 8a43ba967 (Opprydding Hero)
           </FadeDown>
           <Icons />
         </section>
