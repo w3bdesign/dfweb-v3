@@ -21,7 +21,7 @@ const Home: NextPage = ({ pagecontent }: InferGetStaticPropsType<typeof getStati
   useEffect(() => setMounted(true), []);
 
   return (
-    <div className={`${mounted ? "" : "hidden"}`}>
+    <div className={`${!mounted ? "hidden" : ""}`}>
       <Layout title="Forside">
         <IndexContent pagecontent={pagecontent} />
       </Layout>
