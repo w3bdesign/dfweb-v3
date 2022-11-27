@@ -1,7 +1,7 @@
 // Package imports
 import { groq } from "next-sanity";
 
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 // Types
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
@@ -18,7 +18,7 @@ const indexQuery = groq`*[_type == 'page' && title match 'Hjem']{"id": _id, titl
 
 const Home: NextPage = ({ pagecontent }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useLayoutEffect(() => setMounted(true), []);
 
   return (
     <div className={`${!mounted ? "hidden" : ""}`}>
