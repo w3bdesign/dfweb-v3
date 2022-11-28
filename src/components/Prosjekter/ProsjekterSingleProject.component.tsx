@@ -35,7 +35,7 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => (
             <div className="flex justify-center mt-6">
               {projectimage && (
                 <Image
-                  className="lg:h-[250px] lg:w-[500px]"
+                  className="md:h-[250px] md:w-[500px]"
                   width="250"
                   height="500"
                   src={urlFor(projectimage).url() as string}
