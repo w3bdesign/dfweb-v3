@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       height: { 128: "31.25rem" },
-      minHeight: { 128: "31.25rem" }
+      minHeight: { 128: "31.25rem" },
+      colors: { graybg: "#E5E7EB" }
     }
   },
   variants: {
