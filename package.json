@@ -31,20 +31,20 @@
     ]
   },
   "dependencies": {
-    "@emailjs/browser": "^3.9.1",
+    "@emailjs/browser": "^3.10.0",
     "@sanity/image-url": "^1.0.1",
     "axe-core": "^4.5.2",
-    "framer-motion": "^7.6.9",
-    "next": "^13.0.4",
-    "next-sanity": "^2.1.0",
+    "framer-motion": "^7.6.15",
+    "next": "^13.0.5",
+    "next-sanity": "^3.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.6.0",
+    "react-icons": "^4.7.1",
     "react-pdf": "^6.2.0",
     "react-portable-text": "^0.5.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.2",
+    "@babel/core": "^7.20.5",
     "@storybook/addon-a11y": "^6.5.13",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
@@ -66,10 +66,10 @@
     "babel-loader": "^9.1.0",
     "chromatic": "^6.11.4",
     "cross-env": "^7.0.3",
-    "cypress": "10.11.0",
+    "cypress": "11.2.0",
     "cypress-axe": "^1.0.0",
     "eslint": "^8.28.0",
-    "eslint-config-next": "^13.0.4",
+    "eslint-config-next": "^13.0.5",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-jest-dom": "^4.0.3",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -80,7 +80,7 @@
     "jest-environment-jsdom": "^29.3.1",
     "jsdom": "^20.0.3",
     "postcss": "^8.4.19",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "react-test-renderer": "18.2.0",
     "sitemap": "^7.1.1",
     "start-server-and-test": "^1.14.0",
@@ -88,9 +88,9 @@
     "typescript": "^4.9.3"
   },
   "overrides": {
-    "enhanced-resolve": "5.10.0"
+    "enhanced-resolve": "5.12.0"
   },
   "resolutions": {
-    "enhanced-resolve": "5.10.0"
+    "enhanced-resolve": "5.12.0"
   }
 }

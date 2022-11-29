@@ -1,5 +1,4 @@
 import { Document, Page, pdfjs } from "react-pdf";
-//import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5.js';
 
 import Link from "next/link";
 
