@@ -1,10 +1,11 @@
 /// <reference types="cypress" />
 
-import { Test } from "../../src/components/UI/Test.component";
+import Button from "../../src/components/UI/Button.component";
 
-describe("<Stepper>", () => {
+describe("<Button>", () => {
   it("mounts", () => {
-   
-    cy.mount(<Test />);
+    cy.mount(<Button>Test</Button>);
+    cy.get('[data-cy=submit]').should('have.text', 'Test')
+
   });
 });
