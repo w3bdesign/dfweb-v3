@@ -67,7 +67,7 @@
     "chromatic": "^6.11.4",
     "cross-env": "^7.0.3",
     "cypress": "11.2.0",
-    "cypress-axe": "^1.0.0",
+    "cypress-axe": "^1.1.0",
     "eslint": "^8.28.0",
     "eslint-config-next": "^13.0.6",
     "eslint-plugin-cypress": "2.12.1",
