@@ -11,7 +11,7 @@
             "_type": "block",
             "children": [
               {
-                "_key": "ca2e480434ad",
+                "_key": "78654656",
                 "_type": "span",
                 "marks": ["code"],
                 "text": "Siden 2000 har jeg arbeidet med webdesign og utvikling, og jeg har i nyere tid spesialisert meg på frontendutvikling."
@@ -39,7 +39,7 @@
             "_type": "block",
             "children": [
               {
-                "_key": "f4f2dccc1e04",
+                "_key": "8744567556",
                 "_type": "span",
                 "marks": ["code"],
                 "text": "Jeg har også erfaring med andre teknologier som moderne Javascript (ES6+), Typescript, React, Vue.js, PHP, mySQL,  Gatsby, Next.js, Docker, GraphQL, Adobe Photoshop, Storybook, Bootstrap med mer."
@@ -61,7 +61,7 @@
             "_type": "block",
             "children": [
               {
-                "_key": "2c0cb654ac56",
+                "_key": "347875465",
                 "_type": "span",
                 "marks": ["code"],
                 "text": "Jeg arbeider jevnlig med hobbyprosjekter, primært med fokus på Javascript og Typescript."
