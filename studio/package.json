@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "prettier": "^2.8.0",
+    "prettier": "^2.8.1",
     "sanity-codegen": "^0.9.8"
   }
 }
