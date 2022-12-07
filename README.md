@@ -1,6 +1,6 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/129bf1165c3a455fadb43ddf5f67e1bd)](https://www.codacy.com/gh/w3bdesign/dfweb-v3/dashboard)
 [![codecov](https://codecov.io/gh/w3bdesign/dfweb-v3/branch/master/graph/badge.svg?token=VML3KNGO0N)](https://codecov.io/gh/w3bdesign/dfweb-v3)
-![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/dfweb.no)
+![Codiga Code Grade](https://api.codiga.io/project/35212/status/svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/33332dce96e1dedcf0b7/maintainability)](https://codeclimate.com/github/w3bdesign/dfweb-v3/maintainability)
 [![DeepSource](https://deepsource.io/gh/w3bdesign/dfweb-v3.svg/?label=active+issues&token=xU1k2KJL7peEGSzJkuYYEuw5)](https://deepsource.io/gh/w3bdesign/dfweb-v3/?ref=repository-badge)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_dfweb-v3&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3bdesign_dfweb-v3)
