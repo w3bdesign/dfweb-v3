@@ -30,7 +30,7 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => (
         <BounceInScroll viewAmount={0.3}>
           <h2 className="text-xl font-black text-center">{name}</h2>
           <div className="mt-6 text-lg text-left lg:text-left md:text-left">
-            <p className="description">{description}</p>
+            <p className="min-h-[85px]">{description}</p>
             <p className="mt-6 text-left md:text-left lg:text-left">
               Teknologier: {subdescription}
             </p>
