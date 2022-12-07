@@ -7,9 +7,9 @@ import { render, screen } from "@testing-library/react";
 
 import MobileMenu from "../../src/components/Layout/MobileMenu.component";
 
-describe("MobileMenu", () => {
+describe("MobileMenu - elementer eksisterer", () => {
   const testidMenu = "mobile-menu";
-  const user = userEvent.setup();
+
   beforeEach(() => {
     render(<MobileMenu />);
   });
@@ -46,6 +46,14 @@ describe("MobileMenu", () => {
   it("Kontakt linken eksisterer i menyen", () => {
     const kontakt = screen.getByText(/kontakt/i);
     expect(kontakt).toBeInTheDocument();
+  });
+});
+
+describe("MobileMenu - test handlinger", () => {
+  const testidMenu = "mobile-menu";
+  const user = userEvent.setup();
+  beforeEach(() => {
+    render(<MobileMenu />);
   });
 
   it("Åpne mobilmeny og se at aria-hidden er false", async () => {
