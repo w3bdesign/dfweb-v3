@@ -35,7 +35,7 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://www.dfweb.no/" />
           <meta property="og:site_name" content="dfweb" />
         </Head>
-        <body className="bg-graybg">
+        <body className="font-body bg-graybg">
           <Main />
           <NextScript />
         </body>
