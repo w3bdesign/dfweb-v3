@@ -33,7 +33,7 @@ const Navbar = (): JSX.Element => {
           className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap"
         >
           <div className="flex w-full text-white md:w-1/2 md:justify-start">
-            <div className="relative w-[150px] h-[50px]">
+            <div className="relative w-[9.375rem] h-[3.125rem]">
               <Image alt="DFWeb logo" src={logo} fill priority />
             </div>
           </div>

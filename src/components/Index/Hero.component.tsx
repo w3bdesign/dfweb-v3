@@ -22,7 +22,7 @@ const Hero = ({ content }: IContent): JSX.Element => (
     aria-label="Kontainer for animasjoner av introtekst"
     id="main-hero"
     data-testid="main-hero"
-    className="flex flex-col justify-center text-lg bg-[url('/images/blue-hero.jpg')] h-[450px]"
+    className="flex flex-col justify-center text-lg bg-[url('/images/blue-hero.jpg')] h-[28.125rem]"
   >
     <div className="mt-10 mb-4 bg-white p-2 opacity-75 md:mt-4 lg:mt-4 xl:mt-4">
       <div className="rounded text-black">
