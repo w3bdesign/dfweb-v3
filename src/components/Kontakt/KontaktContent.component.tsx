@@ -43,7 +43,7 @@ const KontaktContent = (): JSX.Element => {
       <div className="mt-32 bg-graybg">
         <PageHeader>Kontakt</PageHeader>
         <div className="px-4 p lg:px-0 xl:px-0 md:px-0">
-          <div className="container mx-auto bg-white rounded shadow min-h-[500px]">
+          <div className="container mx-auto bg-white rounded shadow min-h-[31.25rem]">
             <div className="p-4 mx-auto mt-4">
               <div className="p-4 text-lg rounded">
                 {serverResponse && (
