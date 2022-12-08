@@ -30,14 +30,14 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => (
         <BounceInScroll viewAmount={0.3}>
           <h2 className="text-xl font-black text-center">{name}</h2>
           <div className="mt-6 text-lg text-left lg:text-left md:text-left">
-            <p className="min-h-[85px]">{description}</p>
+            <p className="min-h-[5.313rem]">{description}</p>
             <p className="mt-6 text-left md:text-left lg:text-left line-clamp-1">
               Teknologier: {subdescription}
             </p>
             <div className="flex justify-center mt-6">
               {projectimage && (
                 <Image
-                  className="md:h-[250px] md:w-[500px]"
+                  className="md:h-[15.625rem] md:w-[31.25rem]"
                   width="250"
                   height="500"
                   src={urlFor(projectimage).url() as string}
