@@ -10,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang="nb">
         <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.googleapis.com?display=swap" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link
             href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
@@ -35,7 +35,7 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://www.dfweb.no/" />
           <meta property="og:site_name" content="dfweb" />
         </Head>
-        <body className="bg-graybg">
+        <body className="font-body bg-graybg">
           <Main />
           <NextScript />
         </body>
