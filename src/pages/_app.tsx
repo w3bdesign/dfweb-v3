@@ -14,11 +14,9 @@ const lato = Lato({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <div className={lato.className}>
-        <Component {...pageProps} />
-      </div>
-    </>
+    <div className={lato.className}>
+      <Component {...pageProps} />
+    </div>
   );
 }
 
