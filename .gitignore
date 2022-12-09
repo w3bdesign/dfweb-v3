@@ -30,6 +30,7 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# general .env file
 .env
 
 # vercel
@@ -49,3 +50,6 @@ sanity.json
 *.mp4
 /cypress/videos
 /cypress/screenshots
+
+#next.js
+next-env.d.ts
