@@ -27,7 +27,7 @@ class MyDocument extends Document {
           />
 
           <meta property="og:url" content="https://www.dfweb.no/" />
-          <meta property="og:site_name" content="dfweb" />
+          <meta property="og:site_name" content="dfweb.no" />
         </Head>
         <body className="font-body bg-graybg">
           <Main />

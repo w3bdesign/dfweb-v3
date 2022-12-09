@@ -18,6 +18,6 @@ describe("FadeLeftToRight", () => {
 
   it("Framer motion rendrer span tag", () => {
     const fadelefttorightitem = screen.getByTestId("fadelefttorightitem");
-    expect(fadelefttorightitem).toContainHTML("span");
+    expect(fadelefttorightitem).toContainHTML("div");
   });
 });
