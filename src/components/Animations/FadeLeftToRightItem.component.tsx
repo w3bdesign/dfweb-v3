@@ -1,4 +1,5 @@
 import { Variants } from "framer-motion";
+
 // CircleCI doesn't like import { motion } from "framer-motion" here, so we use require
 const { motion } = require("framer-motion");
 
@@ -18,13 +19,13 @@ const FadeLeftToRightItem = ({ children, cssClass }: IAnimateProps): JSX.Element
     hidden: { opacity: 0, x: -20 }
   };
   return (
-    <motion.span
+    <motion.div
       variants={FadeLeftToRightItemVariants}
       className={cssClass}
       data-testid="fadelefttorightitem"
     >
       {children}
-    </motion.span>
+    </motion.div>
   );
 };
 

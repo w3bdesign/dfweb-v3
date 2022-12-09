@@ -68,10 +68,10 @@ const MobileMenu = (): JSX.Element => {
           aria-hidden={!isExpanded}
           className={`absolute right-0 w-full text-center bg-gray-800 mt-4 w-30 ${hidden}`}
         >
-          <ul aria-label="Navigasjon">
+          <nav aria-label="Navigasjon">
             {LINKS.map((link) => (
               <FadeLeftToRightItem key={link.id} cssClass="block">
-                <li
+                <div
                   data-cy="mobile-menu-item"
                   className="border-t border-gray-600 border-solid shadow"
                 >
@@ -95,10 +95,10 @@ const MobileMenu = (): JSX.Element => {
                       {link.text}
                     </Link>
                   )}
-                </li>
+                </div>
               </FadeLeftToRightItem>
             ))}
-          </ul>
+          </nav>
         </div>
       </FadeLeftToRight>
     </div>
