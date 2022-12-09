@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
+    "@next/font": "^13.0.6",
     "@sanity/image-url": "^1.0.1",
     "axe-core": "^4.5.2",
     "framer-motion": "^7.6.19",
