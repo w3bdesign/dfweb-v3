@@ -65,7 +65,7 @@ type TPageContent = { pagecontent: IPageContent[] };
 
 const IndexContent = ({ pagecontent }: TPageContent): JSX.Element => (
   <main aria-label="Her kommer hovedinnholdet" id="maincontent">
-    <div className="mx-auto mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-64 xs:mt-64">
+    <div className="mx-auto  mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-12 xs:mt-10">
       {pagecontent && <Hero content={pagecontent[0].hero} />}
       <div className="container grid gap-4 p-4 mx-auto mt-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
         {pagecontent?.map(({ id, content }: IPageContent) => (
