@@ -7,8 +7,6 @@ class MyDocument extends Document {
   }
 
   static render = (): JSX.Element => {
-
-  //render = (): JSX.Element => {
     return (
       <Html lang="nb">
         <Head>
