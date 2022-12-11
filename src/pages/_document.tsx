@@ -6,7 +6,7 @@ class MyDocument extends Document {
     return { ...initialProps };
   }
 
-  static render = (): JSX.Element => {
+  render = (): JSX.Element => {
     return (
       <Html lang="nb">
         <Head>
