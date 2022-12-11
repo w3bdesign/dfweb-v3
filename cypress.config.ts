@@ -8,7 +8,8 @@ export default defineConfig({
   e2e: {
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
-      return require("./cypress/plugins/index.js")(on, config);
+      // e2e testing node events setup code
+     
     },
     baseUrl: "http://localhost:3000"
   },
