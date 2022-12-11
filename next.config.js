@@ -44,6 +44,10 @@ module.exports = {
     domains: ["cdn.sanity.io", "dfweb.no", "www.dfweb.no"],
     minimumCacheTTL: 1200
   },
+  i18n: {
+    locales: ["nb-NO"],
+    defaultLocale: "nb-NO"
+  },
   async headers() {
     return [
       {
