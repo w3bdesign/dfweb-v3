@@ -7,8 +7,9 @@ export default defineConfig({
   viewportHeight: 1080,
   e2e: {
     // You may want to clean this up later by importing these.
-    setupNodeEvents(_on, config) {
+    setupNodeEvents(on, config) {
       // e2e testing node events setup code
+      require("./cypress/plugins/index.js")(on, config);
       return config;
     },
     baseUrl: "http://localhost:3000"
