@@ -2,8 +2,13 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "noEmit": true,
-    "types": ["cypress"],
     "isolatedModules": false
   },
-  "include": ["../node_modules/cypress", "../node_modules/@testing-library/cypress", "../cypress/support/component.ts", "./**/*.ts"]
+  "types": ["cypress", "cypress-axe", "node"],
+  "include": [
+    "../node_modules/cypress",
+    "../node_modules/@testing-library/cypress",
+    "../cypress/support/component.ts",
+    "./**/*.ts"
+  ]
 }
