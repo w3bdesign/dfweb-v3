@@ -13,9 +13,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
-    "types": ["cypress", "cypress-axe", "node"]
+    "incremental": true
   },
+  "types": ["cypress", "cypress-axe", "node"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
