@@ -1,14 +1,14 @@
 import { MouseEventHandler } from "react";
 
 export interface IHamburgerProps {
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick: any;
   animatetoX: boolean;
 }
 
 /**
  * Hamburger component used in mobile menu. Animates to a X when clicked
  * @function Hamburger
- * @param {MouseEventHandler<HTMLButtonElement>} onClick - onClick handler to respond to clicks
+ * @param {() => void} onClick - onClick handler to respond to clicks
  * @param {boolean} animatetoX - Should the hamburger animate to a X?
  * @returns {JSX.Element} - Rendered component
  */
