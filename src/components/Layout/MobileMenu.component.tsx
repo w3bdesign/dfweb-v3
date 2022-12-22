@@ -1,10 +1,6 @@
 import Link from "next/link";
-<<<<<<< Updated upstream
-import  { useState, useRef, useCallback } from "react";
-=======
-import { useRef } from "react";
+import { useLayoutEffect, useRef, useCallback } from "react";
 import { AnimatePresence, useCycle, motion } from "framer-motion";
->>>>>>> Stashed changes
 
 import LINKS from "../../utils/constants/LINKS";
 
@@ -19,8 +15,19 @@ import Hamburger from "./Hamburger.component";
 
 const MobileMenu = (): JSX.Element => {
   const [isExpanded, setisExpanded] = useCycle<boolean>(false, true);
-
   const node = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = useCallback((e) => {
+    if (node.current?.contains(e.target as Node)) {
+      /**
+       * Do nothing if we clicked inside the menu (but not the link item)
+       */
+
+      return;
+    }
+
+    setisExpanded();
+  }, [setisExpanded]);
 
   const itemVariants = {
     closed: {
@@ -44,6 +51,13 @@ const MobileMenu = (): JSX.Element => {
     }
   };
 
+  useLayoutEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [handleClickOutside]);
+
   return (
     <div ref={node} className="z-50 md:hidden lg:hidden xl:hidden" data-testid="mobilemenu">
       <Hamburger onClick={setisExpanded} animatetoX={isExpanded} />
@@ -64,7 +78,7 @@ const MobileMenu = (): JSX.Element => {
               }}
               exit={{
                 height: 0,
-                transition: { delay: 0.15, duration: 1.6, ease: "easeInOut"  }
+                transition: { delay: 0.15, duration: 1.6, ease: "easeInOut" }
               }}>
               <motion.div initial="closed" animate="open" exit="closed" variants={sideVariants}>
                 <ul>
