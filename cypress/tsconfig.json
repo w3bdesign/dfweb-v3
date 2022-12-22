@@ -3,7 +3,7 @@
   "compilerOptions": {
     "noEmit": true,
     "isolatedModules": false
-  },  
+  },
   "include": [
     "../node_modules/cypress",
     "../node_modules/@testing-library/cypress",
