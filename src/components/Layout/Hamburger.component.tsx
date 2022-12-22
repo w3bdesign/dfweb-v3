@@ -1,7 +1,5 @@
-import { MouseEventHandler } from "react";
-
 export interface IHamburgerProps {
-  onClick: any;
+  onClick: () => void;
   animatetoX: boolean;
 }
 
@@ -26,8 +24,7 @@ const Hamburger = ({ onClick, animatetoX }: IHamburgerProps) => {
       data-testid="hamburger"
       onClick={onClick}
       aria-expanded={animatetoX}
-      type="button"
-    >
+      type="button">
       <span className="sr-only text-white text-2xl">Hamburger</span>
       <span
         data-testid="hamburgerline"

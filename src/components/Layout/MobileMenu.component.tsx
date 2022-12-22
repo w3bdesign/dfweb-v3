@@ -1,7 +1,5 @@
-import React from "react"
 import Link from "next/link";
 
-//import { useLayoutEffect, useCallback } from "react";
 import { AnimatePresence, useCycle, motion } from "framer-motion";
 
 import LINKS from "../../utils/constants/LINKS";
