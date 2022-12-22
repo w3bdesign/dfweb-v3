@@ -1,5 +1,5 @@
 import Link from "next/link";
-import  { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 
 import LINKS from "../../utils/constants/LINKS";
 

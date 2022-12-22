@@ -16,14 +16,10 @@ import { IAnimateProps } from "./types/Animations.types";
 const GrowDownItem = ({ children, cssClass }: IAnimateProps): JSX.Element => {
   const GrowDownItemVariants: Variants = {
     visible: { opacity: 1, y: 0, height: 75 },
-    hidden: { opacity: 0, y: -40, height:0 }
+    hidden: { opacity: 0, y: -40, height: 0 }
   };
   return (
-    <motion.div
-      variants={GrowDownItemVariants}
-      className={cssClass}
-      data-testid="GrowDownitem"
-    >
+    <motion.div variants={GrowDownItemVariants} className={cssClass} data-testid="GrowDownitem">
       {children}
     </motion.div>
   );
