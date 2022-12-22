@@ -17,7 +17,7 @@ const MobileMenu = (): JSX.Element => {
   const [isExpanded, setisExpanded] = useCycle<boolean>(false, true);
   const node = useRef<HTMLDivElement>(null);
 
-  const handleClickOutside = useCallback((e) => {
+  const handleClickOutside = useCallback((e: { target: Node; }) => {
     if (node.current?.contains(e.target as Node)) {
       /**
        * Do nothing if we clicked inside the menu (but not the link item)
