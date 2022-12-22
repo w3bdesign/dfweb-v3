@@ -15,8 +15,8 @@ import { IAnimateProps } from "./types/Animations.types";
 
 const FadeLeftToRightItem = ({ children, cssClass }: IAnimateProps): JSX.Element => {
   const FadeLeftToRightItemVariants: Variants = {
-    visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, x: -20 }
+    visible: { opacity: 1, y: 0, height: 75 },
+    hidden: { opacity: 0, y: -40, height:0 }
   };
   return (
     <motion.div

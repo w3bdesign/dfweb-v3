@@ -29,7 +29,8 @@ const FadeLeftToRight = ({
       transition: {
         when: "beforeChildren",
         staggerChildren: staggerDelay ? staggerDelay : 0.5,
-        delay,
+        delay,  
+        duration: 0.4,     
         ease: "easeInOut",
         staggerDirection: 1
       }
