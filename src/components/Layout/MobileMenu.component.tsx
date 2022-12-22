@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState, useRef, useCallback } from "react";
+import  { useState, useRef, useCallback } from "react";
 
 import LINKS from "../../utils/constants/LINKS";
 
@@ -60,7 +60,7 @@ const MobileMenu = (): JSX.Element => {
   return (
     <div ref={node} className="z-50 md:hidden lg:hidden xl:hidden" data-testid="mobilemenu">
       <Hamburger onClick={handleMobileMenuClick} animatetoX={isExpanded} />
-      <FadeLeftToRight delay={0.05} staggerDelay={0.4} animateNotReverse={isExpanded}>
+      <FadeLeftToRight delay={0.05} staggerDelay={0.35} animateNotReverse={isExpanded}>
         <div
           id="mobile-menu"
           data-testid="mobile-menu"
