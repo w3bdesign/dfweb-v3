@@ -48,7 +48,7 @@ const MobileMenu = (): JSX.Element => {
     } else {
       setTimeout(() => {
         setHidden("invisible");
-      }, 2000);
+      }, 1000);
 
       document.removeEventListener("mousedown", handleClickOutside);
     }
@@ -60,7 +60,7 @@ const MobileMenu = (): JSX.Element => {
   return (
     <div ref={node} className="z-50 md:hidden lg:hidden xl:hidden" data-testid="mobilemenu">
       <Hamburger onClick={handleMobileMenuClick} animatetoX={isExpanded} />
-      <FadeLeftToRight delay={0.2} staggerDelay={0.3} animateNotReverse={isExpanded}>
+      <FadeLeftToRight delay={0.2} staggerDelay={0.2} animateNotReverse={isExpanded}>
         <div
           id="mobile-menu"
           data-testid="mobile-menu"
