@@ -1,8 +1,11 @@
+import React from "react"
 import Link from "next/link";
-import { useLayoutEffect, useRef, useCallback } from "react";
+
+//import { useLayoutEffect, useCallback } from "react";
 import { AnimatePresence, useCycle, motion } from "framer-motion";
 
 import LINKS from "../../utils/constants/LINKS";
+import useClickOutside from "../../utils/hooks/useClickOutside";
 
 import Hamburger from "./Hamburger.component";
 
@@ -15,19 +18,12 @@ import Hamburger from "./Hamburger.component";
 
 const MobileMenu = (): JSX.Element => {
   const [isExpanded, setisExpanded] = useCycle<boolean>(false, true);
-  const node = useRef<HTMLDivElement>(null);
 
-  const handleClickOutside = useCallback((e: { target: Node; }) => {
-    if (node.current?.contains(e.target as Node)) {
-      /**
-       * Do nothing if we clicked inside the menu (but not the link item)
-       */
-
-      return;
-    }
-
+  const handleClickOutside = () => {
     setisExpanded();
-  }, [setisExpanded]);
+  };
+
+  const ref = useClickOutside(handleClickOutside);
 
   const itemVariants = {
     closed: {
@@ -51,15 +47,8 @@ const MobileMenu = (): JSX.Element => {
     }
   };
 
-  useLayoutEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [handleClickOutside]);
-
   return (
-    <div ref={node} className="z-50 md:hidden lg:hidden xl:hidden" data-testid="mobilemenu">
+    <div ref={ref} className="z-50 md:hidden lg:hidden xl:hidden" data-testid="mobilemenu">
       <Hamburger onClick={setisExpanded} animatetoX={isExpanded} />
       <div
         id="mobile-menu"
