@@ -26,13 +26,22 @@ const FadeLeftToRight = ({
   const FadeLeftToRightVariants: Variants = {
     visible: {
       opacity: 1,
+
       transition: {
+        when: "beforeChildren",
+        staggerChildren: staggerDelay ? staggerDelay : 0.5,
+        delayChildren: 0.3,
+        //delay,
+        //ease: "easeInOut",
+      }
+
+      /*transition: {
         when: "beforeChildren",
         staggerChildren: staggerDelay ? staggerDelay : 0.5,
         delay,
         ease: "easeInOut",
         staggerDirection: 1
-      }
+      }*/
     },
     hidden: {
       opacity: 0,
@@ -49,8 +58,7 @@ const FadeLeftToRight = ({
       animate={animateNotReverse ? "visible" : "hidden"}
       variants={FadeLeftToRightVariants}
       className={cssClass}
-      data-testid="fadelefttoright"
-    >
+      data-testid="fadelefttoright">
       {children}
     </motion.div>
   );
