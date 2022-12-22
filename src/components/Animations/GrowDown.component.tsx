@@ -6,8 +6,8 @@ const { motion } = require("framer-motion");
 import { IAnimateStaggerWithDelayProps } from "./types/Animations.types";
 
 /**
- * Fade content left to right. Needs to be used with FadeLeftToRightItem
- * @function FadeLeftToRight
+ * Grow content down. Needs to be used with GrowDownItem
+ * @function GrowDown
  * @param {ReactNode} children - Children content to render
  * @param {string} cssClass - CSS classes to apply to component
  * @param {number} delay - Time to wait before starting animation
@@ -16,14 +16,14 @@ import { IAnimateStaggerWithDelayProps } from "./types/Animations.types";
  * @returns {JSX.Element} - Rendered component
  */
 
-const FadeLeftToRight = ({
+const GrowDown = ({
   children,
   cssClass,
   delay,
   staggerDelay,
   animateNotReverse
 }: IAnimateStaggerWithDelayProps): JSX.Element => {
-  const FadeLeftToRightVariants: Variants = {
+  const GrowDownVariants: Variants = {
     visible: {
       opacity: 1,
       transition: {
@@ -48,13 +48,13 @@ const FadeLeftToRight = ({
     <motion.div
       initial="hidden"
       animate={animateNotReverse ? "visible" : "hidden"}
-      variants={FadeLeftToRightVariants}
+      variants={GrowDownVariants}
       className={cssClass}
-      data-testid="fadelefttoright"
+      data-testid="GrowDown"
     >
       {children}
     </motion.div>
   );
 };
 
-export default FadeLeftToRight;
+export default GrowDown;

@@ -5,8 +5,8 @@ import LINKS from "../../utils/constants/LINKS";
 
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
-import FadeLeftToRight from "../Animations/FadeLeftToRight.component";
-import FadeLeftToRightItem from "../Animations/FadeLeftToRightItem.component";
+import GrowDown from "../Animations/GrowDown.component";
+import GrowDownItem from "../Animations/GrowDownItem.component";
 import Hamburger from "./Hamburger.component";
 
 /**
@@ -60,7 +60,7 @@ const MobileMenu = (): JSX.Element => {
   return (
     <div ref={node} className="z-50 md:hidden lg:hidden xl:hidden" data-testid="mobilemenu">
       <Hamburger onClick={handleMobileMenuClick} animatetoX={isExpanded} />
-      <FadeLeftToRight delay={0.05} staggerDelay={0.35} animateNotReverse={isExpanded}>
+      <GrowDown delay={0.05} staggerDelay={0.35} animateNotReverse={isExpanded}>
         <div
           id="mobile-menu"
           data-testid="mobile-menu"
@@ -70,7 +70,7 @@ const MobileMenu = (): JSX.Element => {
         >
           <nav aria-label="Navigasjon">
             {LINKS.map((link) => (
-              <FadeLeftToRightItem key={link.id} cssClass="block">
+              <GrowDownItem key={link.id} cssClass="block">
                 <div
                   data-cy="mobile-menu-item"
                   className="border-t border-gray-600 border-solid shadow"
@@ -96,11 +96,11 @@ const MobileMenu = (): JSX.Element => {
                     </Link>
                   )}
                 </div>
-              </FadeLeftToRightItem>
+              </GrowDownItem>
             ))}
           </nav>
         </div>
-      </FadeLeftToRight>
+      </GrowDown>
     </div>
   );
 };
