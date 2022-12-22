@@ -1,15 +1,15 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import FadeLeftToRight from "../../src/components/Animations/FadeLeftToRight.component";
-import FadeLeftToRightItem from "../../src/components/Animations/FadeLeftToRightItem.component";
+import GrowDown from "../../src/components/Animations/GrowDown.component";
+import GrowDownItem from "../../src/components/Animations/GrowDownItem.component";
 
 import { IAnimateStaggerWithDelayProps } from "../../src/components/Animations/types/Animations.types";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Animations/FadeLeftToRight",
-  component: FadeLeftToRight,
+  title: "Components/Animations/GrowDown",
+  component: GrowDown,
   parameters: {
     // Sets a delay for the component's stories
     chromatic: { delay: 3000 }
@@ -23,31 +23,31 @@ export default {
   delay: { description: "Delay before starting animation" },
   staggerDelay: { description: "Delay before staggering animations for children" },
   animateNotReverse: { description: "Start animation at once" }
-} as ComponentMeta<typeof FadeLeftToRight>;
+} as ComponentMeta<typeof GrowDown>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof FadeLeftToRight> = ({
+const Template: ComponentStory<typeof GrowDown> = ({
   children,
   cssClass,
   delay,
   staggerDelay,
   animateNotReverse
 }: IAnimateStaggerWithDelayProps) => (
-  <FadeLeftToRight
+  <GrowDown
     cssClass={cssClass}
     delay={delay}
     staggerDelay={staggerDelay}
     animateNotReverse={animateNotReverse}
   >
-    <FadeLeftToRightItem cssClass="block">{children}</FadeLeftToRightItem>
+    <GrowDownItem cssClass="block">{children}</GrowDownItem>
     <br />
-    <FadeLeftToRightItem cssClass="block">{children}</FadeLeftToRightItem>
+    <GrowDownItem cssClass="block">{children}</GrowDownItem>
     <br />
-    <FadeLeftToRightItem cssClass="block">{children}</FadeLeftToRightItem>
+    <GrowDownItem cssClass="block">{children}</GrowDownItem>
     <br />
-    <FadeLeftToRightItem cssClass="block">{children}</FadeLeftToRightItem>
+    <GrowDownItem cssClass="block">{children}</GrowDownItem>
     <br />
-  </FadeLeftToRight>
+  </GrowDown>
 );
 
 export const Primary = Template;

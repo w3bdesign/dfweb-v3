@@ -20,7 +20,7 @@ const FadeUp = ({ children, cssClass, delay }: IAnimateWithDelayProps): JSX.Elem
     animate: {
       y: 0,
       opacity: 1,
-      transition: { delay, type: "spring", duration: 0.5, stiffness: 110 }
+      transition: { delay, type: "spring", duration: 0.5, stiffness: 100 }
     }
   };
   return (
@@ -29,8 +29,7 @@ const FadeUp = ({ children, cssClass, delay }: IAnimateWithDelayProps): JSX.Elem
       variants={fadeUpVariants}
       initial="initial"
       animate="animate"
-      data-testid="fadeup"
-    >
+      data-testid="fadeup">
       {children}
     </motion.div>
   );
