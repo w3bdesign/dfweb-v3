@@ -19,6 +19,7 @@ describe("MobileMenu - test handlinger", () => {
     const hamburger = screen.getByRole("button", {
       name: /hamburger/i
     });
+
     await user.click(hamburger);
     expect(mobilemenu).toHaveAttribute("aria-hidden", "false");
   });
@@ -31,5 +32,27 @@ describe("MobileMenu - test handlinger", () => {
     await user.click(hamburger);
     await user.click(document.body);
     expect(mobilemenu).toHaveAttribute("aria-hidden", "true");
+  });
+
+  it("Hjem linken eksisterer i menyen", async () => {
+    const hamburger = screen.getByRole("button", {
+      name: /hamburger/i
+    });
+
+    await user.click(hamburger);
+    const hjem = screen.getByRole("link", { name: /hjem/i });
+
+    expect(hjem).toBeInTheDocument();
+  });
+
+  it("Kontakt linken eksisterer i menyen", async () => {
+    const hamburger = screen.getByRole("button", {
+      name: /hamburger/i
+    });
+
+    await user.click(hamburger);
+    const kontakt = screen.getByRole("link", { name: /kontakt/i });
+
+    expect(kontakt).toBeInTheDocument();
   });
 });
