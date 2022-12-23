@@ -29,8 +29,8 @@ const GrowDown = ({
       transition: {
         when: "beforeChildren",
         staggerChildren: staggerDelay ? staggerDelay : 0.5,
-        delay,  
-        duration: 0.4,     
+        delay,
+        duration: 0.4,
         ease: "easeInOut",
         staggerDirection: 1
       }
