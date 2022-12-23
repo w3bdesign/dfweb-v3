@@ -17,14 +17,4 @@ describe("MobileMenu - elementer eksisterer", () => {
     const mobilemenu = screen.getByTestId(testidMenu);
     expect(mobilemenu).toBeInTheDocument();
   });
-
-  it("Hjem linken eksisterer i menyen", () => {
-    const hjem = screen.getByText(/hjem/i);
-    expect(hjem).toBeInTheDocument();
-  });
-
-  it("Kontakt linken eksisterer i menyen", () => {
-    const kontakt = screen.getByText(/kontakt/i);
-    expect(kontakt).toBeInTheDocument();
-  });
 });

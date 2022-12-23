@@ -1,12 +1,10 @@
 import Link from "next/link";
-import  { useState, useRef, useCallback } from "react";
+
+import { AnimatePresence, useCycle, motion } from "framer-motion";
 
 import LINKS from "../../utils/constants/LINKS";
+import useClickOutside from "../../utils/hooks/useClickOutside";
 
-import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
-
-import GrowDown from "../Animations/GrowDown.component";
-import GrowDownItem from "../Animations/GrowDownItem.component";
 import Hamburger from "./Hamburger.component";
 
 /**
@@ -17,90 +15,90 @@ import Hamburger from "./Hamburger.component";
  */
 
 const MobileMenu = (): JSX.Element => {
-  const [isExpanded, setisExpanded] = useState<boolean>(false);
-  const [hidden, setHidden] = useState<string>("invisible");
-  const node = useRef<HTMLDivElement>(null);
+  const [isExpanded, setisExpanded] = useCycle<boolean>(false, true);
 
-  const handleClickOutside = (e: MouseEvent): void => {
-    if (node.current?.contains(e.target as Node)) {
-      /**
-       * Do nothing if we clicked inside the menu (but not the link item)
-       */
-      return;
-    }
-
-    setisExpanded(false);
+  const handleClickOutside = () => {
+    setisExpanded();
   };
 
-  const handleMobileMenuClick = useCallback(() => {
-    /**
-     * Anti-pattern: setisExpanded(!isExpanded)
-     * Even if your state updates are batched and multiple updates to the enabled/disabled state are made together
-     * each update will rely on the correct previous state so that you always end up with the result you expect.
-     */
-    setisExpanded((prevExpanded: boolean) => !prevExpanded);
-  }, []);
+  const ref = useClickOutside(handleClickOutside);
 
-  useIsomorphicLayoutEffect(() => {
-    if (isExpanded) {
-      document.addEventListener("mousedown", handleClickOutside);
-      setHidden("");
-    } else {
-      setTimeout(() => {
-        setHidden("invisible");
-      }, 2000);
+  const itemVariants = {
+    closed: {
+      opacity: 0
+    },
+    open: { opacity: 1 }
+  };
 
-      document.removeEventListener("mousedown", handleClickOutside);
+  const sideVariants = {
+    closed: {
+      transition: {
+        staggerChildren: 0.3,
+        staggerDirection: -1
+      }
+    },
+    open: {
+      transition: {
+        staggerChildren: 0.3,
+        staggerDirection: 1
+      }
     }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isExpanded]);
+  };
 
   return (
-    <div ref={node} className="z-50 md:hidden lg:hidden xl:hidden" data-testid="mobilemenu">
-      <Hamburger onClick={handleMobileMenuClick} animatetoX={isExpanded} />
-      <GrowDown delay={0.05} staggerDelay={0.35} animateNotReverse={isExpanded}>
-        <div
-          id="mobile-menu"
-          data-testid="mobile-menu"
-          data-cy="mobile-menu"
-          aria-hidden={!isExpanded}
-          className={`absolute right-0 w-full text-center bg-gray-800 mt-4 w-30 ${hidden}`}
-        >
-          <nav aria-label="Navigasjon">
-            {LINKS.map((link) => (
-              <GrowDownItem key={link.id} cssClass="block">
-                <div
-                  data-cy="mobile-menu-item"
-                  className="border-t border-gray-600 border-solid shadow"
-                >
-                  {link.external ? (
-                    <a
-                      className="inline-block m-4 text-xl text-white hover:underline"
-                      aria-label={link.text}
-                      href={link.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      data-testid={`mobil-${link.text}`}
-                    >
-                      {link.text}
-                    </a>
-                  ) : (
-                    <Link
-                      data-testid={`mobil-${link.text}`}
-                      href={link.url}
-                      className="inline-block m-4 text-xl text-white hover:underline"
-                    >
-                      {link.text}
-                    </Link>
-                  )}
-                </div>
-              </GrowDownItem>
-            ))}
-          </nav>
-        </div>
-      </GrowDown>
+    <div ref={ref} className="z-50 md:hidden lg:hidden xl:hidden" data-testid="mobilemenu">
+      <Hamburger onClick={setisExpanded} animatetoX={isExpanded} />
+      <div
+        id="mobile-menu"
+        data-testid="mobile-menu"
+        data-cy="mobile-menu"
+        aria-hidden={!isExpanded}
+        className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30">
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.aside
+              initial={{ height: 0, opacity: 0 }}
+              animate={{
+                height: 310,
+                opacity: 1,
+                transition: { delay: 0.15, duration: 1.6, ease: "easeInOut" }
+              }}
+              exit={{
+                height: 0,
+                transition: { delay: 0.15, duration: 1.6, ease: "easeInOut" }
+              }}>
+              <nav aria-label="Navigasjon">
+                <motion.div initial="closed" animate="open" exit="closed" variants={sideVariants}>
+                  <ul>
+                    {LINKS.map((link) => (
+                      <motion.li
+                        key={link.url}
+                        className="block p-4 text-xl text-white hover:underline mx-auto text-center border-t border-b border-gray-600 border-solid shadow"
+                        data-cy="mobile-menu-item"
+                        variants={itemVariants}>
+                        {link.external ? (
+                          <a
+                            aria-label={link.text}
+                            href={link.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            data-testid={`mobil-${link.text}`}>
+                            {link.text}
+                          </a>
+                        ) : (
+                          <Link data-testid={`mobil-${link.text}`} href={link.url}>
+                            {link.text}
+                          </Link>
+                        )}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </nav>
+            </motion.aside>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
