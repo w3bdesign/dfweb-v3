@@ -55,7 +55,8 @@ const MobileMenu = (): JSX.Element => {
         data-testid="mobile-menu"
         data-cy="mobile-menu"
         aria-hidden={!isExpanded}
-        className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30">
+        className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30"
+      >
         <AnimatePresence>
           {isExpanded && (
             <motion.aside
@@ -68,28 +69,31 @@ const MobileMenu = (): JSX.Element => {
               exit={{
                 height: 0,
                 transition: { delay: 0.15, duration: 1.6, ease: "easeInOut" }
-              }}>
+              }}
+            >
               <nav aria-label="Navigasjon">
                 <motion.div initial="closed" animate="open" exit="closed" variants={sideVariants}>
                   <ul>
-                    {LINKS.map((link) => (
+                    {LINKS.map(({id,url, text, external }) => (
                       <motion.li
-                        key={link.url}
+                        key={id}
                         className="block p-4 text-xl text-white hover:underline mx-auto text-center border-t border-b border-gray-600 border-solid shadow"
                         data-cy="mobile-menu-item"
-                        variants={itemVariants}>
-                        {link.external ? (
+                        variants={itemVariants}
+                      >
+                        {external ? (
                           <a
-                            aria-label={link.text}
-                            href={link.url}
+                            aria-label={text}
+                            href={url}
                             target="_blank"
                             rel="noreferrer"
-                            data-testid={`mobil-${link.text}`}>
-                            {link.text}
+                            data-testid={`mobil-${text}`}
+                          >
+                            {text}
                           </a>
                         ) : (
-                          <Link data-testid={`mobil-${link.text}`} href={link.url}>
-                            {link.text}
+                          <Link data-testid={`mobil-${text}`} href={url}>
+                            {text}
                           </Link>
                         )}
                       </motion.li>
