@@ -1,10 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
+import { useClickAway } from "react-use";
 
-import { AnimatePresence, useCycle, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import LINKS from "../../utils/constants/LINKS";
-import useClickOutside from "../../utils/hooks/useClickOutside";
 
 import Hamburger from "./Hamburger.component";
 
@@ -16,14 +16,23 @@ import Hamburger from "./Hamburger.component";
  */
 
 const MobileMenu = (): JSX.Element => {
-  const [isExpanded, setisExpanded] = useCycle<boolean>(false, true);
+  const [isExpanded, setisExpanded] = useState<boolean>(false);
   const ref = useRef(null);
 
   const handleClickOutside = () => {
-    setisExpanded();
+    setisExpanded(false);
   };
 
-  useClickOutside(ref, handleClickOutside);
+  const handleMobileMenuClick = useCallback(() => {
+    /**
+     * Anti-pattern: setisExpanded(!isExpanded)
+     * Even if your state updates are batched and multiple updates to the enabled/disabled state are made together
+     * each update will rely on the correct previous state so that you always end up with the result you expect.
+     */
+    setisExpanded((prevExpanded: boolean) => !prevExpanded);
+  }, []);
+
+  useClickAway(ref, handleClickOutside);
 
   const itemVariants = {
     closed: {
@@ -49,14 +58,13 @@ const MobileMenu = (): JSX.Element => {
 
   return (
     <div ref={ref} className="z-50 md:hidden lg:hidden xl:hidden" data-testid="mobilemenu">
-      <Hamburger onClick={setisExpanded} animatetoX={isExpanded} />
+      <Hamburger onClick={handleMobileMenuClick} animatetoX={isExpanded} />
       <div
         id="mobile-menu"
         data-testid="mobile-menu"
         data-cy="mobile-menu"
         aria-hidden={!isExpanded}
-        className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30"
-      >
+        className="absolute right-0 w-full text-center bg-gray-800 mt-4 w-30">
         <AnimatePresence>
           {isExpanded && (
             <motion.aside
@@ -69,31 +77,28 @@ const MobileMenu = (): JSX.Element => {
               exit={{
                 height: 0,
                 transition: { delay: 0.15, duration: 1.6, ease: "easeInOut" }
-              }}
-            >
+              }}>
               <nav aria-label="Navigasjon">
                 <motion.div initial="closed" animate="open" exit="closed" variants={sideVariants}>
                   <ul>
-                    {LINKS.map(({id,url, text, external }) => (
+                    {LINKS.map((link) => (
                       <motion.li
-                        key={id}
+                        key={link.url}
                         className="block p-4 text-xl text-white hover:underline mx-auto text-center border-t border-b border-gray-600 border-solid shadow"
                         data-cy="mobile-menu-item"
-                        variants={itemVariants}
-                      >
-                        {external ? (
+                        variants={itemVariants}>
+                        {link.external ? (
                           <a
-                            aria-label={text}
-                            href={url}
+                            aria-label={link.text}
+                            href={link.url}
                             target="_blank"
                             rel="noreferrer"
-                            data-testid={`mobil-${text}`}
-                          >
-                            {text}
+                            data-testid={`mobil-${link.text}`}>
+                            {link.text}
                           </a>
                         ) : (
-                          <Link data-testid={`mobil-${text}`} href={url}>
-                            {text}
+                          <Link data-testid={`mobil-${link.text}`} href={link.url}>
+                            {link.text}
                           </Link>
                         )}
                       </motion.li>

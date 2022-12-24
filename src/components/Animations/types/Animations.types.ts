@@ -5,6 +5,10 @@ export interface IAnimateProps {
   cssClass?: string;
 }
 
+export interface IAnimateNoChildrenProps {
+  cssClass?: string;
+}
+
 export interface IAnimateBounceProps {
   children: ReactNode;
   cssClass?: string;
