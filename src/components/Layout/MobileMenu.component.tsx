@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import Link from "next/link";
 import { useClickAway } from "react-use";
+import Link from "next/link";
 
 import { AnimatePresence, useCycle, motion } from "framer-motion";
 
