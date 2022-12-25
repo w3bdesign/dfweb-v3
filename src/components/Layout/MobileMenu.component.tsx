@@ -20,7 +20,7 @@ const MobileMenu = (): JSX.Element => {
   const ref = useRef(null);
 
   const handleClickOutside = () => {
-    setisExpanded();
+    setisExpanded(0);
   };
 
   useClickOutside(ref, handleClickOutside);
