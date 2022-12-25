@@ -72,24 +72,24 @@ const MobileMenu = (): JSX.Element => {
               <nav aria-label="Navigasjon">
                 <motion.div initial="closed" animate="open" exit="closed" variants={sideVariants}>
                   <ul>
-                    {LINKS.map((link) => (
+                    {LINKS.map(({ id, url, text, external }) => (
                       <motion.li
-                        key={link.url}
+                        key={id}
                         className="block p-4 text-xl text-white hover:underline mx-auto text-center border-t border-b border-gray-600 border-solid shadow"
                         data-cy="mobile-menu-item"
                         variants={itemVariants}>
-                        {link.external ? (
+                        {external ? (
                           <a
-                            aria-label={link.text}
-                            href={link.url}
+                            aria-label={text}
+                            href={url}
                             target="_blank"
                             rel="noreferrer"
-                            data-testid={`mobil-${link.text}`}>
-                            {link.text}
+                            data-testid={`mobil-${text}`}>
+                            {text}
                           </a>
                         ) : (
-                          <Link data-testid={`mobil-${link.text}`} href={link.url}>
-                            {link.text}
+                          <Link data-testid={`mobil-${text}`} href={url}>
+                            {text}
                           </Link>
                         )}
                       </motion.li>
