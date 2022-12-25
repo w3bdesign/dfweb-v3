@@ -1,10 +1,10 @@
 import { useRef } from "react";
+import { useClickAway } from "react-use";
 import Link from "next/link";
 
 import { AnimatePresence, useCycle, motion } from "framer-motion";
 
 import LINKS from "../../utils/constants/LINKS";
-import useClickOutside from "../../utils/hooks/useClickOutside";
 
 import Hamburger from "./Hamburger.component";
 
@@ -23,7 +23,7 @@ const MobileMenu = (): JSX.Element => {
     setisExpanded(0);
   };
 
-  useClickOutside(ref, handleClickOutside);
+  useClickAway(ref, handleClickOutside);
 
   const itemVariants = {
     closed: {
