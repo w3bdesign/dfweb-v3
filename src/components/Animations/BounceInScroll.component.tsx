@@ -1,6 +1,4 @@
-import { Variants } from "framer-motion";
-// CircleCI doesn't like import { motion } from "framer-motion" here, so we use require
-const { motion } = require("framer-motion");
+import { Variants, motion } from "framer-motion";
 
 import { IAnimateBounceProps } from "./types/Animations.types";
 
@@ -35,8 +33,7 @@ const BounceInScroll = ({ children, cssClass, viewAmount }: IAnimateBounceProps)
     whileInView="onscreen"
     viewport={{ once: true, amount: viewAmount || 0.2 }}
     className={cssClass}
-    data-testid="bounceinscroll"
-  >
+    data-testid="bounceinscroll">
     <motion.div variants={bounceVariants}>{children}</motion.div>
   </motion.div>
 );
