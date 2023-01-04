@@ -16,7 +16,9 @@ jest.mock("react-pdf", () => {
     },
     Outline: null,
     Page,
-    Document: ({ onLoadSuccess = (pdf = { numPages: 2 }) => pdf.numPages }) => <div>nøkkelkvalifikasjoner{onLoadSuccess({ numPages: 2 })}</div>
+    Document: ({ onLoadSuccess = (pdf = { numPages: 2 }) => pdf.numPages }) => (
+      <div>nøkkelkvalifikasjoner{onLoadSuccess({ numPages: 2 })}</div>
+    )
   };
 });
 
@@ -29,9 +31,7 @@ describe("CVContent", () => {
 
   it("PDF laster inn og kan vises", async () => {
     render(<CVContent />);
-    const pdf = await screen.findByText(/nøkkelkvalifikasjoner/i)
+    const pdf = await screen.findByText(/nøkkelkvalifikasjoner/i);
     expect(pdf).toBeInTheDocument();
   });
-
-
 });

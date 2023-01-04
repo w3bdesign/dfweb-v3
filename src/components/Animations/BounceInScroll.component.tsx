@@ -33,7 +33,8 @@ const BounceInScroll = ({ children, cssClass, viewAmount }: IAnimateBounceProps)
     whileInView="onscreen"
     viewport={{ once: true, amount: viewAmount || 0.2 }}
     className={cssClass}
-    data-testid="bounceinscroll">
+    data-testid="bounceinscroll"
+  >
     <motion.div variants={bounceVariants}>{children}</motion.div>
   </motion.div>
 );
