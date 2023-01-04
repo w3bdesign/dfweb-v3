@@ -1,3 +1,4 @@
+/** @type {import('ts-jest').JestConfigWithTsJest} */
 const nextJest = require("next/jest");
 
 const createJestConfig = nextJest({
@@ -7,6 +8,7 @@ const createJestConfig = nextJest({
 
 // Add any custom config to be passed to Jest
 const customJestConfig = {
+  preset: "ts-jest/presets/js-with-babel-esm",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   testPathIgnorePatterns: ["<rootDir>/cypress/"],
   testEnvironment: "jest-environment-jsdom"
