@@ -1,6 +1,4 @@
-import { Variants } from "framer-motion";
-// CircleCI doesn't like import { motion } from "framer-motion" here, so we use require
-const { motion, AnimatePresence } = require("framer-motion");
+import { Variants, motion, AnimatePresence } from "framer-motion";
 
 import { IAnimateProps } from "./types/Animations.types";
 
@@ -26,8 +24,7 @@ const PageTransition = ({ children, cssClass }: IAnimateProps) => {
         initial="initial"
         animate="animate"
         exit="exit"
-        data-testid="pagetransition"
-      >
+        data-testid="pagetransition">
         {children}
       </motion.div>
     </AnimatePresence>

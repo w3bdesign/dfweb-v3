@@ -1,8 +1,4 @@
 import { Variants, motion } from "framer-motion";
-// CircleCI doesn't like import { motion } from "framer-motion" here, so we use require
-//const { motion } = require("framer-motion");
-
-
 
 import { IAnimateBounceProps } from "./types/Animations.types";
 
