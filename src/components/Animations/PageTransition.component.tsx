@@ -24,7 +24,8 @@ const PageTransition = ({ children, cssClass }: IAnimateProps) => {
         initial="initial"
         animate="animate"
         exit="exit"
-        data-testid="pagetransition">
+        data-testid="pagetransition"
+      >
         {children}
       </motion.div>
     </AnimatePresence>
