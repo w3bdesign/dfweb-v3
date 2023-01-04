@@ -35,7 +35,7 @@
     "@next/font": "^13.1.1",
     "@sanity/image-url": "^1.0.1",
     "axe-core": "^4.6.1",
-    "framer-motion": "^8.1.5",
+    "framer-motion": "^8.1.7",
     "next": "^13.1.1",
     "next-sanity": "^3.1.9",
     "react": "^18.2.0",
