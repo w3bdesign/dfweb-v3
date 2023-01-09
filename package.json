@@ -31,6 +31,7 @@
     ]
   },
   "dependencies": {
+    "@applitools/eyes-cypress": "^3.28.1",
     "@emailjs/browser": "^3.10.0",
     "@next/font": "^13.1.1",
     "@sanity/image-url": "^1.0.1",

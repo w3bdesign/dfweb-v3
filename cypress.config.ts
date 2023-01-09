@@ -20,3 +20,6 @@ export default defineConfig({
     }
   }
 });
+
+
+require('@applitools/eyes-cypress')(module);
