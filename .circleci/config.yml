@@ -38,16 +38,13 @@ jobs:
           command: npm ci
       - run:
           name: Chrome key start setup
-          command: echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list
+          command: sudo apt update -y
       - run:
           name: Chrome key finish setup
-          command: wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          command: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
       - run:
           name: Chrome package download
-          command: sudo apt-get update
-      - run:
-          name: Chrome install
-          command: sudo apt-get install -y google-chrome-stable
+          command: sudo apt install ./google-chrome-stable_current_amd64.deb
       - save_cache:
           key: npm-cache-v1-{{ checksum "package-lock.json" }}
           paths:
