@@ -1,7 +1,7 @@
 {
   "name": "dfweb",
   "private": true,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "package.json",
   "author": "Daniel <w3bdesign@github.com>",
@@ -9,22 +9,19 @@
   "scripts": {
     "start": "sanity start",
     "build": "sanity build",
+    "dev": "sanity dev",
     "typescript:generate": "npx sanity-codegen"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.35.2",
-    "@sanity/core": "^2.35.0",
-    "@sanity/default-layout": "^2.35.2",
-    "@sanity/default-login": "^2.35.2",
-    "@sanity/desk-tool": "^2.35.2",
     "@sanity/vision": "^3.2.3",
     "phosphor-react": "^1.4.1",
-    "prop-types": "^15.8",
-    "react": "17.0",
-    "react-dom": "17.0",
+    "prop-types": "^15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sanity": "^3.2.3",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
