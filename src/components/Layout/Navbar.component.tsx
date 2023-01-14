@@ -30,8 +30,7 @@ const Navbar = (): JSX.Element => {
         <div
           id="main-navigation"
           data-cy="main-navigation"
-          className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap"
-        >
+          className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap">
           <div className="flex w-full text-white md:w-1/2 md:justify-start">
             <div className="relative w-[9.375rem] h-[3.125rem]">
               <Image alt="DFWeb logo" src={logo} fill priority />
@@ -40,28 +39,30 @@ const Navbar = (): JSX.Element => {
           <div
             id="hamburger-div"
             data-cy="hamburger-div"
-            className="flex content-center justify-between md:w-1/2 md:justify-end p-3"
-          >
+            className="flex content-center justify-between md:w-1/2 md:justify-end p-3">
             <MobileMenu />
             <ul
               aria-label="Navigasjon"
-              className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4"
-            >
-              {LINKS?.map((link) => (
-                <li key={link.id} className="link mr-3 md:mr-8 lg:mr-3">
-                  {link.external ? (
-                    <Link href={link.url} className="navbar-link inline-block text-xl text-white">
-                      {link.text}
-                    </Link>
+              className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4">
+              {LINKS.map(({ id, url, text, external }) => (
+                <li key={id} className="link mr-3 md:mr-8 lg:mr-3">
+                  {external ? (
+                    <a
+                      aria-label={text}
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="navbar-link inline-block text-xl text-white">
+                      {text}
+                    </a>
                   ) : (
                     <Link
-                      href={link.url}
+                      href={url}
                       className={`navbar-link eds-top-navigation-item inline-block text-xl text-white ${activeLink(
-                        link.url,
+                        url,
                         router.pathname
-                      )}`}
-                    >
-                      {link.text}
+                      )}`}>
+                      {text}
                     </Link>
                   )}
                 </li>
