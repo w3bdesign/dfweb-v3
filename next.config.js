@@ -42,7 +42,7 @@ module.exports = {
   poweredByHeader: false,
   images: {
     domains: ["cdn.sanity.io", "dfweb.no", "www.dfweb.no"],
-    minimumCacheTTL: 1200
+    minimumCacheTTL: 600
   },
   i18n: {
     locales: ["nb-NO"],
