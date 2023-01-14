@@ -12,15 +12,7 @@
     "plugin:react-hooks/recommended",
     "plugin:cypress/recommended"
   ],
-  "plugins": [
-    "react",
-    "cypress",
-    "sonarjs",
-    "testing-library",
-    "jest-dom",
-    "react-hooks",
-    "react-security"
-  ],
+  "plugins": ["react", "cypress", "sonarjs", "testing-library", "jest-dom", "react-hooks"],
   "globals": {
     "cy": true
   },
@@ -37,11 +29,6 @@
     "jest-dom/prefer-required": "error",
     "jest-dom/prefer-to-have-attribute": "error",
     /* @typescript-eslint */
-    "@typescript-eslint/no-namespace": "off",
-    /* React security */
-    "react-security/no-javascript-urls": "warn",
-    "react-security/no-dangerously-set-innerhtml": "warn",
-    "react-security/no-find-dom-node": "warn",
-    "react-security/no-refs": "warn"
+    "@typescript-eslint/no-namespace": "off"
   }
 }
