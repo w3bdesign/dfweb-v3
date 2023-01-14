@@ -17,7 +17,7 @@
     "cy": true
   },
   "rules": {
-    "react/jsx-max-depth": "warn",
+    "react/jsx-max-depth": ["warn", { "max": 10 }],
     /* eslint-plugin-testing-library */
     "testing-library/await-async-query": "error",
     "testing-library/no-await-sync-query": "error",
