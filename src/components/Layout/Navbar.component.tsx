@@ -58,6 +58,7 @@ const Navbar = (): JSX.Element => {
                   ) : (
                     <Link
                       href={url}
+                      data-testid={text}
                       className={`navbar-link eds-top-navigation-item inline-block text-xl text-white ${activeLink(
                         url,
                         router.pathname
