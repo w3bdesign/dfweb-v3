@@ -10,7 +10,7 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   preset: "ts-jest/presets/js-with-babel-esm",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  testPathIgnorePatterns: ["<rootDir>/cypress/"],
+  testPathIgnorePatterns: ["<rootDir>/cypress/", "<rootDir>/playwright/"],
   testEnvironment: "jest-environment-jsdom"
 };
 
