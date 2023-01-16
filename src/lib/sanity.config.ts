@@ -7,7 +7,7 @@ export const config = {
    * https://nextjs.org/docs/basic-features/environment-variables
    **/
   dataset: "production",
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "thisneedstobedefined",
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "41s7iutf",
   apiVersion: "v1",
   /**
    * Set useCdn to `false` if your application require the freshest possible
