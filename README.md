@@ -61,7 +61,7 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 -   Code quality analysis with Codacy, Sonarcloud, LGTM and Codeclimate
 -   E2E testing with Cypress integrated with CircleCI
 -   Unit testing with Jest and React Testing Library integrated with CircleCI
--   Unit testing with Playwright integrated with Github actions
+-   E2E testing with Playwright integrated with Github actions
 -   Test coverage setup with Codecov
 
 > ### Google Lighthouse score
