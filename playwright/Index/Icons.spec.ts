@@ -9,7 +9,7 @@ test.describe("Icons", () => {
 
   test("It should render React icon", async ({ page }) => {
     await page.goto("http://localhost:3000/");
-    const react = page.getByTestId("React");
+    const react = page.getByTestId("Ikke react");
     await expect(react).toBeVisible();
   });
 });
