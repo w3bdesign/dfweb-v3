@@ -6,6 +6,11 @@ test.describe("Kontakt", () => {
     await page.goto(url);
   });
 
+  test("Viser tittel", async ({ page }) => {
+    const header = page.getByRole("heading", { name: "Kontakt" });
+    await expect(header).toContainText("Kontakt");
+  });
+
   test("Sjekk at vi ikke kan sende inn et ufullstendig skjema", async ({ page }) => {
     const fulltNavn = "Fullt navn";
     await page.getByLabel(fulltNavn).fill("brrrrr");

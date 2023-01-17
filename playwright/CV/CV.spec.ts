@@ -5,7 +5,12 @@ test.describe("CV", () => {
     await page.goto("http://localhost:3000/cv");
   });
 
-  test("It should render CV", async ({ page }) => {
+  test("Viser tittel", async ({ page }) => {
+    const header = page.getByRole("heading", { name: "CV" });
+    await expect(header).toContainText("CV");
+  });
+
+  test("Skal vise CV", async ({ page }) => {
     const cv = page.getByText(
       "CVNøkkelkvalifikasjonerTotalt over 10 års erfaring med utvikling og design av ne"
     );
@@ -15,7 +20,7 @@ test.describe("CV", () => {
     );
   });
 
-  test("Download button should be visible", async ({ page }) => {
+  test("Nedlastingsknapp er synlig", async ({ page }) => {
     const download = page.getByRole("link", { name: "Last ned PDF" });
     await expect(download).toBeVisible();
   });
