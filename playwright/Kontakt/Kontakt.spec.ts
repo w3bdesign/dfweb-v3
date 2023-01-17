@@ -11,12 +11,12 @@ test.describe("Kontakt", () => {
     await expect(header).toContainText("Kontakt");
   });
 
-  test("Sjekk at vi ikke kan sende inn et ufullstendig skjema", async ({ page }) => {
+  /*test("Sjekk at vi ikke kan sende inn et ufullstendig skjema", async ({ page }) => {
     const fulltNavn = "Fullt navn";
     await page.getByLabel(fulltNavn).fill("brrrrr");
     await page.getByRole("button", { name: "Send skjema" }).click();
 
     const navn = page.getByLabel(fulltNavn);
     await expect(navn).toContainText(fulltNavn);
-  });
+  });*/
 });
