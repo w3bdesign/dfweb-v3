@@ -10,8 +10,7 @@ test.describe("index", () => {
 
   test("It should navigate to and render the prosjekter page", async ({ page }) => {
     await page.goto("http://localhost:3000/");
-    await page.getByTestId('Prosjekter').click();
-    
+    await page.getByTestId('Prosjekter').click();    
     await expect(page).toHaveURL("http://localhost:3000/prosjekter");
   });
 });
