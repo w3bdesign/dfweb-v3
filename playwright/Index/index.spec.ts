@@ -23,7 +23,7 @@ test.describe("Forside", () => {
     if (feil.length > 0) {
       await page.screenshot({ path: "screenshot.png" });
     }
-
     expect(accessibilityScanResults.violations).toEqual([]);
   });
+  
 });
