@@ -9,7 +9,7 @@ test.describe("CV", () => {
     const cv = page.getByText(
       "CVNøkkelkvalifikasjonerTotalt over 10 års erfaring med utvikling og design av ne"
     );
-    await page.screenshot({ path: "screenshot.png" });
+
     await expect(cv).toContainText(
       "CVNøkkelkvalifikasjonerTotalt over 10 års erfaring med utvikling og design av ne"
     );
