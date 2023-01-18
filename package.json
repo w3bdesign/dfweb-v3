@@ -36,7 +36,7 @@
     "@axe-core/playwright": "^4.5.2",
     "@emailjs/browser": "^3.10.0",
     "@next/font": "^13.1.2",
-    "@sanity/image-url": "^1.0.1",
+    "@sanity/image-url": "^1.0.2",
     "axe-core": "^4.6.2",
     "framer-motion": "7.10.3",
     "next": "^13.1.2",
