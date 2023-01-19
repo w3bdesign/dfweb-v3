@@ -31,7 +31,7 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => (
           <h2 className="text-xl font-black text-center">{name}</h2>
           <div className="mt-6 text-lg text-left lg:text-left md:text-left">
             <p className="min-h-[5.313rem]">{description}</p>
-            <p className="mt-6 text-left md:text-left lg:text-left line-clamp-1">
+            <p className="mt-6 text-left md:text-left lg:text-left lg:line-clamp-1">
               Teknologier: {subdescription}
             </p>
             <div className="flex justify-center mt-6">
