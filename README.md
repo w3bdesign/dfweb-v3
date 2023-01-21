@@ -60,8 +60,8 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 -   CircleCI will warn before deploy if tests fail (setup for React testing library, Cypress and Chromatic)
 -   Code quality analysis with Codacy, Sonarcloud, LGTM and Codeclimate
 -   E2E testing with Cypress integrated with CircleCI
--   Unit testing with Jest and React Testing Library integrated with CircleCI
 -   E2E testing with Playwright integrated with Github actions
+-   Unit testing with Jest and React Testing Library integrated with CircleCI
 -   Test coverage setup with Codecov
 
 > ### Google Lighthouse score
