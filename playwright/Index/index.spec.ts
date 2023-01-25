@@ -25,5 +25,4 @@ test.describe("Forside", () => {
     }
     expect(accessibilityScanResults.violations).toEqual([]);
   });
-  
 });
