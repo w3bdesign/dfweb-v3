@@ -14,7 +14,7 @@ test.describe("Prosjekter", () => {
   test("Filter skal virke", async ({ page }) => {
     await page.getByRole("combobox", { name: "kategorifilter" }).selectOption("PHP");
     const project = page.getByTestId("projectdiv");
-    const count = await project.count();    
+    const count = await project.count();
     await expect(count).toBeGreaterThan(0);
   });
 
