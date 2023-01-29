@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/33332dce96e1dedcf0b7/maintainability)](https://codeclimate.com/github/w3bdesign/dfweb-v3/maintainability)
 [![CodeFactor](https://www.codefactor.io/repository/github/w3bdesign/dfweb-v3/badge)](https://www.codefactor.io/repository/github/w3bdesign/dfweb-v3)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_dfweb-v3&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3bdesign_dfweb-v3)
-
+ 
 # Dfweb.no Portfolio Version 3
 
 Third version of my portfolio website with Next.js, Sanity.io and Typescript.
