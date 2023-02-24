@@ -17,7 +17,7 @@ const PageTransition = ({ children, cssClass }: IAnimateProps) => {
     exit: { opacity: 0 }
   };
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode="wait">
       <motion.div
         className={cssClass}
         variants={pageTransitionVariants}

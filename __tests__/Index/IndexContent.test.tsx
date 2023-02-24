@@ -3,10 +3,13 @@
  */
 
 import { render, screen } from "@testing-library/react";
+import { mockIntersectionObserver } from "jsdom-testing-mocks";
 
 import IndexContent from "../../src/components/Index/IndexContent.component";
 
 import pagecontent from "../../__mocks__/pagecontent.json";
+
+mockIntersectionObserver();
 
 describe("IndexContent", () => {
   beforeEach(() => {
