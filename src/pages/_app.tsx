@@ -1,5 +1,4 @@
-// Imports
-import { Lato } from "@next/font/google";
+import { Lato } from "next/font/google";
 
 // Types
 import type { AppProps } from "next/app";
