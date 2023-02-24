@@ -14,7 +14,9 @@
   ],
   "plugins": ["react", "cypress", "sonarjs", "testing-library", "jest-dom", "react-hooks"],
   "globals": {
-    "cy": true
+    "cy": true,
+    "jest": true,
+    "ES2022": true
   },
   "rules": {
     "react/jsx-max-depth": ["warn", { "max": 10 }],
