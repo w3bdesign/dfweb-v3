@@ -3,10 +3,13 @@
  */
 
 import { render, screen } from "@testing-library/react";
+import { mockIntersectionObserver } from "jsdom-testing-mocks";
 
 import ProsjekterSingleProject from "../../src/components/Prosjekter/ProsjekterSingleProject.component";
 
 import projects from "../../__mocks__/projects.json";
+
+mockIntersectionObserver();
 
 describe("ProsjekterSingleProject", () => {
   beforeEach(() => {
