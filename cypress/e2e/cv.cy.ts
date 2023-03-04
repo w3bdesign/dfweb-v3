@@ -10,7 +10,6 @@ describe(`Test at CV vises og laster`, () => {
   });
 
   it(`Se at CV vises`, () => {
-    cy.wait(5000); // Wait for 5 seconds
     cy.get(".container > .text-2xl").should("be.visible");
   });
 
