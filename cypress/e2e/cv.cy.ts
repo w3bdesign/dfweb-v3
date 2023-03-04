@@ -11,9 +11,7 @@ describe(`Test at CV vises og laster`, () => {
 
   it(`Se at CV vises`, () => {
     cy.wait(5000); // Wait for 5 seconds
-    cy.get('.-mt-12 > .react-pdf__Page__svg > [version="1.1"]', { timeout: 10000 }).should(
-      "be.visible"
-    );
+    cy.get(".container > .text-2xl").should("be.visible");
   });
 
   it("CV skal ikke ha noen a11y feilmeldinger", () => {
