@@ -6,6 +6,7 @@ import type { TTitle } from "./Layout.component";
 
 interface IHeaderProps {
   title: TTitle;
+  links: any;
 }
 
 /**
@@ -15,10 +16,13 @@ interface IHeaderProps {
  * @returns {JSX.Element} - Rendered component
  */
 
-const Header = ({ title }: IHeaderProps): JSX.Element => {
+const Header = ({ title, links }: IHeaderProps): JSX.Element => {
   const today = new Date();
   const todaysDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
   const fullTitle = `${title} - Portefølje - Dfweb`;
+
+
+ 
 
   return (
     <>
@@ -45,7 +49,7 @@ const Header = ({ title }: IHeaderProps): JSX.Element => {
           }}
         />
       </Head>
-      <Navbar />
+      <Navbar links={links}/>
     </>
   );
 };

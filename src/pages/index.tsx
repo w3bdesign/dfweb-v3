@@ -13,19 +13,25 @@ import { getClient } from "../lib/sanity.server";
 
 // Sanity GROQ queries
 const indexQuery = groq`*[_type == 'page' && title match 'Hjem']{"id": _id, title, hero, content}`;
+const navigationQuery = groq`*[_type == 'Links']{id, Text, Url} | order(id asc)`;
 
-const Home: NextPage = ({ pagecontent }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <Layout title="Forside">
+const Home: NextPage = ({
+  pagecontent,
+  navigation
+}: InferGetStaticPropsType<typeof getStaticProps>) => (
+  <Layout title="Forside" links={navigation}>
     <IndexContent pagecontent={pagecontent} />
   </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
   const pagecontent = await getClient(false).fetch(indexQuery);
+  const navigation = await getClient(false).fetch(navigationQuery);
 
   return {
     props: {
-      pagecontent
+      pagecontent,
+      navigation
     }
   };
 };

@@ -14,6 +14,7 @@ export type TTitle =
 interface ILayoutProps {
   children?: ReactNode;
   title: TTitle;
+  links: any;
 }
 
 /**
@@ -24,9 +25,9 @@ interface ILayoutProps {
  * @returns {JSX.Element} - Rendered component
  */
 
-const Layout = ({ children, title }: ILayoutProps): JSX.Element => (
+const Layout = ({ children, title, links }: ILayoutProps): JSX.Element => (
   <>
-    <Header title={title} />
+    <Header title={title} links={links}/>
     {children}
     <Footer />
   </>
