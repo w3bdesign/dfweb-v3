@@ -8,6 +8,8 @@ import Navbar from "../../src/components/Layout/Navbar.component";
 
 const useRouter = jest.spyOn(require("next/router"), "useRouter");
 
+import linksmock from "../../__mocks__/links.json";
+
 describe("Navbar", () => {
   it("Navbar laster inn og kan vises", () => {
     useRouter.mockImplementationOnce(() => ({
@@ -21,7 +23,7 @@ describe("Navbar", () => {
       return "";
     });
 
-    render(<Navbar />);
+    render(<Navbar links={linksmock} />);
 
     activeLink("test", "test");
 

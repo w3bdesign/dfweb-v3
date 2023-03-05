@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import AxeBuilder from "@axe-core/playwright"; 
+import AxeBuilder from "@axe-core/playwright";
 
 test.describe("CV", () => {
   test.beforeEach(async ({ page }) => {

@@ -4,8 +4,18 @@ import { useRouter } from "next/router";
 
 import MobileMenu from "./MobileMenu.component";
 
-import LINKS from "../../utils/constants/LINKS";
 import logo from "../../../public/logo.svg";
+
+interface ILinks {
+  Text: string;
+  Url: string;
+  id: number;
+  External: boolean;
+}
+
+interface INavbarProps {
+  links: ILinks[];
+}
 
 /**
  * Display the menu and the links
@@ -14,7 +24,7 @@ import logo from "../../../public/logo.svg";
  * @function Navbar
  * @returns {JSX.Element} - Rendered component
  */
-const Navbar = (): JSX.Element => {
+const Navbar = ({ links }: INavbarProps) => {
   const router = useRouter();
 
   const activeLink = (url: string, pathname: string) => {
@@ -42,34 +52,34 @@ const Navbar = (): JSX.Element => {
             data-cy="hamburger-div"
             className="flex content-center justify-between md:w-1/2 md:justify-end p-3"
           >
-            <MobileMenu />
+            <MobileMenu links={links}/>
             <ul
               aria-label="Navigasjon"
               className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4"
             >
-              {LINKS.map(({ id, url, text, external }) => (
+              {links.map(({ id, Text, Url, External }) => (
                 <li key={id} className="link mr-3 md:mr-8 lg:mr-3">
-                  {external ? (
+                  {External ? (
                     <a
-                      aria-label={text}
-                      data-testid={text}
-                      href={url}
+                      aria-label={Text}
+                      data-testid={Text}
+                      href={Url}
                       target="_blank"
                       rel="noreferrer"
                       className="navbar-link inline-block text-xl text-white"
                     >
-                      {text}
+                      {Text}
                     </a>
                   ) : (
                     <Link
-                      href={url}
-                      data-testid={text}
+                      href={Url}
+                      data-testid={Text}
                       className={`navbar-link eds-top-navigation-item inline-block text-xl text-white ${activeLink(
-                        url,
+                        Url,
                         router.pathname
                       )}`}
                     >
-                      {text}
+                      {Text}
                     </Link>
                   )}
                 </li>
