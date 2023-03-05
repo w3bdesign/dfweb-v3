@@ -87,7 +87,7 @@ const MobileMenu = ({ links }: IMobileMenuProps) => {
                         className="block p-4 text-xl text-white hover:underline mx-auto text-center border-t border-b border-gray-600 border-solid shadow"
                         data-cy="mobile-menu-item"
                         variants={itemVariants}>
-                        {external ? (
+                        {External ? (
                           <a
                             aria-label={Text}
                             href={Url}
