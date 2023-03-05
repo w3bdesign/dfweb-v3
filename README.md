@@ -11,7 +11,6 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 
 ## Live URL: <https://www.dfweb.no>
 
-<br />
 
 > ## Frontend
 >
