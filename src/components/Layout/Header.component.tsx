@@ -4,9 +4,16 @@ import Navbar from "./Navbar.component";
 
 import type { TTitle } from "./Layout.component";
 
+interface ILinks {
+  Text: string;
+  Url: string;
+  id: number;
+  External: boolean;
+}
+
 interface IHeaderProps {
   title: TTitle;
-  links: any;
+  links: ILinks[];
 }
 
 /**
@@ -16,13 +23,10 @@ interface IHeaderProps {
  * @returns {JSX.Element} - Rendered component
  */
 
-const Header = ({ title, links }: IHeaderProps): JSX.Element => {
+const Header = ({ title, links }: IHeaderProps) => {
   const today = new Date();
   const todaysDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
   const fullTitle = `${title} - Portefølje - Dfweb`;
-
-
- 
 
   return (
     <>
@@ -49,7 +53,7 @@ const Header = ({ title, links }: IHeaderProps): JSX.Element => {
           }}
         />
       </Head>
-      <Navbar links={links}/>
+      <Navbar links={links} />
     </>
   );
 };
