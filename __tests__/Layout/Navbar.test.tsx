@@ -16,20 +16,23 @@ describe("Navbar", () => {
       query: { pathName: "/" }
     }));
 
-    const activeLink = jest.fn((pathname, url) => {
-      if (pathname === url) {
-        return "navbar-link-active";
-      }
-      return "";
-    });
-
     render(<Navbar links={linksmock} />);
-
-    activeLink("test", "test");
 
     const navbar = screen.getByRole("navigation");
     expect(navbar).toBeInTheDocument();
+  });
 
-    expect(activeLink.mock.calls.length).toBe(1);
+  it("Link Hjem har navbar-link class", () => {
+    useRouter.mockImplementationOnce(() => ({
+      query: { pathName: "/" }
+    }));
+
+    render(<Navbar links={linksmock} />);
+
+    const link = screen.getByRole("link", { name: /hjem/i });
+
+    expect(link.className).toBe(
+      "navbar-link eds-top-navigation-item inline-block text-xl text-white "
+    );
   });
 });
