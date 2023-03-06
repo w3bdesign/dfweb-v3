@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-import { accessibilityFixture } from "../helpers/helper";
+import { accessibilityFixture, testTittel } from "../helpers/helper";
 
 test.describe("Prosjekter", () => {
   test.beforeEach(async ({ page }) => {
@@ -20,4 +20,6 @@ test.describe("Prosjekter", () => {
   });
 
   accessibilityFixture();
+
+  testTittel("Prosjekter");
 });
