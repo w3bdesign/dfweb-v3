@@ -52,7 +52,7 @@ const Navbar = ({ links }: INavbarProps) => {
             data-cy="hamburger-div"
             className="flex content-center justify-between md:w-1/2 md:justify-end p-3"
           >
-            <MobileMenu links={links}/>
+            <MobileMenu links={links} />
             <ul
               aria-label="Navigasjon"
               className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4"
