@@ -16,7 +16,7 @@ interface IContent {
  * @returns {JSX.Element} - Rendered component
  */
 
-const Hero = ({ content }: IContent): JSX.Element => (
+const Hero = ({ content }: IContent)  => (
   <div
     role="article"
     aria-label="Kontainer for animasjoner av introtekst"

@@ -15,7 +15,7 @@ export interface IButtonProps {
  * @returns {JSX.Element} - Rendered component
  */
 
-const Button = ({ text, children, onClick }: IButtonProps): JSX.Element => (
+const Button = ({ text, children, onClick }: IButtonProps)  => (
   <button
     type="submit"
     onClick={onClick}

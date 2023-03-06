@@ -63,7 +63,7 @@ type TPageContent = { pagecontent: IPageContent[] };
  * @returns {JSX.Element} - Rendered component
  */
 
-const IndexContent = ({ pagecontent }: TPageContent): JSX.Element => (
+const IndexContent = ({ pagecontent }: TPageContent)  => (
   <main aria-label="Her kommer hovedinnholdet" id="maincontent">
     <div className="mx-auto  mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-12 xs:mt-10">
       {pagecontent && <Hero content={pagecontent[0].hero} />}

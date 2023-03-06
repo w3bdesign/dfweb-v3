@@ -14,7 +14,7 @@ import type { IProject } from "./ProsjekterListings.component";
  * @returns {JSX.Element} - Rendered component
  */
 
-const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => (
+const ProsjekterSingleProject = ({ projects }: IProject)  => (
   <div
     data-cy="prosjektgrid"
     data-testid="prosjektgrid"

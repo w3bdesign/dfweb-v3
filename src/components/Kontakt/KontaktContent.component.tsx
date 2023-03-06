@@ -14,7 +14,7 @@ interface IEvent {
  * @returns {JSX.Element} - Rendered component
  */
 
-const KontaktContent = (): JSX.Element => {
+const KontaktContent = ()  => {
   const formRef = useRef<HTMLFormElement>(null);
   const [serverResponse, setServerResponse] = useState<string>("");
 

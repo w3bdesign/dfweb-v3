@@ -6,7 +6,7 @@ interface ILinkButton {
   name: string;
 }
 
-const LinkButton = ({ url, text, name }: ILinkButton): JSX.Element => (
+const LinkButton = ({ url, text, name }: ILinkButton)  => (
   <a rel="noopener noreferrer" target="_blank" aria-label={name} href={url}>
     <Button text={text} />
   </a>
