@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { testIkon } from "../helpers/helper";
 
 test.describe("Ikoner", () => {
   test.beforeEach(async ({ page }) => {
@@ -11,18 +12,7 @@ test.describe("Ikoner", () => {
     await expect(icons).toBeVisible();
   });
 
-  test("Skal vise React ikon", async ({ page }) => {
-    const react = page.getByTestId("React");
-    await expect(react).toBeVisible();
-  });
-
-  test("Skal vise Vue ikon", async ({ page }) => {
-    const vue = page.getByTestId("Vue");
-    await expect(vue).toBeVisible();
-  });
-
-  test("Skal vise Typescript ikon", async ({ page }) => {
-    const typescript = page.getByTestId("Typescript");
-    await expect(typescript).toBeVisible();
+  ["React", "Vue", "Typescript"].map((ikon) => {
+    testIkon(ikon);
   });
 });
