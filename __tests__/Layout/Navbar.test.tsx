@@ -35,4 +35,16 @@ describe("Navbar", () => {
       "navbar-link eds-top-navigation-item inline-block text-xl text-white "
     );
   });
+
+  it("Link Github har riktig klasse", () => {
+    useRouter.mockImplementationOnce(() => ({
+      query: { pathName: "/" }
+    }));
+
+    render(<Navbar links={linksmock} />);
+
+    const github = screen.getByRole("link", { name: /github/i });
+
+    expect(github.className).toBe("navbar-link inline-block text-xl text-white");
+  });
 });
