@@ -47,4 +47,28 @@ describe("Navbar", () => {
 
     expect(github.className).toBe("navbar-link inline-block text-xl text-white");
   });
+
+  it("Test activeLink", () => {
+
+    useRouter.mockImplementationOnce(() => ({
+      query: { pathName: "/" }
+    }));
+
+    const activeLink = jest.fn((url: string, pathname: string) => {
+      if (pathname === url) {
+        return "navbar-link-active";
+      }
+      return "";
+    });
+
+    render(<Navbar links={linksmock} />);
+
+    const url = "/home";
+    const pathname = "/home";
+    const expected = "navbar-link-active";
+
+    const result = activeLink(url, pathname);
+
+    expect(result).toEqual(expected);
+  });
 });
