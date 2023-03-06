@@ -22,7 +22,7 @@ describe("Navbar", () => {
     expect(navbar).toBeInTheDocument();
   });
 
-  it("Link har active class", () => {
+  it("Link Hjem har navbar-link class", () => {
     useRouter.mockImplementationOnce(() => ({
       query: { pathName: "/" }
     }));
@@ -31,8 +31,8 @@ describe("Navbar", () => {
 
     const link = screen.getByRole("link", { name: /hjem/i });
 
-    expect(link.className).toBe("navbar-link eds-top-navigation-item inline-block text-xl text-white ")
-
-    console.log("Link classname: ", link.className);
+    expect(link.className).toBe(
+      "navbar-link eds-top-navigation-item inline-block text-xl text-white "
+    );
   });
 });
