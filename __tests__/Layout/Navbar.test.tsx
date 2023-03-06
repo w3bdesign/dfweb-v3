@@ -38,7 +38,7 @@ describe("Navbar", () => {
     expect(github.className).toBe("navbar-link inline-block text-xl text-white");
   });
 
-  it("Test activeLink", () => {
+  it("Test activeLink funksjon", () => {
     const activeLink = jest.fn((url: string, pathname: string) => {
       if (pathname === url) {
         return "navbar-link-active";
