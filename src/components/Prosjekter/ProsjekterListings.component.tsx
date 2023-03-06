@@ -51,7 +51,7 @@ export interface IChangeEvent {
  * @returns {JSX.Element} - Rendered component
  */
 
-const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Element => {
+const ProsjekterListings = ({ projects, categories }: IProjectCategory)  => {
   const [prosjekt, setProsjekt] = useState(projects);
 
   const handleFilterChange = (event: IChangeEvent) => {

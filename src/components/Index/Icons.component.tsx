@@ -8,7 +8,7 @@ import { SiTypescript, SiWordpress } from "react-icons/si";
  * @returns {JSX.Element} - Rendered component
  */
 
-const Icons = (): JSX.Element => (
+const Icons = () => (
   <div data-testid="icons" className="flex justify-center mt-4 p-2">
     <span className="p-2">
       <FaReact data-testid="React" title="React ikon" size="3em" aria-label="React ikon" />

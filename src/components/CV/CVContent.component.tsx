@@ -16,7 +16,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
  * @returns {JSX.Element} - Rendered component
  */
 
-const CVContent = (): JSX.Element => (
+const CVContent = ()  => (
   <main id="maincontent">
     <div className="mt-32 bg-graybg">
       <PageHeader>CV</PageHeader>
