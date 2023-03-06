@@ -82,32 +82,7 @@ const MobileMenu = ({ links }: IMobileMenuProps) => {
             >
               <nav aria-label="Navigasjon">
                 <motion.div initial="closed" animate="open" exit="closed" variants={sideVariants}>
-                  <ul>
-                    {links.map(({ id, Text, Url, External }) => (
-                      <motion.li
-                        key={id}
-                        className="block p-4 text-xl text-white hover:underline mx-auto text-center border-t border-b border-gray-600 border-solid shadow"
-                        data-cy="mobile-menu-item"
-                        variants={itemVariants}
-                      >
-                        {External ? (
-                          <a
-                            aria-label={Text}
-                            href={Url}
-                            target="_blank"
-                            rel="noreferrer"
-                            data-testid={`mobil-${Text}`}
-                          >
-                            {Text}
-                          </a>
-                        ) : (
-                          <Link data-testid={`mobil-${Text}`} href={Url}>
-                            {Text}
-                          </Link>
-                        )}
-                      </motion.li>
-                    ))}
-                  </ul>
+                 
                 </motion.div>
               </nav>
             </motion.aside>
