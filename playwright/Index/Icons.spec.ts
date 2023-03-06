@@ -12,7 +12,7 @@ test.describe("Ikoner", () => {
     await expect(icons).toBeVisible();
   });
 
-  ["React", "Vue", "Typescript"].map((ikon) => {
+  ["React", "Vue", "Typescript"].forEach((ikon) => {
     testIkon(ikon);
   });
 });
