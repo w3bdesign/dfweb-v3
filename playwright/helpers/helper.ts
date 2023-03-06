@@ -19,3 +19,10 @@ export const testTittel = (tittel: string) => {
     await expect(header).toContainText(tittel);
   });
 };
+
+export const testIkon = (ikon: string) => {
+  test(`Skal vise ${ikon} ikon`, async ({ page }) => {
+    const ikonTest = page.getByTestId(ikon);
+    await expect(ikonTest).toBeVisible();
+  });
+};
