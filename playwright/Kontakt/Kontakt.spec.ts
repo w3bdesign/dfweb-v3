@@ -1,15 +1,11 @@
 import { test, expect } from "@playwright/test";
-import { accessibilityFixture } from "../helpers/helper";
+
+import { accessibilityFixture, testTittel } from "../helpers/helper";
 
 test.describe("Kontakt", () => {
   test.beforeEach(async ({ page }) => {
     const url = "http://localhost:3000/kontakt";
     await page.goto(url);
-  });
-
-  test("Viser tittel", async ({ page }) => {
-    const header = page.getByRole("heading", { name: "Kontakt" });
-    await expect(header).toContainText("Kontakt");
   });
 
   test("Sjekk at vi ikke kan sende inn et ufullstendig skjema", async ({ page }) => {
@@ -24,4 +20,6 @@ test.describe("Kontakt", () => {
   });
 
   accessibilityFixture();
+
+  testTittel("Kontakt");
 });

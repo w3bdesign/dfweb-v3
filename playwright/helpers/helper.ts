@@ -12,3 +12,10 @@ export const accessibilityFixture = () => {
     expect(accessibilityScanResults.violations).toEqual([]);
   });
 };
+
+export const testTittel = (tittel: string) => {
+  test("Viser tittel", async ({ page }) => {
+    const header = page.getByRole("heading", { name: tittel });
+    await expect(header).toContainText(tittel);
+  });
+};

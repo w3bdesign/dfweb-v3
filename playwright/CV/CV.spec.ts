@@ -1,15 +1,10 @@
 import { test, expect } from "@playwright/test";
 
-import { accessibilityFixture } from "../helpers/helper";
+import { accessibilityFixture, testTittel } from "../helpers/helper";
 
 test.describe("CV", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("http://localhost:3000/cv");
-  });
-
-  test("Viser tittel", async ({ page }) => {
-    const header = page.getByRole("heading", { name: "CV" });
-    await expect(header).toContainText("CV");
   });
 
   test("Skal vise CV", async ({ page }) => {
@@ -29,4 +24,6 @@ test.describe("CV", () => {
   });
 
   accessibilityFixture();
+
+  testTittel("CV");
 });

@@ -1,15 +1,10 @@
 import { test, expect } from "@playwright/test";
 
-import { accessibilityFixture } from "../helpers/helper";
+import { accessibilityFixture, testTittel } from "../helpers/helper";
 
 test.describe("Prosjekter", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("http://localhost:3000/prosjekter");
-  });
-
-  test("Viser tittel", async ({ page }) => {
-    const header = page.getByRole("heading", { name: "Prosjekter" });
-    await expect(header).toContainText("Prosjekter");
   });
 
   test("Filter skal virke", async ({ page }) => {
@@ -20,4 +15,6 @@ test.describe("Prosjekter", () => {
   });
 
   accessibilityFixture();
+
+  testTittel("Prosjekter");
 });
