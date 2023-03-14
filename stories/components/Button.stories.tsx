@@ -1,35 +1,22 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import { Meta, Story } from "@storybook/react";
 import Button, { IButtonProps } from "../../src/components/UI/Button.component";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/UI/Button",
-  component: Button,
-  argTypes: {
-    children: {
-      description: "Children content to be rendered",
-      options: ["Button", "Second Button"],
-      mapping: {
-        Button: <h1>Button</h1>,
-        SecondButton: <h1>Second Button</h1>
-      }
-    },
-    onClick: {
-      description: "onClick handler for button",
-      action: "onClick"
-    }
-  }
-} as ComponentMeta<typeof Button>;
+  component: Button
+} as Meta;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = ({ children }: IButtonProps) => (
-  <Button>{children}</Button>
-);
+const Template: Story<IButtonProps> = (args: IButtonProps) => <Button {...args} />;
 
-export const Primary = Template;
-
+export const Primary = Template.bind({});
 Primary.args = {
-  children: <h1>Button</h1>
+  children: "Click me!"
+};
+
+export const AsLink = Template.bind({});
+AsLink.args = {
+  children: "Go to Google",
+  renderAs: "a",
+  href: "https://www.google.com"
 };
