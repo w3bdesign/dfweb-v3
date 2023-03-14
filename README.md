@@ -35,7 +35,7 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 -   Filter project display
 -   Contact form with Email.js
 -   Display CV with React-PDF
--   Polymorphic components
+-   Polymorphic components (<Button />)
 -   Automatic sitemap generation (see /api/siteMapGenerator.ts)
 -   Google rich results for each individual page
 -   100% score in Google Lighthouse
