@@ -17,6 +17,7 @@ export interface IButtonProps {
 
 const Button = ({ children, href, renderAs, ...props }: IButtonProps) => {
   const Component = renderAs || "button";
+  const targetLink = renderAs ? "_blank" : undefined;
 
   return (
     <Component
@@ -24,6 +25,7 @@ const Button = ({ children, href, renderAs, ...props }: IButtonProps) => {
       data-cy="submit"
       className="p-4 m-4 text-white transition duration-500 ease-in-out bg-gray-800 rounded hover:shadow-outline hover:bg-gray-600"
       href={href}
+      target={targetLink}
       {...props}>
       {children}
     </Component>
