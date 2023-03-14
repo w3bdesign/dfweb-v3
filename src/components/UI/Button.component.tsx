@@ -4,7 +4,7 @@ export interface IButtonProps {
   children: ReactNode;
   href?: string;
   renderAs?: ElementType;
-  type?: "button" | "submit" | "reset" | undefined;
+  type?: "button" | "submit" | "reset";
 }
 
 /**
