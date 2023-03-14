@@ -7,12 +7,12 @@ export interface IButtonProps {
 }
 
 /**
- * Button component usually used for links
- * @function Button
- *
- * @param {children?} children - HTML children to render in the button
- * @param {MouseEventHandler<HTMLButtonElement>?} onClick - onClick handler for button
- * @returns {JSX.Element} - Rendered component
+ * A reusable button component.
+ * @param {Object} props - The component props.
+ * @param {string} [props.children] - The content of the button.
+ * @param {string} [props.href] - The link to navigate to when the button is clicked.
+ * @param {string} [props.renderAs] - The HTML tag to render the button as.
+ * @returns {JSX.Element} - A button component.
  */
 
 const Button = ({ children, href, renderAs, ...props }: IButtonProps) => {
