@@ -28,7 +28,8 @@ const Button = ({ children, href, renderAs, type = "submit", ...props }: IButton
       className="p-4 m-4 text-white transition duration-500 ease-in-out bg-gray-800 rounded hover:shadow-outline hover:bg-gray-600"
       href={href}
       target={targetLink}
-      {...props}>
+      {...props}
+    >
       {children}
     </Component>
   );
