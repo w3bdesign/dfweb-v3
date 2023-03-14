@@ -1,17 +1,19 @@
 import type { ReactNode } from "react";
 
+type TRenderAs = "button" | "a";
+
 export interface IButtonProps {
   children?: ReactNode | JSX.Element;
   href?: string;
-  renderAs?: "button" | "a";
+  renderAs?: TRenderAs;
 }
 
 /**
  * A reusable button component.
- * @param {Object} props - The component props.
- * @param {string} [props.children] - The content of the button.
- * @param {string} [props.href] - The link to navigate to when the button is clicked.
- * @param {string} [props.renderAs] - The HTML tag to render the button as.
+ *
+ * @param {ReactNode | JSX.Element} children - The content of the button.
+ * @param {string} href - The link to navigate to when the button is clicked.
+ * @param {TRenderAs} renderAs - The HTML tag to render the button as.
  * @returns {JSX.Element} - A button component.
  */
 
