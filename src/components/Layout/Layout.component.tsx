@@ -32,7 +32,7 @@ interface ILayoutProps {
  * @returns {JSX.Element} - Rendered component
  */
 
-const Layout = ({ children, title, links }: ILayoutProps)  => (
+const Layout = ({ children, title, links }: ILayoutProps) => (
   <>
     <Header title={title} links={links} />
     {children}

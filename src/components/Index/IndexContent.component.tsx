@@ -1,31 +1,16 @@
-//imports
 import Link from "next/link";
 import PortableText from "react-portable-text";
+import { Fragment } from "react";
 
-// types
-import { Fragment, Key, ReactChild, ReactFragment, ReactPortal } from "react";
-import { UrlObject } from "url";
-
-// components
 import Hero from "../Index/Hero.component";
-
-// animations
 import BounceInScroll from "../Animations/BounceInScroll.component";
-
-// interfaces
 
 interface IHero {
   text: string;
 }
 
-interface IPageContent {
-  id: Key | null;
-  content: IContent[];
-  hero: IHero[];
-}
-
 interface IContent {
-  _key: Key | null;
+  _key: string | null;
   text: IText[];
   title: string;
 }
@@ -46,26 +31,25 @@ interface IText {
 }
 
 interface ISerializerCode {
-  children: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
+  children: React.ReactNode;
 }
 
 interface ISerializerLink {
-  href: string | UrlObject;
-  children: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
+  href: string;
+  children: React.ReactNode;
+}
+
+interface IPageContent {
+  id: React.Key | null;
+  content: IContent[];
+  hero: IHero[];
 }
 
 type TPageContent = { pagecontent: IPageContent[] };
 
-/**
- * Renders the index content for the front page
- * @function IndexContent
- * @param {TData} post - Text data that is retrieved from Sanity
- * @returns {JSX.Element} - Rendered component
- */
-
-const IndexContent = ({ pagecontent }: TPageContent)  => (
+const IndexContent = ({ pagecontent }: TPageContent) => (
   <main aria-label="Her kommer hovedinnholdet" id="maincontent">
-    <div className="mx-auto  mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-12 xs:mt-10">
+    <div className="mx-auto mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-12 xs:mt-10">
       {pagecontent && <Hero content={pagecontent[0].hero} />}
       <div className="container grid gap-4 p-4 mx-auto mt-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xs:grid-cols-1">
         {pagecontent?.map(({ id, content }: IPageContent) => (
@@ -82,11 +66,7 @@ const IndexContent = ({ pagecontent }: TPageContent)  => (
                       content={text}
                       serializers={{
                         code: ({ children }: ISerializerCode) => (
-                          <span className="mt-4 text-lg">
-                            {children}
-                            <br />
-                            &nbsp;
-                          </span>
+                          <span className="mt-4 text-lg">{children}</span>
                         ),
                         link: ({ children, href }: ISerializerLink) => (
                           <Link className="underline text-lg font-bold text-blue-700" href={href}>
