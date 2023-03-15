@@ -16,21 +16,21 @@ const indexQuery = groq`*[_type == 'page' && title match 'Hjem']{"id": _id, titl
 const navigationQuery = groq`*[_type == 'Links']{id, Text, Url} | order(id asc)`;
 
 const Home: NextPage = ({
-  pagecontent,
+  pageContent,
   navigation
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Forside" links={navigation}>
-    <IndexContent pagecontent={pagecontent} />
+    <IndexContent pageContent={pageContent} />
   </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const pagecontent = await getClient(false).fetch(indexQuery);
+  const pageContent = await getClient(false).fetch(indexQuery);
   const navigation = await getClient(false).fetch(navigationQuery);
 
   return {
     props: {
-      pagecontent,
+      pageContent,
       navigation
     }
   };
