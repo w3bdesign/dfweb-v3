@@ -2,56 +2,40 @@
  * @jest-environment jsdom
  */
 
-import { render, screen } from "@testing-library/react";
-
+import { render } from "@testing-library/react";
+import { useRouter } from "next/router";
 import Navbar from "../../src/components/Layout/Navbar.component";
 
-const useRouter = jest.spyOn(require("next/router"), "useRouter");
+jest.mock("next/router", () => ({
+  useRouter: jest.fn()
+}));
 
-import linksmock from "../../__mocks__/links.json";
+const links = [
+  { Text: "Home", Url: "/", id: 1, External: false },
+  { Text: "About", Url: "/about", id: 2, External: false },
+  { Text: "Blog", Url: "/blog", id: 3, External: false }
+];
 
 describe("Navbar", () => {
-  beforeEach(() => {
-    useRouter.mockImplementationOnce(() => ({
-      query: { pathName: "/" }
+  test("Legger til active class", () => {
+    useRouter.mockImplementation(() => ({
+      pathname: "/about"
     }));
 
-    render(<Navbar links={linksmock} />);
+    const { getByText } = render(<Navbar links={links} />);
+
+    const activeLink = getByText("About");
+    expect(activeLink).toHaveClass("navbar-link-active");
   });
 
-  it("Navbar laster inn og kan vises", () => {
-    const navbar = screen.getByRole("navigation");
-    expect(navbar).toBeInTheDocument();
-  });
+  test("Legger ikke til active class", () => {
+    useRouter.mockImplementation(() => ({
+      pathname: "/about"
+    }));
 
-  it("Link Hjem har navbar-link class", () => {
-    const link = screen.getByRole("link", { name: /hjem/i });
+    const { getByText } = render(<Navbar links={links} />);
 
-    expect(link.className).toBe(
-      "navbar-link eds-top-navigation-item inline-block text-xl text-white "
-    );
-  });
-
-  it("Link Github har riktig klasse", () => {
-    const github = screen.getByRole("link", { name: /github/i });
-
-    expect(github.className).toBe("navbar-link inline-block text-xl text-white");
-  });
-
-  it("Test activeLink funksjon", () => {
-    const activeLink = jest.fn((url: string, pathname: string) => {
-      if (pathname === url) {
-        return "navbar-link-active";
-      }
-      return "";
-    });
-
-    const url = "/home";
-    const pathname = "/home";
-    const expected = "navbar-link-active";
-
-    const result = activeLink(url, pathname);
-
-    expect(result).toEqual(expected);
+    const nonActiveLink = getByText("Home");
+    expect(nonActiveLink).not.toHaveClass("navbar-link-active");
   });
 });
