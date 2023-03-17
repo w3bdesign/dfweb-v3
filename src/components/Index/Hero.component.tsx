@@ -42,9 +42,9 @@ const Hero = ({ content }: IContent) => (
             cssClass="mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-center lg:text-xl xl:p-0 xl:text-center xl:text-2xl">
             <h2>{content.length > 0 && content[2].text}</h2>
           </FadeDown>
-          <Grow delay={2.2} duration={1.1}>
+         
             <Icons />
-          </Grow>
+         
         </section>
       </div>
     </div>

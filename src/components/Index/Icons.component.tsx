@@ -1,7 +1,9 @@
+import { IconType } from "react-icons";
 import { FaReact, FaVuejs, FaPhp } from "react-icons/fa";
 import { SiTypescript, SiWordpress } from "react-icons/si";
 
-// Grow
+import Grow from "../Animations/Grow.component";
+
 /**
  * Renders SVG icons that are used on the front page
  * Uses Framer Motion for animations to show the SVGs
@@ -9,34 +11,27 @@ import { SiTypescript, SiWordpress } from "react-icons/si";
  * @returns {JSX.Element} - Rendered component
  */
 
-const Icons = () => (
-  <div data-testid="icons" className="flex justify-center mt-4 p-2">
-    <span className="p-2">
-      <FaReact data-testid="React" title="React ikon" size="3em" aria-label="React ikon" />
-    </span>
-    <span className="p-2">
-      <FaVuejs data-testid="Vue" aria-label="Vue ikon" title="Vue ikon" size="3em" />
-    </span>
-    <span className="p-2">
-      <SiTypescript
-        data-testid="Typescript"
-        aria-label="Typescript ikon"
-        title="Typescript ikon"
-        size="3em"
-      />
-    </span>
-    <span className="p-2">
-      <SiWordpress
-        data-testid="Wordpress"
-        aria-label="Wordpress ikon"
-        title="Wordpress ikon"
-        size="3em"
-      />
-    </span>
-    <span className="p-2">
-      <FaPhp data-testid="PHP" aria-label="PHP ikon" title="PHP ikon" size="3em" />
-    </span>
-  </div>
-);
+const Icons = () => {
+  const AnimateIcons: IconType[] = [FaReact, FaVuejs, SiTypescript, SiWordpress, FaPhp];
+
+  return (
+    <div data-testid="icons" className="flex justify-center mt-4 p-2">
+      {AnimateIcons.map((Icon, index) => (
+        <>
+          <span className="p-2" key={index}>
+            <Grow delay={2.2 + index * 0.2}>
+              <Icon
+                data-testid={Icon.name}
+                aria-label={Icon.name + " ikon"}
+                title={Icon.name + " ikon"}
+                size="3em"
+              />
+            </Grow>
+          </span>
+        </>
+      ))}
+    </div>
+  );
+};
 
 export default Icons;
