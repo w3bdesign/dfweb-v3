@@ -12,7 +12,9 @@ const Grow = ({ duration = 0.5, delay = 0, easing = [0.42, 0, 0.58, 1], children
     <motion.div
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
-      transition={{ duration, delay, ease: easing }}>
+      transition={{ duration, delay, ease: easing }}
+      data-testid="grow"
+      >
       {children}
     </motion.div>
   );
