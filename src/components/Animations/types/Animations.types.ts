@@ -24,3 +24,10 @@ export interface IAnimateStaggerWithDelayProps {
   staggerDelay?: number;
   animateNotReverse: boolean;
 }
+
+export interface IGrowProps {
+  duration?: number;
+  delay?: number;
+  easing?: [number, number, number, number];
+  children: ReactNode;
+}
