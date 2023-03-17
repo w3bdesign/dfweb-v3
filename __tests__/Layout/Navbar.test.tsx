@@ -17,7 +17,7 @@ const links = [
 ];
 
 describe("Navbar", () => {
-  test("applies the active class to the active link", () => {
+  test("Legger til active class", () => {
     useRouter.mockImplementation(() => ({
       pathname: "/about"
     }));
@@ -28,7 +28,7 @@ describe("Navbar", () => {
     expect(activeLink).toHaveClass("navbar-link-active");
   });
 
-  test("does not apply the active class to non-active links", () => {
+  test("Legger ikke til active class", () => {
     useRouter.mockImplementation(() => ({
       pathname: "/about"
     }));
