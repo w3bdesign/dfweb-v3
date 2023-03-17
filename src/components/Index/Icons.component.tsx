@@ -1,7 +1,14 @@
+import { IconType } from "react-icons";
 import { FaReact, FaVuejs, FaPhp } from "react-icons/fa";
 import { SiTypescript, SiWordpress } from "react-icons/si";
 
 import Grow from "../Animations/Grow.component";
+
+interface IAnimateIcons {
+  id: number;
+  Icon: IconType;
+  iconName: string;
+}
 
 /**
  * Renders SVG icons that are used on the front page
@@ -11,7 +18,7 @@ import Grow from "../Animations/Grow.component";
  */
 
 const Icons = () => {
-  const AnimateIcons = [
+  const AnimateIcons: IAnimateIcons[] = [
     { id: 0, Icon: FaReact, iconName: "React" },
     { id: 1, Icon: FaVuejs, iconName: "Vue" },
     { id: 2, Icon: SiTypescript, iconName: "Typescript" },
