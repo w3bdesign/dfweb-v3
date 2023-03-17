@@ -1,6 +1,7 @@
 import { FaReact, FaVuejs, FaPhp } from "react-icons/fa";
 import { SiTypescript, SiWordpress } from "react-icons/si";
 
+// Grow
 /**
  * Renders SVG icons that are used on the front page
  * Uses Framer Motion for animations to show the SVGs
