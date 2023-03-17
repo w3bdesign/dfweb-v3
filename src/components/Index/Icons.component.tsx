@@ -12,20 +12,20 @@ import Grow from "../Animations/Grow.component";
 
 const Icons = () => {
   const AnimateIcons = [
-    { id: 0, Icon: FaReact },
-    { id: 1, Icon: FaVuejs },
-    { id: 2, Icon: SiTypescript },
-    { id: 3, Icon: SiWordpress },
-    { id: 4, Icon: FaPhp }
+    { id: 0, Icon: FaReact, iconName: "React" },
+    { id: 1, Icon: FaVuejs, iconName: "Vue" },
+    { id: 2, Icon: SiTypescript, iconName: "Typescript" },
+    { id: 3, Icon: SiWordpress, iconName: "Wordpress" },
+    { id: 4, Icon: FaPhp, iconName: "PHP" }
   ];
 
   return (
     <div data-testid="icons" className="flex justify-center mt-4 p-2">
-      {AnimateIcons.map(({ Icon, id }) => (
+      {AnimateIcons.map(({ Icon, id, iconName }) => (
         <span className="p-2" key={id}>
           <Grow delay={2.2 + id * 0.2}>
             <Icon
-              data-testid={Icon.name}
+              data-testid={iconName}
               aria-label={`${Icon.name} ikon}`}
               title={`${Icon.name} ikon}`}
               size="3em"
