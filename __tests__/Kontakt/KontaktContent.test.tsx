@@ -11,7 +11,7 @@ describe("KontaktContent", () => {
     expect(screen.getByTestId("kontaktcontent")).toBeInTheDocument();
   });
 
-  test("submits the form and displays success message", async () => {
+  test("submits the form and displays success message", () => {
     render(<KontaktContent />);
 
     // fill out form fields
