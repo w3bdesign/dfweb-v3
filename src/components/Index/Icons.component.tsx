@@ -22,18 +22,16 @@ const Icons = () => {
   return (
     <div data-testid="icons" className="flex justify-center mt-4 p-2">
       {AnimateIcons.map(({ Icon, id }) => (
-        <>
-          <span className="p-2" key={id}>
-            <Grow delay={2.2 + id * 0.2}>
-              <Icon
-                data-testid={Icon.name}
-                aria-label={Icon.name + " ikon"}
-                title={Icon.name + " ikon"}
-                size="3em"
-              />
-            </Grow>
-          </span>
-        </>
+        <span className="p-2" key={id}>
+          <Grow delay={2.2 + id * 0.2}>
+            <Icon
+              data-testid={Icon.name}
+              aria-label={`${Icon.name} ikon}`}
+              title={`${Icon.name} ikon}`}
+              size="3em"
+            />
+          </Grow>
+        </span>
       ))}
     </div>
   );
