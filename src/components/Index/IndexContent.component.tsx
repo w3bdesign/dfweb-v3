@@ -66,7 +66,10 @@ const IndexContent = ({ pageContent }: TPageContent) => (
                       content={text}
                       serializers={{
                         code: ({ children }: ISerializerCode) => (
-                          <span className="mt-4 text-lg">{children}</span>
+                          <span className="mt-4 text-lg">
+                            {children} <br />
+                            &nbsp;
+                          </span>
                         ),
                         link: ({ children, href }: ISerializerLink) => (
                           <Link className="underline text-lg font-bold text-blue-700" href={href}>
