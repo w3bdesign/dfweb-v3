@@ -17,8 +17,7 @@ describe("Icons ", () => {
   });
 
   it("Vue laster inn og kan vises", () => {
-    const vue = screen.getByLabelText(/vuejs/i);
-    screen.debug();
+    const vue = screen.getByLabelText(/vuejs/i);   
     expect(vue).toBeInTheDocument();
   });
 
