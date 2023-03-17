@@ -14,20 +14,20 @@ describe("Grow", () => {
     );
   });
 
-  test("renders the component", () => {
+  test("Kan vise komponenten", () => {
     expect(screen.getByTestId("grow")).toBeInTheDocument();
   });
 
-  test("applies the correct animation properties", () => {
+  test("Legger til riktige animasjoner", () => {
     const element = screen.getByTestId("grow");
     expect(element).toHaveStyle("transform: scale(0) translateZ(0);");
   });
 
-  test("renders its children", () => {
+  test("Viser children", () => {
     expect(screen.getByText("Hello World")).toBeInTheDocument();
   });
 
-  test("returns its children inside a motion.div element", () => {
+  test("Returnerer children i motion.div element", () => {
     const { container } = render(<Grow>Hello World</Grow>);
     expect(container).toMatchInlineSnapshot(`
       <div>
