@@ -10,17 +10,17 @@ jest.mock("next/router", () => ({
   useRouter: jest.fn()
 }));
 
+const links = [
+  { Text: "Home", Url: "/", id: 1, External: false },
+  { Text: "About", Url: "/about", id: 2, External: false },
+  { Text: "Blog", Url: "/blog", id: 3, External: false }
+];
+
 describe("Navbar", () => {
   test("applies the active class to the active link", () => {
     useRouter.mockImplementation(() => ({
       pathname: "/about"
     }));
-
-    const links = [
-      { Text: "Home", Url: "/", id: 1, External: false },
-      { Text: "About", Url: "/about", id: 2, External: false },
-      { Text: "Blog", Url: "/blog", id: 3, External: false }
-    ];
 
     const { getByText } = render(<Navbar links={links} />);
 
@@ -32,12 +32,6 @@ describe("Navbar", () => {
     useRouter.mockImplementation(() => ({
       pathname: "/about"
     }));
-
-    const links = [
-      { Text: "Home", Url: "/", id: 1, External: false },
-      { Text: "Contact", Url: "/contact", id: 2, External: false },
-      { Text: "Blog", Url: "/blog", id: 3, External: false }
-    ];
 
     const { getByText } = render(<Navbar links={links} />);
 
