@@ -7,23 +7,21 @@ describe("Test at navigasjon fungerer", () => {
     cy.visit(mainUrl);
   });
 
-  it("Test at vi kan navigere til Hjem", () => {
-    cy.get('[data-testid="Hjem"]').click();
-    cy.url().should("be.equal", `${mainUrl}/`);
-    cy.contains("Hei!");
-  });
+  const links = [
+    { link: "Hjem", testString: "Hei!", url: "" },
+    { link: "CV", testString: "CV", url: "cv" },
+    { link: "Kontakt", testString: "Kontakt", url: "kontakt" }
+  ];
 
-  it("Test at vi kan navigere til CV", () => {
-    cy.get('[data-testid="CV"]').click();
-    cy.url().should("be.equal", `${mainUrl}/cv`);
-    cy.contains("CV");
-  });
+  const testLink = (link: string, testString: string, url: string) => {
+    it(`Test at vi kan navigere til ${link}`, () => {
+      cy.get(`[data-testid=${link}]`).click();
+      cy.url().should("be.equal", `${mainUrl}/${url}`);
+      cy.contains(testString);
+    });
+  };
 
-  it("Test at vi kan navigere til Kontakt", () => {
-    cy.get('[data-testid="Kontakt"]').click();
-    cy.url().should("be.equal", `${mainUrl}/kontakt`);
-    cy.contains("Kontakt");
-  });
+  links.map((link) => testLink(link.link, link.testString, link.url));
 });
 
 export {};
