@@ -21,7 +21,7 @@ describe("Test at navigasjon fungerer", () => {
     });
   };
 
-  links.map((link) => testLink(link.link, link.testString, link.url));
+  links.forEach((link) => testLink(link.link, link.testString, link.url));
 });
 
 export {};
