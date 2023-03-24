@@ -40,7 +40,8 @@ const Navbar = ({ links }: INavbarProps) => {
         <div
           id="main-navigation"
           data-cy="main-navigation"
-          className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap">
+          className="container flex items-center mx-auto md:flex-wrap lg:flex-wrap xl:flex-wrap"
+        >
           <div className="flex w-full text-white md:w-1/2 md:justify-start">
             <div className="relative w-[9.375rem] h-[3.125rem]">
               <Image alt="DFWeb logo" src={logo} fill priority />
@@ -49,11 +50,13 @@ const Navbar = ({ links }: INavbarProps) => {
           <div
             id="hamburger-div"
             data-cy="hamburger-div"
-            className="flex content-center justify-between md:w-1/2 md:justify-end p-3">
+            className="flex content-center justify-between md:w-1/2 md:justify-end p-3"
+          >
             <MobileMenu links={links} />
             <ul
               aria-label="Navigasjon"
-              className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4">
+              className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4"
+            >
               {links.map(({ id, Text, Url, External }) => (
                 <li key={id} className="link mr-3 md:mr-8 lg:mr-3">
                   {External ? (
@@ -65,7 +68,8 @@ const Navbar = ({ links }: INavbarProps) => {
                       rel="noreferrer"
                       className={`hover:after:w-full after:transition-all after:bg-white after:bottom-[-0.45rem] after:block after:m-auto
                       after:h-1 after:ease-in-out after:duration-500 
-                      inline-block text-xl text-white ${activeLink(Url, router.pathname)}`}>
+                      inline-block text-xl text-white ${activeLink(Url, router.pathname)}`}
+                    >
                       {Text}
                     </a>
                   ) : (
@@ -74,7 +78,8 @@ const Navbar = ({ links }: INavbarProps) => {
                       data-testid={Text}
                       className={`hover:after:w-full after:transition-all after:bg-white after:bottom-[-0.45rem] after:block after:m-auto
                       after:h-1 after:ease-in-out after:duration-500 
-                      inline-block text-xl text-white ${activeLink(Url, router.pathname)}`}>
+                      inline-block text-xl text-white ${activeLink(Url, router.pathname)}`}
+                    >
                       {Text}
                     </Link>
                   )}
