@@ -25,7 +25,9 @@ describe("Navbar", () => {
     const { getByText } = render(<Navbar links={links} />);
 
     const activeLink = getByText("About");
-    expect(activeLink).toHaveClass("hover:after:w-full after:transition-all after:bg-white after:bottom-[-0.45rem] after:block after:m-auto after:h-1 after:ease-in-out after:duration-500 inline-block text-xl text-white");
+    expect(activeLink).toHaveClass(
+      "hover:after:w-full after:transition-all after:bg-white after:bottom-[-0.45rem] after:block after:m-auto after:h-1 after:ease-in-out after:duration-500 inline-block text-xl text-white"
+    );
   });
 
   test("Legger ikke til active class", () => {
