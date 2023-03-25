@@ -1,5 +1,7 @@
 import { Lato } from "next/font/google";
 
+import { AnimatePresence } from "framer-motion";
+
 // Types
 import type { AppProps } from "next/app";
 
@@ -14,7 +16,9 @@ const lato = Lato({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className={lato.className}>
-      <Component {...pageProps} />
+      <AnimatePresence mode="wait">
+        <Component {...pageProps} />
+      </AnimatePresence>
     </div>
   );
 }
