@@ -3,19 +3,24 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-a11y",
-    {
-      name: "@storybook/addon-postcss",
-      options: {
-        postcssLoaderOptions: {
-          implementation: require("postcss")
-        }
-      }
-    }
+    "@storybook/addon-a11y" /*, {
+                                                                                            name: "@storybook/addon-postcss",
+                                                                                            options: {
+                                                                                            postcssLoaderOptions: {
+                                                                                            implementation: require("postcss")
+                                                                                            }
+                                                                                            }
+                                                                                            }*/,
+    "@storybook/addon-mdx-gfm"
   ],
-  framework: "@storybook/react",
-  core: {
-    builder: "webpack5"
+  framework: {
+    name: "@storybook/nextjs",
+    options: {}
   },
-  typescript: { reactDocgen: false }
+  typescript: {
+    reactDocgen: false
+  },
+  docs: {
+    autodocs: true
+  }
 };
