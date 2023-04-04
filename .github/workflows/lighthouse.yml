@@ -47,6 +47,8 @@ jobs:
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: lighthouse_audit
         uses: treosh/lighthouse-ci-action@v3
+              with:
+              node-version: 18
         with:
           urls: |
             ${{ steps.get_preview_url.outputs.vercel_preview_url }}
