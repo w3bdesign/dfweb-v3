@@ -23,7 +23,7 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 
 ## Features
 
-### General
+### General 
 
 -   Next.js 13 with Typescript
 -   Sanity.io for fetching project information and frontpage text
