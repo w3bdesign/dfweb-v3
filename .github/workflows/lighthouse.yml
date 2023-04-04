@@ -17,12 +17,12 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            sleep(20000);
             const comment = context.payload.comment;
-            let previewUrl;
+            let previewUrl = "";
             if(comment) {
             const regex = /https:\/\/[a-z0-9-]+\.vercel\.app/g;
-            const matches = comment.body.match(regex);
-            let previewUrl = "";
+            const matches = comment.body.match(regex);            
             if (matches && matches.length) {
               previewUrl = matches[0];
               console.log('Preview url found:', previewUrl);
