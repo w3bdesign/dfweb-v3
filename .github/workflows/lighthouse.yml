@@ -19,6 +19,7 @@ jobs:
           script: |
             const comment = context.payload.comment;
             console.log("Comment:", comment);
+            console.log("context.payload", context.payload);
             let previewUrl = "";
             if(comment) {
             const regex = /https:\/\/[a-z0-9-]+\.vercel\.app/g;
