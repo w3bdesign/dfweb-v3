@@ -1,8 +1,10 @@
 name: Vercel Preview URL Lighthouse Audit
 
-on:
-  issue_comment:
-    types: [created, edited]
+on: [pull_request]
+
+#on:
+#  issue_comment:
+#    types: [created, edited]
 
 jobs:
   generate_lighthouse_audit:
@@ -11,7 +13,7 @@ jobs:
     steps:
       - name: Get Vercel preview URL
         id: get_preview_url
-        uses: actions/github-script@v6
+        uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -25,11 +27,11 @@ jobs:
             }
             console.log("No preview url found.");
             core.setOutput('vercel_preview_url', previewUrl);
-
+            
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: loading_comment_to_pr
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ github.event.issue.number }}
@@ -53,7 +55,7 @@ jobs:
       - name: Format lighthouse score
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: format_lighthouse_score
-        uses: actions/github-script@v6
+        uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -79,11 +81,11 @@ jobs:
             ].join('\n')
 
              core.setOutput("comment", comment);
-
+             
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: comment_to_pr
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ github.event.issue.number }}
