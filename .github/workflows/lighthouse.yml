@@ -18,6 +18,7 @@ jobs:
             const comment = context.payload.comment;
             const regex = /https:\/\/[a-z0-9-]+\.vercel\.app/g;
             console.log('Comment is: ', comment);
+            console.log('context is: ', context);
             const matches = comment.body.match(regex);
             let previewUrl = "";
             if (matches && matches.length) {
