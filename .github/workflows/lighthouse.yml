@@ -27,7 +27,7 @@ jobs:
             }
             console.log("No preview url found.");
             core.setOutput('vercel_preview_url', previewUrl);
-
+            
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: loading_comment_to_pr
@@ -47,8 +47,6 @@ jobs:
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: lighthouse_audit
         uses: treosh/lighthouse-ci-action@v3
-              with:
-              node-version: 18
         with:
           urls: |
             ${{ steps.get_preview_url.outputs.vercel_preview_url }}
@@ -83,7 +81,7 @@ jobs:
             ].join('\n')
 
              core.setOutput("comment", comment);
-
+             
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: comment_to_pr
