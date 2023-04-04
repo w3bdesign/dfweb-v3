@@ -17,7 +17,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            setTimeout(() => {}, 20000);
+            setTimeout(() => {
             const comment = context.payload.comment;
             let previewUrl = "";
             if(comment) {
@@ -30,6 +30,9 @@ jobs:
             console.log("No preview url found.");
             } else { previewUrl = 'https://www.dfweb.no';}
             core.setOutput('vercel_preview_url', previewUrl);
+
+            }, 20000);
+            
             
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
