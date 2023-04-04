@@ -1,11 +1,9 @@
 name: Vercel Preview URL Lighthouse Audit
 
 on: [pull_request]
-
 #on:
 #  issue_comment:
 #    types: [created, edited]
-
 jobs:
   generate_lighthouse_audit:
     timeout-minutes: 30
