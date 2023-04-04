@@ -17,7 +17,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            sleep(20000);
+            setTimeout(() {}, 20000);
             const comment = context.payload.comment;
             let previewUrl = "";
             if(comment) {
