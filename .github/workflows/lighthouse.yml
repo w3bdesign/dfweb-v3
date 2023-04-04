@@ -28,7 +28,7 @@ jobs:
             }
             console.log("No preview url found.");
             core.setOutput('vercel_preview_url', previewUrl);
-            } else { console.log("No comment found, using dfweb.no as fallback"); core.setOutput('vercel_preview_url', 'http://www.dfweb.no');}
+            } else { console.log("No comment found, using dfweb.no as fallback"); core.setOutput('vercel_preview_url', 'http://www.vg.no');}
 
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
