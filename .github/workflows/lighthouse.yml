@@ -17,13 +17,13 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            setTimeout(() => {
             const comment = context.payload.comment;
-            console.log('Comment is now:', comment);
+            console.log("Comment:", comment);
             let previewUrl = "";
             if(comment) {
             const regex = /https:\/\/[a-z0-9-]+\.vercel\.app/g;
-            const matches = comment.body.match(regex);          
+            const matches = comment.body.match(regex);
+            
             if (matches && matches.length) {
               previewUrl = matches[0];
               console.log('Preview url found:', previewUrl);
@@ -31,9 +31,6 @@ jobs:
             console.log("No preview url found.");
             } else { previewUrl = 'https://www.dfweb.no';}
             core.setOutput('vercel_preview_url', previewUrl);
-
-            }, 20000);
-            
             
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
@@ -69,8 +66,6 @@ jobs:
             const result = ${{ steps.lighthouse_audit.outputs.manifest }}[0].summary
             const links = ${{ steps.lighthouse_audit.outputs.links }}
 
-            console.log("Links: ", links)
-
             const formatResult = (res) => Math.round((res * 100))
             Object.keys(result).forEach(key => result[key] = formatResult(result[key]))
 
@@ -89,7 +84,7 @@ jobs:
             ].join('\n')
 
              core.setOutput("comment", comment);
-      
+             
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: comment_to_pr
