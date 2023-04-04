@@ -16,10 +16,11 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const comment = context.payload.comment;
+            if (comment) {
             const regex = /https:\/\/[a-z0-9-]+\.vercel\.app/g;
             console.log('Comment is: ', comment);
             console.log('context is: ', context);
-            const matches = comment?.body?.match(regex);
+            const matches = comment.body.match(regex);
             let previewUrl = "";
             if (matches && matches.length) {
               previewUrl = matches[0];
@@ -27,6 +28,7 @@ jobs:
             }
             console.log("No preview url found.");
             core.setOutput('vercel_preview_url', previewUrl);
+            } else { console.log("No comment found."); }
             
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
