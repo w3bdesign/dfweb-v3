@@ -15,7 +15,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const comment = context.payload.comment || 'https://www.dfweb.no';
+            const comment = context.payload.comment;
             if (comment) {
             const regex = /https:\/\/[a-z0-9-]+\.vercel\.app/g;
             console.log('Comment is: ', comment);
@@ -28,8 +28,8 @@ jobs:
             }
             console.log("No preview url found.");
             core.setOutput('vercel_preview_url', previewUrl);
-            } else { console.log("No comment found."); }
-            
+            } else { console.log("No comment found."); core.setOutput('vercel_preview_url', 'https://www.dfweb.no');}
+
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: loading_comment_to_pr
@@ -83,7 +83,7 @@ jobs:
             ].join('\n')
 
              core.setOutput("comment", comment);
-             
+
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: comment_to_pr
