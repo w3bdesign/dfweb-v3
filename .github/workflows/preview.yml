@@ -21,9 +21,4 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'The preview URL is: ${{ steps.vercel_preview_url.outputs.vercel_preview_url }}.'
-            });
+            console.log("steps.vercel_preview_url.outputs.vercel_preview_url: ", steps.vercel_preview_url.outputs.vercel_preview_url);
