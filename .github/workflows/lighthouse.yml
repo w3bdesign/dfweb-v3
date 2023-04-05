@@ -1,10 +1,10 @@
 name: Vercel Preview URL Lighthouse Audit
 
-# on: [pull_request]
+on: [pull_request]
 
-on:
-  issue_comment:
-    types: [created, edited]
+#on:
+#  issue_comment:
+#    types: [created, edited]
 
 jobs:
   generate_lighthouse_audit:
