@@ -71,15 +71,15 @@ jobs:
             const score = res => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴'
 
             const comment = [
-                `⚡️ [Lighthouse report](${Object.values(links)[0]}) for the changes in this PR:`,
+                `⚡️ [Lighthouse report](${Object.values(links)[0]}):`,
                 '| Category | Score |',
                 '| --- | --- |',
                 `| ${score(result.performance)} Performance | ${result.performance} |`,
                 `| ${score(result.accessibility)} Accessibility | ${result.accessibility} |`,
                 `| ${score(result['best-practices'])} Best practices | ${result['best-practices']} |`,
                 `| ${score(result.seo)} SEO | ${result.seo} |`,                
-                ' ',
-                `*Lighthouse ran on [${Object.keys(links)[0]}](${Object.keys(links)[0]})*`
+                ' '
+                
             ].join('\n')
 
              core.setOutput("comment", comment);
