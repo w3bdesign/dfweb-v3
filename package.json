@@ -86,7 +86,7 @@
     "jsdom": "^21.1.1",
     "jsdom-testing-mocks": "^1.7.0",
     "postcss": "^8.4.23",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "react-test-renderer": "18.2.0",
     "sitemap": "^7.1.1",
     "start-server-and-test": "^2.0.0",
