@@ -26,7 +26,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
 
   # 🗃️  Base content: Activity & Community
@@ -47,7 +47,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
 
   # 🗃️  Base content: Repositories
@@ -68,7 +68,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
 
   # ⏰ WakaTime plugin
@@ -89,7 +89,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_wakatime: yes
           plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }} # Required
@@ -117,7 +117,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_reactions: yes
           plugin_reactions_limit: 200 # Compute reactions over last 200 issue comments
@@ -144,7 +144,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_topics: yes
           plugin_topics_sort: stars # Sort by most starred topics
@@ -169,7 +169,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_achievements: yes
           plugin_achievements_threshold: C # Display achievements with rank B or higher
@@ -191,7 +191,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_achievements: yes
           plugin_achievements_threshold: B # Display achievements with rank B or higher
@@ -218,7 +218,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_followup: yes
           plugin_followup_sections: repositories, user # Display overall status of issues/pull requests created on user's repositories and created by user
@@ -241,7 +241,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_stackoverflow: yes
           plugin_stackoverflow_user: 184605 # Stackoverflow user id (required)
@@ -267,7 +267,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_posts: yes
           plugin_posts_source: dev.to # External source
@@ -291,7 +291,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_support: yes
 
@@ -313,7 +313,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_traffic: yes
 
@@ -335,7 +335,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_lines: yes
 
@@ -357,7 +357,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_habits: yes
           plugin_habits_from: 200 # Use 200 events to compute habits
@@ -384,7 +384,7 @@ jobs:
           use_prebuilt_image: yes
           committer_message: |
             chore(metrics): update `${filename}`
-            
+
             [Skip GitHub Action]
           plugin_languages: yes
           plugin_languages_ignored: ActionScript, AngelScript # Ignored languages
