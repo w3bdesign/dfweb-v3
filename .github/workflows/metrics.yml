@@ -1,0 +1,404 @@
+name: Metrics
+
+on:
+  # Schedule updates (each hour)
+  schedule: [{ cron: "30 20 * * 5" }]
+  # Lines below let you run workflow manually and on each commit
+  workflow_dispatch:
+  push: { branches: ["master", "main"] }
+
+jobs:
+  # 🗃️  Base content: Header
+  header:
+    name: Header
+    runs-on: ubuntu-latest
+    steps:
+      - name: header
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.base.header.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+
+  # 🗃️  Base content: Activity & Community
+  activity-community:
+    name: Activity & Community
+    runs-on: ubuntu-latest
+    steps:
+      - name: activity & community
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: activity, community
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.base.activity-community.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+
+  # 🗃️  Base content: Repositories
+  repositories:
+    name: Repositories
+    runs-on: ubuntu-latest
+    steps:
+      - name: repositories
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: repositories
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.base.repositories.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+
+  # ⏰ WakaTime plugin
+  plugin-wakatime:
+    name: WakaTime
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin wakatime
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.wakatime.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_wakatime: yes
+          plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }} # Required
+          plugin_wakatime_days: 7 # Display last week stats
+          plugin_wakatime_sections: time, languages, os, editors-graphs, languages-graphs # Display time and projects sections, along with projects graphs
+          plugin_wakatime_limit: 5 # Show 5 entries per graph
+          plugin_wakatime_url: https://wakatime.com # Wakatime url endpoint
+          plugin_wakatime_user: .user.login # User
+
+  # 🎭 Comment reactions
+  plugin-reactions:
+    name: Comment reactions
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin reactions
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.reactions.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_reactions: yes
+          plugin_reactions_limit: 200 # Compute reactions over last 200 issue comments
+          plugin_reactions_limit_issues: 100 # Compute reactions over laste 100 issues/pull requests opened
+          plugin_reactions_days: 30 # Compute reactions on issue comments posted less than 14 days ago
+          plugin_reactions_details: count, percentage # Display reactions count and percentage
+          plugin_reactions_ignored: bot # Ignore "bot" user
+
+  # 📌 Starred topics
+  plugin-topics:
+    name: Starred topics
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin topics
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.topics.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_topics: yes
+          plugin_topics_sort: stars # Sort by most starred topics
+          plugin_topics_mode: mastered # Display icons instead of labels
+          plugin_topics_limit: 20 # Disable limitations
+
+  # 🏆 Achievements
+  plugin-achivements:
+    name: Achievements
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin achievements
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.achievements.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_achievements: yes
+          plugin_achievements_threshold: C # Display achievements with rank B or higher
+          plugin_achievements_secrets: yes # Display unlocked secrets achievements
+          plugin_achievements_ignored: octonaut # Hide octonaut achievement
+          plugin_achievements_limit: 0 # Display all unlocked achievement matching threshold and secrets params
+          plugin_achievements_display: detailed # Use compact display
+
+      - name: plugin achievements compact
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.achievements.compact.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_achievements: yes
+          plugin_achievements_threshold: B # Display achievements with rank B or higher
+          plugin_achievements_secrets: yes # Display unlocked secrets achievements
+          plugin_achievements_ignored: octonaut # Hide octonaut achievement
+          plugin_achievements_limit: 0 # Display all unlocked achievement matching threshold and secrets params
+          plugin_achievements_display: compact # Use compact display
+
+  # 🎟️  Follow-up of issues and pull requests
+  plugin-followup:
+    name: Followup issues
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin followup
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.followup.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_followup: yes
+          plugin_followup_sections: repositories, user # Display overall status of issues/pull requests created on user's repositories and created by user
+
+  # 🗨️  Stackoverflow plugin
+  plugin-stackoverflow:
+    name: Stackoverflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin stackoverflow
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.stackoverflow.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_stackoverflow: yes
+          plugin_stackoverflow_user: 184605 # Stackoverflow user id (required)
+          plugin_stackoverflow_sections: "" # Display top answers and recent questions
+          plugin_stackoverflow_limit: 2 # Display 2 entries per section
+          plugin_stackoverflow_lines: 4 # Display 4 lines per entry
+
+  # ✒️  Recent posts
+  plugin-posts:
+    name: Recent posts
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin posts
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.posts.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_posts: yes
+          plugin_posts_source: dev.to # External source
+          plugin_people_user: .github.user # Use same username as GitHub login
+
+  # 💭 GitHub Community Support
+  plugin-support:
+    name: Community Support
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin support
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.support.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_support: yes
+
+  # 🧮 Repositories traffic
+  plugin-traffic:
+    name: Repositories Traffic
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin traffic
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.traffic.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_traffic: yes
+
+  # 👨‍💻 Lines of code changed
+  plugin-lines:
+    name: Lines of codes changed
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin lines
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.lines.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_lines: yes
+
+  # 💡 Coding habits
+  plugin-habits:
+    name: Coding habits
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin habits
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 300
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.habits.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_habits: yes
+          plugin_habits_from: 200 # Use 200 events to compute habits
+          plugin_habits_days: 14 # Keep only events from last 14 days
+          plugin_habits_facts: yes # Display facts section
+          plugin_habits_charts: no # Display charts section
+          plugin_habits_trim: yes # Trim unused hours on daily chart
+
+  # 🈷️ Most used languages
+  plugin-languages:
+    name: Most used languages
+    runs-on: ubuntu-latest
+    steps:
+      - name: plugin languages
+        uses: lowlighter/metrics@v3.32
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 500
+          repositories_forks: yes
+          repositories_affiliations: owner, collaborator, organization_member
+          config_timezone: Asia/Tehran
+          filename: assets/metrics.plugin.languages.svg
+          use_prebuilt_image: yes
+          committer_message: |
+            chore(metrics): update `${filename}`
+
+            [Skip GitHub Action]
+          plugin_languages: yes
+          plugin_languages_ignored: ActionScript, AngelScript # Ignored languages
+          plugin_languages_skipped: "nekofar/nekofar" # List of repositories to skip
+          plugin_languages_limit: 8 # Display up to 8 languages
+          plugin_languages_threshold: 0% # Hides all languages less than 2%
+          plugin_languages_colors: github # Make most used languages orange and JavaScript red
+          plugin_languages_aliases: "" # Customize languages names with aliases
+          plugin_languages_sections: most-used, recently-used # Display most used and recently used languages stats
+          plugin_languages_details: percentage # Additionally display total bytes size and percentage
+          plugin_languages_indepth: yes # Get indepth stats (see documentation before enabling)
+          plugin_languages_analysis_timeout: 30 # Indepth mode - Analysis timeout
+          plugin_languages_categories: programming # Display only languages that match these categories in most-used section
+          plugin_languages_recent_categories: markup, programming # Display only languages that match these categories in recently-used section
+          plugin_languages_recent_load: 1000 # Load up to 1000 events to compute recently used stats
+          plugin_languages_recent_days: 30 # Events maximum age (day, recently-used section)
+          commits_authoring: ${{ secrets.AUTHOR_EMAILS }} # Surnames or email addresses used to identify your commits
