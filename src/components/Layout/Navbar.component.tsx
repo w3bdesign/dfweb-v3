@@ -52,8 +52,8 @@ const Navbar = ({ links }: INavbarProps) => {
             {Text}
           </a>
         ) : (
-          <Link href={Url} data-testid={Text} className={linkClasses}>
-            {Text}
+          <Link href={Url} data-testid={Text}>
+            <span className={linkClasses}>{Text}</span>
           </Link>
         )}
       </li>
