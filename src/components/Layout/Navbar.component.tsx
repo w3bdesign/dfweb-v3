@@ -31,6 +31,35 @@ const Navbar = ({ links }: INavbarProps) => {
     return pathname === url ? "" : "after:w-0";
   };
 
+  const renderLink = (link: ILinks) => {
+    const { id, Text, Url, External } = link;
+
+    const commonLinkClasses =
+      "hover:after:w-full after:transition-all after:bg-white after:bottom-[-0.45rem] after:block after:m-auto after:h-1 after:ease-in-out after:duration-500 inline-block text-xl text-white";
+
+    const linkClasses = `${commonLinkClasses} ${activeLink(Url, router.pathname)}`;
+
+    return (
+      <li key={id} className="link mr-3 md:mr-8 lg:mr-3">
+        {External ? (
+          <a
+            aria-label={Text}
+            data-testid={Text}
+            href={Url}
+            target="_blank"
+            rel="noreferrer"
+            className={linkClasses}>
+            {Text}
+          </a>
+        ) : (
+          <Link href={Url} data-testid={Text} className={linkClasses}>
+            {Text}
+          </Link>
+        )}
+      </li>
+    );
+  };
+
   return (
     <header aria-label="Header for logo og navigasjon">
       <nav className="fixed top-0 z-50 w-full p-4 bg-gray-800">
@@ -51,32 +80,7 @@ const Navbar = ({ links }: INavbarProps) => {
             <ul
               aria-label="Navigasjon"
               className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4">
-              {links.map(({ id, Text, Url, External }) => (
-                <li key={id} className="link mr-3 md:mr-8 lg:mr-3">
-                  {External ? (
-                    <a
-                      aria-label={Text}
-                      data-testid={Text}
-                      href={Url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={`hover:after:w-full after:transition-all after:bg-white after:bottom-[-0.45rem] after:block after:m-auto
-                      after:h-1 after:ease-in-out after:duration-500 
-                      inline-block text-xl text-white ${activeLink(Url, router.pathname)}`}>
-                      {Text}
-                    </a>
-                  ) : (
-                    <Link
-                      href={Url}
-                      data-testid={Text}
-                      className={`hover:after:w-full after:transition-all after:bg-white after:bottom-[-0.45rem] after:block after:m-auto
-                      after:h-1 after:ease-in-out after:duration-500 
-                      inline-block text-xl text-white ${activeLink(Url, router.pathname)}`}>
-                      {Text}
-                    </Link>
-                  )}
-                </li>
-              ))}
+              {links.map(renderLink)}
             </ul>
           </div>
         </div>
