@@ -33,8 +33,10 @@ const Navbar = ({ links }: INavbarProps) => {
 
   const renderLink = (link: ILinks) => {
     const { id, Text, Url, External } = link;
+
     const commonLinkClasses =
       "hover:after:w-full after:transition-all after:bg-white after:bottom-[-0.45rem] after:block after:m-auto after:h-1 after:ease-in-out after:duration-500 inline-block text-xl text-white";
+
     const linkClasses = `${commonLinkClasses} ${activeLink(Url, router.pathname)}`;
 
     return (
@@ -50,8 +52,8 @@ const Navbar = ({ links }: INavbarProps) => {
             {Text}
           </a>
         ) : (
-          <Link href={Url} data-testid={Text}>
-            <a className={linkClasses}>{Text}</a>
+          <Link href={Url} data-testid={Text} className={linkClasses}>
+            {Text}
           </Link>
         )}
       </li>
