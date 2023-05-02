@@ -48,7 +48,7 @@
     "react-use": "^17.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.5",
+    "@babel/core": "^7.21.8",
     "@playwright/test": "^1.33.0",
     "@storybook/addon-a11y": "^7.0.7",
     "@storybook/addon-actions": "^7.0.7",
