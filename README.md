@@ -5,7 +5,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_dfweb-v3&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3bdesign_dfweb-v3)
  
 # Dfweb.no Portfolio Version 3
-
+ 
 Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 
 ## Live URL: <https://www.dfweb.no>
