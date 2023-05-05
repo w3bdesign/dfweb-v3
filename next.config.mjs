@@ -38,6 +38,9 @@ const headers = [
 ];
 
 const config = {
+  experimental: {
+    appDir: false,
+  },
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
