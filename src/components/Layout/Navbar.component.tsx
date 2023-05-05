@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-import MobileMenu from "./MobileMenu.component";
+// import MobileMenu from "./MobileMenu.component";
 
 import logo from "../../../public/logo.svg";
 
