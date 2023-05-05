@@ -37,10 +37,7 @@ const headers = [
   }
 ];
 
-const config = {
-  experimental: {
-    appDir: false,
-  },
+const config = { 
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
