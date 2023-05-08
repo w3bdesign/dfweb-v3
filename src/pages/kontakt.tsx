@@ -16,7 +16,7 @@ const navigationQuery = groq`*[_type == "Links"]{id, Text, Url} | order(id asc)`
 
 const Kontakt: NextPage = ({ navigation }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Kontakt" links={navigation}>
-    KontaktContent 
+    KontaktContent
   </Layout>
 );
 
