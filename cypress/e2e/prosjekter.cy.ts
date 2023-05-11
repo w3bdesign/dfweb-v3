@@ -26,7 +26,7 @@ describe("Test at prosjekter vises og at filter fungerer", () => {
 
     it("Test at vi kan velge kategori på mobil", () => {
       cy.get('[data-cy="kategorifilter"]').select("PHP");
-      cy.get('[data-cy="prosjektgrid"]').find('[data-cy="projectdiv"]').should("have.length", 1);
+      cy.get('[data-cy="prosjektgrid"]').find('[data-cy="projectdiv"]').should("have.length", 2);
     });
   });
 });
