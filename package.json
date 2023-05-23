@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
-    "@playwright/test": "^1.34.0",
+    "@playwright/test": "^1.34.1",
     "@storybook/addon-a11y": "^7.0.13",
     "@storybook/addon-actions": "^7.0.13",
     "@storybook/addon-essentials": "^7.0.13",
