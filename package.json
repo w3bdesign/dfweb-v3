@@ -71,7 +71,7 @@
     "babel-loader": "^9.1.2",
     "chromatic": "^6.17.4",
     "cross-env": "^7.0.3",
-    "cypress": "12.12.0",
+    "cypress": "12.13.0",
     "cypress-axe": "^1.4.0",
     "eslint": "^8.41.0",
     "eslint-config-next": "^13.4.3",
