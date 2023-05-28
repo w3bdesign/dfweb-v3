@@ -2,7 +2,7 @@ import Link from "next/link";
 import PortableText from "react-portable-text";
 import { Fragment } from "react";
 
-import Hero from "../Index/Hero.component";
+import Hero from "./Hero.component";
 import BounceInScroll from "../Animations/BounceInScroll.component";
 
 interface IHero {
