@@ -48,12 +48,13 @@ interface IPageContent {
 type TPageContent = { pageContent: IPageContent[] };
 
 /**
- * Renders a `section` element with a `title` and `text` content using the given props.
- *
- * @param {IContent} text - the content to be rendered inside the `section` element.
- * @param {string} title - the title of the `section` element, used as `aria-label` and `data-cy`.
+ * Renders a `section` element with a `text` and `title` content using the given props.
+ * 
+ * @param {string} props.title - the title of the `section` element, used as `aria-label` and `data-cy`.
+ * @param {IText[]} props.text - the `text` content to be rendered inside the `section` element.
  * @return {JSX.Element} the `section` element with the given `title` and `text` content.
  */
+
 const Section = ({ text, title }: IContent) => (
   <section aria-label={title} data-testid="sanity-section">
     <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow min-h-full lg:h-128 xl:h-96">
