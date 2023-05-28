@@ -2,7 +2,7 @@ import Link from "next/link";
 import PortableText from "react-portable-text";
 import { Fragment } from "react";
 
-import Hero from "../Index/Hero.component";
+import Hero from "./Hero.component";
 import BounceInScroll from "../Animations/BounceInScroll.component";
 
 interface IHero {
@@ -47,6 +47,14 @@ interface IPageContent {
 
 type TPageContent = { pageContent: IPageContent[] };
 
+/**
+ * Renders a `section` element with a `text` and `title` content using the given props.
+ * 
+ * @param {string} props.title - the title of the `section` element, used as `aria-label` and `data-cy`.
+ * @param {IText[]} props.text - the `text` content to be rendered inside the `section` element.
+ * @return {JSX.Element} the `section` element with the given `title` and `text` content.
+ */
+
 const Section = ({ text, title }: IContent) => (
   <section aria-label={title} data-testid="sanity-section">
     <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow min-h-full lg:h-128 xl:h-96">
@@ -76,6 +84,12 @@ const Section = ({ text, title }: IContent) => (
   </section>
 );
 
+/**
+ * Renders the main content of the page using the given page content object.
+ *
+ * @param {TPageContent} pageContent - The object containing the page content to render.
+ * @return {JSX.Element} The main content of the page.
+ */
 const IndexContent = ({ pageContent }: TPageContent) => (
   <main aria-label="Her kommer hovedinnholdet" id="maincontent">
     <div className="mx-auto mt-16 rounded lg:mt-20 xl:mt-20 bg-graybg shadow-large md:mt-16 sm:mt-12 xs:mt-10">

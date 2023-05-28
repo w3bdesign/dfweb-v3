@@ -11,7 +11,7 @@ interface IContent {
 
 /**
  * Renders Hero that is used on the front page
- * Uses GSAP for animations to show the text
+ * Uses Framer Motion for animations to show the text
  * @function Hero
  * @returns {JSX.Element} - Rendered component
  */
