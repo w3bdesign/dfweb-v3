@@ -49,7 +49,7 @@ type TPageContent = { pageContent: IPageContent[] };
 
 /**
  * Renders a `section` element with a `text` and `title` content using the given props.
- * 
+ *
  * @param {string} props.title - the title of the `section` element, used as `aria-label` and `data-cy`.
  * @param {IText[]} props.text - the `text` content to be rendered inside the `section` element.
  * @return {JSX.Element} the `section` element with the given `title` and `text` content.
