@@ -73,7 +73,7 @@
     "cross-env": "^7.0.3",
     "cypress": "12.13.0",
     "cypress-axe": "^1.4.0",
-    "eslint": "^8.41.0",
+    "eslint": "^8.42.0",
     "eslint-config-next": "^13.4.4",
     "eslint-plugin-cypress": "2.13.3",
     "eslint-plugin-jest-dom": "^4.0.3",
