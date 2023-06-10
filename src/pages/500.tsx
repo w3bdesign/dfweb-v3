@@ -11,8 +11,8 @@ import { getClient } from "../lib/sanity.server";
 import Layout from "../components/Layout/Layout.component";
 import ErrorContent from "../components/Error/ErrorContent.component";
 
-// Sanity GROQ queries
-const navigationQuery = groq`*[_type == 'Links']{id, Text, Url} | order(id asc)`;
+// Sanity GROQ query
+import { navigationQuery } from "../queries/sanityQueries";
 
 const Custom500: NextPage = ({ navigation }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Feil - 500" links={navigation}>
@@ -21,12 +21,10 @@ const Custom500: NextPage = ({ navigation }: InferGetStaticPropsType<typeof getS
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const navigation = await getClient(false).fetch(navigationQuery);
+  const data = await getClient(false).fetch(navigationQuery);
 
   return {
-    props: {
-      navigation
-    }
+    props: data
   };
 };
 

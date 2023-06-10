@@ -1,6 +1,3 @@
-// Package imports
-import { groq } from "next-sanity";
-
 // Types
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 
@@ -11,14 +8,8 @@ import { getClient } from "../lib/sanity.server";
 import ProsjekterListings from "../components/Prosjekter/ProsjekterListings.component";
 import Layout from "../components/Layout/Layout.component";
 
-// Sanity GROQ query
-const query = groq`
-{
-  "projects": *[_type == "project"]{  ...,  "categoryname": projectcategory->name, "imageurl": projectimage.asset->url} | order(id asc),
-  "categories": *[_type == "category"]{ id, name } | order(id asc),
-  "navigation": *[_type == 'Links']{id, Text, Url} | order(id asc)
-}
-`;
+// Import Sanity GROQ queries
+import { projectQuery } from "../queries/sanityQueries";
 
 const Prosjekter: NextPage = ({
   projects,
@@ -31,7 +22,7 @@ const Prosjekter: NextPage = ({
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await getClient(false).fetch(query);
+  const data = await getClient(false).fetch(projectQuery);
 
   return {
     props: data
