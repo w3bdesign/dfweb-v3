@@ -1,6 +1,3 @@
-// Package imports
-import { groq } from "next-sanity";
-
 // Types
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 
