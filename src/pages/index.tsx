@@ -11,9 +11,13 @@ import Layout from "../components/Layout/Layout.component";
 // Utilities
 import { getClient } from "../lib/sanity.server";
 
-// Sanity GROQ queries
-const indexQuery = groq`*[_type == 'page' && title match 'Hjem']{"id": _id, title, hero, content}`;
-const navigationQuery = groq`*[_type == 'Links']{id, Text, Url} | order(id asc)`;
+// Sanity GROQ query
+const query = groq`
+{
+  "pageContent": *[_type == 'page' && title match 'Hjem']{"id": _id, title, hero, content},
+  "navigation": *[_type == 'Links']{id, Text, Url} | order(id asc)
+}
+`;
 
 const Home: NextPage = ({
   pageContent,
@@ -25,14 +29,10 @@ const Home: NextPage = ({
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const pageContent = await getClient(false).fetch(indexQuery);
-  const navigation = await getClient(false).fetch(navigationQuery);
+  const data = await getClient(false).fetch(query);
 
   return {
-    props: {
-      pageContent,
-      navigation
-    }
+    props: data
   };
 };
 
