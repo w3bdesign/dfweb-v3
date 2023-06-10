@@ -1,5 +1,3 @@
-
-
 // Types
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 
