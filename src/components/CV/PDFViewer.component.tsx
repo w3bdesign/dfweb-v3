@@ -8,6 +8,12 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 
 type PdfViewerProps = { file: string };
 
+/**
+ * Renders a PDF viewer component with the given file.
+ *
+ * @param {PdfViewerProps} props - The props object with the file to be rendered.
+ * @return {JSX.Element} The PDF viewer component with the specified file.
+ */
 const PdfViewer: FC<PdfViewerProps> = (props) => {
   const { file } = props;
 
