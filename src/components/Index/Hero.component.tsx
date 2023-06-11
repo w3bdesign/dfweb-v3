@@ -44,7 +44,6 @@ const Hero = ({ content }: IContent) => (
           >
             <h2>{content.length > 0 && content[2].text}</h2>
           </FadeDown>
-
           <Icons />
         </section>
       </div>
