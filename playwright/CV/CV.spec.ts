@@ -9,11 +9,11 @@ test.describe("CV", () => {
 
   test("Skal vise CV", async ({ page }) => {
     const cv = page.getByText(
-      "CVNøkkelkvalifikasjonerTotalt over 10 års erfaring med utvikling og design av ne"
+      "FRONTEND UTVIKLERDANIEL FJELDSTADNØKKELKVALIFIKASJONERFrilansArbeid med utviklin"
     );
 
     await expect(cv).toContainText(
-      "CVNøkkelkvalifikasjonerTotalt over 10 års erfaring med utvikling og design av ne",
+      "FRONTEND UTVIKLERDANIEL FJELDSTADNØKKELKVALIFIKASJONERFrilansArbeid med utviklin",
       { timeout: 10000 }
     );
   });
