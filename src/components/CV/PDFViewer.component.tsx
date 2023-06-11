@@ -21,7 +21,7 @@ const PdfViewer: FC<PdfViewerProps> = (props) => {
       />
       <Page
         //renderMode="svg"
-        className="flex content-center justify-center -mt-12"
+        className="flex content-center justify-center -mt-8"
         scale={1.5}
         pageNumber={2}
       />
