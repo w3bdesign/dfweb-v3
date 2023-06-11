@@ -21,7 +21,7 @@ const CVContent = () => (
       <PageHeader>CV</PageHeader>
       <div className="px-4 p lg:px-0 xl:px-0 md:px-0">
         <div className="container mx-auto bg-white rounded shadow sm:mb-4">
-          <div className="p-4 mx-auto h-96 mt-4 flex justify-center items-center sm:block">
+          <div className="p-4 mx-auto h-96 md:h-full mt-4 flex justify-center items-center sm:block">
             <div className="p-4 text-lg rounded ">
               <div className="mt-4 hidden md:block">
                 <PdfViewer file="./cv/CV-dfweb.pdf" />
