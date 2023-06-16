@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Get Vercel preview URL
         id: get_preview_url
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -34,7 +34,7 @@ jobs:
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: loading_comment_to_pr
-        uses: marocchino/sticky-pull-request-comment@v1
+        uses: marocchino/sticky-pull-request-comment@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ github.event.issue.number }}
@@ -58,7 +58,7 @@ jobs:
       - name: Format lighthouse score
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: format_lighthouse_score
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -87,7 +87,7 @@ jobs:
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: comment_to_pr
-        uses: marocchino/sticky-pull-request-comment@v1
+        uses: marocchino/sticky-pull-request-comment@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ github.event.issue.number }}
