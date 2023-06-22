@@ -68,7 +68,7 @@
     "@types/storybook__react": "^5.2.1",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
-    "chromatic": "^6.19.8",
+    "chromatic": "^6.19.9",
     "cross-env": "^7.0.3",
     "cypress": "12.15.0",
     "cypress-axe": "^1.4.0",
