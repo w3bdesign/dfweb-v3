@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 
 import Button from "../UI/Button.component";
 import PageHeader from "../UI/PageHeader.component";
+import InputField from "./InputField.component";
 
 interface IEvent {
   preventDefault: () => void;
@@ -25,7 +26,9 @@ const KontaktContent = () => {
 
     event.preventDefault();
 
-    if (!formRef.current) return;
+    if (!formRef.current) {
+      return;
+    }
 
     emailjs.init(EMAIL_API_KEY);
     emailjs.sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
@@ -55,50 +58,31 @@ const KontaktContent = () => {
                     ref={formRef}
                     onSubmit={handleSubmit}
                     method="POST"
-                    action="/api/form"
-                  >
+                    action="/api/form">
                     <fieldset>
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema
                       </legend>
-                      <label htmlFor="navn" className="text-black">
-                        Fullt navn
-                        <br />
-                        <input
-                          className="w-64 p-2 m-2 placeholder-black transition duration-500 ease-in-out border border-gray-500 rounded focus:shadow-outline focus:bg-gray-200 hover:bg-gray-200 transform-gpu"
-                          id="navn"
-                          name="navn"
-                          type="text"
-                          required
-                          aria-required
-                        />
-                      </label>
+                      <InputField
+                        label="Fullt navn"
+                        htmlFor="fulltNavn"
+                        required                       
+                      />
                       <br />
-                      <label className="text-black" htmlFor="phone">
-                        Telefonnummer (i norskt format)
-                        <br />
-                        <input
-                          className="w-64 p-2 m-2 placeholder-black transition duration-500 ease-in-out border border-gray-500 rounded focus:bg-gray-200 focus:shadow-outline hover:bg-gray-200 transform-gpu"
-                          id="phone"
-                          name="telefon"
-                          type="text"
-                          required
-                          aria-required
-                          pattern=".[0-9]{7}"
-                        />
-                      </label>
+                      <InputField
+                        label="Telefonnummer"
+                        htmlFor="telefonNummer"
+                        required
+                        pattern=".[0-9]{7}"
+                      />
                       <br />
-                      <label className="text-black" htmlFor="textarea">
-                        Hva ønsker du å si?
-                        <br />
-                        <textarea
-                          className="w-64 p-2 m-2 placeholder-black transition duration-500 ease-in-out border border-gray-500 rounded focus:shadow-outline focus:bg-gray-200 hover:bg-gray-200 transform-gpu"
-                          name="tekst"
-                          id="textarea"
-                          required
-                          aria-required
-                        />
-                      </label>
+                      <InputField
+                        type="textarea"
+                        label="Hva ønsker du å si?"
+                        htmlFor="textarea"
+                        required
+                      />
+                      <br />
                     </fieldset>
                     <Button>Send skjema</Button>
                   </form>
