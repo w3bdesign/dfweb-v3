@@ -17,6 +17,10 @@ interface IEvent {
 
 const KontaktContent = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const navnRef = useRef<HTMLInputElement>(null);
+  const telefonRef = useRef<HTMLInputElement>(null);
+  const tekstRef = useRef<HTMLTextAreaElement>(null);
+
   const [serverResponse, setServerResponse] = useState<string>("");
 
   const handleSubmit = (event: IEvent) => {
@@ -63,13 +67,10 @@ const KontaktContent = () => {
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema
                       </legend>
-                      <InputField
-                        label="Fullt navn"
-                        htmlFor="fulltNavn"
-                        required                       
-                      />
+                      <InputField ref={navnRef} label="Fullt navn" htmlFor="fulltNavn" required />
                       <br />
                       <InputField
+                        ref={telefonRef}
                         label="Telefonnummer"
                         htmlFor="telefonNummer"
                         required
@@ -77,6 +78,7 @@ const KontaktContent = () => {
                       />
                       <br />
                       <InputField
+                        ref={tekstRef}
                         type="textarea"
                         label="Hva ønsker du å si?"
                         htmlFor="textarea"
