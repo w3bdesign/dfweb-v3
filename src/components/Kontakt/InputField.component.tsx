@@ -1,36 +1,21 @@
-import React, {
-  FC,
-  forwardRef,
-  InputHTMLAttributes,
-  TextareaHTMLAttributes,
-  LegacyRef
-} from "react";
+import React, { FC, forwardRef, ForwardRefExoticComponent } from "react";
 
-type InputRef = LegacyRef<HTMLInputElement> | LegacyRef<HTMLTextAreaElement> | any;
+type InputRef =
+  | ForwardRefExoticComponent<HTMLInputElement>
+  | ForwardRefExoticComponent<HTMLTextAreaElement>;
 
-type CommonAttributes = {
-  ref?: InputRef;
+type CommonAttributes<T extends HTMLElement> = {
   label: string;
   htmlFor: string;
-  required?: boolean;
+  isRequired?: boolean;
   type?: "input" | "textarea";
-};
+  inputPattern?: string;
+} & React.DetailedHTMLProps<React.HTMLAttributes<T>, T>;
 
-type InputProps = React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
-> &
-  CommonAttributes;
-type TextareaProps = React.DetailedHTMLProps<
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-  HTMLTextAreaElement
-> &
-  CommonAttributes;
+type Props = CommonAttributes<HTMLInputElement> | CommonAttributes<HTMLTextAreaElement>;
 
-type Props = InputProps | TextareaProps;
-
-const InputField: FC<CommonAttributes> = forwardRef((props: Props) => {
-  const { label, required, ref, htmlFor, type = "input", ...rest } = props;
+const InputField: FC<any> = forwardRef((props: Props, ref: any) => {
+  const { label, inputPattern, isRequired, htmlFor, type = "input" } = props;
 
   const sharedClasses =
     "cursor-pointer my-6 text-xl w-64 p-2 m-2 text-black border-gray-500 border rounded border-opacity-50 outline-none focus:border-blue-500 placeholder-gray-300 placeholder-opacity-0 transition duration-200";
@@ -44,8 +29,8 @@ const InputField: FC<CommonAttributes> = forwardRef((props: Props) => {
           type="text"
           placeholder={label}
           className={sharedClasses}
-          required
-          {...rest}
+          required={isRequired}
+          pattern={inputPattern}
         />
       ) : (
         <textarea
@@ -53,8 +38,7 @@ const InputField: FC<CommonAttributes> = forwardRef((props: Props) => {
           id={htmlFor}
           placeholder={label}
           className={sharedClasses}
-          required
-          {...rest}></textarea>
+          required={isRequired}></textarea>
       )}
       <span
         className={`cursor-pointer text-lg text-black text-opacity-80 absolute left-5 ${
