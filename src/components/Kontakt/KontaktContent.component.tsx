@@ -17,9 +17,6 @@ interface IEvent {
 
 const KontaktContent = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const navnRef = useRef<HTMLInputElement>(null);
-  const telefonRef = useRef<HTMLInputElement>(null);
-  const tekstRef = useRef<HTMLTextAreaElement>(null);
 
   const [serverResponse, setServerResponse] = useState<string>("");
 
@@ -63,23 +60,15 @@ const KontaktContent = () => {
                     ref={formRef}
                     onSubmit={handleSubmit}
                     method="POST"
-                    action="/api/form"
-                  >
+                    action="/api/form">
                     <fieldset>
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema
                       </legend>
-                      <InputField
-                        inputName="navn"
-                        ref={navnRef}
-                        label="Fullt navn"
-                        htmlFor="navn"
-                        isRequired
-                      />
+                      <InputField inputName="navn" label="Fullt navn" htmlFor="navn" isRequired />
                       <br />
                       <InputField
                         inputName="telefon"
-                        ref={telefonRef}
                         label="Telefonnummer"
                         htmlFor="telefon"
                         isRequired
@@ -88,7 +77,6 @@ const KontaktContent = () => {
                       <br />
                       <InputField
                         inputName="tekst"
-                        ref={tekstRef}
                         type="textarea"
                         label="Hva ønsker du å si?"
                         htmlFor="tekst"
