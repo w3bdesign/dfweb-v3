@@ -58,6 +58,7 @@ const KontaktContent = () => {
                 )}
                 {!serverResponse && (
                   <form
+                    id="contact-form"
                     className="text-center mt-6"
                     ref={formRef}
                     onSubmit={handleSubmit}
@@ -67,22 +68,30 @@ const KontaktContent = () => {
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema
                       </legend>
-                      <InputField ref={navnRef} label="Fullt navn" htmlFor="fulltNavn" required />
-                      <br />
                       <InputField
-                        ref={telefonRef}
-                        label="Telefonnummer"
-                        htmlFor="telefonNummer"
-                        required
-                        pattern=".[0-9]{7}"
+                        inputName="navn"
+                        ref={navnRef}
+                        label="Fullt navn"
+                        htmlFor="navn"
+                        isRequired
                       />
                       <br />
                       <InputField
+                        inputName="telefon"
+                        ref={telefonRef}
+                        label="Telefonnummer"
+                        htmlFor="telefon"
+                        isRequired
+                        inputPattern=".[0-9]{7}"
+                      />
+                      <br />
+                      <InputField
+                        inputName="tekst"
                         ref={tekstRef}
                         type="textarea"
                         label="Hva ønsker du å si?"
-                        htmlFor="textarea"
-                        required
+                        htmlFor="tekst"
+                        isRequired
                       />
                       <br />
                     </fieldset>
