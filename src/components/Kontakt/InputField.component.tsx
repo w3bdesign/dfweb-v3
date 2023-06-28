@@ -9,8 +9,6 @@ type CommonAttributes<T extends HTMLElement> = {
 
 type Props = CommonAttributes<HTMLInputElement> | CommonAttributes<HTMLTextAreaElement>;
 
-type InputRef = HTMLInputElement | HTMLTextAreaElement;
-
 /**
  * Renders an input field or a text area based on the `type` prop passed to it.
  * @param {Object} props - The props object.
