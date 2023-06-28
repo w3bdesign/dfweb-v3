@@ -45,6 +45,7 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 -   React Icons for project icons
 -   Tailwind CSS for styling
 -   Google fonts with Lato (optimized with @next/font for Next.js)
+-   Animated reusable input fields
 
 ### Accessibility
 
