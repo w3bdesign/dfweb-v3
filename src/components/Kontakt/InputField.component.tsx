@@ -66,4 +66,6 @@ const InputField = forwardRef<InputRef, Props>((props, ref) => {
   );
 });
 
+InputField.displayName = "InputField";
+
 export default InputField;
