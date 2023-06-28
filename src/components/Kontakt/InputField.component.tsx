@@ -50,12 +50,14 @@ const InputField = ({
           id={htmlFor}
           placeholder={label}
           className={sharedClasses}
-          required={isRequired}></textarea>
+          required={isRequired}
+        ></textarea>
       )}
       <span
         className={`cursor-pointer text-lg text-black text-opacity-80 absolute left-5 ${
           type === "textarea" ? "-top-[3.7rem]" : "top-0"
-        } px-1 transition duration-200 input-text`}>
+        } px-1 transition duration-200 input-text`}
+      >
         {label}
       </span>
     </label>
