@@ -6,7 +6,7 @@
 
 textarea:focus ~ .input-text,
 textarea:not(:placeholder-shown) ~ .input-text {
-  @apply text-blue-500 transform -translate-y-[3.1rem] -translate-x-7 scale-75;
+  @apply text-blue-500 transform -translate-y-[3.1rem] md:-translate-y-[3.9rem] -translate-x-7 scale-75;
 }
 
 input[type="text"]:focus ~ .input-text,
