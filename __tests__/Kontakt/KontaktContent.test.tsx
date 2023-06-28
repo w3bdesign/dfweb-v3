@@ -18,7 +18,7 @@ describe("KontaktContent", () => {
     fireEvent.change(screen.getByLabelText("Fullt navn"), {
       target: { value: "Test User" }
     });
-    fireEvent.change(screen.getByLabelText("Telefonnummer (i norskt format)"), {
+    fireEvent.change(screen.getByLabelText("Telefonnummer"), {
       target: { value: "12345678" }
     });
     fireEvent.change(screen.getByLabelText("Hva ønsker du å si?"), {
