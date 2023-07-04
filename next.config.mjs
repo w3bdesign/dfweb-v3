@@ -37,7 +37,7 @@ const headers = [
   }
 ];
 
-module.exports = {
+const config = { 
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
@@ -57,3 +57,4 @@ module.exports = {
     ];
   }
 };
+export default config;

@@ -1,6 +1,3 @@
-// Package imports
-import { groq } from "next-sanity";
-
 // Types
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 
@@ -11,8 +8,8 @@ import { getClient } from "../lib/sanity.server";
 import KontaktContent from "../components/Kontakt/KontaktContent.component";
 import Layout from "../components/Layout/Layout.component";
 
-// Sanity GROQ queries
-const navigationQuery = groq`*[_type == "Links"]{id, Text, Url} | order(id asc)`;
+// Sanity GROQ query
+import { navigationQuery } from "../queries/sanityQueries";
 
 const Kontakt: NextPage = ({ navigation }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Kontakt" links={navigation}>
@@ -21,12 +18,10 @@ const Kontakt: NextPage = ({ navigation }: InferGetStaticPropsType<typeof getSta
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const navigation = await getClient(false).fetch(navigationQuery);
+  const data = await getClient(false).fetch(navigationQuery);
 
   return {
-    props: {
-      navigation
-    }
+    props: data
   };
 };
 

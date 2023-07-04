@@ -27,7 +27,7 @@ export interface IProjectUrl {
 
 export interface IProjectInterface {
   _id: string;
-  id?: null | number;
+  id?: number;
   name: string;
   description: string;
   subdescription: string;
@@ -51,7 +51,7 @@ export interface IChangeEvent {
  * @returns {JSX.Element} - Rendered component
  */
 
-const ProsjekterListings = ({ projects, categories }: IProjectCategory)  => {
+const ProsjekterListings = ({ projects, categories }: IProjectCategory) => {
   const [prosjekt, setProsjekt] = useState(projects);
 
   const handleFilterChange = (event: IChangeEvent) => {

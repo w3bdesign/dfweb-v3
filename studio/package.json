@@ -16,17 +16,17 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/vision": "^3.6.0",
+    "@sanity/vision": "^3.14.1",
     "phosphor-react": "^1.4.1",
     "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sanity": "^3.6.0",
-    "styled-components": "^5.3.9"
+    "sanity": "^3.14.1",
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.8",
     "sanity-codegen": "^0.9.8"
   }
 }

@@ -6,7 +6,7 @@ class MyDocument extends Document {
     return { ...initialProps };
   }
 
-  render = ()  => {
+  render = () => {
     return (
       <Html lang="nb">
         <Head>
