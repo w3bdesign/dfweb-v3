@@ -3,15 +3,15 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-a11y" /*, {
-                                                                                            name: "@storybook/addon-postcss",
-                                                                                            options: {
-                                                                                            postcssLoaderOptions: {
-                                                                                            implementation: require("postcss")
-                                                                                            }
-                                                                                            }
-                                                                                            }*/,
-    "@storybook/addon-mdx-gfm"
+    "@storybook/addon-a11y",
+    {
+      name: "@storybook/addon-styling",
+      options: {
+        postCss: {
+          implementation: require("postcss")
+        }
+      }
+    }
   ],
   framework: {
     name: "@storybook/nextjs",
