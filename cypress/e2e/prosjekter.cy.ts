@@ -9,9 +9,9 @@ describe("Test at prosjekter vises og at filter fungerer", () => {
     cy.visit("/prosjekter");
   });
 
-  it("Velg PHP og se at vi bare får to resultater", () => {
+  it("Velg PHP og se at vi bare får ett resultat", () => {
     cy.get('[data-cy="kategorifilter"]').select("PHP");
-    cy.get('[data-cy="prosjektgrid"]').find('[data-cy="projectdiv"]').should("have.length", 2);
+    cy.get('[data-cy="prosjektgrid"]').find('[data-cy="projectdiv"]').should("have.length", 1);
   });
 
   it("Prosjekter skal ikke ha noen a11y feilmeldinger", () => {
