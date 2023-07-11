@@ -52,7 +52,7 @@ export interface IChangeEvent {
  */
 
 const ProsjekterListings = ({ projects, categories }: IProjectCategory) => {
-  const [prosjekt, setProsjekt] = useState(projects);
+  const [prosjekt, setProsjekt] = useState<IProjectInterface[]>(projects);
 
   const handleFilterChange = (event: IChangeEvent) => {
     setProsjekt(projects);
@@ -70,8 +70,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory) => {
             <label
               className="p-2 mr-4 text-lg"
               aria-label="kategorifilter"
-              htmlFor="kategorifilter"
-            >
+              htmlFor="kategorifilter">
               Filtrer kategori:
             </label>
             <select
@@ -79,8 +78,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory) => {
               name="kategorifilter"
               data-cy="kategorifilter"
               onChange={handleFilterChange}
-              className="w-40 p-2 bg-white text-black rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-            >
+              className="w-40 p-2 bg-white text-black rounded shadow appearance-none focus:outline-none focus:shadow-outline">
               <option label="" value="">
                 Ingen filtrering
               </option>
