@@ -2,7 +2,7 @@ import { IconType } from "react-icons";
 import { FaReact, FaVuejs, FaPhp } from "react-icons/fa";
 import { SiTypescript, SiWordpress } from "react-icons/si";
 
-import Grow from "../Animations/Grow.component";
+import Grow from "@/components/Animations/Grow.component";
 
 interface IAnimateIcons {
   id: number;

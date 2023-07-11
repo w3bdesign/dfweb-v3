@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import PageHeader from "../UI/PageHeader.component";
+import PageHeader from "@/components/UI/PageHeader.component";
 
 interface IError {
   text: string;

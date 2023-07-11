@@ -15,7 +15,10 @@
     "jsx": "preserve",
     "incremental": true,
     "noImplicitAny": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "types": ["cypress", "cypress-axe", "node"],
   "include": [
