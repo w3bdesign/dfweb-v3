@@ -2,21 +2,15 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 
 // Utilities
-import { getClient } from "@/lib/sanity.server";
+import { getClient } from "../lib/sanity.server";
 
 //Components
-import Layout from "@/components/Layout/Layout.component";
-import ErrorContent from "@/components/Error/ErrorContent.component";
+import Layout from "../components/Layout/Layout.component";
+import ErrorContent from "../components/Error/ErrorContent.component";
 
 // Sanity GROQ query
-import { navigationQuery } from "@/queries/sanityQueries";
+import { navigationQuery } from "../queries/sanityQueries";
 
-/**
- * Renders a custom 500 error page.
- *
- * @param {InferGetStaticPropsType<typeof getStaticProps>} navigation - The navigation links.
- * @return {NextPage} The custom 500 error page component.
- */
 const Custom500: NextPage = ({ navigation }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Feil - 500" links={navigation}>
     <ErrorContent text="Feil - 500" />

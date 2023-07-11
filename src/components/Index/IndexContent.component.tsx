@@ -1,16 +1,16 @@
 import Link from "next/link";
 import PortableText from "react-portable-text";
-import { Fragment, ReactNode, Key } from "react";
+import { Fragment } from "react";
 
 import Hero from "./Hero.component";
-import BounceInScroll from "@/components/Animations/BounceInScroll.component";
+import BounceInScroll from "../Animations/BounceInScroll.component";
 
 interface IHero {
   text: string;
 }
 
 interface IContent {
-  _key?: string;
+  _key: string | null;
   text: IText[];
   title: string;
 }
@@ -31,16 +31,16 @@ interface IText {
 }
 
 interface ISerializerCode {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 interface ISerializerLink {
   href: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 interface IPageContent {
-  id?: Key;
+  id: React.Key | null;
   content: IContent[];
   hero: IHero[];
 }

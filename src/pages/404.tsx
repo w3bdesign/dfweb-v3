@@ -2,21 +2,15 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 
 // Utilities
-import { getClient } from "@/lib/sanity.server";
+import { getClient } from "../lib/sanity.server";
 
 //Components
-import Layout from "@/components/Layout/Layout.component";
-import ErrorContent from "@/components/Error/ErrorContent.component";
+import Layout from "../components/Layout/Layout.component";
+import ErrorContent from "../components/Error/ErrorContent.component";
 
 // Sanity GROQ query
-import { navigationQuery } from "@/queries/sanityQueries";
+import { navigationQuery } from "../queries/sanityQueries";
 
-/**
- * Renders the custom 404 page.
- *
- * @param {InferGetStaticPropsType<typeof getStaticProps>} navigation - The navigation links.
- * @return {NextPage} The custom 404 page component.
- */
 const Custom404: NextPage = ({ navigation }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout title="Side ikke funnet - 404" links={navigation}>
     <ErrorContent text="Side ikke funnet" />

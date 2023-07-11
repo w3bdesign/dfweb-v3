@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-import Button from "@/components/UI/Button.component";
-import PageHeader from "@/components/UI/PageHeader.component";
+import Button from "../UI/Button.component";
+import PageHeader from "../UI/PageHeader.component";
 import InputField from "./InputField.component";
 
 interface IEvent {

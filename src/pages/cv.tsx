@@ -2,14 +2,14 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 
 // Utilities
-import { getClient } from "@/lib/sanity.server";
+import { getClient } from "../lib/sanity.server";
 
 // Components
-import CVContent from "@/components/CV/CVContent.component";
-import Layout from "@/components/Layout/Layout.component";
+import CVContent from "../components/CV/CVContent.component";
+import Layout from "../components/Layout/Layout.component";
 
 // Sanity GROQ query
-import { navigationQuery } from "@/queries/sanityQueries";
+import { navigationQuery } from "../queries/sanityQueries";
 
 const CV: NextPage = ({ navigation }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (

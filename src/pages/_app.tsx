@@ -6,7 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
 
 // Styles
-import "@/styles/globals.css";
+import "../styles/globals.css";
 
 const lato = Lato({
   weight: ["400", "700"],

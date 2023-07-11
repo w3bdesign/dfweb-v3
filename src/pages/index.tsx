@@ -2,22 +2,15 @@
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 
 // Components
-import IndexContent from "@/components/Index/IndexContent.component";
-import Layout from "@/components/Layout/Layout.component";
+import IndexContent from "../components/Index/IndexContent.component";
+import Layout from "../components/Layout/Layout.component";
 
 // Utilities
-import { getClient } from "@/lib/sanity.server";
+import { getClient } from "../lib/sanity.server";
 
 // Sanity GROQ query
-import { indexQuery } from "@/queries/sanityQueries";
+import { indexQuery } from "../queries/sanityQueries";
 
-/**
- * Renders the Home page.
- *
- * @param {object} pageContent - The content of the page.
- * @param {Array} navigation - The navigation links.
- * @return {JSX.Element} The rendered Home page.
- */
 const Home: NextPage = ({
   pageContent,
   navigation

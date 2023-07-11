@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import ProsjekterSingleProject from "./ProsjekterSingleProject.component";
-import PageHeader from "@/components/UI/PageHeader.component";
+import PageHeader from "../UI/PageHeader.component";
 
 interface ICategories {
   id: number;
