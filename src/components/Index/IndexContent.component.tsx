@@ -66,12 +66,24 @@ const Section = ({ text, title }: IContent) => (
         <PortableText
           content={text}
           serializers={{
+            /**
+             * Render the code.
+             *
+             * @param {ISerializerCode} children - The code to be rendered.
+             * @return {JSX.Element} The JSX element containing the rendered code.
+             */
             code: ({ children }: ISerializerCode) => (
               <span className="mt-4 text-lg">
                 {children} <br />
                 &nbsp;
               </span>
             ),
+            /**
+             * Renders a link with an underline, bold, and blue color.
+             *
+             * @param {ISerializerLink} link - The link object containing the children and href.
+             * @return {JSX.Element} The rendered link component.
+             */
             link: ({ children, href }: ISerializerLink) => (
               <Link className="underline text-lg font-bold text-blue-700" href={href}>
                 {children}
