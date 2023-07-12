@@ -2,14 +2,16 @@
 
 import Icons from "../../src/components/Index/Icons.component";
 
+const beVisible = "be.visible"
+
 it("Renders all icons", () => {
   cy.mount(<Icons />);
 
   cy.get('[data-testid="icons"]').within(() => {
-    cy.get('[data-testid="React"]').should("be.visible");
-    cy.get('[data-testid="Vue"]').should("be.visible");
-    cy.get('[data-testid="Typescript"]').should("be.visible");
-    cy.get('[data-testid="Wordpress"]').should("be.visible");
-    cy.get('[data-testid="PHP"]').should("be.visible");
+    cy.get('[data-testid="React"]').should(beVisible);
+    cy.get('[data-testid="Vue"]').should(beVisible);
+    cy.get('[data-testid="Typescript"]').should(beVisible);
+    cy.get('[data-testid="Wordpress"]').should(beVisible);
+    cy.get('[data-testid="PHP"]').should(beVisible);
   });
 });
