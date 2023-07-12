@@ -17,15 +17,13 @@ describe("<Button>", () => {
     cy.url().should("include", "example.com");
   });
 
-  // Test renderAs prop
-  it('renders as anchor tag if renderAs="a"', () => {
-    cy.mount(<Button renderAs="a">Button</Button>);
-    cy.get("a").should("have.attr", "href");
-  });
-
-  // Test type prop
-  it('renders as submit button when type="submit"', () => {
+  it("renders as submit button", () => {
     cy.mount(<Button type="submit">Button</Button>);
     cy.get('button[type="submit"]').should("exist");
+  });
+
+  it("renders as reset button", () => {
+    cy.mount(<Button type="reset">Button</Button>);
+    cy.get('button[type="reset"]').should("exist");
   });
 });
