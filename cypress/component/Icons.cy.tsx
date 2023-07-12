@@ -1,8 +1,8 @@
-// cypress/component/Icons.cy.tsx
+/// <reference types="cypress" />
 
 import Icons from "../../src/components/Index/Icons.component";
 
-it("renders all icons", () => {
+it("Renders all icons", () => {
   cy.mount(<Icons />);
 
   cy.get('[data-testid="icons"]').within(() => {
