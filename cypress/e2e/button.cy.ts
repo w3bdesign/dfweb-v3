@@ -4,7 +4,7 @@
 
 describe("Button component", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.visit("/kontakt");
   });
 
   // Test disabled prop
