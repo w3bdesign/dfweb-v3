@@ -2,7 +2,7 @@
 
 import Icons from "../../src/components/Index/Icons.component";
 
-const beVisible = "be.visible"
+const beVisible = "be.visible";
 
 it("Renders all icons", () => {
   cy.mount(<Icons />);
