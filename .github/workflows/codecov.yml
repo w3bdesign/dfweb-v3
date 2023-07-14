@@ -24,8 +24,6 @@ jobs:
       - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/lcov.info # Jest by default outputs lcov format coverage report at this path
-          flags: unittests
           name: codecov-umbrella
           fail_ci_if_error: true
           verbose: true
