@@ -5,6 +5,7 @@ orbs:
   # the strict explicit version "cypress-io/cypress@1.x.y"
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@3.1.2
+  codecov: codecov/codecov@3.2.5
 executors:
   with-chrome-and-firefox:
     docker:
@@ -54,6 +55,7 @@ jobs:
       - run:
           name: Run Jest Tests
           command: npm test
+      - codecov/upload
     parallelism: 6
 workflows:
   # 👇 Adds Chromatic to the workflow
