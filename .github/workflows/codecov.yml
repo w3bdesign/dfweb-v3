@@ -6,13 +6,26 @@ jobs:
   codecov:
     timeout-minutes: 30
     runs-on: ubuntu-latest
-steps:
-  - uses: actions/checkout@master
-  - uses: codecov/codecov-action@v3
-    with:
-      token: ${{ secrets.CODECOV_TOKEN }}
-      files: ./coverage1.xml,./coverage2.xml # optional
-      flags: unittests # optional
-      name: codecov-umbrella # optional
-      fail_ci_if_error: true # optional (default = false)
-      verbose: true # optional (default = false)
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16" # Adjust this to your project's Node.js version
+
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      - name: Run tests with coverage
+        run: npm run test
+
+      - uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/lcov.info # Jest by default outputs lcov format coverage report at this path
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+          verbose: true
