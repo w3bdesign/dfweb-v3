@@ -6,7 +6,7 @@
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest --coverage",
+    "test": " jest --coverage --collectCoverageFrom='src/**/*.{js,ts,tsx}'",
     "test:watch": "jest --watch",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006 -s public",
