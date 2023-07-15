@@ -15,11 +15,10 @@ jest.mock("next/router", () => ({
   }
 }));
 
-describe("Layout component", () => {
-  // Use a type-valid title
+describe("Layout komponent", () => {
   const title: TTitle = "Forside";
 
-  test("renders without crashing", () => {
+  test("rendrer uten å krasje", () => {
     render(
       <Layout title={title} links={linksmock}>
         <div>Test</div>
@@ -28,28 +27,22 @@ describe("Layout component", () => {
     expect(screen.getByText("Test")).toBeInTheDocument();
   });
 
-  /*
-  test("renders Header with correct props", () => {
+  test("rendrer Header med korrekte props", () => {
     render(
       <Layout title={title} links={linksmock}>
         <div>Test</div>
       </Layout>
     );
-    
-    const fullTitle = `${title} - Portefølje - Dfweb`;
-    
-    // Check that the correct title is set
-    expect(document.title).toEqual(fullTitle);
-    
-    // Check that each link is rendered
+
+    // Sjekk at hver lenke blir rendret
     linksmock.forEach((link) => {
       const linkElement = screen.queryByText(link.Text);
       expect(linkElement).toBeInTheDocument();
     });
-  });*/
+  });
 
-  test("renders children", () => {
-    const testText = "Test child";
+  test("rendrer barn", () => {
+    const testText = "Test barn";
     render(
       <Layout title={title} links={linksmock}>
         {testText}
@@ -58,7 +51,7 @@ describe("Layout component", () => {
     expect(screen.getByText(testText)).toBeInTheDocument();
   });
 
-  test("renders Footer", () => {
+  test("rendrer Footer", () => {
     render(
       <Layout title={title} links={linksmock}>
         <div>Test</div>
