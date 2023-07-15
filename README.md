@@ -62,6 +62,7 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 -   E2E testing with Playwright integrated with Github actions
 -   Unit testing with Jest and React Testing Library integrated with CircleCI
 -   Test coverage setup with Codecov
+-   97% test coverage with Jest and React testing library
 
 > ### Google Lighthouse score
 >
