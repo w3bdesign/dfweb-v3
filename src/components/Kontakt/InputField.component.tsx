@@ -1,34 +1,31 @@
-type CommonAttributes<T extends HTMLElement> = {
+interface IInputProps {
   inputName: string;
   label: string;
   htmlFor: string;
   isRequired?: boolean;
-  type?: "input" | "textarea";
   inputPattern?: string;
-} & React.DetailedHTMLProps<React.HTMLAttributes<T>, T>;
-
-type Props = CommonAttributes<HTMLInputElement> | CommonAttributes<HTMLTextAreaElement>;
+  type?: "input" | "textarea";
+}
 
 /**
- * Renders an input field or a text area based on the `type` prop passed to it.
- * @param {Object} props - The props object.
- * @param {string} props.inputName - The name attribute of the input element or text area element.
- * @param {string} props.label - The label that appears above the input element or text area element.
- * @param {string} props.htmlFor - The id of the input element or text area element.
- * @param {boolean} [props.isRequired] - Whether the input element or text area element is required or not.
- * @param {('input'|'textarea')} [props.type='input'] - The type of the input element or text area element.
- * @param {string} [props.inputPattern] - The pattern attribute of the input element or text area element.
- * @returns {JSX.Element} - The JSX element.
+ * Renders an input field component.
+ *
+ * @param {IInputProps} inputName - The name of the input.
+ * @param {string} label - The label for the input.
+ * @param {string} htmlFor - The id of the input.
+ * @param {string} inputPattern - The pattern for the input.
+ * @param {string} type - The type of input (defaults to "input").
+ * @param {boolean} isRequired - Indicates if the input is required.
+ * @return {JSX.Element} The input field component.
  */
-
 const InputField = ({
   inputName,
   label,
-  inputPattern,
-  isRequired,
   htmlFor,
-  type = "input"
-}: Props) => {
+  inputPattern,
+  type = "input",
+  isRequired
+}: IInputProps) => {
   const sharedClasses =
     "cursor-pointer my-6 text-xl w-64 p-2 m-2 text-black border-gray-500 border rounded border-opacity-50 outline-none focus:border-blue-500 placeholder-gray-300 placeholder-opacity-0 transition duration-200";
 
@@ -40,24 +37,22 @@ const InputField = ({
           id={htmlFor}
           type="text"
           placeholder={label}
-          className={sharedClasses}
           required={isRequired}
           pattern={inputPattern}
+          className={sharedClasses}
         />
       ) : (
         <textarea
           name={inputName}
           id={htmlFor}
           placeholder={label}
-          className={sharedClasses}
           required={isRequired}
-        ></textarea>
+          className={sharedClasses}></textarea>
       )}
       <span
         className={`cursor-pointer text-lg text-black text-opacity-80 absolute left-5 ${
           type === "textarea" ? "-top-[3.7rem]" : "top-0"
-        } px-1 transition duration-200 input-text`}
-      >
+        } px-1 transition duration-200 input-text`}>
         {label}
       </span>
     </label>
