@@ -4,6 +4,7 @@ interface IInputProps {
   htmlFor: string;
   isRequired?: boolean;
   inputPattern?: string;
+  title?: string;
   type?: "input" | "textarea";
 }
 
@@ -22,6 +23,7 @@ const InputField = ({
   inputName,
   label,
   htmlFor,
+  title,
   inputPattern,
   type = "input",
   isRequired
@@ -39,6 +41,7 @@ const InputField = ({
           placeholder={label}
           required={isRequired}
           pattern={inputPattern}
+          title={title}
           className={sharedClasses}
         />
       ) : (

@@ -60,8 +60,7 @@ const KontaktContent = () => {
                     ref={formRef}
                     onSubmit={handleSubmit}
                     method="POST"
-                    action="/api/form"
-                  >
+                    action="/api/form">
                     <fieldset>
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema
@@ -71,6 +70,7 @@ const KontaktContent = () => {
                         label="Fullt navn"
                         htmlFor="navn"
                         inputPattern="[a-zA-ZæøåÆØÅ]+"
+                        title="Vennligst bruk bare norske bokstaver"
                         isRequired
                       />
                       <br />
@@ -80,6 +80,7 @@ const KontaktContent = () => {
                         htmlFor="telefon"
                         isRequired
                         inputPattern=".[0-9]{7}"
+                        title="Vennligst bruk bare tall"
                       />
                       <br />
                       <InputField
@@ -87,6 +88,7 @@ const KontaktContent = () => {
                         type="textarea"
                         label="Hva ønsker du å si?"
                         inputPattern="[a-zA-ZæøåÆØÅ]+"
+                        title="Vennligst bruk bare norske bokstaver"
                         htmlFor="tekst"
                         isRequired
                       />
