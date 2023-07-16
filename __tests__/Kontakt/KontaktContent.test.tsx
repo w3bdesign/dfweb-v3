@@ -23,7 +23,7 @@ describe("KontaktContent", () => {
     expect(screen.getByTestId("kontaktcontent")).toBeInTheDocument();
   });
 
-  test("submits the form and disables button", () => {
+  test("submits the form and disables button", async () => {
     render(<KontaktContent />);
 
     // make emailjs.sendForm return a rejected promise
@@ -50,6 +50,13 @@ describe("KontaktContent", () => {
 
     // assert success message is displayed
     expect(screen.getByText(fulltNavn)).toBeInTheDocument();
+
+    // Wait for promises to resolve
+    await act(() => Promise.resolve());
+
+    // assert success message is displayed
+    const errorMessage = screen.getByText(/Feil under sending av skjema/i);
+    expect(errorMessage).toBeInTheDocument();
   });
 
   test("submits the form and displays error message", async () => {
