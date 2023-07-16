@@ -2,9 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-import userEvent from "@testing-library/user-event";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import KontaktContent from "../../src/components/Kontakt/KontaktContent.component";
 
