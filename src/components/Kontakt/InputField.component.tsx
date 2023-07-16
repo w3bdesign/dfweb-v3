@@ -3,11 +3,6 @@ type CommonAttributes<T extends HTMLElement> = {
   label: string;
   htmlFor: string;
   isRequired?: boolean;
-<<<<<<< HEAD
-  inputPattern?: string;
-  title?: string;
-=======
->>>>>>> parent of 4d11bbf10 (Forbedringer Typescript InputField)
   type?: "input" | "textarea";
   inputPattern?: string;
 } & React.DetailedHTMLProps<React.HTMLAttributes<T>, T>;
@@ -29,11 +24,6 @@ type Props = CommonAttributes<HTMLInputElement> | CommonAttributes<HTMLTextAreaE
 const InputField = ({
   inputName,
   label,
-<<<<<<< HEAD
-  htmlFor,
-  title,
-=======
->>>>>>> parent of 4d11bbf10 (Forbedringer Typescript InputField)
   inputPattern,
   isRequired,
   htmlFor,
@@ -53,11 +43,6 @@ const InputField = ({
           className={sharedClasses}
           required={isRequired}
           pattern={inputPattern}
-<<<<<<< HEAD
-          title={title}
-          className={sharedClasses}
-=======
->>>>>>> parent of 4d11bbf10 (Forbedringer Typescript InputField)
         />
       ) : (
         <textarea

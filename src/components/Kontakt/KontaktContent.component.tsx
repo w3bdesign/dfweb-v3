@@ -65,18 +65,7 @@ const KontaktContent = () => {
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema
                       </legend>
-<<<<<<< HEAD
-                      <InputField
-                        inputName="navn"
-                        label="Fullt navn"
-                        htmlFor="navn"
-                        inputPattern="[a-zA-ZæøåÆØÅ]+"
-                        title="Vennligst bruk bare norske bokstaver"
-                        isRequired
-                      />
-=======
                       <InputField inputName="navn" label="Fullt navn" htmlFor="navn" isRequired />
->>>>>>> parent of 4d11bbf10 (Forbedringer Typescript InputField)
                       <br />
                       <InputField
                         inputName="telefon"
@@ -91,11 +80,6 @@ const KontaktContent = () => {
                         inputName="tekst"
                         type="textarea"
                         label="Hva ønsker du å si?"
-<<<<<<< HEAD
-                        inputPattern="[a-zA-ZæøåÆØÅ]+"
-                        title="Vennligst bruk bare norske bokstaver"
-=======
->>>>>>> parent of 4d11bbf10 (Forbedringer Typescript InputField)
                         htmlFor="tekst"
                         isRequired
                       />
