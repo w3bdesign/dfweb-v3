@@ -6,8 +6,6 @@ import { fireEvent, render, screen } from "@testing-library/react";
 
 import KontaktContent from "../../src/components/Kontakt/KontaktContent.component";
 
-import emailjs from "@emailjs/browser";
-
 jest.mock("@emailjs/browser", () => ({
   sendForm: jest.fn(() => Promise.resolve()),
   init: jest.fn()
