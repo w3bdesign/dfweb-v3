@@ -79,6 +79,7 @@ const KontaktContent = () => {
                         inputName="navn"
                         label="Fullt navn"
                         htmlFor="navn"
+                        inputPattern="[a-zA-ZæøåÆØÅ]+"
                         title="Vennligst bruk norske bokstaver"
                         isRequired
                       />
