@@ -70,7 +70,9 @@ const KontaktContent = () => {
                     ref={formRef}
                     onSubmit={handleSubmit}
                     method="POST"
-                    action="/api/form">
+                    action="/api/form"
+                    aria-label="Contact Form"
+                  >
                     <fieldset>
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema

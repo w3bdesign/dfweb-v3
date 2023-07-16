@@ -39,7 +39,8 @@ const Button = ({
       href={href}
       target={targetLink}
       disabled={disabled}
-      {...props}>
+      {...props}
+    >
       {children}
     </Component>
   );
