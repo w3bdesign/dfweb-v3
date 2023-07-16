@@ -21,9 +21,9 @@ const KontaktContent = () => {
   const [serverResponse, setServerResponse] = useState<string>("");
 
   const handleSubmit = (event: IEvent) => {
-    const EMAIL_API_KEY = process.env.NEXT_PUBLIC_EMAIL_API_KEY || "changeme";
-    const TEMPLATE_KEY = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY || "changeme";
-    const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY || "changeme";
+    const EMAIL_API_KEY = process.env.NEXT_PUBLIC_EMAIL_API_KEY ?? "changeme";
+    const TEMPLATE_KEY = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY ?? "changeme";
+    const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY ?? "changeme";
 
     event.preventDefault();
 
@@ -60,13 +60,12 @@ const KontaktContent = () => {
                     ref={formRef}
                     onSubmit={handleSubmit}
                     method="POST"
-                    action="/api/form"
-                  >
+                    action="/api/form">
                     <fieldset>
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema
                       </legend>
-                      <InputField inputName="navn" label="Fullt navn" htmlFor="navn" isRequired />
+                      <InputField inputName="navn" label="Fullt navn" htmlFor="navn" title="Vennligst bruk norske bokstaver" isRequired />
                       <br />
                       <InputField
                         inputName="telefon"
@@ -74,6 +73,7 @@ const KontaktContent = () => {
                         htmlFor="telefon"
                         isRequired
                         inputPattern=".[0-9]{7}"
+                        title="Vennligst bruk bare tall"
                       />
                       <br />
                       <InputField
