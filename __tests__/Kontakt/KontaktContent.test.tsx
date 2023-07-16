@@ -14,6 +14,10 @@ jest.mock("@emailjs/browser", () => ({
 }));
 
 describe("KontaktContent", () => {
+
+  const fulltNavn = "Fullt navn"
+
+
   test("renders the component", () => {
     render(<KontaktContent />);
     expect(screen.getByTestId("kontaktcontent")).toBeInTheDocument();
@@ -26,7 +30,7 @@ describe("KontaktContent", () => {
     emailjs.sendForm.mockImplementation(() => Promise.reject());
 
     // fill out form fields
-    fireEvent.change(screen.getByLabelText("Fullt navn"), {
+    fireEvent.change(screen.getByLabelText(fulltNavn), {
       target: { value: "Bruker Test" }
     });
     fireEvent.change(screen.getByLabelText("Telefonnummer"), {
@@ -44,7 +48,7 @@ describe("KontaktContent", () => {
     expect(button).toBeDisabled();
 
     // assert success message is displayed
-    expect(screen.getByText("Fullt navn")).toBeInTheDocument();
+    expect(screen.getByText(fulltNavn)).toBeInTheDocument();
   });
 
 
@@ -53,7 +57,7 @@ describe("KontaktContent", () => {
     const { getByRole } = render(<KontaktContent />);
   
     // fill out form fields
-    fireEvent.change(screen.getByLabelText('Fullt navn'), { target: { value: 'Bruker Test' } });
+    fireEvent.change(screen.getByLabelText(fulltNavn), { target: { value: 'Bruker Test' } });
     fireEvent.change(screen.getByLabelText('Telefonnummer'), { target: { value: '12345678' } });
     fireEvent.change(screen.getByLabelText('Hva ønsker du å si?'), { target: { value: 'Message' } });
   
