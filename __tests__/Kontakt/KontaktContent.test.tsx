@@ -2,9 +2,11 @@
  * @jest-environment jsdom
  */
 
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, act, waitFor } from "@testing-library/react";
 
 import KontaktContent from "../../src/components/Kontakt/KontaktContent.component";
+
+import emailjs from "@emailjs/browser";
 
 jest.mock("@emailjs/browser", () => ({
   sendForm: jest.fn(() => Promise.resolve()),
@@ -13,6 +15,8 @@ jest.mock("@emailjs/browser", () => ({
 
 describe("KontaktContent", () => {
   const fulltNavn = "Fullt navn";
+  const telefonNummer = "Telefonnummer";
+  const hvaOnskerDu = "Hva ønsker du å si?";
 
   test("renders the component", () => {
     render(<KontaktContent />);
@@ -22,11 +26,14 @@ describe("KontaktContent", () => {
   test("submits the form and displays success message", () => {
     render(<KontaktContent />);
 
+    // make emailjs.sendForm return a rejected promise
+    emailjs.sendForm.mockImplementation(() => Promise.reject());
+
     // fill out form fields
     fireEvent.change(screen.getByLabelText(fulltNavn), {
       target: { value: "Bruker Test" }
     });
-    fireEvent.change(screen.getByLabelText("Telefonnummer"), {
+    fireEvent.change(screen.getByLabelText(telefonNummer), {
       target: { value: "12345678" }
     });
     fireEvent.change(screen.getByLabelText("Hva ønsker du å si?"), {
@@ -50,13 +57,14 @@ describe("KontaktContent", () => {
 
     // fill out form fields
     fireEvent.change(screen.getByLabelText(fulltNavn), { target: { value: "Bruker Test" } });
-    fireEvent.change(screen.getByLabelText("Telefonnummer"), { target: { value: "12345678" } });
-    fireEvent.change(screen.getByLabelText("Hva ønsker du å si?"), {
-      target: { value: "Message" }
-    });
+    fireEvent.change(screen.getByLabelText(telefonNummer), { target: { value: "12345678" } });
+    fireEvent.change(screen.getByLabelText(hvaOnskerDu), { target: { value: "Message" } });
 
     const form = getByRole("form", { name: /contact form/i });
     fireEvent.submit(form); // submit the form
+
+    // Wait for promises to resolve
+    await act(() => waitFor(() => {}));
 
     // assert success message is displayed
     //expect(screen.getByText('Takk for din beskjed')).toBeInTheDocument();
