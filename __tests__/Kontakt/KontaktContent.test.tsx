@@ -17,7 +17,7 @@ describe("KontaktContent", () => {
 
     // fill out form fields
     fireEvent.change(screen.getByLabelText("Fullt navn"), {
-      target: { value: "Bruker" }
+      target: { value: "Bruker Test" }
     });
     fireEvent.change(screen.getByLabelText("Telefonnummer"), {
       target: { value: "12345678" }
