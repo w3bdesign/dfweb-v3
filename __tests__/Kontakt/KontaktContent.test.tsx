@@ -17,20 +17,18 @@ describe("KontaktContent", () => {
 
     // fill out form fields
     fireEvent.change(screen.getByLabelText("Fullt navn"), {
-      target: { value: "Test User" }
+      target: { value: "Bruker Test" }
     });
     fireEvent.change(screen.getByLabelText("Telefonnummer"), {
       target: { value: "12345678" }
     });
     fireEvent.change(screen.getByLabelText("Hva ønsker du å si?"), {
-      target: { value: "Test message" }
+      target: { value: "Message" }
     });
 
     const button = screen.getByText("Send skjema");
 
     fireEvent.click(button);
-
-    console.log(button);
 
     // assert button is disabled after click
     expect(button).toBeDisabled();
