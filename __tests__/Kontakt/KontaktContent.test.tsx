@@ -27,7 +27,8 @@ describe("KontaktContent", () => {
     render(<KontaktContent />);
 
     // make emailjs.sendForm return a rejected promise
-    emailjs.sendForm.mockImplementation(() => Promise.reject());
+
+    emailjs.sendForm.mockImplementation(() => Promise.reject(new Error("Error message")));
 
     // fill out form fields
     fireEvent.change(screen.getByLabelText(fulltNavn), {
@@ -63,8 +64,7 @@ describe("KontaktContent", () => {
     fireEvent.submit(form); // submit the form
 
     // Wait for promises to resolve
-    await act(() => Promise.resolve());  // Proposed code to remove warnings
-
+    await act(() => Promise.resolve()); // Proposed code to remove warnings
 
     // assert success message is displayed
 
