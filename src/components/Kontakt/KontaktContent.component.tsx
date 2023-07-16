@@ -45,11 +45,9 @@ const KontaktContent = () => {
     emailjs.sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
       () => {
         setServerResponse("Takk for din beskjed");
-        setIsSubmitting(false);
       },
       () => {
         setServerResponse("Feil under sending av skjema");
-        setIsSubmitting(false);
       }
     );
   };
