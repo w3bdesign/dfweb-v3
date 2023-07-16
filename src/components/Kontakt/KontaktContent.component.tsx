@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 
 import Button from "../UI/Button.component";
 import PageHeader from "../UI/PageHeader.component";
-import InputField from "./InputField.component";
+import InputField from "../UI/InputField.component";
 
 interface IEvent {
   preventDefault: () => void;
