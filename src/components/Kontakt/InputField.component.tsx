@@ -1,14 +1,3 @@
-type CommonAttributes<T extends HTMLElement> = {
-  inputName: string;
-  label: string;
-  htmlFor: string;
-  isRequired?: boolean;
-  type?: "input" | "textarea";
-  inputPattern?: string;
-} & React.DetailedHTMLProps<React.HTMLAttributes<T>, T>;
-
-type Props = CommonAttributes<HTMLInputElement> | CommonAttributes<HTMLTextAreaElement>;
-
 interface IInputProps {
   inputName: string;
   label: string;
@@ -20,17 +9,17 @@ interface IInputProps {
 }
 
 /**
- * Renders an input field or a text area based on the `type` prop passed to it.
- * @param {Object} props - The props object.
- * @param {string} props.inputName - The name attribute of the input element or text area element.
- * @param {string} props.label - The label that appears above the input element or text area element.
- * @param {string} props.htmlFor - The id of the input element or text area element.
- * @param {boolean} [props.isRequired] - Whether the input element or text area element is required or not.
- * @param {('input'|'textarea')} [props.type='input'] - The type of the input element or text area element.
- * @param {string} [props.inputPattern] - The pattern attribute of the input element or text area element.
- * @returns {JSX.Element} - The JSX element.
+ * Renders an input field or textarea based on the `type` prop.
+ *
+ * @param {IInputProps} inputName - The name of the input field.
+ * @param {string} label - The label for the input field.
+ * @param {string} inputPattern - The regex pattern for input validation.
+ * @param {boolean} isRequired - Determines if the input field is required.
+ * @param {string} htmlFor - The ID of the associated label.
+ * @param {string} title - The title attribute for the input field.
+ * @param {string} [type=input] - The type of input field to render.
+ * @return {JSX.Element} - The rendered input field or textarea.
  */
-
 const InputField = ({
   inputName,
   label,
