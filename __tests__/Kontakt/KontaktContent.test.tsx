@@ -63,7 +63,8 @@ describe("KontaktContent", () => {
     fireEvent.submit(form); // submit the form
 
     // Wait for promises to resolve
-    await act(() => waitFor(() => {}));
+    await act(() => Promise.resolve());  // Proposed code to remove warnings
+
 
     // assert success message is displayed
 
