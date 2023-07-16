@@ -9,6 +9,16 @@ type CommonAttributes<T extends HTMLElement> = {
 
 type Props = CommonAttributes<HTMLInputElement> | CommonAttributes<HTMLTextAreaElement>;
 
+interface IInputProps {
+  inputName: string;
+  label: string;
+  htmlFor: string;
+  isRequired?: boolean;
+  inputPattern?: string;
+  title?: string;
+  type?: "input" | "textarea";
+}
+
 /**
  * Renders an input field or a text area based on the `type` prop passed to it.
  * @param {Object} props - The props object.
@@ -27,8 +37,9 @@ const InputField = ({
   inputPattern,
   isRequired,
   htmlFor,
+  title,
   type = "input"
-}: Props) => {
+}: IInputProps) => {
   const sharedClasses =
     "cursor-pointer my-6 text-xl w-64 p-2 m-2 text-black border-gray-500 border rounded border-opacity-50 outline-none focus:border-blue-500 placeholder-gray-300 placeholder-opacity-0 transition duration-200";
 
@@ -40,9 +51,10 @@ const InputField = ({
           id={htmlFor}
           type="text"
           placeholder={label}
-          className={sharedClasses}
           required={isRequired}
           pattern={inputPattern}
+          title={title}
+          className={sharedClasses}
         />
       ) : (
         <textarea
@@ -50,14 +62,12 @@ const InputField = ({
           id={htmlFor}
           placeholder={label}
           className={sharedClasses}
-          required={isRequired}
-        ></textarea>
+          required={isRequired}></textarea>
       )}
       <span
         className={`cursor-pointer text-lg text-black text-opacity-80 absolute left-5 ${
           type === "textarea" ? "-top-[3.7rem]" : "top-0"
-        } px-1 transition duration-200 input-text`}
-      >
+        } px-1 transition duration-200 input-text`}>
         {label}
       </span>
     </label>

@@ -65,7 +65,7 @@ const KontaktContent = () => {
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema
                       </legend>
-                      <InputField inputName="navn" label="Fullt navn" htmlFor="navn" isRequired />
+                      <InputField inputName="navn" label="Fullt navn" htmlFor="navn" title="Vennligst bruk norske bokstaver" isRequired />
                       <br />
                       <InputField
                         inputName="telefon"
