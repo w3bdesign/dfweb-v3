@@ -52,7 +52,6 @@ describe("KontaktContent", () => {
   });
 
   test("submits the form and displays error message", async () => {
-    //render(<KontaktContent />);
     const { getByRole } = render(<KontaktContent />);
 
     // fill out form fields
