@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { fireEvent, render, screen, act, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, act } from "@testing-library/react";
 
 import KontaktContent from "../../src/components/Kontakt/KontaktContent.component";
 
