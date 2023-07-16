@@ -28,7 +28,7 @@ const Button = ({
   disabled = false,
   ...props
 }: IButtonProps) => {
-  const Component = renderAs || "button";
+  const Component = renderAs ?? "button";
   const targetLink = renderAs ? "_blank" : undefined;
 
   return (
