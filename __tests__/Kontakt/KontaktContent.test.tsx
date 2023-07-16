@@ -2,9 +2,16 @@
  * @jest-environment jsdom
  */
 
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, act, waitFor } from "@testing-library/react";
 
 import KontaktContent from "../../src/components/Kontakt/KontaktContent.component";
+
+import emailjs from "@emailjs/browser";
+
+jest.mock("@emailjs/browser", () => ({
+  sendForm: jest.fn(() => Promise.resolve()),
+  init: jest.fn()
+}));
 
 describe("KontaktContent", () => {
   test("renders the component", () => {
@@ -14,6 +21,9 @@ describe("KontaktContent", () => {
 
   test("submits the form and displays success message", () => {
     render(<KontaktContent />);
+
+    // make emailjs.sendForm return a rejected promise
+    emailjs.sendForm.mockImplementation(() => Promise.reject());
 
     // fill out form fields
     fireEvent.change(screen.getByLabelText("Fullt navn"), {
@@ -36,4 +46,38 @@ describe("KontaktContent", () => {
     // assert success message is displayed
     expect(screen.getByText("Fullt navn")).toBeInTheDocument();
   });
+
+
+  test('submits the form and displays error message', async () => {
+    //render(<KontaktContent />);
+    const { getByRole } = render(<KontaktContent />);
+  
+    // fill out form fields
+    fireEvent.change(screen.getByLabelText('Fullt navn'), { target: { value: 'Bruker Test' } });
+    fireEvent.change(screen.getByLabelText('Telefonnummer'), { target: { value: '12345678' } });
+    fireEvent.change(screen.getByLabelText('Hva ønsker du å si?'), { target: { value: 'Message' } });
+  
+    const form = getByRole('form', { name: /contact form/i });
+    fireEvent.submit(form); // submit the form
+  
+    // Wait for promises to resolve
+    await act(() => waitFor(() => {}));
+  
+    // assert success message is displayed
+    //expect(screen.getByText('Takk for din beskjed')).toBeInTheDocument();
+    expect(screen.getByText("Feil under sending av skjema")).toBeInTheDocument();
+  });
+  
+
+
+
+
+
+
+
+
+
+
+
+
 });
