@@ -5,19 +5,29 @@ export interface IButtonProps {
   href?: string;
   renderAs?: ElementType;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 /**
- * A reusable button component.
+ * Renders a button component with optional props.
  *
- * @param {ReactNode | JSX.Element} children - The content of the button.
- * @param {string} href - The link to navigate to when the button is clicked.
- * @param {ElementType} renderAs - The HTML tag to render the button as.
- * @param {string} type - The type of button (default is "submit")
- * @returns {JSX.Element} - A button component.
+ * @param {IButtonProps} props - The props object containing the following properties:
+ *   - children: The content of the button.
+ *   - href: The URL the button should link to.
+ *   - renderAs: The HTML element to render the button as. Defaults to "button".
+ *   - type: The type of button. Defaults to "submit".
+ *   - disabled: Whether the button should be disabled. Defaults to false.
+ *   - ...props: Additional props to pass to the button component.
+ * @return {JSX.Element} The rendered button component.
  */
-
-const Button = ({ children, href, renderAs, type = "submit", ...props }: IButtonProps) => {
+const Button = ({
+  children,
+  href,
+  renderAs,
+  type = "submit",
+  disabled = false,
+  ...props
+}: IButtonProps) => {
   const Component = renderAs || "button";
   const targetLink = renderAs ? "_blank" : undefined;
 
@@ -25,11 +35,11 @@ const Button = ({ children, href, renderAs, type = "submit", ...props }: IButton
     <Component
       type={type}
       data-cy="submit"
-      className="p-4 m-4 text-white transition duration-500 ease-in-out bg-gray-800 rounded hover:shadow-outline hover:bg-gray-600"
+      className="p-4 m-4 text-white transition duration-500 ease-in-out bg-gray-800 rounded hover:shadow-outline hover:bg-gray-600 disabled:opacity-50 disabled:pointer-events-none"
       href={href}
       target={targetLink}
-      {...props}
-    >
+      disabled={disabled}
+      {...props}>
       {children}
     </Component>
   );

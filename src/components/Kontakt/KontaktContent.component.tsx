@@ -19,11 +19,21 @@ const KontaktContent = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   const [serverResponse, setServerResponse] = useState<string>("");
+  const [submitting, setIsSubmitting] = useState<boolean>(false);
 
+  /**
+   * Handles the form submission and sends an email using the provided API keys.
+   *
+   * @param {IEvent} event - The event object representing the form submission event.
+   * @return {void} No return value.
+   */
   const handleSubmit = (event: IEvent) => {
     const EMAIL_API_KEY = process.env.NEXT_PUBLIC_EMAIL_API_KEY ?? "changeme";
     const TEMPLATE_KEY = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY ?? "changeme";
     const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY ?? "changeme";
+
+    // Disable button
+    setIsSubmitting(true);
 
     event.preventDefault();
 
@@ -35,9 +45,11 @@ const KontaktContent = () => {
     emailjs.sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
       () => {
         setServerResponse("Takk for din beskjed");
+        setIsSubmitting(false);
       },
       () => {
         setServerResponse("Feil under sending av skjema");
+        setIsSubmitting(false);
       }
     );
   };
@@ -65,7 +77,13 @@ const KontaktContent = () => {
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema
                       </legend>
-                      <InputField inputName="navn" label="Fullt navn" htmlFor="navn" title="Vennligst bruk norske bokstaver" isRequired />
+                      <InputField
+                        inputName="navn"
+                        label="Fullt navn"
+                        htmlFor="navn"
+                        title="Vennligst bruk norske bokstaver"
+                        isRequired
+                      />
                       <br />
                       <InputField
                         inputName="telefon"
@@ -85,7 +103,7 @@ const KontaktContent = () => {
                       />
                       <br />
                     </fieldset>
-                    <Button>Send skjema</Button>
+                    <Button disabled={submitting}>Send skjema</Button>
                   </form>
                 )}
               </div>
