@@ -27,7 +27,8 @@ const InputField = ({
   isRequired,
   htmlFor,
   title,
-  type = "input"
+  type = "input",
+  ...props
 }: IInputProps) => {
   const sharedClasses =
     "cursor-pointer my-6 text-xl w-64 p-2 m-2 text-black border-gray-500 border rounded border-opacity-50 outline-none focus:border-blue-500 placeholder-gray-300 placeholder-opacity-0 transition duration-200";
@@ -44,6 +45,7 @@ const InputField = ({
           pattern={inputPattern}
           title={title}
           className={sharedClasses}
+          {...props}
         />
       ) : (
         <textarea
@@ -51,7 +53,8 @@ const InputField = ({
           id={htmlFor}
           placeholder={label}
           className={sharedClasses}
-          required={isRequired}></textarea>
+          required={isRequired}
+          {...props}></textarea>
       )}
       <span
         className={`cursor-pointer text-lg text-black text-opacity-80 absolute left-5 ${

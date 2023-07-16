@@ -3,6 +3,7 @@
  */
 
 import { fireEvent, render, screen } from "@testing-library/react";
+
 import KontaktContent from "../../src/components/Kontakt/KontaktContent.component";
 
 describe("KontaktContent", () => {
@@ -25,8 +26,14 @@ describe("KontaktContent", () => {
       target: { value: "Test message" }
     });
 
-    // submit form
-    fireEvent.click(screen.getByText("Send skjema"));
+    const button = screen.getByText("Send skjema");
+
+    fireEvent.click(button);
+
+    console.log(button);
+
+    // assert button is disabled after click
+    expect(button).toBeDisabled();
 
     // assert success message is displayed
     expect(screen.getByText("Fullt navn")).toBeInTheDocument();
