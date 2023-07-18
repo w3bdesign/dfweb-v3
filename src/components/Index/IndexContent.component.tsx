@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PortableText from "react-portable-text";
-import { Fragment } from "react";
+import { Fragment, Key, ReactNode } from "react";
 
 import Hero from "./Hero.component";
 import BounceInScroll from "../Animations/BounceInScroll.component";
@@ -36,11 +36,11 @@ interface ISerializerCode {
 
 interface ISerializerLink {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 interface IPageContent {
-  id: React.Key | null;
+  id?: Key;
   content: IContent[];
   hero: IHero[];
 }
