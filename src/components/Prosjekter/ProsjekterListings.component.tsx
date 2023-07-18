@@ -57,7 +57,9 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory) => {
   const handleFilterChange = (event: IChangeEvent) => {
     setFilteredProsjekt(projects);
     if (event.target.value) {
-      setFilteredProsjekt(projects.filter((project) => project.categoryname === event.target.value));
+      setFilteredProsjekt(
+        projects.filter((project) => project.categoryname === event.target.value)
+      );
     }
   };
 

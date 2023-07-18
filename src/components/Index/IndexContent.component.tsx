@@ -48,13 +48,41 @@ interface IPageContent {
 type TPageContent = { pageContent: IPageContent[] };
 
 /**
- * Renders a `section` element with a `text` and `title` content using the given props.
+ * Renders a Code component.
  *
- * @param {string} props.title - the title of the `section` element, used as `aria-label` and `data-cy`.
- * @param {IText[]} props.text - the `text` content to be rendered inside the `section` element.
- * @return {JSX.Element} the `section` element with the given `title` and `text` content.
+ * @param {ISerializerCode} children - The children to be rendered.
+ * @return {JSX.Element} The rendered Code component.
+ */
+const Code = ({ children }: ISerializerCode) => (
+  <span className="mt-4 text-lg">
+    {children} <br />
+    &nbsp;
+  </span>
+);
+
+/**
+ * Renders a link component with a given href and children.
+ *
+ * @param {ISerializerLink} props - The properties for the link component.
+ * @param {React.ReactNode} props.children - The children to be rendered within the link.
+ * @param {string} props.href - The href attribute for the link.
+ * @return {React.ReactElement} The rendered link component.
  */
 
+const LinkComponent = ({ children, href }: ISerializerLink) => (
+  <Link className="underline text-lg font-bold text-blue-700" href={href}>
+    {children}
+  </Link>
+);
+
+/**
+ * Renders a section component with a title and text content.
+ *
+ * @param {IContent} props - The props object containing the text and title.
+ * @param {string} props.text - The text content to be rendered.
+ * @param {string} props.title - The title of the section.
+ * @return {JSX.Element} The rendered section component.
+ */
 const Section = ({ text, title }: IContent) => (
   <section aria-label={title} data-testid="sanity-section">
     <div className="mt-4 p-8 text-lg text-black bg-white rounded shadow min-h-full lg:h-128 xl:h-96">
@@ -66,29 +94,8 @@ const Section = ({ text, title }: IContent) => (
         <PortableText
           content={text}
           serializers={{
-            /**
-             * Render the code.
-             *
-             * @param {ISerializerCode} children - The code to be rendered.
-             * @return {JSX.Element} The JSX element containing the rendered code.
-             */
-            code: ({ children }: ISerializerCode) => (
-              <span className="mt-4 text-lg">
-                {children} <br />
-                &nbsp;
-              </span>
-            ),
-            /**
-             * Renders a link with an underline, bold, and blue color.
-             *
-             * @param {ISerializerLink} link - The link object containing the children and href.
-             * @return {JSX.Element} The rendered link component.
-             */
-            link: ({ children, href }: ISerializerLink) => (
-              <Link className="underline text-lg font-bold text-blue-700" href={href}>
-                {children}
-              </Link>
-            )
+            code: Code,
+            link: LinkComponent
           }}
         />
       </BounceInScroll>
