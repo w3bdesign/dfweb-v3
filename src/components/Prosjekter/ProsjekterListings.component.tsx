@@ -52,12 +52,14 @@ export interface IChangeEvent {
  */
 
 const ProsjekterListings = ({ projects, categories }: IProjectCategory) => {
-  const [prosjekt, setProsjekt] = useState<IProjectInterface[]>(projects);
+  const [filteredProsjekt, setFilteredProsjekt] = useState<IProjectInterface[]>(projects);
 
   const handleFilterChange = (event: IChangeEvent) => {
-    setProsjekt(projects);
+    setFilteredProsjekt(projects);
     if (event.target.value) {
-      setProsjekt(projects.filter((project) => project.categoryname === event.target.value));
+      setFilteredProsjekt(
+        projects.filter((project) => project.categoryname === event.target.value)
+      );
     }
   };
 
@@ -91,7 +93,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory) => {
               ))}
             </select>
           </span>
-          {prosjekt && <ProsjekterSingleProject projects={prosjekt} />}
+          {filteredProsjekt && <ProsjekterSingleProject projects={filteredProsjekt} />}
         </div>
       </div>
     </main>
