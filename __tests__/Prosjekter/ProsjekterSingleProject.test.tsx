@@ -11,6 +11,8 @@ import projects from "../../__mocks__/projects.json";
 
 mockIntersectionObserver();
 
+jest.mock('react-dom');
+
 describe("ProsjekterSingleProject", () => {
   beforeEach(() => {
     render(<ProsjekterSingleProject projects={projects} />);

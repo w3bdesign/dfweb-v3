@@ -15,6 +15,8 @@ jest.mock("next/router", () => ({
   }
 }));
 
+jest.mock('react-dom');
+
 describe("Layout komponent", () => {
   const title: TTitle = "Forside";
 
