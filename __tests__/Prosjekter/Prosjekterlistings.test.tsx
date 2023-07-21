@@ -13,6 +13,13 @@ import categories from "../../__mocks__/categories.json";
 
 mockIntersectionObserver();
 
+jest.mock("react-dom", () => ({
+  ...jest.requireActual("react-dom"), // use actual for all non-hook parts
+  preload: () => {},
+  preconnect: () => {},
+  prefetchDNS: () => {}
+}));
+
 describe("ProsjekterListings", () => {
   const user = userEvent.setup();
   beforeEach(() => {
