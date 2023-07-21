@@ -19,12 +19,7 @@ jest.mock("next/router", () => ({
   }
 }));
 
-jest.mock("react-dom", () => ({
-  ...jest.requireActual("react-dom"), // use actual for all non-hook parts
-  preload: () => {},
-  preconnect: () => {},
-  prefetchDNS: () => {}
-}));
+jest.mock('react-dom');
 
 describe("Header", () => {
   it("Header laster inn og kan vises", () => {

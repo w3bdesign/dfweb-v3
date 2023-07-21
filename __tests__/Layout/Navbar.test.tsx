@@ -10,12 +10,7 @@ jest.mock("next/router", () => ({
   useRouter: jest.fn()
 }));
 
-jest.mock("react-dom", () => ({
-  ...jest.requireActual("react-dom"), // use actual for all non-hook parts
-  preload: () => {},
-  preconnect: () => {},
-  prefetchDNS: () => {}
-}));
+jest.mock('react-dom');
 
 const links = [
   { Text: "Home", Url: "/", id: 1, External: false },
