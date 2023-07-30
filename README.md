@@ -20,6 +20,12 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 >
 > <img src="https://user-images.githubusercontent.com/45217974/163738342-3e8ecc1c-e0d0-4f1d-8fcf-cbbccc31a2d7.png" alt="Sanity backend" />
 
+<br />
+
+> ## Google Lighthouse
+> 
+> <center><img src="https://user-images.githubusercontent.com/45217974/154784575-ec7c0df5-3724-4de0-b8ec-c0ee6ea42f6f.png" alt="Lighthouse score" /></center>
+
 ## Features
 
 ### General 
@@ -63,10 +69,6 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 -   Unit testing with Jest and React Testing Library integrated with CircleCI
 -   Test coverage setup with Codecov
 -   98% test coverage with Jest and React testing library
-
-> ### Google Lighthouse score
->
-> <center><img src="https://user-images.githubusercontent.com/45217974/154784575-ec7c0df5-3724-4de0-b8ec-c0ee6ea42f6f.png" alt="Lighthouse score" /></center>
 
 ## TODO
 
