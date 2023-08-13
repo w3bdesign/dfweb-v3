@@ -10,7 +10,7 @@ jest.mock("next/router", () => ({
   useRouter: jest.fn()
 }));
 
-jest.mock('react-dom');
+jest.mock("react-dom");
 
 const links = [
   { Text: "Home", Url: "/", id: 1, External: false },

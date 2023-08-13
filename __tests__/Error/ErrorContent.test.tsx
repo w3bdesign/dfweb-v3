@@ -6,7 +6,7 @@ import { render, screen } from "@testing-library/react";
 
 import ErrorContent from "../../src/components/Error/ErrorContent.component";
 
-jest.mock('react-dom');
+jest.mock("react-dom");
 
 describe("Error", () => {
   it("ErrorContent laster inn og kan vises", () => {

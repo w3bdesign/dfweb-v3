@@ -19,7 +19,7 @@ jest.mock("next/router", () => ({
   }
 }));
 
-jest.mock('react-dom');
+jest.mock("react-dom");
 
 describe("Header", () => {
   it("Header laster inn og kan vises", () => {
