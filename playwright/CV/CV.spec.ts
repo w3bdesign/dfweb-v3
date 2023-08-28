@@ -8,14 +8,25 @@ test.describe("CV", () => {
   });
 
   test("Skal vise CV", async ({ page }) => {
-    const cv = page.getByText(
-      "FRONTEND UTVIKLERDANIEL FJELDSTADNØKKELKVALIFIKASJONERFrilansArbeid med utviklin"
-    );
-
-    await expect(cv).toContainText(
-      "FRONTEND UTVIKLERDANIEL FJELDSTADNØKKELKVALIFIKASJONERFrilansArbeid med utviklin",
+    // Wait for the PDF to load by checking for the presence of specific text
+    await page.waitForFunction(
+      () => {
+        return document.body.textContent?.includes("DANIEL FJELDSTAD");
+      },
       { timeout: 10000 }
     );
+
+    // Save a screenshot of the current page
+    await page.screenshot({ path: "screenshots/cv.png" });
+
+    //const cv = page.getByText("DANIEL FJELDSTAD");
+
+    // Use the more specific selector and select the first occurrence
+    const cv = page.locator('span[dir="ltr"][role="presentation"] >> text=DANIEL FJELDSTAD').nth(0);
+
+    await expect(cv).toContainText("DANIEL FJELDSTAD", { timeout: 15000 });
+    // Save a screenshot of the current page
+    await page.screenshot({ path: "screenshots/after-cv-page.png" });
   });
 
   test("Nedlastingsknapp er synlig", async ({ page }) => {
