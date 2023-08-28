@@ -19,8 +19,6 @@ test.describe("CV", () => {
     // Save a screenshot of the current page
     await page.screenshot({ path: "screenshots/cv.png" });
 
-    //const cv = page.getByText("DANIEL FJELDSTAD");
-
     // Use the more specific selector and select the first occurrence
     const cv = page.locator('span[dir="ltr"][role="presentation"] >> text=DANIEL FJELDSTAD').nth(0);
 
