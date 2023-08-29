@@ -92,5 +92,9 @@
     "tailwindcss": "^3.3.3",
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
-  }
+  },
+    "resolutions": {
+    "react-pdf/**/canvas": "link:./node_modules/.cache/null",
+    "pdfjs-dist/canvas": "link:./node_modules/.cache/null"
+    }
 }
