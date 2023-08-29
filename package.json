@@ -83,7 +83,7 @@
     "jest-environment-jsdom": "^29.6.4",
     "jsdom": "^22.1.0",
     "jsdom-testing-mocks": "^1.9.0",
-    "postcss": "^8.4.28",
+    "postcss": "^8.4.29",
     "prettier": "^3.0.3",
     "react-test-renderer": "18.2.0",
     "sitemap": "^7.1.1",
