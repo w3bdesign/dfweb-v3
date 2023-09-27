@@ -38,7 +38,7 @@ const Navbar = ({ links }: INavbarProps) => {
       "hover:after:w-full after:transition-all after:bg-white after:bottom-[-0.45rem] after:block after:m-auto after:h-1 after:ease-in-out after:duration-500 inline-block text-xl text-white";
 
     const linkClasses = `${commonLinkClasses} ${activeLink(Url, router.pathname)}`;
-
+    
     return (
       <li key={id} className="link mr-3 md:mr-8 lg:mr-3">
         {External ? (
