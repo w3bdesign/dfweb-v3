@@ -87,7 +87,8 @@ export const AnimatedText = ({
           visible: { transition: { staggerChildren: 0.1 } },
           hidden: {}
         }}
-        aria-hidden>
+        aria-hidden
+      >
         {textArray.map((line) => (
           <span className="block" key={uuidv4()}>
             {line.split(" ").map((word) => (
