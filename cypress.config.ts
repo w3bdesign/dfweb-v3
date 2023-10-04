@@ -11,11 +11,11 @@ export default defineConfig({
 
       on("task", {
         log(message) {
-         // console.log(message);
+          console.log(message);
           return message;
         },
         table(message) {
-         // console.table(message);
+          console.table(message);
           return message;
         }
       });
