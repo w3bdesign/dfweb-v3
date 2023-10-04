@@ -50,7 +50,7 @@ export const AnimatedText = ({
   repeatDelay,
   animation = defaultAnimations
 }: AnimatedTextProps) => {
-  const [_, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
   const ref = useRef(null);
@@ -64,6 +64,7 @@ export const AnimatedText = ({
   useEffect(() => {
     let timeout: NodeJS.Timeout;
     const show = () => {
+      if (!mounted) return;
       controls.start("visible");
       if (repeatDelay) {
         timeout = setTimeout(async () => {
@@ -93,8 +94,7 @@ export const AnimatedText = ({
           visible: { transition: { staggerChildren: 0.1 } },
           hidden: {}
         }}
-        aria-hidden
-      >
+        aria-hidden>
         {textArray.map((line) => (
           <span className="block" key={uuidv4()}>
             {line.split(" ").map((word) => (
