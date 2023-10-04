@@ -37,7 +37,7 @@ const Hero = ({ content }: IContent) => (
               delay={500}
               text={[content[1].text]}
               className="mt-4 px-6 text-lg md:mx-auto md:p-0 md:text-center md:text-xl lg:w-2/3 lg:p-0 lg:text-center lg:text-xl xl:p-0 xl:text-center xl:text-2xl"
-              once={true}
+              once
             />
           )}
           <FadeDown
