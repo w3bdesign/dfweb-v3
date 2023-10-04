@@ -1,7 +1,7 @@
 import Icons from "./Icons.component";
 
 import FadeDown from "../Animations/FadeDown.component";
-import FadeUp from "../Animations/FadeUp.component";
+
 import { AnimatedText } from "../Animations/AnimatedText.component";
 
 type THero = { text: string };
