@@ -1,5 +1,5 @@
 import { motion, useInView, useAnimation, Variant } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 type AnimatedTextProps = {
@@ -50,10 +50,16 @@ export const AnimatedText = ({
   repeatDelay,
   animation = defaultAnimations
 }: AnimatedTextProps) => {
+  const [mounted, setMounted] = useState(false);
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5, once });
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
