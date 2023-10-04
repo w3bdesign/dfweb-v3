@@ -50,7 +50,7 @@ export const AnimatedText = ({
   repeatDelay,
   animation = defaultAnimations
 }: AnimatedTextProps) => {
-  const [mounted, setMounted] = useState(false);
+  const [_, setMounted] = useState(false);
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
   const ref = useRef(null);
