@@ -30,7 +30,7 @@ const Icons = () => {
     <div data-testid="icons" className="flex justify-center mt-4 p-2">
       {AnimateIcons.map(({ Icon, id, iconName }) => (
         <span className="p-2" key={id}>
-          <Grow delay={2.2 + id * 0.2}>
+          <Grow delay={5.5 + id * 0.2}>
             <Icon
               data-testid={iconName}
               aria-label={`${Icon.name} ikon}`}
