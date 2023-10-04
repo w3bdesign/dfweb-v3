@@ -1,5 +1,6 @@
 import { motion, useInView, useAnimation, Variant } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 type AnimatedTextProps = {
   text: string | string[];
@@ -88,9 +89,9 @@ export const AnimatedText = ({
         }}
         aria-hidden>
         {textArray.map((line, lineIndex) => (
-          <span className="block" key={`${line}-${lineIndex}`}>
+          <span className="block" key={uuidv4()}>
             {line.split(" ").map((word, wordIndex) => (
-              <span className="mt-2 inline-block" key={`${word}-${wordIndex}`}>
+              <span className="mt-2 inline-block" key={uuidv4()}>
                 {word.split("").map((char, charIndex) => (
                   <motion.span
                     key={`${char}-${charIndex}`}
