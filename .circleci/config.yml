@@ -24,7 +24,7 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-cache
       - run: yarn install
-        # 👇 Runs the Chromatic CLI 
+        # 👇 Runs the Chromatic CLI
       - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
   build:
     working_directory: /home/circleci/dfweb
@@ -55,7 +55,7 @@ jobs:
       - run:
           name: Run Jest Tests
           command: npm test
-      # - codecov/upload
+      - codecov/upload
     parallelism: 6
 workflows:
   # 👇 Adds Chromatic to the workflow
@@ -63,8 +63,8 @@ workflows:
     jobs:
       - build:
           name: Build Next.js project
-     # - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
-     #     name: Check build with Chromatic
+      # - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
+      #     name: Check build with Chromatic
       - cypress/run:
           name: Run Cypress E2E tests with Electron
           cypress-command: npx cypress run --browser electron
