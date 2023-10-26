@@ -9,7 +9,7 @@ orbs:
 executors:
   with-chrome-and-firefox:
     docker:
-      - image: "cypress/browsers:node16.14.2-slim-chrome100-ff99-edge"
+      - image: "cypress/browsers:node-18.15.0-chrome-106.0.5249.61-1-ff-99.0.1-edge-114.0.1823.51-1"
     resource_class: large
 jobs:
   # 👇 Adds Chromatic as a job
