@@ -68,5 +68,5 @@ workflows:
       - cypress/run:
           name: Run Cypress E2E tests with Electron
           cypress-command: npx cypress run --browser electron
-          start-command: npm run dev
+          start-command: node -v && npm run dev
           parallelism: 8
