@@ -1,4 +1,4 @@
-import { groq } from "next-sanity"; 
+import { groq } from "next-sanity";
 
 const navigation = groq`
 "navigation": *[_type == "Links"]{id, Text, Url} | order(id asc)`;
