@@ -29,6 +29,7 @@ jobs:
       - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
   build:
     working_directory: /home/circleci/dfweb
+    executor: with-chrome-and-firefox
     docker:
       - image: cimg/node:21.1.0-browsers
     steps:
@@ -67,9 +68,7 @@ workflows:
      # - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
      #     name: Check build with Chromatic
       - cypress/run:          
-          name: Run Cypress E2E tests with Chrome 
-          executor: with-chrome-and-firefox
-          steps:         
-            cypress-command: npx cypress run --browser chrome          
-            start-command: node -v && npm run dev
-            parallelism: 8        
+          name: Run Cypress E2E tests with Chrome          
+          cypress-command: npx cypress run --browser chrome          
+          start-command: node -v && npm run dev
+          parallelism: 8 
