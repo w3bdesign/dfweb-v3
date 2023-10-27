@@ -66,9 +66,8 @@ workflows:
      # - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
      #     name: Check build with Chromatic
       - cypress/run:
-          name: Run Cypress E2E tests with Electron         
+          name: Run Cypress E2E tests with Electron
+          node-version: 18
           cypress-command: npx cypress run --browser electron
           start-command: node -v && npm run dev
           parallelism: 8
-                with:
-                node-version: 18
