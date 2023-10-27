@@ -10,8 +10,7 @@ executors:
     resource_class: large
 jobs:
   chromatic-deployment:
-    docker:
-      - image: cimg/node:21.1.0
+  executor: with-chrome-and-firefox
     working_directory: ~/chromatic
     steps:
       - checkout
