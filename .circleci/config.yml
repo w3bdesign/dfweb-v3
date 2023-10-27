@@ -24,8 +24,8 @@ jobs:
   build:
     working_directory: /home/circleci/dfweb
     executor: with-chrome-and-firefox
-    docker:
-      - image: cimg/node:18.0.0-browsers
+    #docker:
+    #  - image: cimg/node:18.0.0-browsers
     steps:
       - checkout
       - restore_cache:
