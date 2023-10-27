@@ -16,8 +16,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-cache
+            - v2-dependencies-{{ checksum "package.json" }}
+            - v2-dependencies-cache
       - run: yarn install
       - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
   build:
