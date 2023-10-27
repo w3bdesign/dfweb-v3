@@ -69,6 +69,6 @@ workflows:
       - cypress/run:
           name: Run Cypress E2E tests with Chrome          
           cypress-command: npx cypress run --browser chrome
-          node-cache-version: '18.17'
+          node-cache-version: v2
           start-command: node -v && npm run dev
           parallelism: 8
