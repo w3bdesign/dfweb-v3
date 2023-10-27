@@ -6,7 +6,7 @@ orbs:
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@3.1.4
   codecov: codecov/codecov@3.3.0
-  parameters: node-version: '18.17'
+  
 executors:
   with-chrome-and-firefox:
     docker:
