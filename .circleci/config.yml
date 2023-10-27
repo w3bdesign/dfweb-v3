@@ -69,6 +69,6 @@ workflows:
       - cypress/run:
           name: Run Cypress E2E tests with Electron          
           cypress-command: npx cypress run --browser electron
-          node-cache-version: '18'
+          node-cache-version: 18
           start-command: node -v && npm run dev
           parallelism: 8
