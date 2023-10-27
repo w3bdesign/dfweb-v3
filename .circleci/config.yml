@@ -1,312 +1,65 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@3.1.4
-  codecov: codecov/codecov@1.2.3 #
-  win: circleci/windows@5.0.0
+  codecov: codecov/codecov@3.3.0
 
 executors:
   with-chrome-and-firefox:
     docker:
-      - image: "cypress/browsers:node-18.16.0-chrome-114.0.5735.133-1-ff-114.0.2-edge-114.0.1823.51-1"
+      - image: "cypress/browsers:node-18.15.0-chrome-106.0.5249.61-1-ff-99.0.1-edge-114.0.1823.51-1"
     resource_class: large
-    environment:
-      CYPRESS_coverage: false
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Commands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-commands:
-  report-coverage:
-    description: |
-      Store coverage report as an artifact and send it to Codecov service.
-    steps:
-      - store_artifacts:
-          path: coverage
-      - run: npx nyc report --reporter=text || true
-      - codecov/upload:
-          file: coverage/coverage-final.json
-  persist_ws:
-    steps:
-      - persist_to_workspace:
-          paths:
-            # for linux builds
-            - .cache/Cypress
-            # for windows builds
-            - AppData/Local/Cypress/Cache
-            - project
-          root: ~/
-  attach_ws:
-    steps:
-      - attach_workspace:
-          at: ~/
-  setup_linux:
-    steps:
-      - run:
-          name: Install curl
-          command: apt-get update && apt-get install -y curl
-  # Setup Windows
-  # 1. Add nvm and install node 18.16.0
-  # 2. Install yarn
-  setup_node_and_yarn_windows:
-    steps:
-      - run:
-          name: Install node 18
-          command: nvm install 18.16.0
-      - run:
-          name: Use node 18
-          command: nvm use 18.16.0
-      - run:
-          name: Install yarn
-          command: npm i --location=global yarn
-  # Setup
-  #  1. Install Cypress
-  #  2. Validate types
-  #  3. Run server unit-tests
-  setup_project_and_cypress:
-    steps:
-      - cypress/install:
-          package-manager: yarn
-      - run:
-          name: Build CI ℹ️
-          command: yarn build:ci
-      - run:
-          name: Print machine info ℹ️
-          command: yarn cypress info
-      - run:
-          name: Cypress cache list
-          command: yarn cypress cache list
-      - run:
-          name: Check Types
-          command: yarn types
-      - run:
-          name: Lint Files
-          command: yarn lint
-      - run:
-          name: Run Unit Tests
-          command: yarn test:unit:ci
-      - persist_ws
-  cypress_tests:
-    parameters:
-      browser:
-        type: string
-        default: chrome
-      specPattern:
-        type: string
-        default: ""
-      ciBuildId:
-        type: string
-      group:
-        type: string
-      isMobile:
-        type: boolean
-        default: false
-      isComponent:
-        type: boolean
-        default: false
-      recordPercy:
-        type: boolean
-        default: false
-    steps:
-      - attach_ws
-      - when:
-          condition:
-            and:
-              - equal: [true, << parameters.isComponent >>]
-          steps:
-            - cypress/run-tests:
-                cypress-command: yarn cypress run --ci-build-id=<<parameters.ciBuildId>> --group="<<parameters.group>>" --record --parallel --component
-      - when:
-          condition:
-            and:
-              - equal: [true, << parameters.isMobile >>]
-          steps:
-            - cypress/run-tests:
-                start-command: yarn start:ci
-                cypress-command: yarn cypress run --ci-build-id=<<parameters.ciBuildId>> --group="<<parameters.group>>" --record --parallel --spec=<<parameters.specPattern>> --browser=<<parameters.browser>> --config viewportWidth=375,viewportHeight=667
-      - when:
-          condition:
-            and:
-              - equal: [false, << parameters.isMobile >>]
-              - equal: [false, << parameters.isComponent >>]
-          steps:
-            - when:
-                condition:
-                  and:
-                    - equal: [true, <<parameters.recordPercy>>]
-                steps:
-                  - cypress/run-tests:
-                      start-command: yarn start:ci
-                      cypress-command: yarn percy exec -- yarn cypress run --ci-build-id=<<parameters.ciBuildId>> --group="<<parameters.group>>" --record --parallel --spec=<<parameters.specPattern>> --browser=<<parameters.browser>>
-            - when:
-                condition:
-                  and:
-                    - equal: [false, <<parameters.recordPercy>>]
-                steps:
-                  - cypress/run-tests:
-                      start-command: yarn start:ci
-                      cypress-command: yarn cypress run --ci-build-id=<<parameters.ciBuildId>> --group="<<parameters.group>>" --record --parallel --spec=<<parameters.specPattern>> --browser=<<parameters.browser>>
-      - report-coverage
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Jobs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 jobs:
-  setup_project_and_cypress_linux:
+  chromatic-deployment:
+    docker:
+      - image: cimg/node:21.1.0
+    working_directory: ~/chromatic
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-cache
+      - run: yarn install
+      - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
+  build:
+    working_directory: /home/circleci/dfweb
     executor: with-chrome-and-firefox
+    #docker:
+    #  - image: cimg/node:18.0.0-browsers
     steps:
-      - setup_project_and_cypress
-  setup_project_and_cypress_windows:
-    executor:
-      # executor comes from the "windows" orb
-      name: win/default
-      shell: bash.exe
-      size: large
-    steps:
-      - setup_node_and_yarn_windows
+      - checkout
+      - restore_cache:
+          key: npm-cache-v4-{{ checksum "package-lock.json" }}
       - run:
-          name: Disabling Windows Defender
-          shell: powershell.exe
-          command: Set-MpPreference -DisableRealtimeMonitoring $true
-      - setup_project_and_cypress
-  cypress_tests_linux:
-    executor: with-chrome-and-firefox
-    parallelism: 5
-    parameters:
-      browser:
-        type: string
-        default: chrome
-      specPattern:
-        type: string
-        default: ""
-      ciBuildId:
-        type: string
-      group:
-        type: string
-      isMobile:
-        type: boolean
-        default: false
-      isComponent:
-        type: boolean
-        default: false
-      recordPercy:
-        type: boolean
-        default: false
-    steps:
-      - setup_linux
-      - cypress_tests:
-          browser: <<parameters.browser>>
-          specPattern: <<parameters.specPattern>>
-          ciBuildId: <<parameters.ciBuildId>>
-          group: <<parameters.group>>
-          isMobile: <<parameters.isMobile>>
-          isComponent: <<parameters.isComponent>>
-          recordPercy: <<parameters.recordPercy>>
-  cypress_tests_windows:
-    executor:
-      # executor comes from the "windows" orb
-      name: win/default
-      shell: bash.exe
-    parallelism: 5
-    parameters:
-      browser:
-        type: string
-        default: chrome
-      specPattern:
-        type: string
-        default: ""
-      ciBuildId:
-        type: string
-      group:
-        type: string
-      isMobile:
-        type: boolean
-        default: false
-      isComponent:
-        type: boolean
-        default: false
-    steps:
-      - setup_node_and_yarn_windows
-      - cypress_tests:
-          browser: <<parameters.browser>>
-          specPattern: <<parameters.specPattern>>
-          ciBuildId: <<parameters.ciBuildId>>
-          group: <<parameters.group>>
-          isMobile: <<parameters.isMobile>>
-          isComponent: <<parameters.isComponent>>
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Workflows ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-linux-workflow: &linux-workflow
-  jobs:
-    - setup_project_and_cypress_linux:
-        name: "Setup Linux"
-    # Run Cypress Component tests
-    - cypress_tests_linux:
-        name: "Cypress Component Tests"
-        ciBuildId: ${CIRCLE_SHA1:0:8}
-        group: Component
-        requires:
-          - Setup Linux
-    # Run API tests against backend server
-    - cypress_tests_linux:
-        name: "Cypress API Tests"
-        browser: chrome
-        specPattern: "cypress/tests/api/*"
-        ciBuildId: ${CIRCLE_SHA1:0:8}
-        group: API
-        requires:
-          - Setup Linux
-    # Run E2E tests in Chrome
-    - cypress_tests_linux:
-        name: "UI Tests - Chrome"
-        browser: chrome
-        specPattern: "cypress/tests/ui/*"
-        ciBuildId: ${CIRCLE_SHA1:0:8}
-        group: "UI - Chrome"
-        recordPercy: true
-        requires:
-          - Setup Linux
-    # Run E2E tests in Chrome with mobile device viewport
-    - cypress_tests_linux:
-        name: "UI Tests - Chrome - Mobile"
-        browser: chrome
-        specPattern: "cypress/tests/ui/*"
-        ciBuildId: ${CIRCLE_SHA1:0:8}
-        group: "UI - Chrome - Mobile"
-        isMobile: true
-        requires:
-          - Setup Linux
-    # Run E2E tests in Firefox
-    - cypress_tests_linux:
-        name: "UI Tests - Firefox"
-        browser: firefox
-        specPattern: "cypress/tests/ui/*"
-        ciBuildId: ${CIRCLE_SHA1:0:8}
-        group: "UI - Firefox"
-        requires:
-          - Setup Linux
-    # Run E2E tests in Firefox with mobile device viewport
-    - cypress_tests_linux:
-        name: "UI Tests - Firefox - Mobile"
-        browser: firefox
-        specPattern: "cypress/tests/ui/*"
-        ciBuildId: ${CIRCLE_SHA1:0:8}
-        group: "UI - Firefox - Mobile"
-        isMobile: true
-        requires:
-          - Setup Linux
-
-windows-workflow: &windows-workflow
-  jobs:
-    - setup_project_and_cypress_windows:
-        name: "Setup Windows"
-    # Run E2E tests in Windows in Electron
-    - cypress_tests_windows:
-        name: "UI Tests - Electron - Windows"
-        browser: electron
-        specPattern: "cypress/tests/ui/*"
-        ciBuildId: ${CIRCLE_SHA1:0:8}
-        group: "UI - Electron - Windows"
-        requires:
-          - Setup Windows
-
+          name: Install Dependencies
+          command: npm ci
+      - run:
+          name: Chrome key start setup
+          command: sudo apt update -y
+      - run:
+          name: Chrome key finish setup
+          command: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      - run:
+          name: Chrome package download
+          command: sudo apt install ./google-chrome-stable_current_amd64.deb
+      - save_cache:
+          key: npm-cache-v4-{{ checksum "package-lock.json" }}
+          paths:
+            - /home/circleci/.npm
+      - store_artifacts:
+          path: /root/.npm/_logs
+      - run:
+          name: Run Jest Tests
+          command: npm test
+           - codecov/upload
+    parallelism: 6
 workflows:
-  linux:
-    <<: *linux-workflow
-  windows:
-    <<: *windows-workflow
+  chromatic-deploy:  
+    jobs:
+      - build:
+          name: Build Next.js project
+      - cypress/run:          
+          name: Run Cypress E2E tests with Electron          
+          cypress-command: npx cypress run --browser electron          
+          start-command: node -v && npm run dev
+          parallelism: 8
