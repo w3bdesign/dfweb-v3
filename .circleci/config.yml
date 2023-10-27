@@ -22,9 +22,9 @@ jobs:
       - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
   build:
     working_directory: /home/circleci/dfweb
-    executor: with-chrome-and-firefox
-    #docker:
-    #  - image: cimg/node:18.0.0-browsers
+    #executor: with-chrome-and-firefox
+    docker:
+      - image: cimg/node:18.0.0-browsers
     steps:
       - checkout
       - restore_cache:
