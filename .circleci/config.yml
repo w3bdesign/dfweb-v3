@@ -60,15 +60,16 @@ jobs:
     parallelism: 6
 workflows:
   # 👇 Adds Chromatic to the workflow
-  chromatic-deploy:
-  executor: with-chrome-and-firefox
+  chromatic-deploy:  
     jobs:
       - build:
           name: Build Next.js project
      # - chromatic-deployment: # 👈 Runs the Chromatic job implemented above
      #     name: Check build with Chromatic
       - cypress/run:          
-          name: Run Cypress E2E tests with Chrome          
-          cypress-command: npx cypress run --browser chrome          
-          start-command: node -v && npm run dev
-          parallelism: 8
+          name: Run Cypress E2E tests with Chrome 
+          executor: with-chrome-and-firefox
+          steps:         
+            cypress-command: npx cypress run --browser chrome          
+            start-command: node -v && npm run dev
+            parallelism: 8        
