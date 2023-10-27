@@ -10,7 +10,7 @@ executors:
     resource_class: large
 jobs:
   chromatic-deployment:
-  executor: with-chrome-and-firefox
+    executor: with-chrome-and-firefox
     working_directory: ~/chromatic
     steps:
       - checkout
