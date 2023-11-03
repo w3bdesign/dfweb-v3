@@ -1,6 +1,4 @@
-import { Variants } from "framer-motion";
-// CircleCI doesn't like import { motion } from "framer-motion" here, so we use require
-const { motion } = require("framer-motion");
+import { Variants, motion } from "framer-motion";
 
 import { IAnimateWithDelayProps } from "./types/Animations.types";
 
@@ -13,13 +11,13 @@ import { IAnimateWithDelayProps } from "./types/Animations.types";
  * @returns {JSX.Element} - Rendered component
  */
 
-const FadeDown = ({ children, cssClass, delay }: IAnimateWithDelayProps): JSX.Element => {
+const FadeDown = ({ children, cssClass, delay }: IAnimateWithDelayProps) => {
   const fadeDownVariants: Variants = {
     initial: { opacity: 0, y: -20 },
     animate: {
       y: 0,
       opacity: 1,
-      transition: { delay, type: "spring", duration: 0.5, stiffness: 110 }
+      transition: { delay, type: "spring", duration: 0.5, stiffness: 100 }
     }
   };
   return (

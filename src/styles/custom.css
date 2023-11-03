@@ -1,28 +1,4 @@
 /* Global font */
-body {
-  font-family: Lato, sans-serif;
-  background-color: #f2f2f2;
-}
-
-/* ProsjekterSingleProject */
-.description {
-  min-height: 85px;
-}
-
-/* Kontakt page */
-#kontakt-container {
-  min-height: 500px;
-}
-
-#error-container {
-  min-height: 620px;
-}
-
-/* Custom styling for main hero image */
-#main-hero {
-  background-image: url("../assets/images/blue-hero.jpg");
-  height: 450px;
-}
 
 a {
   color: inherit;
@@ -33,22 +9,6 @@ a {
   box-sizing: border-box;
 }
 
-/* Navbar animations */
-.navbar-link::after {
-  content: "";
-  display: block;
-  bottom: -0.45rem;
-  height: 0.2575rem;
-  width: 0;
-  margin: 0 auto;
-  background: #fff;
-  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.navbar-link:hover::after {
-  width: 100%;
-}
-
-.navbar-link-active::after {
-  width: 100%;
+option {
+  font-family: "Lato", sans-serif !important;
 }

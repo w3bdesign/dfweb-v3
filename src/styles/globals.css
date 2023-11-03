@@ -3,3 +3,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+textarea:focus ~ .input-text,
+textarea:not(:placeholder-shown) ~ .input-text {
+  @apply text-blue-500 transform -translate-y-[3.1rem] sm:-translate-y-[3.1rem] lg:-translate-y-[3.9rem] -translate-x-7 scale-75;
+}
+
+input[type="text"]:focus ~ .input-text,
+input[type="text"]:not(:placeholder-shown) ~ .input-text {
+  @apply text-blue-500 transform -translate-y-11 -translate-x-7 scale-75;
+}
+

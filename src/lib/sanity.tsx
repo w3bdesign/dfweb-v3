@@ -1,7 +1,5 @@
 import createImageUrlBuilder from "@sanity/image-url";
 
-import { createPreviewSubscriptionHook, createCurrentUserHook } from "next-sanity";
-
 import { config } from "./sanity.config";
 
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
@@ -12,8 +10,6 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
  **/
 export const urlFor = (source: SanityImageSource) => createImageUrlBuilder(config).image(source);
 
-// Set up the live preview subscription hook
-export const usePreviewSubscription = createPreviewSubscriptionHook(config);
-
-// Helper function for using the current logged in user account
-export const useCurrentUser = createCurrentUserHook(config);
+// TODO: Set up the live preview subscription hook
+// https://github.com/sanity-io/next-sanity/blob/main/MIGRATE-v4-to-v5-pages-router.md
+// export const usePreviewSubscription = definePreview(config);

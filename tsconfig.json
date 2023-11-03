@@ -14,8 +14,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["cypress", "cypress-axe", "node"]
+    "noImplicitAny": true,
+    "strictNullChecks": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "types": ["cypress", "cypress-axe", "node"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "cypress.d.ts",
+    "cypress",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

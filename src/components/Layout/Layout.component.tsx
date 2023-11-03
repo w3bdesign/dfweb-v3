@@ -3,6 +3,13 @@ import { ReactNode } from "react";
 import Footer from "./Footer.component";
 import Header from "./Header.component";
 
+interface ILinks {
+  Text: string;
+  Url: string;
+  id: number;
+  External: boolean;
+}
+
 export type TTitle =
   | "Forside"
   | "Kontakt"
@@ -14,6 +21,7 @@ export type TTitle =
 interface ILayoutProps {
   children?: ReactNode;
   title: TTitle;
+  links: ILinks[];
 }
 
 /**
@@ -24,9 +32,9 @@ interface ILayoutProps {
  * @returns {JSX.Element} - Rendered component
  */
 
-const Layout = ({ children, title }: ILayoutProps): JSX.Element => (
+const Layout = ({ children, title, links }: ILayoutProps) => (
   <>
-    <Header title={title} />
+    <Header title={title} links={links} />
     {children}
     <Footer />
   </>

@@ -27,7 +27,7 @@ export interface IProjectUrl {
 
 export interface IProjectInterface {
   _id: string;
-  id?: null | number;
+  id?: number;
   name: string;
   description: string;
   subdescription: string;
@@ -51,13 +51,15 @@ export interface IChangeEvent {
  * @returns {JSX.Element} - Rendered component
  */
 
-const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Element => {
-  const [prosjekt, setProsjekt] = useState(projects);
+const ProsjekterListings = ({ projects, categories }: IProjectCategory) => {
+  const [filteredProsjekt, setFilteredProsjekt] = useState<IProjectInterface[]>(projects);
 
   const handleFilterChange = (event: IChangeEvent) => {
-    setProsjekt(projects);
+    setFilteredProsjekt(projects);
     if (event.target.value) {
-      setProsjekt(projects.filter((project) => project.categoryname === event.target.value));
+      setFilteredProsjekt(
+        projects.filter((project) => project.categoryname === event.target.value)
+      );
     }
   };
 
@@ -91,7 +93,7 @@ const ProsjekterListings = ({ projects, categories }: IProjectCategory): JSX.Ele
               ))}
             </select>
           </span>
-          {prosjekt && <ProsjekterSingleProject projects={prosjekt} />}
+          {filteredProsjekt && <ProsjekterSingleProject projects={filteredProsjekt} />}
         </div>
       </div>
     </main>

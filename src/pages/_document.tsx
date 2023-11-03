@@ -6,17 +6,10 @@ class MyDocument extends Document {
     return { ...initialProps };
   }
 
-  render(): JSX.Element {
+  render = () => {
     return (
       <Html lang="nb">
         <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
-
           <link rel="icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" href="/logo.png" />
 
@@ -33,15 +26,15 @@ class MyDocument extends Document {
           />
 
           <meta property="og:url" content="https://www.dfweb.no/" />
-          <meta property="og:site_name" content="dfweb" />
+          <meta property="og:site_name" content="dfweb.no" />
         </Head>
-        <body>
+        <body className="font-body bg-graybg">
           <Main />
           <NextScript />
         </body>
       </Html>
     );
-  }
+  };
 }
 
 export default MyDocument;

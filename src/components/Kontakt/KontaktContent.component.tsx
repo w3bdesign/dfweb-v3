@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 
 import Button from "../UI/Button.component";
 import PageHeader from "../UI/PageHeader.component";
+import InputField from "../UI/InputField.component";
 
 interface IEvent {
   preventDefault: () => void;
@@ -14,18 +15,31 @@ interface IEvent {
  * @returns {JSX.Element} - Rendered component
  */
 
-const KontaktContent = (): JSX.Element => {
+const KontaktContent = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [serverResponse, setServerResponse] = useState<string>("");
 
+  const [serverResponse, setServerResponse] = useState<string>("");
+  const [submitting, setIsSubmitting] = useState<boolean>(false);
+
+  /**
+   * Handles the form submission and sends an email using the provided API keys.
+   *
+   * @param {IEvent} event - The event object representing the form submission event.
+   * @return {void} No return value.
+   */
   const handleSubmit = (event: IEvent) => {
-    const EMAIL_API_KEY = process.env.NEXT_PUBLIC_EMAIL_API_KEY || "changeme";
-    const TEMPLATE_KEY = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY || "changeme";
-    const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY || "changeme";
+    const EMAIL_API_KEY = process.env.NEXT_PUBLIC_EMAIL_API_KEY ?? "changeme";
+    const TEMPLATE_KEY = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY ?? "changeme";
+    const SERVICE_KEY = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY ?? "changeme";
+
+    // Disable button
+    setIsSubmitting(true);
 
     event.preventDefault();
 
-    if (!formRef.current) return;
+    if (!formRef.current) {
+      return;
+    }
 
     emailjs.init(EMAIL_API_KEY);
     emailjs.sendForm(SERVICE_KEY, TEMPLATE_KEY, formRef.current).then(
@@ -43,7 +57,7 @@ const KontaktContent = (): JSX.Element => {
       <div className="mt-32 bg-graybg">
         <PageHeader>Kontakt</PageHeader>
         <div className="px-4 p lg:px-0 xl:px-0 md:px-0">
-          <div id="kontakt-container" className="container mx-auto bg-white rounded shadow">
+          <div className="container mx-auto bg-white rounded shadow min-h-[31.25rem]">
             <div className="p-4 mx-auto mt-4">
               <div className="p-4 text-lg rounded">
                 {serverResponse && (
@@ -51,63 +65,55 @@ const KontaktContent = (): JSX.Element => {
                 )}
                 {!serverResponse && (
                   <form
+                    id="contact-form"
                     className="text-center mt-6"
                     ref={formRef}
                     onSubmit={handleSubmit}
                     method="POST"
                     action="/api/form"
+                    aria-label="Contact Form"
                   >
                     <fieldset>
                       <legend className="text-center mx-auto text-xl mt-4 sr-only">
                         Kontaktskjema
                       </legend>
-                      <label htmlFor="navn" className="text-black">
-                        Fullt navn
-                        <br />
-                        <input
-                          className="w-64 p-2 m-2 placeholder-black transition duration-500 ease-in-out border border-gray-500 rounded focus:shadow-outline focus:bg-gray-200 hover:bg-gray-200 transform-gpu"
-                          id="navn"
-                          name="navn"
-                          type="text"
-                          required
-                          aria-required
-                        />
-                      </label>
+                      <InputField
+                        inputName="navn"
+                        label="Fullt navn"
+                        htmlFor="navn"
+                        inputPattern="[a-zA-ZæøåÆØÅ ]+"
+                        title="Vennligst bruk norske bokstaver"
+                        isRequired
+                      />
                       <br />
-                      <label className="text-black" htmlFor="phone">
-                        Telefonnummer (i norskt format)
-                        <br />
-                        <input
-                          className="w-64 p-2 m-2 placeholder-black transition duration-500 ease-in-out border border-gray-500 rounded focus:bg-gray-200 focus:shadow-outline hover:bg-gray-200 transform-gpu"
-                          id="phone"
-                          name="telefon"
-                          type="text"
-                          required
-                          aria-required
-                          pattern=".[0-9]{7}"
-                        />
-                      </label>
+                      <InputField
+                        inputName="telefon"
+                        label="Telefonnummer"
+                        htmlFor="telefon"
+                        isRequired
+                        inputPattern=".[0-9]{7}"
+                        title="Vennligst bruk bare tall"
+                      />
                       <br />
-                      <label className="text-black" htmlFor="textarea">
-                        Hva ønsker du å si?
-                        <br />
-                        <textarea
-                          className="w-64 p-2 m-2 placeholder-black transition duration-500 ease-in-out border border-gray-500 rounded focus:shadow-outline focus:bg-gray-200 hover:bg-gray-200 transform-gpu"
-                          name="tekst"
-                          id="textarea"
-                          required
-                          aria-required
-                        />
-                      </label>
+                      <InputField
+                        inputName="tekst"
+                        type="textarea"
+                        label="Hva ønsker du å si?"
+                        htmlFor="tekst"
+                        isRequired
+                      />
+                      <br />
                     </fieldset>
-                    <Button>Send skjema</Button>
+                    <Button disabled={submitting}>Send skjema</Button>
                   </form>
                 )}
               </div>
             </div>
           </div>
         </div>
-        <div id="kontakt-filler" className="mt-0 lg:mt-40" />
+        <div id="kontakt-filler" className="mt-0 lg:mt-40">
+          &nbsp;
+        </div>
       </div>
     </main>
   );
