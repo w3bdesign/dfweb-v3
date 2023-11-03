@@ -40,6 +40,7 @@ const ProsjekterSingleProject = ({ projects }: IProject) => (
                   className="md:h-[15.625rem] md:w-[31.25rem]"
                   width="250"
                   height="500"
+                  quality={80}
                   src={urlFor(projectimage).url() as string}
                   alt={name}
                   priority
