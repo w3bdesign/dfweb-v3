@@ -41,7 +41,7 @@ const ProsjekterSingleProject = ({ projects }: IProject) => (
                   style={{  width: "500px", height: "250px" }}
                   width="250"
                   height="500"
-                  quality={80}
+                  quality={90}
                   src={urlFor(projectimage).url() as string}
                   alt={name}
                   priority
