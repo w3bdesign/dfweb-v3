@@ -37,10 +37,11 @@ const ProsjekterSingleProject = ({ projects }: IProject) => (
             <div className="flex justify-center mt-6">
               {projectimage && (
                 <Image
-                  className="md:h-[15.625rem] md:w-[31.25rem]"
+                  //className="md:h-[15.625rem] md:w-[31.25rem]"
+                  style={{  width: "500px", height: "250px" }}
                   width="250"
                   height="500"
-                  quality={80}
+                  quality={90}
                   src={urlFor(projectimage).url() as string}
                   alt={name}
                   priority
