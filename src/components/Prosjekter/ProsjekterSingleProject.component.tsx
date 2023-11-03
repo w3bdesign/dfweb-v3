@@ -42,6 +42,7 @@ const ProsjekterSingleProject = ({ projects }: IProject) => (
                   src={urlFor(projectimage).url() as string}
                   alt={name}
                   priority={true}
+                  unoptimized = {true}
                 />
               )}
             </div>
