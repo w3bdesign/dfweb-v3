@@ -30,7 +30,7 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 
 ### General 
 
--   Next.js 13 with Typescript
+-   Next.js 14 with Typescript
 -   Sanity.io for fetching project information and frontpage text
 -   Storybook for component documentation
 -   Chromatic for visual testing of Storybook components
