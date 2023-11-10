@@ -39,6 +39,8 @@ const Navbar = ({ links }: INavbarProps) => {
 
     const linkClasses = `${commonLinkClasses} ${activeLink(Url, router.pathname)}`;
 
+    if (Text === "CV") return;
+
     return (
       <li key={id} className="link mr-3 md:mr-8 lg:mr-3">
         {External ? (
