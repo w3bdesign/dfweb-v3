@@ -37,7 +37,7 @@
     "@emailjs/browser": "^3.11.0",
     "@sanity/image-url": "^1.0.2",
     "axe-core": "^4.8.2",
-    "framer-motion": "^10.16.5",
+    "framer-motion": "^10.16.7",
     "next": "14.0.3",
     "next-sanity": "^6.1.0",
     "react": "^18.2.0",
