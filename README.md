@@ -73,3 +73,4 @@ Third version of my portfolio website with Next.js, Sanity.io and Typescript.
 ## TODO
 
 -   React Hook Form
+-   Ladle as Storybook replacement
