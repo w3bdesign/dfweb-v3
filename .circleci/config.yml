@@ -46,7 +46,7 @@ jobs:
             corepack prepare pnpm@latest-8 --activate
       - run:
           name: Install Dependencies
-          command: pnpm install --frozen-lockfile
+          command: pnpm install
       - run:
           name: Chrome key start setup
           command: sudo apt update -y
