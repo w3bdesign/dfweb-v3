@@ -37,7 +37,7 @@ const headers = [
   }
 ];
 
-const config = { 
+const config = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
@@ -48,7 +48,7 @@ const config = {
     locales: ["nb-NO"],
     defaultLocale: "nb-NO"
   },
-  async headers() {
+  headers() {
     return [
       {
         source: "/(.*)",
