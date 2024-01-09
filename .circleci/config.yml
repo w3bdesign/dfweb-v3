@@ -16,11 +16,21 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "pnpm-lock.yaml" }}
-            - v1-dependencies-cache
-      - run: npm install -g pnpm
-      - run: pnpm install
+            - pnpm-packages-v1-{{ checksum "pnpm-lock.yaml" }}
+            - pnpm-packages-cache-v1
+      - run:
+          name: Install pnpm package manager
+          command: |
+            corepack enable
+            corepack prepare pnpm@latest-8 --activate
+      - run:
+          name: Install Dependencies
+          command: pnpm install --frozen-lockfile
       - run: pnpm run chromatic -- --project-token=${CHROMATIC_PROJECT_TOKEN}
+      - save_cache:
+          key: pnpm-packages-v1-{{ checksum "pnpm-lock.yaml" }}
+          paths:
+            - ~/.pnpm-store
   build:
     working_directory: /home/circleci/dfweb
     docker:
@@ -30,8 +40,13 @@ jobs:
       - restore_cache:
           key: pnpm-cache-v2-{{ checksum "pnpm-lock.yaml" }}
       - run:
+          name: Install pnpm package manager
+          command: |
+            corepack enable
+            corepack prepare pnpm@latest-8 --activate
+      - run:
           name: Install Dependencies
-          command: npm install -g pnpm && pnpm install --frozen-lockfile
+          command: pnpm install --frozen-lockfile
       - run:
           name: Chrome key start setup
           command: sudo apt update -y
@@ -42,7 +57,7 @@ jobs:
           name: Chrome package download
           command: sudo apt install ./google-chrome-stable_current_amd64.deb
       - save_cache:
-          key: pnpm-cache-v1-{{ checksum "pnpm-lock.yaml" }}
+          key: pnpm-cache-v2-{{ checksum "pnpm-lock.yaml" }}
           paths:
             - ~/.pnpm-store
       - store_artifacts:
