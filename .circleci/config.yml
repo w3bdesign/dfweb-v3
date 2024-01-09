@@ -72,8 +72,8 @@ workflows:
     jobs:
       - build:
           name: Build Next.js project
-      #- cypress/run:
-          #name: Run Cypress E2E tests with Electron
-          #cypress-command: npx cypress run --browser electron
-          #start-command: pnpm run dev
-          #parallelism: 8
+      - cypress/run:
+          name: Run Cypress E2E tests with Electron
+          cypress-command: pnpm dlx cypress run --browser electron
+          start-command: pnpm run dev
+          parallelism: 8
