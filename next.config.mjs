@@ -42,7 +42,7 @@ const config = {
   poweredByHeader: false,
   images: {
     domains: ["cdn.sanity.io", "dfweb.no", "www.dfweb.no"],
-    minimumCacheTTL: 600
+    minimumCacheTTL: 800
   },
   i18n: {
     locales: ["nb-NO"],
