@@ -16,12 +16,14 @@ jobs:
         cache: 'pnpm' # This will enable caching for pnpm
     - name: Install pnpm
       run: npm install -g pnpm
+    - name: Verify pnpm installation
+      run: pnpm --version
     - name: Install dependencies
-      run: pnpm install --frozen-lockfile
+      run: npx pnpm install --frozen-lockfile
     - name: Install Playwright Browsers
-      run: pnpm exec playwright install --with-deps
+      run: npx pnpm exec playwright install --with-deps
     - name: Run Playwright tests
-      run: pnpm exec playwright test
+      run: npx pnpm exec playwright test
     - uses: actions/upload-artifact@v4
       if: always()
       with:
