@@ -15,6 +15,7 @@ jobs:
       with:
         node-version: 18
         cache: 'pnpm' # This will enable caching for pnpm
+        version: 8
     - name: Install pnpm
       run: npm install -g pnpm
     - name: Verify pnpm installation
