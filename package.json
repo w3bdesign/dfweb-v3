@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@axe-core/playwright": "^4.8.2",
-    "@emailjs/browser": "^3.11.0",
+    "@emailjs/browser": "^3.12.1",
     "@sanity/image-url": "^1.0.2",
     "axe-core": "^4.8.3",
     "framer-motion": "^10.17.12",
