@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@3.2.1
+  cypress: cypress-io/cypress@3.3.0
   codecov: codecov/codecov@3.3.0
 executors:
   with-chrome-and-firefox:
@@ -10,7 +10,7 @@ executors:
 jobs:
   chromatic-deployment:
     docker:
-      - image: cimg/node:21.5.0
+      - image: cimg/node:21.6.0
     working_directory: ~/chromatic
     steps:
       - checkout
@@ -34,7 +34,7 @@ jobs:
   build:
     working_directory: /home/circleci/dfweb
     docker:
-      - image: cimg/node:21.5.0-browsers
+      - image: cimg/node:21.6.0-browsers
     steps:
       - checkout
       - restore_cache:
