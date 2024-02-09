@@ -39,7 +39,7 @@
     "axe-core": "^4.8.4",
     "framer-motion": "^11.0.3",
     "next": "14.0.3",
-    "next-sanity": "^7.1.3",
+    "next-sanity": "^7.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
