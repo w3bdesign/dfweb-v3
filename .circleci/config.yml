@@ -17,13 +17,12 @@ jobs:
         - checkout       
         - run: npm install
         - save_cache:
-            key: v1-dependencies-{{ checksum "package.json" }}
+            key: v1-dependenciesx-{{ checksum "package.json" }}
             paths:
               - node_modules        
         - run:
             name: Run Cypress E2E tests with Electron
-            command: |
-              source $BASH_ENV
+            command: |              
               npx cypress run --browser electron
 
 
