@@ -1,13 +1,10 @@
-
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@3.3.1
   codecov: codecov/codecov@4.0.1
 executors:
   with-chrome-and-firefox:
-    docker:
-      # - image: "cypress/browsers:node16.14.2-slim-chrome100-ff99-edge"
-      # - image: "cypress/browsers:node-20.11.0-chrome-121.0.6167.184-1-ff-123.0-edge-121.0.2277.128-1"
+    docker:      
         - image: "cypress/browsers:node-20.10.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1"
     resource_class: large
 jobs:
