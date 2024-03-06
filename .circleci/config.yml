@@ -12,14 +12,14 @@ jobs:
       executor: with-chrome-and-firefox
       steps:
         - checkout       
-        - run: npm install
+        - run: pnpm install
         - save_cache:
             key: v1-dependenciesx-{{ checksum "package.json" }}
             paths:
               - node_modules 
         - run:
             name: Start Dev Server
-            command: npm run dev
+            command: pnpm dev
             background: true       
         - run:
             name: Run Cypress E2E tests with Electron
@@ -62,7 +62,7 @@ jobs:
           key: npm-cache-v2-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
-          command: npm ci
+          command: pnpm install
       - run:
           name: Chrome key start setup
           command: sudo apt update -y
@@ -80,7 +80,7 @@ jobs:
           path: /root/.npm/_logs
       - run:
           name: Run Jest Tests
-          command: npm test
+          command: pnpm test
       - codecov/upload
     parallelism: 6
 workflows:
