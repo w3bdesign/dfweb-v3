@@ -4,11 +4,16 @@
 
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { mockIntersectionObserver } from "jsdom-testing-mocks";
 
 import ProsjekterListings from "../../src/components/Prosjekter/ProsjekterListings.component";
 
 import projects from "../../__mocks__/projects.json";
 import categories from "../../__mocks__/categories.json";
+
+mockIntersectionObserver();
+
+jest.mock("react-dom");
 
 describe("ProsjekterListings", () => {
   const user = userEvent.setup();

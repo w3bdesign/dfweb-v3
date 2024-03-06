@@ -11,12 +11,12 @@ interface IContent {
 
 /**
  * Renders Hero that is used on the front page
- * Uses GSAP for animations to show the text
+ * Uses Framer Motion for animations to show the text
  * @function Hero
  * @returns {JSX.Element} - Rendered component
  */
 
-const Hero = ({ content }: IContent): JSX.Element => (
+const Hero = ({ content }: IContent) => (
   <div
     role="article"
     aria-label="Kontainer for animasjoner av introtekst"
@@ -44,9 +44,7 @@ const Hero = ({ content }: IContent): JSX.Element => (
           >
             <h2>{content.length > 0 && content[2].text}</h2>
           </FadeDown>
-          <FadeUp delay={2.2}>
-            <Icons />
-          </FadeUp>
+          <Icons />
         </section>
       </div>
     </div>

@@ -2,66 +2,79 @@
  * @jest-environment jsdom
  */
 
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { fireEvent, render, screen, act } from "@testing-library/react";
 
 import KontaktContent from "../../src/components/Kontakt/KontaktContent.component";
 
+import emailjs from "@emailjs/browser";
+
+jest.mock("@emailjs/browser", () => ({
+  sendForm: jest.fn(() => Promise.resolve()),
+  init: jest.fn()
+}));
+
 describe("KontaktContent", () => {
-  const user = userEvent.setup();
+  const fulltNavn = "Fullt navn";
+  const telefonNummer = "Telefonnummer";
+  const hvaOnskerDu = "Hva ønsker du å si?";
 
-  beforeEach(() => {
+  test("renders the component", () => {
     render(<KontaktContent />);
+    expect(screen.getByTestId("kontaktcontent")).toBeInTheDocument();
   });
 
-  it("KontaktContent laster inn", () => {
-    const kontaktcontent = screen.getByRole("heading", { name: /kontakt/i });
-    expect(kontaktcontent).toBeInTheDocument();
+  test("submits the form and disables button", async () => {
+    render(<KontaktContent />);
+
+    // make emailjs.sendForm return a rejected promise
+
+    emailjs.sendForm.mockImplementation(() => Promise.reject(new Error("Error message")));
+
+    // fill out form fields
+    fireEvent.change(screen.getByLabelText(fulltNavn), {
+      target: { value: "Bruker Test" }
+    });
+    fireEvent.change(screen.getByLabelText(telefonNummer), {
+      target: { value: "12345678" }
+    });
+    fireEvent.change(screen.getByLabelText("Hva ønsker du å si?"), {
+      target: { value: "Message" }
+    });
+
+    const button = screen.getByText("Send skjema");
+
+    fireEvent.click(button);
+
+    // assert button is disabled after click
+    expect(button).toBeDisabled();
+
+    // assert success message is displayed
+    expect(screen.getByText(fulltNavn)).toBeInTheDocument();
+
+    // Wait for promises to resolve
+    await act(() => Promise.resolve());
+
+    // assert success message is displayed
+    const errorMessage = screen.getByText(/Feil under sending av skjema/i);
+    expect(errorMessage).toBeInTheDocument();
   });
 
-  it("KontaktContent laster inn og kan vises", () => {
-    const kontaktcontent = screen.getByRole("heading", { name: /kontakt/i });
-    expect(kontaktcontent).toBeVisible();
-  });
+  test("submits the form and displays error message", async () => {
+    const { getByRole } = render(<KontaktContent />);
 
-  it("KontaktContent hovedinnhold laster inn", () => {
-    const kontaktmaincontent = screen.getByTestId("kontaktcontent");
-    expect(kontaktmaincontent).toBeInTheDocument();
-  });
+    // fill out form fields
+    fireEvent.change(screen.getByLabelText(fulltNavn), { target: { value: "Bruker Test" } });
+    fireEvent.change(screen.getByLabelText(telefonNummer), { target: { value: "12345678" } });
+    fireEvent.change(screen.getByLabelText(hvaOnskerDu), { target: { value: "Message" } });
 
-  it("KontaktContent hovedinnhold laster inn og kan vises", () => {
-    const kontaktmaincontent = screen.getByTestId("kontaktcontent");
-    expect(kontaktmaincontent).toBeVisible();
-  });
+    const form = getByRole("form", { name: /contact form/i });
+    fireEvent.submit(form); // submit the form
 
-  it("Test at vi ikke kan sende et tomt skjema", async () => {
-    const sendskjema = screen.getByRole("button", { name: /send skjema/i });
-    const firstname = screen.getByRole("textbox", { name: /fullt navn/i });
+    // Wait for promises to resolve
+    await act(() => Promise.resolve()); // Proposed code to remove warnings
 
-    await user.click(sendskjema);
-    expect(firstname).toBeVisible();
-  });
+    // assert success message is displayed
 
-  it("Test at vi kan skrive i navn tekstboks", async () => {
-    const firstname = screen.getByRole("textbox", { name: /fullt navn/i });
-    await user.clear(firstname);
-    await user.type(firstname, "navn");
-    expect(firstname).toHaveValue("navn");
+    expect(screen.getByText("Feil under sending av skjema")).toBeInTheDocument();
   });
-
-  it("Test at vi kan skrive i telefon tekstboks", async () => {
-    const telefon = screen.getByRole("textbox", { name: /telefonnummer \(i norskt format\)/i });
-    await user.clear(telefon);
-    await user.type(telefon, "telefon");
-    expect(telefon).toHaveValue("telefon");
-  });
-
-  it("Test at vi kan skrive i hva ønsker du å si tekstboks", async () => {
-    const beskjed = screen.getByRole("textbox", { name: /hva ønsker du å si\?/i });
-    await user.clear(beskjed);
-    await user.type(beskjed, "beskjed");
-    expect(beskjed).toHaveValue("beskjed");
-  });
-  // https://stackoverflow.com/questions/69706363/why-form-test-fails-while-using-react-hook-form
-  // https://react-hook-form.com/advanced-usage/#TestingForm
 });

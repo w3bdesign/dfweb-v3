@@ -4,8 +4,18 @@ import { useRouter } from "next/router";
 
 import MobileMenu from "./MobileMenu.component";
 
-import LINKS from "../../utils/constants/LINKS";
 import logo from "../../../public/logo.svg";
+
+interface ILinks {
+  Text: string;
+  Url: string;
+  id: number;
+  External: boolean;
+}
+
+interface INavbarProps {
+  links: ILinks[];
+}
 
 /**
  * Display the menu and the links
@@ -14,14 +24,43 @@ import logo from "../../../public/logo.svg";
  * @function Navbar
  * @returns {JSX.Element} - Rendered component
  */
-const Navbar = (): JSX.Element => {
+const Navbar = ({ links }: INavbarProps) => {
   const router = useRouter();
 
   const activeLink = (url: string, pathname: string) => {
-    if (pathname === url) {
-      return "navbar-link-active";
-    }
-    return "";
+    return pathname === url ? "" : "after:w-0";
+  };
+
+  const renderLink = (link: ILinks) => {
+    const { id, Text, Url, External } = link;
+
+    const commonLinkClasses =
+      "hover:after:w-full after:transition-all after:bg-white after:bottom-[-0.45rem] after:block after:m-auto after:h-1 after:ease-in-out after:duration-500 inline-block text-xl text-white";
+
+    const linkClasses = `${commonLinkClasses} ${activeLink(Url, router.pathname)}`;
+
+    if (Text === "CV") return;
+
+    return (
+      <li key={id} className="link mr-3 md:mr-8 lg:mr-3">
+        {External ? (
+          <a
+            aria-label={Text}
+            data-testid={Text}
+            href={Url}
+            target="_blank"
+            rel="noreferrer"
+            className={linkClasses}
+          >
+            {Text}
+          </a>
+        ) : (
+          <Link href={Url} data-testid={Text}>
+            <span className={linkClasses}>{Text}</span>
+          </Link>
+        )}
+      </li>
+    );
   };
 
   return (
@@ -42,30 +81,12 @@ const Navbar = (): JSX.Element => {
             data-cy="hamburger-div"
             className="flex content-center justify-between md:w-1/2 md:justify-end p-3"
           >
-            <MobileMenu />
+            <MobileMenu links={links} />
             <ul
               aria-label="Navigasjon"
               className="items-center justify-between flex-1 hidden list-reset md:flex lg:flex xl:flex lg:-mr-4 xl:-mr-4"
             >
-              {LINKS?.map((link) => (
-                <li key={link.id} className="link mr-3 md:mr-8 lg:mr-3">
-                  {link.external ? (
-                    <Link href={link.url} className="navbar-link inline-block text-xl text-white">
-                      {link.text}
-                    </Link>
-                  ) : (
-                    <Link
-                      href={link.url}
-                      className={`navbar-link eds-top-navigation-item inline-block text-xl text-white ${activeLink(
-                        link.url,
-                        router.pathname
-                      )}`}
-                    >
-                      {link.text}
-                    </Link>
-                  )}
-                </li>
-              ))}
+              {links.map(renderLink)}
             </ul>
           </div>
         </div>

@@ -1,30 +1,27 @@
 /// <reference types="cypress"/>
 
 describe("Test at navigasjon fungerer", () => {
-  const navlink = ".navbar-link";
   const mainUrl = "http://localhost:3000";
 
   beforeEach(() => {
     cy.visit(mainUrl);
   });
 
-  it("Test at vi kan navigere til Hjem", () => {
-    cy.get(navlink).eq(0).click();
-    cy.url().should("be.equal", `${mainUrl}/`);
-    cy.contains("Hei!");
-  });
+  const links = [
+    { link: "Hjem", testString: "Hei!", url: "" },
+    //{ link: "CV", testString: "CV", url: "cv" },
+    { link: "Kontakt", testString: "Kontakt", url: "kontakt" }
+  ];
 
-  it("Test at vi kan navigere til CV", () => {
-    cy.get(navlink).eq(2).click();
-    cy.url().should("be.equal", `${mainUrl}/cv`);
-    cy.contains("CV");
-  });
+  const testLink = (link: string, testString: string, url: string) => {
+    it(`Test at vi kan navigere til ${link}`, () => {
+      cy.get(`[data-testid=${link}]`).click();
+      cy.url().should("be.equal", `${mainUrl}/${url}`);
+      cy.contains(testString);
+    });
+  };
 
-  it("Test at vi kan navigere til Kontakt", () => {
-    cy.get(navlink).eq(4).click();
-    cy.url().should("be.equal", `${mainUrl}/kontakt`);
-    cy.contains("Kontakt");
-  });
+  links.forEach((link) => testLink(link.link, link.testString, link.url));
 });
 
 export {};

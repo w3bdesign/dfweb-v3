@@ -12,7 +12,7 @@ interface IError {
  * @returns {JSX.Element} - Rendered component
  */
 
-const ErrorContent = ({ text }: IError): JSX.Element => (
+const ErrorContent = ({ text }: IError) => (
   <main id="maincontent">
     <div className="mt-32 bg-graybg">
       <PageHeader>{text}</PageHeader>

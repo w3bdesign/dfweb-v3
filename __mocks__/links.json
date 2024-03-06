@@ -1,0 +1,32 @@
+[
+  {
+    "Text": "Hjem",
+    "Url": "/",
+    "id": 1,
+    "External": false
+  },
+  {
+    "Text": "Prosjekter",
+    "Url": "/prosjekter",
+    "id": 2,
+    "External": false
+  },
+  {
+    "Text": "CV",
+    "Url": "/cv",
+    "id": 3,
+    "External": false
+  },
+  {
+    "Text": "Github",
+    "Url": "https://www.github.com/w3bdesign",
+    "id": 4,
+    "External": true
+  },
+  {
+    "Text": "Kontakt",
+    "Url": "/kontakt",
+    "id": 5,
+    "External": false
+  }
+]

@@ -27,7 +27,7 @@ const bounceVariants: Variants = {
  * @returns {JSX.Element} - Rendered component
  */
 
-const BounceInScroll = ({ children, cssClass, viewAmount }: IAnimateBounceProps): JSX.Element => (
+const BounceInScroll = ({ children, cssClass, viewAmount }: IAnimateBounceProps) => (
   <motion.div
     initial="offscreen"
     whileInView="onscreen"

@@ -10,8 +10,14 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   preset: "ts-jest/presets/js-with-babel-esm",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  testPathIgnorePatterns: ["<rootDir>/cypress/"],
-  testEnvironment: "jest-environment-jsdom"
+  testPathIgnorePatterns: ["<rootDir>/cypress/", "<rootDir>/playwright/"],
+  testEnvironment: "jest-environment-jsdom",
+  collectCoverageFrom: [
+    "src/components/*.{js,jsx,ts,tsx}",
+    "!src/lib/**/*.*",
+    "!src/pages/**/*.*",
+    "!src/utils/**/*.*"
+  ]
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

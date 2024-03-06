@@ -7,11 +7,13 @@ import { render, screen } from "@testing-library/react";
 
 import MobileMenu from "../../src/components/Layout/MobileMenu.component";
 
+import linksmock from "../../__mocks__/links.json";
+
 describe("MobileMenu - test handlinger", () => {
   const testidMenu = "mobile-menu";
   const user = userEvent.setup();
   beforeEach(() => {
-    render(<MobileMenu />);
+    render(<MobileMenu links={linksmock} />);
   });
 
   it("Åpne mobilmeny og se at aria-hidden er false", async () => {

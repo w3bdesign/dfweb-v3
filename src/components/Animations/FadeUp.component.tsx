@@ -11,7 +11,7 @@ import { IAnimateWithDelayProps } from "./types/Animations.types";
  * @returns {JSX.Element} - Rendered component
  */
 
-const FadeUp = ({ children, cssClass, delay }: IAnimateWithDelayProps): JSX.Element => {
+const FadeUp = ({ children, cssClass, delay }: IAnimateWithDelayProps) => {
   const fadeUpVariants: Variants = {
     initial: { opacity: 0, y: 20 },
     animate: {

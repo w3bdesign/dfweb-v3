@@ -53,3 +53,7 @@ sanity.json
 
 #next.js
 next-env.d.ts
+/test-results/
+/playwright-report/
+/playwright/.cache/
+screenshot.png

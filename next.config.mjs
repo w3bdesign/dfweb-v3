@@ -37,12 +37,12 @@ const headers = [
   }
 ];
 
-module.exports = {
+const config = { 
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
     domains: ["cdn.sanity.io", "dfweb.no", "www.dfweb.no"],
-    minimumCacheTTL: 1200
+    minimumCacheTTL: 600
   },
   i18n: {
     locales: ["nb-NO"],
@@ -57,3 +57,4 @@ module.exports = {
     ];
   }
 };
+export default config;

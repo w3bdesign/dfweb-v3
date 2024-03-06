@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import BounceInScroll from "../Animations/BounceInScroll.component";
-import LinkButton from "./LinkButton.component";
+import Button from "../UI/Button.component";
 
 import { urlFor } from "../../lib/sanity";
 
@@ -14,7 +14,7 @@ import type { IProject } from "./ProsjekterListings.component";
  * @returns {JSX.Element} - Rendered component
  */
 
-const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => (
+const ProsjekterSingleProject = ({ projects }: IProject) => (
   <div
     data-cy="prosjektgrid"
     data-testid="prosjektgrid"
@@ -31,25 +31,35 @@ const ProsjekterSingleProject = ({ projects }: IProject): JSX.Element => (
           <h2 className="text-xl font-black text-center">{name}</h2>
           <div className="mt-6 text-lg text-left lg:text-left md:text-left">
             <p className="min-h-[5.313rem]">{description}</p>
-            <p className="mt-6 text-left md:text-left lg:text-left line-clamp-1">
+            <p className="mt-6 text-left md:text-left lg:text-left lg:line-clamp-1">
               Teknologier: {subdescription}
             </p>
             <div className="flex justify-center mt-6">
               {projectimage && (
                 <Image
-                  className="md:h-[15.625rem] md:w-[31.25rem]"
+                  style={{ width: "500px", height: "250px" }}
                   width="250"
                   height="500"
+                  quality={100}
                   src={urlFor(projectimage).url() as string}
                   alt={name}
                   priority
+                  unoptimized
                 />
               )}
             </div>
             <div className="flex justify-center mt-4">
               {/* Display only Github button if not empty  */}
-              {urlgithub && <LinkButton url={urlgithub[0].url} text="Github" name={name} />}
-              {urlwww && <LinkButton url={urlwww[0].url} text="Besøk" name={name} />}
+              {urlgithub && (
+                <Button href={urlgithub[0].url} renderAs="a">
+                  Github
+                </Button>
+              )}
+              {urlwww && (
+                <Button href={urlwww[0].url} renderAs="a">
+                  Besøk
+                </Button>
+              )}
             </div>
           </div>
         </BounceInScroll>

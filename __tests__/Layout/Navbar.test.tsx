@@ -2,32 +2,44 @@
  * @jest-environment jsdom
  */
 
-import { render, screen } from "@testing-library/react";
-
+import { render } from "@testing-library/react";
+import { useRouter } from "next/router";
 import Navbar from "../../src/components/Layout/Navbar.component";
 
-const useRouter = jest.spyOn(require("next/router"), "useRouter");
+jest.mock("next/router", () => ({
+  useRouter: jest.fn()
+}));
+
+jest.mock("react-dom");
+
+const links = [
+  { Text: "Home", Url: "/", id: 1, External: false },
+  { Text: "About", Url: "/about", id: 2, External: false },
+  { Text: "Blog", Url: "/blog", id: 3, External: false }
+];
 
 describe("Navbar", () => {
-  it("Navbar laster inn og kan vises", () => {
-    useRouter.mockImplementationOnce(() => ({
-      query: { pathName: "/" }
+  test("Legger til active class", () => {
+    useRouter.mockImplementation(() => ({
+      pathname: "/about"
     }));
 
-    const activeLink = jest.fn((pathname, url) => {
-      if (pathname === url) {
-        return "navbar-link-active";
-      }
-      return "";
-    });
+    const { getByText } = render(<Navbar links={links} />);
 
-    render(<Navbar />);
+    const activeLink = getByText("About");
+    expect(activeLink).toHaveClass(
+      "hover:after:w-full after:transition-all after:bg-white after:bottom-[-0.45rem] after:block after:m-auto after:h-1 after:ease-in-out after:duration-500 inline-block text-xl text-white"
+    );
+  });
 
-    activeLink("test", "test");
+  test("Legger ikke til active class", () => {
+    useRouter.mockImplementation(() => ({
+      pathname: "/about"
+    }));
 
-    const navbar = screen.getByRole("navigation");
-    expect(navbar).toBeInTheDocument();
+    const { getByText } = render(<Navbar links={links} />);
 
-    expect(activeLink.mock.calls.length).toBe(1);
+    const nonActiveLink = getByText("Home");
+    expect(nonActiveLink).not.toHaveClass("navbar-link-active");
   });
 });

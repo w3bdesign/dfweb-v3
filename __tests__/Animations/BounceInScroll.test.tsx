@@ -3,8 +3,11 @@
  */
 
 import { render, screen } from "@testing-library/react";
+import { mockIntersectionObserver } from "jsdom-testing-mocks";
 
 import BounceInScroll from "../../src/components/Animations/BounceInScroll.component";
+
+mockIntersectionObserver();
 
 describe("BounceInScroll", () => {
   beforeEach(() => {

@@ -1,6 +1,3 @@
-// Package imports
-import { groq } from "next-sanity";
-
 // Types
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 
@@ -11,22 +8,23 @@ import Layout from "../components/Layout/Layout.component";
 // Utilities
 import { getClient } from "../lib/sanity.server";
 
-// Sanity GROQ queries
-const indexQuery = groq`*[_type == 'page' && title match 'Hjem']{"id": _id, title, hero, content}`;
+// Sanity GROQ query
+import { indexQuery } from "../queries/sanityQueries";
 
-const Home: NextPage = ({ pagecontent }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <Layout title="Forside">
-    <IndexContent pagecontent={pagecontent} />
+const Home: NextPage = ({
+  pageContent,
+  navigation
+}: InferGetStaticPropsType<typeof getStaticProps>) => (
+  <Layout title="Forside" links={navigation}>
+    <IndexContent pageContent={pageContent} />
   </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const pagecontent = await getClient(false).fetch(indexQuery);
+  const data = await getClient(false).fetch(indexQuery);
 
   return {
-    props: {
-      pagecontent
-    }
+    props: data
   };
 };
 
