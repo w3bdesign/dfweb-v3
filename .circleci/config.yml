@@ -15,7 +15,7 @@ jobs:
       executor: with-chrome-and-firefox
       steps:
         - checkout       
-        - run: yarn install
+        - run: npm install
         - save_cache:
             key: v1-dependencies-{{ checksum "package.json" }}
             paths:
