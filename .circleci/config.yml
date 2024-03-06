@@ -1,3 +1,7 @@
+# I am getting this error from this yml: You are using Node.js 18.16.1. For Next.js, Node.js version >= v18.17.0 is required.
+
+# I suspect we need to add an extra step to install nvm and the latest Node.js version (20)
+
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@3.3.1
@@ -5,7 +9,8 @@ orbs:
 executors:
   with-chrome-and-firefox:
     docker:
-      - image: "cypress/browsers:node16.14.2-slim-chrome100-ff99-edge"
+      #- image: "cypress/browsers:node16.14.2-slim-chrome100-ff99-edge"
+      - image: "cypress/browsers:node-20.11.0-chrome-121.0.6167.184-1-ff-123.0-edge-121.0.2277.128-1"
     resource_class: large
 jobs:
   # 👇 Adds Chromatic as a job
