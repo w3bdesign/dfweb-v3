@@ -8,7 +8,7 @@ executors:
     docker:
       # - image: "cypress/browsers:node16.14.2-slim-chrome100-ff99-edge"
       # - image: "cypress/browsers:node-20.11.0-chrome-121.0.6167.184-1-ff-123.0-edge-121.0.2277.128-1"
-        - image: cimg/node:21.6.2
+        - image: "cypress/browsers:node-20.10.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1"
     resource_class: large
 jobs:
   cypress-run-with-electron:
@@ -27,8 +27,8 @@ jobs:
               echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
               echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
               source $BASH_ENV
-              nvm install 18.17.0
-              nvm use 18.17.0
+              nvm install 20.10.0
+              nvm use 20.10.0
         - run:
             name: Verify Node.js version
             command: |
