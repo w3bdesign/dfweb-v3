@@ -15,6 +15,11 @@ jobs:
       steps:
         - checkout
         - run:
+            name: Install dependencies
+            command: |
+              sudo apt-get update
+              sudo apt-get install -y curl
+        - run:
             name: Install NVM and Node.js
             command: |
               curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
