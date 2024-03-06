@@ -9,16 +9,23 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 
     - uses: actions/setup-node@v4
+    - uses: pnpm/action-setup@v2
       with:
         node-version: 18
+        cache: 'pnpm' # This will enable caching for pnpm
+        version: 8
+    - name: Install pnpm
+      run: npm install -g pnpm
+    - name: Verify pnpm installation
+      run: pnpm --version
     - name: Install dependencies
-      run: npm ci
+      run: npx pnpm install --frozen-lockfile
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npx pnpm exec playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npx pnpm exec playwright test
     - uses: actions/upload-artifact@v4
       if: always()
       with:

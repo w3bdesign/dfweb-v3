@@ -37,18 +37,18 @@ const headers = [
   }
 ];
 
-const config = { 
+const config = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
     domains: ["cdn.sanity.io", "dfweb.no", "www.dfweb.no"],
-    minimumCacheTTL: 600
+    minimumCacheTTL: 800
   },
   i18n: {
     locales: ["nb-NO"],
     defaultLocale: "nb-NO"
   },
-  async headers() {
+  headers() {
     return [
       {
         source: "/(.*)",
