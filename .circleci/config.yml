@@ -14,35 +14,12 @@ jobs:
   cypress-run-with-electron:
       executor: with-chrome-and-firefox
       steps:
-        - checkout
-        - run:
-            name: Install dependencies
-            command: |
-              sudo apt-get update
-              sudo apt-get install -y curl
-        - run:
-            name: Install NVM and Node.js
-            command: |
-              curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-              echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
-              echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
-              source $BASH_ENV
-              nvm install 20.10.0
-              nvm use 20.10.0
-        - run:
-            name: Verify Node.js version
-            command: |
-              source $BASH_ENV
-              node --version
-        - restore_cache:
-            keys:
-              - v1-dependencies-{{ checksum "package.json" }}
-              - v1-dependencies-cache
+        - checkout       
         - run: yarn install
         - save_cache:
             key: v1-dependencies-{{ checksum "package.json" }}
             paths:
-              - node_modules
+              - node_modules        
         - run:
             name: Run Cypress E2E tests with Electron
             command: |
