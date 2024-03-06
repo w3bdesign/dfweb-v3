@@ -10,6 +10,40 @@ executors:
       - image: "cypress/browsers:node-20.11.0-chrome-121.0.6167.184-1-ff-123.0-edge-121.0.2277.128-1"
     resource_class: large
 jobs:
+  cypress-run-with-electron:
+      executor: with-chrome-and-firefox
+      steps:
+        - checkout
+        - run:
+            name: Install NVM and Node.js
+            command: |
+              curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+              echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
+              echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
+              source $BASH_ENV
+              nvm install 18.17.0
+              nvm use 18.17.0
+        - run:
+            name: Verify Node.js version
+            command: |
+              source $BASH_ENV
+              node --version
+        - restore_cache:
+            keys:
+              - v1-dependencies-{{ checksum "package.json" }}
+              - v1-dependencies-cache
+        - run: yarn install
+        - save_cache:
+            key: v1-dependencies-{{ checksum "package.json" }}
+            paths:
+              - node_modules
+        - run:
+            name: Run Cypress E2E tests with Electron
+            command: |
+              source $BASH_ENV
+              npx cypress run --browser electron
+
+
   chromatic-deployment:
     docker:
       - image: cimg/node:21.6.2
@@ -73,8 +107,8 @@ workflows:
           name: Build Next.js project
       # - chromatic-deployment:
       #     name: Check build with Chromatic
-      - cypress/run:
-          name: Run Cypress E2E tests with Electron
-          cypress-command: npx cypress run --browser electron
-          start-command: npm run dev
-          parallelism: 8
+      - cypress-run-with-electron:
+            name: Run Cypress E2E tests with Electron
+              #cypress-command: npx cypress run --browser electron
+              #start-command: npm run dev
+              #parallelism: 8
