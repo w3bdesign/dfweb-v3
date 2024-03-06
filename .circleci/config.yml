@@ -20,10 +20,11 @@ jobs:
             key: v1-dependenciesx-{{ checksum "package.json" }}
             paths:
               - node_modules 
-        - run: npm run dev       
+        # - run: npm run dev       
         - run:
             name: Run Cypress E2E tests with Electron
-            command: |              
+            command: |  
+              npm run dev            
               npx cypress run --browser electron
 
 
