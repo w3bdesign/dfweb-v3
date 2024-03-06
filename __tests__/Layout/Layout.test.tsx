@@ -43,8 +43,7 @@ describe("Layout komponent", () => {
       expect(linkElement).toBeInTheDocument();
     });
   });
-  
-  */
+*/
 
   test("rendrer barn", () => {
     const testText = "Test barn";

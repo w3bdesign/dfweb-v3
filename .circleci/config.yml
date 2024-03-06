@@ -1,3 +1,4 @@
+
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@3.3.1
@@ -5,9 +6,30 @@ orbs:
 executors:
   with-chrome-and-firefox:
     docker:
-      - image: "cypress/browsers:node16.14.2-slim-chrome100-ff99-edge"
+      # - image: "cypress/browsers:node16.14.2-slim-chrome100-ff99-edge"
+      # - image: "cypress/browsers:node-20.11.0-chrome-121.0.6167.184-1-ff-123.0-edge-121.0.2277.128-1"
+        - image: "cypress/browsers:node-20.10.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1"
     resource_class: large
 jobs:
+  cypress-run-with-electron:
+      executor: with-chrome-and-firefox
+      steps:
+        - checkout       
+        - run: npm install
+        - save_cache:
+            key: v1-dependenciesx-{{ checksum "package.json" }}
+            paths:
+              - node_modules 
+        - run:
+            name: Start Dev Server
+            command: npm run dev
+            background: true       
+        - run:
+            name: Run Cypress E2E tests with Electron
+            command: |                            
+              npx cypress run --browser electron
+
+
   chromatic-deployment:
     docker:
       - image: cimg/node:21.6.2
@@ -16,37 +38,34 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - pnpm-packages-v1-{{ checksum "pnpm-lock.yaml" }}
-            - pnpm-packages-cache-v1
-      - run:
-          name: Install pnpm package manager
-          command: |
-            sudo corepack enable
-            sudo corepack prepare pnpm@latest-8 --activate
-      - run:
-          name: Install Dependencies
-          command: pnpm install --frozen-lockfile
-      - run: pnpm run chromatic -- --project-token=${CHROMATIC_PROJECT_TOKEN}
-      - save_cache:
-          key: pnpm-packages-v1-{{ checksum "pnpm-lock.yaml" }}
-          paths:
-            - ~/.pnpm-store
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-cache
+      - run: yarn install
+      - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
   build:
     working_directory: /home/circleci/dfweb
     docker:
-      - image: cimg/node:21.6.2-browsers
+      - image: cimg/base:stable
     steps:
       - checkout
-      - restore_cache:
-          key: pnpm-cache-v2-{{ checksum "pnpm-lock.yaml" }}
       - run:
-          name: Install pnpm package manager
+          name: Install NVM and Node.js
           command: |
-            sudo corepack enable
-            sudo corepack prepare pnpm@latest-8 --activate
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
+            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
+            source $BASH_ENV
+            nvm install 18.17.0
+      - run:
+          name: Verify Node.js version
+          command: |
+            source $BASH_ENV
+            node --version
+      - restore_cache:
+          key: npm-cache-v2-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
-          command: pnpm install
+          command: npm ci
       - run:
           name: Chrome key start setup
           command: sudo apt update -y
@@ -57,14 +76,14 @@ jobs:
           name: Chrome package download
           command: sudo apt install ./google-chrome-stable_current_amd64.deb
       - save_cache:
-          key: pnpm-cache-v2-{{ checksum "pnpm-lock.yaml" }}
+          key: npm-cache-v1-{{ checksum "package-lock.json" }}
           paths:
-            - ~/.pnpm-store
+            - /home/circleci/.npm
       - store_artifacts:
           path: /root/.npm/_logs
       - run:
           name: Run Jest Tests
-          command: pnpm test
+          command: npm test
       - codecov/upload
     parallelism: 6
 workflows:
@@ -72,8 +91,10 @@ workflows:
     jobs:
       - build:
           name: Build Next.js project
-      - cypress/run:
-          name: Run Cypress E2E tests with Electron
-          cypress-command: pnpm dlx cypress run --browser electron
-          start-command: pnpm install && pnpm run dev
-          parallelism: 8
+      # - chromatic-deployment:
+      #     name: Check build with Chromatic
+      - cypress-run-with-electron:
+            name: Run Cypress E2E tests with Electron
+              #cypress-command: npx cypress run --browser electron
+              #start-command: npm run dev
+              #parallelism: 8
