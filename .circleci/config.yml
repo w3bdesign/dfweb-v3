@@ -19,7 +19,8 @@ jobs:
         - save_cache:
             key: v1-dependenciesx-{{ checksum "package.json" }}
             paths:
-              - node_modules        
+              - node_modules 
+        - run: npm run dev       
         - run:
             name: Run Cypress E2E tests with Electron
             command: |              
