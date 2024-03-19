@@ -98,8 +98,8 @@ devDependencies:
     specifier: ^9.1.3
     version: 9.1.3(@babel/core@7.24.0)(webpack@5.90.3)
   chromatic:
-    specifier: ^11.0.8
-    version: 11.0.8
+    specifier: ^11.1.0
+    version: 11.1.0
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
@@ -2676,17 +2676,6 @@ packages:
       webpack: 5.90.3(@swc/core@1.4.8)(esbuild@0.18.20)
     dev: true
 
-  /@portabletext/react@3.0.12(react@18.2.0):
-    resolution: {integrity: sha512-XyvM9rad7JK9gVt+fg4eK/5LuqmoGSkSabqlEMiuoQ1sRd7dJrNiYAegmjNFuxHIQraDlz3fCrh5FbQP1hryIQ==}
-    engines: {node: ^14.13.1 || >=16.0.0}
-    peerDependencies:
-      react: ^17 || ^18
-    dependencies:
-      '@portabletext/toolkit': 2.0.11
-      '@portabletext/types': 2.0.9
-      react: 18.2.0
-    dev: false
-
   /@portabletext/react@3.0.13(react@18.2.0):
     resolution: {integrity: sha512-TOSk1uwtkJC+VMK1dY5bHPnvNr/SXaqbWpEQoBC8oMhI55qnZg5pL9VBuw6BI2XEMsH5Il2tQngRQrtEeRklog==}
     engines: {node: ^14.13.1 || >=16.0.0}
@@ -2698,13 +2687,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@portabletext/toolkit@2.0.11:
-    resolution: {integrity: sha512-4xdn1jZUZzihTvtJJbtZDsuaHNw9aaf/WZqKriP9306SlSuLFYC8Lw1MzW+Xmh3ZSurIjs+L0M+lTflB2NfYSA==}
-    engines: {node: ^14.13.1 || >=16.0.0}
-    dependencies:
-      '@portabletext/types': 2.0.9
-    dev: false
-
   /@portabletext/toolkit@2.0.12:
     resolution: {integrity: sha512-uSA8bDAuRht3uuFRXxVmDD3OkoqNYhT/R0JaCuoiaxr5WwEbFW/Rgngai/QInH9VxlDvfOpVCyt+DIIAm2W/uA==}
     engines: {node: ^14.13.1 || >=16.0.0}
@@ -2714,11 +2696,6 @@ packages:
 
   /@portabletext/types@2.0.10:
     resolution: {integrity: sha512-pyyT3w8bV2v0LjOiSMHMEqzUhUO9FD54xU4tdLDt9WKBShrvP9NTQO5BO4bUljp1l5I5yyai0Y/OTKI8VAE9BQ==}
-    engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
-    dev: false
-
-  /@portabletext/types@2.0.9:
-    resolution: {integrity: sha512-1naiVZBrDTUSExPgaUPY8Ip1v9mboLBIsPHSAzvQraVsdj2dyHi6n9qwiXykY4W1JmpJAKz7jYp2rShCnKQ9JA==}
     engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
     dev: false
 
@@ -6699,8 +6676,8 @@ packages:
     engines: {node: '>=10'}
     requiresBuild: true
 
-  /chromatic@11.0.8:
-    resolution: {integrity: sha512-+zJ5h0/Eu5z26KCNLIw2tknbK69gUO8q3Jsew4oU0Q/i/NPhIwcXhvPP7u75aLJgX1EI61+ndiGJA/yeQZQcgw==}
+  /chromatic@11.1.0:
+    resolution: {integrity: sha512-0fGXzWqz7PTXmjYf+aSYB4jOUgDN/b8zkl6i8Syt+qGdhqqeW8Q1tHnHToC+eSuMxDLNVAVq28cMeYnRxL3MOA==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -13904,7 +13881,7 @@ packages:
       '@dnd-kit/sortable': 7.0.2(@dnd-kit/core@6.1.0)(react@18.2.0)
       '@dnd-kit/utilities': 3.2.2(react@18.2.0)
       '@juggle/resize-observer': 3.4.0
-      '@portabletext/react': 3.0.12(react@18.2.0)
+      '@portabletext/react': 3.0.13(react@18.2.0)
       '@rexxars/react-json-inspector': 8.0.1(react@18.2.0)
       '@sanity/asset-utils': 1.3.0
       '@sanity/bifur-client': 0.3.1
