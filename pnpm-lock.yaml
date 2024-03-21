@@ -98,8 +98,8 @@ devDependencies:
     specifier: ^9.1.3
     version: 9.1.3(@babel/core@7.24.3)(webpack@5.90.3)
   chromatic:
-    specifier: ^11.1.1
-    version: 11.1.1
+    specifier: ^11.2.0
+    version: 11.2.0
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
@@ -3327,7 +3327,7 @@ packages:
       decompress: 4.2.1
       esbuild: 0.19.12
       esbuild-register: 3.5.0(esbuild@0.19.12)
-      get-it: 8.4.13
+      get-it: 8.4.16
       golden-fleece: 1.0.9
       node-machine-id: 1.1.12
       pkg-dir: 5.0.0
@@ -3382,7 +3382,7 @@ packages:
       '@sanity/util': 3.34.0
       archiver: 7.0.1
       debug: 4.3.4(supports-color@8.1.1)
-      get-it: 8.4.13
+      get-it: 8.4.16
       lodash: 4.17.21
       mississippi: 4.0.0
       p-queue: 2.4.2
@@ -3429,7 +3429,7 @@ packages:
       '@sanity/uuid': 3.0.2
       debug: 4.3.4(supports-color@8.1.1)
       file-url: 2.0.2
-      get-it: 8.4.13
+      get-it: 8.4.16
       get-uri: 2.0.4
       globby: 10.0.2
       gunzip-maybe: 1.4.2
@@ -3517,7 +3517,7 @@ packages:
     dependencies:
       '@sanity/client': 6.15.7
       '@sanity/icons': 2.11.2(react@18.2.0)
-      '@sanity/preview-url-secret': 1.6.4(@sanity/client@6.15.7)
+      '@sanity/preview-url-secret': 1.6.5(@sanity/client@6.15.7)
       '@sanity/ui': 2.0.10(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
       '@sanity/uuid': 3.0.2
       '@types/lodash.isequal': 4.5.8
@@ -3564,16 +3564,6 @@ packages:
       react: 18.2.0
       react-fast-compare: 3.2.2
       use-sync-external-store: 1.2.0(react@18.2.0)
-    dev: false
-
-  /@sanity/preview-url-secret@1.6.4(@sanity/client@6.15.7):
-    resolution: {integrity: sha512-iOu6n5Zt7kuWoOYRliS2o/MDDBWcWkrnwwss2tglIBl744RPRkz0yi9qulnpAqMnWrZyIU8fV1yPCdg0RY+olw==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      '@sanity/client': ^6.14.4
-    dependencies:
-      '@sanity/client': 6.15.7
-      '@sanity/uuid': 3.0.2
     dev: false
 
   /@sanity/preview-url-secret@1.6.5(@sanity/client@6.15.7):
@@ -6703,8 +6693,8 @@ packages:
     engines: {node: '>=10'}
     requiresBuild: true
 
-  /chromatic@11.1.1:
-    resolution: {integrity: sha512-wccDzwik2se0h6Fsr72M5xM8opbToZHa0PbybUieHfbjI1GoRROHoolLhwVARpBmCOUgRcrU0O0+6RL0sLGelQ==}
+  /chromatic@11.2.0:
+    resolution: {integrity: sha512-b7vzlMuy/68WnH0N6nXpo8FiFK5pEF0ClIyVVK9YfYYSbGLo5/6Lh/VEbjWMoRaShCUk59YSXA43Npa2NrXIsg==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -9372,24 +9362,6 @@ packages:
       has-symbols: 1.0.3
       hasown: 2.0.2
     dev: true
-
-  /get-it@8.4.13:
-    resolution: {integrity: sha512-uY9sMQmiG3RCXqzfpIwt7uI6FuL0XNHgO1U8DhWbpxWgOZ8cCNJOAwr+xkLZxpYRcQ6jFEwdr6oTG55l8u415g==}
-    engines: {node: '>=14.0.0'}
-    dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
-      decompress-response: 7.0.0
-      follow-redirects: 1.15.6(debug@4.3.4)
-      into-stream: 6.0.0
-      is-plain-object: 5.0.0
-      is-retry-allowed: 2.2.0
-      is-stream: 2.0.1
-      parse-headers: 2.0.5
-      progress-stream: 2.0.0
-      tunnel-agent: 0.6.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
 
   /get-it@8.4.16:
     resolution: {integrity: sha512-NrdV3P0bI4Zh/R0GXIsY3da5mJUd1lT8hGcfwb3KU9E/ewnJ1e8YAWQycAtj3mxrjesBf8ZBq3TDKqyM8AJkJg==}
@@ -13985,7 +13957,7 @@ packages:
       execa: 2.1.0
       exif-component: 1.0.1
       framer-motion: 11.0.18(react-dom@18.2.0)(react@18.2.0)
-      get-it: 8.4.13
+      get-it: 8.4.16
       get-random-values-esm: 1.0.2
       groq-js: 1.4.3
       hashlru: 2.3.0
@@ -14000,7 +13972,7 @@ packages:
       json5: 2.2.3
       lodash: 4.17.21
       log-symbols: 2.2.0
-      mendoza: 3.0.5
+      mendoza: 3.0.6
       module-alias: 2.2.3
       nano-pubsub: 2.0.1
       nanoid: 3.3.7
