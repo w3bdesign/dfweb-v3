@@ -1,7 +1,7 @@
 // sanity.config.js
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
-import {visionTool} from '@sanity/vision';
+import { visionTool } from "@sanity/vision";
 import { types } from "./schemas/schema";
 
 export default defineConfig({

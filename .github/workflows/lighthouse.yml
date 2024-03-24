@@ -30,7 +30,7 @@ jobs:
             console.log("No preview url found.");
             } else { previewUrl = 'https://www.dfweb.no';}
             core.setOutput('vercel_preview_url', previewUrl);
-            
+
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: loading_comment_to_pr
@@ -83,7 +83,7 @@ jobs:
             ].join('\n')
 
              core.setOutput("comment", comment);
-             
+
       - name: Add comment to PR
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: comment_to_pr
