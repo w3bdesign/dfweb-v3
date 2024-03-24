@@ -5,7 +5,7 @@
  */
 export const mockReactDom = () => {
   jest.mock("react-dom", () => ({
-    ...jest.requireActual("react-dom"), // use actual for all non-hook parts
+    ...jest.requireActual("react-dom"),
     preload: () => {},
     preconnect: () => {},
     prefetchDNS: () => {}
