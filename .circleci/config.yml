@@ -73,7 +73,7 @@ workflows:
       - build:
           name: Build Next.js project
       #- cypress/run:
-          #name: Run Cypress E2E tests with Electron
-          #cypress-command: npx cypress run --browser electron
-          #start-command: pnpm run dev
-          #parallelism: 8
+      #name: Run Cypress E2E tests with Electron
+      #cypress-command: npx cypress run --browser electron
+      #start-command: pnpm run dev
+      #parallelism: 8
