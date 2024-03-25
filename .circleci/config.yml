@@ -10,7 +10,7 @@ executors:
 jobs:
   chromatic-deployment:
     docker:
-      - image: cimg/node:21.6.2
+      - image: cimg/node:21.7.1
     working_directory: ~/chromatic
     steps:
       - checkout
@@ -34,7 +34,7 @@ jobs:
   build:
     working_directory: /home/circleci/dfweb
     docker:
-      - image: cimg/node:21.6.2-browsers
+      - image: cimg/node:21.7.1-browsers
     steps:
       - checkout
       - restore_cache:
