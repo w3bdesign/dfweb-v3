@@ -41,8 +41,8 @@ dependencies:
 
 devDependencies:
   '@axe-core/playwright':
-    specifier: ^4.8.5
-    version: 4.8.5(playwright-core@1.42.1)
+    specifier: ^4.9.0
+    version: 4.9.0(playwright-core@1.42.1)
   '@babel/core':
     specifier: ^7.24.4
     version: 7.24.4
@@ -205,12 +205,12 @@ packages:
       default-browser-id: 3.0.0
     dev: true
 
-  /@axe-core/playwright@4.8.5(playwright-core@1.42.1):
-    resolution: {integrity: sha512-GFdXXAEn9uk0Vyzgl2eEP+VwvgGzas0YSnacoJ/0U237G83zWZ1PhbP/RDymm0cqevoA+xRjMo+ONzh9Q711nw==}
+  /@axe-core/playwright@4.9.0(playwright-core@1.42.1):
+    resolution: {integrity: sha512-Q1Lz75dNsX38jof+aev7RficDMdH/HLOLySkDdXR0fUoeFcLdw4UNgDO2CNNP4CTpoesEdfYRdd6VmDXjhBgbA==}
     peerDependencies:
       playwright-core: '>= 1.0.0'
     dependencies:
-      axe-core: 4.8.4
+      axe-core: 4.9.0
       playwright-core: 1.42.1
     dev: true
 
@@ -5981,11 +5981,6 @@ packages:
 
   /axe-core@4.7.0:
     resolution: {integrity: sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==}
-    engines: {node: '>=4'}
-    dev: true
-
-  /axe-core@4.8.4:
-    resolution: {integrity: sha512-CZLSKisu/bhJ2awW4kJndluz2HLZYIHh5Uy1+ZwDRkJi69811xgIXXfdU9HSLX0Th+ILrHj8qfL/5wzamsFtQg==}
     engines: {node: '>=4'}
     dev: true
 
