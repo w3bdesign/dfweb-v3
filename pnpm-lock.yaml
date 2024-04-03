@@ -101,11 +101,11 @@ devDependencies:
     specifier: ^11.3.0
     version: 11.3.0
   cypress:
-    specifier: 13.7.1
-    version: 13.7.1
+    specifier: 13.7.2
+    version: 13.7.2
   cypress-axe:
     specifier: ^1.5.0
-    version: 1.5.0(axe-core@4.9.0)(cypress@13.7.1)
+    version: 1.5.0(axe-core@4.9.0)(cypress@13.7.2)
   eslint:
     specifier: ^8.57.0
     version: 8.57.0
@@ -7194,7 +7194,7 @@ packages:
     resolution: {integrity: sha512-0sVXIohTfLqVIW3kb/0n6IiWF3Ifj5nm2XaSrLq2DI6fKIGa2fYAZdk917rUneaeLVpYfFcyXE2ft0fe3remsA==}
     dev: false
 
-  /cypress-axe@1.5.0(axe-core@4.9.0)(cypress@13.7.1):
+  /cypress-axe@1.5.0(axe-core@4.9.0)(cypress@13.7.2):
     resolution: {integrity: sha512-Hy/owCjfj+25KMsecvDgo4fC/781ccL+e8p+UUYoadGVM2ogZF9XIKbiM6KI8Y3cEaSreymdD6ZzccbI2bY0lQ==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -7202,11 +7202,11 @@ packages:
       cypress: ^10 || ^11 || ^12 || ^13
     dependencies:
       axe-core: 4.9.0
-      cypress: 13.7.1
+      cypress: 13.7.2
     dev: true
 
-  /cypress@13.7.1:
-    resolution: {integrity: sha512-4u/rpFNxOFCoFX/Z5h+uwlkBO4mWzAjveURi3vqdSu56HPvVdyGTxGw4XKGWt399Y1JwIn9E1L9uMXQpc0o55w==}
+  /cypress@13.7.2:
+    resolution: {integrity: sha512-FF5hFI5wlRIHY8urLZjJjj/YvfCBrRpglbZCLr/cYcL9MdDe0+5usa8kTIrDHthlEc9lwihbkb5dmwqBDNS2yw==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
     requiresBuild: true
