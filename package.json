@@ -40,7 +40,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "@sanity/image-url": "^1.0.2",
-    "framer-motion": "^11.1.5",
+    "framer-motion": "^11.1.7",
     "next": "14.2.2",
     "next-sanity": "^9.0.7",
     "react": "^18.2.0",
