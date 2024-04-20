@@ -118,8 +118,8 @@ importers:
         specifier: 2.15.2
         version: 2.15.2(eslint@9.1.0)
       eslint-plugin-jest-dom:
-        specifier: ^5.2.0
-        version: 5.2.0(@testing-library/dom@10.0.0)(eslint@9.1.0)
+        specifier: ^5.4.0
+        version: 5.4.0(@testing-library/dom@10.0.0)(eslint@9.1.0)
       eslint-plugin-react-hooks:
         specifier: ^4.6.0
         version: 4.6.0(eslint@9.1.0)
@@ -4223,12 +4223,12 @@ packages:
       '@typescript-eslint/parser':
         optional: true
 
-  eslint-plugin-jest-dom@5.2.0:
-    resolution: {integrity: sha512-ctnCP0MsLmUvbCyhnOQ+/1OmsZj+e7V6kFunazIx5728Yq7TQnuKI8HOsgPTStB+9iYEpiEa+VfKB09Lq7/3fA==}
+  eslint-plugin-jest-dom@5.4.0:
+    resolution: {integrity: sha512-yBqvFsnpS5Sybjoq61cJiUsenRkC9K32hYQBFS9doBR7nbQZZ5FyO+X7MlmfM1C48Ejx/qTuOCgukDUNyzKZ7A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0, npm: '>=6', yarn: '>=1'}
     peerDependencies:
-      '@testing-library/dom': ^8.0.0 || ^9.0.0
-      eslint: ^6.8.0 || ^7.0.0 || ^8.0.0
+      '@testing-library/dom': ^8.0.0 || ^9.0.0 || ^10.0.0
+      eslint: ^6.8.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
     peerDependenciesMeta:
       '@testing-library/dom':
         optional: true
@@ -13474,7 +13474,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-jest-dom@5.2.0(@testing-library/dom@10.0.0)(eslint@9.1.0):
+  eslint-plugin-jest-dom@5.4.0(@testing-library/dom@10.0.0)(eslint@9.1.0):
     dependencies:
       '@babel/runtime': 7.24.4
       eslint: 9.1.0

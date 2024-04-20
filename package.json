@@ -76,7 +76,7 @@
     "eslint": "^9.1.0",
     "eslint-config-next": "14.2.2",
     "eslint-plugin-cypress": "2.15.2",
-    "eslint-plugin-jest-dom": "^5.2.0",
+    "eslint-plugin-jest-dom": "^5.4.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-sonarjs": "^0.25.1",
     "eslint-plugin-storybook": "^0.8.0",
