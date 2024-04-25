@@ -75,7 +75,7 @@
     "cypress-axe": "^1.5.0",
     "eslint": "^9.1.1",
     "eslint-config-next": "14.2.3",
-    "eslint-plugin-cypress": "3.0.0",
+    "eslint-plugin-cypress": "3.0.1",
     "eslint-plugin-jest-dom": "^5.4.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-sonarjs": "^0.25.1",
