@@ -12,7 +12,7 @@
     "plugin:react-hooks/recommended",
     "plugin:cypress/recommended"
   ],
-  "plugins": ["react", "cypress", "sonarjs", "jest-dom", "react-hooks"],
+  /*"plugins": ["react", "cypress", "sonarjs", "jest-dom", "react-hooks"],*/
   "globals": {
     "cy": true,
     "jest": true,
