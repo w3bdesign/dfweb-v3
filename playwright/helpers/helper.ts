@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-
 import AxeBuilder from "@axe-core/playwright";
 
 export const accessibilityFixture = () => {
@@ -20,7 +19,7 @@ export const testTittel = (tittel: string) => {
   });
 };
 
-export const testIkon = (ikon: string) => {
+export const testIkon = (ikon: string | RegExp) => {
   test(`Skal vise ${ikon} ikon`, async ({ page }) => {
     const ikonTest = page.getByTestId(ikon);
     await expect(ikonTest).toBeVisible();

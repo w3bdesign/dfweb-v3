@@ -1,7 +1,7 @@
 {
   "name": "dfweb-v3",
   "version": "1.4.1",
-  "private": true,  
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -18,7 +18,7 @@
     "e2e": "start-test dev 3000 cypress:headless",
     "playwright": "npx playwright test",
     "playwright:codegen": "playwright codegen",
-    "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format",
+    "refresh": "rm -rf node_modules && rm package-lock.json && pnpm i && npm run format",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
     "prettier:fix": "npm run prettier -- --write"
   },
@@ -70,10 +70,10 @@
     "chromatic": "^11.3.0",
     "cypress": "13.8.1",
     "cypress-axe": "^1.5.0",
-    "eslint": "8.57.0",    
-    "eslint-config-next": "^14.2.3",  
+    "eslint": "8.57.0",
+    "eslint-config-next": "^14.2.3",
     "eslint-config-cypress": "^0.28.0",
-    "eslint-plugin-jest-dom": "^5.4.0",    
+    "eslint-plugin-jest-dom": "^5.4.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jsdom": "^24.0.0",
