@@ -19,8 +19,8 @@
     "@sanity/vision": "^3.36.4",
     "phosphor-react": "^1.4.1",
     "prop-types": "^15.8.1",
-    "react": "18.3.0",
-    "react-dom": "18.3.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "sanity": "^3.36.4",
     "styled-components": "^5.3.11"
   },
