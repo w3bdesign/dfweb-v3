@@ -111,6 +111,9 @@ importers:
       eslint:
         specifier: 8.57.0
         version: 8.57.0
+      eslint-config-cypress:
+        specifier: ^0.28.0
+        version: 0.28.0(eslint@8.57.0)
       eslint-config-next:
         specifier: ^14.2.3
         version: 14.2.3(eslint@8.57.0)(typescript@5.4.5)
@@ -4179,6 +4182,11 @@ packages:
     engines: {node: '>=6.0'}
     hasBin: true
 
+  eslint-config-cypress@0.28.0:
+    resolution: {integrity: sha512-6ZuyEavasN1ieOSrTGQAniHpgTSVTMp9Qnl64SG76Vorbfe8gidKMnJvmwfk/yPmctd0Q9tFnU1Q0geVnm8oPQ==}
+    peerDependencies:
+      eslint: '*'
+
   eslint-config-next@14.2.3:
     resolution: {integrity: sha512-ZkNztm3Q7hjqvB1rRlOX8P9E/cXRL9ajRcs8jufEtwMfTVYRqnmtnaSu57QqHyBlovMuiB8LEzfLBkh5RYV6Fg==}
     peerDependencies:
@@ -4218,6 +4226,11 @@ packages:
         optional: true
       eslint-import-resolver-webpack:
         optional: true
+
+  eslint-plugin-cypress@2.15.2:
+    resolution: {integrity: sha512-CtcFEQTDKyftpI22FVGpx8bkpKyYXBlNge6zSo0pl5/qJvBAnzaD76Vu2AsP16d6mTj478Ldn2mhgrWV+Xr0vQ==}
+    peerDependencies:
+      eslint: '>= 3.2.1'
 
   eslint-plugin-import@2.29.1:
     resolution: {integrity: sha512-BbPC0cuExzhiMo4Ff1BTVwHpjjv28C5R+btTOGaCRC7UEz801up0JadwkeSk5Ued6TG34uaczuVuH6qyy5YUxw==}
@@ -13556,6 +13569,11 @@ snapshots:
     optionalDependencies:
       source-map: 0.6.1
 
+  eslint-config-cypress@0.28.0(eslint@8.57.0):
+    dependencies:
+      eslint: 8.57.0
+      eslint-plugin-cypress: 2.15.2(eslint@8.57.0)
+
   eslint-config-next@14.2.3(eslint@8.57.0)(typescript@5.4.5):
     dependencies:
       '@next/eslint-plugin-next': 14.2.3
@@ -13609,6 +13627,11 @@ snapshots:
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0)
     transitivePeerDependencies:
       - supports-color
+
+  eslint-plugin-cypress@2.15.2(eslint@8.57.0):
+    dependencies:
+      eslint: 8.57.0
+      globals: 13.24.0
 
   eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0):
     dependencies:

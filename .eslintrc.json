@@ -7,11 +7,13 @@
     "sourceType": "module"
   },
   "extends": [
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "plugin:cypress/recommended"
     /*"plugin:sonarjs/recommended",
     "plugin:react-hooks/recommended",
     "plugin:cypress/recommended"*/
   ],
+  "plugins": ["cypress"],
   /*"plugins": ["react", "cypress", "sonarjs", "jest-dom", "react-hooks"],*/
   "globals": {
     "cy": true,
