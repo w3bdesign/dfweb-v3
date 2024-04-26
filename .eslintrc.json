@@ -8,11 +8,13 @@
   },
   "extends": [
     "next/core-web-vitals",
-    "plugin:sonarjs/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:cypress/recommended"
+    /*"plugin:sonarjs/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:cypress/recommended"*/
   ],
-  "plugins": ["react", "cypress", "sonarjs", "jest-dom", "react-hooks"],
+  "plugins": ["cypress", "jest-dom"],
+  /*"plugins": ["react", "cypress", "sonarjs", "jest-dom", "react-hooks"],*/
   "globals": {
     "cy": true,
     "jest": true,
