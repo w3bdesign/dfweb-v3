@@ -18,7 +18,7 @@
     "e2e": "start-test dev 3000 cypress:headless",
     "playwright": "npx playwright test",
     "playwright:codegen": "playwright codegen",
-    "refresh": "rm -rf node_modules && rm pnpm-lock.yaml && pnpm store prune &&pnpm i && pnpm format",
+    "refresh": "rm -rf node_modules && rm pnpm-lock.yaml && pnpm store prune && pnpm i && pnpm format",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
     "prettier:fix": "npm run prettier -- --write"
   },
