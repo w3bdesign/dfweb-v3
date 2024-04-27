@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm rebuild && next build",
     "start": "next start",
     "test": " jest --coverage --collectCoverageFrom='src/components/**/*.{js,jsx,ts,tsx}'",
     "test:watch": "jest --watch",
