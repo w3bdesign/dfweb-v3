@@ -35,8 +35,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-icons:
-        specifier: ^5.1.0
-        version: 5.1.0(react@18.3.1)
+        specifier: ^5.2.0
+        version: 5.2.0(react@18.3.1)
       react-pdf:
         specifier: ^7.7.1
         version: 7.7.1(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6901,8 +6901,8 @@ packages:
       react-native:
         optional: true
 
-  react-icons@5.1.0:
-    resolution: {integrity: sha512-D3zug1270S4hbSlIRJ0CUS97QE1yNNKDjzQe3HqY0aefp2CBn9VgzgES27sRR2gOvFK+0CNx/BW0ggOESp6fqQ==}
+  react-icons@5.2.0:
+    resolution: {integrity: sha512-n52Y7Eb4MgQZHsSZOhSXv1zs2668/hBYKfSRIvKh42yExjyhZu0d1IK2CLLZ3BZB1oo13lDfwx2vOh2z9FTV6Q==}
     peerDependencies:
       react: '*'
 
@@ -10291,7 +10291,7 @@ snapshots:
 
   '@sanity/cli@3.39.1':
     dependencies:
-      '@babel/traverse': 7.24.1
+      '@babel/traverse': 7.24.5
       '@sanity/client': 6.15.20(debug@4.3.4)
       '@sanity/codegen': 3.39.1
       '@sanity/telemetry': 0.7.7
@@ -10338,13 +10338,13 @@ snapshots:
   '@sanity/codegen@3.39.1':
     dependencies:
       '@babel/core': 7.24.5
-      '@babel/generator': 7.24.4
+      '@babel/generator': 7.24.5
       '@babel/preset-env': 7.24.4(@babel/core@7.24.5)
       '@babel/preset-react': 7.24.1(@babel/core@7.24.5)
       '@babel/preset-typescript': 7.24.1(@babel/core@7.24.5)
       '@babel/register': 7.23.7(@babel/core@7.24.5)
-      '@babel/traverse': 7.24.1
-      '@babel/types': 7.24.0
+      '@babel/traverse': 7.24.5
+      '@babel/types': 7.24.5
       debug: 4.3.4(supports-color@8.1.1)
       globby: 10.0.2
       groq: 3.39.1
@@ -16865,7 +16865,7 @@ snapshots:
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
 
-  react-icons@5.1.0(react@18.3.1):
+  react-icons@5.2.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
