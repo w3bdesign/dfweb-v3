@@ -108,11 +108,11 @@ importers:
         specifier: ^11.4.0
         version: 11.4.0
       cypress:
-        specifier: 13.9.0
-        version: 13.9.0
+        specifier: 13.10.0
+        version: 13.10.0
       cypress-axe:
         specifier: ^1.5.0
-        version: 1.5.0(axe-core@4.9.1)(cypress@13.9.0)
+        version: 1.5.0(axe-core@4.9.1)(cypress@13.10.0)
       eslint:
         specifier: 9.3.0
         version: 9.3.0
@@ -3796,8 +3796,8 @@ packages:
       axe-core: ^3 || ^4
       cypress: ^10 || ^11 || ^12 || ^13
 
-  cypress@13.9.0:
-    resolution: {integrity: sha512-atNjmYfHsvTuCaxTxLZr9xGoHz53LLui3266WWxXJHY7+N6OdwJdg/feEa3T+buez9dmUXHT1izCOklqG82uCQ==}
+  cypress@13.10.0:
+    resolution: {integrity: sha512-tOhwRlurVOQbMduX+KonoMeQILs2cwR3yHGGENoFvvSoLUBHmJ8b9/n21gFSDqjlOJ+SRVcwuh+fG/JDsHsT6Q==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
 
@@ -13195,12 +13195,12 @@ snapshots:
 
   cyclist@1.0.2: {}
 
-  cypress-axe@1.5.0(axe-core@4.9.1)(cypress@13.9.0):
+  cypress-axe@1.5.0(axe-core@4.9.1)(cypress@13.10.0):
     dependencies:
       axe-core: 4.9.1
-      cypress: 13.9.0
+      cypress: 13.10.0
 
-  cypress@13.9.0:
+  cypress@13.10.0:
     dependencies:
       '@cypress/request': 3.0.1
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
