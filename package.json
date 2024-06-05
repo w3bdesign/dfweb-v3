@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.9.1",
-    "@babel/core": "^7.24.6",
+    "@babel/core": "^7.24.7",
     "@playwright/test": "^1.44.1",
     "@storybook/addon-a11y": "7.6.19",
     "@storybook/addon-actions": "7.6.19",
