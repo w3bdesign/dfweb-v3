@@ -150,8 +150,8 @@ importers:
         specifier: ^8.0.0
         version: 8.0.0
       start-server-and-test:
-        specifier: ^2.0.3
-        version: 2.0.3
+        specifier: ^2.0.4
+        version: 2.0.4
       storybook:
         specifier: 7.6.19
         version: 7.6.19
@@ -3918,6 +3918,15 @@ packages:
       supports-color:
         optional: true
 
+  debug@4.3.5:
+    resolution: {integrity: sha512-pt0bNEmneDIvdL1Xsd9oDQ/wrQRkXDT4AUWlNZNPKvW5x/jyO9VFXkJUP07vQ2upmw5PlaITaPKc31jK13V+jg==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
   decimal.js@10.4.3:
     resolution: {integrity: sha512-VBBaLc1MgL5XpzgIP7ny5Z6Nx3UrRkIViUkPUdtl9aya5amy3De1gsUUSB1g3+3sExYNjCAsAznmukyxCb1GRA==}
 
@@ -7545,8 +7554,8 @@ packages:
   stacktrace-js@2.0.2:
     resolution: {integrity: sha512-Je5vBeY4S1r/RnLydLl0TBTi3F2qdfWmYsGvtfZgEI+SCprPppaIhQf5nGcal4gI4cGpCV/duLcAzT1np6sQqg==}
 
-  start-server-and-test@2.0.3:
-    resolution: {integrity: sha512-QsVObjfjFZKJE6CS6bSKNwWZCKBG6975/jKRPPGFfFh+yOQglSeGXiNWjzgQNXdphcBI9nXbyso9tPfX4YAUhg==}
+  start-server-and-test@2.0.4:
+    resolution: {integrity: sha512-CKNeBTcP0hVqIlNismHMudb9q3lLdAjcVPO13/7gfI66fcJpeIb/o4NzQd1JK/CD+lfWVqr10ZH9Y14+OwlJuw==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -10414,7 +10423,7 @@ snapshots:
 
   '@sanity/cli@3.36.4':
     dependencies:
-      '@babel/traverse': 7.24.6
+      '@babel/traverse': 7.24.7
       '@sanity/codegen': 3.36.4
       '@sanity/telemetry': 0.7.7
       '@sanity/util': 3.36.4
@@ -10444,13 +10453,13 @@ snapshots:
   '@sanity/codegen@3.36.4':
     dependencies:
       '@babel/core': 7.24.7
-      '@babel/generator': 7.24.6
+      '@babel/generator': 7.24.7
       '@babel/preset-env': 7.24.4(@babel/core@7.24.7)
       '@babel/preset-react': 7.24.1(@babel/core@7.24.7)
       '@babel/preset-typescript': 7.24.1(@babel/core@7.24.7)
       '@babel/register': 7.23.7(@babel/core@7.24.7)
-      '@babel/traverse': 7.24.6
-      '@babel/types': 7.24.6
+      '@babel/traverse': 7.24.7
+      '@babel/types': 7.24.7
       debug: 4.3.4(supports-color@8.1.1)
       globby: 10.0.2
       groq-js: 1.7.0
@@ -12377,9 +12386,9 @@ snapshots:
 
   axe-core@4.9.1: {}
 
-  axios@1.6.8(debug@4.3.4):
+  axios@1.6.8(debug@4.3.5):
     dependencies:
-      follow-redirects: 1.15.6(debug@4.3.4)
+      follow-redirects: 1.15.6(debug@4.3.5)
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -13253,6 +13262,10 @@ snapshots:
       ms: 2.1.2
     optionalDependencies:
       supports-color: 8.1.1
+
+  debug@4.3.5:
+    dependencies:
+      ms: 2.1.2
 
   decimal.js@10.4.3: {}
 
@@ -14248,6 +14261,10 @@ snapshots:
   follow-redirects@1.15.6(debug@4.3.4):
     optionalDependencies:
       debug: 4.3.4(supports-color@8.1.1)
+
+  follow-redirects@1.15.6(debug@4.3.5):
+    optionalDependencies:
+      debug: 4.3.5
 
   for-each@0.3.3:
     dependencies:
@@ -17673,16 +17690,16 @@ snapshots:
       stack-generator: 2.0.10
       stacktrace-gps: 3.1.2
 
-  start-server-and-test@2.0.3:
+  start-server-and-test@2.0.4:
     dependencies:
       arg: 5.0.2
       bluebird: 3.7.2
       check-more-types: 2.24.0
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.5
       execa: 5.1.1
       lazy-ass: 1.6.0
       ps-tree: 1.2.0
-      wait-on: 7.2.0(debug@4.3.4)
+      wait-on: 7.2.0(debug@4.3.5)
     transitivePeerDependencies:
       - supports-color
 
@@ -18407,9 +18424,9 @@ snapshots:
     dependencies:
       xml-name-validator: 5.0.0
 
-  wait-on@7.2.0(debug@4.3.4):
+  wait-on@7.2.0(debug@4.3.5):
     dependencies:
-      axios: 1.6.8(debug@4.3.4)
+      axios: 1.6.8(debug@4.3.5)
       joi: 17.12.3
       lodash: 4.17.21
       minimist: 1.2.8
