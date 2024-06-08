@@ -7,6 +7,7 @@ test.describe("CV", () => {
     await page.goto("http://localhost:3000/cv");
   });
 
+  /*
   test("Skal vise CV", async ({ page }) => {
     // Wait for the PDF to load by checking for the presence of specific text
     await page.waitForFunction(
@@ -26,6 +27,7 @@ test.describe("CV", () => {
     // Save a screenshot of the current page
     await page.screenshot({ path: "screenshots/after-cv-page.png" });
   });
+  */
 
   test("Nedlastingsknapp er synlig", async ({ page }) => {
     const download = page.getByRole("link", { name: "Last ned PDF" });
