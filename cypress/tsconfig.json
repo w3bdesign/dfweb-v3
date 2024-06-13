@@ -4,6 +4,7 @@
     "noEmit": true,
     "isolatedModules": false
   },
+  "types": ["cypress", "cypress-axe", "node"],
   "include": [
     "../node_modules/cypress",
     "../node_modules/@testing-library/cypress",
