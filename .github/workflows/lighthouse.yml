@@ -44,12 +44,12 @@ jobs:
 
       - name: Checkout repository
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
       - name: Audit preview URL with Lighthouse
         if: ${{ steps.get_preview_url.outputs.vercel_preview_url != '' }}
         id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@v11
+        uses: treosh/lighthouse-ci-action@v12
         with:
           urls: |
             ${{ steps.get_preview_url.outputs.vercel_preview_url }}
