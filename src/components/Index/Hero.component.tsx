@@ -20,15 +20,13 @@ const Hero = ({ content }: IContent) => (
   <div
     role="article"
     aria-label="Kontainer for animasjoner av introtekst"
-    id="main-hero"
-    data-testid="main-hero"
     className="flex flex-col justify-center text-lg bg-[url('/images/blue-hero.jpg')] h-[28.125rem]"
   >
     <div className="mt-10 mb-4 bg-white p-2 opacity-75 md:mt-4 lg:mt-4 xl:mt-4">
       <div className="rounded text-black">
         <section>
           <FadeDown delay={0.5} cssClass="text-center">
-            <span data-cy="hei" className="introtekst inline-block text-5xl">
+            <span data-cy="hei" className="inline-block text-5xl">
               {content.length > 0 ? content[0].text : "Hei!"}
             </span>
           </FadeDown>
