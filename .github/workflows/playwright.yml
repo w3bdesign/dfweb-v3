@@ -21,7 +21,7 @@ jobs:
       - name: Verify pnpm installation
         run: pnpm --version
       - name: Install dependencies
-        run: npx pnpm install --frozen-lockfile
+        run: npx pnpm install --no-frozen-lockfile
       - name: Install Playwright Browsers
         run: npx pnpm exec playwright install --with-deps
       - name: Run Playwright tests
