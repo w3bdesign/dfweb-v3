@@ -1,16 +1,12 @@
 # IMPORTANT
 
->
-> This project has been replaced by the newer and actively maintained https://github.com/w3bdesign/dfweb-v4
->
+This project has been replaced by the newer and actively maintained https://github.com/w3bdesign/dfweb-v4
 
 * * *
 
 # Dfweb.no Portfolio Version 3
 
 Third version of my portfolio website with Next.js, Sanity.io and Typescript.
-
-## Live URL: <https://www.dfweb.no>
 
 > ## Frontend
 >
